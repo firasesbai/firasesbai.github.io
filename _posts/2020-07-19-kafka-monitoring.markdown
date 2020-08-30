@@ -2,6 +2,7 @@
 layout: post
 title:  "Kafka Monitoring"
 date:   2020-07-19 18:00:00 +0200
+issue_id: 1
 ---
 In this article we will discuss monitoring Apache Kafka in a production environment. 
 
