@@ -29,9 +29,12 @@ github_username:  firasesbai
 
 show_excerpts: true
 
+google_analytics: UA-176795420-1
+
 # Build settings
 markdown: kramdown
 theme: minima
+
 plugins:
   - jekyll-feed
 
