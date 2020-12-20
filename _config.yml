@@ -13,38 +13,57 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+
+#######################################################
+#################### Site Settings ####################
+#######################################################
+
 title: Firas Esbai
-
-description: >- # this means to ignore newlines until "baseurl:"
-    Well explained articles for data enthusiasts.
-
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 author:
   name: Firas Esbai
 
-linkedin_username: firas-esbai-049aab129
-github_username:  firasesbai
-
+# Show excerpts in the front page
 show_excerpts: true
+
+include:
+    - _pages
+
+#######################################################
+#################### Build Settings ###################
+#######################################################
+
+markdown: kramdown
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate-v2
+
+# Pagination Settings
+pagination:
+  enabled: true
+  per_page: 5
+  permalink: '/page/:num/'
+  title: ' - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+#######################################################
+#################### Additional Settings ##############
+#######################################################
 
 google_analytics: UA-176795420-1
 google_adsense: ca-pub-8456873429477182
 
 issues_repository: firasesbai/firasesbai.github.io
 
-# Build settings
-markdown: kramdown
-theme: minima
+#######################################################
+############### Exclude from processing ###############
+#######################################################
 
-plugins:
-  - jekyll-feed
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
+exclude:
+# The following items will not be processed, by default.
 #   - Gemfile
 #   - Gemfile.lock
 #   - node_modules
@@ -52,3 +71,6 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+# Custom list:
+    - README.md
+    - .gitignore
