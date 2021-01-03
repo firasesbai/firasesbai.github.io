@@ -28,5 +28,5 @@ jobs:
 
       # Standard Usage
       - uses: helaili/jekyll-action@2.0.4
-      - env: 
+        env: 
          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
