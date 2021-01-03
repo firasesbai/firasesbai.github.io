@@ -74,3 +74,4 @@ exclude:
 # Custom list:
     - README.md
     - .gitignore
+    - vendor
