@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Book Notes
+title: Notes
 permalink: /notes/
 pagination: 
   enabled: true
