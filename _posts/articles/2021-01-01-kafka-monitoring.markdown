@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Kafka Monitoring"
-date:   2020-07-19 18:00:00 +0200
+date:   2021-01-01
 issue_id: 1
 category: articles
 ---
