@@ -22,3 +22,10 @@ jobs:
       - uses: helaili/jekyll-action@2.0.1
         env: 
          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+      
+       # Specify the target branch (optional)
+      - uses: helaili/jekyll-action@2.0.1
+        env:
+         JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+        with:
+         jekyll_src: 'gh-pages'
