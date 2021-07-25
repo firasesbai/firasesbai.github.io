@@ -28,7 +28,8 @@ jobs:
       
       # Specify the target branch and source location as parameter
       - uses: helaili/jekyll-action@v2
+        env:
+         JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
         with:
-         token: ${{ secrets.GITHUB_TOKEN }}
          jekyll_src: '_site'
          target_branch: 'gh-pages'
