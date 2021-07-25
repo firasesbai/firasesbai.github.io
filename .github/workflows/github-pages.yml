@@ -19,9 +19,9 @@ jobs:
       - uses: actions/checkout@v2
 
       # Standard Usage
-      - uses: helaili/jekyll-action@2.0.1
-        env: 
-         JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+      # - uses: helaili/jekyll-action@2.0.1
+      #   env: 
+      #    JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
       
        # Specify the target branch (optional)
       - uses: helaili/jekyll-action@2.0.1
