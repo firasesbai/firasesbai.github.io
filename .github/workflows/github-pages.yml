@@ -11,21 +11,25 @@ jobs:
   # This workflow contains a single job called "github-pages"
   github-pages:
     # The type of runner that the job will run on
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Standard Usage
-      # - uses: helaili/jekyll-action@2.0.1
-      #   env: 
-      #    JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
       
-       # Specify the target branch (optional)
+      # Use GitHub Actions' cache to shorten build times and decrease load on servers
+      - uses: actions/cache@v2
+        with:
+         path: vendor/bundle
+         key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+         restore-keys: |
+         ${{ runner.os }}-gems-
+      
+      # Specify the target branch and source location as parameter
       - uses: helaili/jekyll-action@v2
         env:
          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
         with:
+         jekyll_src: '_site'
          target_branch: 'gh-pages'
