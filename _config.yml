@@ -36,9 +36,13 @@ include:
 markdown: kramdown
 theme: minima
 
+# Base hostname & protocol for the site
+url: "https://firasesbai.github.io"
+
 plugins:
   - jekyll-feed
   - jekyll-paginate-v2
+  - jekyll-sitemap
 
 # Pagination Settings
 pagination:
