@@ -43,6 +43,7 @@ plugins:
   - jekyll-feed
   - jekyll-paginate-v2
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 # Pagination Settings
 pagination:
