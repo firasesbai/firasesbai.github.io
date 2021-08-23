@@ -4,6 +4,7 @@ title:  "Kafka Monitoring"
 date:   2021-01-01
 issue_id: 1
 category: articles
+description: "Detailed explanation with code examples for Apache Kafka cluser monitoring using Prometheus and Grafana dashboards"
 ---
 In this article we will discuss monitoring Apache Kafka in a production environment. 
 

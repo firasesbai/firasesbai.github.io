@@ -3,6 +3,7 @@ layout: post
 title:  "Think and Grow Rich"
 date:   2021-03-04
 category: notes
+decription: "Summary and important notes from the book think and grow reach by napoleon hill"
 ---
 *By Napoleon Hill*
 

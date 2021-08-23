@@ -3,6 +3,7 @@ layout: post
 title:  "What to Expect"
 date:   2021-01-17
 category: notes
+description: "Introduction and template for taking notes and summarizing books"
 ---
 Under the Notes section, I will be publishing short summaries along with notes about books that I’m reading.
 
