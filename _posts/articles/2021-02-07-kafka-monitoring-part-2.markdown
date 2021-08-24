@@ -4,6 +4,7 @@ title:  "Kafka Monitoring Part 2"
 date:   2021-02-07
 issue_id: 2
 category: articles
+tags: kafka cluster, monitoring, metrics
 description: "Explanation of important metrics and their usage for Apache Kafka Monitoring"
 ---
 In this article we will stop by some of the most important metrics that we need to keep an eye on while monitoring an Apache Kafka cluster. 
