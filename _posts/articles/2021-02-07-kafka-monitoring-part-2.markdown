@@ -7,7 +7,8 @@ category: articles
 tags: kafka cluster, monitoring, metrics
 description: "Explanation of important metrics and their usage for Apache Kafka Monitoring"
 ---
-In this article we will stop by some of the most important metrics that we need to keep an eye on while monitoring an Apache Kafka cluster. 
+
+*In this article we will stop by some of the most important metrics that we need to keep an eye on while monitoring an Apache Kafka cluster.*
 
 This is a follow-up article on the Kafka monitoring topic where we started by setting up the necessary infrastructure to monitor an Apache Kafka cluster running in a production environment.
 

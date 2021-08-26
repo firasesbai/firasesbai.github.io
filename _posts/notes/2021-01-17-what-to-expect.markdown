@@ -5,7 +5,10 @@ date:   2021-01-17
 category: notes
 description: "Introduction and template for taking notes and summarizing books"
 ---
-Under the Notes section, I will be publishing short summaries along with notes about books that I’m reading.
+
+*Under the Notes section, I will be publishing short summaries along with notes about books that I’m reading.*
+
+![image](/assets/images/notes/1_what_to_expect.png)
 
 No one can argue about the advantages of reading books and the importance of incorporating this habit into your daily routine. Whether it is widening your knowledge on various topics, improving your vocabulary, focus and concentration or strengthening your brain, the list of benefits goes on.
 

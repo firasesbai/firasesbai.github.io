@@ -5,7 +5,10 @@ date:   2021-04-12
 category: articles
 description: "Five reasons why i started blogging and why you should as well"
 ---
-5 Reasons Why I Started This Blog.
+
+*5 Reasons Why I Started This Blog.*
+
+![image](/assets/images/articles/3_why_i_started_this_blog.jpg)
 
 You might be feeling overwhelmed by the redundancy and abundance of information out there, at least I did, though it is still never too late.  
 Feeling reluctant at the beginning, starting this blog turned out to be one of my best decisions.

@@ -7,7 +7,8 @@ category: articles
 tags: kafka, promethues, grafana, monitoring
 description: "Detailed explanation with code examples for Apache Kafka cluser monitoring using Prometheus and Grafana dashboards"
 ---
-In this article we will discuss monitoring Apache Kafka in a production environment. 
+
+*In this article we will discuss monitoring Apache Kafka in a production environment.* 
 
 If you’re just starting to use Apache Kafka or maybe thinking about it (convincing you to start right away would require another post, but you should anyway), then probably monitoring it might have not even crossed your mind or seemed that important to you at the beginning. 
 
