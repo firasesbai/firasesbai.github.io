@@ -77,7 +77,7 @@ After finishing the necessary configuration steps and have integrated both plugi
 You can also use the **google lighthouse** tool from your chrome browser to generate a report about the performance of your site for different categories and metrics like seen in the screenshot below.
 Some useful hints and tips on how to further improve your site are also given to you in order to fix some common problems and enhance the user experience.  
 
-![image](/assets/images/articles/6_lighthouse_results.png)
+![image](/assets/images/articles/6_lighthouse_results.PNG)
 
 With this we have reached the end of this post, I hope you enjoyed it! 
 
