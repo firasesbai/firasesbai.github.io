@@ -26,7 +26,7 @@ The subscription may be terminated by you at any time by sending us an email at 
 
 ## 4. Cookies
 
-This website makes use of cookies to save and retrieve information about your visit to our site. Cookies are small files of software which save and retrieve information about your visit to a website or application. They reside in your internet browser to help remember your preferences and previous activity. You can find more information about cookies at [AllAboutCookies](www.allaboutcookies.org). 
+This website makes use of cookies to save and retrieve information about your visit to our site. Cookies are small files of software which save and retrieve information about your visit to a website or application. They reside in your internet browser to help remember your preferences and previous activity. You can find more information about cookies at [AllAboutCookies](https://www.allaboutcookies.org). 
 
 Users can control and refuse the use of cookies at the individual browser level. Cookies installed can be deleted. If you have visited our website in the past and would like to make changes to your cookie preferences, please first clear the cookies from your browser and then update your cookie preferences. If you reject cookies, you may still use our website. 
 
