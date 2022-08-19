@@ -3,7 +3,7 @@ layout: page
 permalink: /privacy-policy/
 ---
 
-# Privacy Policy
+## Privacy Policy
 
 This Privacy Policy discloses how we gather, use, and protect your personal data.
 
