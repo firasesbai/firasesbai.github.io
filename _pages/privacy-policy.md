@@ -7,7 +7,7 @@ permalink: /privacy-policy/
 
 This Privacy Policy discloses how we gather, use, and protect your personal data.
 
-This Privacy Policy applies to personal data collected by the owner of this website accessible at www.firasesbai.com or, as described below, by other means when you use our website. 
+This Privacy Policy applies to personal data collected by the owner of this website accessible at [www.firasesbai.com](https://www.firasesbai.com) or, as described below, by other means when you use our website. 
 
 ## 1. Logfiles
 
@@ -22,7 +22,7 @@ This website offers you the possibility to engage in writing comments that are v
 ## 3. Newsletter
 
 We may provide the opportunity to sign-up for a periodic email newsletter by entering in your email address.
-The subscription may be terminated by you at any time by sending us an email at newsletter@firasesbai.com.  
+The subscription may be terminated by you at any time by sending us an email at [newsletter@firasesbai.com](mailto: newsletter@firasesbai.com).  
 
 ## 4. Cookies
 
@@ -54,4 +54,4 @@ This Privacy Policy may be updated from time to time. You are advised to check t
 
 ## 8. Contact 
 
-If you have any questions about our privacy policy or the data we hold on you you can contact us via email at: privacypolicy@firasesbai.com  
+If you have any questions about our privacy policy or the data we hold on you you can contact us via email at: [privacypolicy@firasesbai.com](mailto: privacypolicy@firasesbai.com).  
