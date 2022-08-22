@@ -44,6 +44,19 @@ Google Analytics also offers a deactivation add-on for most current browsers tha
 
 You can find additional information on how to install the browser add-on referenced above at the following [link](https://tools.google.com/dlpage/gaoptout?hl=en). 
 
+### 5.2. Amazon Associates
+
+This website is a participant in the Amazon Associates Program. 
+
+The Associates Program permits you to monetize your website by placing on your Site links to an Amazon Site or affiliated sites when applicable. 
+
+This website contains affiliate links and by clicking on those data will be collected to show that you have clicked on the link and whether you purchased any products and services. 
+
+As an Amazon Associate the owner of this website earns from qualifying purchases.
+
+For more information check the [Associates Program Operating Agreement](https://affiliate-program.amazon.com/help/operating/agreement). 
+
+
 ## 6. External Links
 
 This Web Site contains hyperlinks to web sites that are not operated by us. These hyperlinks are provided for your reference and convenience only and do not imply any endorsement of the activities of these third-party web sites or any association with their operators. We do not control these websites and are not responsible for their data or privacy practices. We urge you to review any privacy policy posted on any site you visit before using the site or providing any Personal Data about yourself.
