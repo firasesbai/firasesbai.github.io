@@ -22,7 +22,7 @@ This website offers you the possibility to engage in writing comments that are v
 ## 3. Newsletter
 
 We may provide the opportunity to sign-up for a periodic email newsletter by entering in your email address.
-The subscription may be terminated by you at any time by sending us an email at [newsletter@firasesbai.com](mailto: newsletter@firasesbai.com).  
+The subscription may be terminated by you at any time by sending us an email at [subscription@firasesbai.com](mailto: newsletter@firasesbai.com).  
 
 ## 4. Cookies
 
