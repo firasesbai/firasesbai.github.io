@@ -35,7 +35,7 @@ Especially when the sitemap is generated automatically using in this case the **
 
 In order to set this up for your blog you need to do the following:
 
-1. Add gem `jekyll-sitemap` to your site's Gemfile and run bundle
+1. Add `gem jekyll-sitemap` to your site's Gemfile and run bundle
 2. Add the following to your site's **_config.yml** file:
 
 {% highlight ruby %} 
@@ -57,7 +57,7 @@ This is a Jekyll plugin to add metadata tags for search engines and social netwo
 
 In order to set this up for your blog you need to do the following:
 
-1- Add gem `jekyll-seo-tag` to your site's Gemfile and run bundle
+1- Add `gem jekyll-seo-tag` to your site's Gemfile and run bundle
 
 2- Add the following to your site's **_config.yml** file:
    
