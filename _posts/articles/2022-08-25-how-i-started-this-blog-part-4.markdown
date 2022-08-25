@@ -89,7 +89,7 @@ There are multiple ways to achieve this such as using Google Custom Search Engin
 
 You should now be able to see a search bar, as shown below in the screenshot, and be able to type in keywords to find an article. 
 
-![image](/assets/images/articles/8_search_bar.PNG)
+![image](/assets/images/articles/8_search_bar.png)
 
 ## Pagination ##
 
@@ -160,7 +160,7 @@ For the same reasons mentioned above, having a pagination system in place will m
 
 That is it! If you have more then five posts, navigation buttons like shown below will appear at the bottom of your homepage in order to be able to visit your older posts. 
 
-![image](/assets/images/articles/8_navigation_buttons.PNG)
+![image](/assets/images/articles/8_navigation_buttons.png)
 
 ## Managing a custom domain for your Site ##
 
