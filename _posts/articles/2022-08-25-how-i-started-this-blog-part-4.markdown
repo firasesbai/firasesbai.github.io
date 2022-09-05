@@ -243,7 +243,7 @@ I hope this will get you started on a good foot and if you have any suggestions 
 [blog post]: https://firasesbai.github.io/articles/2021/10/07/how-i-started-this-blog.html
 [Google Domains]: https://domains.google/
 
-[https://blog.webjeda.com/instant-jekyll-search/]: [https://blog.webjeda.com/instant-jekyll-search/]
-[https://jekyllrb.com/docs/pagination/]: [https://jekyllrb.com/docs/pagination/]
-[https://github.com/sverrirs/jekyll-paginate-v2]: [https://github.com/sverrirs/jekyll-paginate-v2]
-[https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site]: [https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site]
+[https://blog.webjeda.com/instant-jekyll-search/]: https://blog.webjeda.com/instant-jekyll-search/
+[https://jekyllrb.com/docs/pagination/]: https://jekyllrb.com/docs/pagination/
+[https://github.com/sverrirs/jekyll-paginate-v2]: https://github.com/sverrirs/jekyll-paginate-v2
+[https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site]: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
