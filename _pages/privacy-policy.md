@@ -22,8 +22,8 @@ This website offers you the possibility to engage in writing comments that are v
 ## 3. Newsletter
 
 We may provide the opportunity to sign-up for a periodic email newsletter by entering in your email address.
-The subscription may be terminated by you at any time by sending us an email at [subscription@firasesbai.com](mailto: newsletter@firasesbai.com).  
-
+The subscription may be terminated by you at any time by following the unsubscribe instructions included in each newsletter. 
+ 
 ## 4. Cookies
 
 This website makes use of cookies to save and retrieve information about your visit to our site. Cookies are small files of software which save and retrieve information about your visit to a website or application. They reside in your internet browser to help remember your preferences and previous activity. You can find more information about cookies at [AllAboutCookies](https://www.allaboutcookies.org). 
