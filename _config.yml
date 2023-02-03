@@ -37,7 +37,7 @@ markdown: kramdown
 theme: minima
 
 # Base hostname & protocol for the site
-url: "https://firasesbai.github.io"
+url: "https://www.firasesbai.com"
 
 plugins:
   - jekyll-feed
