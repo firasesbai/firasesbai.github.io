@@ -9,7 +9,7 @@ decription: "Summary and important notes from the book think and grow reach by n
 
 *By Napoleon Hill*
 
-![image](/assets/images/notes/2_think_and_grow_rich.png)
+![image](/assets/images/notes/2_think_and_grow_rich.jpg)
 
 **1. Summary**
 

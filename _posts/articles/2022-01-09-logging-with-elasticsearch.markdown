@@ -37,6 +37,7 @@ For more info check the official [documentation] from elastic.
 After some theoretical introduction about the different components of the ELK stack, let’s dive deeper into the setup of our architecture as illustrated in the diagram below. 
 
 ![image](/assets/images/articles/5_logging_with_elk_stack.PNG)
+<br />*Figure 1: Architecture*
 
 We will create a single endpoint FastAPI application running in a docker container that generates logs and saves them to files. Filebeat reads then those files and transfers them into Elasticsearch. 
 

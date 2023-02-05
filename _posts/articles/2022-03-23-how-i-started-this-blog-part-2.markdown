@@ -78,6 +78,7 @@ You can also use the **google lighthouse** tool from your chrome browser to gene
 Some useful hints and tips on how to further improve your site are also given to you in order to fix some common problems and enhance the user experience.  
 
 ![image](/assets/images/articles/6_lighthouse_results.PNG)
+<br />*Figure 1: Lighthouse Results*
 
 With this we have reached the end of this post, I hope you enjoyed it! 
 

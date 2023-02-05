@@ -10,7 +10,7 @@ description: "In this article we will integrate a comments section using Github 
 
 *In this article we continue adding some interesting key features to a Jekyll Blog.* 
 
-![image](/assets/images/articles/7_how_i_started_this_blog_part_3.jpg)
+![image](/assets/images/articles/7_how_i_started_this_blog_part_3.png)
 
 Continuing with the *How I Started This Blog* series and in this third part we will go through some fundamental features in order to make your blog stand out.
 

@@ -11,6 +11,7 @@ description: "steps to create a jekyll blog and host it in github pages "
 *In this article we will see how to easily setup and publish your first blog.* 
 
 ![image](/assets/images/articles/4_how_i_started_this_blog.png)
+<br /> *Figure 1: What is Jekyll, Image from [Geeksforgeeks]*
 
 In a previous [post], I mentioned five reasons that were behind the existance of this blog. Now, it is time to walk you through the journey of actually creating it.
 
@@ -108,6 +109,7 @@ In this article we discussed the building blocks for our Jekyll blog and how to 
 
 [https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll]
 
+[Geeksforgeeks]: https://www.geeksforgeeks.org/jekyll-vs-wordpress/
 [post]: https://firasesbai.github.io/articles/2021/04/12/why-i-started-this-blog.html
 [link]: https://jekyllrb.com/docs/installation/ 
 [documentation]: https://jekyllrb.com/docs/structure/

@@ -9,7 +9,7 @@ decription: "Summary and important notes from the book the richest man in babylo
 
 *By George Samuel Clason*
 
-![image](/assets/images/notes/4_the_richest_man_in_babylon.png)
+![image](/assets/images/notes/4_the_richest_man_in_babylon.jpg)
 
 **1. Summary**
 
