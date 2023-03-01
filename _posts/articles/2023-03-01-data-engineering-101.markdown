@@ -5,7 +5,7 @@ date:   2023-03-01
 issue_id: 13
 category: articles
 tags: data engineering, data engineer, data democratization, data flow, big data, data sources, data governance, data in motion, data at rest, ingestion, transformation, storage, analysis, machine learning, visualization and reporting
-description: "In this article "
+description: "In this article we will deep dive into the different aspects of data engineering and see its importance in data democratization"
 ---
 
 *In this article we will explore the different aspects of data engineering and what makes it crucial in today’s data-driven world and how it can benefit organizations of all sizes and industries.* 
