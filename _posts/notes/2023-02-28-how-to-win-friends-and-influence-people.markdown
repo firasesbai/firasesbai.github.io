@@ -4,7 +4,7 @@ title:  "How to Win Friends and Influence People"
 date:   2023-02-28
 category: notes
 tags: book summary
-decription: "Summary and important notes from the book the richest man in babylon by george samuel clason"
+decription: "Summary and important notes from the book how to win friends and influence people by dale carnegie"
 ---
 
 *By  Dale Carnegie*
