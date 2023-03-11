@@ -44,7 +44,16 @@ Google Analytics also offers a deactivation add-on for most current browsers tha
 
 You can find additional information on how to install the browser add-on referenced above at the following [link](https://tools.google.com/dlpage/gaoptout?hl=en). 
 
-### 5.2. Amazon Associates
+### 5.2. Google AdSense
+
+This website uses Google AdSense, a service to display ads provided by Google, Inc. 
+
+Google AdSense uses cookies that enables it and its partners to serve ads based on your prior visits to this Site and/or other websites on the internet. These cookies may collect information such as your IP address, browser type, and device type. We do not have access to or control over these cookies. By accessing this website, you consent to the use of data about you by Google in the manner and for the purposes set out above.
+
+You may opt out of Google's personalized advertising by visiting [Ads Settings](https://myadcenter.google.com/). You can also opt out of all personalized ads from other companies and third-party vendors through the [Network Advertising Initiative's Consumer Opt-Out tool](https://optout.networkadvertising.org/). 
+Note that if you opt out, you may still see ads on our site, but they won't be tailored to your interests.
+
+### 5.3. Amazon Associates
 
 This website is a participant in the Amazon Associates Program. 
 
@@ -55,7 +64,6 @@ This website contains affiliate links and by clicking on those data will be coll
 As an Amazon Associate the owner of this website earns from qualifying purchases.
 
 For more information check the [Associates Program Operating Agreement](https://affiliate-program.amazon.com/help/operating/agreement). 
-
 
 ## 6. External Links
 
