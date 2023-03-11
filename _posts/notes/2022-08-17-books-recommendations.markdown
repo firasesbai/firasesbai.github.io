@@ -9,39 +9,38 @@ decription: "List of recommended readings and books in different areas of life a
 
 *This is a curated list of book recommendations organised in different areas and subjects that might be of interest to you.*
 
-This article is a *Work In Progress* which means you might want to keep an eye on it as it will be updated regularly. 
+![image](/assets/images/notes/6_reading_recommendations.jpg)
 
-# Evolution 
 
-- [Sapiens: A Brief History of Humankind](https://amzn.to/3Ks5kbv) - *by Yuval Noah Harari* 
+This is a *Work In Progress* which means you might want to keep an eye on it as it will be updated regularly. 
 
-# Money
+# Self-Help 
 
-- [Think and Grow Rich](https://amzn.to/3AOvTEB) - *by Napoleon Hill*
-- [Rich Dad, Poor Dad](https://amzn.to/3pEuxWy) - *by Robert T. Kiyosaki*
-- [The Psychology of Money](https://amzn.to/3AEF6Px) - *by Morgan Housel*
-- [Your Money or Your Life](https://amzn.to/3dNLT0p) - *by Vicki Robin, Joe Dominguez*
-
-# Investement
- 
-- [The Richest Man in Babylon](https://amzn.to/3KkhVgM) - *by  George S. Clason* 
-- [The intelligent Investor](https://amzn.to/3CsC1Ds) - *by  Benjamin Graham* 
-- [The Most Important Thing: Uncommon Sense for the Thoughtful Investor](https://amzn.to/3CkSkCb) - *by  Howard Marks*
+- [How to Win Friends and Influence People](https://amzn.to/3T75aKC) - *by Dale Carnegie*
+- [Moonwalking with Einstein: The Art and Science of Remembering Everything](https://amzn.to/3yu6jlY) - *by Joshua Foer*
+- [Range: Why Generalists Triumph in a Specialized World](https://amzn.to/3l1GwyL) - *by David Epstein*
+- [So Good They Can't Ignore You: Why Skills Trump Passion in the Quest for Work You Love](https://amzn.to/3ZGhyE4) - *by Cal Newport*
+- [Deep Work: Rules for Focused Success in a Distracted World](https://amzn.to/3JcUTbi) - *by Cal Newport*
 
 # Productivity
 
-- [Getting Things Done: The Art of Stress-Free Productivity](https://amzn.to/3pBrOwV) - *by  David Allen*
-- [The 4-Hour Workweek](https://amzn.to/3PL79ky) - *by Timothy Ferriss*
-- [The Productivity Project: Accomplishing More by Managing Your Time, Attention, and Energy](https://amzn.to/3PFrfN1) - *by Chris Bailey*
+- [The 4-Hour Workweek](https://amzn.to/3Fg5mlo) - *by Timothy Ferriss*
+
+# Money
+
+- [Think and Grow Rich](https://amzn.to/3JdIPqi) - *by Napoleon Hill*
+- [Rich Dad, Poor Dad](https://amzn.to/3l3SV52) - *by Robert T. Kiyosaki*
+- [The Psychology of Money](https://amzn.to/3J9hnKn) - *by Morgan Housel*
+
+# Investement
+ 
+- [The Richest Man in Babylon](https://amzn.to/3T76OMi) - *by  George S. Clason* 
 
 # Startups
 
-- [Zero to One: Notes on Startups, or How to Build the Future](https://amzn.to/3QLTjzY) - *by Peter Thiel, Blake Masters*
-- [The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses](https://amzn.to/3AgUvEa) - *by Eric Ries*
-- [Lean Inception: How to Align People and Build the Right Product](https://amzn.to/3KecvUz) - *by Paulo Caroli* 
-- [Traction: A Startup Guide to Getting Customers](https://amzn.to/3AEoTK2) - *by Gabriel Weinberg, Justin Mares*
+- [The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses](https://amzn.to/3JzL5K8) - *by Eric Ries*
+- [Lean Inception: How to Align People and Build the Right Product](https://amzn.to/40hONxx) - *by Paulo Caroli* 
 
 # Artificial Intelligence 
 
-- [AI Superpowers: China, Silicon Valley, and the New World Order](https://amzn.to/3CoQhgH) - *by Kai-Fu Lee*
-- [Life 3.0: Being Human in the Age of Artificial Intelligence](https://amzn.to/3AFEU2u) - *by Max Tegmark* 
+- [Life 3.0: Being Human in the Age of Artificial Intelligence](https://amzn.to/3ZYr9Wr) - *by Max Tegmark* 
