@@ -7,7 +7,7 @@
             {%- if site.author %}
             <ul class="contact-list">
                {% if site.author.name -%}
-               <li class="p-name">&copy {{ site.author.name | escape }}</li>
+               <li class="p-name">Copyright &copy {{ site.time | date: '%Y' }} {{ site.author.name | escape }}.</li>
                {% endif -%}
             </ul>
             {%- endif %}
