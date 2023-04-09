@@ -2,14 +2,15 @@
 layout: post
 title:  "The Lean Startup"
 date:   2022-09-11
-category: notes
+category: articles
 tags: book summary
+author: Firas Esbai
 decription: "Summary and important notes from the book the lean startup by eric ries"
 ---
 
-*By Eric Ries*
+*Notes from the Lean Startup Book By Eric Ries*
 
-![image](/assets/images/notes/3_the_lean_startup.png)
+![image](/assets/images/articles/14_the_lean_startup.png)
 <br />*Figure 1: Lean Startup Validated Learnings to Achieve Growth*
 
 **1. Summary**
@@ -81,7 +82,7 @@ How vision leads to steering?
 
 Build-Measure-Learn feedback loop. 
 
-![image](/assets/images/notes/3_learn_build_measure.png)
+![image](/assets/images/articles/14_learn_build_measure.png)
 <br />*Figure 2: Learn Build Measure Loop*
 
 It is at the core of the lean startup model.
@@ -245,7 +246,7 @@ It is at the core of the lean startup model.
    Product development process in a lean startup is responding to pull requests in the form of experiments that need to be run. 
    Thus it is not the customer but rather our *hypothesis about the customer* that pulls work from product development and other functions. Any other work is waste. 
    
-   ![image](/assets/images/notes/3_the_startup_way.png)
+   ![image](/assets/images/articles/14_the_startup_way.png)
    <br />*Figure 3: The Startup Way, Image from [theleanstartup]*
 
 - ***Principal 10: Growth***

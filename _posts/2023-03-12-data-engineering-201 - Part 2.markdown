@@ -5,6 +5,7 @@ date:   2023-03-12
 issue_id: 15
 category: articles
 tags: data engineering, data flow, ingestion, ETL, ELT, transformation, batch processing, stream processing, micro-batch processing, storage, operational data, analytical data, OLTP, OLAP, transactional consistency, ACID, data warehouse, data lake, data lakehouse, cloud
+author: Firas Esbai
 description: "In this article we will deep dive into data ingestion and different data integration techniques. In addition we will look into popular methods for data processing and transformation. Finally we will see different storage types and how they compare to each others."
 ---
 

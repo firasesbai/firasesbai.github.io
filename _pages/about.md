@@ -20,22 +20,23 @@ permalink: /about/
 <div class="flex-container">
    <div class="row-one">
       <p> 
-         I’m <b>Firas Esbai</b>, a data and machine learning engineer.
+         <b>Firas Esbai</b> is a data and machine learning engineer.
       </p>
+	  <br/>
       <p>
          I started this site as a place to keep my own writings and document my learning journey. <br/>
          What started as an experiment has now grown into an informal writing habit that I’m sharing with you. 
       </p>
    </div>
    <div class="row-two"> 
-      <img style="float:right;" src="/assets/images/0_profile.png" width="150">
+      <img style="float:right;" src="/assets/images/0_profile.png" width="200">
    </div>
 </div>
 <div class="centre-container">
    <p>
       The articles I publish cover a broad range of big data and artificial intelligence related topics. <br/>
       My main interest is building intelligent data intensive systems focusing on design and architecture challenges to help businesses thrive with better data-driven decisions. <br/>
-      I also occasionally publish notes on books that I find interesting and give reading recommendations on a variety of subjects and areas.   
+	  Most of my technical work can be found on <a href="https://github.com/firasesbai">GitHub</a>.
    </p>
 </div>
 
@@ -46,4 +47,4 @@ You can reach me by sending an email to [contact@firasesbai.com](mailto: contact
 
 # Social Media 
 
-[LinkedIn](https://www.linkedin.com/in/firas-esbai-049aab129/)
+[LinkedIn](https://www.linkedin.com/in/firas-esbai/)

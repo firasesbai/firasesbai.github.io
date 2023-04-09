@@ -2,14 +2,15 @@
 layout: post
 title:  "Reading Recommendations"
 date:   2022-08-17
-category: notes
+category: articles
 tags: books recommendations
+author: Firas Esbai
 decription: "List of recommended readings and books in different areas of life and subjects"
 ---
 
 *This is a curated list of book recommendations organised in different areas and subjects that might be of interest to you.*
 
-![image](/assets/images/notes/6_reading_recommendations.jpg)
+![image](/assets/images/articles/13_reading_recommendations.jpg)
 
 
 This is a *Work In Progress* which means you might want to keep an eye on it as it will be updated regularly. 

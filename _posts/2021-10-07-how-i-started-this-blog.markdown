@@ -5,6 +5,7 @@ date:   2021-10-07
 issue_id: 6
 category: articles
 tags: jekyll, github, github-pages, blog
+author: Firas Esbai
 description: "steps to create a jekyll blog and host it in github pages "
 ---
 

@@ -23,6 +23,17 @@ title: Firas Esbai
 author:
   name: Firas Esbai
 
+
+# The `>` after `description:` means to ignore line-breaks until next key.
+# If you want to omit the line-break after the end of text, use `>-` instead.
+description: >
+  Things I like to write about.
+
+#Social links
+rss: Subscribe
+github_username: firasesbai
+linkedin_username: firas-esbai
+
 # Show excerpts in the front page
 show_excerpts: true
 

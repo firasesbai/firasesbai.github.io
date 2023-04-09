@@ -5,6 +5,7 @@ date:   2022-03-27
 issue_id: 9
 category: articles
 tags: jekyll, github, github-pages, blog, comments, reading time, wpm
+author: Firas Esbai
 description: "In this article we will integrate a comments section using Github comments API and add an estimated reading time to our articles"
 ---
 

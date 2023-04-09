@@ -5,6 +5,7 @@ date:   2022-08-25
 issue_id: 11
 category: articles
 tags: jekyll, search, pagination, custom domain, simple jekyll search, instant search, jekyll-paginate-v2, google domains
+author: Firas Esbai
 description: "In this article we will integrate a search bar, add pages and customize our blog with a new domain"
 ---
 

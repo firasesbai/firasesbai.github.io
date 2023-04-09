@@ -3,6 +3,7 @@ layout: post
 title:  "Why I Started This Blog"
 date:   2021-04-12
 category: articles
+author: Firas Esbai
 description: "Five reasons why i started blogging and why you should as well"
 ---
 

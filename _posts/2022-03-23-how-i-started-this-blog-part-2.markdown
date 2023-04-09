@@ -5,6 +5,7 @@ date:   2022-03-23
 issue_id: 8
 category: articles
 tags: jekyll, github, github-pages, blog, sitemap, seo
+author: Firas Esbai
 description: "In this article we will integrate some jekyll plugins to add a sitemap and improve your SEO ranking and lighthouse score of your blog"
 ---
 
