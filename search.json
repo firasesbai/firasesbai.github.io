@@ -1,0 +1,157 @@
+[
+  
+    {
+
+      "title"      : "Data engineering 201: In-depth Guide - Part 2",
+	  "url"        : "/articles/2023/03/12/data-engineering-201-Part-2.html",
+      "category"   : "articles",
+      "date"       : "2023-03-12 00:00:00 +0000",
+	  "tags"       : "data engineering, data flow, ingestion, ETL, ELT, transformation, batch processing, stream processing, micro-batch processing, storage, operational data, analytical data, OLTP, OLAP, transactional consistency, ACID, data warehouse, data lake, data lakehouse, cloud",
+	  "description": "In this article we will deep dive into data ingestion and different data integration techniques. In addition we will look into popular methods for data processing and transformation. Finally we will see different storage types and how they compare to each others."
+
+    } ,
+  
+    {
+
+      "title"      : "Data engineering 201: In-depth Guide - Part 1",
+	  "url"        : "/articles/2023/03/11/data-engineering-201.html",
+      "category"   : "articles",
+      "date"       : "2023-03-11 00:00:00 +0000",
+	  "tags"       : "data engineering, data flow, big data, data sources, data governance, analysis, machine learning, visualization and reporting, file formats, parquet, csv, avro, json, data management, data security, data quality, data privacy",
+	  "description": "In this article we will discuss different data sources and big data file formats as well as data governance, its benefits and differences from data management"
+
+    } ,
+  
+    {
+
+      "title"      : "Data engineering 101: Understanding the Fundementals",
+	  "url"        : "/articles/2023/03/01/data-engineering-101.html",
+      "category"   : "articles",
+      "date"       : "2023-03-01 00:00:00 +0000",
+	  "tags"       : "data engineering, data engineer, data democratization, data flow, big data, data sources, data governance, data in motion, data at rest, ingestion, transformation, storage, analysis, machine learning, visualization and reporting",
+	  "description": "In this article we will deep dive into the different aspects of data engineering and see its importance in data democratization"
+
+    } ,
+  
+    {
+
+      "title"      : "Prometheus Monitoring: How to Collect and Analyze Metrics",
+	  "url"        : "/articles/2023/01/15/prometheus-monitoring.html",
+      "category"   : "articles",
+      "date"       : "2023-01-15 00:00:00 +0000",
+	  "tags"       : "prometheus, python, docker, fastapi, monitoring, metrics",
+	  "description": "In this article we will deep dive into prometheus and see how to create a custom metric for a simple python application"
+
+    } ,
+  
+    {
+
+      "title"      : "The Lean Startup",
+	  "url"        : "/articles/2022/09/11/the-lean-startup.html",
+      "category"   : "articles",
+      "date"       : "2022-09-11 00:00:00 +0000",
+	  "tags"       : "book summary",
+	  "description": ""
+
+    } ,
+  
+    {
+
+      "title"      : "How I Started This Blog Part 4",
+	  "url"        : "/articles/2022/08/25/how-i-started-this-blog-part-4.html",
+      "category"   : "articles",
+      "date"       : "2022-08-25 00:00:00 +0000",
+	  "tags"       : "jekyll, search, pagination, custom domain, simple jekyll search, instant search, jekyll-paginate-v2, google domains",
+	  "description": "In this article we will integrate a search bar, add pages and customize our blog with a new domain"
+
+    } ,
+  
+    {
+
+      "title"      : "Reading Recommendations",
+	  "url"        : "/articles/2022/08/17/books-recommendations.html",
+      "category"   : "articles",
+      "date"       : "2022-08-17 00:00:00 +0000",
+	  "tags"       : "books recommendations",
+	  "description": ""
+
+    } ,
+  
+    {
+
+      "title"      : "How I Started This Blog Part 3",
+	  "url"        : "/articles/2022/03/27/how-i-started-this-blog-part-3.html",
+      "category"   : "articles",
+      "date"       : "2022-03-27 00:00:00 +0000",
+	  "tags"       : "jekyll, github, github-pages, blog, comments, reading time, wpm",
+	  "description": "In this article we will integrate a comments section using Github comments API and add an estimated reading time to our articles"
+
+    } ,
+  
+    {
+
+      "title"      : "How I Started This Blog Part 2",
+	  "url"        : "/articles/2022/03/23/how-i-started-this-blog-part-2.html",
+      "category"   : "articles",
+      "date"       : "2022-03-23 00:00:00 +0000",
+	  "tags"       : "jekyll, github, github-pages, blog, sitemap, seo",
+	  "description": "In this article we will integrate some jekyll plugins to add a sitemap and improve your SEO ranking and lighthouse score of your blog"
+
+    } ,
+  
+    {
+
+      "title"      : "Logging with ELK Stack",
+	  "url"        : "/articles/2022/01/09/logging-with-elasticsearch.html",
+      "category"   : "articles",
+      "date"       : "2022-01-09 00:00:00 +0000",
+	  "tags"       : "logging, elasticsearch, elk, fastapi, python, filebeat, kibana, docker",
+	  "description": "Steps to configure filebeat to collect log files generated by python application running in docker container and saves them to elasticsearch"
+
+    } ,
+  
+    {
+
+      "title"      : "How I Started This Blog",
+	  "url"        : "/articles/2021/10/07/how-i-started-this-blog.html",
+      "category"   : "articles",
+      "date"       : "2021-10-07 00:00:00 +0000",
+	  "tags"       : "jekyll, github, github-pages, blog",
+	  "description": "steps to create a jekyll blog and host it in github pages "
+
+    } ,
+  
+    {
+
+      "title"      : "Why I Started This Blog",
+	  "url"        : "/articles/2021/04/12/why-i-started-this-blog.html",
+      "category"   : "articles",
+      "date"       : "2021-04-12 00:00:00 +0000",
+	  "tags"       : "",
+	  "description": "Five reasons why i started blogging and why you should as well"
+
+    } ,
+  
+    {
+
+      "title"      : "Kafka Monitoring Part 2",
+	  "url"        : "/articles/2021/02/07/kafka-monitoring-part-2.html",
+      "category"   : "articles",
+      "date"       : "2021-02-07 00:00:00 +0000",
+	  "tags"       : "kafka cluster, monitoring, metrics",
+	  "description": "Explanation of important metrics and their usage for Apache Kafka Monitoring"
+
+    } ,
+  
+    {
+
+      "title"      : "Kafka Monitoring",
+	  "url"        : "/articles/2021/01/01/kafka-monitoring.html",
+      "category"   : "articles",
+      "date"       : "2021-01-01 00:00:00 +0000",
+	  "tags"       : "kafka, promethues, grafana, monitoring",
+	  "description": "Detailed explanation with code examples for Apache Kafka cluser monitoring using Prometheus and Grafana dashboards"
+
+    } 
+  
+]

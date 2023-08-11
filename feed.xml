@@ -1,0 +1,1611 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2023-08-11T12:41:39+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Things I like to write about.
+</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Data engineering 201: In-depth Guide - Part 2</title><link href="https://www.firasesbai.com/articles/2023/03/12/data-engineering-201-Part-2.html" rel="alternate" type="text/html" title="Data engineering 201: In-depth Guide - Part 2" /><published>2023-03-12T00:00:00+00:00</published><updated>2023-03-12T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/03/12/data-engineering-201%20-%20Part%202</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/03/12/data-engineering-201-Part-2.html">&lt;p&gt;&lt;em&gt;This is part 2 of our in-depth article discussing the different stages of data flow inside an organisation.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;We will discover how data in motion and data at rest is handled through different techniques and methods and the importance of choosing the right storage technology.&lt;/p&gt;
+
+&lt;p&gt;If you have missed the first part, you can find it &lt;a href=&quot;https://www.firasesbai.com/articles/2023/03/11/data-engineering-201.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So buckle up, folks! This is going to be a long ride. But don’t worry, it’s worth it. Grab a snack, get comfy, and let’s dive in!”&lt;/p&gt;
+
+&lt;h2 id=&quot;ingestion&quot;&gt;Ingestion&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;ETL (Extract, Transform, Load)&lt;/strong&gt; and &lt;strong&gt;ELT (Extract, Load, Transform)&lt;/strong&gt; are both data integration techniques used to move data from multiple sources to a single destination, such as a data warehouse or a data lake (more on this later in the Storage section).&lt;/p&gt;
+
+&lt;p&gt;In ETL, data is extracted from source systems, transformed into a format suitable for the destination system, and then loaded into the destination system. 
+The transformation is actually done in what is often referred to as a staging area. 
+This approach is typically used in traditional data warehousing systems. 
+Any data you load into your data warehouse must be transformed into a relational format before the data warehouse can ingest it. 
+As a part of this data transformation process, data mapping may also be necessary to combine multiple data sources based on correlating information. 
+In addition, ETL can help with data privacy and compliance by cleaning sensitive and secure data even before loading into the data warehouse.&lt;/p&gt;
+
+&lt;p&gt;In ELT on the other hand, data is first extracted from source systems and loaded into the destination system in its raw form, where it is then transformed into the desired format. 
+This approach is typically used in big data environments, where the target system, such as a data lake, is designed to handle large amounts of unstructured and semi-structured data and can perform the transformations in parallel.&lt;/p&gt;
+
+&lt;p&gt;Rather than obsessing over this ETL vs ELT cage fight, just try to take away the following:&lt;/p&gt;
+
+&lt;p&gt;Sometimes you may want to optimize/reshape your data sooner (because you know that’s how everyone wants to use it). 
+Other times, you want to leave the schema flexible (and just let the user’s queries/views do the work) to avoid having to maintain lots of tables/views/jobs.&lt;/p&gt;
+
+&lt;h2 id=&quot;transformation&quot;&gt;Transformation&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Batch&lt;/strong&gt; and &lt;strong&gt;Stream&lt;/strong&gt; processing are two popular methods for data processing and transformation.&lt;/p&gt;
+
+&lt;p&gt;In batch processing, we wait for a certain amount of raw data to “pile up” before running an ETL job. 
+Typically this means data is between an hour to a few days old before it is made available for analysis. 
+Batch ETL jobs will typically be run on a set schedule (e.g. every 24 hours), or in some cases once the amount of data reaches a certain threshold.
+You should lean towards batch processing when:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Data freshness is not a mission-critical issue&lt;/li&gt;
+  &lt;li&gt;You are working with large datasets and are running a complex algorithm that requires access to the entire batch – e.g., sorting the entire dataset&lt;/li&gt;
+  &lt;li&gt;You get access to the data in batches rather than in streams&lt;/li&gt;
+  &lt;li&gt;When you are joining tables in relational databases&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In stream processing, we process data as soon as it arrives in the storage layer – which would often also be very close to the time it was generated (although this would not always be the case). 
+This would typically be in sub-second timeframes, so that for the end user the processing happens in real-time. 
+These operations would typically not be stateful, or would only be able to store a ‘small’ state, so would usually involve a relatively simple transformation or calculation.&lt;/p&gt;
+
+&lt;p&gt;Another alternative is &lt;strong&gt;micro-batch&lt;/strong&gt; processing. 
+In micro-batch processing, we run batch processes on much smaller accumulations of data – typically less than a minute’s worth of data. 
+This means data is available in near real-time. 
+In practice, there is little difference between micro-batching and stream processing, and the terms would often be used interchangeably in data architecture descriptions and software platform descriptions.
+Microbatch processing is useful when we need very fresh data, but not necessarily real-time – meaning we can’t wait an hour or a day for a batch processing to run, but we also don’t need to know what happened in the last few seconds. 
+Example scenarios could include web analytics (clickstream) or user behavior.&lt;/p&gt;
+
+&lt;h2 id=&quot;storage&quot;&gt;Storage&lt;/h2&gt;
+
+&lt;p&gt;Two different types of data are used today in an organization; &lt;strong&gt;Operational&lt;/strong&gt; and &lt;strong&gt;Analytical&lt;/strong&gt;. 
+Both operational and analytical data are important for organizations, but they serve different purposes and are used in different ways.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;​​Operational data refers to the data that is used in day-to-day business operations to support critical functions such as sales, marketing, and customer service. Operational data is often used to support short-term decision making and is focused on current and immediate needs.&lt;/li&gt;
+  &lt;li&gt;Analytical data, on the other hand, is used for long-term strategic decision making. Analytical data is used to support trend analysis, business intelligence, and other data-driven decision making processes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;oltp-vs-olap&quot;&gt;OLTP vs OLAP&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;OLTP (Online Transaction Processing)&lt;/strong&gt; and &lt;strong&gt;OLAP (Online Analytical Processing)&lt;/strong&gt; are two different types of data processing systems that are often used to manage operational and analytical data, respectively.&lt;/p&gt;
+
+&lt;p&gt;OLTP&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;OLTP systems are used to process operational data and are designed to support rapid data insertion, updates, and retrievals.&lt;/li&gt;
+  &lt;li&gt;Make sure that the systems can keep up with high volumes of transactions but often very small and fast in nature (e.g. online banking, FinTech application).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;OLAP&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;OLAP systems are used to process analytical data and are designed to support large-scale data analysis.&lt;/li&gt;
+  &lt;li&gt;Make sure that you can crunch through millions or billions of rows of data for your complex and large theories, where they need to run some fancy aggregation or calculations for data Analytics purposes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Example: Online Store&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;OLTP&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Store user data, passwords, previous transactions, find user, change its name,… basically perform INSERT, UPDATE, DELETE operations&lt;/li&gt;
+  &lt;li&gt;Store actual products, their associated prices&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;OLAP&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Find out the “total money spent by all users”&lt;/li&gt;
+  &lt;li&gt;Find out “what is the most sold product”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;oltp-databases&quot;&gt;OLTP Databases&lt;/h4&gt;
+
+&lt;p&gt;OLTP databases can use either &lt;strong&gt;SQL (Structured Query Language)&lt;/strong&gt; or &lt;strong&gt;NoSQL (Not only SQL)&lt;/strong&gt; technologies.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;SQL Database&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;NoSQL Database&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Data storage model&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Tables with fixed rows and columns&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Document: JSON Documents &lt;br /&gt; Key-value: key-value pairs &lt;br /&gt; Wide-Columns: Tables with rows and dynamic columns &lt;br /&gt; Graph&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Development history&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Developed in the 1970s with a focus on reducing data duplication&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Developed in the late 2000s with a focus on scaling and allowing for rapid application change driven by agile and DevOps practices&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Primary purpose&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;General purpose&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Document: general purpose &lt;br /&gt; Key-value: large amounts of data with simple lookup queries &lt;br /&gt; Wide-column: large amounts of data with predictable query patterns &lt;br /&gt; Graph: analyzing and traversing relationships between connected data&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Schema&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Rigid&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Flexible (Implicit schema!, querying time)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Scaling&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Vertical (scale-up with a larger server)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Horizontal (scale-out across commodity servers)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Joins&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Typically required&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Typically not required&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;SQL databases are based on a relational model and use a structured data model, where data is organized into tables, rows, and columns. 
+This makes it easy to enforce data constraints, such as unique keys, and ensures data consistency. 
+They are well tested and proven, and they have a long history of use in OLTP systems. 
+This makes them a reliable choice for OLTP systems. 
+However, SQL databases can be complex to set up and maintain and can be challenging to scale, particularly for large OLTP systems that require horizontal scalability and the rigid schema of SQL databases can make it difficult to accommodate changing requirements or new data types.&lt;/p&gt;
+
+&lt;p&gt;NoSQL databases on the other hand are designed for horizontal scalability, which makes them well suited for OLTP systems that need to scale to handle large amounts of data and users. 
+In addition, they use a variety of data models which makes them more flexible than SQL databases. 
+This allows NoSQL databases to better handle unstructured data and changing data requirements. 
+However , NoSQL databases may not provide the same level of transactional consistency as SQL databases, which can result in data inconsistencies. 
+Plus they can be complex to set up and maintain as well, even though this can be addressed since they are designed to work well in cloud environments, which makes them a good choice for OLTP systems that need to scale quickly and elastically.&lt;/p&gt;
+
+&lt;p&gt;We kept mentioning &lt;strong&gt;transactional consistency&lt;/strong&gt; and you might be wondering what is it?&lt;/p&gt;
+
+&lt;p&gt;A transaction is a sequence of operations performed (using one or more SQL statements) on a database as a single logical unit of work. 
+Transactions have the following four standard properties, usually referred to by the acronym &lt;strong&gt;ACID&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Atomicity&lt;/strong&gt; − ensures that all operations within the work unit are completed successfully. Otherwise, the transaction is aborted at the point of failure and all the previous operations are rolled back to their former state.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Consistency&lt;/strong&gt; − ensures that the database properly changes states upon a successfully committed transaction.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Isolation&lt;/strong&gt; − enables transactions to operate independently of and transparent to each other.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Durability&lt;/strong&gt; − ensures that the result or effect of a committed transaction persists in case of a system failure.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;olap-databases&quot;&gt;OLAP Databases&lt;/h4&gt;
+
+&lt;p&gt;In this section we will discuss two important components that are used for advanced analysis and decision-making; &lt;strong&gt;data warehouses&lt;/strong&gt; and &lt;strong&gt;data lakes&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;data-warehouse&quot;&gt;Data warehouse&lt;/h4&gt;
+
+&lt;p&gt;A data warehouse is a centralized repository for storing and managing large amounts of data from various sources. 
+Data warehouses are designed to support business intelligence (BI) and analytics applications, by providing a single source of data that can be queried, analyzed, and used to make informed decisions. 
+The following are the key characteristics of a data warehouse:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Integration&lt;/em&gt; - Data warehouses integrate data from multiple sources, such as transactional systems, log files, and external data sources, into a single, unified view.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Scalability&lt;/em&gt; - Data warehouses are designed to handle large amounts of data, which can grow over time.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Data Modeling&lt;/em&gt; - Data warehouses use a specific data model, such as the star or snowflake schema, to organize data and make it easier to query and analyze.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Historical data&lt;/em&gt; - Data warehouses store historical data, allowing users to analyze trends and changes over time.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Performance optimization&lt;/em&gt; - Data warehouses are optimized for fast querying and analysis, by using techniques such as indexing, materialized views, and aggregations.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Data Cleansing&lt;/em&gt; - Data warehouses often include data cleansing and normalization to ensure that data is consistent and accurate.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Security and access control&lt;/em&gt; - Data warehouses have robust security and access control features to ensure that sensitive data is protected and only authorized users have access to it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The explosion of big data, including the growth of structured, semi-structured, and unstructured data, made it increasingly difficult for traditional data warehouses to store and process all the data being generated. 
+In addition, Traditional data warehouses required expensive hardware and software to store and process data. 
+The cost of these solutions made it difficult for organizations to store all their data, which led to the adoption of data lakes as a more cost-effective alternative.&lt;/p&gt;
+
+&lt;h4 id=&quot;data-lake&quot;&gt;Data lake&lt;/h4&gt;
+
+&lt;p&gt;A data lake is a centralized repository that stores large amounts of raw, structured and unstructured data. The data is stored in its native format and can be accessed, processed, and analyzed later as needed. 
+The following are the key characteristics of a data lake:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Flexibility&lt;/em&gt; - Data lakes allow organizations to store a wide variety of data types and formats, including structured, semi-structured, and unstructured data, without having to worry about pre-defining schemas.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Scalability&lt;/em&gt; - Data lakes are designed to handle very large amounts of data, which can grow over time.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Cost-effectiveness&lt;/em&gt; - Data lakes are often implemented on low-cost, commodity hardware&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Raw data preservation&lt;/em&gt; - Data lakes preserve raw data, allowing organizations to perform in-depth analysis and retain the original data for future use.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Decentralized processing&lt;/em&gt; - Data lakes can be used to distribute processing tasks across multiple nodes in a network, allowing for increased processing speed and scalability.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Self-service analytics&lt;/em&gt; - Data lakes allow business users and data scientists to perform their own data analysis, without having to rely on IT or data engineering teams.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Integration with big data tools&lt;/em&gt; - Data lakes can be integrated with big data tools, such as Apache Spark and Apache Flink, allowing organizations to perform complex data processing and analysis tasks.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The following table summarizes the differences between data warehouse and data lake.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/11_data_warehouse_vs_data_lake.png&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;&lt;em&gt;Figure 1: Data Warehouse vs Data Lake&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;As organizations move data infrastructure to the cloud, the choice of data warehouse vs. data lake, or the need for complex integrations between the two, is less of an issue. 
+It is becoming natural for organizations to have both, and move data flexibly from lakes to warehouses to enable business analysis.&lt;/p&gt;
+
+&lt;p&gt;Here is a list of some known cloud-based solutions from different cloud providers:&lt;/p&gt;
+
+&lt;p&gt;Cloud data warehousing solutions&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Amazon Redshift&lt;/em&gt; - a fully-managed, analytical data warehouse that can handle petabyte-scale data, and enable querying it in seconds.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Google BigQuery&lt;/em&gt; - an enterprise-grade cloud-native data warehouse, which runs fast interactive and ad-hoc queries on datasets of petabyte-scale.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cloud data lake solutions&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Amazon S3&lt;/em&gt; - an object storage platform built to store and retrieve any amount of data from any data source, and designed for 99.999999999% durability.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Azure Blob Storage&lt;/em&gt; - stores billions of objects in hot, cool, or archive tiers, depending on how often data is accessed. Data ranges from structured (converted to object form) to any unstructured format - images, videos, audio, documents.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The data lake architecture was introduced as a solution to some challenges of data warehousing with the rise of big data offering the ability to store and process big data in a cost-effective and scalable manner. 
+However, it had its own set of challenges, such as the lack of reliability and transactional consistency and the complex data quality problems making it difficult for GDPR compliance and to use for critical business decisions.&lt;/p&gt;
+
+&lt;p&gt;Can we get the best of both worlds without the complexity of managing both a data lake and a data warehouse or perhaps multiple ones?&lt;/p&gt;
+
+&lt;h4 id=&quot;data-lakehouse&quot;&gt;Data Lakehouse&lt;/h4&gt;
+
+&lt;p&gt;A data Lakehouse is a new, open architecture that combines the best elements of data lakes and data warehouses. 
+Data Lakehouses are enabled by a new system design: implementing similar data structures and data management features to those in a data warehouse directly on top of low cost cloud storage in open formats.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/12_data_warehouse_vs_data_lake_vs_data_lakehouse.png&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;&lt;em&gt;Figure 2: Data Warehouse vs Data Lake vs Data Lakehouse&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Some data management solutions such as &lt;a href=&quot;https://delta.io/&quot;&gt;Delta Lake&lt;/a&gt;, which is an implementation of Data Lakehouse from Databricks, offer the ability to store and process big data in a reliable and consistent manner, while also providing the scalability and cost savings of a data lake.&lt;/p&gt;
+
+&lt;p&gt;The data lakehouse is a relatively new concept and is still evolving, but it has the potential to become an important technology for big data processing and analysis in the future.&lt;/p&gt;
+
+&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;In this article, we went through some popular patterns such as ETL vs ELT and stream vs batch processing that are used in data ingestion and transformation and where they can be applied. 
+Then we discussed the different types of data storage and some concrete implementations of them in the cloud and how they fit in an organization based on its requirements, data maturity and purpose.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://martinfowler.com/articles/data-mesh-principles.html&quot;&gt;https://martinfowler.com/articles/data-mesh-principles.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.jie-tao.com/delta-lake-step-by-step1/&quot;&gt;https://www.jie-tao.com/delta-lake-step-by-step1/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.databricks.com/blog/2020/01/30/what-is-a-data-lakehouse.html&quot;&gt;https://www.databricks.com/blog/2020/01/30/what-is-a-data-lakehouse.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://delta.io/&quot;&gt;https://delta.io/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="data" /><category term="engineering," /><category term="data" /><category term="flow," /><category term="ingestion," /><category term="ETL," /><category term="ELT," /><category term="transformation," /><category term="batch" /><category term="processing," /><category term="stream" /><category term="processing," /><category term="micro-batch" /><category term="processing," /><category term="storage," /><category term="operational" /><category term="data," /><category term="analytical" /><category term="data," /><category term="OLTP," /><category term="OLAP," /><category term="transactional" /><category term="consistency," /><category term="ACID," /><category term="data" /><category term="warehouse," /><category term="data" /><category term="lake," /><category term="data" /><category term="lakehouse," /><category term="cloud" /><summary type="html">This is part 2 of our in-depth article discussing the different stages of data flow inside an organisation.</summary></entry><entry><title type="html">Data engineering 201: In-depth Guide - Part 1</title><link href="https://www.firasesbai.com/articles/2023/03/11/data-engineering-201.html" rel="alternate" type="text/html" title="Data engineering 201: In-depth Guide - Part 1" /><published>2023-03-11T00:00:00+00:00</published><updated>2023-03-11T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/03/11/data-engineering-201</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/03/11/data-engineering-201.html">&lt;p&gt;&lt;em&gt;In this two parts article we will deep dive into each of the general steps of the data flow.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In a previous &lt;a href=&quot;https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html&quot;&gt;blog post&lt;/a&gt;, we saw the importance of data engineering in democratizing data inside an organization and enabling data driven decision making. 
+In addition, we outlined the different stages data goes through in order to be able to extract insights out of it.&lt;/p&gt;
+
+&lt;p&gt;Here is a reminder of our data flow blueprint:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/10_data_flow.png&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;&lt;em&gt;Figure 1: Data Flow Stages&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;We will start by taking a bird’s eye view, focusing on data sources, data governance and analysis before zooming in on the other stages of the data flow in part 2.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;data-sources&quot;&gt;Data Sources&lt;/h2&gt;
+
+&lt;p&gt;Data sources refer to the various systems and platforms that generate data and constitute the origin of all data in an organization and play a crucial role in the data engineering and big data landscape. 
+These sources can be internal systems such as transactional databases, or external sources such as social media platforms, sensors, or log files.&lt;/p&gt;
+
+&lt;p&gt;The variety and volume of data sources have dramatically increased with the growth of big data, making it important for organizations to have a comprehensive strategy for managing, processing, and analyzing data from multiple sources.&lt;/p&gt;
+
+&lt;p&gt;For instance, data must be transformed and stored in a format that enables efficient processing and analysis. 
+There are a variety of file formats, such as Parquet and Avro, that are common to big data use cases and which provide a means of storing and exchanging large volumes of structured and semi-structured data in a standardized way, making it easier for organizations to work with data from multiple sources.&lt;/p&gt;
+
+&lt;p&gt;Following is a table summarizing some properties and how do they compare between some big data file formats:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Properties&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;CSV&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;JSON&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Parquet&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Avro&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Human readability&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;No&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;NO&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Format&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Row-based&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Key-Value&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Columunar&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Row-based&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Compressible&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Splittable&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Complex data structure&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;No&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Schema evolution&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;No&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;No&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Read performance&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Slow&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Slow&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Fast&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Average&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Write performance&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Fast&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Fast&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Slow&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Average&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;CSV should typically be the fastest to write, JSON the easiest to understand for humans, and Parquet the fastest to read a subset of columns, while Avro is the fastest to read all columns at once.&lt;/p&gt;
+
+&lt;h2 id=&quot;data-governance&quot;&gt;Data Governance&lt;/h2&gt;
+
+&lt;p&gt;Data governance is the systematic management of the availability, usability, integrity and security of the data used in an organization. 
+It includes the actions people must take, the processes they must follow, and the technology that supports them throughout the data lifecycle to ensure data is secure, private, accurate, available, and usable.&lt;/p&gt;
+
+&lt;p&gt;Some of the key components of the data governance include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Data compliance&lt;/strong&gt;: Establishing clear policies, procedures, and standards to govern data collection, storage, and usage. In addition, regularly monitoring and auditing data to ensure compliance with relevant regulations and laws&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data security&lt;/strong&gt;: Implementing security measures to protect data from unauthorized access and breaches.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data privacy&lt;/strong&gt;: Ensuring that personal and confidential data is managed in accordance with relevant regulations and laws.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data Quality&lt;/strong&gt;: Refers to the development and implementation of activities that apply quality management techniques to data to make sure it is suitable to be used in a specific context, thus considered to be high quality data. Data quality is generally judged on six dimensions: accuracy, completeness, consistency, timeliness, validity, and uniqueness.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data cataloging&lt;/strong&gt;: Maintaining a comprehensive and up-to-date inventory of data assets, including metadata, definitions, and relationships.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data lineage&lt;/strong&gt;: Tracing the origin and evolution of data to understand its history and potential impact on decision-making.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;data-governance-vs-data-management&quot;&gt;Data Governance vs Data Management&lt;/h3&gt;
+
+&lt;p&gt;The scope of Data management is broader than data governance. 
+Data management includes all aspects of the full data lifecycle from collection and storage to usage and oversight. 
+This is inclusive of data governance, which can be considered as a core component of it, but it also includes other areas such as data architecture and data modeling.&lt;/p&gt;
+
+&lt;h3 id=&quot;benefits-of-data-governance&quot;&gt;Benefits of Data Governance&lt;/h3&gt;
+
+&lt;p&gt;Implementing a data governance framework can increase the value of data within your organization and therefore make better and more timely decisions. 
+In fact, effective data governance aims to maintain high quality data that’s both secure and compliant and easily accessible for deeper business insights.&lt;/p&gt;
+
+&lt;h2 id=&quot;analysis&quot;&gt;Analysis&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Visualization&lt;/em&gt; and &lt;em&gt;reporting&lt;/em&gt; play a critical role in helping organizations to make informed decisions. 
+By presenting data in an easily understandable format, stakeholders can gain insights into trends, patterns, and relationships that would not be evident from raw data alone. 
+Effective visualization and reporting also make it easier for organizations to communicate the results of data analysis to others, including stakeholders, partners, and customers.&lt;/p&gt;
+
+&lt;p&gt;Visualization is the process of creating visual representations of data and information, such as charts, graphs, and maps. 
+Data visualization can be done using a wide range of tools including plotting libraries such as matplotlib or seaborn which are used especially by data scientists to more powerful analytics dashboards such as Tableau and Microsoft Power BI.&lt;/p&gt;
+
+&lt;p&gt;Reporting, on the other hand, is the presentation of data and information in a structured format that is designed to be easily consumable by stakeholders. 
+Reports are often used to provide an overview of key metrics, trends, and insights, and can be used to support decision making and strategic planning.&lt;/p&gt;
+
+&lt;p&gt;Another aspect of the data analysis we mentioned in &lt;a href=&quot;https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html&quot;&gt;this article&lt;/a&gt; is the use of &lt;em&gt;machine learning algorithms&lt;/em&gt;. 
+However, it is not feasible to fully cover the topic of machine learning within the scope of this article. 
+Though a good starting point for anyone new to this field is the &lt;a href=&quot;https://www.deeplearning.ai/courses/machine-learning-specialization/&quot;&gt;machine learning specialization course&lt;/a&gt; from Andrew Ng.&lt;/p&gt;
+
+&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;In this article we saw the different types of big data file formats and how they compare to each other which can help shape our choice to achieve more efficient data processing. 
+In addition, we discussed some of the key components of data governance and its benefit to achieve better data quality and therefore better data analysis through the usage of visualization and reporting.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devopedia.org/data-serialization&quot;&gt;https://devopedia.org/data-serialization&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://cloud.google.com/learn/what-is-data-governance&quot;&gt;https://cloud.google.com/learn/what-is-data-governance&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ibm.com/topics/data-governance&quot;&gt;https://www.ibm.com/topics/data-governance&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.heavy.ai/technical-glossary/data-quality&quot;&gt;https://www.heavy.ai/technical-glossary/data-quality&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="data" /><category term="engineering," /><category term="data" /><category term="flow," /><category term="big" /><category term="data," /><category term="data" /><category term="sources," /><category term="data" /><category term="governance," /><category term="analysis," /><category term="machine" /><category term="learning," /><category term="visualization" /><category term="and" /><category term="reporting," /><category term="file" /><category term="formats," /><category term="parquet," /><category term="csv," /><category term="avro," /><category term="json," /><category term="data" /><category term="management," /><category term="data" /><category term="security," /><category term="data" /><category term="quality," /><category term="data" /><category term="privacy" /><summary type="html">In this two parts article we will deep dive into each of the general steps of the data flow.</summary></entry><entry><title type="html">Data engineering 101: Understanding the Fundementals</title><link href="https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html" rel="alternate" type="text/html" title="Data engineering 101: Understanding the Fundementals" /><published>2023-03-01T00:00:00+00:00</published><updated>2023-03-01T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/03/01/data-engineering-101</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html">&lt;p&gt;&lt;em&gt;In this article we will explore the different aspects of data engineering and what makes it crucial in today’s data-driven world and how it can benefit organizations of all sizes and industries.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-data-democratization&quot;&gt;What is Data Democratization?&lt;/h2&gt;
+
+&lt;p&gt;Data democratization is the process of making data accessible to all members of an organization, regardless of their role or level of technical expertise. 
+It enables organizations to make better and more informed decisions by providing access to data to a wide range of users. 
+Data democratization also helps to promote data-driven culture within an organization, as it enables them to explore and leverage their data to create new products and services.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-data-engineering&quot;&gt;What is Data Engineering?&lt;/h2&gt;
+
+&lt;p&gt;While data democratization is the foundation for organizations to become data-driven and make better decisions, data engineering plays a vital role in making it happen.&lt;/p&gt;
+
+&lt;p&gt;Data engineering is the process of acquiring, storing, and preparing raw data for analysis to extract valuable insights from their data and make informed business decisions.&lt;/p&gt;
+
+&lt;h2 id=&quot;role-of-data-engineer&quot;&gt;Role of Data Engineer&lt;/h2&gt;
+
+&lt;p&gt;A data engineer is responsible for the “plumbing” that helps derive value from data. 
+The specific responsibilities of a data engineer may vary depending on the organization and industry, but generally include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Designing and building data pipelines&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Acquire data from various sources into the appropriate storage and processing systems&lt;/li&gt;
+      &lt;li&gt;Coordination of the many jobs through orchestration tools&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Data storage and management&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Work with different types of data storage systems&lt;/li&gt;
+      &lt;li&gt;Design and implement data models&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Data processing&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Work with different types of data processing methods such as batch processing and streaming processing&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Data governance&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Ensure data is accurate, reliable, and easily accessible to users&lt;/li&gt;
+      &lt;li&gt;Establish, implement, and maintain policies and procedures for data quality, compliance, and security&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Manage data infrastructure&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Collaboration and communication&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Work closely with data scientists, analysts, and other stakeholders to understand their data needs and develop solutions that meet their requirements&lt;/li&gt;
+      &lt;li&gt;Communicate with other teams such as DevOps, IT and security to ensure that the data infrastructure is aligned with the organization’s overall strategy&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;data-engineering-vs-big-data-engineering&quot;&gt;Data Engineering vs Big Data Engineering&lt;/h2&gt;
+
+&lt;p&gt;According to a study by IDC, the global data sphere is projected to grow from 33 zettabytes (ZB) in 2018 to 175 ZB by 2025, with a compound annual growth rate of 23%. 
+It’s also important to note that the vast majority of this data (about 90%) is unstructured data, such as social media posts, images, and videos.
+Another study by IBM estimates that 2.5 quintillion bytes of data are created every day, and this amount is increasing exponentially.&lt;/p&gt;
+
+&lt;p&gt;These statistics highlight the sheer volume of data that is being generated on a daily basis and the significant growth in the amount of data generated over time which leads us to the definition of &lt;strong&gt;Big Data&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Big data refers to extremely large and complex data sets that are difficult to process and analyze using traditional data processing and management techniques. These data sets are characterized by the “3Vs” - &lt;em&gt;volume, velocity, and variety&lt;/em&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Volume&lt;/em&gt; refers to the sheer amount of data that is generated and collected, this could be in terabytes, petabytes, or even exabytes.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Velocity&lt;/em&gt; refers to the speed at which data is generated and collected. With the growing number of devices and sensors that are connected to the internet, data is being generated at an unprecedented rate.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Variety&lt;/em&gt; refers to the different types of data that are generated and collected, such as structured data, unstructured data, and semi-structured data.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So is data engineering always “Big”?&lt;/p&gt;
+
+&lt;p&gt;Data engineering is the broader concept of designing, building, and maintaining systems and infrastructure to support data-driven applications and services, while big data engineering is a specific subfield that is focused on the management and analysis of extremely large and complex data sets that requires the use of advanced processing tools and analytics techniques.&lt;/p&gt;
+
+&lt;p&gt;Overall, data engineering is needed to democratize data inside an organization for informed business decisions, not just when we are dealing with big data.&lt;/p&gt;
+
+&lt;p&gt;After understanding the “What” and the “Why” behind data engineering, it is now time to delve into the “How” of data engineering.&lt;/p&gt;
+
+&lt;h2 id=&quot;data-flow&quot;&gt;Data Flow&lt;/h2&gt;
+
+&lt;p&gt;The data flow outlines the different stages involved in making data easily accessible in a reliable and accurate way for analysis and decision making.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/10_data_flow.png&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;&lt;em&gt;Figure 1: Data Flow Stages&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The general steps include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Data Sources&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Data sources are an important and challenging step due to the wide range of potential integration points.&lt;/li&gt;
+      &lt;li&gt;Depending on the organization’s needs, some common data sources include:
+        &lt;ul&gt;
+          &lt;li&gt;Relational and non relational databases&lt;/li&gt;
+          &lt;li&gt;Flat files: Data stored in CSV, Excel, or other flat file formats&lt;/li&gt;
+          &lt;li&gt;Streaming data: Data generated in real-time, such as data from social media feeds or IoT devices&lt;/li&gt;
+          &lt;li&gt;External data: Data from third-party sources, such as government data or data from other companies&lt;/li&gt;
+          &lt;li&gt;Legacy systems: Data stored in older systems that need to be migrated to the new data infrastructure&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Data Governance&lt;/strong&gt;
+&lt;br /&gt;Data governance is the systematic management of the availability, usability, integrity and security of the data used in an organization. 
+It is not particularly a separate step in the data flow, but rather a broad concept that involves processes, people and technology that support these processes in order to maintain high quality data and make better data driven decisions.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data in Motion&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;Ingestion&lt;/em&gt; 
+&lt;br /&gt;Ingestion is the process of acquiring and importing data from various sources into the organization’s data infrastructure.&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;Transformation&lt;/em&gt; 
+&lt;br /&gt;This is the process of cleaning, normalizing, and transforming the data acquired during the ingestion step so that it is in a format that can be used for analysis and reporting.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Data at Rest: Storage&lt;/strong&gt; 
+&lt;br /&gt;This is the process of storing and managing the data in a way that it can be accessed, queried, and updated easily. Therefore, choosing the right type of storage and technology is a key element not only to the following steps, but also to previous ones due to the fact that we might require multiple storages in different steps.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Analysis&lt;/strong&gt; 
+&lt;br /&gt;This is the step where we extract insights and knowledge from the processed data. This involves:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;Visualization and Reporting&lt;/em&gt;
+&lt;br /&gt;Creating visual representations of the data to help communicate insights and make it easy to understand&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;Machine learning&lt;/em&gt;
+&lt;br /&gt;Using algorithms to learn from the data&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;In this article we have seen how valuable it is to democratize data inside an organization to make the shift towards data-driven decision making and the main role played by data engineers in the different steps of the raw data goes through to reach this goal. 
+In the following blog post we will dive deeper into each step to uncover best practices, tools and paradigms used and how they have evolved in an ever changing field. Stay tuned!&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/free-code-camp/the-rise-of-the-data-engineer-91be18f1e603&quot;&gt;https://medium.com/free-code-camp/the-rise-of-the-data-engineer-91be18f1e603&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://maximebeauchemin.medium.com/the-downfall-of-the-data-engineer-5bfb701e5d6b&quot;&gt;https://maximebeauchemin.medium.com/the-downfall-of-the-data-engineer-5bfb701e5d6b&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/andkret/Cookbook&quot;&gt;https://github.com/andkret/Cookbook&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="data" /><category term="engineering," /><category term="data" /><category term="engineer," /><category term="data" /><category term="democratization," /><category term="data" /><category term="flow," /><category term="big" /><category term="data," /><category term="data" /><category term="sources," /><category term="data" /><category term="governance," /><category term="data" /><category term="in" /><category term="motion," /><category term="data" /><category term="at" /><category term="rest," /><category term="ingestion," /><category term="transformation," /><category term="storage," /><category term="analysis," /><category term="machine" /><category term="learning," /><category term="visualization" /><category term="and" /><category term="reporting" /><summary type="html">In this article we will explore the different aspects of data engineering and what makes it crucial in today’s data-driven world and how it can benefit organizations of all sizes and industries.</summary></entry><entry><title type="html">Prometheus Monitoring: How to Collect and Analyze Metrics</title><link href="https://www.firasesbai.com/articles/2023/01/15/prometheus-monitoring.html" rel="alternate" type="text/html" title="Prometheus Monitoring: How to Collect and Analyze Metrics" /><published>2023-01-15T00:00:00+00:00</published><updated>2023-01-15T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/01/15/prometheus-monitoring</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/01/15/prometheus-monitoring.html">&lt;p&gt;&lt;em&gt;In this article we will deep dive into prometheus, the open-source monitoring and alerting system, and see how we can use it to monitor a simple python application.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;All the source code is available &lt;a href=&quot;https://github.com/firasesbai/fastapi-prometheus-monitoring&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Prometheus is an open-source monitoring and alerting system. 
+It is often used to monitor the performance of various systems and services, and can send alerts if certain thresholds are exceeded. 
+Prometheus also has a powerful query language that can be used to analyze the data it collects.&lt;/p&gt;
+
+&lt;p&gt;Prometheus uses a pull model to collect metrics from targets. 
+This means that Prometheus actively scrapes metrics from specified targets at regular intervals, rather than waiting for the targets to push metrics to it.&lt;/p&gt;
+
+&lt;h3 id=&quot;prometheus-architecture&quot;&gt;Prometheus Architecture&lt;/h3&gt;
+
+&lt;p&gt;The main components of Prometheus are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Prometheus Server&lt;/strong&gt;: This is the core component of Prometheus. It is responsible for scraping metrics from specified targets, storing metrics in its built-in time-series database, and processing and answering queries via PromQL.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Target&lt;/strong&gt;: A target is a system or service that Prometheus scrapes metrics from. Targets typically expose metrics in a specific format over HTTP, which Prometheus can understand.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Time-Series Database&lt;/strong&gt;: Prometheus stores all the metrics it collects in its built-in time-series database. This allows Prometheus to quickly query and analyze metrics, and to provide historical data.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;PromQL&lt;/strong&gt;: Prometheus has a powerful query language called PromQL, which can be used to retrieve and analyze metrics stored in its database. PromQL allows you to filter and aggregate metrics, and to create complex queries and alerts.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Alertmanager&lt;/strong&gt;: Prometheus has a built-in alerting system called Alertmanager that can be used to trigger alerts based on metrics and send notifications through various channels.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Exporters&lt;/strong&gt;: Prometheus exporters are third-party tools that convert metrics from various systems and technologies into a format that Prometheus can understand. This allows Prometheus to scrape metrics from a wide variety of sources, such as JMX for Java applications, StatsD, SNMP, and more. For more details, check this blog &lt;a href=&quot;https://www.firasesbai.com/articles/2021/01/01/kafka-monitoring.html&quot;&gt;post&lt;/a&gt; on how to use JMX exporter to monitor an apache kafka cluster.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These components work together in the following way:&lt;/p&gt;
+
+&lt;p&gt;The prometheus server scrapes metrics from specified targets, stores the metrics in its built-in time-series database, and uses PromQL to process and answer queries. 
+The Alertmanager is used to trigger alerts based on metrics and send notifications. 
+In addition, exporters can be used to convert metrics from various systems and technologies into a format that Prometheus can understand.&lt;/p&gt;
+
+&lt;h2 id=&quot;collecting-and-storing-metrics&quot;&gt;Collecting and Storing Metrics&lt;/h2&gt;
+
+&lt;p&gt;Prometheus periodically scrapes metrics from specified targets, which are typically the applications or services that you want to monitor. 
+These targets expose metrics in a specific format, usually over HTTP, that Prometheus can understand.&lt;/p&gt;
+
+&lt;p&gt;Prometheus supports several types of metrics:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Counter&lt;/strong&gt;: A cumulative metric that represents a single monotonically increasing counter whose value can only increase or be reset to zero on restart.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Gauge&lt;/strong&gt;: A metric that represents a single numerical value that can arbitrarily go up and down.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Histogram&lt;/strong&gt;: A metric that samples observations (usually things like request durations or response sizes) and counts them in configurable buckets. It also provides a sum of all observed values.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Summary&lt;/strong&gt;: Similar to a histogram, a summary samples observations and provides both the sum of all observed values and the number of observations.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Untyped&lt;/strong&gt;: A catch-all metric type that can be used to represent any sort of value.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Vector&lt;/strong&gt;: A collection of metrics with the same name and type, but with different labels. This allows users to aggregate and select time series based on their labels.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Prometheus also supports the concept of &lt;strong&gt;labels&lt;/strong&gt;, which are key-value pairs that can be added to metrics to provide more context. 
+Labels can be used to group and filter metrics, making it easy to identify trends and patterns in the data.&lt;/p&gt;
+
+&lt;h2 id=&quot;integrating-with-other-tools&quot;&gt;Integrating with Other Tools&lt;/h2&gt;
+
+&lt;p&gt;There are several popular tools that can integrate with Prometheus:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Grafana&lt;/strong&gt;: A popular open-source visualization and dashboarding tool that can be used to create interactive and informative charts and graphs based on Prometheus metrics.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Kapacitor&lt;/strong&gt;: A data processing engine that can be used to perform calculations on Prometheus metrics in real-time, such as anomaly detection or aggregations.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Thanos&lt;/strong&gt;: A set of components that can be used to scale Prometheus and make it highly available, by providing features such as long-term storage and querying across multiple Prometheus instances.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;implementation&quot;&gt;Implementation&lt;/h2&gt;
+
+&lt;p&gt;In our &lt;a href=&quot;https://github.com/firasesbai/fastapi-prometheus-monitoring&quot;&gt;example&lt;/a&gt;, we created a simple python application using fastapi. 
+Our application has two endpoints; one that returns the prometheus metrics and another one that returns a random fact about cats. 
+When querying the latter, we also show how to create your own prometheus metrics by measuring the number of times our endpoint was triggered. 
+This is an example of a metric of type counter.&lt;/p&gt;
+
+&lt;h3 id=&quot;set-up&quot;&gt;Set up&lt;/h3&gt;
+
+&lt;p&gt;1- Clone this Github &lt;a href=&quot;https://github.com/firasesbai/fastapi-prometheus-monitoring&quot;&gt;repository&lt;/a&gt;, change into the corresponding directory and run the following command: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose up -d&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This will start two docker containers: one corresponding to the &lt;em&gt;prometheus service&lt;/em&gt; and the other is our python application container called &lt;em&gt;fastapi-app&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;2- Access the prometheus dashboard in your web browser through: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://localhost:9090/targets&lt;/code&gt; where you will see our python application as a target for the prometheus service to monitor as shown in the screenshot below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/9_prometheus_interface.png&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;&lt;em&gt;Figure 1: Prometheus Web Interface&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;3- Go to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://127.0.0.1:8000/docs&lt;/code&gt; where you will see the Swagger UI of our python application.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/9_fastapi_swagger_ui.png&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;&lt;em&gt;Figure 2: FastAPI Swagger UI&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;As indicated in the screenshot above, our application has two endpoints:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/metrics&lt;/code&gt;: Makes the monitoring metrics available for prometheus to scrape&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/cat_facts&lt;/code&gt;: Returns a random fact about cats.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As mentioned when triggering the last endpoint, we calculate in the background a prometheus metric called: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;random_facts_api_execution_counter&lt;/code&gt; which measures the number of times this endpoint was triggered.&lt;/p&gt;
+
+&lt;p&gt;When we request the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/metrics&lt;/code&gt; endpoint, we see a list of metrics measuring several things such as the &lt;em&gt;request time&lt;/em&gt;, &lt;em&gt;python garbage collection objects&lt;/em&gt;, etc…&lt;/p&gt;
+
+&lt;p&gt;These metrics were made available by adding the &lt;strong&gt;prometheus middleware&lt;/strong&gt; to our application. 
+  In addition, we can also see our own created metric as shown below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/9_custom_prometheus_metric.png&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;&lt;em&gt;Figure 3: Custom Prometheus Metrics Example&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s it! You have successfully created a custom metric in your python application and you were able to scrape it and make it visible to prometheus.&lt;/p&gt;
+
+&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;In this blog post, we discussed Prometheus monitoring, a widely used and powerful monitoring and alerting system. 
+We covered topics such as Prometheus architecture, how to collect the different types of metrics and gave an example of popular tools that can integrate with Prometheus. 
+In addition, we went through an example of how to deploy a python application in which we created a custom metric and we were able to scrap it and visualize it using prometheus.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://prometheus.io/docs/introduction/overview/&quot;&gt;https://prometheus.io/docs/introduction/overview/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://grafana.com/grafana/&quot;&gt;https://grafana.com/grafana/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.influxdata.com/kapacitor/v1.6/working/scraping-and-discovery/&quot;&gt;https://docs.influxdata.com/kapacitor/v1.6/working/scraping-and-discovery/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://thanos.io/&quot;&gt;https://thanos.io/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="prometheus," /><category term="python," /><category term="docker," /><category term="fastapi," /><category term="monitoring," /><category term="metrics" /><summary type="html">In this article we will deep dive into prometheus, the open-source monitoring and alerting system, and see how we can use it to monitor a simple python application.</summary></entry><entry><title type="html">The Lean Startup</title><link href="https://www.firasesbai.com/articles/2022/09/11/the-lean-startup.html" rel="alternate" type="text/html" title="The Lean Startup" /><published>2022-09-11T00:00:00+00:00</published><updated>2022-09-11T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2022/09/11/the-lean-startup</id><content type="html" xml:base="https://www.firasesbai.com/articles/2022/09/11/the-lean-startup.html">&lt;p&gt;&lt;em&gt;Notes from the Lean Startup Book By Eric Ries&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/14_the_lean_startup.png&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;&lt;em&gt;Figure 1: Lean Startup Validated Learnings to Achieve Growth&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. Summary&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The Lean startup takes its name from the lean manufacturing revolution that originated in Japan with the Toyota Production System. 
+Since not only building cars requires management but also building a startup, the lean startup movement came to existence. 
+Entrepreneurs are afraid of implementing traditional management practices early in a startup thinking that this will limit innovation. 
+As a consequence, entrepreneurs take a ”just do it” attitude avoiding all forms of management, process and discipline. Unfortunately this approach leads to chaos more often then it does to success.&lt;/p&gt;
+
+&lt;p&gt;Eric Ries describes in this book the why and the how that led to the birth of this movement and the tools that will teach you how to drive a Startup.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. Favorite Quotes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Think Big, Start Small.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;An Experiment is a Product.&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;The lean startup is a framework not a blueprint of steps to follow. It is designed to be adapted to the specific conditions of each specific company.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;3. Main Takeaways&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The Lean Startup has &lt;em&gt;12 Principles&lt;/em&gt; that are categorised into three main parts making up the lifecycle of a Startup.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Part 1: Vision&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Explore the importance of learning as the measure of progress for a startup.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 1: Start&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;Goal of a startup&lt;/em&gt;: Figure out the right thing to build; the thing customers want and will pay for as quickly as possible.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 2: Define&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;What is a Startup?&lt;/em&gt;&lt;/p&gt;
+
+    &lt;p&gt;A startup is a human institution(process) designed to create a new product or service(innovation is part of the broad term product to encompass any source of value for the people) under conditions of extreme uncertainty.&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;What is an Entrepreneur?&lt;/em&gt;&lt;/p&gt;
+
+    &lt;p&gt;Anyone who is creating a new product or business under conditions of extreme uncertainty is an entrepreneur regardless of the size of the company, the industry or the sector of the economy.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 3: Learn&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;Validated Learning:&lt;/em&gt;&lt;/p&gt;
+
+    &lt;p&gt;Learning is the essential unit of progress for startups. The effort that is not necessary for learning what customers want can be eliminated.&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;Productivity in a Startup:&lt;/em&gt;&lt;/p&gt;
+
+    &lt;p&gt;Not in terms of how much stuff we are building but in terms of how much validated learning we’re getting for our efforts.&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;The audacity of zero:&lt;/em&gt;&lt;/p&gt;
+
+    &lt;p&gt;The irony is that it is often easier to raise money or acquire other resources when you have zero revenu, zero customers and zero traction than when you have a small amount. 
+ Zero invites imagination, but small numbers invite questions about whether large numbers will ever materialise.&lt;/p&gt;
+
+    &lt;p&gt;We can mitigate the waste that happens because of the audacity of zero with &lt;strong&gt;validated learning&lt;/strong&gt;.&lt;/p&gt;
+
+    &lt;p&gt;In the lean startup model, every product, every feature, every marketing campaign –everything a startup does – is understood to be an &lt;strong&gt;experiment&lt;/strong&gt; designed to achieve validated learning.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 4: Experiment&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;A true experiment follows the scientific method. It begins with a clear hypothesis that makes predictions about what is supposed to happen. It then tests those predictions empirically.&lt;/p&gt;
+
+    &lt;p&gt;The goal of every startup’s experiment is to discover how to build a sustainable business around that &lt;strong&gt;vision&lt;/strong&gt;.&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;How?&lt;/em&gt; The second part will tell us that.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Part 2: Steer&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;How vision leads to steering?&lt;/p&gt;
+
+&lt;p&gt;Build-Measure-Learn feedback loop.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/14_learn_build_measure.png&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;&lt;em&gt;Figure 2: Learn Build Measure Loop&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It is at the core of the lean startup model.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 5: Leap&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;Every business plan begins with a set of assumptions. 
+ The riskiest elements of a startup’s plan are called &lt;strong&gt;leap of faith assumptions&lt;/strong&gt;.
+ They are called leaps of faith because the success of the entire venture rests on them. If they are true, tremendous opportunity awaits. If they are false, the startup risks total failure.&lt;/p&gt;
+
+    &lt;p&gt;The most important leap-of-faith questions any new startup faces are &lt;strong&gt;value hypothesis&lt;/strong&gt; and &lt;strong&gt;growth hypothesis&lt;/strong&gt;.&lt;/p&gt;
+
+    &lt;p&gt;The value hypothesis tests whether a product or service really delivers value to customers once they are using it.&lt;/p&gt;
+
+    &lt;p&gt;Growth hypothesis tests how new customers will discover a product or service.&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;Example: why facebook impressed the investors?&lt;/em&gt;&lt;/p&gt;
+
+    &lt;p&gt;More than half of the users came back to the site every single day -&amp;gt; validated value hypothesis: the customers find the product valuable.&lt;/p&gt;
+
+    &lt;p&gt;By the end of the month of launch 3/4 of harvard’s undergraduates were using it without a dollar of marketing or advertising have been spent -&amp;gt; validated growth hypothesis.&lt;/p&gt;
+
+    &lt;p&gt;We need to confirm that your leap-of-faith questions are based in reality, that the customer has a significant problem worth solving.&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;How?&lt;/em&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;Early contact with customers&lt;/strong&gt;.&lt;/p&gt;
+
+    &lt;p&gt;The goal of such early contact with customers is to understand our potential customers and what problems they have. With that understanding we can craft a &lt;strong&gt;customer archetype&lt;/strong&gt;, a brief document that seeks to humanise the proposed target customer. &lt;br /&gt;
+ The point is not to find the average customer but to find early adopters; the customers who feel the need for the product most accurately and experiment with them.&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;When?&lt;/em&gt;&lt;/p&gt;
+
+    &lt;p&gt;Enter the build phase as quickly as possible with a &lt;strong&gt;Concierge Minimum Viable Product&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 6: Test&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;The goal of the &lt;strong&gt;MVP&lt;/strong&gt; is to begin the process of learning, not to end it. Unlike a prototype or concept test, an MVP is designed not just to answer product design or technical questions. 
+ Its goal is to test fundamental business hypotheses.&lt;/p&gt;
+
+    &lt;p&gt;Before new products can be sold successfully to the mass market, they have to be sold to early adopters.&lt;/p&gt;
+
+    &lt;p&gt;MVP ranges in complexity from extremely simple smoke tests (little more than an advertisement) to actual early prototypes complete with problems and missing features.&lt;/p&gt;
+
+    &lt;p&gt;The lesson of the MVP is that any additional work beyond what was required to start learning is waste, no matter how important it might have seemed at the time.&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;Example:&lt;/em&gt;&lt;/p&gt;
+
+    &lt;p&gt;Dropbox had a video as an MVP. It validated the leap-of-faith assumption that customers wanted the product by signing up to the beta waiting list on the website after watching the video.&lt;/p&gt;
+
+    &lt;p&gt;For startups I believe in the following &lt;strong&gt;quality principle&lt;/strong&gt;: If we do not know who the customer is we do not know what quality is. So remove any feature, process or effort that does not contribute directly to the learning you seek.&lt;/p&gt;
+
+    &lt;p&gt;The most commun speed bumps a Startup faces with an MVP are legal issues, fears about competitors (no need, present the competition with your idea and they won’t build it),  branding (different brand) risks and the impact on morale.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 7: Measure&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;At the beginning a startup is little more than a business model (projections on how many customers the company expects to attract, how much it will spend, how much revenue and profit that will lead to) on a piece of paper.&lt;/p&gt;
+
+    &lt;p&gt;A startup’s job is to:&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Rigorously measure where it is right now&lt;/li&gt;
+      &lt;li&gt;Devise experiments to learn how to move the real numbers closer to the ideal reflected in the business plan&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;How to measure progress ?  &lt;strong&gt;Innovation Accounting&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;Innovation accounting is a quantitative approach that allows us to see whether our engine tuning efforts are bearing fruit. 
+ It also allows us to create learning milestones useful for entrepreneurs as a way of assessing their progress accurately and objectively. 
+ They are also invaluable to managers and investors who must hold entrepreneurs accountable.&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;Use an MVP to establish real data on where the company is right now.&lt;/li&gt;
+      &lt;li&gt;Attempt to tune the engine (micro changes and product optimizations) from the baseline toward the ideal.&lt;/li&gt;
+      &lt;li&gt;Pivot or Persevere: When a company pivots, it starts the process all over again. The sign of a successful pivot is that these engine-tuning activities are more productive after the pivot then before.&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;Innovation accounting will not work if a startup is being misled by &lt;strong&gt;Vanity Metrics&lt;/strong&gt;: gross number of customers and so on. 
+ The alternative is the kind of metrics we use to judge our business and our learning milestones; &lt;strong&gt;Actionable Metrics&lt;/strong&gt;.&lt;/p&gt;
+
+    &lt;p&gt;Good metrics:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Actionable
+        &lt;ul&gt;
+          &lt;li&gt;It must demonstrate clear cause and effect. When cause and effect is clearly understood, people are better able to learn from their actions.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Accessible
+        &lt;ul&gt;
+          &lt;li&gt;All too many reports are not understood. The easiest way to make reports comprehensible is to use tangible concrete units. What is a website hit? Nobody is really sure but everyone knows what a person visiting the website is.&lt;/li&gt;
+          &lt;li&gt;Accessibility also refers to widespread access to the reports. One way is to automatically generate a document containing each experiment and its results explained and mail it to every employee.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Auditable
+        &lt;ul&gt;
+          &lt;li&gt;We must ensure that the data is credible to employees. How? We need to be able to test the data by hand by talking to customers. Metrics are people too. This is the only way to check if the reports contain true facts.&lt;/li&gt;
+          &lt;li&gt;The mechanisms that generate the reports are not too complex.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Solutions?&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Instead of looking at gross metrics, use &lt;strong&gt;cohort-based&lt;/strong&gt; metrics.&lt;/li&gt;
+      &lt;li&gt;Instead of looking for cause-and-effect relationships after the fact, we launch each new feature as a true &lt;strong&gt;split-test experiment&lt;/strong&gt;.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Kanban&lt;/strong&gt;; Teams working in this system begin to measure their productivity according to validated learning not in terms of the production of new features.&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;ins&gt;Cohort analysis&lt;/ins&gt;:&lt;/p&gt;
+
+    &lt;p&gt;This is one of the most important tools of a startup analytics. 
+ Instead of looking at cumulative totals or gross numbers such as total revenue and total number of customers one looks at the performance of each group of customers that comes into contact with the product independently. 
+ Each group is called a cohort.&lt;/p&gt;
+
+    &lt;p&gt;&lt;ins&gt;Split-test experiment&lt;/ins&gt;:&lt;/p&gt;
+
+    &lt;p&gt;This is one in which different versions of a product are offered to customers at the same time. By observing the changes in behavior between the two groups one can make inferences about the impact of the different variations. 
+ Although split testing often is thought of as a marketing-specific practice, lean startups incorporate it directly into product development.&lt;/p&gt;
+
+    &lt;p&gt;&lt;ins&gt;Kanban&lt;/ins&gt;:&lt;/p&gt;
+
+    &lt;p&gt;User stories are not considered complete until they led to validated learning 
+ Stories can be in one of 4 states of development:&lt;/p&gt;
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;BACKLOG&lt;/th&gt;
+          &lt;th&gt;IN PROGRESS&lt;/th&gt;
+          &lt;th&gt;BUILT&lt;/th&gt;
+          &lt;th&gt;VALIDATED&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;A&lt;/td&gt;
+          &lt;td&gt;D&lt;/td&gt;
+          &lt;td&gt;F&lt;/td&gt;
+          &lt;td&gt; &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;B&lt;/td&gt;
+          &lt;td&gt;E&lt;/td&gt;
+          &lt;td&gt; &lt;/td&gt;
+          &lt;td&gt; &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;C&lt;/td&gt;
+          &lt;td&gt; &lt;/td&gt;
+          &lt;td&gt; &lt;/td&gt;
+          &lt;td&gt; &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+
+    &lt;p&gt;No bucket can contain more than 3 projects at a time.&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;Validated&lt;/em&gt; is defined as knowing whether the story was a good idea to have been done in the first place. 
+ This validation usually would come in the form of a split test showing a change in customer behavior but also might include customer interviews or surveys.
+ If the validation fails and it turns out the story is a bad idea, the relevant feature is removed from the product.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 8: Pivot (or Persevere)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;A pivot is not just an exhortation to change. It is a special kind of structured change designed to test a new fundamental hypothesis about the product business model and engine of growth.&lt;/p&gt;
+
+    &lt;p&gt;A pivot is better understood as a new strategic hypothesis that will require a new MVP to test.&lt;/p&gt;
+
+    &lt;p&gt;Every startup should have a regular pivot or persevere meeting. Less than a few weeks is too often and more than a few months is too infrequent. Each startup needs to find its own pace.&lt;/p&gt;
+
+    &lt;p&gt;Normally, the &lt;strong&gt;runway&lt;/strong&gt; is defined as the remaining cash in the bank divided by the monthly burn rate or net drain on that account balance. 
+ The true measure of runway in a startup is how many pivots the startup has left: the number of opportunities it has to make a fundamental change to its business strategy. 
+ The startup has to find a way to achieve the same amount of validated learning at lower cost or in a shorter time.&lt;/p&gt;
+
+    &lt;p&gt;A catalogue of pivots:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Zoom-in pivot&lt;/li&gt;
+      &lt;li&gt;Zoom-out pivot&lt;/li&gt;
+      &lt;li&gt;Customer segment pivot&lt;/li&gt;
+      &lt;li&gt;Customer need pivot&lt;/li&gt;
+      &lt;li&gt;Platform pivot&lt;/li&gt;
+      &lt;li&gt;Business architecture pivot&lt;/li&gt;
+      &lt;li&gt;Value capture pivot&lt;/li&gt;
+      &lt;li&gt;Engine of growth pivot&lt;/li&gt;
+      &lt;li&gt;Channel pivot&lt;/li&gt;
+      &lt;li&gt;Technology pivot &lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Part 3: Accelerate&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 9: Batch&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;The small batch approach produces a finished product every few seconds whereas the large batch approach must deliver all the products at once at the end.&lt;/p&gt;
+
+    &lt;p&gt;The biggest advantage of working in small batches is that quality problems can be identified much sooner.&lt;/p&gt;
+
+    &lt;p&gt;What if it turns out that the customer doesn’t want the product we’re building? Working in small batches ensures that a startup can minimize the expenditure of time, money and effort that ultimately turns out to have been wasted.&lt;/p&gt;
+
+    &lt;p&gt;The essential lesson is not that everyone should be shipping fifty times per day but that by reducing batch size we can get through the Build-Measure-Learn feedback loop more quickly than our competitors can. 
+ The ability to learn faster from customers is the essential competitive advantage that startups must possess.&lt;/p&gt;
+
+    &lt;p&gt;Lean production solves the problem of stockouts with a technique called &lt;em&gt;Pull&lt;/em&gt;. 
+ When companies switch to this kind of production, their warehouses immediately shrink, as the amount of just-in-case inventory (called work-in-progress (WIP) inventory) is reduced dramatically.&lt;/p&gt;
+
+    &lt;p&gt;Some people misunderstand the lean startup model as simply applying pull to customer wants. This assumes that customers could tell us what products to build and that this would act as the pull signal to product developpement to make them. Customers often don’t know what they want.&lt;/p&gt;
+
+    &lt;p&gt;Product development process in a lean startup is responding to pull requests in the form of experiments that need to be run. 
+ Thus it is not the customer but rather our &lt;em&gt;hypothesis about the customer&lt;/em&gt; that pulls work from product development and other functions. Any other work is waste.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/images/articles/14_the_startup_way.png&quot; alt=&quot;image&quot; /&gt;
+ &lt;br /&gt;&lt;em&gt;Figure 3: The Startup Way, Image from &lt;a href=&quot;http://www.thestartupway.com/&quot;&gt;theleanstartup&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principal 10: Growth&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;The engine of growth is the mechanism that startups use to achieve sustainable growth. 
+ &lt;strong&gt;Sustainable growth&lt;/strong&gt; is characterized by one simple rule: new customers come from the actions of past customers.&lt;/p&gt;
+
+    &lt;p&gt;Four primary ways past customers drive sustainable growth:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Word of mouth&lt;/li&gt;
+      &lt;li&gt;As a side effect of product usage&lt;/li&gt;
+      &lt;li&gt;Through funded advertising&lt;/li&gt;
+      &lt;li&gt;Through repeat purchase or use &lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;These sources of sustainable growth power the feedback loops called &lt;strong&gt;engines of growth&lt;/strong&gt;.&lt;/p&gt;
+
+    &lt;p&gt;Three engines of growth 
+ Engines of growth are designed to give startups a relatively small set of metrics on which to focus their energies.&lt;/p&gt;
+
+    &lt;p&gt;&lt;ins&gt;The sticky engine of growth&lt;ins&gt;&lt;/ins&gt;:&lt;/ins&gt;&lt;/p&gt;
+
+    &lt;p&gt;Attract and retain customers for the long term.&lt;/p&gt;
+
+    &lt;p&gt;Companies using the sticky engine of growth track their &lt;strong&gt;attrition rate&lt;/strong&gt; or churn rate very carefully. The churn rate is defined as the fraction of customers in any period who fail to remain engaged with the company’s product. 
+ The rules that govern the sticky engine of growth are pretty simple: if the rate of new customer acquisition exceeds the churn rate, the product will grow. The speed of growth is determined by what is called the &lt;strong&gt;rate of compounding&lt;/strong&gt; which is simply the natural growth rate minus the churn rate. 
+ The way to find growth is to focus on existing customers to make the product even more engaging to them.&lt;/p&gt;
+
+    &lt;p&gt;&lt;ins&gt;The viral engine of growth&lt;ins&gt;&lt;/ins&gt;:&lt;/ins&gt;&lt;/p&gt;
+
+    &lt;p&gt;The viral engine is powered by a feedback loop that can be quantified. It is called the &lt;strong&gt;viral loop&lt;/strong&gt; and its speed is determined by a single mathematical term called the &lt;strong&gt;viral coefficient&lt;/strong&gt;. 
+ The viral coefficient measures how many new customers will use a product as a consequence of each new customer who signs up. For a product with a viral coefficient of 0.1, one in every ten customers will recruit one of his or her friends.
+ Companies that rely on the viral engine of growth must focus on increasing the viral coefficient more than anything else. 
+ A consequence of this is that many viral products do not charge customers directly but rely on indirect sources of revenue such as advertising. This is because viral products cannot afford to have any friction impede the process of signing customers up and recruiting their friends.&lt;/p&gt;
+
+    &lt;p&gt;&lt;ins&gt;The paid engine of growth&lt;ins&gt;&lt;/ins&gt;:&lt;/ins&gt;&lt;/p&gt;
+
+    &lt;p&gt;Each customer pays a certain amount of money for the product over his or her “lifetime” as a customer. Once variable costs are deducted this usually is called the customer lifetime value (LTV). This revenue can be invested in growth by buying advertising. 
+ If the company wants to increase its rate of growth it can do so in one of two ways:
+ Increase the revenue from each customer or drive down the cost of acquiring a new customer. 
+ Suppose an advertisement costs 100$ and causes 50 new customers to sign up for the service. This ad has a cost per acquisition (CPA) of 2$. In this example if the product has an LTV &amp;gt; 2$ the product will grow. The margin between the LTV and CPA determines how fast the paid engine of growth will turn (this is called the marginal profit)&lt;/p&gt;
+
+    &lt;p&gt;I strongly recommend that startups focus on one engine at a time. Only after pursuing one engine thoroughly should a startup consider a pivot to one of the others.&lt;/p&gt;
+
+    &lt;p&gt;Product/market fit = moment when a startup finally finds a widespread set of customers that resonate with its product. 
+ Since each engine of growth can be defined quantitatively, each has a unique set of metrics that can be used to evaluate whether a startup is on the verge of achieving product/market fit.&lt;/p&gt;
+
+    &lt;p&gt;Two assumptions that are wrong:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Our startup has failed to achieve product/market fit -&amp;gt; a pivot is a failure event&lt;/li&gt;
+      &lt;li&gt;Once our product has achieved product/market fit we won’t have to pivot anymore &lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;Every engine of growth is tied to a given set of customers and their related habits, preferences, advertising channels and interconnections. 
+ At some point that set of customers will be exhausted. This may take a long time or a short time depending on one’s industry and timing.&lt;/p&gt;
+
+    &lt;p&gt;Companies of any size can suffer from the perpetual affliction. 
+ They need to manage a portfolio of activities simultaneously tuning their engine of growth and developing new sources of growth for when the engine inevitably runs its course.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 11: Adapt&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;The wisdom of the five whys:&lt;/em&gt;&lt;/p&gt;
+
+    &lt;p&gt;Repeating why five times can help uncover the root problem and correct it. 
+ The core idea of five whys is to tie investments directly to the prevention of the most problematic symptoms. 
+ Here is how to use 5 whys analysis to build an adaptive organization: consistently make a proportional investment at each of the five levels of the hierarchy. In other words the investment should be smaller when the symptom is minor and larger when the symptom is more painful. 
+ Startup teams should go through the five whys whenever they encounter any kind of failure, including technical faults, failures to achieve business results or unexpected changes in customer behaviour.&lt;/p&gt;
+
+    &lt;p&gt;The curse of the 5 blames
+ Instead of using the 5 whys to find and fix problems managers and employees can fall into the trap of using the 5 blames as a means for venting their frustrations and calling out colleagues for systemic failures 
+ To escape the 5 blames make sure that everyone affected by the problem is in the room during the analysis of the root cause.&lt;/p&gt;
+
+    &lt;p&gt;Once you are ready to begin, start with a narrowly targeted class of symptoms. It’s better to give the team a chance to learn how to do the process first and then expand into higher-stakes areas later.&lt;/p&gt;
+
+    &lt;p&gt;Appoint a five whys master for each area in which the method is being used. This individual is tasked with being the moderator for each 5 whys meeting making decisions about which prevention steps to take, and assigning the follow up work from the meeting.  The master must be senior enough to have the authority to ensure that those assignments get done but should not be so senior that he or she will not be able to be present at the meetings because of conflicting responsibilities.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 12: Innovate&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;Successful innovation teams must be structured correctly in order to succeed.&lt;/p&gt;
+
+    &lt;p&gt;Startup teams require 3 structural attributes:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Scarce but secure resources&lt;/strong&gt;: Startups require much less capital overall, but that capital must be absolutely secure from tampering&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Independent authority to develop their business&lt;/strong&gt;: Startup teams must be completely cross functional. Have full-time representation from every functional department in the company that will be involved in the creation or launch of their early products. They have to be able to build and ship actual functioning products and services, not just prototypes. Approvals slow down the build-measure-learn feedback loop.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Personal stake in the outcome&lt;/strong&gt;: This is usually achieved through stock options or other forms of equity ownership but it doesn’t have to be financial. Make it clear who the innovator is and make sure the innovator receives credit for having brought the new product to life if it is successful. &lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;ins&gt;Creating an innovation sandbox&lt;ins&gt;&lt;/ins&gt;&lt;/ins&gt;&lt;/p&gt;
+
+    &lt;p&gt;Create a sandbox for innovation that will contain the impact of the new innovation but not constrain the methods of the startup team. It works as follows:&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Any team can create a true split-test experiment that affects only the sandboxed parts of the product or service or only certain customer segments or territories&lt;/li&gt;
+      &lt;li&gt;One team must see the whole experiment through from end to end -&amp;gt; cross-functional team&lt;/li&gt;
+      &lt;li&gt;No experiment can run longer than a specified amount of time&lt;/li&gt;
+      &lt;li&gt;No experiment can affect more than a specified number of customers (usually expressed as a percentage of the company’s total mainstream customer base)&lt;/li&gt;
+      &lt;li&gt;Every experiment has to be evaluated on the basis of a single standard report of five to 10 no more actionable metrics&lt;/li&gt;
+      &lt;li&gt;Every team that works inside the sandbox and every product that is built must use the same metrics to evaluate success&lt;/li&gt;
+      &lt;li&gt;Any team that creates an experiment must monitor the metrics and customer reactions while the experiment is in progress and abort it if something catastrophic happens&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Thanks for reading, I hope you enjoyed it!&lt;/em&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="book" /><category term="summary" /><summary type="html">Notes from the Lean Startup Book By Eric Ries</summary></entry><entry><title type="html">How I Started This Blog Part 4</title><link href="https://www.firasesbai.com/articles/2022/08/25/how-i-started-this-blog-part-4.html" rel="alternate" type="text/html" title="How I Started This Blog Part 4" /><published>2022-08-25T00:00:00+00:00</published><updated>2022-08-25T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2022/08/25/how-i-started-this-blog-part-4</id><content type="html" xml:base="https://www.firasesbai.com/articles/2022/08/25/how-i-started-this-blog-part-4.html">&lt;p&gt;&lt;em&gt;In this article we will wrap up the How I Started This Blog series by adding some features that will make your site more discoverable and easier to navigate.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In case you missed the first parts, you can find them here: &lt;a href=&quot;https://firasesbai.github.io/articles/2021/10/07/how-i-started-this-blog.html&quot;&gt;Part 1&lt;/a&gt;, &lt;a href=&quot;https://firasesbai.github.io/articles/2022/03/23/how-i-started-this-blog-part-2.html&quot;&gt;Part 2&lt;/a&gt; and &lt;a href=&quot;https://www.firasesbai.com/articles/2022/03/27/how-i-started-this-blog-part-3.html&quot;&gt;Part 3&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;search&quot;&gt;Search&lt;/h2&gt;
+
+&lt;p&gt;As the number of articles increases over time in your blog, it will be difficult to navigate and find a certain article that you are looking for. In this case, having search functionality becomes necessary.&lt;/p&gt;
+
+&lt;p&gt;There are multiple ways to achieve this such as using Google Custom Search Engine or other paid services. Easiest solution though would be to use the &lt;a href=&quot;https://github.com/christian-fei/Simple-Jekyll-Search&quot;&gt;Simple Jekyll Instant Search&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;set-up&quot;&gt;Set up&lt;/h3&gt;
+
+&lt;p&gt;1- Create a &lt;strong&gt;JSON&lt;/strong&gt; file called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;search.json&lt;/code&gt; in the root folder of your blog&lt;/p&gt;
+
+&lt;p&gt;2- Add the following code snippet in the newly created file:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;      
+   &lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;
+   &lt;span class=&quot;ss&quot;&gt;layout: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;
+
+   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;% for &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;posts&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%}
+    {
+      &quot;title&quot;       : &quot;{{ post.title | escape }&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+      &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;    : &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;category&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+      &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;        : &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;tags&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;join: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;', '&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+      &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;         : &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;baseurl&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+      &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;        : &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
+      &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; : &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;description&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strip_html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strip_newlines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;escape&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;
+    } 
+   {% unless forloop.last %},{% endunless %}
+   {% endfor %}
+   
+   &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This will go over all your posts and extract for each one necessary information such as title, category, etc… that will be used to search through your articles.&lt;/p&gt;
+
+&lt;p&gt;3- Create a new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;search-script.js&lt;/code&gt; under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/js/&lt;/code&gt; folder in your root directory. You can find an example of it &lt;a href=&quot;https://github.com/firasesbai/firasesbai.github.io/blob/master/js/search-script.js&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;4- Create a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;search.html&lt;/code&gt; page under the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt; folder.&lt;/p&gt;
+
+&lt;p&gt;5- Add the following code snippet to it:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;      
+   
+   &lt;span class=&quot;o&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Html&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Elements&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Search&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;search-container&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;search-input&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;search...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;results-container&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/ul&amp;gt;
+   &amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+
+   &lt;span class=&quot;o&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Script&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pointing&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;js&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/js/search-script.js&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&amp;gt;
+
+   &amp;lt;!-- Configuration --&amp;gt;
+   &amp;lt;script&amp;gt;
+   SimpleJekyllSearch({
+   searchInput: document.getElementById('search-input'),
+   resultsContainer: document.getElementById('results-container'),
+   json: '/se&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;',
+   searchResultTemplate: '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;{url}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/h4&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/div&amp;gt;'
+   })
+   &amp;lt;/s&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cript&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+
+   
+   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;6- Include the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;search.html&lt;/code&gt; page into your home page found under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts/home.html&lt;/code&gt; by adding the following line:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;      
+   &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;align&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;right&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;%- include search.html -%} &amp;lt;/div&amp;gt;   
+   
+   &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You should now be able to see a search bar, as shown below in the screenshot, and be able to type in keywords to find an article.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/8_search_bar.png&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt; &lt;em&gt;Figure 1: Search Bar&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;pagination&quot;&gt;Pagination&lt;/h2&gt;
+
+&lt;p&gt;For the same reasons mentioned above, having a pagination system in place will make navigating your rich blog easier rather than making your readers scroll down endlessly.&lt;/p&gt;
+
+&lt;h3 id=&quot;set-up-1&quot;&gt;Set up&lt;/h3&gt;
+
+&lt;p&gt;1- Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;jekyll-paginate-v2&quot;&lt;/code&gt; to your site’s Gemfile and run bundle&lt;/p&gt;
+
+&lt;p&gt;2- Add the following to your site’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
+      
+   &lt;span class=&quot;c1&quot;&gt;# Pagination Settings&lt;/span&gt;
+   &lt;span class=&quot;ss&quot;&gt;pagination:
+    enabled: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;per_page: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;permalink: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/page/:num/'&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;title: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' - page :num'&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;limit: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;sort_field: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'date'&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;sort_reverse: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+      
+   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This will enable the pagination and sort your posts based on their release date having the latest at the top and a maximum of 5 articles per page.&lt;/p&gt;
+
+&lt;p&gt;3-  Add the following code snippet to your home page found under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts/home.html&lt;/code&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
+      
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;post-list&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;!--&lt;/span&gt; 
+        &lt;span class=&quot;no&quot;&gt;Here&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paginator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logic&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;called&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;% for &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paginator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;posts&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%}
+      &amp;lt;li&amp;gt;
+	  
+        &amp;lt;h3&amp;gt; &amp;lt;a class=&quot;post-link&quot; href=&quot;{{ post.url | relative_url }&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;{{ post.title | escape }}&amp;lt;/a&amp;gt;&amp;lt;/h3&amp;gt;
+        &amp;lt;span class=&quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;{{ post.date | date: &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%-d, %Y&quot; }}&amp;lt;/span&amp;gt;
+
+		{%-&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;show_excerpts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;%}
+          {{ post.excerpt }&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;%- endif -%}
+      &amp;lt;/li&amp;gt;
+    {% endfor %}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/ul&amp;gt;
+  
+    &amp;lt;!-- 
+    Showing buttons to move to the next and to the previous list of posts (pager buttons).
+    --&amp;gt;
+    {% if paginator.total_pages &amp;gt; 1 %}
+    &amp;lt;ul class=&quot;pager&quot;&amp;gt;
+      {% if paginator.previous_page %}
+      &amp;lt;li class=&quot;previous&quot;&amp;gt;
+          &amp;lt;a href=&quot;{{ paginator.previous_page_path | prepend: site.baseurl | replace: '/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;', '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' }}&quot;&amp;gt;&amp;amp;larr; Newer Posts&amp;lt;/a&amp;gt;
+      &amp;lt;/li&amp;gt;
+      {% endif %}
+      {% if paginator.next_page %}
+      &amp;lt;li class=&quot;next&quot;&amp;gt;
+          &amp;lt;a href=&quot;{{ paginator.next_page_path | prepend: site.baseurl | replace: '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/', '/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;Older Posts &amp;amp;rarr;&amp;lt;/a&amp;gt;
+      &amp;lt;/li&amp;gt;
+      {% endif %}
+    &amp;lt;/ul&amp;gt;
+   {% endif %}
+      
+   &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This will render your posts in a list using the &lt;strong&gt;paginator&lt;/strong&gt; variable provided by the gem and using the corresponding configurations you added in step 2.&lt;/p&gt;
+
+&lt;p&gt;That is it! If you have more then five posts, navigation buttons like shown below will appear at the bottom of your homepage in order to be able to visit your older posts.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/8_navigation_buttons.png&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;&lt;em&gt;Figure 2: Navigation Buttons&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;managing-a-custom-domain-for-your-site&quot;&gt;Managing a custom domain for your Site&lt;/h2&gt;
+
+&lt;p&gt;We have mentioned in the first &lt;a href=&quot;https://firasesbai.github.io/articles/2021/10/07/how-i-started-this-blog.html&quot;&gt;blog post&lt;/a&gt; of the series that we have opted for &lt;strong&gt;GitHub Pages&lt;/strong&gt; as our free static site hosting service. 
+Using this will serve your site under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://&amp;lt;username&amp;gt;.github.io&lt;/code&gt; where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;username&lt;/code&gt; is your GitHub user account.&lt;/p&gt;
+
+&lt;p&gt;That worked out of the box for us and was a good starting point. Now that we have a fully functional website armed with all the features that we need, it is time to customise that URL by using a custom domain. 
+This has multiple benefits namely better promoting our own brand, providing trust to our readers and making the site more discoverable.&lt;/p&gt;
+
+&lt;h3 id=&quot;set-up-2&quot;&gt;Set up&lt;/h3&gt;
+
+&lt;p&gt;1- Head over to &lt;a href=&quot;https://domains.google/&quot;&gt;Google Domains&lt;/a&gt; and search for a new domain&lt;/p&gt;
+
+&lt;p&gt;2- Follow the steps in order to finalise your purchase. A standard &lt;strong&gt;.com&lt;/strong&gt; should cost you around 12 Euros per year.&lt;/p&gt;
+
+&lt;p&gt;3- Under your newly created domain, click on &lt;strong&gt;DNS&lt;/strong&gt; from the sidebar and add a new &lt;strong&gt;Custom Records&lt;/strong&gt; with the following configurations:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Custom Record 1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
+      
+   &lt;span class=&quot;no&quot;&gt;Host&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;www&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;autocompleted&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourdomainname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CNAME&lt;/span&gt;
+   &lt;span class=&quot;no&quot;&gt;TTL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3600&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;no&quot;&gt;Data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;io&lt;/span&gt;
+      
+   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Custom Record 2&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
+      
+   &lt;span class=&quot;no&quot;&gt;Host&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;leave&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourdomainname&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;A&lt;/span&gt;
+   &lt;span class=&quot;no&quot;&gt;TTL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3600&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;no&quot;&gt;Data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
+    &lt;span class=&quot;mf&quot;&gt;185.199&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;110.153&lt;/span&gt;
+    &lt;span class=&quot;mf&quot;&gt;185.199&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;111.153&lt;/span&gt;
+    &lt;span class=&quot;mf&quot;&gt;185.199&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;109.153&lt;/span&gt;
+    &lt;span class=&quot;mf&quot;&gt;185.199&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;108.153&lt;/span&gt;
+      
+   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;4- On GitHub, navigate to your site’s repository and go to Settings&lt;/p&gt;
+
+&lt;p&gt;5- Click on Pages from the sidebar, add your custom domain &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;www.yourdomainname.com&lt;/code&gt; and click save.&lt;/p&gt;
+
+&lt;p&gt;6- Add &lt;strong&gt;CNAME&lt;/strong&gt; file to your master branch. By default when you add a custom domain, github adds the CNAME file to your &lt;em&gt;gh-pages&lt;/em&gt; branch, which gets overwritten by the build from your master branch each time you push new changes.&lt;/p&gt;
+
+&lt;p&gt;That’s it! You should now be able to access your blog at the new URL &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;www.yourdomainname.com&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
+
+&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;Through these blog posts we have only touched the tip of the iceberg. Working on your blog will be a continuous process involving experimentation and trial of new features all in the purpose of reaching more people to share your thoughts and learnings. 
+I hope this will get you started on a good foot and if you have any suggestions or an interesting feature and you would like to share it, feel free to reach out.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.webjeda.com/instant-jekyll-search/&quot;&gt;https://blog.webjeda.com/instant-jekyll-search/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/docs/pagination/&quot;&gt;https://jekyllrb.com/docs/pagination/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sverrirs/jekyll-paginate-v2&quot;&gt;https://github.com/sverrirs/jekyll-paginate-v2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site&quot;&gt;https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="jekyll," /><category term="search," /><category term="pagination," /><category term="custom" /><category term="domain," /><category term="simple" /><category term="jekyll" /><category term="search," /><category term="instant" /><category term="search," /><category term="jekyll-paginate-v2," /><category term="google" /><category term="domains" /><summary type="html">In this article we will wrap up the How I Started This Blog series by adding some features that will make your site more discoverable and easier to navigate.</summary></entry><entry><title type="html">Reading Recommendations</title><link href="https://www.firasesbai.com/articles/2022/08/17/books-recommendations.html" rel="alternate" type="text/html" title="Reading Recommendations" /><published>2022-08-17T00:00:00+00:00</published><updated>2022-08-17T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2022/08/17/books-recommendations</id><content type="html" xml:base="https://www.firasesbai.com/articles/2022/08/17/books-recommendations.html">&lt;p&gt;&lt;em&gt;This is a curated list of book recommendations organised in different areas and subjects that might be of interest to you.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/13_reading_recommendations.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a &lt;em&gt;Work In Progress&lt;/em&gt; which means you might want to keep an eye on it as it will be updated regularly.&lt;/p&gt;
+
+&lt;h1 id=&quot;self-help&quot;&gt;Self-Help&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.to/3T75aKC&quot;&gt;How to Win Friends and Influence People&lt;/a&gt; - &lt;em&gt;by Dale Carnegie&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.to/3yu6jlY&quot;&gt;Moonwalking with Einstein: The Art and Science of Remembering Everything&lt;/a&gt; - &lt;em&gt;by Joshua Foer&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.to/3l1GwyL&quot;&gt;Range: Why Generalists Triumph in a Specialized World&lt;/a&gt; - &lt;em&gt;by David Epstein&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.to/3ZGhyE4&quot;&gt;So Good They Can’t Ignore You: Why Skills Trump Passion in the Quest for Work You Love&lt;/a&gt; - &lt;em&gt;by Cal Newport&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.to/3JcUTbi&quot;&gt;Deep Work: Rules for Focused Success in a Distracted World&lt;/a&gt; - &lt;em&gt;by Cal Newport&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;productivity&quot;&gt;Productivity&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.to/3Fg5mlo&quot;&gt;The 4-Hour Workweek&lt;/a&gt; - &lt;em&gt;by Timothy Ferriss&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;money&quot;&gt;Money&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.to/3JdIPqi&quot;&gt;Think and Grow Rich&lt;/a&gt; - &lt;em&gt;by Napoleon Hill&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.to/3l3SV52&quot;&gt;Rich Dad, Poor Dad&lt;/a&gt; - &lt;em&gt;by Robert T. Kiyosaki&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.to/3J9hnKn&quot;&gt;The Psychology of Money&lt;/a&gt; - &lt;em&gt;by Morgan Housel&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;investement&quot;&gt;Investement&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.to/3T76OMi&quot;&gt;The Richest Man in Babylon&lt;/a&gt; - &lt;em&gt;by  George S. Clason&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;startups&quot;&gt;Startups&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.to/3JzL5K8&quot;&gt;The Lean Startup: How Today’s Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses&lt;/a&gt; - &lt;em&gt;by Eric Ries&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.to/40hONxx&quot;&gt;Lean Inception: How to Align People and Build the Right Product&lt;/a&gt; - &lt;em&gt;by Paulo Caroli&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;artificial-intelligence&quot;&gt;Artificial Intelligence&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.to/3ZYr9Wr&quot;&gt;Life 3.0: Being Human in the Age of Artificial Intelligence&lt;/a&gt; - &lt;em&gt;by Max Tegmark&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="books" /><category term="recommendations" /><summary type="html">This is a curated list of book recommendations organised in different areas and subjects that might be of interest to you.</summary></entry><entry><title type="html">How I Started This Blog Part 3</title><link href="https://www.firasesbai.com/articles/2022/03/27/how-i-started-this-blog-part-3.html" rel="alternate" type="text/html" title="How I Started This Blog Part 3" /><published>2022-03-27T00:00:00+00:00</published><updated>2022-03-27T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2022/03/27/how-i-started-this-blog-part-3</id><content type="html" xml:base="https://www.firasesbai.com/articles/2022/03/27/how-i-started-this-blog-part-3.html">&lt;p&gt;&lt;em&gt;In this article we continue adding some interesting key features to a Jekyll Blog.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/7_how_i_started_this_blog_part_3.png&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Continuing with the &lt;em&gt;How I Started This Blog&lt;/em&gt; series and in this third part we will go through some fundamental features in order to make your blog stand out.&lt;/p&gt;
+
+&lt;p&gt;In case you missed the first parts, you can find them here: &lt;a href=&quot;https://firasesbai.github.io/articles/2021/10/07/how-i-started-this-blog.html&quot;&gt;Part 1&lt;/a&gt; and &lt;a href=&quot;https://firasesbai.github.io/articles/2022/03/23/how-i-started-this-blog-part-2.html&quot;&gt;Part 2&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;articles-reading-time&quot;&gt;Articles Reading Time&lt;/h2&gt;
+
+&lt;p&gt;Adding an estimated reading time at the beginning of your articles improves your engagement with the readers, especially the ones with time-limited schedules and which will probably refrain or bounce from it if they think that the article is too long.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-to-estimate-reading-time&quot;&gt;How to estimate reading time?&lt;/h3&gt;
+
+&lt;p&gt;Words Per Minute (WPM) is a measure of words processed per minute. According to this &lt;a href=&quot;https://en.wikipedia.org/wiki/Words_per_minute&quot;&gt;Wikipedia&lt;/a&gt; article the average person reading speed of English is at 200 wpm on paper and 180 on a monitor.&lt;/p&gt;
+
+&lt;h3 id=&quot;set-up&quot;&gt;Set up&lt;/h3&gt;
+
+&lt;p&gt;1- We start by creating a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;reading-time.html&lt;/code&gt; page under the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt; folder&lt;/p&gt;
+
+&lt;p&gt;2- Add the following code snippet in the newly created page:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;      
+   &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;reading-time&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Estimated read time&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;% assign &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;words&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strip_html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number_of_words&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%}
+   {{ words | divided_by:180 }&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;min&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/span&amp;gt;
+   
+   &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This basically calculates the total number of words in a page and divides it by the average person reading speed. 
+   We have also added the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;strip_html&lt;/code&gt; filter which removes any HTML tags from a string in order to have a more accurate reading time if you want to display this information in your home page as well.&lt;/p&gt;
+
+&lt;p&gt;3- Finally all you need to do is to include this page in the &lt;strong&gt;post layout&lt;/strong&gt; like this:&lt;br /&gt;
+   &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{% include reading-time.html %}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You should now be able to see the estimated reading time appear on every post of your blog.&lt;/p&gt;
+
+&lt;h2 id=&quot;comments&quot;&gt;Comments&lt;/h2&gt;
+
+&lt;p&gt;Another feature that directly impacts the engagement with your readers is having a comments section.&lt;/p&gt;
+
+&lt;p&gt;Usually people tend to use third party services, like &lt;a href=&quot;https://disqus.com/&quot;&gt;Disqus&lt;/a&gt;, when it comes to adding comments for static sites. 
+We on the other hand will be seeing how to leverage Github’s API for commenting and integrate it by displaying Github issues comments on a static blog post.&lt;/p&gt;
+
+&lt;p&gt;This might not be an ideal solution for everyone since it requires the person commenting to be logged in to Github. 
+In my case, using this approach made sense since most of my articles are rather technical and would involve some code snippets or references to a Github repository. 
+Besides, as we have already covered it in the first part of the series, the blog itself is hosted on Github using the free Github Pages hosting service.&lt;/p&gt;
+
+&lt;p&gt;At the end we are only presenting one of many options and it is up to you to choose the best one for you depending on your requirements and needs.&lt;/p&gt;
+
+&lt;h3 id=&quot;set-up-1&quot;&gt;Set up&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;We start by adding the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;issues_repository&lt;/code&gt; variable in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; configuration file which will point to the Github repository where the comments will be added.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;For every post where you want to include a comments section add in the &lt;a href=&quot;https://jekyllrb.com/docs/front-matter/&quot;&gt;Front Matter&lt;/a&gt; section a predefined variable called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;issue_id&lt;/code&gt; which points to the issue number of the issue you created in the Github repository.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;comments.html&lt;/code&gt; file under the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt; folder. This is where the whole logic resides. Using the previously defined variables we fetch the existing comments using the Github API and load them. 
+You can find an example of this file &lt;a href=&quot;https://github.com/firasesbai/firasesbai.github.io/blob/master/_includes/comments.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Finally in order to make the loaded comments appear on our pages, like the one we have at the bottom of this article you are currently reading, we need to add the following code snippet in the &lt;strong&gt;post layout&lt;/strong&gt; page:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
+      
+   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;% if &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;page&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;issue_id&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%}
+	{% include comments.html issue_id=page.issue_id %}&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;% endif &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      
+   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
+
+&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;In this article we saw how to add an estimated reading time per article and a comments section for our blog posts in order to increase the engagement with the audience.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;[https://carlosbecker.com/posts/jekyll-reading-time-without-plugins/]&quot;&gt;https://carlosbecker.com/posts/jekyll-reading-time-without-plugins/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;[https://stackoverflow.com/questions/62457756/get-the-read-time-for-a-specific-post-in-jekyll-pages-from-home-page-any-other]&quot;&gt;https://stackoverflow.com/questions/62457756/get-the-read-time-for-a-specific-post-in-jekyll-pages-from-home-page-any-other&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="jekyll," /><category term="github," /><category term="github-pages," /><category term="blog," /><category term="comments," /><category term="reading" /><category term="time," /><category term="wpm" /><summary type="html">In this article we continue adding some interesting key features to a Jekyll Blog.</summary></entry><entry><title type="html">How I Started This Blog Part 2</title><link href="https://www.firasesbai.com/articles/2022/03/23/how-i-started-this-blog-part-2.html" rel="alternate" type="text/html" title="How I Started This Blog Part 2" /><published>2022-03-23T00:00:00+00:00</published><updated>2022-03-23T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2022/03/23/how-i-started-this-blog-part-2</id><content type="html" xml:base="https://www.firasesbai.com/articles/2022/03/23/how-i-started-this-blog-part-2.html">&lt;p&gt;&lt;em&gt;In this article we will see how to make your Jekyll blog more discoverable.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/6_how_i_started_this_blog_part_2.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In a previous &lt;a href=&quot;https://firasesbai.github.io/articles/2021/10/07/how-i-started-this-blog.html&quot;&gt;post&lt;/a&gt;, we went through the building bloks of a Jekyll blog, how to set one up and host it using github pages.&lt;/p&gt;
+
+&lt;p&gt;In this second article, part of the &lt;em&gt;How I Started This Blog&lt;/em&gt; series, we will build upon what we already have by adding some features that will make your blog posts more discoverable and reachable to your audience.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;jekyll-sitemap-generator-plugin&quot;&gt;Jekyll Sitemap Generator Plugin&lt;/h2&gt;
+
+&lt;h3 id=&quot;what-is-a-sitemap&quot;&gt;What is a Sitemap?&lt;/h3&gt;
+
+&lt;p&gt;A sitemap is a file where you provide information about the pages, videos, and other files on your site, and the relationships between them. 
+Search engines like Google read this file to crawl your site more efficiently. A sitemap tells Google which pages and files you think are important in your site, and also provides valuable information about these files. 
+For example, when the page was last updated and any alternate language versions of the page.&lt;/p&gt;
+
+&lt;p&gt;For more information you can check the following &lt;a href=&quot;https://developers.google.com/search/docs/advanced/sitemaps/overview&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can only benefit from having a sitemap for your website to improve its crawling even if your site’s pages are properly linked. 
+Especially when the sitemap is generated automatically using in this case the &lt;strong&gt;Jekyll Sitemap Generator Plugin&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;set-up&quot;&gt;Set up&lt;/h3&gt;
+
+&lt;p&gt;In order to set this up for your blog you need to do the following:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem jekyll-sitemap&lt;/code&gt; to your site’s Gemfile and run bundle&lt;/li&gt;
+  &lt;li&gt;Add the following to your site’s &lt;strong&gt;_config.yml&lt;/strong&gt; file:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
+&lt;span class=&quot;ss&quot;&gt;url: &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://example.com&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# the base hostname &amp;amp; protocol for your site&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;plugins:
+  &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sitemap&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;That’s it! You are good to go.&lt;/p&gt;
+
+&lt;p&gt;For additional information, you can check the official Github &lt;a href=&quot;https://github.com/jekyll/jekyll-sitemap&quot;&gt;repository&lt;/a&gt; of the plugin.&lt;/p&gt;
+
+&lt;h2 id=&quot;jekyll-seo-tag-plugin&quot;&gt;Jekyll SEO Tag Plugin&lt;/h2&gt;
+
+&lt;p&gt;After creating a sitemap for your blog, another useful plugin to add is the &lt;strong&gt;Jekyll SEO Tag Plugin&lt;/strong&gt;. 
+This is a Jekyll plugin to add metadata tags for search engines and social networks to better index and display your site’s content.&lt;/p&gt;
+
+&lt;h3 id=&quot;set-up-1&quot;&gt;Set up&lt;/h3&gt;
+
+&lt;p&gt;In order to set this up for your blog you need to do the following:&lt;/p&gt;
+
+&lt;p&gt;1- Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem jekyll-seo-tag&lt;/code&gt; to your site’s Gemfile and run bundle&lt;/p&gt;
+
+&lt;p&gt;2- Add the following to your site’s &lt;strong&gt;_config.yml&lt;/strong&gt; file:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;   &lt;span class=&quot;ss&quot;&gt;plugins:
+    &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;
+   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;3- Add the following &lt;strong&gt;{% seo %}&lt;/strong&gt; tag right before &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;/head&amp;gt;&lt;/code&gt; in your default layout&lt;/p&gt;
+
+&lt;p&gt;4- Add a description for every article in your blog&lt;/p&gt;
+
+&lt;p&gt;You can find more information on SEO optimisation in Jekyll website &lt;a href=&quot;https://jsinibardy.com/optimize-seo-jekyll&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;After finishing the necessary configuration steps and have integrated both plugins in your blog you can check the results and their impact by verifying the generated html pages.&lt;/p&gt;
+
+&lt;p&gt;You can also use the &lt;strong&gt;google lighthouse&lt;/strong&gt; tool from your chrome browser to generate a report about the performance of your site for different categories and metrics like seen in the screenshot below.
+Some useful hints and tips on how to further improve your site are also given to you in order to fix some common problems and enhance the user experience.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/6_lighthouse_results.PNG&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;&lt;em&gt;Figure 1: Lighthouse Results&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
+
+&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;In this article we discussed the building blocks for our Jekyll blog and how to host it.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;[https://vilcins.medium.com/optimize-your-jekyll-powered-website-with-these-simple-steps-b2a24d66a629]&quot;&gt;https://vilcins.medium.com/optimize-your-jekyll-powered-website-with-these-simple-steps-b2a24d66a629&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="jekyll," /><category term="github," /><category term="github-pages," /><category term="blog," /><category term="sitemap," /><category term="seo" /><summary type="html">In this article we will see how to make your Jekyll blog more discoverable.</summary></entry><entry><title type="html">Logging with ELK Stack</title><link href="https://www.firasesbai.com/articles/2022/01/09/logging-with-elasticsearch.html" rel="alternate" type="text/html" title="Logging with ELK Stack" /><published>2022-01-09T00:00:00+00:00</published><updated>2022-01-09T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2022/01/09/logging-with-elasticsearch</id><content type="html" xml:base="https://www.firasesbai.com/articles/2022/01/09/logging-with-elasticsearch.html">&lt;p&gt;&lt;em&gt;In this article we will discuss how to set up an ELK stack to properly monitor your dockerized application’s logs.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;All the source code is available &lt;a href=&quot;https://github.com/firasesbai/fastapi-elk-stack-logging&quot;&gt;here&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;First let’s start with the basics.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-the-elastic-stack&quot;&gt;What is the Elastic Stack?&lt;/h2&gt;
+
+&lt;p&gt;The Elastic Stack, known as &lt;strong&gt;ELK&lt;/strong&gt;, allows us to reliably and securely take data from multiple sources and different formats using the first component of the stack; &lt;strong&gt;Logstash&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then we can store, search and analyze it through &lt;strong&gt;Elasticsearch&lt;/strong&gt; and finally visualize it in real time using its data visualisation dashboard &lt;strong&gt;Kibana&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The Elastic Stack can be seen and applied in a variety of use cases such as security analytics, business analytics, metrics and logs aggregation and analysis.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-are-beats&quot;&gt;What are Beats?&lt;/h2&gt;
+
+&lt;p&gt;Beats is the new member of the ELK Stack. Beats are light weight log data shippers which can push logs to either Logstash for more processing and transformation or to Elasticsearch.
+They sit on your servers, with your containers, or deployed as functions — and then centralize data in Elasticsearch.&lt;/p&gt;
+
+&lt;p&gt;In this tutorial we will use &lt;strong&gt;Filebeat&lt;/strong&gt; which is an open-source lightweight shipper for logs written in go. 
+It uses a backpressure-sensitive protocol when sending data to account for higher volumes of data.&lt;/p&gt;
+
+&lt;p&gt;For more info check the official &lt;a href=&quot;https://www.elastic.co/beats/filebeat&quot;&gt;documentation&lt;/a&gt; from elastic.&lt;/p&gt;
+
+&lt;h2 id=&quot;architecture&quot;&gt;Architecture&lt;/h2&gt;
+
+&lt;p&gt;After some theoretical introduction about the different components of the ELK stack, let’s dive deeper into the setup of our architecture as illustrated in the diagram below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/5_logging_with_elk_stack.PNG&quot; alt=&quot;image&quot; /&gt;
+&lt;br /&gt;&lt;em&gt;Figure 1: Architecture&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;We will create a single endpoint FastAPI application running in a docker container that generates logs and saves them to files. Filebeat reads then those files and transfers them into Elasticsearch.&lt;/p&gt;
+
+&lt;h3 id=&quot;setup&quot;&gt;Setup&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Clone this Github &lt;a href=&quot;https://github.com/firasesbai/fastapi-elk-stack-logging&quot;&gt;repository&lt;/a&gt;, change into the corresponding directory and run the following command: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose up -d&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;This will start docker containers for each system shown in the above architecture.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Go to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://127.0.0.1:8000/docs&lt;/code&gt; where you will see the Swagger UI of our python application and try out  the endpoint in order to generate some logs.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Access the kibana dashboard in your web browser through: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://127.0.0.1:5601&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;The first thing you have to do is to configure the ElasticSearch indices that can be displayed in Kibana.
+The file &lt;strong&gt;filebeat.yml&lt;/strong&gt; found under &lt;a href=&quot;https://github.com/firasesbai/fastapi-elk-stack-logging/blob/main/filebeat/filebeat.yml&quot;&gt;/filebeat/filebeat.yml&lt;/a&gt; indicates the used index for our application.&lt;/p&gt;
+
+    &lt;p&gt;For further exploration of the possible Filebeat configuration options you can check this &lt;a href=&quot;https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-reference-yml.html&quot;&gt;filebeat.reference.yml&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That’s it! You can now visualize the logs generated by our application in the kibana interface in real time and apply your filters for further analysis.&lt;/p&gt;
+
+&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;In this article we discussed the building blocks and the interaction between them to set up an ELK stack to collect logs from a python application running as a docker container necessary for further troubleshooting and monitoring.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.elastic.co/beats/filebeat&quot;&gt;https://www.elastic.co/beats/filebeat&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-reference-yml.html&quot;&gt;https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-reference-yml.html&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="logging," /><category term="elasticsearch," /><category term="elk," /><category term="fastapi," /><category term="python," /><category term="filebeat," /><category term="kibana," /><category term="docker" /><summary type="html">In this article we will discuss how to set up an ELK stack to properly monitor your dockerized application’s logs.</summary></entry></feed>
