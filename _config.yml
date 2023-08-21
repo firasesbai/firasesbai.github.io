@@ -91,3 +91,4 @@ exclude:
     - README.md
     - .gitignore
     - vendor
+    - node_modules
