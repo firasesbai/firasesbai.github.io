@@ -43,7 +43,7 @@ jobs:
 
       # Generates service worker
       - name: generate sw
-        run: workbox generateSW workbox-config.js
+        run: npx workbox generateSW workbox-config.js
 
       # Deploys static files to Github Pages 
       - name: deploy
