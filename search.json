@@ -2,8 +2,19 @@
   
     {
 
+      "title"      : "Turning Your Jekyll Blog into a Progressive Web App (PWA) on GitHub Pages: A Step-by-Step Guide",
+	  "url"        : "/articles/2023/08/21/turning-your-jekyll-blog-into-a-progressive-web-app-on-github-pages.html",
+      "category"   : "articles",
+      "date"       : "2023-08-21 00:00:00 +0000",
+	  "tags"       : "jekyll, progressive web app, pwa, github-pages, service worker, web app manifest, workbox, github actions",
+	  "description": "In this article we will walk through required steps to transform a jekyll blog into a progressive web app and how to deploy it to github pages after exploring some theory behind it."
+
+    } ,
+  
+    {
+
       "title"      : "Data engineering 201: In-depth Guide - Part 2",
-	  "url"        : "/articles/2023/03/12/data-engineering-201-Part-2.html",
+	  "url"        : "/articles/2023/03/12/data-engineering-201-part-2.html",
       "category"   : "articles",
       "date"       : "2023-03-12 00:00:00 +0000",
 	  "tags"       : "data engineering, data flow, ingestion, ETL, ELT, transformation, batch processing, stream processing, micro-batch processing, storage, operational data, analytical data, OLTP, OLAP, transactional consistency, ACID, data warehouse, data lake, data lakehouse, cloud",

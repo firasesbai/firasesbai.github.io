@@ -1,5 +1,166 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2023-08-21T20:07:42+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Things I like to write about.
-</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Data engineering 201: In-depth Guide - Part 2</title><link href="https://www.firasesbai.com/articles/2023/03/12/data-engineering-201-Part-2.html" rel="alternate" type="text/html" title="Data engineering 201: In-depth Guide - Part 2" /><published>2023-03-12T00:00:00+00:00</published><updated>2023-03-12T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/03/12/data-engineering-201%20-%20Part%202</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/03/12/data-engineering-201-Part-2.html">&lt;p&gt;&lt;em&gt;This is part 2 of our in-depth article discussing the different stages of data flow inside an organisation.&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2023-08-22T13:47:06+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Things I like to write about.
+</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Turning Your Jekyll Blog into a Progressive Web App (PWA) on GitHub Pages: A Step-by-Step Guide</title><link href="https://www.firasesbai.com/articles/2023/08/21/turning-your-jekyll-blog-into-a-progressive-web-app-on-github-pages.html" rel="alternate" type="text/html" title="Turning Your Jekyll Blog into a Progressive Web App (PWA) on GitHub Pages: A Step-by-Step Guide" /><published>2023-08-21T00:00:00+00:00</published><updated>2023-08-21T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/08/21/turning-your-jekyll-blog-into-a-progressive-web-app-on-github-pages</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/08/21/turning-your-jekyll-blog-into-a-progressive-web-app-on-github-pages.html">&lt;p&gt;&lt;em&gt;In this guide, we’ll explore how to transform your Jekyll-based blog into a Progressive Web App, unlocking features such as offline access, fast loading, and a seamless user experience.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Progressive Web Apps (PWAs) represent a significant advancement in web application development, offering users a seamless and engaging experience that combines the best aspects of both web and native mobile applications. 
+By transforming your Jekyll-based blog into a PWA, you’ll enhance user engagement, improve performance, and enable key features such as offline access.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-are-progressive-web-apps&quot;&gt;What are Progressive Web Apps?&lt;/h2&gt;
+
+&lt;p&gt;Platform-specific apps are developed for a specific operating system (OS) and/or class of devices, like an iOS or Android device. They are usually installed on the user’s device using the vendor’s app store. Websites on the other hand, can only be accessed by the user opening the browser and navigating to the site, and is highly dependent on network connectivity.&lt;/p&gt;
+
+&lt;p&gt;So how does this relate to PWAs?&lt;/p&gt;
+
+&lt;p&gt;Progressive web apps combine the best features of traditional websites and platform-specific apps. At their core, PWAs are web applications that take advantage of modern web technologies to deliver a reliable, fast, and immersive experience to users. Unlike traditional websites, PWAs can be installed on users’ devices, giving them a direct pathway to your content, even without a traditional app store. PWAs can be accessed through web browsers, but they offer the responsiveness and fluidity that users typically expect from native mobile applications.&lt;/p&gt;
+
+&lt;h2 id=&quot;key-attributes-of-pwas&quot;&gt;Key Attributes of PWAs&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Offline Access&lt;/strong&gt;: One of the most significant advantages of PWAs is their ability to work offline or in low-network conditions. Users can still access content and navigate within the app, even when they’re not connected to the internet. This offline capability ensures that your content remains accessible, enhancing user satisfaction.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Fast Loading&lt;/strong&gt;: PWAs are designed to load quickly, providing an almost instant experience to users. This is achieved through techniques like efficient caching, optimized assets, and lazy loading of content. Fast loading times lead to lower bounce rates and higher user retention.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Responsive Design&lt;/strong&gt;: PWAs are responsive by default, adapting to various screen sizes and orientations. This responsiveness ensures a consistent and visually appealing experience across devices, including smartphones, tablets, and desktops.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Engagement and Retention&lt;/strong&gt;: PWAs can be “installed” on users’ home screens or app drawers, creating a sense of ownership and encouraging repeated visits. This increased engagement can lead to higher retention rates, as users have easy access to your PWA.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;successful-pwa-examples&quot;&gt;Successful PWA Examples&lt;/h2&gt;
+
+&lt;p&gt;Numerous companies have embraced PWAs to enhance user experience and drive business growth. For example:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Pinterest&lt;/strong&gt;: Pinterest’s PWA increased user engagement, with faster load times leading to a 60% increase in user engagement and a 44% increase in user-generated ad revenue.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Alibaba&lt;/strong&gt;: Alibaba.com’s PWA achieved a 76% increase in conversions across browsers, with 14% more monthly active users on iOS and a 30% increase in mobile users.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For more details, check the links in the resources section.&lt;/p&gt;
+
+&lt;h2 id=&quot;technical-features-of-pwas&quot;&gt;Technical features of PWAs&lt;/h2&gt;
+
+&lt;p&gt;Because PWAs are websites, they have the same basic features as any other website: at least one HTML page, which very probably loads some CSS and JavaScript.&lt;/p&gt;
+
+&lt;p&gt;Beyond that, a PWA has some additional features:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;A &lt;strong&gt;web app manifest file&lt;/strong&gt;, which, at a minimum, provides information that the browser needs to install the PWA, such as the app name and icon.&lt;/li&gt;
+  &lt;li&gt;A &lt;strong&gt;service worker&lt;/strong&gt;, which, at a minimum, provides a basic offline experience.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Having this in mind, a blog is nothing more than static HTML, CSS, and Javascript files. This makes it a prime candidate for adding PWA features which is the focus of the rest of this blog post.&lt;/p&gt;
+
+&lt;p&gt;We will be adding these features to a blog built using Jekyll, a free and open source static site generator, and hosted on Github Pages. For more in depth guides on how I started my journey building this blog, you can check my 4 Parts series starting from &lt;a href=&quot;https://www.firasesbai.com/articles/2021/10/07/how-i-started-this-blog.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;creating-a-manifest-file&quot;&gt;Creating a Manifest File&lt;/h2&gt;
+
+&lt;p&gt;The Web App Manifest is a JSON document that provides application metadata such as its name, icon, and other details, which browsers can use when adding the PWA to the home screen.&lt;/p&gt;
+
+&lt;p&gt;If you have previously generated a favicon to your blog using &lt;a href=&quot;https://realfavicongenerator.net/&quot;&gt;https://realfavicongenerator.net/&lt;/a&gt; or similar, you should already have a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.webmanifest&lt;/code&gt; file that might be complete or miss a few properties. Otherwise, you can just use the following link &lt;a href=&quot;https://app-manifest.firebaseapp.com/&quot;&gt;https://app-manifest.firebaseapp.com/&lt;/a&gt; for reference or to generate its content.&lt;/p&gt;
+
+&lt;p&gt;In either cases, the next step would be to add a reference to the manifest file under the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default.html&lt;/code&gt; file in the head section as follow:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;      
+   &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;manifest&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/assets/favicon/site.webmanifest&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+   
+   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The location of your manifest file might differ and you should update it accordingly. In my case, the manifest file is placed under assets along with the icons and favicon.&lt;/p&gt;
+
+&lt;h2 id=&quot;implementing-service-workers&quot;&gt;Implementing Service Workers&lt;/h2&gt;
+
+&lt;p&gt;A service worker is a powerful web technology that acts as a scriptable network proxy between a web application (such as a website) and the browser. It runs in the background, separate from the main web page, and allows you to intercept and control network requests and responses, enabling advanced features like offline access, caching, and push notifications in web applications.&lt;/p&gt;
+
+&lt;p&gt;We will be using &lt;a href=&quot;https://developer.chrome.com/docs/workbox/&quot;&gt;Workbox&lt;/a&gt; which is a set of Javascript modules created by Google that simplifies and addresses a specific aspect of service worker development.&lt;/p&gt;
+
+&lt;p&gt;1- Download and install the latest version of Node.js from the &lt;a href=&quot;https://nodejs.org/&quot;&gt;official website&lt;/a&gt;, and npm will be installed automatically as part of the Node.js package.&lt;/p&gt;
+
+&lt;p&gt;2- Install Workbox CLI by running the following command:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;n&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workbox&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cli&lt;/span&gt; 
+  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;3- Use the Workbox Wizard to create a service worker by executing the following command inside the directory of your blog:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;n&quot;&gt;workbox&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wizard&lt;/span&gt; 
+  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The Workbox CLI wizard will guide you through setting up the service worker by choosing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; directory as the root of your app and selecting the type of files the service worker should pre-cache.&lt;/p&gt;
+
+&lt;p&gt;At the end of this step, you should have a file named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;workbox-config.js&lt;/code&gt; created at the root of the project.&lt;/p&gt;
+
+&lt;p&gt;4- Use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;workbox-confiog.js&lt;/code&gt; file to generate the service worker by executing the following command:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;n&quot;&gt;workbox&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;generateSW&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workbox&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;js&lt;/span&gt;
+  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;A new file named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sw.js&lt;/code&gt; inside the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder will be generated.&lt;/p&gt;
+
+&lt;p&gt;5- Create a new javascript file used to register your service worker. Place this file under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/js/service-worker.js&lt;/code&gt; in your Jekyll project’s root directory.&lt;/p&gt;
+
+&lt;p&gt;The content of this file is the following:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Only&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trigger&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workers&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;are&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;supported&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;browser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'serviceWorker'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Wait&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;until&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;window&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;loaded&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;before&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;registering&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+        &lt;span class=&quot;nf&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'load'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Register&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;service&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;worker&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'s scope.
+        navigator.serviceWorker.register('&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;js&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;', { scope: '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' })
+            // Output success/failure of registration.
+            .then(() =&amp;gt; console.log('&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Service&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Worker&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;registered&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'))
+            .catch(() =&amp;gt; console.error('&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Service&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Worker&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;registration&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;failed&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;In order to register the service worker and enable its functionality, you’ll need to include this code snippet to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;default.html&lt;/code&gt; file, which is a layout file included in all your pages, as follow:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;     
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/js/service-worker.js&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&amp;gt;
+  
+  &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;At this point if your development server is already running, you can navigate to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://localhost:4000&lt;/code&gt; and use developer tools to verify that:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;By checking the Offline box under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Application -&amp;gt; Manifest -&amp;gt; Service worker&lt;/code&gt; you can still access your site.&lt;/li&gt;
+  &lt;li&gt;Under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Application -&amp;gt; Cache Storage&lt;/code&gt; new entry have been created&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The newly created cache entry indicates that the predetermined assets in the workbox-config file are added to the cache during the service worker installation. This is called &lt;strong&gt;precaching&lt;/strong&gt; and is commonly used to ensure that essential resources are available offline and to improve the initial loading performance of your application.&lt;/p&gt;
+
+&lt;p&gt;For more details on some precaching considerations you can check this &lt;a href=&quot;https://developer.chrome.com/docs/workbox/precaching-dos-and-donts/&quot;&gt;article&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Another type of caching is &lt;strong&gt;runtime caching&lt;/strong&gt;. It  involves caching resources dynamically during the runtime of your web application, i.e., when users interact with the application. Unlike precaching, runtime caching allows you to define caching strategies for specific URLs or URL patterns based on different criteria such as network requests, HTTP methods, and more.&lt;/p&gt;
+
+&lt;p&gt;There some common runtime caching strategies that are out of the scope of this blog post. For more details you can refer to the &lt;a href=&quot;https://developer.chrome.com/docs/workbox/modules/workbox-strategies/&quot;&gt;workbox documentation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;deploying-service-workers&quot;&gt;Deploying Service Workers&lt;/h2&gt;
+
+&lt;p&gt;Knowing that Jekyll regenerates the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder with each change you make to your files, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sw.js&lt;/code&gt; will be lost and we have to regenerate it each time. Since our site is hosted on Github Pages, we can leverage &lt;strong&gt;Github Actions&lt;/strong&gt; to automate the execution of these commands as part of the pipeline building and deploying your site.&lt;/p&gt;
+
+&lt;p&gt;An example of a Github Actions workflow can be found &lt;a href=&quot;https://github.com/firasesbai/firasesbai.github.io/blob/master/.github/workflows/github-pages.yml&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
+
+&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;Congratulations! You’ve successfully transformed your Jekyll blog into a powerful Progressive Web App. By implementing service workers and a manifest file, you’ve unlocked offline access and responsive design, making your content accessible to users even when they’re offline. Remember, this is just the beginning and there’s a wealth of additional features and optimizations you can explore to further enhance your PWA.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/What_is_a_progressive_web_app&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/What_is_a_progressive_web_app&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://web.dev/what-are-pwas/&quot;&gt;https://web.dev/what-are-pwas/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://medium.com/dev-channel/a-pinterest-progressive-web-app-performance-case-study-3bd6ed2e6154&quot;&gt;https://medium.com/dev-channel/a-pinterest-progressive-web-app-performance-case-study-3bd6ed2e6154&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://web.dev/alibaba/&quot;&gt;https://web.dev/alibaba/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://fredrickb.com/2019/07/25/turning-jekyll-site-into-a-progressive-web-app/&quot;&gt;https://fredrickb.com/2019/07/25/turning-jekyll-site-into-a-progressive-web-app/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://sevic.dev/caching-service-worker-workbox/&quot;&gt;https://sevic.dev/caching-service-worker-workbox/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="jekyll," /><category term="progressive" /><category term="web" /><category term="app," /><category term="pwa," /><category term="github-pages," /><category term="service" /><category term="worker," /><category term="web" /><category term="app" /><category term="manifest," /><category term="workbox," /><category term="github" /><category term="actions" /><summary type="html">In this guide, we’ll explore how to transform your Jekyll-based blog into a Progressive Web App, unlocking features such as offline access, fast loading, and a seamless user experience.</summary></entry><entry><title type="html">Data engineering 201: In-depth Guide - Part 2</title><link href="https://www.firasesbai.com/articles/2023/03/12/data-engineering-201-part-2.html" rel="alternate" type="text/html" title="Data engineering 201: In-depth Guide - Part 2" /><published>2023-03-12T00:00:00+00:00</published><updated>2023-03-12T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/03/12/data-engineering-201-part-2</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/03/12/data-engineering-201-part-2.html">&lt;p&gt;&lt;em&gt;This is part 2 of our in-depth article discussing the different stages of data flow inside an organisation.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;We will discover how data in motion and data at rest is handled through different techniques and methods and the importance of choosing the right storage technology.&lt;/p&gt;
 
@@ -1540,72 +1701,4 @@ Some useful hints and tips on how to further improve your site are also given to
 
 &lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;[https://vilcins.medium.com/optimize-your-jekyll-powered-website-with-these-simple-steps-b2a24d66a629]&quot;&gt;https://vilcins.medium.com/optimize-your-jekyll-powered-website-with-these-simple-steps-b2a24d66a629&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="jekyll," /><category term="github," /><category term="github-pages," /><category term="blog," /><category term="sitemap," /><category term="seo" /><summary type="html">In this article we will see how to make your Jekyll blog more discoverable.</summary></entry><entry><title type="html">Logging with ELK Stack</title><link href="https://www.firasesbai.com/articles/2022/01/09/logging-with-elasticsearch.html" rel="alternate" type="text/html" title="Logging with ELK Stack" /><published>2022-01-09T00:00:00+00:00</published><updated>2022-01-09T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2022/01/09/logging-with-elasticsearch</id><content type="html" xml:base="https://www.firasesbai.com/articles/2022/01/09/logging-with-elasticsearch.html">&lt;p&gt;&lt;em&gt;In this article we will discuss how to set up an ELK stack to properly monitor your dockerized application’s logs.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;All the source code is available &lt;a href=&quot;https://github.com/firasesbai/fastapi-elk-stack-logging&quot;&gt;here&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;First let’s start with the basics.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-the-elastic-stack&quot;&gt;What is the Elastic Stack?&lt;/h2&gt;
-
-&lt;p&gt;The Elastic Stack, known as &lt;strong&gt;ELK&lt;/strong&gt;, allows us to reliably and securely take data from multiple sources and different formats using the first component of the stack; &lt;strong&gt;Logstash&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Then we can store, search and analyze it through &lt;strong&gt;Elasticsearch&lt;/strong&gt; and finally visualize it in real time using its data visualisation dashboard &lt;strong&gt;Kibana&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;The Elastic Stack can be seen and applied in a variety of use cases such as security analytics, business analytics, metrics and logs aggregation and analysis.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-are-beats&quot;&gt;What are Beats?&lt;/h2&gt;
-
-&lt;p&gt;Beats is the new member of the ELK Stack. Beats are light weight log data shippers which can push logs to either Logstash for more processing and transformation or to Elasticsearch.
-They sit on your servers, with your containers, or deployed as functions — and then centralize data in Elasticsearch.&lt;/p&gt;
-
-&lt;p&gt;In this tutorial we will use &lt;strong&gt;Filebeat&lt;/strong&gt; which is an open-source lightweight shipper for logs written in go. 
-It uses a backpressure-sensitive protocol when sending data to account for higher volumes of data.&lt;/p&gt;
-
-&lt;p&gt;For more info check the official &lt;a href=&quot;https://www.elastic.co/beats/filebeat&quot;&gt;documentation&lt;/a&gt; from elastic.&lt;/p&gt;
-
-&lt;h2 id=&quot;architecture&quot;&gt;Architecture&lt;/h2&gt;
-
-&lt;p&gt;After some theoretical introduction about the different components of the ELK stack, let’s dive deeper into the setup of our architecture as illustrated in the diagram below.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/articles/5_logging_with_elk_stack.PNG&quot; alt=&quot;image&quot; /&gt;
-&lt;br /&gt;&lt;em&gt;Figure 1: Architecture&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;We will create a single endpoint FastAPI application running in a docker container that generates logs and saves them to files. Filebeat reads then those files and transfers them into Elasticsearch.&lt;/p&gt;
-
-&lt;h3 id=&quot;setup&quot;&gt;Setup&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Clone this Github &lt;a href=&quot;https://github.com/firasesbai/fastapi-elk-stack-logging&quot;&gt;repository&lt;/a&gt;, change into the corresponding directory and run the following command: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose up -d&lt;/code&gt;&lt;/p&gt;
-
-    &lt;p&gt;This will start docker containers for each system shown in the above architecture.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Go to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://127.0.0.1:8000/docs&lt;/code&gt; where you will see the Swagger UI of our python application and try out  the endpoint in order to generate some logs.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Access the kibana dashboard in your web browser through: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://127.0.0.1:5601&lt;/code&gt;&lt;/p&gt;
-
-    &lt;p&gt;The first thing you have to do is to configure the ElasticSearch indices that can be displayed in Kibana.
-The file &lt;strong&gt;filebeat.yml&lt;/strong&gt; found under &lt;a href=&quot;https://github.com/firasesbai/fastapi-elk-stack-logging/blob/main/filebeat/filebeat.yml&quot;&gt;/filebeat/filebeat.yml&lt;/a&gt; indicates the used index for our application.&lt;/p&gt;
-
-    &lt;p&gt;For further exploration of the possible Filebeat configuration options you can check this &lt;a href=&quot;https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-reference-yml.html&quot;&gt;filebeat.reference.yml&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;That’s it! You can now visualize the logs generated by our application in the kibana interface in real time and apply your filters for further analysis.&lt;/p&gt;
-
-&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
-
-&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
-
-&lt;p&gt;In this article we discussed the building blocks and the interaction between them to set up an ELK stack to collect logs from a python application running as a docker container necessary for further troubleshooting and monitoring.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.elastic.co/beats/filebeat&quot;&gt;https://www.elastic.co/beats/filebeat&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-reference-yml.html&quot;&gt;https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-reference-yml.html&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="logging," /><category term="elasticsearch," /><category term="elk," /><category term="fastapi," /><category term="python," /><category term="filebeat," /><category term="kibana," /><category term="docker" /><summary type="html">In this article we will discuss how to set up an ELK stack to properly monitor your dockerized application’s logs.</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;[https://vilcins.medium.com/optimize-your-jekyll-powered-website-with-these-simple-steps-b2a24d66a629]&quot;&gt;https://vilcins.medium.com/optimize-your-jekyll-powered-website-with-these-simple-steps-b2a24d66a629&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="jekyll," /><category term="github," /><category term="github-pages," /><category term="blog," /><category term="sitemap," /><category term="seo" /><summary type="html">In this article we will see how to make your Jekyll blog more discoverable.</summary></entry></feed>
