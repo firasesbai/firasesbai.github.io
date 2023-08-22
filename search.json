@@ -58,8 +58,8 @@
     {
 
       "title"      : "The Lean Startup",
-	  "url"        : "/articles/2022/09/11/the-lean-startup.html",
-      "category"   : "articles",
+	  "url"        : "/notes/2022/09/11/the-lean-startup.html",
+      "category"   : "notes",
       "date"       : "2022-09-11 00:00:00 +0000",
 	  "tags"       : "book summary",
 	  "description": ""
@@ -80,8 +80,8 @@
     {
 
       "title"      : "Reading Recommendations",
-	  "url"        : "/articles/2022/08/17/books-recommendations.html",
-      "category"   : "articles",
+	  "url"        : "/notes/2022/08/17/books-recommendations.html",
+      "category"   : "notes",
       "date"       : "2022-08-17 00:00:00 +0000",
 	  "tags"       : "books recommendations",
 	  "description": ""
