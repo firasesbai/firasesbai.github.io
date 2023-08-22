@@ -2,7 +2,7 @@
 layout: post
 title:  "Reading Recommendations"
 date:   2022-08-17
-category: articles
+category: notes
 tags: books recommendations
 author: Firas Esbai
 decription: "List of recommended readings and books in different areas of life and subjects"
