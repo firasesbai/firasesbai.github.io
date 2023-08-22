@@ -8,6 +8,8 @@ module.exports = {
 		/^utm_/,
 		/^fbclid$/
 	],
+	cacheId: "fe-blog",
+	cleanupOutdatedCaches: true,
 	runtimeCaching: [
 		{
 		  urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
