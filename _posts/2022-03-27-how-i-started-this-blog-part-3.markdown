@@ -95,9 +95,9 @@ In this article we saw how to add an estimated reading time per article and a co
 
 ### Resources ###
 
-[https://carlosbecker.com/posts/jekyll-reading-time-without-plugins/]
+[https://carlosbecker.com/posts/jekyll-reading-time-without-plugins/](https://carlosbecker.com/posts/jekyll-reading-time-without-plugins/)
 
-[https://stackoverflow.com/questions/62457756/get-the-read-time-for-a-specific-post-in-jekyll-pages-from-home-page-any-other]
+[https://stackoverflow.com/questions/62457756/get-the-read-time-for-a-specific-post-in-jekyll-pages-from-home-page-any-other](https://stackoverflow.com/questions/62457756/get-the-read-time-for-a-specific-post-in-jekyll-pages-from-home-page-any-other)
 
 [Part 1]: https://firasesbai.github.io/articles/2021/10/07/how-i-started-this-blog.html
 [Part 2]: https://firasesbai.github.io/articles/2022/03/23/how-i-started-this-blog-part-2.html 
@@ -105,6 +105,3 @@ In this article we saw how to add an estimated reading time per article and a co
 [Disqus]: https://disqus.com/ 
 [Front Matter]: https://jekyllrb.com/docs/front-matter/ 
 [here]: https://github.com/firasesbai/firasesbai.github.io/blob/master/_includes/comments.html
-
-[https://carlosbecker.com/posts/jekyll-reading-time-without-plugins/]: [https://carlosbecker.com/posts/jekyll-reading-time-without-plugins/]
-[https://stackoverflow.com/questions/62457756/get-the-read-time-for-a-specific-post-in-jekyll-pages-from-home-page-any-other]: [https://stackoverflow.com/questions/62457756/get-the-read-time-for-a-specific-post-in-jekyll-pages-from-home-page-any-other]
