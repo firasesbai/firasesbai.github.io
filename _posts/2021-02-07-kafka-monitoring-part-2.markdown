@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Kafka Monitoring Part 2"
+title:  "Essential Kafka Cluster Metrics: A Comprehensive Monitoring Guide"
 date:   2021-02-07
 issue_id: 2
 category: articles
