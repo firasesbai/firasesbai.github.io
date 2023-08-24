@@ -145,7 +145,7 @@
   
     {
 
-      "title"      : "Kafka Monitoring Part 2",
+      "title"      : "Essential Kafka Cluster Metrics: A Comprehensive Monitoring Guide",
 	  "url"        : "/articles/2021/02/07/kafka-monitoring-part-2.html",
       "category"   : "articles",
       "date"       : "2021-02-07 00:00:00 +0000",
@@ -156,7 +156,7 @@
   
     {
 
-      "title"      : "Kafka Monitoring",
+      "title"      : "Navigating Apache Kafka Monitoring in Real-World Deployments",
 	  "url"        : "/articles/2021/01/01/kafka-monitoring.html",
       "category"   : "articles",
       "date"       : "2021-01-01 00:00:00 +0000",
