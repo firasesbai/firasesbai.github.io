@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
-  {% seo %}
   
   {%- include head.html -%}
   
@@ -24,10 +22,10 @@
   <!-- end custom head snippets -->
   
   {% if site.google_analytics %}
-	{% include google-analytics.html %}
+  	{% include google-analytics.html %}
   {% endif %}
   {% if site.google_adsense %}
-	{% include google-adsense.html %}
+	  {% include google-adsense.html %}
   {% endif %}
   
   <body>
