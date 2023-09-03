@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Why I Started This Blog"
+title:  "5 Reasons Why I Started This Blog"
 date:   2021-04-12
 category: articles
 author: Firas Esbai
-description: "Five reasons why i started blogging and why you should as well"
+description: "Discover the transformative power of starting a blog for the right reasons. Explore my Five personal reasons why i started blogging to help you join the journey"
 ---
 
 *5 Reasons Why I Started This Blog.*

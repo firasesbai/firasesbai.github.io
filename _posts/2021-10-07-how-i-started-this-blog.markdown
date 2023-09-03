@@ -6,7 +6,7 @@ issue_id: 6
 category: articles
 tags: jekyll, github, github-pages, blog
 author: Firas Esbai
-description: "steps to create a jekyll blog and host it in github pages "
+description: "detailed steps to create a blog using jekyll a static site generator and host it in github pages"
 ---
 
 *In this article we will see how to easily setup and publish your first blog.* 

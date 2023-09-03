@@ -29,7 +29,7 @@ permalink: /about/
       </p>
    </div>
    <div class="row-two"> 
-      <img style="float:right;" src="/assets/images/0_profile.png" width="200">
+      <img alt="profile-picture" style="float:right;" src="/assets/images/0_profile.png" height="200" width="200">
    </div>
 </div>
 <div class="centre-container">
@@ -41,10 +41,10 @@ permalink: /about/
 </div>
 
 
-# Contact Information 
+### Contact Information 
 
 You can reach me by sending an email to [contact@firasesbai.com](mailto: contact@firasesbai.com)
 
-# Social Media 
+### Social Media 
 
 [LinkedIn](https://www.linkedin.com/in/firas-esbai/)

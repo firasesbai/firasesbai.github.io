@@ -5,7 +5,7 @@ date:   2022-09-11
 category: notes
 tags: book summary
 author: Firas Esbai
-decription: "Summary and important notes from the book the lean startup by eric ries"
+decription: "Summary, favorite quotes and important notes and takeaways from the book the lean startup by eric ries"
 ---
 
 *Notes from the Lean Startup Book By Eric Ries*
