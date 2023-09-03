@@ -18,7 +18,7 @@
       "category"   : "articles",
       "date"       : "2023-03-12 00:00:00 +0000",
 	  "tags"       : "data engineering, data flow, ingestion, ETL, ELT, transformation, batch processing, stream processing, micro-batch processing, storage, operational data, analytical data, OLTP, OLAP, transactional consistency, ACID, data warehouse, data lake, data lakehouse, cloud",
-	  "description": "In this article we will deep dive into data ingestion and different data integration techniques. In addition we will look into popular methods for data processing and transformation. Finally we will see different storage types and how they compare to each others."
+	  "description": "In this article we will deep dive into data ingestion and data integration techniques. Look into popular methods for data processing and transformation. Explore different storage types and how they compare to each others."
 
     } ,
   
@@ -128,18 +128,18 @@
       "category"   : "articles",
       "date"       : "2021-10-07 00:00:00 +0000",
 	  "tags"       : "jekyll, github, github-pages, blog",
-	  "description": "steps to create a jekyll blog and host it in github pages "
+	  "description": "detailed steps to create a blog using jekyll a static site generator and host it in github pages"
 
     } ,
   
     {
 
-      "title"      : "Why I Started This Blog",
+      "title"      : "5 Reasons Why I Started This Blog",
 	  "url"        : "/articles/2021/04/12/why-i-started-this-blog.html",
       "category"   : "articles",
       "date"       : "2021-04-12 00:00:00 +0000",
 	  "tags"       : "",
-	  "description": "Five reasons why i started blogging and why you should as well"
+	  "description": "Discover the transformative power of starting a blog for the right reasons. Explore my Five personal reasons why i started blogging to help you join the journey"
 
     } ,
   
