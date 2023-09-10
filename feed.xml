@@ -1,5 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2023-09-03T09:48:48+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Dive into Software, Big Data, and AI with Practical Insights | Explore hands-on ideas at the intersection of technology on Firas Esbai's Blog.
-</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Turning Your Jekyll Blog into a Progressive Web App (PWA) on GitHub Pages: A Step-by-Step Guide</title><link href="https://www.firasesbai.com/articles/2023/08/21/turning-your-jekyll-blog-into-a-progressive-web-app-on-github-pages.html" rel="alternate" type="text/html" title="Turning Your Jekyll Blog into a Progressive Web App (PWA) on GitHub Pages: A Step-by-Step Guide" /><published>2023-08-21T00:00:00+00:00</published><updated>2023-08-21T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/08/21/turning-your-jekyll-blog-into-a-progressive-web-app-on-github-pages</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/08/21/turning-your-jekyll-blog-into-a-progressive-web-app-on-github-pages.html">&lt;p&gt;&lt;em&gt;In this guide, we’ll explore how to transform your Jekyll-based blog into a Progressive Web App, unlocking features such as offline access, fast loading, and a seamless user experience.&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2023-09-10T12:49:25+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Dive into Software, Big Data, and AI with Practical Insights | Explore hands-on ideas at the intersection of technology on Firas Esbai's Blog.
+</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Understanding Modern Data Stack</title><link href="https://www.firasesbai.com/articles/2023/09/10/understanding-modern-data-stack.html" rel="alternate" type="text/html" title="Understanding Modern Data Stack" /><published>2023-09-10T00:00:00+00:00</published><updated>2023-09-10T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/09/10/understanding-modern-data-stack</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/09/10/understanding-modern-data-stack.html">&lt;p&gt;&lt;em&gt;In this article we will explore the modern data stack, a brief history that led to its adoption and a brief walkthrough of its components and objectives.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The modern data stack is designed to empower organizations to harness the full potential of their data assets, make data-driven decisions, and stay competitive in today’s data-centric business landscape. It represents a shift towards more agile, integrated, and scalable data management practices.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;a-brief-history&quot;&gt;A Brief History&lt;/h2&gt;
+
+&lt;p&gt;The modern data stack as we currently know it is a very recent development in data. In fact the rise of the cloud data warehouse triggered by the release of Amazon Redshift in late 2012 is considered one of the key developments that led to the adoption of the modern data stack. Redshift was one of the early cloud-based data warehousing solutions that offered a highly scalable and cost-effective platform for storing and analyzing large datasets. Its introduction marked a shift away from traditional on-premises data warehousing and towards cloud-based solutions. All of the other solutions in the market today like Google BigQuery and Snowflake followed the revolution set by Amazon.&lt;/p&gt;
+
+&lt;p&gt;Consequently this shift led to the move from &lt;em&gt;Extract Transform Load (ETL)&lt;/em&gt; to &lt;em&gt;Extract Load Transform (ELT)&lt;/em&gt; pipelines. As storage becomes cheaper and more accessible, there is no need to deal with data transformations before saving it in the traditional data warehouse. Organizations just dump their data in its raw format and only apply the transformations later when needed.&lt;/p&gt;
+
+&lt;p&gt;The rise of the cloud data warehouse has not only contributed to the transition from ETL to ELT but also the widespread adoption of BI tools. These self serve solutions democratize data usage allowing more and more personas to access it and make data-driven business decisions.‍&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-the-modern-data-stack&quot;&gt;What is the Modern Data Stack?&lt;/h2&gt;
+
+&lt;p&gt;The modern data stack is a collection of tools and technologies used together to support the data flow starting from ingestion and integration of different data sources up to analysis in order to extract insights and help create data driven decisions. The particularity resides in the plug and play nature of its components and the overall ease of use without much infrastructure and data platform management overhead so that data is accessible for everyone to turn it into knowledge.&lt;/p&gt;
+
+&lt;h2 id=&quot;objectives-of-the-modern-data-stack&quot;&gt;Objectives of the Modern Data Stack&lt;/h2&gt;
+
+&lt;p&gt;The objectives of the modern data stack revolve around building a data infrastructure that enables organizations to efficiently and effectively manage their data, derive valuable insights, and make data-driven decisions.&lt;/p&gt;
+
+&lt;p&gt;Here are the primary objectives of implementing a modern data stack:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Scalability&lt;/strong&gt;: Accommodate Growing Data - The modern data stack should be able to handle increasing data volumes, whether structured or unstructured, as organizations collect more data from various sources.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Flexibility and Agility&lt;/strong&gt;: Easily Adapt to Changing Needs - It should be flexible enough to adapt to changing business requirements, data sources, and processing methods without the need for a complete overhaul.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Integration&lt;/strong&gt;: Seamlessly Connect Data Sources: The stack should provide tools and processes for integrating data from diverse sources, including databases, applications, APIs, and more.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Cost-Efficiency&lt;/strong&gt;: Optimize Resource Usage by minimising unnecessary resource usage by efficiently managing data storage and processing to control costs.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Interoperability&lt;/strong&gt;: Ensure Compatibility - Ensure that the various components of the stack can interoperate smoothly with each other and with external systems or tools.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Cloud-Ready&lt;/strong&gt;: Leverage Cloud Infrastructure - Be compatible with cloud-based infrastructure to take advantage of scalability, cost-effectiveness, and the latest data services provided by cloud providers.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Performance and Reliability&lt;/strong&gt;: Maintain High Performance - Deliver reliable and high-performance data processing to support critical business operations.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Adaptability to Emerging Technologies&lt;/strong&gt;: Be Open to Innovation - Keep an eye on emerging technologies and trends, allowing for easy integration with new tools or platforms that may enhance the stack’s capabilities.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;components-of-the-modern-data-stack&quot;&gt;Components of the Modern Data Stack&lt;/h2&gt;
+
+&lt;p&gt;In a previous blog post about the &lt;a href=&quot;https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html&quot;&gt;fundamentals of data engineering&lt;/a&gt; we tried to identify a common data flow that identifies the different stages including ingestion, storage, transformation, data management/governance, visualization and exploration  which are  involved in making data easily accessible.&lt;/p&gt;
+
+&lt;p&gt;The components of the modern data stack can be perfectly mapped to the same diagram from the mentioned article, at least at a high level first, as shown below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/15_modern_data_stack_example.PNG&quot; alt=&quot;Example of Componentes of Modern Data Stack in Standard Data Flow&quot; /&gt;
+&lt;em&gt;Figure 1: Example of Componentes of Modern Data Stack in Standard Data Flow&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Note that the specific tools are changing and evolving rapidly but they usually include some of the ones we chose as an example in the diagram. In addition, some vendor technologies fit beyond a single stage as presented in the diagram and offer more capabilities such as data governance and/or machine learning.&lt;/p&gt;
+
+&lt;p&gt;However, this only captures the stack at a high level. In fact, there is no one-size-fits-all approach when it comes to selecting the best tools and technologies to deal with your data. Every organization has a different level of data maturity, different data teams, different structures, processes, and so on.&lt;/p&gt;
+
+&lt;p&gt;Therefore, the stack can be enriched with a &lt;strong&gt;workflow  orchestration tool&lt;/strong&gt; such as &lt;a href=&quot;https://airflow.apache.org/&quot;&gt;Apache Airflow&lt;/a&gt; or &lt;a href=&quot;https://dagster.io/&quot;&gt;Dagster&lt;/a&gt; needed to schedule your transformation in an automated fashion depending on your required frequency.&lt;/p&gt;
+
+&lt;p&gt;Also &lt;strong&gt;data observability&lt;/strong&gt; has become a key part of the modern data stack. It ensures data reliability by monitoring data quality and identifying potential data issues throughout the stack. Explaining this concept is beyond the scope of this article but we will have a dedicated blog post about. Some of the tools worth mentioning here include &lt;a href=&quot;https://www.montecarlodata.com/&quot;&gt;Monte Carlo&lt;/a&gt; and &lt;a href=&quot;https://www.datadoghq.com/&quot;&gt;Datadog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
+
+&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;In this article, we explored the concept of the modern data stack and its significance in the contemporary data landscape. We provided an overview of its main components and how they correlate to our standard data flow established in a previous article.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://preset.io/blog/modern-data-stack/&quot;&gt;https://preset.io/blog/modern-data-stack/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://preset.io/blog/reshaping-data-engineering/&quot;&gt;https://preset.io/blog/reshaping-data-engineering/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.getdbt.com/blog/future-of-the-modern-data-stack/&quot;&gt;https://www.getdbt.com/blog/future-of-the-modern-data-stack/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://a16z.com/2020/10/15/emerging-architectures-for-modern-data-infrastructure-2020/&quot;&gt;https://a16z.com/2020/10/15/emerging-architectures-for-modern-data-infrastructure-2020/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="modern" /><category term="data" /><category term="stack," /><category term="data" /><category term="observability," /><category term="cloud," /><category term="monte" /><category term="carlo," /><category term="dbt," /><category term="fivetran," /><category term="airbyte," /><category term="snowflake," /><category term="databricks," /><category term="redshift," /><category term="orchestration," /><category term="superset," /><category term="tableau," /><category term="looker" /><summary type="html">In this article we will explore the modern data stack, a brief history that led to its adoption and a brief walkthrough of its components and objectives.</summary></entry><entry><title type="html">Turning Your Jekyll Blog into a Progressive Web App (PWA) on GitHub Pages: A Step-by-Step Guide</title><link href="https://www.firasesbai.com/articles/2023/08/21/turning-your-jekyll-blog-into-a-progressive-web-app-on-github-pages.html" rel="alternate" type="text/html" title="Turning Your Jekyll Blog into a Progressive Web App (PWA) on GitHub Pages: A Step-by-Step Guide" /><published>2023-08-21T00:00:00+00:00</published><updated>2023-08-21T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/08/21/turning-your-jekyll-blog-into-a-progressive-web-app-on-github-pages</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/08/21/turning-your-jekyll-blog-into-a-progressive-web-app-on-github-pages.html">&lt;p&gt;&lt;em&gt;In this guide, we’ll explore how to transform your Jekyll-based blog into a Progressive Web App, unlocking features such as offline access, fast loading, and a seamless user experience.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Progressive Web Apps (PWAs) represent a significant advancement in web application development, offering users a seamless and engaging experience that combines the best aspects of both web and native mobile applications. 
 By transforming your Jekyll-based blog into a PWA, you’ll enhance user engagement, improve performance, and enable key features such as offline access.&lt;/p&gt;
@@ -1615,90 +1703,4 @@ You can find an example of this file &lt;a href=&quot;https://github.com/firases
 
 &lt;p&gt;&lt;a href=&quot;https://carlosbecker.com/posts/jekyll-reading-time-without-plugins/&quot;&gt;https://carlosbecker.com/posts/jekyll-reading-time-without-plugins/&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/62457756/get-the-read-time-for-a-specific-post-in-jekyll-pages-from-home-page-any-other&quot;&gt;https://stackoverflow.com/questions/62457756/get-the-read-time-for-a-specific-post-in-jekyll-pages-from-home-page-any-other&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="jekyll," /><category term="github," /><category term="github-pages," /><category term="blog," /><category term="comments," /><category term="reading" /><category term="time," /><category term="wpm" /><summary type="html">In this article we continue adding some interesting key features to a Jekyll Blog.</summary></entry><entry><title type="html">How I Started This Blog Part 2</title><link href="https://www.firasesbai.com/articles/2022/03/23/how-i-started-this-blog-part-2.html" rel="alternate" type="text/html" title="How I Started This Blog Part 2" /><published>2022-03-23T00:00:00+00:00</published><updated>2022-03-23T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2022/03/23/how-i-started-this-blog-part-2</id><content type="html" xml:base="https://www.firasesbai.com/articles/2022/03/23/how-i-started-this-blog-part-2.html">&lt;p&gt;&lt;em&gt;In this article we will see how to make your Jekyll blog more discoverable.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/articles/6_how_i_started_this_blog_part_2.jpg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In a previous &lt;a href=&quot;https://firasesbai.github.io/articles/2021/10/07/how-i-started-this-blog.html&quot;&gt;post&lt;/a&gt;, we went through the building bloks of a Jekyll blog, how to set one up and host it using github pages.&lt;/p&gt;
-
-&lt;p&gt;In this second article, part of the &lt;em&gt;How I Started This Blog&lt;/em&gt; series, we will build upon what we already have by adding some features that will make your blog posts more discoverable and reachable to your audience.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;jekyll-sitemap-generator-plugin&quot;&gt;Jekyll Sitemap Generator Plugin&lt;/h2&gt;
-
-&lt;h3 id=&quot;what-is-a-sitemap&quot;&gt;What is a Sitemap?&lt;/h3&gt;
-
-&lt;p&gt;A sitemap is a file where you provide information about the pages, videos, and other files on your site, and the relationships between them. 
-Search engines like Google read this file to crawl your site more efficiently. A sitemap tells Google which pages and files you think are important in your site, and also provides valuable information about these files. 
-For example, when the page was last updated and any alternate language versions of the page.&lt;/p&gt;
-
-&lt;p&gt;For more information you can check the following &lt;a href=&quot;https://developers.google.com/search/docs/advanced/sitemaps/overview&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;You can only benefit from having a sitemap for your website to improve its crawling even if your site’s pages are properly linked. 
-Especially when the sitemap is generated automatically using in this case the &lt;strong&gt;Jekyll Sitemap Generator Plugin&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;set-up&quot;&gt;Set up&lt;/h3&gt;
-
-&lt;p&gt;In order to set this up for your blog you need to do the following:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem jekyll-sitemap&lt;/code&gt; to your site’s Gemfile and run bundle&lt;/li&gt;
-  &lt;li&gt;Add the following to your site’s &lt;strong&gt;_config.yml&lt;/strong&gt; file:&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
-&lt;span class=&quot;ss&quot;&gt;url: &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://example.com&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# the base hostname &amp;amp; protocol for your site&lt;/span&gt;
-&lt;span class=&quot;ss&quot;&gt;plugins:
-  &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sitemap&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;That’s it! You are good to go.&lt;/p&gt;
-
-&lt;p&gt;For additional information, you can check the official Github &lt;a href=&quot;https://github.com/jekyll/jekyll-sitemap&quot;&gt;repository&lt;/a&gt; of the plugin.&lt;/p&gt;
-
-&lt;h2 id=&quot;jekyll-seo-tag-plugin&quot;&gt;Jekyll SEO Tag Plugin&lt;/h2&gt;
-
-&lt;p&gt;After creating a sitemap for your blog, another useful plugin to add is the &lt;strong&gt;Jekyll SEO Tag Plugin&lt;/strong&gt;. 
-This is a Jekyll plugin to add metadata tags for search engines and social networks to better index and display your site’s content.&lt;/p&gt;
-
-&lt;h3 id=&quot;set-up-1&quot;&gt;Set up&lt;/h3&gt;
-
-&lt;p&gt;In order to set this up for your blog you need to do the following:&lt;/p&gt;
-
-&lt;p&gt;1- Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem jekyll-seo-tag&lt;/code&gt; to your site’s Gemfile and run bundle&lt;/p&gt;
-
-&lt;p&gt;2- Add the following to your site’s &lt;strong&gt;_config.yml&lt;/strong&gt; file:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;   &lt;span class=&quot;ss&quot;&gt;plugins:
-    &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tag&lt;/span&gt;
-   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;3- Add the following &lt;strong&gt;{% seo %}&lt;/strong&gt; tag right before &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;/head&amp;gt;&lt;/code&gt; in your default layout&lt;/p&gt;
-
-&lt;p&gt;4- Add a description for every article in your blog&lt;/p&gt;
-
-&lt;p&gt;You can find more information on SEO optimisation in Jekyll website &lt;a href=&quot;https://jsinibardy.com/optimize-seo-jekyll&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;After finishing the necessary configuration steps and have integrated both plugins in your blog you can check the results and their impact by verifying the generated html pages.&lt;/p&gt;
-
-&lt;p&gt;You can also use the &lt;strong&gt;google lighthouse&lt;/strong&gt; tool from your chrome browser to generate a report about the performance of your site for different categories and metrics like seen in the screenshot below.
-Some useful hints and tips on how to further improve your site are also given to you in order to fix some common problems and enhance the user experience.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/articles/6_lighthouse_results.PNG&quot; alt=&quot;image&quot; /&gt;
-&lt;br /&gt;&lt;em&gt;Figure 1: Lighthouse Results&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
-
-&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
-
-&lt;p&gt;In this article we discussed the building blocks for our Jekyll blog and how to host it.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;[https://vilcins.medium.com/optimize-your-jekyll-powered-website-with-these-simple-steps-b2a24d66a629]&quot;&gt;https://vilcins.medium.com/optimize-your-jekyll-powered-website-with-these-simple-steps-b2a24d66a629&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="jekyll," /><category term="github," /><category term="github-pages," /><category term="blog," /><category term="sitemap," /><category term="seo" /><summary type="html">In this article we will see how to make your Jekyll blog more discoverable.</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/62457756/get-the-read-time-for-a-specific-post-in-jekyll-pages-from-home-page-any-other&quot;&gt;https://stackoverflow.com/questions/62457756/get-the-read-time-for-a-specific-post-in-jekyll-pages-from-home-page-any-other&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="jekyll," /><category term="github," /><category term="github-pages," /><category term="blog," /><category term="comments," /><category term="reading" /><category term="time," /><category term="wpm" /><summary type="html">In this article we continue adding some interesting key features to a Jekyll Blog.</summary></entry></feed>

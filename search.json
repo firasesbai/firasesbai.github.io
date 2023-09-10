@@ -2,6 +2,17 @@
   
     {
 
+      "title"      : "Understanding Modern Data Stack",
+	  "url"        : "/articles/2023/09/10/understanding-modern-data-stack.html",
+      "category"   : "articles",
+      "date"       : "2023-09-10 00:00:00 +0000",
+	  "tags"       : "modern data stack, data observability, cloud, monte carlo, dbt, fivetran, airbyte, snowflake, databricks, redshift, orchestration, superset, tableau, looker",
+	  "description": "uncovering modern data stack, its components with examples and their objectives"
+
+    } ,
+  
+    {
+
       "title"      : "Turning Your Jekyll Blog into a Progressive Web App (PWA) on GitHub Pages: A Step-by-Step Guide",
 	  "url"        : "/articles/2023/08/21/turning-your-jekyll-blog-into-a-progressive-web-app-on-github-pages.html",
       "category"   : "articles",
