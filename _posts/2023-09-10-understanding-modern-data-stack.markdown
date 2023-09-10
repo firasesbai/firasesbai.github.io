@@ -56,7 +56,7 @@ In a previous blog post about the [fundamentals of data engineering](https://www
 
 The components of the modern data stack can be perfectly mapped to the same diagram from the mentioned article, at least at a high level first, as shown below: 
 
-![Example of Componentes of Modern Data Stack in Standard Data Flow](/assets/images/articles/15_modern_data_stack_example.PNG)
+![Example of Componentes of Modern Data Stack in Standard Data Flow](/assets/images/articles/15_modern_data_stack_example.png)
 *Figure 1: Example of Componentes of Modern Data Stack in Standard Data Flow*
 
 Note that the specific tools are changing and evolving rapidly but they usually include some of the ones we chose as an example in the diagram. In addition, some vendor technologies fit beyond a single stage as presented in the diagram and offer more capabilities such as data governance and/or machine learning. 
