@@ -29,6 +29,11 @@ All the source code is available [here]() - `optional`
 | ------|:------|
 | row 1 | row 1 | 
 
+## Headline 3 ##
+
+![image alt text](/assets/images/articles/)
+*Figure 1: image alt txt*
+
 With this we have reached the end of this post, I hope you enjoyed it!
 
 If you have any remarks or questions, please don’t hesitate and do drop a comment below.
