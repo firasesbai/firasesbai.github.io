@@ -17,31 +17,31 @@ This is a *Work In Progress* which means you might want to keep an eye on it as 
 
 # Self-Help 
 
-- [How to Win Friends and Influence People](https://amzn.to/3T75aKC) - *by Dale Carnegie*
-- [Moonwalking with Einstein: The Art and Science of Remembering Everything](https://amzn.to/3yu6jlY) - *by Joshua Foer*
-- [Range: Why Generalists Triumph in a Specialized World](https://amzn.to/3l1GwyL) - *by David Epstein*
-- [So Good They Can't Ignore You: Why Skills Trump Passion in the Quest for Work You Love](https://amzn.to/3ZGhyE4) - *by Cal Newport*
-- [Deep Work: Rules for Focused Success in a Distracted World](https://amzn.to/3JcUTbi) - *by Cal Newport*
+- [How to Win Friends and Influence People](https://www.goodreads.com/book/show/4865.How_to_Win_Friends_and_Influence_People) - *by Dale Carnegie*
+- [Moonwalking with Einstein: The Art and Science of Remembering Everything](https://joshuafoer.com/) - *by Joshua Foer*
+- [Range: Why Generalists Triumph in a Specialized World](https://davidepstein.com/the-range/) - *by David Epstein*
+- [So Good They Can't Ignore You: Why Skills Trump Passion in the Quest for Work You Love](https://calnewport.com/writing/) - *by Cal Newport*
+- [Deep Work: Rules for Focused Success in a Distracted World](https://calnewport.com/writing/) - *by Cal Newport*
 
 # Productivity
 
-- [The 4-Hour Workweek](https://amzn.to/3Fg5mlo) - *by Timothy Ferriss*
+- [The 4-Hour Workweek](https://tim.blog/tim-ferriss-books/#the-4-hour-workweek) - *by Timothy Ferriss*
 
 # Money
 
-- [Think and Grow Rich](https://amzn.to/3JdIPqi) - *by Napoleon Hill*
-- [Rich Dad, Poor Dad](https://amzn.to/3l3SV52) - *by Robert T. Kiyosaki*
-- [The Psychology of Money](https://amzn.to/3J9hnKn) - *by Morgan Housel*
+- [Think and Grow Rich](https://www.naphill.org/shop/books/paperback/think-and-grow-rich-the-1937-edition/) - *by Napoleon Hill*
+- [Rich Dad, Poor Dad](https://www.richdad.com/about/rich-dad) - *by Robert T. Kiyosaki*
+- [The Psychology of Money](https://www.morganhousel.com/) - *by Morgan Housel*
 
 # Investement
  
-- [The Richest Man in Babylon](https://amzn.to/3T76OMi) - *by  George S. Clason* 
+- [The Richest Man in Babylon](https://www.goodreads.com/book/show/1052.The_Richest_Man_in_Babylon) - *by  George S. Clason* 
 
 # Startups
 
-- [The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses](https://amzn.to/3JzL5K8) - *by Eric Ries*
-- [Lean Inception: How to Align People and Build the Right Product](https://amzn.to/40hONxx) - *by Paulo Caroli* 
+- [The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses](https://theleanstartup.com/) - *by Eric Ries*
+- [Lean Inception: How to Align People and Build the Right Product](https://caroli.org/en/livro/lean-inception-how-to-align-people-and-build-the-right-product/) - *by Paulo Caroli* 
 
 # Artificial Intelligence 
 
-- [Life 3.0: Being Human in the Age of Artificial Intelligence](https://amzn.to/3ZYr9Wr) - *by Max Tegmark* 
+- [Life 3.0: Being Human in the Age of Artificial Intelligence](https://www.goodreads.com/en/book/show/34272565) - *by Max Tegmark* 
