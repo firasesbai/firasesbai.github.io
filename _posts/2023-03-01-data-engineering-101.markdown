@@ -4,7 +4,7 @@ title:  "Data engineering 101: Understanding the Fundementals"
 date:   2023-03-01
 issue_id: 13
 category: articles
-tags: data engineering, data engineer, data democratization, data flow, big data, data sources, data governance, data in motion, data at rest, ingestion, transformation, storage, analysis, machine learning, visualization and reporting
+tags: ["Data Engineering", "Data Architecture"]
 author: Firas Esbai
 description: "In this article we will deep dive into the different aspects of data engineering and see its importance in data democratization"
 ---

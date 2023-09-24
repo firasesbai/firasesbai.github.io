@@ -4,7 +4,7 @@ title:  "Prometheus Monitoring: How to Collect and Analyze Metrics"
 date:   2023-01-15
 issue_id: 12
 category: articles
-tags: prometheus, python, docker, fastapi, monitoring, metrics
+tags: ["Observability", "Software Development"]
 author: Firas Esbai
 description: "In this article we will deep dive into prometheus and see how to create a custom metric for a simple python application"
 ---

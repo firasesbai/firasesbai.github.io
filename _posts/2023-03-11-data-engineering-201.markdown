@@ -4,7 +4,7 @@ title:  "Data engineering 201: In-depth Guide - Part 1"
 date:   2023-03-11
 issue_id: 14
 category: articles
-tags: data engineering, data flow, big data, data sources, data governance, analysis, machine learning, visualization and reporting, file formats, parquet, csv, avro, json, data management, data security, data quality, data privacy
+tags: ["Data Engineering", "Data Architecture"]
 author: Firas Esbai
 description: "In this article we will discuss different data sources and big data file formats as well as data governance, its benefits and differences from data management"
 ---

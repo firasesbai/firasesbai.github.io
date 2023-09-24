@@ -4,7 +4,7 @@ title:  "How I Started This Blog"
 date:   2021-10-07
 issue_id: 6
 category: articles
-tags: jekyll, github, github-pages, blog
+tags: ["Jekyll"]
 author: Firas Esbai
 description: "detailed steps to create a blog using jekyll a static site generator and host it in github pages"
 ---

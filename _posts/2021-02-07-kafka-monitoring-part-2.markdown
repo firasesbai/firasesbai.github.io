@@ -4,7 +4,7 @@ title:  "Essential Kafka Cluster Metrics: A Comprehensive Monitoring Guide"
 date:   2021-02-07
 issue_id: 2
 category: articles
-tags: kafka cluster, monitoring, metrics
+tags: ["Observability"]
 author: Firas Esbai
 description: "Explanation of important metrics and their usage for Apache Kafka Monitoring"
 ---

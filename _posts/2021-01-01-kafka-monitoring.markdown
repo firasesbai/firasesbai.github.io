@@ -4,7 +4,7 @@ title:  "Navigating Apache Kafka Monitoring in Real-World Deployments"
 date:   2021-01-01
 issue_id: 1
 category: articles
-tags: kafka, promethues, grafana, monitoring
+tags: ["Observability"]
 author: Firas Esbai
 description: "Detailed explanation with code examples for Apache Kafka cluser monitoring using Prometheus and Grafana dashboards"
 ---

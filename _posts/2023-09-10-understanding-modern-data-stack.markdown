@@ -4,7 +4,7 @@ title:  "Understanding Modern Data Stack"
 date:   2023-09-10  
 issue_id: 17
 category: articles
-tags: modern data stack, data observability, cloud, monte carlo, dbt, fivetran, airbyte, snowflake, databricks, redshift, orchestration, superset, tableau, looker
+tags: ["Data Engineering", "Data Architecture", "Cloud Computing"]
 author: Firas Esbai
 description: "uncovering modern data stack, its components with examples and their objectives"
 ---

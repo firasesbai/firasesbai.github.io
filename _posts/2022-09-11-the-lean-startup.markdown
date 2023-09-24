@@ -3,7 +3,7 @@ layout: post
 title:  "The Lean Startup"
 date:   2022-09-11
 category: notes
-tags: book summary
+tags: ["Startups"]
 author: Firas Esbai
 decription: "Summary, favorite quotes and important notes and takeaways from the book the lean startup by eric ries"
 ---

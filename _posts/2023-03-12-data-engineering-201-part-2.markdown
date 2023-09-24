@@ -4,7 +4,7 @@ title:  "Data engineering 201: In-depth Guide - Part 2"
 date:   2023-03-12
 issue_id: 15
 category: articles
-tags: data engineering, data flow, ingestion, ETL, ELT, transformation, batch processing, stream processing, micro-batch processing, storage, operational data, analytical data, OLTP, OLAP, transactional consistency, ACID, data warehouse, data lake, data lakehouse, cloud
+tags: ["Data Engineering", "Data Architecture"]
 author: Firas Esbai
 description: "In this article we will deep dive into data ingestion and data integration techniques. Look into popular methods for data processing and transformation. Explore different storage types and how they compare to each others."
 ---

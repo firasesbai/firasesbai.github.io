@@ -4,7 +4,7 @@ title:  "Turning Your Jekyll Blog into a Progressive Web App (PWA) on GitHub Pag
 date:   2023-08-21
 issue_id: 16
 category: articles
-tags: jekyll, progressive web app, pwa, github-pages, service worker, web app manifest, workbox, github actions
+tags: ["Jekyll"]
 author: Firas Esbai
 description: "In this article we will walk through required steps to transform a jekyll blog into a progressive web app and how to deploy it to github pages after exploring some theory behind it."
 ---
