@@ -19,3 +19,12 @@ permalink: /archive/
   {% endfor %}
   </ul>
 {% endfor %}
+
+<h1>Categories</h1>
+
+{% assign categories_array = "Cloud Computing, Jekyll, Startups, Data Architecture, Data Engineering, Writing, General, Software Development, Observability" | split: ", " | sort %}
+
+{% for category in categories_array %}
+  {% assign post_url = category | downcase | replace: " ", "-" %}
+  <ul><li><h4><a href="/categories/{{ post_url}}">{{category}}</a></h4></li></ul>
+{% endfor %}

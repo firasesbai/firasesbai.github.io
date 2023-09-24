@@ -39,6 +39,7 @@ show_excerpts: true
 
 include:
     - _pages
+    - _categories
 
 #######################################################
 #################### Build Settings ###################
