@@ -26,5 +26,5 @@ permalink: /archive/
 
 {% for category in categories_array %}
   {% assign post_url = category | downcase | replace: " ", "-" %}
-  <ul><li><h4><a href="/categories/{{ post_url}}">{{category}}</a></h4></li></ul>
+  <ul><li><h4><a href="/categories/{{post_url}}">{{category}}</a></h4></li></ul>
 {% endfor %}
