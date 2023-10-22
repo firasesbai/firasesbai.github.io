@@ -2,6 +2,17 @@
   
     {
 
+      "title"      : "Learning How to Learn",
+	  "url"        : "/notes/2023/10/21/learning-how-to-learn.html",
+      "category"   : "notes",
+      "date"       : "2023-10-21 00:00:00 +0000",
+	  "tags"       : "General",
+	  "description": "Summary and important notes and takeaways from the course learning how to learn by Barbara Oakley"
+
+    } ,
+  
+    {
+
       "title"      : "Data Processing Architectures: Lambda vs Kappa",
 	  "url"        : "/articles/2023/09/24/data-processing-architectures-lambda-vs-kappa.html",
       "category"   : "articles",
