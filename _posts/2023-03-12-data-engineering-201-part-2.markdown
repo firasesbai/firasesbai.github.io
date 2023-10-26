@@ -17,6 +17,8 @@ If you have missed the first part, you can find it [here].
 
 So buckle up, folks! This is going to be a long ride. But don't worry, it's worth it. Grab a snack, get comfy, and let's dive in!"
 
+{% include table-of-content.html %}
+
 ## Ingestion ##
 
 **ETL (Extract, Transform, Load)** and **ELT (Extract, Load, Transform)** are both data integration techniques used to move data from multiple sources to a single destination, such as a data warehouse or a data lake (more on this later in the Storage section). 
@@ -204,7 +206,7 @@ Then we discussed the different types of data storage and some concrete implemen
 
 *Happy learning!*
 
-### Resources ###
+## Resources ##
 
 [https://martinfowler.com/articles/data-mesh-principles.html]
 

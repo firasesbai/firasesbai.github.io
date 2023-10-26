@@ -19,6 +19,8 @@ In this second article, part of the *How I Started This Blog* series, we will bu
 
 *So let's get started!* 
 
+{% include table-of-content.html %}
+
 ## Jekyll Sitemap Generator Plugin ##
 
 ### What is a Sitemap? ###
@@ -93,7 +95,7 @@ In this article we discussed the building blocks for our Jekyll blog and how to 
 
 *Happy learning!*
 
-### Resources ###
+## Resources ##
 
 [https://vilcins.medium.com/optimize-your-jekyll-powered-website-with-these-simple-steps-b2a24d66a629]
 

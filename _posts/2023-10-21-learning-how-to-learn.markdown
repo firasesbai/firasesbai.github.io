@@ -13,6 +13,8 @@ description: "Summary and important notes and takeaways from the course learning
 ![image](/assets/images/articles/17_learning_how_to_learn.png)
 <br />*Figure 1: Learning How to Learn Mindmap*
 
+{% include table-of-content.html %}
+
 ## Summary ##
 
 In a world that's constantly evolving, the ability to learn efficiently and effectively is a skill that can unlock doors to personal and professional growth. Whether you're a student striving for academic excellence, a professional seeking to stay competitive in your career, or simply someone who wants to enhance their ability to acquire new knowledge, the **[Learn How to Learn course](https://www.coursera.org/learn/learning-how-to-learn)** is a valuable resource that can empower you to do just that.

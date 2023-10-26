@@ -23,6 +23,8 @@ But, if you like to get your hands dirty and build your own monitoring solution 
 
 **All the source code is available [here].**
 
+{% include table-of-content.html %}
+
 *First let’s start with the basics.*
 
 ## What is Apache Kafka? ##
@@ -97,7 +99,7 @@ In this article we discussed the building blocks and the interaction between the
 
 *Happy learning!*
 
-### Resources ###
+## Resources ##
 
 [https://www.confluent.io/what-is-apache-kafka]
 

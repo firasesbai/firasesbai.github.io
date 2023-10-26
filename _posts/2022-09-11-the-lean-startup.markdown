@@ -13,7 +13,9 @@ decription: "Summary, favorite quotes and important notes and takeaways from the
 ![image](/assets/images/articles/14_the_lean_startup.png)
 <br />*Figure 1: Lean Startup Validated Learnings to Achieve Growth*
 
-**1. Summary**
+{% include table-of-content.html %}
+
+## 1. Summary ##
 
 The Lean startup takes its name from the lean manufacturing revolution that originated in Japan with the Toyota Production System. 
 Since not only building cars requires management but also building a startup, the lean startup movement came to existence. 
@@ -22,16 +24,16 @@ As a consequence, entrepreneurs take a ”just do it” attitude avoiding all fo
 
 Eric Ries describes in this book the why and the how that led to the birth of this movement and the tools that will teach you how to drive a Startup.
 
-**2. Favorite Quotes**
+## 2. Favorite Quotes ##
 - *Think Big, Start Small.*
 - *An Experiment is a Product.*
 - *The lean startup is a framework not a blueprint of steps to follow. It is designed to be adapted to the specific conditions of each specific company.*
 
-**3. Main Takeaways**
+## 3. Main Takeaways ##
  
 The Lean Startup has *12 Principles* that are categorised into three main parts making up the lifecycle of a Startup.  
 
-**Part 1: Vision**
+### Part 1: Vision ###
 
 Explore the importance of learning as the measure of progress for a startup.
 
@@ -76,7 +78,7 @@ Explore the importance of learning as the measure of progress for a startup.
 
    *How?* The second part will tell us that. 
    
-**Part 2: Steer**
+### Part 2: Steer ###
 
 How vision leads to steering?
 
@@ -225,7 +227,7 @@ It is at the core of the lean startup model.
      - Channel pivot 
      - Technology pivot <br/>
 	 
-**Part 3: Accelerate**
+### Part 3: Accelerate ###
 
 - ***Principle 9: Batch***
 

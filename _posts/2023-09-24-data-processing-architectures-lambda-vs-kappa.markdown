@@ -17,6 +17,8 @@ This is where data processing architectures come into play, offering structured 
 
 *So let’s get started!*
 
+{% include table-of-content.html %}
+
 ## Lambda Architecture ##
 
 Lambda architecture was introduced by *Nathan Marz* to address the challenges of data processing in a scalable and fault-tolerant manner.

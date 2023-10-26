@@ -16,6 +16,8 @@ By transforming your Jekyll-based blog into a PWA, you'll enhance user engagemen
 
 *So let’s get started!*
 
+{% include table-of-content.html %}
+
 ## What are Progressive Web Apps? ##
 
 Platform-specific apps are developed for a specific operating system (OS) and/or class of devices, like an iOS or Android device. They are usually installed on the user’s device using the vendor's app store. Websites on the other hand, can only be accessed by the user opening the browser and navigating to the site, and is highly dependent on network connectivity. 

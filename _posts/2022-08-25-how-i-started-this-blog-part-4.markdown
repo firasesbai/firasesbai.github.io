@@ -15,6 +15,8 @@ In case you missed the first parts, you can find them here: [Part 1], [Part 2] a
 
 *So let's get started!* 
 
+{% include table-of-content.html %}
+
 ## Search ##
 
 As the number of articles increases over time in your blog, it will be difficult to navigate and find a certain article that you are looking for. In this case, having search functionality becomes necessary. 
@@ -228,7 +230,7 @@ I hope this will get you started on a good foot and if you have any suggestions 
 
 *Happy learning!*
 
-### Resources ###
+## Resources ##
 
 [https://blog.webjeda.com/instant-jekyll-search/]
 

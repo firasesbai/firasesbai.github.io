@@ -15,6 +15,8 @@ decription: "List of recommended readings and books in different areas of life a
 
 This is a *Work In Progress* which means you might want to keep an eye on it as it will be updated regularly. 
 
+{% include table-of-content.html %}
+
 # Self-Help 
 
 - [How to Win Friends and Influence People](https://www.goodreads.com/book/show/4865.How_to_Win_Friends_and_Influence_People) - *by Dale Carnegie*

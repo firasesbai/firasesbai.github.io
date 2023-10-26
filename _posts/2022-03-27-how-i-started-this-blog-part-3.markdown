@@ -19,6 +19,8 @@ In case you missed the first parts, you can find them here: [Part 1] and [Part 2
 
 *So let's get started!* 
 
+{% include table-of-content.html %}
+
 ## Articles Reading Time ##
 
 Adding an estimated reading time at the beginning of your articles improves your engagement with the readers, especially the ones with time-limited schedules and which will probably refrain or bounce from it if they think that the article is too long. 
@@ -93,7 +95,7 @@ In this article we saw how to add an estimated reading time per article and a co
 
 *Happy learning!*
 
-### Resources ###
+## Resources ##
 
 [https://carlosbecker.com/posts/jekyll-reading-time-without-plugins/](https://carlosbecker.com/posts/jekyll-reading-time-without-plugins/)
 

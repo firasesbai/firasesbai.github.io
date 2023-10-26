@@ -21,6 +21,8 @@ The key metrics we are interested in can be grouped into the following categorie
 - *Broker Topics Metrics*
 - *Broker Requests Metrics*
 
+{% include table-of-content.html %}
+
 ## Broker Server Metrics ##
 
 While it is important to collect and record the values of these metrics, an **alerting mechanism** needs to be put in place, in order to receive notifications mainly for the critical ones. 
@@ -84,7 +86,7 @@ In this article we went through some of the most important metrics that we need 
 
 *Happy learning!*
 
-### Resources ###
+## Resources ##
 
 [https://docs.confluent.io/current/kafka/monitoring.html]
 

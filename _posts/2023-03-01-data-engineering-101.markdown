@@ -13,6 +13,8 @@ description: "In this article we will deep dive into the different aspects of da
 
 *So let's get started!* 
 
+{% include table-of-content.html %}
+
 ## What is Data Democratization? ##
 
 Data democratization is the process of making data accessible to all members of an organization, regardless of their role or level of technical expertise. 
@@ -113,7 +115,7 @@ In the following blog post we will dive deeper into each step to uncover best pr
 
 *Happy learning!*
 
-### Resources ###
+## Resources ##
 
 [https://medium.com/free-code-camp/the-rise-of-the-data-engineer-91be18f1e603]
 

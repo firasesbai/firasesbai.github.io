@@ -20,6 +20,8 @@ Through a series of posts we will setup a blog using **Jekyll** and enrich it wi
 
 *So let's get started!* 
 
+{% include table-of-content.html %}
+
 ## What is Jekyll? ##
 
 Jekyll is a free and open source ***static site generator*** written in *Ruby*. 
@@ -102,7 +104,7 @@ In this article we discussed the building blocks for our Jekyll blog and how to 
 
 *Happy learning!*
 
-### Resources ###
+## Resources ##
 
 [https://jekyllrb.com/docs/]
 

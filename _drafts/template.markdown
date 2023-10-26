@@ -15,6 +15,8 @@ All the source code is available [here]() - `optional`
 
 *So let’s get started!*
 
+{% include table-of-content.html %}
+
 ## Headline 1 ##
 
    {% highlight ruby %}

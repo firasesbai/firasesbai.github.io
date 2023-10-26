@@ -15,6 +15,8 @@ All the source code is available [here].
 
 *So let's get started!* 
 
+{% include table-of-content.html %}
+
 ## Introduction ##
 
 Prometheus is an open-source monitoring and alerting system. 
@@ -116,7 +118,7 @@ In addition, we went through an example of how to deploy a python application in
 
 *Happy learning!*
 
-### Resources ###
+## Resources ##
 
 [https://prometheus.io/docs/introduction/overview/]
 

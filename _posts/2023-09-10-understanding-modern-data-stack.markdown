@@ -15,6 +15,8 @@ The modern data stack is designed to empower organizations to harness the full p
 
 *So let’s get started!*
 
+{% include table-of-content.html %}
+
 ## A Brief History ##
 
 The modern data stack as we currently know it is a very recent development in data. In fact the rise of the cloud data warehouse triggered by the release of Amazon Redshift in late 2012 is considered one of the key developments that led to the adoption of the modern data stack. Redshift was one of the early cloud-based data warehousing solutions that offered a highly scalable and cost-effective platform for storing and analyzing large datasets. Its introduction marked a shift away from traditional on-premises data warehousing and towards cloud-based solutions. All of the other solutions in the market today like Google BigQuery and Snowflake followed the revolution set by Amazon. 

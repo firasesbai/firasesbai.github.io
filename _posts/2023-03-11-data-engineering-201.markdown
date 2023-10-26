@@ -23,6 +23,8 @@ We will start by taking a bird’s eye view, focusing on data sources, data gove
 
 *So let's get started!* 
 
+{% include table-of-content.html %}
+
 ## Data Sources ##
 
 Data sources refer to the various systems and platforms that generate data and constitute the origin of all data in an organization and play a crucial role in the data engineering and big data landscape. 
@@ -98,7 +100,7 @@ In addition, we discussed some of the key components of data governance and its 
 
 *Happy learning!*
 
-### Resources ###
+## Resources ##
 
 [https://devopedia.org/data-serialization]
 
