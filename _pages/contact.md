@@ -2,6 +2,7 @@
 layout: page
 title: Contact Me
 permalink: /contact/
+description: "Get in touch with Firas Esbai to discuss collaborations or inquiries. We are here to connect and help with all your needs."
 ---
 
 <style>
