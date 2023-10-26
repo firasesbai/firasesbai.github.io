@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /privacy-policy/
+description: "Learn about our commitment to safeguarding your privacy. Our Privacy Policy provides details on how we collect, use, and protect your information. Your trust is our priority."
 ---
 
 # Privacy Policy
