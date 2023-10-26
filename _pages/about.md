@@ -2,6 +2,7 @@
 layout: page
 title: About Me
 permalink: /about/
+description: "Discover the story behind Firas Esbai, a passionate data and machine learning engineer."
 ---
 
 <style>
