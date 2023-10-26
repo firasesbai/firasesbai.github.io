@@ -4,7 +4,7 @@ title: Archive
 permalink: /archive/
 ---
 
-<h1>Archive</h1>
+### Archive ###
 
 {% assign years_array = "2023, 2022, 2021" | split: ", " %}
 
