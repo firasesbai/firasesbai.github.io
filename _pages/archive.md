@@ -2,6 +2,7 @@
 layout: page
 title: Archive
 permalink: /archive/
+description: "Explore a comprehensive archive of Firas Esbai's articles. Browse by category or date to find the content you're looking for."
 ---
 
 ### Archive ###
