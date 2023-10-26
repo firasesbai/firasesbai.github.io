@@ -2,10 +2,10 @@
   
     {
 
-      "title"      : "Learning How to Learn",
+    "title"      : "Learning How to Learn",
 	  "url"        : "/notes/2023/10/21/learning-how-to-learn.html",
-      "category"   : "notes",
-      "date"       : "2023-10-21 00:00:00 +0000",
+    "category"   : "notes",
+    "date"       : "2023-10-21 00:00:00 +0000",
 	  "tags"       : "General",
 	  "description": "Summary and important notes and takeaways from the course learning how to learn by Barbara Oakley"
 
@@ -13,10 +13,10 @@
   
     {
 
-      "title"      : "Data Processing Architectures: Lambda vs Kappa",
+    "title"      : "Data Processing Architectures: Lambda vs Kappa",
 	  "url"        : "/articles/2023/09/24/data-processing-architectures-lambda-vs-kappa.html",
-      "category"   : "articles",
-      "date"       : "2023-09-24 00:00:00 +0000",
+    "category"   : "articles",
+    "date"       : "2023-09-24 00:00:00 +0000",
 	  "tags"       : "Data Engineering Data Architecture",
 	  "description": "uncovering lambda and kappa architectures and their tradeoffs and use cases"
 
@@ -24,10 +24,10 @@
   
     {
 
-      "title"      : "Understanding Modern Data Stack",
+    "title"      : "Understanding Modern Data Stack",
 	  "url"        : "/articles/2023/09/10/understanding-modern-data-stack.html",
-      "category"   : "articles",
-      "date"       : "2023-09-10 00:00:00 +0000",
+    "category"   : "articles",
+    "date"       : "2023-09-10 00:00:00 +0000",
 	  "tags"       : "Data Engineering Data Architecture Cloud Computing",
 	  "description": "uncovering modern data stack, its components with examples and their objectives"
 
@@ -35,10 +35,10 @@
   
     {
 
-      "title"      : "Turning Your Jekyll Blog into a Progressive Web App (PWA) on GitHub Pages: A Step-by-Step Guide",
+    "title"      : "Turning Your Jekyll Blog into a Progressive Web App (PWA) on GitHub Pages: A Step-by-Step Guide",
 	  "url"        : "/articles/2023/08/21/turning-your-jekyll-blog-into-a-progressive-web-app-on-github-pages.html",
-      "category"   : "articles",
-      "date"       : "2023-08-21 00:00:00 +0000",
+    "category"   : "articles",
+    "date"       : "2023-08-21 00:00:00 +0000",
 	  "tags"       : "Jekyll",
 	  "description": "In this article we will walk through required steps to transform a jekyll blog into a progressive web app and how to deploy it to github pages after exploring some theory behind it."
 
@@ -46,10 +46,10 @@
   
     {
 
-      "title"      : "Data engineering 201: In-depth Guide - Part 2",
+    "title"      : "Data engineering 201: In-depth Guide - Part 2",
 	  "url"        : "/articles/2023/03/12/data-engineering-201-part-2.html",
-      "category"   : "articles",
-      "date"       : "2023-03-12 00:00:00 +0000",
+    "category"   : "articles",
+    "date"       : "2023-03-12 00:00:00 +0000",
 	  "tags"       : "Data Engineering Data Architecture",
 	  "description": "In this article we will deep dive into data ingestion and data integration techniques. Look into popular methods for data processing and transformation. Explore different storage types and how they compare to each others."
 
@@ -57,10 +57,10 @@
   
     {
 
-      "title"      : "Data engineering 201: In-depth Guide - Part 1",
+    "title"      : "Data engineering 201: In-depth Guide - Part 1",
 	  "url"        : "/articles/2023/03/11/data-engineering-201.html",
-      "category"   : "articles",
-      "date"       : "2023-03-11 00:00:00 +0000",
+    "category"   : "articles",
+    "date"       : "2023-03-11 00:00:00 +0000",
 	  "tags"       : "Data Engineering Data Architecture",
 	  "description": "In this article we will discuss different data sources and big data file formats as well as data governance, its benefits and differences from data management"
 
@@ -68,10 +68,10 @@
   
     {
 
-      "title"      : "Data engineering 101: Understanding the Fundementals",
+    "title"      : "Data engineering 101: Understanding the Fundementals",
 	  "url"        : "/articles/2023/03/01/data-engineering-101.html",
-      "category"   : "articles",
-      "date"       : "2023-03-01 00:00:00 +0000",
+    "category"   : "articles",
+    "date"       : "2023-03-01 00:00:00 +0000",
 	  "tags"       : "Data Engineering Data Architecture",
 	  "description": "In this article we will deep dive into the different aspects of data engineering and see its importance in data democratization"
 
@@ -79,10 +79,10 @@
   
     {
 
-      "title"      : "Prometheus Monitoring: How to Collect and Analyze Metrics",
+    "title"      : "Prometheus Monitoring: How to Collect and Analyze Metrics",
 	  "url"        : "/articles/2023/01/15/prometheus-monitoring.html",
-      "category"   : "articles",
-      "date"       : "2023-01-15 00:00:00 +0000",
+    "category"   : "articles",
+    "date"       : "2023-01-15 00:00:00 +0000",
 	  "tags"       : "Observability Software Development",
 	  "description": "In this article we will deep dive into prometheus and see how to create a custom metric for a simple python application"
 
@@ -90,10 +90,10 @@
   
     {
 
-      "title"      : "The Lean Startup",
+    "title"      : "The Lean Startup",
 	  "url"        : "/notes/2022/09/11/the-lean-startup.html",
-      "category"   : "notes",
-      "date"       : "2022-09-11 00:00:00 +0000",
+    "category"   : "notes",
+    "date"       : "2022-09-11 00:00:00 +0000",
 	  "tags"       : "Startups",
 	  "description": ""
 
@@ -101,10 +101,10 @@
   
     {
 
-      "title"      : "How I Started This Blog Part 4",
+    "title"      : "How I Started This Blog Part 4",
 	  "url"        : "/articles/2022/08/25/how-i-started-this-blog-part-4.html",
-      "category"   : "articles",
-      "date"       : "2022-08-25 00:00:00 +0000",
+    "category"   : "articles",
+    "date"       : "2022-08-25 00:00:00 +0000",
 	  "tags"       : "Jekyll",
 	  "description": "In this article we will integrate a search bar, add pages and customize our blog with a new domain"
 
@@ -112,10 +112,10 @@
   
     {
 
-      "title"      : "Reading Recommendations",
+    "title"      : "Reading Recommendations",
 	  "url"        : "/notes/2022/08/17/books-recommendations.html",
-      "category"   : "notes",
-      "date"       : "2022-08-17 00:00:00 +0000",
+    "category"   : "notes",
+    "date"       : "2022-08-17 00:00:00 +0000",
 	  "tags"       : "General",
 	  "description": ""
 
@@ -123,10 +123,10 @@
   
     {
 
-      "title"      : "How I Started This Blog Part 3",
+    "title"      : "How I Started This Blog Part 3",
 	  "url"        : "/articles/2022/03/27/how-i-started-this-blog-part-3.html",
-      "category"   : "articles",
-      "date"       : "2022-03-27 00:00:00 +0000",
+    "category"   : "articles",
+    "date"       : "2022-03-27 00:00:00 +0000",
 	  "tags"       : "Jekyll",
 	  "description": "In this article we will integrate a comments section using Github comments API and add an estimated reading time to our articles"
 
@@ -134,10 +134,10 @@
   
     {
 
-      "title"      : "How I Started This Blog Part 2",
+    "title"      : "How I Started This Blog Part 2",
 	  "url"        : "/articles/2022/03/23/how-i-started-this-blog-part-2.html",
-      "category"   : "articles",
-      "date"       : "2022-03-23 00:00:00 +0000",
+    "category"   : "articles",
+    "date"       : "2022-03-23 00:00:00 +0000",
 	  "tags"       : "Jekyll",
 	  "description": "In this article we will integrate some jekyll plugins to add a sitemap and improve your SEO ranking and lighthouse score of your blog"
 
@@ -145,10 +145,10 @@
   
     {
 
-      "title"      : "Logging with ELK Stack",
+    "title"      : "Logging with ELK Stack",
 	  "url"        : "/articles/2022/01/09/logging-with-elasticsearch.html",
-      "category"   : "articles",
-      "date"       : "2022-01-09 00:00:00 +0000",
+    "category"   : "articles",
+    "date"       : "2022-01-09 00:00:00 +0000",
 	  "tags"       : "Observability Software Development",
 	  "description": "Steps to configure filebeat to collect log files generated by python application running in docker container and saves them to elasticsearch"
 
@@ -156,10 +156,10 @@
   
     {
 
-      "title"      : "How I Started This Blog",
+    "title"      : "How I Started This Blog",
 	  "url"        : "/articles/2021/10/07/how-i-started-this-blog.html",
-      "category"   : "articles",
-      "date"       : "2021-10-07 00:00:00 +0000",
+    "category"   : "articles",
+    "date"       : "2021-10-07 00:00:00 +0000",
 	  "tags"       : "Jekyll",
 	  "description": "detailed steps to create a blog using jekyll a static site generator and host it in github pages"
 
@@ -167,10 +167,10 @@
   
     {
 
-      "title"      : "5 Reasons Why I Started This Blog",
+    "title"      : "5 Reasons Why I Started This Blog",
 	  "url"        : "/articles/2021/04/12/why-i-started-this-blog.html",
-      "category"   : "articles",
-      "date"       : "2021-04-12 00:00:00 +0000",
+    "category"   : "articles",
+    "date"       : "2021-04-12 00:00:00 +0000",
 	  "tags"       : "Writing",
 	  "description": "Discover the transformative power of starting a blog for the right reasons. Explore my Five personal reasons why i started blogging to help you join the journey"
 
@@ -178,10 +178,10 @@
   
     {
 
-      "title"      : "Essential Kafka Cluster Metrics: A Comprehensive Monitoring Guide",
+    "title"      : "Essential Kafka Cluster Metrics: A Comprehensive Monitoring Guide",
 	  "url"        : "/articles/2021/02/07/kafka-monitoring-part-2.html",
-      "category"   : "articles",
-      "date"       : "2021-02-07 00:00:00 +0000",
+    "category"   : "articles",
+    "date"       : "2021-02-07 00:00:00 +0000",
 	  "tags"       : "Observability",
 	  "description": "Explanation of important metrics and their usage for Apache Kafka Monitoring"
 
@@ -189,10 +189,10 @@
   
     {
 
-      "title"      : "Navigating Apache Kafka Monitoring in Real-World Deployments",
+    "title"      : "Navigating Apache Kafka Monitoring in Real-World Deployments",
 	  "url"        : "/articles/2021/01/01/kafka-monitoring.html",
-      "category"   : "articles",
-      "date"       : "2021-01-01 00:00:00 +0000",
+    "category"   : "articles",
+    "date"       : "2021-01-01 00:00:00 +0000",
 	  "tags"       : "Observability",
 	  "description": "Detailed explanation with code examples for Apache Kafka cluser monitoring using Prometheus and Grafana dashboards"
 

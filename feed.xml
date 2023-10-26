@@ -1,8 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2023-10-22T10:33:22+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Dive into Software, Big Data, and AI with Practical Insights | Explore hands-on ideas at the intersection of technology on Firas Esbai's Blog.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2023-10-26T19:27:35+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Dive into Software, Big Data, and AI with Practical Insights | Explore hands-on ideas at the intersection of technology on Firas Esbai's Blog.
 </subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Learning How to Learn</title><link href="https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn.html" rel="alternate" type="text/html" title="Learning How to Learn" /><published>2023-10-21T00:00:00+00:00</published><updated>2023-10-21T00:00:00+00:00</updated><id>https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn</id><content type="html" xml:base="https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn.html">&lt;p&gt;&lt;em&gt;Notes from the online course learning how to learn: powerful mental tools to help you master tough subjects by Barbara Oakley.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/articles/17_learning_how_to_learn.png&quot; alt=&quot;image&quot; /&gt;
 &lt;br /&gt;&lt;em&gt;Figure 1: Learning How to Learn Mindmap&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#summary&quot; id=&quot;markdown-toc-summary&quot;&gt;Summary&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#main-takeaways&quot; id=&quot;markdown-toc-main-takeaways&quot;&gt;Main Takeaways&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#1-what-is-learning&quot; id=&quot;markdown-toc-1-what-is-learning&quot;&gt;1/ What is learning?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2-memory&quot; id=&quot;markdown-toc-2-memory&quot;&gt;2/ Memory&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#working-memory&quot; id=&quot;markdown-toc-working-memory&quot;&gt;Working Memory&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#long-term-memory&quot; id=&quot;markdown-toc-long-term-memory&quot;&gt;Long Term Memory&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3-how-to-improve-your-memory&quot; id=&quot;markdown-toc-3-how-to-improve-your-memory&quot;&gt;3/ How to improve your memory&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#4-chunking&quot; id=&quot;markdown-toc-4-chunking&quot;&gt;4/ Chunking&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#what-is-a-chunk&quot; id=&quot;markdown-toc-what-is-a-chunk&quot;&gt;What is a Chunk?&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#how-to-form-a-chunk&quot; id=&quot;markdown-toc-how-to-form-a-chunk&quot;&gt;How to form a chunk?&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#the-value-of-a-library-of-chunks&quot; id=&quot;markdown-toc-the-value-of-a-library-of-chunks&quot;&gt;The value of a Library of Chunks&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#interleaving&quot; id=&quot;markdown-toc-interleaving&quot;&gt;Interleaving&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#5-procrastination&quot; id=&quot;markdown-toc-5-procrastination&quot;&gt;5/ Procrastination&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#what-is-a-habit&quot; id=&quot;markdown-toc-what-is-a-habit&quot;&gt;What is a habit?&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#harnessing-your-zombies&quot; id=&quot;markdown-toc-harnessing-your-zombies&quot;&gt;Harnessing your zombies&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#6-juggling-life-and-learning&quot; id=&quot;markdown-toc-6-juggling-life-and-learning&quot;&gt;6/ Juggling Life and Learning&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
 
@@ -199,6 +231,24 @@ The essential idea here is that the zombie habitual part of your brain likes pro
 
 &lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
 
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#lambda-architecture&quot; id=&quot;markdown-toc-lambda-architecture&quot;&gt;Lambda Architecture&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#advantages-and-disadvantages&quot; id=&quot;markdown-toc-advantages-and-disadvantages&quot;&gt;Advantages and Disadvantages&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#kappa-architecture&quot; id=&quot;markdown-toc-kappa-architecture&quot;&gt;Kappa Architecture&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#advantages-and-disadvantages-1&quot; id=&quot;markdown-toc-advantages-and-disadvantages-1&quot;&gt;Advantages and Disadvantages&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#choosing-the-right-architecture&quot; id=&quot;markdown-toc-choosing-the-right-architecture&quot;&gt;Choosing the Right Architecture&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
 &lt;h2 id=&quot;lambda-architecture&quot;&gt;Lambda Architecture&lt;/h2&gt;
 
 &lt;p&gt;Lambda architecture was introduced by &lt;em&gt;Nathan Marz&lt;/em&gt; to address the challenges of data processing in a scalable and fault-tolerant manner.
@@ -272,6 +322,19 @@ If the algorithms used to process historical data and real-time data are not alw
 &lt;p&gt;The modern data stack is designed to empower organizations to harness the full potential of their data assets, make data-driven decisions, and stay competitive in today’s data-centric business landscape. It represents a shift towards more agile, integrated, and scalable data management practices.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#a-brief-history&quot; id=&quot;markdown-toc-a-brief-history&quot;&gt;A Brief History&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#what-is-the-modern-data-stack&quot; id=&quot;markdown-toc-what-is-the-modern-data-stack&quot;&gt;What is the Modern Data Stack?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#objectives-of-the-modern-data-stack&quot; id=&quot;markdown-toc-objectives-of-the-modern-data-stack&quot;&gt;Objectives of the Modern Data Stack&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#components-of-the-modern-data-stack&quot; id=&quot;markdown-toc-components-of-the-modern-data-stack&quot;&gt;Components of the Modern Data Stack&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;a-brief-history&quot;&gt;A Brief History&lt;/h2&gt;
 
@@ -361,6 +424,22 @@ If the algorithms used to process historical data and real-time data are not alw
 By transforming your Jekyll-based blog into a PWA, you’ll enhance user engagement, improve performance, and enable key features such as offline access.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#what-are-progressive-web-apps&quot; id=&quot;markdown-toc-what-are-progressive-web-apps&quot;&gt;What are Progressive Web Apps?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#key-attributes-of-pwas&quot; id=&quot;markdown-toc-key-attributes-of-pwas&quot;&gt;Key Attributes of PWAs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#successful-pwa-examples&quot; id=&quot;markdown-toc-successful-pwa-examples&quot;&gt;Successful PWA Examples&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#technical-features-of-pwas&quot; id=&quot;markdown-toc-technical-features-of-pwas&quot;&gt;Technical features of PWAs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#creating-a-manifest-file&quot; id=&quot;markdown-toc-creating-a-manifest-file&quot;&gt;Creating a Manifest File&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#implementing-service-workers&quot; id=&quot;markdown-toc-implementing-service-workers&quot;&gt;Implementing Service Workers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#deploying-service-workers&quot; id=&quot;markdown-toc-deploying-service-workers&quot;&gt;Deploying Service Workers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;what-are-progressive-web-apps&quot;&gt;What are Progressive Web Apps?&lt;/h2&gt;
 
@@ -523,6 +602,28 @@ By transforming your Jekyll-based blog into a PWA, you’ll enhance user engagem
 &lt;p&gt;If you have missed the first part, you can find it &lt;a href=&quot;https://www.firasesbai.com/articles/2023/03/11/data-engineering-201.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;So buckle up, folks! This is going to be a long ride. But don’t worry, it’s worth it. Grab a snack, get comfy, and let’s dive in!”&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#ingestion&quot; id=&quot;markdown-toc-ingestion&quot;&gt;Ingestion&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#transformation&quot; id=&quot;markdown-toc-transformation&quot;&gt;Transformation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#storage&quot; id=&quot;markdown-toc-storage&quot;&gt;Storage&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#oltp-vs-olap&quot; id=&quot;markdown-toc-oltp-vs-olap&quot;&gt;OLTP vs OLAP&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#oltp-databases&quot; id=&quot;markdown-toc-oltp-databases&quot;&gt;OLTP Databases&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#olap-databases&quot; id=&quot;markdown-toc-olap-databases&quot;&gt;OLAP Databases&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#data-warehouse&quot; id=&quot;markdown-toc-data-warehouse&quot;&gt;Data warehouse&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#data-lake&quot; id=&quot;markdown-toc-data-lake&quot;&gt;Data lake&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#data-lakehouse&quot; id=&quot;markdown-toc-data-lakehouse&quot;&gt;Data Lakehouse&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;ingestion&quot;&gt;Ingestion&lt;/h2&gt;
 
@@ -766,7 +867,7 @@ Then we discussed the different types of data storage and some concrete implemen
 
 &lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://martinfowler.com/articles/data-mesh-principles.html&quot;&gt;https://martinfowler.com/articles/data-mesh-principles.html&lt;/a&gt;&lt;/p&gt;
 
@@ -787,6 +888,22 @@ In addition, we outlined the different stages data goes through in order to be a
 &lt;p&gt;We will start by taking a bird’s eye view, focusing on data sources, data governance and analysis before zooming in on the other stages of the data flow in part 2.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#data-sources&quot; id=&quot;markdown-toc-data-sources&quot;&gt;Data Sources&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#data-governance&quot; id=&quot;markdown-toc-data-governance&quot;&gt;Data Governance&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#data-governance-vs-data-management&quot; id=&quot;markdown-toc-data-governance-vs-data-management&quot;&gt;Data Governance vs Data Management&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#benefits-of-data-governance&quot; id=&quot;markdown-toc-benefits-of-data-governance&quot;&gt;Benefits of Data Governance&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#analysis&quot; id=&quot;markdown-toc-analysis&quot;&gt;Analysis&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;data-sources&quot;&gt;Data Sources&lt;/h2&gt;
 
@@ -924,7 +1041,7 @@ In addition, we discussed some of the key components of data governance and its 
 
 &lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://devopedia.org/data-serialization&quot;&gt;https://devopedia.org/data-serialization&lt;/a&gt;&lt;/p&gt;
 
@@ -935,6 +1052,20 @@ In addition, we discussed some of the key components of data governance and its 
 &lt;p&gt;&lt;a href=&quot;https://www.heavy.ai/technical-glossary/data-quality&quot;&gt;https://www.heavy.ai/technical-glossary/data-quality&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><category term="Data Architecture" /><summary type="html">In this two parts article we will deep dive into each of the general steps of the data flow.</summary></entry><entry><title type="html">Data engineering 101: Understanding the Fundementals</title><link href="https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html" rel="alternate" type="text/html" title="Data engineering 101: Understanding the Fundementals" /><published>2023-03-01T00:00:00+00:00</published><updated>2023-03-01T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/03/01/data-engineering-101</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html">&lt;p&gt;&lt;em&gt;In this article we will explore the different aspects of data engineering and what makes it crucial in today’s data-driven world and how it can benefit organizations of all sizes and industries.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#what-is-data-democratization&quot; id=&quot;markdown-toc-what-is-data-democratization&quot;&gt;What is Data Democratization?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#what-is-data-engineering&quot; id=&quot;markdown-toc-what-is-data-engineering&quot;&gt;What is Data Engineering?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#role-of-data-engineer&quot; id=&quot;markdown-toc-role-of-data-engineer&quot;&gt;Role of Data Engineer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#data-engineering-vs-big-data-engineering&quot; id=&quot;markdown-toc-data-engineering-vs-big-data-engineering&quot;&gt;Data Engineering vs Big Data Engineering&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#data-flow&quot; id=&quot;markdown-toc-data-flow&quot;&gt;Data Flow&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;what-is-data-democratization&quot;&gt;What is Data Democratization?&lt;/h2&gt;
 
@@ -1069,7 +1200,7 @@ In the following blog post we will dive deeper into each step to uncover best pr
 
 &lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://medium.com/free-code-camp/the-rise-of-the-data-engineer-91be18f1e603&quot;&gt;https://medium.com/free-code-camp/the-rise-of-the-data-engineer-91be18f1e603&lt;/a&gt;&lt;/p&gt;
 
@@ -1080,6 +1211,25 @@ In the following blog post we will dive deeper into each step to uncover best pr
 &lt;p&gt;All the source code is available &lt;a href=&quot;https://github.com/firasesbai/fastapi-prometheus-monitoring&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#introduction&quot; id=&quot;markdown-toc-introduction&quot;&gt;Introduction&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#prometheus-architecture&quot; id=&quot;markdown-toc-prometheus-architecture&quot;&gt;Prometheus Architecture&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#collecting-and-storing-metrics&quot; id=&quot;markdown-toc-collecting-and-storing-metrics&quot;&gt;Collecting and Storing Metrics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#integrating-with-other-tools&quot; id=&quot;markdown-toc-integrating-with-other-tools&quot;&gt;Integrating with Other Tools&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#implementation&quot; id=&quot;markdown-toc-implementation&quot;&gt;Implementation&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#set-up&quot; id=&quot;markdown-toc-set-up&quot;&gt;Set up&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
@@ -1189,7 +1339,7 @@ In addition, we went through an example of how to deploy a python application in
 
 &lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://prometheus.io/docs/introduction/overview/&quot;&gt;https://prometheus.io/docs/introduction/overview/&lt;/a&gt;&lt;/p&gt;
 
@@ -1202,7 +1352,22 @@ In addition, we went through an example of how to deploy a python application in
 &lt;p&gt;&lt;img src=&quot;/assets/images/articles/14_the_lean_startup.png&quot; alt=&quot;image&quot; /&gt;
 &lt;br /&gt;&lt;em&gt;Figure 1: Lean Startup Validated Learnings to Achieve Growth&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;1. Summary&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-summary&quot; id=&quot;markdown-toc-1-summary&quot;&gt;1. Summary&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-favorite-quotes&quot; id=&quot;markdown-toc-2-favorite-quotes&quot;&gt;2. Favorite Quotes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-main-takeaways&quot; id=&quot;markdown-toc-3-main-takeaways&quot;&gt;3. Main Takeaways&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#part-1-vision&quot; id=&quot;markdown-toc-part-1-vision&quot;&gt;Part 1: Vision&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#part-2-steer&quot; id=&quot;markdown-toc-part-2-steer&quot;&gt;Part 2: Steer&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#part-3-accelerate&quot; id=&quot;markdown-toc-part-3-accelerate&quot;&gt;Part 3: Accelerate&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1-summary&quot;&gt;1. Summary&lt;/h2&gt;
 
 &lt;p&gt;The Lean startup takes its name from the lean manufacturing revolution that originated in Japan with the Toyota Production System. 
 Since not only building cars requires management but also building a startup, the lean startup movement came to existence. 
@@ -1211,18 +1376,18 @@ As a consequence, entrepreneurs take a ”just do it” attitude avoiding all fo
 
 &lt;p&gt;Eric Ries describes in this book the why and the how that led to the birth of this movement and the tools that will teach you how to drive a Startup.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;2. Favorite Quotes&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2-favorite-quotes&quot;&gt;2. Favorite Quotes&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;em&gt;Think Big, Start Small.&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;An Experiment is a Product.&lt;/em&gt;&lt;/li&gt;
   &lt;li&gt;&lt;em&gt;The lean startup is a framework not a blueprint of steps to follow. It is designed to be adapted to the specific conditions of each specific company.&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;3. Main Takeaways&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;3-main-takeaways&quot;&gt;3. Main Takeaways&lt;/h2&gt;
 
 &lt;p&gt;The Lean Startup has &lt;em&gt;12 Principles&lt;/em&gt; that are categorised into three main parts making up the lifecycle of a Startup.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Part 1: Vision&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;part-1-vision&quot;&gt;Part 1: Vision&lt;/h3&gt;
 
 &lt;p&gt;Explore the importance of learning as the measure of progress for a startup.&lt;/p&gt;
 
@@ -1274,7 +1439,7 @@ As a consequence, entrepreneurs take a ”just do it” attitude avoiding all fo
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Part 2: Steer&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;part-2-steer&quot;&gt;Part 2: Steer&lt;/h3&gt;
 
 &lt;p&gt;How vision leads to steering?&lt;/p&gt;
 
@@ -1474,7 +1639,7 @@ As a consequence, entrepreneurs take a ”just do it” attitude avoiding all fo
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Part 3: Accelerate&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;part-3-accelerate&quot;&gt;Part 3: Accelerate&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -1608,6 +1773,27 @@ As a consequence, entrepreneurs take a ”just do it” attitude avoiding all fo
 &lt;p&gt;In case you missed the first parts, you can find them here: &lt;a href=&quot;https://firasesbai.github.io/articles/2021/10/07/how-i-started-this-blog.html&quot;&gt;Part 1&lt;/a&gt;, &lt;a href=&quot;https://firasesbai.github.io/articles/2022/03/23/how-i-started-this-blog-part-2.html&quot;&gt;Part 2&lt;/a&gt; and &lt;a href=&quot;https://www.firasesbai.com/articles/2022/03/27/how-i-started-this-blog-part-3.html&quot;&gt;Part 3&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#search&quot; id=&quot;markdown-toc-search&quot;&gt;Search&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#set-up&quot; id=&quot;markdown-toc-set-up&quot;&gt;Set up&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#pagination&quot; id=&quot;markdown-toc-pagination&quot;&gt;Pagination&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#set-up-1&quot; id=&quot;markdown-toc-set-up-1&quot;&gt;Set up&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#managing-a-custom-domain-for-your-site&quot; id=&quot;markdown-toc-managing-a-custom-domain-for-your-site&quot;&gt;Managing a custom domain for your Site&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#set-up-2&quot; id=&quot;markdown-toc-set-up-2&quot;&gt;Set up&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;search&quot;&gt;Search&lt;/h2&gt;
 
@@ -1821,7 +2007,7 @@ I hope this will get you started on a good foot and if you have any suggestions 
 
 &lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://blog.webjeda.com/instant-jekyll-search/&quot;&gt;https://blog.webjeda.com/instant-jekyll-search/&lt;/a&gt;&lt;/p&gt;
 

@@ -63,7 +63,7 @@
   
   
   <body><header class="site-header" role="banner">
-   <div class="wrapper"><a class="site-title" href="/" style="font-size: 29px"> Firas Esbai </a><nav class="site-nav">
+   <div class="wrapper"><a class="site-title" href="/" style="font-size: 26px"> Home </a><nav class="site-nav">
          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
          <label for="nav-trigger">
             <span class="menu-icon">
@@ -81,13 +81,17 @@
             
             
             
-            <a class="page-link" href="/about/" style="font-size: 20px">About</a>
+            <a class="page-link" href="/about/" style="font-size: 20px">About Me</a>
             
             
             
             <a class="page-link" href="/archive/" style="font-size: 20px">Archive</a>
             
             
+            
+            
+            
+            <a class="page-link" href="/contact/" style="font-size: 20px">Contact Me</a>
             
             
             
@@ -129,17 +133,48 @@
       </nav></div>
 </header><main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <!-- Just some nice to have styles for the pager buttons -->
+        <link href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible:400&display=swap" rel="stylesheet">
+
 <style>
   ul.pager { text-align: center; list-style: none; }
   ul.pager li {display: inline;border: 1px solid black; padding: 10px; margin: 5px;}
+  .header {
+   text-align: center; 
+    margin: 20px 0; 
+   }
+   .welcome-message {
+    text-align: center; 
+    margin: 20px 0; 
+   }
+   .welcome-message h1 {
+    font-family: 'Atkinson Hyperlegible', sans-serif; 
+    font-weight: 400; 
+    font-style: italic;
+    letter-spacing: 2px;
+   }
+   .search {
+    text-align: center;
+   }
+   @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .search {
+        text-align: center;
+      }
+   }
 </style>
 
 <div class="home">
 
-  <div align="right"><!-- Html Elements for Search -->
+   <div class="header">
+      <div class="welcome-message">
+          <h1>Welcome 👋 to Firas Esbai's Corner</h1>
+      </div>
+      <div class="search"><!-- Html Elements for Search -->
 <div id="search-container">
-<input type="text" id="search-input" placeholder="search..." size=40>
+<input type="text" id="search-input" placeholder="search..." size=50>
 <img src="/assets/images/search-icon.png" width="28" height="28" alt="search-icon"/>
 <ul id="results-container"></ul>
 </div>
@@ -156,6 +191,10 @@ SimpleJekyllSearch({
   searchResultTemplate: '<div><a href="{url}"><h4>{title}</h4></a></div>'
   })
 </script></div>
+  </div>
+
+  <hr>
+  <br>
 
   
 
@@ -181,7 +220,7 @@ SimpleJekyllSearch({
         </h3>
         <span class="post-meta">Sep 24, 2023 - 
         
-        6 min read
+        7 min read
         </span><p><em>In this article we will explore two popular data processing architectures: Lambda and Kappa. We will take a look at their components, key differences and how to choose between them.</em></p>
 </li>
      
