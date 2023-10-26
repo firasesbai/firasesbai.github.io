@@ -1,15 +1,53 @@
 ---
 layout: default
 ---
-<!-- Just some nice to have styles for the pager buttons -->
+
+<link href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible:400&display=swap" rel="stylesheet">
+
 <style>
   ul.pager { text-align: center; list-style: none; }
   ul.pager li {display: inline;border: 1px solid black; padding: 10px; margin: 5px;}
+  .header {
+   text-align: center; 
+    margin: 20px 0; 
+   }
+   .welcome-message {
+    text-align: center; 
+    margin: 20px 0; 
+   }
+   .welcome-message h1 {
+    font-family: 'Atkinson Hyperlegible', sans-serif; 
+    font-weight: 400; 
+    font-style: italic;
+    letter-spacing: 2px;
+   }
+   .search {
+    text-align: center;
+   }
+   @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .search {
+        text-align: center;
+      }
+   }
 </style>
 
 <div class="home">
 
-  <div align="right"> {%- include search.html -%} </div>
+   <div class="header">
+      <div class="welcome-message">
+          <h1>Welcome 👋 to Firas Esbai's Corner</h1>
+      </div>
+      <div class="search">
+          {%- include search.html -%}
+      </div>
+  </div>
+
+  <hr>
+  <br>
 
   {{ content }}
 
