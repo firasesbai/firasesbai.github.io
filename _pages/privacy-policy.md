@@ -48,15 +48,6 @@ Google Analytics also offers a deactivation add-on for most current browsers tha
 
 You can find additional information on how to install the browser add-on referenced above at the following [link](https://tools.google.com/dlpage/gaoptout?hl=en). 
 
-#### 6.2. Google AdSense
-
-This website uses Google AdSense, a service to display ads provided by Google, Inc. 
-
-Google AdSense uses cookies that enables it and its partners to serve ads based on your prior visits to this Site and/or other websites on the internet. These cookies may collect information such as your IP address, browser type, and device type. We do not have access to or control over these cookies. By accessing this website, you consent to the use of data about you by Google in the manner and for the purposes set out above.
-
-You may opt out of Google's personalized advertising by visiting [Ads Settings](https://myadcenter.google.com/). You can also opt out of all personalized ads from other companies and third-party vendors through the [Network Advertising Initiative's Consumer Opt-Out tool](https://optout.networkadvertising.org/). 
-Note that if you opt out, you may still see ads on our site, but they won't be tailored to your interests.
-
 ### 7. External Links
 
 This Website contains hyperlinks to web sites that are not operated by us. These hyperlinks are provided for your reference and convenience only and do not imply any endorsement of the activities of these third-party web sites or any association with their operators. We do not control these websites and are not responsible for their data or privacy practices. We urge you to review any privacy policy posted on any site you visit before using the site or providing any Personal Data about yourself.
