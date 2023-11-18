@@ -380,57 +380,29 @@ Some useful hints and tips on how to further improve your site are also given to
         
 </div>
 
-  
-    
 
-<div class="clearfix"></div>
-<br>
+  
 <hr>
 <br>
-<div id="comments">
-   <div class="post-header bg-">
-      <h2 class="h1 post-title">Comments</h2>
-   </div>
-   <article class="post-content">
-      <p>Want to leave a comment? Visit <a href="https://github.com/firasesbai/firasesbai.github.io/issues/8"> this post's issue page on GitHub</a>.</p>
-   </article>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript">
-   function loadComments(data) {
-     for (var i=0; i<data.length; i++) {
-       var cuser = data[i].user.login;
-       var cuserlink = data[i].user.html_url;
-       var clink = data[i].html_url;
-       var cbody = data[i].body_html;
-       var cavatarlink = data[i].user.avatar_url;      
-       var cdate = new Date(data[i].created_at);
-       $("#comments").append(
-          "<div class='comment'>" + 
-             "<div class='commentheader'>" + 
-               "<div class='commentgravatar'>" + 
-                 '<img src="' + cavatarlink + '" alt="" width="30" height="30">' 
-   		+ ' ' 
-   		+ "<a class='commentuser' href=\"" + cuserlink + "\">" + cuser + "</a>" 
-   		+ ' ' 
-   		+ "<a class='commentdate' href=\"" + clink + "\">" + cdate.toLocaleDateString("en") + "</a>" +
-               "</div>" + 
-             "</div>" + 
-             "<div class='commentbody' ; style='margin-left:35px'>" + 
-               cbody + 
-             "</div>" + 
-           "</div>"
-       );
-     }
-   }
-   $.ajax("https://api.github.com/repos/firasesbai/firasesbai.github.io/issues/8/comments", {
-     headers: {Accept: "application/vnd.github.v3.html+json"},
-     dataType: "json",
-     success: function(msg){
-       loadComments(msg);
-    }
-   });
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://firasesbai.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
 </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 
   <a class="u-url" href="/articles/2022/03/23/how-i-started-this-blog-part-2.html" hidden></a>
