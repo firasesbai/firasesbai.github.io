@@ -2,11 +2,11 @@
 layout: post
 title:  ""
 date:   
-issue_id: 
 category: articles
 tags: 
 author: Firas Esbai
 description: ""
+comments:
 ---
 
 *excerpt*

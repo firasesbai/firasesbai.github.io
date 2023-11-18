@@ -6,6 +6,7 @@ category: notes
 tags: ["General"]
 author: Firas Esbai
 description: "Summary and important notes and takeaways from the course learning how to learn by Barbara Oakley"
+comments: true
 ---
 
 *Notes from the online course learning how to learn: powerful mental tools to help you master tough subjects by Barbara Oakley.*

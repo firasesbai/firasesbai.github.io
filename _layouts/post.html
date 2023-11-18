@@ -36,8 +36,8 @@ layout: default
 
 {% include related-posts.html %}
 
-  {% if page.issue_id %}
-    {% include comments.html issue_id=page.issue_id %}
+{% if page.comments %}
+  {% include disqus_comments.html %}
 {% endif %}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>

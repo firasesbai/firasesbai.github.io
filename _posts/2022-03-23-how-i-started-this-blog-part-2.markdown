@@ -2,11 +2,11 @@
 layout: post
 title:  "How I Started This Blog Part 2"
 date:   2022-03-23
-issue_id: 8
 category: articles
 tags: ["Jekyll"]
 author: Firas Esbai
 description: "In this article we will integrate some jekyll plugins to add a sitemap and improve your SEO ranking and lighthouse score of your blog"
+comments: true
 ---
 
 *In this article we will see how to make your Jekyll blog more discoverable.* 

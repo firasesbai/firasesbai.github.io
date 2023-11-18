@@ -2,11 +2,11 @@
 layout: post
 title:  "Data engineering 201: In-depth Guide - Part 1"
 date:   2023-03-11
-issue_id: 14
 category: articles
 tags: ["Data Engineering", "Data Architecture"]
 author: Firas Esbai
 description: "In this article we will discuss different data sources and big data file formats as well as data governance, its benefits and differences from data management"
+comments: true
 ---
 
 *In this two parts article we will deep dive into each of the general steps of the data flow.* 

@@ -2,11 +2,11 @@
 layout: post
 title:  "Understanding Modern Data Stack"
 date:   2023-09-10  
-issue_id: 17
 category: articles
 tags: ["Data Engineering", "Data Architecture", "Cloud Computing"]
 author: Firas Esbai
 description: "uncovering modern data stack, its components with examples and their objectives"
+comments: true
 ---
 
 *In this article we will explore the modern data stack, a brief history that led to its adoption and a brief walkthrough of its components and objectives.*

@@ -6,6 +6,7 @@ category: articles
 tags: ["Writing"]
 author: Firas Esbai
 description: "Discover the transformative power of starting a blog for the right reasons. Explore my Five personal reasons why i started blogging to help you join the journey"
+comments: true
 ---
 
 *5 Reasons Why I Started This Blog.*
@@ -46,6 +47,6 @@ That being said, here are mine through which i hope to inspire and motivate you 
 
    Having an online presence and contributing to the community is appreciated in many areas and could be the reason behind an impactful future opportunity. 
 
-I hope you enjoy the content on my blog and to find it helpful no matter how small it might be.
+I hope you enjoy the content on my blog and to find it helpful no matter how small it might be. I'm eager to hear about your stories and motivations. Feel free to drop your reasons in the comments below. 
 
 *One final thought to mention is that my posts are my own and do not reflect the opinions of my current, past or future employers.* 

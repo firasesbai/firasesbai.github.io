@@ -6,6 +6,7 @@ category: notes
 tags: ["General"]
 author: Firas Esbai
 decription: "List of recommended readings and books in different areas of life and subjects"
+comments: true
 ---
 
 *This is a curated list of book recommendations organised in different areas and subjects that might be of interest to you.*
@@ -47,3 +48,8 @@ This is a *Work In Progress* which means you might want to keep an eye on it as 
 # Artificial Intelligence 
 
 - [Life 3.0: Being Human in the Age of Artificial Intelligence](https://www.goodreads.com/en/book/show/34272565) - *by Max Tegmark* 
+
+
+*I hope you find these recommendations as captivating as I did!* 
+
+*I'd love to hear your suggestions and your favorite reads in the comments below on.* 

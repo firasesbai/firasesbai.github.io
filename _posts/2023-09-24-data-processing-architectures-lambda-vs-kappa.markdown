@@ -2,11 +2,11 @@
 layout: post
 title:  "Data Processing Architectures: Lambda vs Kappa"
 date:   2023-09-24
-issue_id: 18
 category: articles
 tags: ["Data Engineering", "Data Architecture"]
 author: Firas Esbai
 description: "uncovering lambda and kappa architectures and their tradeoffs and use cases"
+comments: true
 ---
 
 *In this article we will explore two popular data processing architectures: Lambda and Kappa. We will take a look at their components, key differences and how to choose between them.*

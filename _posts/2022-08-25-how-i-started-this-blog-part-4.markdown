@@ -2,11 +2,11 @@
 layout: post
 title:  "How I Started This Blog Part 4"
 date:   2022-08-25
-issue_id: 11
 category: articles
 tags: ["Jekyll"]
 author: Firas Esbai
 description: "In this article we will integrate a search bar, add pages and customize our blog with a new domain"
+comments: true
 ---
 
 *In this article we will wrap up the How I Started This Blog series by adding some features that will make your site more discoverable and easier to navigate.* 
