@@ -21,7 +21,9 @@ This website uses a contact form which can be used to get in contact with us ele
 
 ### 3. Comments
 
-This website offers you the possibility to engage in writing comments that are visible to other users. For this we are using GitHub Issues API to store and retrieve the content of your comments. If you have a GitHub account, we may display your profile photo, profile username and the time when you submitted your comment.  
+This website offers you the possibility to engage in writing comments that are visible to other users. For this we are using [Disqus](https://disqus.com/) to store and retrieve the content of your comments. Disqus is a third-party commenting platform that facilitates the storage and retrieval of user-generated content. When you participate in discussions on this site, Disqus may collect and display information such as your profile photo, username, and the timestamp of your comments.
+
+For more information we recommend reviewing [Disqus’ Privacy Policy](https://disqus.com/privacy-policy/). 
 
 ### 4. Newsletter
 
