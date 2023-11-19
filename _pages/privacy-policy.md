@@ -48,7 +48,15 @@ Google stores the information collected by the cookie on servers in the United S
 
 Google Analytics also offers a deactivation add-on for most current browsers that provides you with more control over what data Google can collect on websites you access. The add-on tells the JavaScript (ga.js) used by Google Analytics not to transmit any information about website visits to Google Analytics. 
 
-You can find additional information on how to install the browser add-on referenced above at the following [link](https://tools.google.com/dlpage/gaoptout?hl=en). 
+You can find additional information on how to install the browser add-on referenced above at the following [link](https://tools.google.com/dlpage/gaoptout?hl=en).
+
+#### 6.2 ConvertKit 
+
+This website uses [ConvertKit](https://convertkit.com/), a service that assists us in managing, organizing and delivering emails to subscribers. 
+
+We use ConvertKit to manage our subscription services and collect information from users who choose to subscribe to our blog updates. When you subscribe to our blog updates, ConvertKit collects and stores your email address for the purpose of sending you notifications about new blog posts and related content.You can unsubscribe from our blog updates at any time by using the unsubscribe link provided in the emails or by contacting us directly. 
+
+For more information we recommend reviewing [ConvertKit’s Privacy Policy](https://convertkit.com/privacy).   
 
 ### 7. External Links
 
