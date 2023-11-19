@@ -1,5 +1,344 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2023-11-19T14:59:13+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Dive into Software, Big Data, and AI with Practical Insights | Explore hands-on ideas at the intersection of technology on Firas Esbai's Blog.
-</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Learning How to Learn</title><link href="https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn.html" rel="alternate" type="text/html" title="Learning How to Learn" /><published>2023-10-21T00:00:00+00:00</published><updated>2023-10-21T00:00:00+00:00</updated><id>https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn</id><content type="html" xml:base="https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn.html">&lt;p&gt;&lt;em&gt;Notes from the online course learning how to learn: powerful mental tools to help you master tough subjects by Barbara Oakley.&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2023-11-19T20:26:18+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Dive into Software, Big Data, and AI with Practical Insights | Explore hands-on ideas at the intersection of technology on Firas Esbai's Blog.
+</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Preparation Guide for Google Cloud Professional Data Engineer Certification</title><link href="https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification.html" rel="alternate" type="text/html" title="Preparation Guide for Google Cloud Professional Data Engineer Certification" /><published>2023-11-19T00:00:00+00:00</published><updated>2023-11-19T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification.html">&lt;p&gt;&lt;em&gt;This article contains a collection of notes, mind maps and resources to support you while preparing for the google cloud professional data engineer certification.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Disclaimer&lt;/em&gt;&lt;/strong&gt;: The new Professional Data Engineer exam will be live starting November 13. The new version reflects updates to Google Cloud’s data storing, data sharing, and data governance and has less emphasis on operationalizing machine learning models. 
+That being said, I believe most of the content is still relevant and can serve as a guide to assist you as you begin your preparation.&lt;/p&gt;
+
+&lt;p&gt;So brace yourselves, this is gonna be a rather long post filled with too many images extracted from different parts of the mind maps I used for my preparation in order to make them easy to read and follow.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#google-cloud&quot; id=&quot;markdown-toc-google-cloud&quot;&gt;Google Cloud&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#infrastructure&quot; id=&quot;markdown-toc-infrastructure&quot;&gt;Infrastructure&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#vpc-networks&quot; id=&quot;markdown-toc-vpc-networks&quot;&gt;VPC Networks&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#data-transfer-services&quot; id=&quot;markdown-toc-data-transfer-services&quot;&gt;Data Transfer Services&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#resource-manager&quot; id=&quot;markdown-toc-resource-manager&quot;&gt;Resource Manager&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#security&quot; id=&quot;markdown-toc-security&quot;&gt;Security&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#compute&quot; id=&quot;markdown-toc-compute&quot;&gt;Compute&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#storage&quot; id=&quot;markdown-toc-storage&quot;&gt;Storage&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#ingestion-and-processing&quot; id=&quot;markdown-toc-ingestion-and-processing&quot;&gt;Ingestion and Processing&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#data-pipelines-management&quot; id=&quot;markdown-toc-data-pipelines-management&quot;&gt;Data Pipelines Management&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#data-governance&quot; id=&quot;markdown-toc-data-governance&quot;&gt;Data Governance&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#analytics&quot; id=&quot;markdown-toc-analytics&quot;&gt;Analytics&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#machine-learning&quot; id=&quot;markdown-toc-machine-learning&quot;&gt;Machine Learning&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#ingestion-and-pocessing&quot; id=&quot;markdown-toc-ingestion-and-pocessing&quot;&gt;Ingestion and Pocessing&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#pubsub&quot; id=&quot;markdown-toc-pubsub&quot;&gt;Pub/Sub&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#dataproc&quot; id=&quot;markdown-toc-dataproc&quot;&gt;Dataproc&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#dataflow&quot; id=&quot;markdown-toc-dataflow&quot;&gt;Dataflow&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#storage-1&quot; id=&quot;markdown-toc-storage-1&quot;&gt;Storage&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#cloud-storage&quot; id=&quot;markdown-toc-cloud-storage&quot;&gt;Cloud Storage&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#cloud-sql&quot; id=&quot;markdown-toc-cloud-sql&quot;&gt;Cloud SQL&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#query-insights&quot; id=&quot;markdown-toc-query-insights&quot;&gt;Query Insights&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#cloud-spanner&quot; id=&quot;markdown-toc-cloud-spanner&quot;&gt;Cloud Spanner&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#firestore&quot; id=&quot;markdown-toc-firestore&quot;&gt;Firestore&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#datastore&quot; id=&quot;markdown-toc-datastore&quot;&gt;Datastore&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#memorystore&quot; id=&quot;markdown-toc-memorystore&quot;&gt;Memorystore&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#bigtable&quot; id=&quot;markdown-toc-bigtable&quot;&gt;Bigtable&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#bigquery&quot; id=&quot;markdown-toc-bigquery&quot;&gt;BigQuery&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;google-cloud&quot;&gt;Google Cloud&lt;/h2&gt;
+
+&lt;p&gt;Before we dive into the characteristics of Google Cloud services that will enable professional data engineers to design, build and operationalize data processing systems, let’s start with a 10,000-foot view on different topics that may be included in the exam.&lt;/p&gt;
+
+&lt;h3 id=&quot;infrastructure&quot;&gt;Infrastructure&lt;/h3&gt;
+
+&lt;p&gt;Google Cloud services are available in different locations divided into &lt;strong&gt;Regions&lt;/strong&gt;.
+Regions contain multiple &lt;strong&gt;Zones&lt;/strong&gt; where the resources are deployed and are isolated from one another so that failures in one zone do not affect other zones in a region. 
+Most regions have at least three zones and can have more. All regions have at least two zones.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_regions.png&quot; alt=&quot;Google Cloud Regions&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 1: Google Cloud Regions, Source: &lt;a href=&quot;https://cloud.google.com/about/locations#lightbox-regions-map&quot;&gt;https://cloud.google.com/about/locations#lightbox-regions-map&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Google data centers are connected with Google’s own high-speed network. Google is the only cloud provider that owns all the fiber connecting its data center together. A huge amount of the world’s internet traffic goes through Google’s network.&lt;/p&gt;
+
+&lt;p&gt;In addition to the data centers, there are points of presence all over the world. They allow access to Google’s network where all messages are encrypted, secure and very fast.&lt;/p&gt;
+
+&lt;p&gt;In addition to the POPs, Google runs a global caching system or CDN that consists of hundreds of more nodes. You can easily take advantage of this CDN to cache your content, thus increasing your application performance and decreasing your networking cost.&lt;/p&gt;
+
+&lt;h3 id=&quot;vpc-networks&quot;&gt;VPC Networks&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_vpc_networks.png&quot; alt=&quot;Google Cloud Platform VPC Networks&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 2: Google Cloud Platform VPC Networks&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;data-transfer-services&quot;&gt;Data Transfer Services&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_data_transfer_services.png&quot; alt=&quot;Google Cloud Platform Data Transfer Services&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 3: Google Cloud Platform Data Transfer Services&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;resource-manager&quot;&gt;Resource Manager&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_resource_manager.png&quot; alt=&quot;Google Cloud Platform Resource Manager&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 4: Google Cloud Platform Resource Manager&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;security&quot;&gt;Security&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_security.png&quot; alt=&quot;Security in Google Cloud Platform&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 5: Security in Google Cloud Platform&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;compute&quot;&gt;Compute&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_compute.png&quot; alt=&quot;Google Cloud Platform Compute&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 6: Google Cloud Platform Compute&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;storage&quot;&gt;Storage&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_storage.png&quot; alt=&quot;Google Cloud Platform Storage&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 7: Google Cloud Platform Storage&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ingestion-and-processing&quot;&gt;Ingestion and Processing&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_ingestion_and_processing.png&quot; alt=&quot;Ingestion and Processing in Google Cloud Platform&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 8: Ingestion and Processing in Google Cloud Platform&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;data-pipelines-management&quot;&gt;Data Pipelines Management&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_data_pipelines_management.png&quot; alt=&quot;Data Pipelines Management in Google Cloud Platform Data&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 9: Data Pipelines Management in Google Cloud Platform Data&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;data-governance&quot;&gt;Data Governance&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_data_governance.png&quot; alt=&quot;Data Governance in Google Cloud Platform&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 10: Data Governance in Google Cloud Platform&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;analytics&quot;&gt;Analytics&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_analytics.png&quot; alt=&quot;Analytics in Google Cloud Platform&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 11: Analytics in Google Cloud Platform&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;machine-learning&quot;&gt;Machine Learning&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_machine_learning.png&quot; alt=&quot;Machine Learning in Google Cloud Platform&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 12: Machine Learning in Google Cloud Platform&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;ingestion-and-pocessing&quot;&gt;Ingestion and Pocessing&lt;/h2&gt;
+
+&lt;p&gt;As a professional data engineer, designing data processing systems requires building and operationalizing data pipelines by choosing the appropriate services to integrate new data sources and processing the data in batch or streaming fashion. In this section, we deep dive into services that will allow you to ingest data in real time and build data processing systems whether you are migrating on premises workloads or starting from scratch.&lt;/p&gt;
+
+&lt;h3 id=&quot;pubsub&quot;&gt;Pub/Sub&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_pub_sub.png&quot; alt=&quot;Pub/Sub&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 13: Pub/Sub&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;dataproc&quot;&gt;Dataproc&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_dataproc.png&quot; alt=&quot;Dataproc 1/2&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 14: Dataproc 1/2&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_dataproc_2.png&quot; alt=&quot;Dataproc 2/2&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 15: Dataproc 2/2&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;dataflow&quot;&gt;Dataflow&lt;/h3&gt;
+
+&lt;p&gt;It allows you to execute your Apache Beans pipelines on Google Cloud.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;A managed service that provides the resources necessary to create pipelines
+    &lt;ul&gt;
+      &lt;li&gt;Defines &lt;em&gt;HOW&lt;/em&gt; to run the pipeline:
+        &lt;ul&gt;
+          &lt;li&gt;Optimizes the graph by fusing transforms for example for best execution path&lt;/li&gt;
+          &lt;li&gt;Breaks jobs into units of work&lt;/li&gt;
+          &lt;li&gt;Schedules them to various workers&lt;/li&gt;
+          &lt;li&gt;Optimization is always ongoing
+            &lt;ul&gt;
+              &lt;li&gt;Units of work are continually rebalanced mid job which provides fault tolerance&lt;/li&gt;
+              &lt;li&gt;autoscaling mid job&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Resources –both compute and storage– are deployed on demand and on a per job basis&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The Apache Beam SDK, which provides the programming environment to make the creation of streaming and batch pipelines easier
+    &lt;ul&gt;
+      &lt;li&gt;Defines &lt;em&gt;WHAT&lt;/em&gt; has to be done&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_dataflow.png&quot; alt=&quot;Dataflow 1/3&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 16: Dataflow 1/3&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_dataflow_2.png&quot; alt=&quot;Dataflow 2/3&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 17: Dataflow 2/3&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_dataflow_3.png&quot; alt=&quot;Dataflow 3/3&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 18: Dataflow 3/3&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;storage-1&quot;&gt;Storage&lt;/h2&gt;
+
+&lt;p&gt;One of a data engineer’s most important skills is choosing the right storage technology, which involves knowing how to use managed services and having a solid grasp of storage performance and pricing. To further optimize your data processing and cut expenses, consider data modeling, schema design, and data life cycle management. In this section we will delve into the many storage options provided by Google Cloud.&lt;/p&gt;
+
+&lt;h3 id=&quot;cloud-storage&quot;&gt;Cloud Storage&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_cloud_storage.png&quot; alt=&quot;Cloud Storage 1/2&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 19: Cloud Storage 1/2&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_cloud_storage_2.png&quot; alt=&quot;Cloud Storage 2/2&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 20: Cloud Storage 2/2&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Google Cloud provides 3 ways to manage the KEK encryption key:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Google Managed Encryption Keys - GMEK: automatic encryption using Cloud KMS (Key Management Service)&lt;/li&gt;
+  &lt;li&gt;Customer Managed Encryption Keys - CMEK: you control the creation and existance of the KEK key in KMS&lt;/li&gt;
+  &lt;li&gt;Customer Supplied Encryption Keys - CSEK: you provide the KEK key&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cloud-sql&quot;&gt;Cloud SQL&lt;/h3&gt;
+
+&lt;p&gt;Cloud SQL is a fully managed relational database service for:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;MySQL&lt;/li&gt;
+  &lt;li&gt;PostgreSQL&lt;/li&gt;
+  &lt;li&gt;Microsoft SQL&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_cloud_sql.png&quot; alt=&quot;Cloud SQL&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 21: Cloud SQL&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;query-insights&quot;&gt;Query Insights&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_insights.png&quot; alt=&quot;Query Insights&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 22: Query Insights&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;cloud-spanner&quot;&gt;Cloud Spanner&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_cloud_spanner.png&quot; alt=&quot;Cloud Spanner&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 23: Cloud Spanner&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;firestore&quot;&gt;Firestore&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_firestore.png&quot; alt=&quot;Firestore&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 24: Firestore&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;datastore&quot;&gt;Datastore&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_datastore.png&quot; alt=&quot;Datastore&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 25: Datastore&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;memorystore&quot;&gt;Memorystore&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_memorystore.png&quot; alt=&quot;Memorystore&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 26: Memorystore&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;bigtable&quot;&gt;Bigtable&lt;/h3&gt;
+
+&lt;p&gt;Bigtable is a fully managed NoSQL database service. It is suitable for:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Storing &amp;gt; 1TB&lt;/li&gt;
+  &lt;li&gt;High Throughput&lt;/li&gt;
+  &lt;li&gt;Low latency random data access&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_bigtable.png&quot; alt=&quot;Bigtable&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 27: Bigtable&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;bigquery&quot;&gt;BigQuery&lt;/h2&gt;
+
+&lt;p&gt;The last section is solely dedicated to BigQuery. BigQuery is a serverless and cost-effective data warehouse. It is deeply integrated with the GCP’s analytical and data processing offering, allowing customers to build an enterprise ready cloud native data warehouse. BigQuery is part of Google Cloud’s comprehensive data analytics platform that covers the analytics value chain from Ingest, process and store to advanced analytics and collaboration.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_bigquery.png&quot; alt=&quot;BigQuery 1/12&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 28: BigQuery 1/12&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_2.png&quot; alt=&quot;BigQuery 2/12&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 29: BigQuery 2/12&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_3.png&quot; alt=&quot;BigQuery 3/12&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 30: BigQuery 3/12&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_4.png&quot; alt=&quot;BigQuery 4/12&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 31: BigQuery 4/12&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_5.png&quot; alt=&quot;BigQuery 5/12&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 32: BigQuery 5/12&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_6.png&quot; alt=&quot;BigQuery 6/12&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 33: BigQuery 6/12&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_7.png&quot; alt=&quot;BigQuery 7/12&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 34: BigQuery 7/12&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_8.png&quot; alt=&quot;BigQuery 8/12&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 35: BigQuery 8/12&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_9.png&quot; alt=&quot;BigQuery 9/12&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 36: BigQuery 9/12&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_10.png&quot; alt=&quot;BigQuery 10/12&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 37: BigQuery 10/12&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_11.png&quot; alt=&quot;BigQuery 11/12&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 38: BigQuery 11/12&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_12.png&quot; alt=&quot;BigQuery 12/12&quot; /&gt;&lt;br /&gt;
+&lt;em&gt;Figure 39: BigQuery 12/12&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;Developer Cheat Sheet:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googlecloudcheatsheet.withgoogle.com/&quot;&gt;https://googlecloudcheatsheet.withgoogle.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The Cloud Girl:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/priyankavergadia/GCPSketchnote&quot;&gt;https://github.com/priyankavergadia/GCPSketchnote&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Google Cloud Product list:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.google.com/terms/services&quot;&gt;https://cloud.google.com/terms/services&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;21 products explained under 2 minutes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.google.com/blog/topics/inside-google-cloud/21-google-cloud-tools-each-explained-under-2-minutes&quot;&gt;https://cloud.google.com/blog/topics/inside-google-cloud/21-google-cloud-tools-each-explained-under-2-minutes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;GCP Data Engineer Study Guide:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/xg1990/GCP-Data-Engineer-Study-Guide/blob/master/GCP%20Data%20Engineer.pdf&quot;&gt;https://github.com/xg1990/GCP-Data-Engineer-Study-Guide/blob/master/GCP%20Data%20Engineer.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Data Engineering Cheat Sheet on GCP:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ml874/Data-Engineering-on-GCP-Cheatsheet/blob/master/data_engineering_on_GCP.pdf&quot;&gt;https://github.com/ml874/Data-Engineering-on-GCP-Cheatsheet/blob/master/data_engineering_on_GCP.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Schema design best practices for Bigtable:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.google.com/bigtable/docs/schema-design&quot;&gt;https://cloud.google.com/bigtable/docs/schema-design&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Optimize query computation for BigQuery:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.google.com/bigquery/docs/best-practices-performance-compute&quot;&gt;https://cloud.google.com/bigquery/docs/best-practices-performance-compute&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
+
+&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Cloud Computing" /><summary type="html">This article contains a collection of notes, mind maps and resources to support you while preparing for the google cloud professional data engineer certification.</summary></entry><entry><title type="html">Learning How to Learn</title><link href="https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn.html" rel="alternate" type="text/html" title="Learning How to Learn" /><published>2023-10-21T00:00:00+00:00</published><updated>2023-10-21T00:00:00+00:00</updated><id>https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn</id><content type="html" xml:base="https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn.html">&lt;p&gt;&lt;em&gt;Notes from the online course learning how to learn: powerful mental tools to help you master tough subjects by Barbara Oakley.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/articles/17_learning_how_to_learn.png&quot; alt=&quot;image&quot; /&gt;
 &lt;br /&gt;&lt;em&gt;Figure 1: Learning How to Learn Mindmap&lt;/em&gt;&lt;/p&gt;
@@ -1768,251 +2107,4 @@ As a consequence, entrepreneurs take a ”just do it” attitude avoiding all fo
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;em&gt;Thanks for reading, I hope you enjoyed it!&lt;/em&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="notes" /><category term="Startups" /><summary type="html">Notes from the Lean Startup Book By Eric Ries</summary></entry><entry><title type="html">How I Started This Blog Part 4</title><link href="https://www.firasesbai.com/articles/2022/08/25/how-i-started-this-blog-part-4.html" rel="alternate" type="text/html" title="How I Started This Blog Part 4" /><published>2022-08-25T00:00:00+00:00</published><updated>2022-08-25T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2022/08/25/how-i-started-this-blog-part-4</id><content type="html" xml:base="https://www.firasesbai.com/articles/2022/08/25/how-i-started-this-blog-part-4.html">&lt;p&gt;&lt;em&gt;In this article we will wrap up the How I Started This Blog series by adding some features that will make your site more discoverable and easier to navigate.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;In case you missed the first parts, you can find them here: &lt;a href=&quot;https://firasesbai.github.io/articles/2021/10/07/how-i-started-this-blog.html&quot;&gt;Part 1&lt;/a&gt;, &lt;a href=&quot;https://firasesbai.github.io/articles/2022/03/23/how-i-started-this-blog-part-2.html&quot;&gt;Part 2&lt;/a&gt; and &lt;a href=&quot;https://www.firasesbai.com/articles/2022/03/27/how-i-started-this-blog-part-3.html&quot;&gt;Part 3&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1&gt; Contents &lt;/h1&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#search&quot; id=&quot;markdown-toc-search&quot;&gt;Search&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#set-up&quot; id=&quot;markdown-toc-set-up&quot;&gt;Set up&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#pagination&quot; id=&quot;markdown-toc-pagination&quot;&gt;Pagination&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#set-up-1&quot; id=&quot;markdown-toc-set-up-1&quot;&gt;Set up&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#managing-a-custom-domain-for-your-site&quot; id=&quot;markdown-toc-managing-a-custom-domain-for-your-site&quot;&gt;Managing a custom domain for your Site&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#set-up-2&quot; id=&quot;markdown-toc-set-up-2&quot;&gt;Set up&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;search&quot;&gt;Search&lt;/h2&gt;
-
-&lt;p&gt;As the number of articles increases over time in your blog, it will be difficult to navigate and find a certain article that you are looking for. In this case, having search functionality becomes necessary.&lt;/p&gt;
-
-&lt;p&gt;There are multiple ways to achieve this such as using Google Custom Search Engine or other paid services. Easiest solution though would be to use the &lt;a href=&quot;https://github.com/christian-fei/Simple-Jekyll-Search&quot;&gt;Simple Jekyll Instant Search&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;set-up&quot;&gt;Set up&lt;/h3&gt;
-
-&lt;p&gt;1- Create a &lt;strong&gt;JSON&lt;/strong&gt; file called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;search.json&lt;/code&gt; in the root folder of your blog&lt;/p&gt;
-
-&lt;p&gt;2- Add the following code snippet in the newly created file:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;      
-   &lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;
-   &lt;span class=&quot;ss&quot;&gt;layout: &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;none&lt;/span&gt;
-   &lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;
-
-   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;% for &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;posts&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%}
-    {
-      &quot;title&quot;       : &quot;{{ post.title | escape }&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
-      &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;    : &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;category&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
-      &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;        : &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;tags&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;join: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;', '&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
-      &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;         : &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;baseurl&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
-      &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;        : &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,
-      &quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; : &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;description&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strip_html&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strip_newlines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;escape&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;
-    } 
-   {% unless forloop.last %},{% endunless %}
-   {% endfor %}
-   
-   &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This will go over all your posts and extract for each one necessary information such as title, category, etc… that will be used to search through your articles.&lt;/p&gt;
-
-&lt;p&gt;3- Create a new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;search-script.js&lt;/code&gt; under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/js/&lt;/code&gt; folder in your root directory. You can find an example of it &lt;a href=&quot;https://github.com/firasesbai/firasesbai.github.io/blob/master/js/search-script.js&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;4- Create a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;search.html&lt;/code&gt; page under the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_includes&lt;/code&gt; folder.&lt;/p&gt;
-
-&lt;p&gt;5- Add the following code snippet to it:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;      
-   
-   &lt;span class=&quot;o&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Html&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Elements&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Search&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&amp;gt;&lt;/span&gt;
-   &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;search-container&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-   &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;search-input&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;search...&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-   &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;results-container&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/ul&amp;gt;
-   &amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-
-   &lt;span class=&quot;o&quot;&gt;&amp;lt;!--&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Script&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pointing&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;js&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&amp;gt;&lt;/span&gt;
-   &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/js/search-script.js&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&amp;gt;
-
-   &amp;lt;!-- Configuration --&amp;gt;
-   &amp;lt;script&amp;gt;
-   SimpleJekyllSearch({
-   searchInput: document.getElementById('search-input'),
-   resultsContainer: document.getElementById('results-container'),
-   json: '/se&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;',
-   searchResultTemplate: '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;href&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;{url}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/h4&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/div&amp;gt;'
-   })
-   &amp;lt;/s&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cript&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-
-   
-   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;6- Include the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;search.html&lt;/code&gt; page into your home page found under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts/home.html&lt;/code&gt; by adding the following line:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;      
-   &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;align&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;right&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;%- include search.html -%} &amp;lt;/div&amp;gt;   
-   
-   &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;You should now be able to see a search bar, as shown below in the screenshot, and be able to type in keywords to find an article.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/articles/8_search_bar.png&quot; alt=&quot;image&quot; /&gt;
-&lt;br /&gt; &lt;em&gt;Figure 1: Search Bar&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;pagination&quot;&gt;Pagination&lt;/h2&gt;
-
-&lt;p&gt;For the same reasons mentioned above, having a pagination system in place will make navigating your rich blog easier rather than making your readers scroll down endlessly.&lt;/p&gt;
-
-&lt;h3 id=&quot;set-up-1&quot;&gt;Set up&lt;/h3&gt;
-
-&lt;p&gt;1- Add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem &quot;jekyll-paginate-v2&quot;&lt;/code&gt; to your site’s Gemfile and run bundle&lt;/p&gt;
-
-&lt;p&gt;2- Add the following to your site’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
-      
-   &lt;span class=&quot;c1&quot;&gt;# Pagination Settings&lt;/span&gt;
-   &lt;span class=&quot;ss&quot;&gt;pagination:
-    enabled: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
-    &lt;span class=&quot;ss&quot;&gt;per_page: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-    &lt;span class=&quot;ss&quot;&gt;permalink: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/page/:num/'&lt;/span&gt;
-    &lt;span class=&quot;ss&quot;&gt;title: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' - page :num'&lt;/span&gt;
-    &lt;span class=&quot;ss&quot;&gt;limit: &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-    &lt;span class=&quot;ss&quot;&gt;sort_field: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'date'&lt;/span&gt;
-    &lt;span class=&quot;ss&quot;&gt;sort_reverse: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
-      
-   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This will enable the pagination and sort your posts based on their release date having the latest at the top and a maximum of 5 articles per page.&lt;/p&gt;
-
-&lt;p&gt;3-  Add the following code snippet to your home page found under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_layouts/home.html&lt;/code&gt;:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
-      
-    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;post-list&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;&amp;lt;!--&lt;/span&gt; 
-        &lt;span class=&quot;no&quot;&gt;Here&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paginator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logic&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;called&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
-    &lt;span class=&quot;nf&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;% for &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paginator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;posts&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%}
-      &amp;lt;li&amp;gt;
-	  
-        &amp;lt;h3&amp;gt; &amp;lt;a class=&quot;post-link&quot; href=&quot;{{ post.url | relative_url }&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;{{ post.title | escape }}&amp;lt;/a&amp;gt;&amp;lt;/h3&amp;gt;
-        &amp;lt;span class=&quot;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;meta&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;{{ post.date | date: &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;%-d, %Y&quot; }}&amp;lt;/span&amp;gt;
-
-		{%-&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;show_excerpts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;%}
-          {{ post.excerpt }&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;%- endif -%}
-      &amp;lt;/li&amp;gt;
-    {% endfor %}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/ul&amp;gt;
-  
-    &amp;lt;!-- 
-    Showing buttons to move to the next and to the previous list of posts (pager buttons).
-    --&amp;gt;
-    {% if paginator.total_pages &amp;gt; 1 %}
-    &amp;lt;ul class=&quot;pager&quot;&amp;gt;
-      {% if paginator.previous_page %}
-      &amp;lt;li class=&quot;previous&quot;&amp;gt;
-          &amp;lt;a href=&quot;{{ paginator.previous_page_path | prepend: site.baseurl | replace: '/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;', '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' }}&quot;&amp;gt;&amp;amp;larr; Newer Posts&amp;lt;/a&amp;gt;
-      &amp;lt;/li&amp;gt;
-      {% endif %}
-      {% if paginator.next_page %}
-      &amp;lt;li class=&quot;next&quot;&amp;gt;
-          &amp;lt;a href=&quot;{{ paginator.next_page_path | prepend: site.baseurl | replace: '&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/', '/&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;Older Posts &amp;amp;rarr;&amp;lt;/a&amp;gt;
-      &amp;lt;/li&amp;gt;
-      {% endif %}
-    &amp;lt;/ul&amp;gt;
-   {% endif %}
-      
-   &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This will render your posts in a list using the &lt;strong&gt;paginator&lt;/strong&gt; variable provided by the gem and using the corresponding configurations you added in step 2.&lt;/p&gt;
-
-&lt;p&gt;That is it! If you have more then five posts, navigation buttons like shown below will appear at the bottom of your homepage in order to be able to visit your older posts.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/articles/8_navigation_buttons.png&quot; alt=&quot;image&quot; /&gt;
-&lt;br /&gt;&lt;em&gt;Figure 2: Navigation Buttons&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;managing-a-custom-domain-for-your-site&quot;&gt;Managing a custom domain for your Site&lt;/h2&gt;
-
-&lt;p&gt;We have mentioned in the first &lt;a href=&quot;https://firasesbai.github.io/articles/2021/10/07/how-i-started-this-blog.html&quot;&gt;blog post&lt;/a&gt; of the series that we have opted for &lt;strong&gt;GitHub Pages&lt;/strong&gt; as our free static site hosting service. 
-Using this will serve your site under &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://&amp;lt;username&amp;gt;.github.io&lt;/code&gt; where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;username&lt;/code&gt; is your GitHub user account.&lt;/p&gt;
-
-&lt;p&gt;That worked out of the box for us and was a good starting point. Now that we have a fully functional website armed with all the features that we need, it is time to customise that URL by using a custom domain. 
-This has multiple benefits namely better promoting our own brand, providing trust to our readers and making the site more discoverable.&lt;/p&gt;
-
-&lt;h3 id=&quot;set-up-2&quot;&gt;Set up&lt;/h3&gt;
-
-&lt;p&gt;1- Head over to &lt;a href=&quot;https://domains.google/&quot;&gt;Google Domains&lt;/a&gt; and search for a new domain&lt;/p&gt;
-
-&lt;p&gt;2- Follow the steps in order to finalise your purchase. A standard &lt;strong&gt;.com&lt;/strong&gt; should cost you around 12 Euros per year.&lt;/p&gt;
-
-&lt;p&gt;3- Under your newly created domain, click on &lt;strong&gt;DNS&lt;/strong&gt; from the sidebar and add a new &lt;strong&gt;Custom Records&lt;/strong&gt; with the following configurations:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Custom Record 1&lt;/strong&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
-      
-   &lt;span class=&quot;no&quot;&gt;Host&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;www&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;autocompleted&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourdomainname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-   &lt;span class=&quot;no&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CNAME&lt;/span&gt;
-   &lt;span class=&quot;no&quot;&gt;TTL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3600&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-   &lt;span class=&quot;no&quot;&gt;Data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;io&lt;/span&gt;
-      
-   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;Custom Record 2&lt;/strong&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
-      
-   &lt;span class=&quot;no&quot;&gt;Host&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;leave&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourdomainname&lt;/span&gt; 
-   &lt;span class=&quot;no&quot;&gt;Type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;A&lt;/span&gt;
-   &lt;span class=&quot;no&quot;&gt;TTL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3600&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-   &lt;span class=&quot;no&quot;&gt;Data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
-    &lt;span class=&quot;mf&quot;&gt;185.199&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;110.153&lt;/span&gt;
-    &lt;span class=&quot;mf&quot;&gt;185.199&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;111.153&lt;/span&gt;
-    &lt;span class=&quot;mf&quot;&gt;185.199&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;109.153&lt;/span&gt;
-    &lt;span class=&quot;mf&quot;&gt;185.199&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;108.153&lt;/span&gt;
-      
-   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;4- On GitHub, navigate to your site’s repository and go to Settings&lt;/p&gt;
-
-&lt;p&gt;5- Click on Pages from the sidebar, add your custom domain &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;www.yourdomainname.com&lt;/code&gt; and click save.&lt;/p&gt;
-
-&lt;p&gt;6- Add &lt;strong&gt;CNAME&lt;/strong&gt; file to your master branch. By default when you add a custom domain, github adds the CNAME file to your &lt;em&gt;gh-pages&lt;/em&gt; branch, which gets overwritten by the build from your master branch each time you push new changes.&lt;/p&gt;
-
-&lt;p&gt;That’s it! You should now be able to access your blog at the new URL &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;www.yourdomainname.com&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
-
-&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
-
-&lt;p&gt;Through these blog posts we have only touched the tip of the iceberg. Working on your blog will be a continuous process involving experimentation and trial of new features all in the purpose of reaching more people to share your thoughts and learnings. 
-I hope this will get you started on a good foot and if you have any suggestions or an interesting feature and you would like to share it, feel free to reach out.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://blog.webjeda.com/instant-jekyll-search/&quot;&gt;https://blog.webjeda.com/instant-jekyll-search/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/docs/pagination/&quot;&gt;https://jekyllrb.com/docs/pagination/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/sverrirs/jekyll-paginate-v2&quot;&gt;https://github.com/sverrirs/jekyll-paginate-v2&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site&quot;&gt;https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Jekyll" /><summary type="html">In this article we will wrap up the How I Started This Blog series by adding some features that will make your site more discoverable and easier to navigate.</summary></entry></feed>
+&lt;p&gt;&lt;em&gt;Thanks for reading, I hope you enjoyed it!&lt;/em&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="notes" /><category term="Startups" /><summary type="html">Notes from the Lean Startup Book By Eric Ries</summary></entry></feed>
