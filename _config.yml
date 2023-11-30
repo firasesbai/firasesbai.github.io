@@ -56,6 +56,7 @@ plugins:
   - jekyll-paginate-v2
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 # Pagination Settings
 pagination:
@@ -66,6 +67,11 @@ pagination:
   limit: 0
   sort_field: 'date'
   sort_reverse: true
+
+# Redirects Settings
+redirect_from:
+  json: false
+
 #######################################################
 #################### Additional Settings ##############
 #######################################################

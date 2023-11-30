@@ -7,6 +7,7 @@ tags: ["Data Engineering", "Data Architecture"]
 author: Firas Esbai
 description: "In this article we will deep dive into data ingestion and data integration techniques. Look into popular methods for data processing and transformation. Explore different storage types and how they compare to each others."
 comments: true
+redirect_from: /articles/2023/03/12/data-engineering-201-Part-2.html
 ---
 
 *This is part 2 of our in-depth article discussing the different stages of data flow inside an organisation.* 

@@ -25,7 +25,8 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
   gem "jekyll-paginate-v2", ">= 3.0"
   gem "jekyll-sitemap", "~> 1.4"
-  gem 'jekyll-seo-tag', '~> 2.1'
+  gem "jekyll-seo-tag", "~> 2.1"
+  gem "jekyll-redirect-from", "~> 0.16.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
