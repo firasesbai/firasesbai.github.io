@@ -61,7 +61,7 @@ description: "Discover the story behind Firas Esbai, a passionate data and machi
 <div class="flex-container">
    <div class="row-one">
       <p> 
-         <b>Firas Esbai</b> is a data and machine learning engineer.
+         <b>Firas Esbai</b> is a data and machine learning engineer with several years of experience.
       </p>
 	  <br/>
       <p>
@@ -75,7 +75,7 @@ description: "Discover the story behind Firas Esbai, a passionate data and machi
 </div>
 <div class="centre-container">
    <p>
-      The articles I publish cover a broad range of big data and artificial intelligence related topics. <br/>
+      The articles I publish cover a broad range of data engineering and machine learning related topics. <br/>
       My main interest is building intelligent data intensive systems focusing on design and architecture challenges to help businesses thrive with better data-driven decisions. <br/>
 	  Most of my technical work can be found on <a href="https://github.com/firasesbai">GitHub</a>.
    </p>
