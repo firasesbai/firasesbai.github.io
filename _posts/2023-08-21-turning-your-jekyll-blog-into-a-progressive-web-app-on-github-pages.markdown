@@ -3,7 +3,7 @@ layout: post
 title:  "Turning Your Jekyll Blog into a Progressive Web App (PWA) on GitHub Pages: A Step-by-Step Guide"
 date:   2023-08-21
 category: articles
-tags: ["Jekyll"]
+tags: ["Blogging"]
 author: Firas Esbai
 description: "In this article we will walk through required steps to transform a jekyll blog into a progressive web app and how to deploy it to github pages after exploring some theory behind it."
 comments: true

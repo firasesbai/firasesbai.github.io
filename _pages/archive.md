@@ -23,7 +23,7 @@ description: "Explore a comprehensive archive of Firas Esbai's articles. Browse 
 
 <h1>Categories</h1>
 
-{% assign categories_array = "Cloud Computing, Jekyll, Startups, Data Architecture, Data Engineering, Writing, General, Software Development, Observability" | split: ", " | sort %}
+{% assign categories_array = "Cloud Computing, Blogging, Data Architecture, Data Engineering, General, Observability" | split: ", " | sort %}
 
 {% for category in categories_array %}
   {% assign post_url = category | downcase | replace: " ", "-" %}

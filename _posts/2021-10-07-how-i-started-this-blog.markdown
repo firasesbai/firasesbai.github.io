@@ -3,7 +3,7 @@ layout: post
 title:  "How I Started This Blog"
 date:   2021-10-07
 category: articles
-tags: ["Jekyll"]
+tags: ["Blogging"]
 author: Firas Esbai
 description: "detailed steps to create a blog using jekyll a static site generator and host it in github pages"
 comments: true

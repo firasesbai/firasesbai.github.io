@@ -3,7 +3,7 @@ layout: post
 title:  "Prometheus Monitoring: How to Collect and Analyze Metrics"
 date:   2023-01-15
 category: articles
-tags: ["Observability", "Software Development"]
+tags: ["Observability"]
 author: Firas Esbai
 description: "In this article we will deep dive into prometheus and see how to create a custom metric for a simple python application"
 comments: true

@@ -3,7 +3,7 @@ layout: post
 title:  "Data engineering 101: Understanding the Fundementals"
 date:   2023-03-01
 category: articles
-tags: ["Data Engineering", "Data Architecture"]
+tags: ["Data Engineering"]
 author: Firas Esbai
 description: "In this article we will deep dive into the different aspects of data engineering and see its importance in data democratization"
 comments: true

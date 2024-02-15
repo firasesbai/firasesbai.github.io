@@ -1,9 +1,9 @@
 ---
 layout: page
-permalink: /categories/jekyll
+permalink: /categories/blogging
 ---
 
-{% assign category = "Jekyll" %}
+{% assign category = "Blogging" %}
 
 {% for tag in site.tags %}
 {% if tag[0] == category %}

@@ -3,7 +3,7 @@ layout: post
 title:  "How I Started This Blog Part 3"
 date:   2022-03-27
 category: articles
-tags: ["Jekyll"]
+tags: ["Blogging"]
 author: Firas Esbai
 description: "In this article we will integrate a comments section using Github comments API and add an estimated reading time to our articles"
 comments: true
