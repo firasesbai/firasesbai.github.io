@@ -1,55 +1,76 @@
 ---
 layout: post
-title:  "Reading Recommendations"
+title:  "My Reading List"
 date:   2022-08-17
 category: notes
 tags: ["General"]
 author: Firas Esbai
-decription: "List of recommended readings and books in different areas of life and subjects"
+decription: "My recommended list of books arranged in different categories and subjects"
 comments: true
+pinned: true 
 ---
 
-*This is a curated list of book recommendations organised in different areas and subjects that might be of interest to you.*
+*A curated list of books that I have read and would recommend to others. The list is organised in different topics and subjects.*
+
+See also my collection of **learning resources** around **data engineering** in this [repository](https://github.com/firasesbai/data-engineering-resources).  
 
 ![image](/assets/images/articles/13_reading_recommendations.jpg)
 
 
 This is a *Work In Progress* which means you might want to keep an eye on it as it will be updated regularly. 
 
+Note that none of the below links are affiliate links or sponsored. 
+
 {% include table-of-content.html %}
 
-# Self-Help 
 
-- [How to Win Friends and Influence People](https://www.goodreads.com/book/show/4865.How_to_Win_Friends_and_Influence_People) - *by Dale Carnegie*
-- [Moonwalking with Einstein: The Art and Science of Remembering Everything](https://joshuafoer.com/) - *by Joshua Foer*
-- [Range: Why Generalists Triumph in a Specialized World](https://davidepstein.com/the-range/) - *by David Epstein*
-- [So Good They Can't Ignore You: Why Skills Trump Passion in the Quest for Work You Love](https://calnewport.com/writing/) - *by Cal Newport*
-- [Deep Work: Rules for Focused Success in a Distracted World](https://calnewport.com/writing/) - *by Cal Newport*
+# Tech Leadership
 
-# Productivity
-
-- [The 4-Hour Workweek](https://tim.blog/tim-ferriss-books/#the-4-hour-workweek) - *by Timothy Ferriss*
-
-# Money
-
-- [Think and Grow Rich](https://www.naphill.org/shop/books/paperback/think-and-grow-rich-the-1937-edition/) - *by Napoleon Hill*
-- [Rich Dad, Poor Dad](https://www.richdad.com/about/rich-dad) - *by Robert T. Kiyosaki*
-- [The Psychology of Money](https://www.morganhousel.com/) - *by Morgan Housel*
-
-# Investement
- 
-- [The Richest Man in Babylon](https://www.goodreads.com/book/show/1052.The_Richest_Man_in_Babylon) - *by  George S. Clason* 
+- [The Staff Engineer's Path: A Guide for Individual Contributors Navigating Growth and Change](https://www.oreilly.com/library/view/the-staff-engineers/9781098118723/) - *by Tanya Reilly*
+  - If you are a senior engineer wondering about the next level, this book is for you. It provides structure and practical advice for engineers covering a wide range of topics including technical leadership, communication skills, project management, and career development. Through real-world examples and actionable strategies, readers learn how to navigate the path to staff engineering.  
 
 # Startups
 
 - [The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses](https://theleanstartup.com/) - *by Eric Ries*
+  - For anyone in the entrepreneurial space, the Lean Startup is considered a must read. It provides practical advice, case studies, and a framework for creating successful businesses in today's fast-paced and uncertain market. Before delving in the story leading to the born of the lean startup movement, you can check my personal [notes and main takeways](https://www.firasesbai.com/notes/2022/09/11/the-lean-startup.html) on the 12 principles shaping the lifecycle of a Startup. 
 - [Lean Inception: How to Align People and Build the Right Product](https://caroli.org/en/livro/lean-inception-how-to-align-people-and-build-the-right-product/) - *by Paulo Caroli* 
+  - The book through the Lean Inception method, which combines elements of Lean Startup, Design Thinking, and Agile methodologies, provides a practical guide to launching successful products while minimizing waste and maximizing value. It outlines techniques for aligning teams, defining a clear vision, and rapidly iterating on product ideas. It emphasizes the importance of customer feedback and continuous improvement. 
 
-# Artificial Intelligence 
+# Productivity
+
+- [The 4-Hour Workweek](https://tim.blog/tim-ferriss-books/#the-4-hour-workweek) - *by Timothy Ferriss*
+  - Tim Ferriss challenges the traditional 9-to-5 work model, advocating for lifestyle design and efficiency. Ferriss discusses the concept of "lifestyle automation" through outsourcing, delegating tasks, and focusing on high-impact activities. He emphasizes the value of time freedom, passive income streams, and mini-retirements. The book offers practical tips on starting a business, negotiating remote work, and maximizing productivity. Readers learn how to escape the rat race, achieve more in less time, and create a life of adventure and fulfillment beyond the typical workweek.
+
+# Self-Help 
+
+- [How to Win Friends and Influence People](https://www.goodreads.com/book/show/4865.How_to_Win_Friends_and_Influence_People) - *by Dale Carnegie*
+  - The book provides advice on how to build relationships, communicate effectively, and influence others through techniques such as active listening, being genuinely interested in others, and showing appreciation. It is considered a classic in the field of self-help and personal development.
+- [Moonwalking with Einstein: The Art and Science of Remembering Everything](https://joshuafoer.com/) - *by Joshua Foer*
+  - Joshua Foer, a journalist, records his own quest to improve his memory and even compete in the U.S. Memory Championship. The book delves into the science of memory and how our brains store and retrieve information as well as exploring tools and techniques used by memory champions for anyone looking to improve their memory and cognitive abilities.  
+- [Range: Why Generalists Triumph in a Specialized World](https://davidepstein.com/the-range/) - *by David Epstein*
+  - David Epstein challenges in his book the notion that specialization is the key to success. Epstein argues that in today's rapidly changing world, the ability to learn broadly and adapt is more valuable than hyper-specialization. The book advocates for a "range" of experiences and interests, suggesting that this breadth of knowledge fosters creativity, problem-solving abilities, and resilience. 
+- [So Good They Can't Ignore You: Why Skills Trump Passion in the Quest for Work You Love](https://calnewport.com/writing/) - *by Cal Newport*
+  - Why do some people end up loving what they do while so many others fail at this goal? Cal Newport's book challenges the popular notion that success comes from following your passion. He argues that the advice to "follow your passion" is seriously flawed and presents a different approach through 4 rules.
+- [Deep Work: Rules for Focused Success in a Distracted World](https://calnewport.com/writing/) - *by Cal Newport*
+  - Deep undistracted work is becoming increasingly rare and valuable in a world filled with emails, social media and other interruptions. To remain valuable in our economy, the book emphasizes the importance of intense, uninterrupted periods of work for achieving productivity and excellence. Newport provides practical tips and strategies for cultivating deep work such as time-blocking, minimizing shallow work, and creating dedicated spaces for concentration.
+
+# Money & Investement
+
+- [Think and Grow Rich](https://www.naphill.org/shop/books/paperback/think-and-grow-rich-the-1937-edition/) - *by Napoleon Hill*
+  - In this book, written after the market crash and depression in 1929, the author studied the life of over 500 richest Americans in history trying to find patterns and similarities that could have led these people to accumulate riches. This challenging mission resulted in 13 consistent principles detailed over this book for anyone who is seeking making money and achieving wealth. 
+- [Rich Dad, Poor Dad](https://www.richdad.com/about/rich-dad) - *by Robert T. Kiyosaki*
+  - Through contrasting the financial teachings of two father figures, hince the name of the book, Kiyosaki shares key principles of financial literacy, such as the importance of assets over liabilities, the value of financial education, and the power of passive income. The book encourages readers to rethink their approach to money, investing, and wealth-building. 
+- [The Psychology of Money](https://www.morganhousel.com/) - *by Morgan Housel*
+  - The book highlights the importance of understanding the complex relationship between money and human behavior rather than focusing solely on financial strategies. Housel explores the psychological biases and emotions that often drive financial decisions, such as fear, greed, and overconfidence. Through historical and the author's personal stories, readers gain a better understanding of their own financial behaviors and learn how to make more informed and rational decisions with money.
+- [The Richest Man in Babylon](https://www.goodreads.com/book/show/1052.The_Richest_Man_in_Babylon) - *by  George S. Clason* 
+  - Originally published in 1962, the author presents rules that can be considered as laws, since they are still valid even in today’s economy, for personal financial advice through an entertaining story that took place in Babylon many many years ago. 
+
+# Artificial Intelligence
 
 - [Life 3.0: Being Human in the Age of Artificial Intelligence](https://www.goodreads.com/en/book/show/34272565) - *by Max Tegmark* 
+  - The book is a thought-provoking exploration of the potential future of artificial intelligence and its impact on humanity. Tegmark discusses the possibilities, risks, and ethical considerations surrounding advanced AI technology. He presents diverse perspectives on AI from scientists, philosophers, and technologists, inviting readers to contemplate the ethical and existential questions AI raises in order to consider how we can shape a positive future with AI, ensuring it aligns with human values and goals.
 
 
-*I hope you find these recommendations as captivating as I did!* 
+I hope you find these recommendations as captivating as I did! 
 
 *I'd love to hear your suggestions and your favorite reads in the comments below on.* 
