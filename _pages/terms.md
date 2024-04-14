@@ -1,7 +1,8 @@
 ---
 layout: page
-permalink: /terms/
+permalink: /terms.html
 description: "Our terms and conditions set rules and guidelines for how to interact with our website and content."
+redirect_from: /terms/
 ---
 
 # Terms and Conditions 

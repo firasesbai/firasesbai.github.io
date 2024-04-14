@@ -1,8 +1,9 @@
 ---
 layout: page
 title: About Me
-permalink: /about/
+permalink: /about.html
 description: "Discover the story behind Firas Esbai, a passionate data and machine learning engineer."
+redirect_from: /about/
 ---
 
 <style>

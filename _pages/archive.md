@@ -1,8 +1,9 @@
 ---
 layout: page
 title: Archive
-permalink: /archive/
+permalink: /archive.html
 description: "Explore a comprehensive archive of Firas Esbai's articles. Browse by category or date to find the content you're looking for."
+redirect_from: /archive/
 ---
 
 ### Archive ###

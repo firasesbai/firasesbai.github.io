@@ -1,7 +1,8 @@
 ---
 layout: page
-permalink: /thank-you/
+permalink: /thank-you.html
 description: "Thank you for subscribing to get the latest content by email."
+redirect_from: /thank-you/
 ---
 
 # Thank You for subscribing to My Blog! 🚀

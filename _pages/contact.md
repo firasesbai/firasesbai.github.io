@@ -1,8 +1,9 @@
 ---
 layout: page
 title: Contact Me
-permalink: /contact/
+permalink: /contact.html
 description: "Get in touch with Firas Esbai to discuss collaborations or inquiries. We are here to connect and help with all your needs."
+redirect_from: /contact/
 ---
 
 <style>
