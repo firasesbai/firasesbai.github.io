@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About Me
+title: About
 permalink: /about.html
 description: "Discover the story behind Firas Esbai, a passionate data and machine learning engineer."
 redirect_from: /about/
@@ -57,27 +57,30 @@ redirect_from: /about/
 }
 </style>
 
-### About Me ###
+### Who am I? ###
 
 <div class="flex-container">
    <div class="row-one">
       <p> 
-         <b>Firas Esbai</b> is a data and machine learning engineer with several years of experience.
+         I'am <b>Firas Esbai</b>, a data and machine learning engineer with several years of experience.
       </p>
-	  <br/>
+	   <br/>
       <p>
-         I started this site as a place to keep my own writings and document my learning journey. <br/>
-         What started as an experiment has now grown into an informal writing habit that I’m sharing with you. 
+         My main interest is building intelligent data intensive systems focusing on design and architecture challenges to help businesses thrive with better data-driven decisions.
       </p>
    </div>
    <div class="row-two"> 
       <img alt="profile-picture" style="float:right;" src="/assets/images/0_profile.png" height="200" width="200">
    </div>
 </div>
+
+### What is this Site? ###
+
 <div class="centre-container">
    <p>
-      The articles I publish cover a broad range of data engineering and machine learning related topics. <br/>
-      My main interest is building intelligent data intensive systems focusing on design and architecture challenges to help businesses thrive with better data-driven decisions. <br/>
-	  Most of my technical work can be found on <a href="https://github.com/firasesbai">GitHub</a>.
+      I started this site as a place to keep my own writings and document my learning journey. <br/>
+      What started as an experiment has now grown into an informal writing habit that I’m sharing with you. 
+ <br/>
+      The articles I publish cover a broad range of data engineering and machine learning related topics.
    </p>
 </div>
