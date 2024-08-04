@@ -103,4 +103,4 @@ In this article we discussed the building blocks for our Jekyll blog and how to 
 [link]: https://developers.google.com/search/docs/advanced/sitemaps/overview
 [repository]: https://github.com/jekyll/jekyll-sitemap 
 [here]: https://jsinibardy.com/optimize-seo-jekyll
-[https://vilcins.medium.com/optimize-your-jekyll-powered-website-with-these-simple-steps-b2a24d66a629]: [https://vilcins.medium.com/optimize-your-jekyll-powered-website-with-these-simple-steps-b2a24d66a629]
+[https://vilcins.medium.com/optimize-your-jekyll-powered-website-with-these-simple-steps-b2a24d66a629]: https://vilcins.medium.com/optimize-your-jekyll-powered-website-with-these-simple-steps-b2a24d66a629
