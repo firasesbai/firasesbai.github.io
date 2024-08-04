@@ -4,7 +4,7 @@
       {% if page.tags %}
         {% assign primary_tag = page.tags | first %}
         {% assign tag_url = primary_tag | downcase | replace: ' ', '-' %}
-        > <a href="{{ site.baseurl }}/categories/{{ tag_url }}/">{{ primary_tag }}</a>
+        > <a href="{{ site.baseurl }}/categories/{{ tag_url }}">{{ primary_tag }}</a>
       {% endif %}
       > <span>{{ page.title }}</span>
     </p>
