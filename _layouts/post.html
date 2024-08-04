@@ -1,7 +1,30 @@
 ---
 layout: default
 ---
+<style>
+  .breadcrumb {
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+  
+  .breadcrumb a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .breadcrumb span {
+    color: #6c757d;
+    pointer-events: none;
+  }
+  
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  </style>
+
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  {% include breadcrumbs.html %}
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
