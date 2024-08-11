@@ -5,22 +5,22 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>How I Started This Blog Part 2 | Firas Esbai</title>
+<title>Cloudflare Analytics vs Google Analytics | Firas Esbai</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="How I Started This Blog Part 2" />
+<meta property="og:title" content="Cloudflare Analytics vs Google Analytics" />
 <meta name="author" content="Firas Esbai" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="In this article we will integrate some jekyll plugins to add a sitemap and improve your SEO ranking and lighthouse score of your blog" />
-<meta property="og:description" content="In this article we will integrate some jekyll plugins to add a sitemap and improve your SEO ranking and lighthouse score of your blog" />
-<link rel="canonical" href="https://www.firasesbai.com/articles/2022/03/23/how-i-started-this-blog-part-2.html" />
-<meta property="og:url" content="https://www.firasesbai.com/articles/2022/03/23/how-i-started-this-blog-part-2.html" />
+<meta name="description" content="Reasons for discrepancies between data present in google analytics and data in cloudflare analytics" />
+<meta property="og:description" content="Reasons for discrepancies between data present in google analytics and data in cloudflare analytics" />
+<link rel="canonical" href="https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html" />
+<meta property="og:url" content="https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html" />
 <meta property="og:site_name" content="Firas Esbai" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-03-23T00:00:00+00:00" />
+<meta property="article:published_time" content="2024-08-11T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="How I Started This Blog Part 2" />
+<meta property="twitter:title" content="Cloudflare Analytics vs Google Analytics" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Firas Esbai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.firasesbai.com/articles/2022/03/23/how-i-started-this-blog-part-2.html"},"description":"In this article we will integrate some jekyll plugins to add a sitemap and improve your SEO ranking and lighthouse score of your blog","url":"https://www.firasesbai.com/articles/2022/03/23/how-i-started-this-blog-part-2.html","@type":"BlogPosting","headline":"How I Started This Blog Part 2","dateModified":"2022-03-23T00:00:00+00:00","datePublished":"2022-03-23T00:00:00+00:00","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Firas Esbai"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html"},"description":"Reasons for discrepancies between data present in google analytics and data in cloudflare analytics","url":"https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html","@type":"BlogPosting","headline":"Cloudflare Analytics vs Google Analytics","dateModified":"2024-08-11T00:00:00+00:00","datePublished":"2024-08-11T00:00:00+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://www.firasesbai.com/feed.xml" title="Firas Esbai" /><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id='G-3ET85T3WD3'"></script>
@@ -172,32 +172,30 @@
         
         > <a href="/categories/blogging">Blogging</a>
       
-      > <span>How I Started This Blog Part 2</span>
+      > <span>Cloudflare Analytics vs Google Analytics</span>
     </p>
   </nav>
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">How I Started This Blog Part 2</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2022-03-23T00:00:00+00:00" itemprop="datePublished">
-        Mar 23, 2022 - 
+    <h1 class="post-title p-name" itemprop="name headline">Cloudflare Analytics vs Google Analytics</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2024-08-11T00:00:00+00:00" itemprop="datePublished">
+        Aug 11, 2024 - 
       </time>
 	  
 	  <span class="reading-time" title="Estimated read time">
   
-  3 min read
+  4 min read
 </span>
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name"> - Firas Esbai</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><em>In this article we will see how to make your Jekyll blog more discoverable.</em></p>
+    <p><em>In this article we will look into the reasons for discrepancies between the data reported by Cloudflare Analytics and Google Analytics and how to leverage both of them.</em></p>
 
-<p><img src="/assets/images/articles/6_how_i_started_this_blog_part_2.jpg" alt="image" /></p>
+<p>Tracking and analyzing web data is essential for keeping a holistic view on your site’s performance. This is especially useful for bloggers to track key metrics such as which articles and pages are most visited, where visitors are located and the percentage of visitors who leave after viewing only one page just to name a few.</p>
 
-<p>In a previous <a href="https://firasesbai.github.io/articles/2021/10/07/how-i-started-this-blog.html">post</a>, we went through the building bloks of a Jekyll blog, how to set one up and host it using github pages.</p>
-
-<p>In this second article, part of the <em>How I Started This Blog</em> series, we will build upon what we already have by adding some features that will make your blog posts more discoverable and reachable to your audience.</p>
+<p>For monitoring this site’s performance, I have opted for integrating Google Analytics web service. In addition, I’m using cloudflare for managing a custom domain name. Cloudflare has implemented Analytics where users can also gain insights to their managed sites. These however show big discrepancies from the data present in Google Analytics. Understanding the reasons behind it is what we will try to accomplish in this blog post.</p>
 
 <p><em>So let’s get started!</em></p>
 
@@ -205,81 +203,65 @@
 
 <h1> Contents </h1>
 <ul id="markdown-toc">
-  <li><a href="#jekyll-sitemap-generator-plugin" id="markdown-toc-jekyll-sitemap-generator-plugin">Jekyll Sitemap Generator Plugin</a>    <ul>
-      <li><a href="#what-is-a-sitemap" id="markdown-toc-what-is-a-sitemap">What is a Sitemap?</a></li>
-      <li><a href="#set-up" id="markdown-toc-set-up">Set up</a></li>
+  <li><a href="#data-collection-method" id="markdown-toc-data-collection-method">Data Collection Method</a>    <ul>
+      <li><a href="#server-side-tracking" id="markdown-toc-server-side-tracking">Server-Side Tracking</a></li>
+      <li><a href="#client-side-tracking" id="markdown-toc-client-side-tracking">Client-Side Tracking</a></li>
     </ul>
   </li>
-  <li><a href="#jekyll-seo-tag-plugin" id="markdown-toc-jekyll-seo-tag-plugin">Jekyll SEO Tag Plugin</a>    <ul>
-      <li><a href="#set-up-1" id="markdown-toc-set-up-1">Set up</a></li>
+  <li><a href="#types-of-data-collected" id="markdown-toc-types-of-data-collected">Types of Data Collected</a>    <ul>
+      <li><a href="#cloudflare" id="markdown-toc-cloudflare">Cloudflare</a></li>
+      <li><a href="#google-analytics" id="markdown-toc-google-analytics">Google Analytics</a></li>
     </ul>
   </li>
+  <li><a href="#recommendation" id="markdown-toc-recommendation">Recommendation</a></li>
   <li><a href="#recap" id="markdown-toc-recap">Recap</a></li>
   <li><a href="#resources" id="markdown-toc-resources">Resources</a></li>
 </ul>
 <hr />
 
-<h2 id="jekyll-sitemap-generator-plugin">Jekyll Sitemap Generator Plugin</h2>
+<h2 id="data-collection-method">Data Collection Method</h2>
 
-<h3 id="what-is-a-sitemap">What is a Sitemap?</h3>
+<p>Understanding the different methods used by each tool to collect data will reveal the main reason for discrepancies in their reports.</p>
 
-<p>A sitemap is a file where you provide information about the pages, videos, and other files on your site, and the relationships between them. 
-Search engines like Google read this file to crawl your site more efficiently. A sitemap tells Google which pages and files you think are important in your site, and also provides valuable information about these files. 
-For example, when the page was last updated and any alternate language versions of the page.</p>
+<h3 id="server-side-tracking">Server-Side Tracking</h3>
 
-<p>For more information you can check the following <a href="https://developers.google.com/search/docs/advanced/sitemaps/overview">link</a></p>
+<p>Cloudflare uses DNS and server-side data to track visits. This means it collects data on every request made to your website’s server. This includes all HTTP/HTTPS requests, regardless of whether they are made by human users, bots, or automated scripts. Therefore, every unique IP address for a request is identified as a visit.</p>
 
-<p>You can only benefit from having a sitemap for your website to improve its crawling even if your site’s pages are properly linked. 
-Especially when the sitemap is generated automatically using in this case the <strong>Jekyll Sitemap Generator Plugin</strong>.</p>
+<p>For this reason, Cloudflare Analytics probably will show higher unique visitors than Google Analytics unique pageviews because when a bot or API is consuming partial content from your site without loading the full page it counts as a unique visitor in Cloudflare but not as a pageview.</p>
 
-<h3 id="set-up">Set up</h3>
+<h3 id="client-side-tracking">Client-Side Tracking</h3>
 
-<p>In order to set this up for your blog you need to do the following:</p>
+<p>Google Analytics uses a JavaScript tag embedded in web pages to collect data. When a user loads a page, the script sends data back to Google Analytics. Even though Google Analytics filters out known bot traffic, it can miss traffic from users who block Javascript, use privacy-focused browsers or have ad blockers that prevent Google Analytics from loading.</p>
 
-<ol>
-  <li>Add <code class="language-plaintext highlighter-rouge">gem jekyll-sitemap</code> to your site’s Gemfile and run bundle</li>
-  <li>Add the following to your site’s <strong>_config.yml</strong> file:</li>
-</ol>
+<p>For this reason, Cloudflare Analytics probably will show higher number of visitors than Google Analytics.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"> 
-<span class="ss">url: </span><span class="s2">"https://example.com"</span> <span class="c1"># the base hostname &amp; protocol for your site</span>
-<span class="ss">plugins:
-  </span><span class="o">-</span> <span class="n">jekyll</span><span class="o">-</span><span class="n">sitemap</span></code></pre></figure>
+<h2 id="types-of-data-collected">Types of Data Collected</h2>
 
-<p>That’s it! You are good to go.</p>
+<p>Knowing the reason behind the data of both Cloudflare and Google Analytics was only the beginning. In this section, we will look into the type of data collected by them and its purpose.</p>
 
-<p>For additional information, you can check the official Github <a href="https://github.com/jekyll/jekyll-sitemap">repository</a> of the plugin.</p>
+<h3 id="cloudflare">Cloudflare</h3>
 
-<h2 id="jekyll-seo-tag-plugin">Jekyll SEO Tag Plugin</h2>
+<p>Cloudflare often provides high-level technical data. It tracks every request made to your server which gives a comprehensive view of all incoming traffic and how many requests each resource on your website receives. In addition, Cloudflare provides data to help maintain the security and efficiency of your website such as blocked threats or DDoS attacks and cache hits/misses and load times.</p>
 
-<p>After creating a sitemap for your blog, another useful plugin to add is the <strong>Jekyll SEO Tag Plugin</strong>. 
-This is a Jekyll plugin to add metadata tags for search engines and social networks to better index and display your site’s content.</p>
+<h3 id="google-analytics">Google Analytics</h3>
 
-<h3 id="set-up-1">Set up</h3>
+<p>Google Analytics excels in tracking how users interact with your website. It provides detailed metrics on page views, sessions, bounce rates, and conversion rates. Also, it tracks where your visitors come from, whether through organic search, paid ads, social media, or referrals. This will help you understand your users’ behavior and engagement and their journey through your website.</p>
 
-<p>In order to set this up for your blog you need to do the following:</p>
+<h2 id="recommendation">Recommendation</h2>
 
-<p>1- Add <code class="language-plaintext highlighter-rouge">gem jekyll-seo-tag</code> to your site’s Gemfile and run bundle</p>
+<p>Leveraging data from both Cloudflare and Google Analytics offers a powerful combination of insights that will allow you to maximise your understanding of your website traffic along with detailed insights into user behavior and improve the performance and security.</p>
 
-<p>2- Add the following to your site’s <strong>_config.yml</strong> file:</p>
+<p>One way to achieve this would be using <a href="https://lookerstudio.google.com/overview">Looker Studio</a>.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">   <span class="ss">plugins:
-    </span><span class="o">-</span> <span class="n">jekyll</span><span class="o">-</span><span class="n">seo</span><span class="o">-</span><span class="n">tag</span>
-   </code></pre></figure>
+<p>Looker Studio is an online free tool by Google that will allow you to easily access data from multiple sources through its built-in connectors and visualise it through interactive reports and dashboards.</p>
 
-<p>3- Add the following <strong>{% seo %}</strong> tag right before <code class="language-plaintext highlighter-rouge">&lt;/head&gt;</code> in your default layout</p>
+<p>If you are using Google Analytics then getting your data into Looker Studio is just a few clicks away. However, for Cloudflare data it is a bit more than that.</p>
 
-<p>4- Add a description for every article in your blog</p>
+<p>Cloudflare web analytics is free and does not require an Enterprise plan but getting data into Looker Studio in an automated fashion would require a Cloudflare Enterprise account with Cloudflare Logs enabled. For more information, check this <a href="https://developers.cloudflare.com/analytics/analytics-integrations/looker/">link</a>.</p>
 
-<p>You can find more information on SEO optimisation in Jekyll website <a href="https://jsinibardy.com/optimize-seo-jekyll">here</a>.</p>
+<p>An alternative workaround to visualize your Cloudflare data in Looker Studio can be achieved by exporting the collected data into Google Sheets first and then use the latter as a new data source in Looker Studio.</p>
 
-<p>After finishing the necessary configuration steps and have integrated both plugins in your blog you can check the results and their impact by verifying the generated html pages.</p>
-
-<p>You can also use the <strong>google lighthouse</strong> tool from your chrome browser to generate a report about the performance of your site for different categories and metrics like seen in the screenshot below.
-Some useful hints and tips on how to further improve your site are also given to you in order to fix some common problems and enhance the user experience.</p>
-
-<p><img src="/assets/images/articles/6_lighthouse_results.PNG" alt="image" />
-<br /><em>Figure 1: Lighthouse Results</em></p>
+<p>The data export step can be done either manually or using a script that sends requests to Cloudflare’s API. Choosing one option over the other is up to you depending on your requirements and needs for up-to-date dashboards and how often you will review them.</p>
 
 <p>With this we have reached the end of this post, I hope you enjoyed it!</p>
 
@@ -289,14 +271,13 @@ Some useful hints and tips on how to further improve your site are also given to
 
 <h2 id="recap">Recap</h2>
 
-<p>In this article we discussed the building blocks for our Jekyll blog and how to host it.</p>
+<p>In this article we covered the reasons behind the difference of data gathered by Cloudflare Analytics and data coming from Google Analytics. We also saw how to use Looker Studio as a central reporting solution for combining both data sources for a comprehensive website analytics.</p>
 
 <p><em>Happy learning!</em></p>
 
 <h2 id="resources">Resources</h2>
 
-<p><a href="https://vilcins.medium.com/optimize-your-jekyll-powered-website-with-these-simple-steps-b2a24d66a629">https://vilcins.medium.com/optimize-your-jekyll-powered-website-with-these-simple-steps-b2a24d66a629</a></p>
-
+<p><a href="https://developers.cloudflare.com/analytics/faq/about-analytics/#4lt2VoRUorCudxN1xzxpOt">https://developers.cloudflare.com/analytics/faq/about-analytics/#4lt2VoRUorCudxN1xzxpOt</a></p>
 
   </div>
 
@@ -328,12 +309,6 @@ Some useful hints and tips on how to further improve your site are also given to
     
    
     
-    <div>
-      <h3><a href="/articles/2024/08/11/cloudflare-vs-google-analytics.html">Cloudflare Analytics vs Google Analytics</a></h3>
-    </div>
-    
-    
-   
    
     
     
@@ -429,6 +404,18 @@ Some useful hints and tips on how to further improve your site are also given to
     </div>
     
     
+   
+   
+    
+    
+    
+   
+    
+    <div>
+      <h3><a href="/articles/2022/03/23/how-i-started-this-blog-part-2.html">How I Started This Blog Part 2</a></h3>
+    </div>
+    
+    
         
 </div>
 
@@ -457,7 +444,7 @@ Some useful hints and tips on how to further improve your site are also given to
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   
 
-  <a class="u-url" href="/articles/2022/03/23/how-i-started-this-blog-part-2.html" hidden></a>
+  <a class="u-url" href="/articles/2024/08/11/cloudflare-vs-google-analytics.html" hidden></a>
 </article>
       </div>
     </main><style>

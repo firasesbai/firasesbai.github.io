@@ -13,6 +13,17 @@
   
     {
 
+    "title"      : "Cloudflare Analytics vs Google Analytics",
+	  "url"        : "/articles/2024/08/11/cloudflare-vs-google-analytics.html",
+    "category"   : "articles",
+    "date"       : "2024-08-11 00:00:00 +0000",
+	  "tags"       : "Blogging",
+	  "description": "Reasons for discrepancies between data present in google analytics and data in cloudflare analytics"
+
+    } ,
+  
+    {
+
     "title"      : "Preparation Guide for Google Cloud Professional Data Engineer Certification",
 	  "url"        : "/articles/2023/11/19/gcp-data-engineer-certification.html",
     "category"   : "articles",
