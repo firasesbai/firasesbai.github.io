@@ -8,7 +8,7 @@ redirect_from: /archive/
 
 ### Archive ###
 
-{% assign years_array = "2023, 2022, 2021" | split: ", " %}
+{% assign years_array = "2024, 2023, 2022, 2021" | split: ", " %}
 
 {% for year in years_array %}
   <h4>{{year}}</h4>
