@@ -2,6 +2,17 @@
   
     {
 
+    "title"      : "Data Warehouse Modeling Techniques",
+	  "url"        : "/articles/2024/08/11/data-warehouse-modeling-techniques.html",
+    "category"   : "articles",
+    "date"       : "2024-08-11 00:00:00 +0000",
+	  "tags"       : "Data Engineering Data Architecture",
+	  "description": "Big three modeling techniques and database design approaches and their implementation in databricks lakehouse architecure"
+
+    } ,
+  
+    {
+
     "title"      : "Preparation Guide for Google Cloud Professional Data Engineer Certification",
 	  "url"        : "/articles/2023/11/19/gcp-data-engineer-certification.html",
     "category"   : "articles",

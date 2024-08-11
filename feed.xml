@@ -1,5 +1,308 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2024-08-04T16:24:30+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Firas Esbai's Lifelong Learning Journey.
-</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Preparation Guide for Google Cloud Professional Data Engineer Certification</title><link href="https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification.html" rel="alternate" type="text/html" title="Preparation Guide for Google Cloud Professional Data Engineer Certification" /><published>2023-11-19T00:00:00+00:00</published><updated>2023-11-19T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification.html">&lt;p&gt;&lt;em&gt;This article contains a collection of notes, mind maps and resources to support you while preparing for the google cloud professional data engineer certification.&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2024-08-11T11:31:15+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Firas Esbai's Lifelong Learning Journey.
+</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Data Warehouse Modeling Techniques</title><link href="https://www.firasesbai.com/articles/2024/08/11/data-warehouse-modeling-techniques.html" rel="alternate" type="text/html" title="Data Warehouse Modeling Techniques" /><published>2024-08-11T00:00:00+00:00</published><updated>2024-08-11T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/08/11/data-warehouse-modeling-techniques</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/08/11/data-warehouse-modeling-techniques.html">&lt;p&gt;&lt;em&gt;In this article we will go over the big three approaches for modeling analytical data.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;We will go through some definitions around data modeling and database design approaches as well as the differences between a data warehouse and a data mart, how they are used in business intelligence and data analytics and the modeling techniques applied with them.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#what-is-a-data-warehouse&quot; id=&quot;markdown-toc-what-is-a-data-warehouse&quot;&gt;What is a Data Warehouse?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#data-warehouse-vs-data-mart&quot; id=&quot;markdown-toc-data-warehouse-vs-data-mart&quot;&gt;Data Warehouse vs Data Mart&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#what-is-data-modeling&quot; id=&quot;markdown-toc-what-is-data-modeling&quot;&gt;What is Data Modeling?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#normalization-vs-denormalization&quot; id=&quot;markdown-toc-normalization-vs-denormalization&quot;&gt;Normalization vs Denormalization&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#normalization&quot; id=&quot;markdown-toc-normalization&quot;&gt;Normalization&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#denormalization&quot; id=&quot;markdown-toc-denormalization&quot;&gt;Denormalization&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#data-warehouse-modeling-techniques&quot; id=&quot;markdown-toc-data-warehouse-modeling-techniques&quot;&gt;Data Warehouse Modeling Techniques&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#modeling-techniques-implementation-on-databricks-lakehouse-platform&quot; id=&quot;markdown-toc-modeling-techniques-implementation-on-databricks-lakehouse-platform&quot;&gt;Modeling Techniques Implementation on Databricks Lakehouse Platform&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;what-is-a-data-warehouse&quot;&gt;What is a Data Warehouse?&lt;/h2&gt;
+
+&lt;p&gt;Data Warehouse is not the same as a database but rather typically built on top of other databases. It aggregates data from dozens of data sources such as operational systems or external systems and the data is actually copied rather than moved.&lt;/p&gt;
+
+&lt;p&gt;Building a Data Warehouse serves the purpose of having a one stop shop: all your data in a single location which will enable you to make data driven decisions through trend analysis and business intelligence.&lt;/p&gt;
+
+&lt;h2 id=&quot;data-warehouse-vs-data-mart&quot;&gt;Data Warehouse vs Data Mart&lt;/h2&gt;
+
+&lt;p&gt;Unlike the data warehouse which is a centralized data repository that provides a holistic view on the organization’s data, data mart is a specialized and focused subset of a data warehouse. It supports specific analytical needs and is generally easier and quicker to design and implement compared to a data warehouse.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-data-modeling&quot;&gt;What is Data Modeling?&lt;/h2&gt;
+
+&lt;p&gt;The aim of the data model design is to represent the data in an easy way for reusability, flexibility, and scalability. The process of crafting data models involves 3 steps:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Conceptual&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Analysis and design phase to understand the key business entities and attributes and capture their interactions as per the business processes and rules within the organization.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Logical&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Technology agnostic model that adds more details and relations between entities for how the conceptual model will be implemented.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Physical&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Defines how the logical model will be implemented using the system and technology in question to ensure that the writes and reads can be performed efficiently.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;normalization-vs-denormalization&quot;&gt;Normalization vs Denormalization&lt;/h2&gt;
+
+&lt;p&gt;Normalization and Denormalization are two opposing approaches to database design.&lt;/p&gt;
+
+&lt;h3 id=&quot;normalization&quot;&gt;Normalization&lt;/h3&gt;
+
+&lt;p&gt;In normalization, the focus is on reducing data redundancy and non-consistency and improving data integrity. This is achieved by organizing data into separate related tables in accordance with normal forms.&lt;/p&gt;
+
+&lt;p&gt;There are several normal forms each building upon the previous one and the main normalization norms are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;First normal form (1NF)&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Each column is unique and has a single value. The table has a unique primary key.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Second normal form (2NF)&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;The requirements of 1NF, plus &lt;em&gt;partial dependencies&lt;/em&gt; are removed.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Third normal form (3NF)&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;The requirements of 2NF, plus each table contains only relevant Fields related to its primary key and has no &lt;em&gt;transitive dependencies&lt;/em&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A &lt;em&gt;partial dependency&lt;/em&gt; occurs when a subset of fields in a composite key can be used to determine a non-key column of the table.&lt;/p&gt;
+
+&lt;p&gt;For example, considering the following table:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;StudentID&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;CourseID&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;StudentName&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;CourseName&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;InstructorName&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;101&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;CS101&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;John&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Database&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Dr. Smith&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;102&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;CS102&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Emma&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Networking&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Dr. Johnson&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;103&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;CS102&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;John&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Networking&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Dr. Johnson&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The primary key is the combination of (StudentId, CourseID)&lt;/li&gt;
+  &lt;li&gt;StudentName depends only on StudentID&lt;/li&gt;
+  &lt;li&gt;CourseName depends only on CourseID&lt;/li&gt;
+  &lt;li&gt;Here, we have two partial dependencies:
+    &lt;ul&gt;
+      &lt;li&gt;StudentID → StudentName&lt;/li&gt;
+      &lt;li&gt;CourseID → CourseName&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A &lt;em&gt;transitive dependency&lt;/em&gt; occurs when a non-key field depends on another non-key field.&lt;/p&gt;
+
+&lt;p&gt;For example, considering the following table:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;EmployeeID&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;EmployeeName&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;DepartmentID&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;DepartmentName&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;E01&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Alice&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;D1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Sales&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;E02&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Bob&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;D2&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Marketing&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;E03&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Charlie&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;D1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Sales&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The primary key is EmployeeID&lt;/li&gt;
+  &lt;li&gt;EmployeeName depends on EmployeeID&lt;/li&gt;
+  &lt;li&gt;DepartmentID depends on EmployeeID&lt;/li&gt;
+  &lt;li&gt;DepartmentName depends on DepartmentID&lt;/li&gt;
+  &lt;li&gt;Here, we have a transitive dependency:
+    &lt;ul&gt;
+      &lt;li&gt;EmployeeID → DepartmentID → DepartmentName&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Most practical database designs typically aim for 3NF as it generally provides a good balance between data integrity and performance.&lt;/p&gt;
+
+&lt;p&gt;In general, normalization is best suited for systems with frequent insert, update, and delete operations, like transactional databases. What about denormalization?&lt;/p&gt;
+
+&lt;h3 id=&quot;denormalization&quot;&gt;Denormalization&lt;/h3&gt;
+
+&lt;p&gt;Denormalization on the other hand focuses on improving query performance, especially for read-heavy workloads, by combining related data from multiple tables increasing data redundancy and storage requirements and decreasing the number of tables in the database.&lt;/p&gt;
+
+&lt;p&gt;Denormalization is ideal for reporting systems and data warehouses where complex joins are expensive.&lt;/p&gt;
+
+&lt;p&gt;The choice between normalization and denormalization depends on specific application needs:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Use normalization when data integrity and consistency are crucial, and when the database undergoes frequent updates.&lt;/li&gt;
+  &lt;li&gt;Opt for denormalization when query performance is a priority, especially for read-intensive applications or when complex joins significantly slow down data retrieval.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;data-warehouse-modeling-techniques&quot;&gt;Data Warehouse Modeling Techniques&lt;/h2&gt;
+
+&lt;p&gt;The three big approaches for modeling analytical data are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Inmon&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Top-down approach&lt;/li&gt;
+      &lt;li&gt;Advocates for creating a centralized, integrated &lt;em&gt;Enterprise Data Warehouse&lt;/em&gt; (EDW)&lt;/li&gt;
+      &lt;li&gt;Uses a normalized structure (3NF) for the core warehouse where data is organized by subject reflecting the overall business structure&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;Data Marts&lt;/em&gt; are created from the EDW as needed for analytical needs&lt;/li&gt;
+      &lt;li&gt;The popular option for modeling the data mart is a &lt;strong&gt;Star Schema&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;Rules how to build data warehouse, store and organise data (Bill Inmon, 1990):
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;Integrated&lt;/strong&gt; = other data sources&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Subject oriented&lt;/strong&gt; = reorganise the data per subject&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Time variant&lt;/strong&gt; = data warehouse contains historical data&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Non volatile&lt;/strong&gt; = data warehouse remains stable between refreshes&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Kimball&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Bottom up approach&lt;/li&gt;
+      &lt;li&gt;Focuses on building data marts that address specific business processes making the data mart the data warehouse itself&lt;/li&gt;
+      &lt;li&gt;Uses a &lt;strong&gt;Star or Snowflake Schema&lt;/strong&gt; for the design of the data marts&lt;/li&gt;
+      &lt;li&gt;Data is modulated with two general types of tables: &lt;strong&gt;Facts&lt;/strong&gt; and &lt;strong&gt;Dimensions&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;A &lt;strong&gt;slowly changing dimension (SCD)&lt;/strong&gt; is necessary to track changes in dimensions&lt;/li&gt;
+      &lt;li&gt;SCD three most common ones:
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;Type 1&lt;/strong&gt;
+            &lt;ul&gt;
+              &lt;li&gt;Overwrite existing dimension records. This is super simple and means you have no access to the deleted historical dimension records&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Type 2&lt;/strong&gt;
+            &lt;ul&gt;
+              &lt;li&gt;Keep a full history of dimension records. When a record changes, that specific record is flagged as changed, and a new dimension record is created that reflects the current status of the attributes&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Type 3&lt;/strong&gt;
+            &lt;ul&gt;
+              &lt;li&gt;A type 3 SCD is similar to a type 2 SCD, but instead of creating a new Row, a change in a type 3 SCD creates a new field&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data Vault&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Data Vaults organize data into three different types: &lt;strong&gt;hubs&lt;/strong&gt;, &lt;strong&gt;links&lt;/strong&gt;, and &lt;strong&gt;satellites&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Hubs represent core business entities. The primary key of Hub tables is usually derived by a combination of business concept ID, load date, and other metadata information&lt;/li&gt;
+          &lt;li&gt;Links represent relationships between hubs. It has only the join keys. It is like a Factless Fact table in the dimensional model. No attributes - just join keys&lt;/li&gt;
+          &lt;li&gt;Satellites store attributes about hubs or links. They have descriptive information on core business entities. They are similar to a normalized version of a Dimension table&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Data Vault is a “write-optimized” modeling style&lt;/li&gt;
+      &lt;li&gt;Great fit for data lakes and lakehouse approach&lt;/li&gt;
+      &lt;li&gt;Supports agile development approaches:
+        &lt;ul&gt;
+          &lt;li&gt;It can be easily extended without massive refactoring like the dimensional models&lt;/li&gt;
+          &lt;li&gt;Additional hubs can be easily added to links and additional satellites can be added to a Hub with minimal changes&lt;/li&gt;
+          &lt;li&gt;Existing ETL jobs need significantly less refactoring when the data model changes&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;modeling-techniques-implementation-on-databricks-lakehouse-platform&quot;&gt;Modeling Techniques Implementation on Databricks Lakehouse Platform&lt;/h2&gt;
+
+&lt;p&gt;A &lt;strong&gt;data Lakehouse&lt;/strong&gt; is a new, open architecture that combines the best elements of data lakes and data warehouses. The Databricks Lakehouse is a large-scale enterprise-level platform that can host many use cases and data products. Therefore, it can support many different data modeling styles for different purposes and both normalized Data Vault (write-optimized) and denormalized dimensional models (read-optimized) data modeling styles have their place.&lt;/p&gt;
+
+&lt;p&gt;The application of both techniques can be especially recognized through the lenses of the &lt;strong&gt;Medallion Architecture&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;The medallion architecture is a data design pattern used to logically organize data in a lakehouse, with the goal of incrementally and progressively improving the structure and quality of data as it flows through each layer of the architecture (from Bronze ⇒ Silver ⇒ Gold layer tables).&lt;/p&gt;
+
+&lt;p&gt;The following diagram summarizes the mapping of different layers, their purpose, and applied modeling techniques in each:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/articles/19_data_lakehouse_architecture.png&quot; alt=&quot;Data lakehouse architecture and modeling techniques&quot; /&gt;
+&lt;em&gt;Figure 1: Data lakehouse architecture and modeling techniques - &lt;a href=&quot;https://www.databricks.com/blog/2022/06/24/data-warehousing-modeling-techniques-and-their-implementation-on-the-databricks-lakehouse-platform.html&quot;&gt;Source&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;First data is landed in the Bronze layer in raw format using the same models of source systems in order to get converted to delta lake format. Next it flows into the Silver layer where it gets aggregated using more normalized model. Finally, the gold layer is meant for read-optimized presentation layer using denormalized models.&lt;/p&gt;
+
+&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
+
+&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;In this article we covered the three main data warehouse modeling techniques and relevant design concepts and how they are applied in some form of combination taking the example of Databricks lakehouse platform.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.snowflake.com/guides/difference-between-data-warehouse-and-data-mart/&quot;&gt;https://www.snowflake.com/guides/difference-between-data-warehouse-and-data-mart/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.databricks.com/glossary/medallion-architecture&quot;&gt;https://www.databricks.com/glossary/medallion-architecture&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.databricks.com/blog/2022/06/24/prescriptive-guidance-for-implementing-a-data-vault-model-on-the-databricks-lakehouse-platform.html&quot;&gt;https://www.databricks.com/blog/2022/06/24/prescriptive-guidance-for-implementing-a-data-vault-model-on-the-databricks-lakehouse-platform.html&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><category term="Data Architecture" /><summary type="html">In this article we will go over the big three approaches for modeling analytical data.</summary></entry><entry><title type="html">Preparation Guide for Google Cloud Professional Data Engineer Certification</title><link href="https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification.html" rel="alternate" type="text/html" title="Preparation Guide for Google Cloud Professional Data Engineer Certification" /><published>2023-11-19T00:00:00+00:00</published><updated>2023-11-19T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification.html">&lt;p&gt;&lt;em&gt;This article contains a collection of notes, mind maps and resources to support you while preparing for the google cloud professional data engineer certification.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Disclaimer&lt;/em&gt;&lt;/strong&gt;: The new Professional Data Engineer exam will be live starting November 13. The new version reflects updates to Google Cloud’s data storing, data sharing, and data governance and has less emphasis on operationalizing machine learning models. 
 That being said, I believe most of the content is still relevant and can serve as a guide to assist you as you begin your preparation.&lt;/p&gt;
@@ -1686,425 +1989,4 @@ In addition, we went through an example of how to deploy a python application in
 
 &lt;p&gt;&lt;a href=&quot;https://docs.influxdata.com/kapacitor/v1.6/working/scraping-and-discovery/&quot;&gt;https://docs.influxdata.com/kapacitor/v1.6/working/scraping-and-discovery/&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://thanos.io/&quot;&gt;https://thanos.io/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Observability" /><summary type="html">In this article we will deep dive into prometheus, the open-source monitoring and alerting system, and see how we can use it to monitor a simple python application.</summary></entry><entry><title type="html">The Lean Startup</title><link href="https://www.firasesbai.com/notes/2022/09/11/the-lean-startup.html" rel="alternate" type="text/html" title="The Lean Startup" /><published>2022-09-11T00:00:00+00:00</published><updated>2022-09-11T00:00:00+00:00</updated><id>https://www.firasesbai.com/notes/2022/09/11/the-lean-startup</id><content type="html" xml:base="https://www.firasesbai.com/notes/2022/09/11/the-lean-startup.html">&lt;p&gt;&lt;em&gt;Notes from the Lean Startup Book By Eric Ries&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/articles/14_the_lean_startup.png&quot; alt=&quot;image&quot; /&gt;
-&lt;br /&gt;&lt;em&gt;Figure 1: Lean Startup Validated Learnings to Achieve Growth&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1&gt; Contents &lt;/h1&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1-summary&quot; id=&quot;markdown-toc-1-summary&quot;&gt;1. Summary&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2-favorite-quotes&quot; id=&quot;markdown-toc-2-favorite-quotes&quot;&gt;2. Favorite Quotes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#3-main-takeaways&quot; id=&quot;markdown-toc-3-main-takeaways&quot;&gt;3. Main Takeaways&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#part-1-vision&quot; id=&quot;markdown-toc-part-1-vision&quot;&gt;Part 1: Vision&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#part-2-steer&quot; id=&quot;markdown-toc-part-2-steer&quot;&gt;Part 2: Steer&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#part-3-accelerate&quot; id=&quot;markdown-toc-part-3-accelerate&quot;&gt;Part 3: Accelerate&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;1-summary&quot;&gt;1. Summary&lt;/h2&gt;
-
-&lt;p&gt;The Lean startup takes its name from the lean manufacturing revolution that originated in Japan with the Toyota Production System. 
-Since not only building cars requires management but also building a startup, the lean startup movement came to existence. 
-Entrepreneurs are afraid of implementing traditional management practices early in a startup thinking that this will limit innovation. 
-As a consequence, entrepreneurs take a ”just do it” attitude avoiding all forms of management, process and discipline. Unfortunately this approach leads to chaos more often then it does to success.&lt;/p&gt;
-
-&lt;p&gt;Eric Ries describes in this book the why and the how that led to the birth of this movement and the tools that will teach you how to drive a Startup.&lt;/p&gt;
-
-&lt;h2 id=&quot;2-favorite-quotes&quot;&gt;2. Favorite Quotes&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;Think Big, Start Small.&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;An Experiment is a Product.&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;The lean startup is a framework not a blueprint of steps to follow. It is designed to be adapted to the specific conditions of each specific company.&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;3-main-takeaways&quot;&gt;3. Main Takeaways&lt;/h2&gt;
-
-&lt;p&gt;The Lean Startup has &lt;em&gt;12 Principles&lt;/em&gt; that are categorised into three main parts making up the lifecycle of a Startup.&lt;/p&gt;
-
-&lt;h3 id=&quot;part-1-vision&quot;&gt;Part 1: Vision&lt;/h3&gt;
-
-&lt;p&gt;Explore the importance of learning as the measure of progress for a startup.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 1: Start&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;Goal of a startup&lt;/em&gt;: Figure out the right thing to build; the thing customers want and will pay for as quickly as possible.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 2: Define&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;What is a Startup?&lt;/em&gt;&lt;/p&gt;
-
-    &lt;p&gt;A startup is a human institution(process) designed to create a new product or service(innovation is part of the broad term product to encompass any source of value for the people) under conditions of extreme uncertainty.&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;What is an Entrepreneur?&lt;/em&gt;&lt;/p&gt;
-
-    &lt;p&gt;Anyone who is creating a new product or business under conditions of extreme uncertainty is an entrepreneur regardless of the size of the company, the industry or the sector of the economy.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 3: Learn&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;Validated Learning:&lt;/em&gt;&lt;/p&gt;
-
-    &lt;p&gt;Learning is the essential unit of progress for startups. The effort that is not necessary for learning what customers want can be eliminated.&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;Productivity in a Startup:&lt;/em&gt;&lt;/p&gt;
-
-    &lt;p&gt;Not in terms of how much stuff we are building but in terms of how much validated learning we’re getting for our efforts.&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;The audacity of zero:&lt;/em&gt;&lt;/p&gt;
-
-    &lt;p&gt;The irony is that it is often easier to raise money or acquire other resources when you have zero revenu, zero customers and zero traction than when you have a small amount. 
- Zero invites imagination, but small numbers invite questions about whether large numbers will ever materialise.&lt;/p&gt;
-
-    &lt;p&gt;We can mitigate the waste that happens because of the audacity of zero with &lt;strong&gt;validated learning&lt;/strong&gt;.&lt;/p&gt;
-
-    &lt;p&gt;In the lean startup model, every product, every feature, every marketing campaign –everything a startup does – is understood to be an &lt;strong&gt;experiment&lt;/strong&gt; designed to achieve validated learning.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 4: Experiment&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;A true experiment follows the scientific method. It begins with a clear hypothesis that makes predictions about what is supposed to happen. It then tests those predictions empirically.&lt;/p&gt;
-
-    &lt;p&gt;The goal of every startup’s experiment is to discover how to build a sustainable business around that &lt;strong&gt;vision&lt;/strong&gt;.&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;How?&lt;/em&gt; The second part will tell us that.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;part-2-steer&quot;&gt;Part 2: Steer&lt;/h3&gt;
-
-&lt;p&gt;How vision leads to steering?&lt;/p&gt;
-
-&lt;p&gt;Build-Measure-Learn feedback loop.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/articles/14_learn_build_measure.png&quot; alt=&quot;image&quot; /&gt;
-&lt;br /&gt;&lt;em&gt;Figure 2: Learn Build Measure Loop&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;It is at the core of the lean startup model.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 5: Leap&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;Every business plan begins with a set of assumptions. 
- The riskiest elements of a startup’s plan are called &lt;strong&gt;leap of faith assumptions&lt;/strong&gt;.
- They are called leaps of faith because the success of the entire venture rests on them. If they are true, tremendous opportunity awaits. If they are false, the startup risks total failure.&lt;/p&gt;
-
-    &lt;p&gt;The most important leap-of-faith questions any new startup faces are &lt;strong&gt;value hypothesis&lt;/strong&gt; and &lt;strong&gt;growth hypothesis&lt;/strong&gt;.&lt;/p&gt;
-
-    &lt;p&gt;The value hypothesis tests whether a product or service really delivers value to customers once they are using it.&lt;/p&gt;
-
-    &lt;p&gt;Growth hypothesis tests how new customers will discover a product or service.&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;Example: why facebook impressed the investors?&lt;/em&gt;&lt;/p&gt;
-
-    &lt;p&gt;More than half of the users came back to the site every single day -&amp;gt; validated value hypothesis: the customers find the product valuable.&lt;/p&gt;
-
-    &lt;p&gt;By the end of the month of launch 3/4 of harvard’s undergraduates were using it without a dollar of marketing or advertising have been spent -&amp;gt; validated growth hypothesis.&lt;/p&gt;
-
-    &lt;p&gt;We need to confirm that your leap-of-faith questions are based in reality, that the customer has a significant problem worth solving.&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;How?&lt;/em&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;Early contact with customers&lt;/strong&gt;.&lt;/p&gt;
-
-    &lt;p&gt;The goal of such early contact with customers is to understand our potential customers and what problems they have. With that understanding we can craft a &lt;strong&gt;customer archetype&lt;/strong&gt;, a brief document that seeks to humanise the proposed target customer. &lt;br /&gt;
- The point is not to find the average customer but to find early adopters; the customers who feel the need for the product most accurately and experiment with them.&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;When?&lt;/em&gt;&lt;/p&gt;
-
-    &lt;p&gt;Enter the build phase as quickly as possible with a &lt;strong&gt;Concierge Minimum Viable Product&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 6: Test&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;The goal of the &lt;strong&gt;MVP&lt;/strong&gt; is to begin the process of learning, not to end it. Unlike a prototype or concept test, an MVP is designed not just to answer product design or technical questions. 
- Its goal is to test fundamental business hypotheses.&lt;/p&gt;
-
-    &lt;p&gt;Before new products can be sold successfully to the mass market, they have to be sold to early adopters.&lt;/p&gt;
-
-    &lt;p&gt;MVP ranges in complexity from extremely simple smoke tests (little more than an advertisement) to actual early prototypes complete with problems and missing features.&lt;/p&gt;
-
-    &lt;p&gt;The lesson of the MVP is that any additional work beyond what was required to start learning is waste, no matter how important it might have seemed at the time.&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;Example:&lt;/em&gt;&lt;/p&gt;
-
-    &lt;p&gt;Dropbox had a video as an MVP. It validated the leap-of-faith assumption that customers wanted the product by signing up to the beta waiting list on the website after watching the video.&lt;/p&gt;
-
-    &lt;p&gt;For startups I believe in the following &lt;strong&gt;quality principle&lt;/strong&gt;: If we do not know who the customer is we do not know what quality is. So remove any feature, process or effort that does not contribute directly to the learning you seek.&lt;/p&gt;
-
-    &lt;p&gt;The most commun speed bumps a Startup faces with an MVP are legal issues, fears about competitors (no need, present the competition with your idea and they won’t build it),  branding (different brand) risks and the impact on morale.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 7: Measure&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;At the beginning a startup is little more than a business model (projections on how many customers the company expects to attract, how much it will spend, how much revenue and profit that will lead to) on a piece of paper.&lt;/p&gt;
-
-    &lt;p&gt;A startup’s job is to:&lt;/p&gt;
-    &lt;ol&gt;
-      &lt;li&gt;Rigorously measure where it is right now&lt;/li&gt;
-      &lt;li&gt;Devise experiments to learn how to move the real numbers closer to the ideal reflected in the business plan&lt;/li&gt;
-    &lt;/ol&gt;
-
-    &lt;p&gt;How to measure progress ?  &lt;strong&gt;Innovation Accounting&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;Innovation accounting is a quantitative approach that allows us to see whether our engine tuning efforts are bearing fruit. 
- It also allows us to create learning milestones useful for entrepreneurs as a way of assessing their progress accurately and objectively. 
- They are also invaluable to managers and investors who must hold entrepreneurs accountable.&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;Use an MVP to establish real data on where the company is right now.&lt;/li&gt;
-      &lt;li&gt;Attempt to tune the engine (micro changes and product optimizations) from the baseline toward the ideal.&lt;/li&gt;
-      &lt;li&gt;Pivot or Persevere: When a company pivots, it starts the process all over again. The sign of a successful pivot is that these engine-tuning activities are more productive after the pivot then before.&lt;/li&gt;
-    &lt;/ol&gt;
-
-    &lt;p&gt;Innovation accounting will not work if a startup is being misled by &lt;strong&gt;Vanity Metrics&lt;/strong&gt;: gross number of customers and so on. 
- The alternative is the kind of metrics we use to judge our business and our learning milestones; &lt;strong&gt;Actionable Metrics&lt;/strong&gt;.&lt;/p&gt;
-
-    &lt;p&gt;Good metrics:&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Actionable
-        &lt;ul&gt;
-          &lt;li&gt;It must demonstrate clear cause and effect. When cause and effect is clearly understood, people are better able to learn from their actions.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Accessible
-        &lt;ul&gt;
-          &lt;li&gt;All too many reports are not understood. The easiest way to make reports comprehensible is to use tangible concrete units. What is a website hit? Nobody is really sure but everyone knows what a person visiting the website is.&lt;/li&gt;
-          &lt;li&gt;Accessibility also refers to widespread access to the reports. One way is to automatically generate a document containing each experiment and its results explained and mail it to every employee.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Auditable
-        &lt;ul&gt;
-          &lt;li&gt;We must ensure that the data is credible to employees. How? We need to be able to test the data by hand by talking to customers. Metrics are people too. This is the only way to check if the reports contain true facts.&lt;/li&gt;
-          &lt;li&gt;The mechanisms that generate the reports are not too complex.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;Solutions?&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Instead of looking at gross metrics, use &lt;strong&gt;cohort-based&lt;/strong&gt; metrics.&lt;/li&gt;
-      &lt;li&gt;Instead of looking for cause-and-effect relationships after the fact, we launch each new feature as a true &lt;strong&gt;split-test experiment&lt;/strong&gt;.&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;Kanban&lt;/strong&gt;; Teams working in this system begin to measure their productivity according to validated learning not in terms of the production of new features.&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;ins&gt;Cohort analysis&lt;/ins&gt;:&lt;/p&gt;
-
-    &lt;p&gt;This is one of the most important tools of a startup analytics. 
- Instead of looking at cumulative totals or gross numbers such as total revenue and total number of customers one looks at the performance of each group of customers that comes into contact with the product independently. 
- Each group is called a cohort.&lt;/p&gt;
-
-    &lt;p&gt;&lt;ins&gt;Split-test experiment&lt;/ins&gt;:&lt;/p&gt;
-
-    &lt;p&gt;This is one in which different versions of a product are offered to customers at the same time. By observing the changes in behavior between the two groups one can make inferences about the impact of the different variations. 
- Although split testing often is thought of as a marketing-specific practice, lean startups incorporate it directly into product development.&lt;/p&gt;
-
-    &lt;p&gt;&lt;ins&gt;Kanban&lt;/ins&gt;:&lt;/p&gt;
-
-    &lt;p&gt;User stories are not considered complete until they led to validated learning 
- Stories can be in one of 4 states of development:&lt;/p&gt;
-
-    &lt;table&gt;
-      &lt;thead&gt;
-        &lt;tr&gt;
-          &lt;th&gt;BACKLOG&lt;/th&gt;
-          &lt;th&gt;IN PROGRESS&lt;/th&gt;
-          &lt;th&gt;BUILT&lt;/th&gt;
-          &lt;th&gt;VALIDATED&lt;/th&gt;
-        &lt;/tr&gt;
-      &lt;/thead&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;A&lt;/td&gt;
-          &lt;td&gt;D&lt;/td&gt;
-          &lt;td&gt;F&lt;/td&gt;
-          &lt;td&gt; &lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;B&lt;/td&gt;
-          &lt;td&gt;E&lt;/td&gt;
-          &lt;td&gt; &lt;/td&gt;
-          &lt;td&gt; &lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;C&lt;/td&gt;
-          &lt;td&gt; &lt;/td&gt;
-          &lt;td&gt; &lt;/td&gt;
-          &lt;td&gt; &lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-
-    &lt;p&gt;No bucket can contain more than 3 projects at a time.&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;Validated&lt;/em&gt; is defined as knowing whether the story was a good idea to have been done in the first place. 
- This validation usually would come in the form of a split test showing a change in customer behavior but also might include customer interviews or surveys.
- If the validation fails and it turns out the story is a bad idea, the relevant feature is removed from the product.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 8: Pivot (or Persevere)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;A pivot is not just an exhortation to change. It is a special kind of structured change designed to test a new fundamental hypothesis about the product business model and engine of growth.&lt;/p&gt;
-
-    &lt;p&gt;A pivot is better understood as a new strategic hypothesis that will require a new MVP to test.&lt;/p&gt;
-
-    &lt;p&gt;Every startup should have a regular pivot or persevere meeting. Less than a few weeks is too often and more than a few months is too infrequent. Each startup needs to find its own pace.&lt;/p&gt;
-
-    &lt;p&gt;Normally, the &lt;strong&gt;runway&lt;/strong&gt; is defined as the remaining cash in the bank divided by the monthly burn rate or net drain on that account balance. 
- The true measure of runway in a startup is how many pivots the startup has left: the number of opportunities it has to make a fundamental change to its business strategy. 
- The startup has to find a way to achieve the same amount of validated learning at lower cost or in a shorter time.&lt;/p&gt;
-
-    &lt;p&gt;A catalogue of pivots:&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Zoom-in pivot&lt;/li&gt;
-      &lt;li&gt;Zoom-out pivot&lt;/li&gt;
-      &lt;li&gt;Customer segment pivot&lt;/li&gt;
-      &lt;li&gt;Customer need pivot&lt;/li&gt;
-      &lt;li&gt;Platform pivot&lt;/li&gt;
-      &lt;li&gt;Business architecture pivot&lt;/li&gt;
-      &lt;li&gt;Value capture pivot&lt;/li&gt;
-      &lt;li&gt;Engine of growth pivot&lt;/li&gt;
-      &lt;li&gt;Channel pivot&lt;/li&gt;
-      &lt;li&gt;Technology pivot &lt;br /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;part-3-accelerate&quot;&gt;Part 3: Accelerate&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 9: Batch&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;The small batch approach produces a finished product every few seconds whereas the large batch approach must deliver all the products at once at the end.&lt;/p&gt;
-
-    &lt;p&gt;The biggest advantage of working in small batches is that quality problems can be identified much sooner.&lt;/p&gt;
-
-    &lt;p&gt;What if it turns out that the customer doesn’t want the product we’re building? Working in small batches ensures that a startup can minimize the expenditure of time, money and effort that ultimately turns out to have been wasted.&lt;/p&gt;
-
-    &lt;p&gt;The essential lesson is not that everyone should be shipping fifty times per day but that by reducing batch size we can get through the Build-Measure-Learn feedback loop more quickly than our competitors can. 
- The ability to learn faster from customers is the essential competitive advantage that startups must possess.&lt;/p&gt;
-
-    &lt;p&gt;Lean production solves the problem of stockouts with a technique called &lt;em&gt;Pull&lt;/em&gt;. 
- When companies switch to this kind of production, their warehouses immediately shrink, as the amount of just-in-case inventory (called work-in-progress (WIP) inventory) is reduced dramatically.&lt;/p&gt;
-
-    &lt;p&gt;Some people misunderstand the lean startup model as simply applying pull to customer wants. This assumes that customers could tell us what products to build and that this would act as the pull signal to product developpement to make them. Customers often don’t know what they want.&lt;/p&gt;
-
-    &lt;p&gt;Product development process in a lean startup is responding to pull requests in the form of experiments that need to be run. 
- Thus it is not the customer but rather our &lt;em&gt;hypothesis about the customer&lt;/em&gt; that pulls work from product development and other functions. Any other work is waste.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/images/articles/14_the_startup_way.png&quot; alt=&quot;image&quot; /&gt;
- &lt;br /&gt;&lt;em&gt;Figure 3: The Startup Way, Image from &lt;a href=&quot;http://www.thestartupway.com/&quot;&gt;theleanstartup&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principal 10: Growth&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;The engine of growth is the mechanism that startups use to achieve sustainable growth. 
- &lt;strong&gt;Sustainable growth&lt;/strong&gt; is characterized by one simple rule: new customers come from the actions of past customers.&lt;/p&gt;
-
-    &lt;p&gt;Four primary ways past customers drive sustainable growth:&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Word of mouth&lt;/li&gt;
-      &lt;li&gt;As a side effect of product usage&lt;/li&gt;
-      &lt;li&gt;Through funded advertising&lt;/li&gt;
-      &lt;li&gt;Through repeat purchase or use &lt;br /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;These sources of sustainable growth power the feedback loops called &lt;strong&gt;engines of growth&lt;/strong&gt;.&lt;/p&gt;
-
-    &lt;p&gt;Three engines of growth 
- Engines of growth are designed to give startups a relatively small set of metrics on which to focus their energies.&lt;/p&gt;
-
-    &lt;p&gt;&lt;ins&gt;The sticky engine of growth&lt;ins&gt;&lt;/ins&gt;:&lt;/ins&gt;&lt;/p&gt;
-
-    &lt;p&gt;Attract and retain customers for the long term.&lt;/p&gt;
-
-    &lt;p&gt;Companies using the sticky engine of growth track their &lt;strong&gt;attrition rate&lt;/strong&gt; or churn rate very carefully. The churn rate is defined as the fraction of customers in any period who fail to remain engaged with the company’s product. 
- The rules that govern the sticky engine of growth are pretty simple: if the rate of new customer acquisition exceeds the churn rate, the product will grow. The speed of growth is determined by what is called the &lt;strong&gt;rate of compounding&lt;/strong&gt; which is simply the natural growth rate minus the churn rate. 
- The way to find growth is to focus on existing customers to make the product even more engaging to them.&lt;/p&gt;
-
-    &lt;p&gt;&lt;ins&gt;The viral engine of growth&lt;ins&gt;&lt;/ins&gt;:&lt;/ins&gt;&lt;/p&gt;
-
-    &lt;p&gt;The viral engine is powered by a feedback loop that can be quantified. It is called the &lt;strong&gt;viral loop&lt;/strong&gt; and its speed is determined by a single mathematical term called the &lt;strong&gt;viral coefficient&lt;/strong&gt;. 
- The viral coefficient measures how many new customers will use a product as a consequence of each new customer who signs up. For a product with a viral coefficient of 0.1, one in every ten customers will recruit one of his or her friends.
- Companies that rely on the viral engine of growth must focus on increasing the viral coefficient more than anything else. 
- A consequence of this is that many viral products do not charge customers directly but rely on indirect sources of revenue such as advertising. This is because viral products cannot afford to have any friction impede the process of signing customers up and recruiting their friends.&lt;/p&gt;
-
-    &lt;p&gt;&lt;ins&gt;The paid engine of growth&lt;ins&gt;&lt;/ins&gt;:&lt;/ins&gt;&lt;/p&gt;
-
-    &lt;p&gt;Each customer pays a certain amount of money for the product over his or her “lifetime” as a customer. Once variable costs are deducted this usually is called the customer lifetime value (LTV). This revenue can be invested in growth by buying advertising. 
- If the company wants to increase its rate of growth it can do so in one of two ways:
- Increase the revenue from each customer or drive down the cost of acquiring a new customer. 
- Suppose an advertisement costs 100$ and causes 50 new customers to sign up for the service. This ad has a cost per acquisition (CPA) of 2$. In this example if the product has an LTV &amp;gt; 2$ the product will grow. The margin between the LTV and CPA determines how fast the paid engine of growth will turn (this is called the marginal profit)&lt;/p&gt;
-
-    &lt;p&gt;I strongly recommend that startups focus on one engine at a time. Only after pursuing one engine thoroughly should a startup consider a pivot to one of the others.&lt;/p&gt;
-
-    &lt;p&gt;Product/market fit = moment when a startup finally finds a widespread set of customers that resonate with its product. 
- Since each engine of growth can be defined quantitatively, each has a unique set of metrics that can be used to evaluate whether a startup is on the verge of achieving product/market fit.&lt;/p&gt;
-
-    &lt;p&gt;Two assumptions that are wrong:&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Our startup has failed to achieve product/market fit -&amp;gt; a pivot is a failure event&lt;/li&gt;
-      &lt;li&gt;Once our product has achieved product/market fit we won’t have to pivot anymore &lt;br /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;Every engine of growth is tied to a given set of customers and their related habits, preferences, advertising channels and interconnections. 
- At some point that set of customers will be exhausted. This may take a long time or a short time depending on one’s industry and timing.&lt;/p&gt;
-
-    &lt;p&gt;Companies of any size can suffer from the perpetual affliction. 
- They need to manage a portfolio of activities simultaneously tuning their engine of growth and developing new sources of growth for when the engine inevitably runs its course.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 11: Adapt&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;The wisdom of the five whys:&lt;/em&gt;&lt;/p&gt;
-
-    &lt;p&gt;Repeating why five times can help uncover the root problem and correct it. 
- The core idea of five whys is to tie investments directly to the prevention of the most problematic symptoms. 
- Here is how to use 5 whys analysis to build an adaptive organization: consistently make a proportional investment at each of the five levels of the hierarchy. In other words the investment should be smaller when the symptom is minor and larger when the symptom is more painful. 
- Startup teams should go through the five whys whenever they encounter any kind of failure, including technical faults, failures to achieve business results or unexpected changes in customer behaviour.&lt;/p&gt;
-
-    &lt;p&gt;The curse of the 5 blames
- Instead of using the 5 whys to find and fix problems managers and employees can fall into the trap of using the 5 blames as a means for venting their frustrations and calling out colleagues for systemic failures 
- To escape the 5 blames make sure that everyone affected by the problem is in the room during the analysis of the root cause.&lt;/p&gt;
-
-    &lt;p&gt;Once you are ready to begin, start with a narrowly targeted class of symptoms. It’s better to give the team a chance to learn how to do the process first and then expand into higher-stakes areas later.&lt;/p&gt;
-
-    &lt;p&gt;Appoint a five whys master for each area in which the method is being used. This individual is tasked with being the moderator for each 5 whys meeting making decisions about which prevention steps to take, and assigning the follow up work from the meeting.  The master must be senior enough to have the authority to ensure that those assignments get done but should not be so senior that he or she will not be able to be present at the meetings because of conflicting responsibilities.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;&lt;em&gt;Principle 12: Innovate&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;Successful innovation teams must be structured correctly in order to succeed.&lt;/p&gt;
-
-    &lt;p&gt;Startup teams require 3 structural attributes:&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;Scarce but secure resources&lt;/strong&gt;: Startups require much less capital overall, but that capital must be absolutely secure from tampering&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;Independent authority to develop their business&lt;/strong&gt;: Startup teams must be completely cross functional. Have full-time representation from every functional department in the company that will be involved in the creation or launch of their early products. They have to be able to build and ship actual functioning products and services, not just prototypes. Approvals slow down the build-measure-learn feedback loop.&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;Personal stake in the outcome&lt;/strong&gt;: This is usually achieved through stock options or other forms of equity ownership but it doesn’t have to be financial. Make it clear who the innovator is and make sure the innovator receives credit for having brought the new product to life if it is successful. &lt;br /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;ins&gt;Creating an innovation sandbox&lt;ins&gt;&lt;/ins&gt;&lt;/ins&gt;&lt;/p&gt;
-
-    &lt;p&gt;Create a sandbox for innovation that will contain the impact of the new innovation but not constrain the methods of the startup team. It works as follows:&lt;/p&gt;
-    &lt;ol&gt;
-      &lt;li&gt;Any team can create a true split-test experiment that affects only the sandboxed parts of the product or service or only certain customer segments or territories&lt;/li&gt;
-      &lt;li&gt;One team must see the whole experiment through from end to end -&amp;gt; cross-functional team&lt;/li&gt;
-      &lt;li&gt;No experiment can run longer than a specified amount of time&lt;/li&gt;
-      &lt;li&gt;No experiment can affect more than a specified number of customers (usually expressed as a percentage of the company’s total mainstream customer base)&lt;/li&gt;
-      &lt;li&gt;Every experiment has to be evaluated on the basis of a single standard report of five to 10 no more actionable metrics&lt;/li&gt;
-      &lt;li&gt;Every team that works inside the sandbox and every product that is built must use the same metrics to evaluate success&lt;/li&gt;
-      &lt;li&gt;Any team that creates an experiment must monitor the metrics and customer reactions while the experiment is in progress and abort it if something catastrophic happens&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;Thanks for reading, I hope you enjoyed it!&lt;/em&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="notes" /><category term="General" /><summary type="html">Notes from the Lean Startup Book By Eric Ries</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://thanos.io/&quot;&gt;https://thanos.io/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Observability" /><summary type="html">In this article we will deep dive into prometheus, the open-source monitoring and alerting system, and see how we can use it to monitor a simple python application.</summary></entry></feed>
