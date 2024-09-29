@@ -1,0 +1,42 @@
+---
+layout: page
+permalink: /archive/
+description: "Explore a comprehensive archive of Firas Esbai's articles."
+---
+
+<link rel="stylesheet" href="/assets/css/archive.css">
+
+<h1>Archive</h1>
+
+<h2>Explore by Category</h2>
+
+{% assign categories_array = "Cloud Computing, Blogging, Data Architecture, Data Engineering, General, Observability" | split: ", " | sort %}
+
+{% for category in categories_array %}
+  {% assign post_count = 0 %}
+  
+  {% for tag in site.tags %}
+    {% if tag[0] == category %}
+      {% assign post_count = tag[1] | size %}
+    {% endif %}
+  {% endfor %}
+  
+  {% assign post_url = category | downcase | replace: " ", "-" %}
+  <ul><li><h4><a href="/categories/{{post_url}}">{{category}} ({{post_count}})</a></h4></li></ul>
+{% endfor %}
+
+<h2>Archive by Year</h2>
+
+{% assign years_array = "2024, 2023, 2022, 2021" | split: ", " %}
+
+{% for year in years_array %}
+  <h4>{{year}}</h4>
+  <ul>
+  {% for post in site.posts %}
+  {% assign post_year = post.date | date: "%Y" %}
+    {% if post_year == year %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+{% endfor %}
