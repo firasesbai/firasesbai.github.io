@@ -4,7 +4,7 @@
       {%- assign page_paths = site.header_pages | default: default_paths -%}
       {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
       
-	   <a class="site-title" href="{{ "/" | relative_url}}" style="font-size: 26px"> Home </a>		
+	   <a class="site-title" href="{{ "/" | relative_url}}" style="font-size: 26px"> Firas Esbai </a>		
 	         
 	  {%- if titles_size > 0 -%}
       <nav class="site-nav">
@@ -21,10 +21,11 @@
                my_page.autogen is populated by the pagination logic for all pages
                                that are automatically created by the gem. Check for non-existence to exclude pagination pages from site.pages iterators
                -->
-            {% for my_page in site.pages %}
-            {% if my_page.title and my_page.autogen == nil and my_page.title != "Home" %}
-            <a class="page-link" href="{{ my_page.url | relative_url }}" style="font-size: 20px">{{ my_page.title | escape }}</a>
-            {% endif %}
+            {%- assign page_links = site.pages | where: "autogen", nil | sort: "nav_order" -%}
+            {% for my_page in page_links %}
+               {% if my_page.title and my_page.autogen == nil and my_page.title != "Home" %}
+                  <a class="page-link" href="{{ my_page.url | relative_url }}" style="font-size: 20px">{{ my_page.title | escape }}</a>
+               {% endif %}
             {% endfor %}
 
          </div>
