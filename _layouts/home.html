@@ -2,120 +2,60 @@
 layout: default
 ---
 
-<link href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible:400&display=swap" rel="stylesheet">
-
-<style>
-  ul.pager { text-align: center; list-style: none; }
-  ul.pager li {display: inline;border: 1px solid black; padding: 10px; margin: 5px;}
-  .header {
-   text-align: center; 
-    margin: 20px 0; 
-   }
-   .welcome-message {
-    text-align: center; 
-    margin: 20px 0; 
-   }
-   .welcome-message h1 {
-    font-family: 'Atkinson Hyperlegible', sans-serif; 
-    font-weight: 400; 
-    font-style: italic;
-    letter-spacing: 2px;
-   }
-   .search {
-    text-align: center;
-   }
-   @media (max-width: 768px) {
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .search {
-        text-align: center;
-      }
-   }
-   .pinned-articles {
-    text-align: center; 
-   }
-
-</style>
+<link rel="stylesheet" href="/assets/css/home.css">
 
 <div class="home">
-
    <div class="header">
       <div class="welcome-message">
-          <h1>Welcome 👋 to Firas Esbai's Corner</h1>
-      </div>
-      <div class="search">
-          {%- include search.html -%}
+          <h1>Welcome 👋 to My Corner</h1>
       </div>
   </div>
 
-  <hr>
-  <br>
+<hr>
 
-  {{ content }}
+<main class="main-content">
+  <div class="flex-container">
+      <div class="intro-text">
+         <p>I'am <strong>{{site.title}}</strong>, a data engineer and architect with several years of experience.</p>
+         <p>My main interest is building intelligent data intensive systems focusing on design and architecture challenges to help businesses thrive with better data-driven decisions.</p>
+      </div>
+      <div class="profile-image"> 
+         <img alt="Firas Esbai" style="float:right;" src="/assets/images/0_profile.png" height="200" width="200">
+      </div>
+  </div>
 
-  <!-- Logic for displaying pinned articles -->
-  <ul class="post-list">
-   <li>
-   <div class="pinned-articles">
-      <h2>
-         📌 Pinned 📌
-      </h2>
-   </div>
-   {% for post in site.posts %}
-    {% if post.pinned %}
-         <h3>
-            <a class="post-link" href="{{ post.url | relative_url}}">{{ post.title | escape }}</a>
-         </h3>
-         {{ post.excerpt }}
-   </li>
-    {% endif %}
-   {% endfor %}
-  </ul>
+   <section class="about-site">
+      <p>I started this site as a place to keep my own writings and document my learning journey that I'm now sharing with you.</p>
+      <p>I write about modern tools, architectures and best practices for building resilient, future-proof data systems.</p>
+   </section>
 
-  <hr>
-  <br>
+   <section class="cta">
+      <p>Feel free to <a href="/contact/">Get in Touch</a>, I'm always open to interesting conversations and collaboration.</p>
+   </section>
 
-  <ul class="post-list">
-     <!-- 
-        Here is the main paginator logic called.
-        All calls to site.posts should be replaced by paginator.posts 
-        -->
-     {% for post in paginator.posts %}
-      {% unless post.pinned %}
-         <li>
-            <h3> 
+   <hr>
+
+   <section class="recent-posts">
+      <h1>Recent Blog Posts</h1>
+      <ul>
+        {% for post in site.posts limit:3 %}
+          <li>
+            <h3>
                <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
             </h3>
-            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" | append: ' - '}}
-            {% assign words = post.content | strip_html | number_of_words %}
-            {{ words | divided_by:180 }} min read
+            <span class="post-date">
+               {{ post.date | date: "%b %-d, %Y" | append: ' - '}}
+               {% assign words = post.content | strip_html | number_of_words %}
+               {{ words | divided_by:180 }} min read
             </span>
-
             {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
+               {{ post.excerpt }}
             {%- endif -%}
-         </li>
-      {% endunless %}
-     {% endfor %}
-  </ul>
-  
-  <!-- 
-     Showing buttons to move to the next and to the previous list of posts (pager buttons).
-     -->
-  {% if paginator.total_pages > 1 %}
-  <ul class="pager">
-     {% if paginator.previous_page %}
-     <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-     </li>
-     {% endif %}
-     {% if paginator.next_page %}
-     <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-     </li>
-     {% endif %}
-  </ul>
-  {% endif %}
-</div>
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="view-all-container">
+         <a href="/blog" class="btn">View All Posts</a>
+       </div>
+    </section>
+</main>
