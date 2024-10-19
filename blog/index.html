@@ -125,9 +125,11 @@
       <div class="wrapper">
         <link rel="stylesheet" href="/assets/css/blog.css">
 
-<div class="search"><!-- Html Elements for Search -->
+<div class="search"><link rel="stylesheet" href="/assets/css/search.css">
+
+<!-- Html Elements for Search -->
 <div id="search-container">
-<input type="text" id="search-input" placeholder="Search..." size=50>
+<input type="text" id="search-input" placeholder="Search...">
 <button type="submit">🔍</button>
 <ul id="results-container"></ul>
 </div>
@@ -143,8 +145,7 @@ SimpleJekyllSearch({
   json: '/search.json',
   searchResultTemplate: '<div><a href="{url}"><h4>{title}</h4></a></div>'
   })
-</script>
-<br>
+</script><br>
 </div>
 
 <hr>
