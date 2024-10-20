@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2024-10-19T14:27:26+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Firas Esbai's Lifelong Learning Journey.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2024-10-20T12:03:12+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Firas Esbai's Lifelong Learning Journey.
 </subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Cloudflare Analytics vs Google Analytics</title><link href="https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html" rel="alternate" type="text/html" title="Cloudflare Analytics vs Google Analytics" /><published>2024-08-11T00:00:00+00:00</published><updated>2024-08-11T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html">&lt;p&gt;&lt;em&gt;In this article we will look into the reasons for discrepancies between the data reported by Cloudflare Analytics and Google Analytics and how to leverage both of them.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Tracking and analyzing web data is essential for keeping a holistic view on your site’s performance. This is especially useful for bloggers to track key metrics such as which articles and pages are most visited, where visitors are located and the percentage of visitors who leave after viewing only one page just to name a few.&lt;/p&gt;
@@ -727,7 +727,7 @@ Most regions have at least three zones and can have more. All regions have at le
 
 &lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
 
-&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Cloud Computing" /><summary type="html">This article contains a collection of notes, mind maps and resources to support you while preparing for the google cloud professional data engineer certification.</summary></entry><entry><title type="html">Learning How to Learn</title><link href="https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn.html" rel="alternate" type="text/html" title="Learning How to Learn" /><published>2023-10-21T00:00:00+00:00</published><updated>2023-10-21T00:00:00+00:00</updated><id>https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn</id><content type="html" xml:base="https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn.html">&lt;p&gt;&lt;em&gt;Notes from the online course learning how to learn: powerful mental tools to help you master tough subjects by Barbara Oakley.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Cloud Computing" /><summary type="html">This article contains a collection of notes, mind maps and resources to support you while preparing for the google cloud professional data engineer certification.</summary></entry><entry><title type="html">Learning How to Learn</title><link href="https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn.html" rel="alternate" type="text/html" title="Learning How to Learn" /><published>2023-10-21T00:00:00+00:00</published><updated>2023-10-21T00:00:00+00:00</updated><id>https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn</id><content type="html" xml:base="https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn.html">&lt;p&gt;&lt;em&gt;Notes from the Learning How to Learn Book By Barbara Oakley.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/images/articles/17_learning_how_to_learn.png&quot; alt=&quot;image&quot; /&gt;
 &lt;br /&gt;&lt;em&gt;Figure 1: Learning How to Learn Mindmap&lt;/em&gt;&lt;/p&gt;
@@ -766,9 +766,9 @@ Most regions have at least three zones and can have more. All regions have at le
 
 &lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
 
-&lt;p&gt;In a world that’s constantly evolving, the ability to learn efficiently and effectively is a skill that can unlock doors to personal and professional growth. Whether you’re a student striving for academic excellence, a professional seeking to stay competitive in your career, or simply someone who wants to enhance their ability to acquire new knowledge, the &lt;strong&gt;&lt;a href=&quot;https://www.coursera.org/learn/learning-how-to-learn&quot;&gt;Learn How to Learn course&lt;/a&gt;&lt;/strong&gt; is a valuable resource that can empower you to do just that.&lt;/p&gt;
+&lt;p&gt;In a world that’s constantly evolving, the ability to learn efficiently and effectively is a skill that can unlock doors to personal and professional growth. Whether you’re a student striving for academic excellence, a professional seeking to stay competitive in your career, or simply someone who wants to enhance their ability to acquire new knowledge, the &lt;strong&gt;&lt;a href=&quot;https://barbaraoakley.com/books/learning-how-to-learn/&quot;&gt;Learn How to Learn book&lt;/a&gt;&lt;/strong&gt; is a valuable resource that can empower you to do just that.&lt;/p&gt;
 
-&lt;p&gt;This course has garnered attention from learners of all backgrounds. It delves into the science behind learning and equips you with proven strategies to enhance your learning abilities. As we explore the key takeaways from this course, you’ll discover how to overcome common obstacles, develop effective study habits, and harness the power of your brain to grasp new concepts with confidence.&lt;/p&gt;
+&lt;p&gt;This book has garnered attention from learners of all backgrounds. It delves into the science behind learning and equips you with proven strategies to enhance your learning abilities. As we explore the key takeaways from this book, you’ll discover how to overcome common obstacles, develop effective study habits, and harness the power of your brain to grasp new concepts with confidence.&lt;/p&gt;
 
 &lt;h2 id=&quot;main-takeaways&quot;&gt;Main Takeaways&lt;/h2&gt;
 
@@ -951,7 +951,7 @@ The essential idea here is that the zombie habitual part of your brain likes pro
 
 &lt;p&gt;&lt;a href=&quot;https://www.brainfacts.org/&quot;&gt;https://www.brainfacts.org/&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Procrastination&quot;&gt;https://en.wikipedia.org/wiki/Procrastination&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="notes" /><category term="General" /><summary type="html">Notes from the online course learning how to learn: powerful mental tools to help you master tough subjects by Barbara Oakley.</summary></entry><entry><title type="html">Data Processing Architectures: Lambda vs Kappa</title><link href="https://www.firasesbai.com/articles/2023/09/24/data-processing-architectures-lambda-vs-kappa.html" rel="alternate" type="text/html" title="Data Processing Architectures: Lambda vs Kappa" /><published>2023-09-24T00:00:00+00:00</published><updated>2023-09-24T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/09/24/data-processing-architectures-lambda-vs-kappa</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/09/24/data-processing-architectures-lambda-vs-kappa.html">&lt;p&gt;&lt;em&gt;In this article we will explore two popular data processing architectures: Lambda and Kappa. We will take a look at their components, key differences and how to choose between them.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Procrastination&quot;&gt;https://en.wikipedia.org/wiki/Procrastination&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="notes" /><category term="General" /><summary type="html">Notes from the Learning How to Learn Book By Barbara Oakley.</summary></entry><entry><title type="html">Data Processing Architectures: Lambda vs Kappa</title><link href="https://www.firasesbai.com/articles/2023/09/24/data-processing-architectures-lambda-vs-kappa.html" rel="alternate" type="text/html" title="Data Processing Architectures: Lambda vs Kappa" /><published>2023-09-24T00:00:00+00:00</published><updated>2023-09-24T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/09/24/data-processing-architectures-lambda-vs-kappa</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/09/24/data-processing-architectures-lambda-vs-kappa.html">&lt;p&gt;&lt;em&gt;In this article we will explore two popular data processing architectures: Lambda and Kappa. We will take a look at their components, key differences and how to choose between them.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;In our data-driven era, the ability to harness the power of data has become a pivotal competitive advantage for businesses and organizations across industries. The vast volumes of information generated daily present both opportunities and challenges. How do we efficiently process, analyze, and derive insights from this deluge of data in real-time, without drowning in complexity?&lt;/p&gt;
 
@@ -1341,11 +1341,11 @@ By transforming your Jekyll-based blog into a PWA, you’ll enhance user engagem
       &lt;li&gt;&lt;a href=&quot;#oltp-vs-olap&quot; id=&quot;markdown-toc-oltp-vs-olap&quot;&gt;OLTP vs OLAP&lt;/a&gt;        &lt;ul&gt;
           &lt;li&gt;&lt;a href=&quot;#oltp-databases&quot; id=&quot;markdown-toc-oltp-databases&quot;&gt;OLTP Databases&lt;/a&gt;&lt;/li&gt;
           &lt;li&gt;&lt;a href=&quot;#olap-databases&quot; id=&quot;markdown-toc-olap-databases&quot;&gt;OLAP Databases&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#data-warehouse&quot; id=&quot;markdown-toc-data-warehouse&quot;&gt;Data warehouse&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#data-lake&quot; id=&quot;markdown-toc-data-lake&quot;&gt;Data lake&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#data-lakehouse&quot; id=&quot;markdown-toc-data-lakehouse&quot;&gt;Data Lakehouse&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#data-warehouse&quot; id=&quot;markdown-toc-data-warehouse&quot;&gt;Data warehouse&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#data-lake&quot; id=&quot;markdown-toc-data-lake&quot;&gt;Data lake&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#data-lakehouse&quot; id=&quot;markdown-toc-data-lakehouse&quot;&gt;Data Lakehouse&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
@@ -1512,7 +1512,7 @@ Transactions have the following four standard properties, usually referred to by
 
 &lt;p&gt;In this section we will discuss two important components that are used for advanced analysis and decision-making; &lt;strong&gt;data warehouses&lt;/strong&gt; and &lt;strong&gt;data lakes&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;h4 id=&quot;data-warehouse&quot;&gt;Data warehouse&lt;/h4&gt;
+&lt;h3 id=&quot;data-warehouse&quot;&gt;Data warehouse&lt;/h3&gt;
 
 &lt;p&gt;A data warehouse is a centralized repository for storing and managing large amounts of data from various sources. 
 Data warehouses are designed to support business intelligence (BI) and analytics applications, by providing a single source of data that can be queried, analyzed, and used to make informed decisions. 
@@ -1532,7 +1532,7 @@ The following are the key characteristics of a data warehouse:&lt;/p&gt;
 In addition, Traditional data warehouses required expensive hardware and software to store and process data. 
 The cost of these solutions made it difficult for organizations to store all their data, which led to the adoption of data lakes as a more cost-effective alternative.&lt;/p&gt;
 
-&lt;h4 id=&quot;data-lake&quot;&gt;Data lake&lt;/h4&gt;
+&lt;h3 id=&quot;data-lake&quot;&gt;Data lake&lt;/h3&gt;
 
 &lt;p&gt;A data lake is a centralized repository that stores large amounts of raw, structured and unstructured data. The data is stored in its native format and can be accessed, processed, and analyzed later as needed. 
 The following are the key characteristics of a data lake:&lt;/p&gt;
@@ -1574,7 +1574,7 @@ However, it had its own set of challenges, such as the lack of reliability and t
 
 &lt;p&gt;Can we get the best of both worlds without the complexity of managing both a data lake and a data warehouse or perhaps multiple ones?&lt;/p&gt;
 
-&lt;h4 id=&quot;data-lakehouse&quot;&gt;Data Lakehouse&lt;/h4&gt;
+&lt;h3 id=&quot;data-lakehouse&quot;&gt;Data Lakehouse&lt;/h3&gt;
 
 &lt;p&gt;A data Lakehouse is a new, open architecture that combines the best elements of data lakes and data warehouses. 
 Data Lakehouses are enabled by a new system design: implementing similar data structures and data management features to those in a data warehouse directly on top of low cost cloud storage in open formats.&lt;/p&gt;
