@@ -5,11 +5,11 @@ date:   2023-10-21
 category: notes
 tags: ["General"]
 author: Firas Esbai
-description: "Summary and important notes and takeaways from the course learning how to learn by Barbara Oakley"
+description: "Summary and important notes and takeaways from the book learning how to learn by Barbara Oakley"
 comments: true
 ---
 
-*Notes from the online course learning how to learn: powerful mental tools to help you master tough subjects by Barbara Oakley.*
+*Notes from the Learning How to Learn Book By Barbara Oakley.*
 
 ![image](/assets/images/articles/17_learning_how_to_learn.png)
 <br />*Figure 1: Learning How to Learn Mindmap*
@@ -18,9 +18,9 @@ comments: true
 
 ## Summary ##
 
-In a world that's constantly evolving, the ability to learn efficiently and effectively is a skill that can unlock doors to personal and professional growth. Whether you're a student striving for academic excellence, a professional seeking to stay competitive in your career, or simply someone who wants to enhance their ability to acquire new knowledge, the **[Learn How to Learn course](https://www.coursera.org/learn/learning-how-to-learn)** is a valuable resource that can empower you to do just that.
+In a world that's constantly evolving, the ability to learn efficiently and effectively is a skill that can unlock doors to personal and professional growth. Whether you're a student striving for academic excellence, a professional seeking to stay competitive in your career, or simply someone who wants to enhance their ability to acquire new knowledge, the **[Learn How to Learn book](https://barbaraoakley.com/books/learning-how-to-learn/)** is a valuable resource that can empower you to do just that.
 
-This course has garnered attention from learners of all backgrounds. It delves into the science behind learning and equips you with proven strategies to enhance your learning abilities. As we explore the key takeaways from this course, you'll discover how to overcome common obstacles, develop effective study habits, and harness the power of your brain to grasp new concepts with confidence.
+This book has garnered attention from learners of all backgrounds. It delves into the science behind learning and equips you with proven strategies to enhance your learning abilities. As we explore the key takeaways from this book, you'll discover how to overcome common obstacles, develop effective study habits, and harness the power of your brain to grasp new concepts with confidence.
 
 ## Main Takeaways ##
 
