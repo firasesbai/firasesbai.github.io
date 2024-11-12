@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2024-10-29T07:06:47+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Firas Esbai's Lifelong Learning Journey.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2024-11-12T13:05:40+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Firas Esbai's Lifelong Learning Journey.
 </subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Cloudflare Analytics vs Google Analytics</title><link href="https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html" rel="alternate" type="text/html" title="Cloudflare Analytics vs Google Analytics" /><published>2024-08-11T00:00:00+00:00</published><updated>2024-08-11T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html">&lt;p&gt;&lt;em&gt;In this article we will look into the reasons for discrepancies between the data reported by Cloudflare Analytics and Google Analytics and how to leverage both of them.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Tracking and analyzing web data is essential for keeping a holistic view on your site’s performance. This is especially useful for bloggers to track key metrics such as which articles and pages are most visited, where visitors are located and the percentage of visitors who leave after viewing only one page just to name a few.&lt;/p&gt;
@@ -1339,13 +1339,19 @@ By transforming your Jekyll-based blog into a PWA, you’ll enhance user engagem
   &lt;li&gt;&lt;a href=&quot;#transformation&quot; id=&quot;markdown-toc-transformation&quot;&gt;Transformation&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#storage&quot; id=&quot;markdown-toc-storage&quot;&gt;Storage&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#oltp-vs-olap&quot; id=&quot;markdown-toc-oltp-vs-olap&quot;&gt;OLTP vs OLAP&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#oltp-databases&quot; id=&quot;markdown-toc-oltp-databases&quot;&gt;OLTP Databases&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#olap-databases&quot; id=&quot;markdown-toc-olap-databases&quot;&gt;OLAP Databases&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#oltp-databases&quot; id=&quot;markdown-toc-oltp-databases&quot;&gt;OLTP Databases&lt;/a&gt;            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;#sql-vs-nosql&quot; id=&quot;markdown-toc-sql-vs-nosql&quot;&gt;SQL vs NoSQL&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#acid-vs-base&quot; id=&quot;markdown-toc-acid-vs-base&quot;&gt;ACID vs BASE&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#olap-databases&quot; id=&quot;markdown-toc-olap-databases&quot;&gt;OLAP Databases&lt;/a&gt;            &lt;ul&gt;
+              &lt;li&gt;&lt;a href=&quot;#data-warehouse&quot; id=&quot;markdown-toc-data-warehouse&quot;&gt;Data warehouse&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#data-lake&quot; id=&quot;markdown-toc-data-lake&quot;&gt;Data lake&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;#data-lakehouse&quot; id=&quot;markdown-toc-data-lakehouse&quot;&gt;Data Lakehouse&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#data-warehouse&quot; id=&quot;markdown-toc-data-warehouse&quot;&gt;Data warehouse&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#data-lake&quot; id=&quot;markdown-toc-data-lake&quot;&gt;Data lake&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#data-lakehouse&quot; id=&quot;markdown-toc-data-lakehouse&quot;&gt;Data Lakehouse&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
@@ -1440,6 +1446,8 @@ Both operational and analytical data are important for organizations, but they s
 
 &lt;h4 id=&quot;oltp-databases&quot;&gt;OLTP Databases&lt;/h4&gt;
 
+&lt;h5 id=&quot;sql-vs-nosql&quot;&gt;SQL vs NoSQL&lt;/h5&gt;
+
 &lt;p&gt;OLTP databases can use either &lt;strong&gt;SQL (Structured Query Language)&lt;/strong&gt; or &lt;strong&gt;NoSQL (Not only SQL)&lt;/strong&gt; technologies.&lt;/p&gt;
 
 &lt;table&gt;
@@ -1496,23 +1504,34 @@ This allows NoSQL databases to better handle unstructured data and changing data
 However , NoSQL databases may not provide the same level of transactional consistency as SQL databases, which can result in data inconsistencies. 
 Plus they can be complex to set up and maintain as well, even though this can be addressed since they are designed to work well in cloud environments, which makes them a good choice for OLTP systems that need to scale quickly and elastically.&lt;/p&gt;
 
+&lt;h5 id=&quot;acid-vs-base&quot;&gt;ACID vs BASE&lt;/h5&gt;
+
 &lt;p&gt;We kept mentioning &lt;strong&gt;transactional consistency&lt;/strong&gt; and you might be wondering what is it?&lt;/p&gt;
 
 &lt;p&gt;A transaction is a sequence of operations performed (using one or more SQL statements) on a database as a single logical unit of work. 
-Transactions have the following four standard properties, usually referred to by the acronym &lt;strong&gt;ACID&lt;/strong&gt;.&lt;/p&gt;
+For relational databases, transactions have the following four standard properties, usually referred to by the acronym &lt;strong&gt;ACID&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Atomicity&lt;/strong&gt; − ensures that all operations within the work unit are completed successfully. Otherwise, the transaction is aborted at the point of failure and all the previous operations are rolled back to their former state.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Consistency&lt;/strong&gt; − ensures that the database properly changes states upon a successfully committed transaction.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Isolation&lt;/strong&gt; − enables transactions to operate independently of and transparent to each other.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Isolation&lt;/strong&gt; − enables transactions to operate independently of and transparent to each other. Executing transactions concurrently has the same results as if the transactions were executed serially.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Durability&lt;/strong&gt; − ensures that the result or effect of a committed transaction persists in case of a system failure.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;BASE&lt;/strong&gt; on the other hand is often used to describe the properties of NoSQL databases. It stands for:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Basically available&lt;/strong&gt; - the system guarantees availability.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Soft state&lt;/strong&gt; - the state of the system may change over time, even without input.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Eventual consistency&lt;/strong&gt; - the system will become consistent over a period of time, given that the system doesn’t receive input during that period.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ACID databases prioritize consistency over availability—the whole transaction fails if an error occurs in any step within the transaction. In contrast, BASE databases prioritize availability over consistency. Instead of failing the transaction, users can access inconsistent data temporarily.&lt;/p&gt;
 
 &lt;h4 id=&quot;olap-databases&quot;&gt;OLAP Databases&lt;/h4&gt;
 
 &lt;p&gt;In this section we will discuss two important components that are used for advanced analysis and decision-making; &lt;strong&gt;data warehouses&lt;/strong&gt; and &lt;strong&gt;data lakes&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;h3 id=&quot;data-warehouse&quot;&gt;Data warehouse&lt;/h3&gt;
+&lt;h5 id=&quot;data-warehouse&quot;&gt;Data warehouse&lt;/h5&gt;
 
 &lt;p&gt;A data warehouse is a centralized repository for storing and managing large amounts of data from various sources. 
 Data warehouses are designed to support business intelligence (BI) and analytics applications, by providing a single source of data that can be queried, analyzed, and used to make informed decisions. 
@@ -1532,7 +1551,7 @@ The following are the key characteristics of a data warehouse:&lt;/p&gt;
 In addition, Traditional data warehouses required expensive hardware and software to store and process data. 
 The cost of these solutions made it difficult for organizations to store all their data, which led to the adoption of data lakes as a more cost-effective alternative.&lt;/p&gt;
 
-&lt;h3 id=&quot;data-lake&quot;&gt;Data lake&lt;/h3&gt;
+&lt;h5 id=&quot;data-lake&quot;&gt;Data lake&lt;/h5&gt;
 
 &lt;p&gt;A data lake is a centralized repository that stores large amounts of raw, structured and unstructured data. The data is stored in its native format and can be accessed, processed, and analyzed later as needed. 
 The following are the key characteristics of a data lake:&lt;/p&gt;
@@ -1574,7 +1593,7 @@ However, it had its own set of challenges, such as the lack of reliability and t
 
 &lt;p&gt;Can we get the best of both worlds without the complexity of managing both a data lake and a data warehouse or perhaps multiple ones?&lt;/p&gt;
 
-&lt;h3 id=&quot;data-lakehouse&quot;&gt;Data Lakehouse&lt;/h3&gt;
+&lt;h5 id=&quot;data-lakehouse&quot;&gt;Data Lakehouse&lt;/h5&gt;
 
 &lt;p&gt;A data Lakehouse is a new, open architecture that combines the best elements of data lakes and data warehouses. 
 Data Lakehouses are enabled by a new system design: implementing similar data structures and data management features to those in a data warehouse directly on top of low cost cloud storage in open formats.&lt;/p&gt;
@@ -1603,7 +1622,9 @@ Then we discussed the different types of data storage and some concrete implemen
 
 &lt;p&gt;&lt;a href=&quot;https://www.databricks.com/blog/2020/01/30/what-is-a-data-lakehouse.html&quot;&gt;https://www.databricks.com/blog/2020/01/30/what-is-a-data-lakehouse.html&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://delta.io/&quot;&gt;https://delta.io/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><summary type="html">This is part 2 of our in-depth article discussing the different stages of data flow inside an organisation.</summary></entry><entry><title type="html">Data engineering 201: In-depth Guide - Part 1</title><link href="https://www.firasesbai.com/articles/2023/03/11/data-engineering-201.html" rel="alternate" type="text/html" title="Data engineering 201: In-depth Guide - Part 1" /><published>2023-03-11T00:00:00+00:00</published><updated>2023-03-11T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/03/11/data-engineering-201</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/03/11/data-engineering-201.html">&lt;p&gt;&lt;em&gt;In this two parts article we will deep dive into each of the general steps of the data flow.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://delta.io/&quot;&gt;https://delta.io/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/compare/the-difference-between-acid-and-base-database/&quot;&gt;https://aws.amazon.com/compare/the-difference-between-acid-and-base-database/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><summary type="html">This is part 2 of our in-depth article discussing the different stages of data flow inside an organisation.</summary></entry><entry><title type="html">Data engineering 201: In-depth Guide - Part 1</title><link href="https://www.firasesbai.com/articles/2023/03/11/data-engineering-201.html" rel="alternate" type="text/html" title="Data engineering 201: In-depth Guide - Part 1" /><published>2023-03-11T00:00:00+00:00</published><updated>2023-03-11T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/03/11/data-engineering-201</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/03/11/data-engineering-201.html">&lt;p&gt;&lt;em&gt;In this two parts article we will deep dive into each of the general steps of the data flow.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;In a previous &lt;a href=&quot;https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html&quot;&gt;blog post&lt;/a&gt;, we saw the importance of data engineering in democratizing data inside an organization and enabling data driven decision making. 
 In addition, we outlined the different stages data goes through in order to be able to extract insights out of it.&lt;/p&gt;
