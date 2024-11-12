@@ -95,6 +95,8 @@ OLAP
 
 #### OLTP Databases ####
 
+##### SQL vs NoSQL #####
+
 OLTP databases can use either **SQL (Structured Query Language)** or **NoSQL (Not only SQL)** technologies.
 
 |                         | SQL Database                                                       | NoSQL Database            |
@@ -118,21 +120,30 @@ This allows NoSQL databases to better handle unstructured data and changing data
 However , NoSQL databases may not provide the same level of transactional consistency as SQL databases, which can result in data inconsistencies. 
 Plus they can be complex to set up and maintain as well, even though this can be addressed since they are designed to work well in cloud environments, which makes them a good choice for OLTP systems that need to scale quickly and elastically.
 
+##### ACID vs BASE #####
+
 We kept mentioning **transactional consistency** and you might be wondering what is it? 
 
 A transaction is a sequence of operations performed (using one or more SQL statements) on a database as a single logical unit of work. 
-Transactions have the following four standard properties, usually referred to by the acronym **ACID**.
+For relational databases, transactions have the following four standard properties, usually referred to by the acronym **ACID**.
 
 - **Atomicity** − ensures that all operations within the work unit are completed successfully. Otherwise, the transaction is aborted at the point of failure and all the previous operations are rolled back to their former state.
 - **Consistency** − ensures that the database properly changes states upon a successfully committed transaction.
-- **Isolation** − enables transactions to operate independently of and transparent to each other.
+- **Isolation** − enables transactions to operate independently of and transparent to each other. Executing transactions concurrently has the same results as if the transactions were executed serially. 
 - **Durability** − ensures that the result or effect of a committed transaction persists in case of a system failure.
+
+**BASE** on the other hand is often used to describe the properties of NoSQL databases. It stands for:
+- **Basically available** - the system guarantees availability.
+- **Soft state** - the state of the system may change over time, even without input.
+- **Eventual consistency** - the system will become consistent over a period of time, given that the system doesn't receive input during that period.
+
+ACID databases prioritize consistency over availability—the whole transaction fails if an error occurs in any step within the transaction. In contrast, BASE databases prioritize availability over consistency. Instead of failing the transaction, users can access inconsistent data temporarily.
 
 #### OLAP Databases ####
 
 In this section we will discuss two important components that are used for advanced analysis and decision-making; **data warehouses** and **data lakes**. 
 
-### Data warehouse ###
+##### Data warehouse #####
 
 A data warehouse is a centralized repository for storing and managing large amounts of data from various sources. 
 Data warehouses are designed to support business intelligence (BI) and analytics applications, by providing a single source of data that can be queried, analyzed, and used to make informed decisions. 
@@ -150,7 +161,7 @@ The explosion of big data, including the growth of structured, semi-structured, 
 In addition, Traditional data warehouses required expensive hardware and software to store and process data. 
 The cost of these solutions made it difficult for organizations to store all their data, which led to the adoption of data lakes as a more cost-effective alternative.
 
-### Data lake ###
+##### Data lake #####
 
 A data lake is a centralized repository that stores large amounts of raw, structured and unstructured data. The data is stored in its native format and can be accessed, processed, and analyzed later as needed. 
 The following are the key characteristics of a data lake:
@@ -186,7 +197,7 @@ However, it had its own set of challenges, such as the lack of reliability and t
 
 Can we get the best of both worlds without the complexity of managing both a data lake and a data warehouse or perhaps multiple ones?  
 
-### Data Lakehouse ###
+##### Data Lakehouse #####
 
 A data Lakehouse is a new, open architecture that combines the best elements of data lakes and data warehouses. 
 Data Lakehouses are enabled by a new system design: implementing similar data structures and data management features to those in a data warehouse directly on top of low cost cloud storage in open formats. 
@@ -217,10 +228,13 @@ Then we discussed the different types of data storage and some concrete implemen
 
 [https://delta.io/] 
 
+[https://aws.amazon.com/compare/the-difference-between-acid-and-base-database/]
+
 [https://martinfowler.com/articles/data-mesh-principles.html]: https://martinfowler.com/articles/data-mesh-principles.html
 [https://www.jie-tao.com/delta-lake-step-by-step1/]: https://www.jie-tao.com/delta-lake-step-by-step1/
 [https://www.databricks.com/blog/2020/01/30/what-is-a-data-lakehouse.html]: https://www.databricks.com/blog/2020/01/30/what-is-a-data-lakehouse.html
 [https://delta.io/]: https://delta.io/
+[https://aws.amazon.com/compare/the-difference-between-acid-and-base-database/]: https://aws.amazon.com/compare/the-difference-between-acid-and-base-database/
 
 [here]: https://www.firasesbai.com/articles/2023/03/11/data-engineering-201.html
 [Delta Lake]: https://delta.io/ 
