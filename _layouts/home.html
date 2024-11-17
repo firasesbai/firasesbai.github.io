@@ -38,7 +38,8 @@ layout: default
    <section class="recent-posts">
       <h1>Recent Blog Posts</h1>
       <ul>
-        {% for post in site.posts limit:3 %}
+        {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+        {% for post in sorted_posts limit:3 %}
           <li>
             <h3>
                <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
