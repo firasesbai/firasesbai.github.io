@@ -1,5 +1,190 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2024-11-12T13:05:40+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Firas Esbai's Lifelong Learning Journey.
-</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Cloudflare Analytics vs Google Analytics</title><link href="https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html" rel="alternate" type="text/html" title="Cloudflare Analytics vs Google Analytics" /><published>2024-08-11T00:00:00+00:00</published><updated>2024-08-11T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html">&lt;p&gt;&lt;em&gt;In this article we will look into the reasons for discrepancies between the data reported by Cloudflare Analytics and Google Analytics and how to leverage both of them.&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2024-11-17T17:55:01+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Firas Esbai's Lifelong Learning Journey.
+</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Evolution of Analytical Data Architectures: From Data Warehouses to Lakehouses</title><link href="https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures.html" rel="alternate" type="text/html" title="Evolution of Analytical Data Architectures: From Data Warehouses to Lakehouses" /><published>2024-11-17T00:00:00+00:00</published><updated>2024-11-17T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures.html">&lt;p&gt;&lt;em&gt;In this article, we will go through a brief overview of the journey from the foundational data warehouses to the data lakes and up to the emerging concept of the data lakehouse.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The evolution of data management has been driven by the growing complexity and scale of modern data needs. Organizations have sought different solutions over the years for handling diverse data types while optimizing for cost efficiency.&lt;/p&gt;
+
+&lt;p&gt;This article explores the key transitions from one analytical architecture to the other and the challenges that shaped each phase.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#data-warehouses&quot; id=&quot;markdown-toc-data-warehouses&quot;&gt;Data Warehouses&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#data-lakes&quot; id=&quot;markdown-toc-data-lakes&quot;&gt;Data Lakes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#two-tier-architecture-data-warehouse--data-lake&quot; id=&quot;markdown-toc-two-tier-architecture-data-warehouse--data-lake&quot;&gt;Two-Tier Architecture: Data Warehouse + Data Lake&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#data-lakehouses&quot; id=&quot;markdown-toc-data-lakehouses&quot;&gt;Data Lakehouses&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#what-is-a-table-format&quot; id=&quot;markdown-toc-what-is-a-table-format&quot;&gt;What is a Table Format?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#open-table-formats&quot; id=&quot;markdown-toc-open-table-formats&quot;&gt;Open Table Formats&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;data-warehouses&quot;&gt;Data Warehouses&lt;/h2&gt;
+
+&lt;p&gt;The concept of data warehousing emerged in the late 1980s as a response to the growing need for businesses to make data-driven decisions. In fact, the proliferation of applications and the resulting disparate data across the organization resulted in a tedious manual process of querying and finding the right data with the correct version in order to avoid incorrect decisions.&lt;/p&gt;
+
+&lt;p&gt;As a result, the &lt;em&gt;Data Warehouse&lt;/em&gt; was born.&lt;/p&gt;
+
+&lt;p&gt;A data warehouse is a centralized repository for storing and managing large amounts of data from various sources.&lt;/p&gt;
+
+&lt;p&gt;Data Warehouse is not the same as a database but rather typically built on top of data copied from other databases and addresses several limitations of traditional operational databases:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Centralization&lt;/strong&gt;: They provided a single source of truth for enterprise-wide data.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Historical analysis&lt;/strong&gt;: Unlike operational systems focused on current data, warehouses allowed for trend analysis over time.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Complex querying&lt;/strong&gt;: Designed for analytical processing, they could handle complex queries more efficiently than transaction-oriented databases.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data quality&lt;/strong&gt;: The ETL (Extract, Transform, Load) process helped in cleaning and standardizing data before loading it into the warehouse.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;However, as data types evolved and volumes grew exponentially, data warehouses faced mainly the following challenges:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Scalability&lt;/strong&gt;: The increasing volume and velocity of data required expensive hardware and software to store and process data. The cost of these solutions made it difficult for organizations to store all their data.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Flexibility&lt;/strong&gt;: The rigid schema-on-write approach made it difficult to accommodate rapidly changing data requirements and the growth of semi-structured and unstructured data types.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These limitations set the stage for the next evolution in analytical data architecture: the &lt;strong&gt;Data Lake&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;data-lakes&quot;&gt;Data Lakes&lt;/h2&gt;
+
+&lt;p&gt;As mentioned, the concept of a data lake emerged as a response to the limitations of traditional data warehouses, which were costly, proprietary, and unable to handle the diverse and voluminous data generated by modern businesses.&lt;/p&gt;
+
+&lt;p&gt;Initially data lakes were almost exclusively implemented on &lt;strong&gt;&lt;em&gt;Hadoop&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hadoop is an open-source platform that enables the storage and processing of large datasets across distributed computing environments. The original development of Hadoop goes back to 2003 when Google released two papers:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;Google File System (GFS)&lt;/em&gt;&lt;/strong&gt;: a way to store data across distributed machines&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;Google MapReduce&lt;/em&gt;&lt;/strong&gt;: a programming model for distributed data processing on top of GFS&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This research paved the way for Yahoo to bootstrap the Hadoop project. Later on, a shift towards modern data lakes appeared that leverages cloud platforms.&lt;/p&gt;
+
+&lt;p&gt;Cloud platforms offer elasticity and cost efficiency especially with the need for data lakes to support a wider range of users and use cases including machine learning.&lt;/p&gt;
+
+&lt;p&gt;While data lakes offer a lot of improvements over data warehouses including enabling organizations to scale their data storage in a more cost-effective way and flexibility with their schema on-read approach, it is also important to note that they also come with challenges.&lt;/p&gt;
+
+&lt;p&gt;Following are some of the key challenges associated with data lakes:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Data Reliability&lt;/strong&gt;: Data lakes can suffer from reliability issues due to broken data pipelines and the need for continuous reprocessing of missing or corrupted data. This often occurs when write operations fail partially, requiring data engineers to clean up and reprocess the data, which can be time-consuming and resource-intensive.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data Quality&lt;/strong&gt;: Ensuring high data quality is a significant challenge in data lakes, as they store raw, unprocessed data that may be inconsistent or incomplete. Poor data quality can negatively impact downstream analytics and decision-making processes.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data Governance&lt;/strong&gt;: Implementing effective data governance in data lakes is complex due to the variety and volume of data. Ensuring data integrity, security, and compliance with regulations such as GDPR and CCPA is challenging, especially when it comes to deleting or updating data.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data Silos&lt;/strong&gt;: Without proper management, data lakes can become data swamps, where data is isolated and inaccessible, leading to the creation of data silos. This hinders collaboration and limits the organization’s ability to extract valuable insights from the data.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In an attempt to address these challenges, a common approach organizations ended up deploying was the &lt;strong&gt;Two-Tier Architecture&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;two-tier-architecture-data-warehouse--data-lake&quot;&gt;Two-Tier Architecture: Data Warehouse + Data Lake&lt;/h2&gt;
+
+&lt;p&gt;This architecture involves using a data lake as the first tier for data ingestion and storage, followed by a data warehouse as the second tier for structured analytics and reporting.&lt;/p&gt;
+
+&lt;p&gt;This leverages the cost effective storage and flexibility of the data lake to store the large volumes of raw data. In addition, through ETL processes, data will be moved from the lake to the data warehouse where security, compliance, and optimized performance for analytical queries are ensured.&lt;/p&gt;
+
+&lt;p&gt;This sounds like the perfect combination and the answer to all the previously mentioned challenges. In practice however this has several drawbacks. It results in higher costs because of the redundant data stored across both systems and the maintenance costs of both infrastructures. Also managing two separate systems can be quite complex for users.&lt;/p&gt;
+
+&lt;p&gt;Luckily the evolution did not stop here and the data lakehouse architecture emerged to the rescue which aims to combine the best features of both data warehouses and data lakes but into a single, unified architecture.&lt;/p&gt;
+
+&lt;h2 id=&quot;data-lakehouses&quot;&gt;Data Lakehouses&lt;/h2&gt;
+
+&lt;p&gt;Data Lakehouses combine the best elements of both data lakes and data warehouses.&lt;/p&gt;
+
+&lt;p&gt;They are enabled by a new system design: implementing similar data structures, data management features and ACID transactions to those in a data warehouse directly on top of low cost cloud storage in open file formats of the data lake for flexibility and scale.&lt;/p&gt;
+
+&lt;p&gt;One of the key technology advancements that have enabled the data lakehouse architecture is a &lt;strong&gt;table format&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-a-table-format&quot;&gt;What is a Table Format?&lt;/h3&gt;
+
+&lt;p&gt;Table format is a metadata layer that allows tools to interact with data lake storage like a traditional database. Since data in a data lake is usually stretched across several files, the metadata layer contains information about which files are part of different table versions to offer rich management features like ACID-compliant transactions.&lt;/p&gt;
+
+&lt;p&gt;In addition, the metadata layers enable other features common in data lakehouses such as:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Schema evolution&lt;/strong&gt;: accommodate data that is changing over time by easily changing a table current’s schema&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Partition evolution&lt;/strong&gt;: allows us to update the partition scheme of a table without having to rewrite all the previous data&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Time Travel&lt;/strong&gt;: query a table at previous states&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;open-table-formats&quot;&gt;Open Table Formats&lt;/h3&gt;
+
+&lt;p&gt;Multiple projects have emerged as open source table format technologies to allow community development, drive standardization efforts and avoid vendor lock in. The term open table format gained prominence with the rise of the data lakehouse concept and become a way to collectively refer to these technologies.&lt;/p&gt;
+
+&lt;p&gt;Among these are Apache Iceberg, Apache Hudi, and Databricks Delta Lake.&lt;/p&gt;
+
+&lt;p&gt;The following table summarizes differences between these open table formats and how each has a different approach to supporting common features of data lakehouses.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Apache Iceberg&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Apache Hudi&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Delta Lake&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Origin&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Originated at Netflix and then become part of the Apache Software Foundation&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Originated at Uber and then become part of the Apache Software Foundation&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Developed by Databricks and is now an independent open-source sub-project of the Linux Foundation Projects&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Metadata Layer&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Catalogue&lt;/strong&gt;: maintain a list of existing Iceberg tables and keeps a reference to a table’s current metadata file known as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;metadata.json&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Timeline&lt;/strong&gt;: event log recording all table actions in an ordered manner, with events kept for a specified period.&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Transaction Log&lt;/strong&gt;: Log files similar to Git commits to capture files added and removed from the table since the last commit and Log checkpoints that summarize a group of log files so each individual log file doesn’t have to be read to construct the list of files in the dataset.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Schema Evolution&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;In-place table evolution: schema updates are metadata changes and no data files need to be rewritten to perform the update. Iceberg supports the following schema evolution changes: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Add&lt;/i&gt; -- add a new column to the table or to a nested struct&lt;/li&gt;&lt;li&gt;&lt;i&gt;Drop&lt;/i&gt; -- remove an existing column from the table or a nested struct&lt;/li&gt;&lt;li&gt;&lt;i&gt;Rename&lt;/i&gt; -- rename an existing column or field in a nested struct&lt;/li&gt;&lt;li&gt;&lt;i&gt;Update&lt;/i&gt; -- widen the type of a column, struct field, map key, map value, or list element&lt;/li&gt;&lt;li&gt;&lt;i&gt;Reorder&lt;/i&gt; -- change the order of columns or fields in a nested struct&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Supports schema evolution on write out of the box and an experimental schema evolution on read feature. Schema evolution on write supports backward compatible scenarios such as adding a nullable field, promoting data types or handling missing columns.&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Schema evolution is disabled by default. This is referred to as schema enforcement. You can enable it by:&lt;ul&gt;&lt;li&gt;&lt;i&gt;mergeSchema&lt;/i&gt;: applies for a single write to a single table &lt;/li&gt;&lt;li&gt;&lt;i&gt;autoMerge&lt;/i&gt;: activates schema evolution for writes to any table&lt;/li&gt;&lt;/ul&gt; Delta lake supports the following types of schema changes: &lt;ul&gt;&lt;li&gt;Adding new columns (at arbitrary positions)&lt;/li&gt;&lt;li&gt;Reordering existing columns&lt;/li&gt;&lt;li&gt;Renaming existing columns&lt;/li&gt;&lt;/ul&gt; When attempting to write data with a new schema, Delta Lake compares the new schema with the existing schema stored in the transaction log. It checks if the schema change is compatible and allowed based on the current settings (e.g., if mergeSchema is enabled). If the change is allowed, Delta Lake creates a new transaction that includes:&lt;ul&gt;&lt;li&gt;An &quot;update metadata&quot; action to modify the table's schema&lt;/li&gt;&lt;li&gt;&quot;Add file&quot; actions for the new data files&lt;/li&gt;&lt;/ul&gt; If the transaction is successful, these changes are committed to the transaction log as a new entry. After the commit, the latest table state, including the new schema, is reflected in the next checkpoint file &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Partition Evolution&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Partition evolution is a metadata operation and does not eagerly rewrite files. When you evolve a partition spec, the old data written with an earlier spec remains unchanged. New data is written using the new spec in a new layout. Metadata for each of the partition versions is kept separately.&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Hudi considers partition evolution as anti-pattern and avoids such scheme&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Delta lake does not natively support partition evolution without rewriting the entire table&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Time Travel&lt;/strong&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Every change to an Iceberg table creates a new snapshot. Queries can access the table’s list of snapshots to return results from older versions. Queries can be executed using: &lt;ul&gt;&lt;li&gt;specific snapshot id&lt;/li&gt;&lt;li&gt;timestamp when a snapshot was the current at that time&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;The internal timeline log used by Hudi enables time travel queries support using a point in time syntax with timestamps&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Delta lake will inspect the transaction log and figure out which files should be read for each given version. It also supports time travel by timestamp without having to figure out the exact version.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
+
+&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;In this article, we covered the advantages and challenges of different data analytics architecture and how these led to the current development of the data lakehouse concept. In addition, we compared internal structures of open table formats to better understand their importance in enabling the data lakehouse architecture.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.databricks.com/blog/2021/05/19/evolution-to-the-data-lakehouse.html&quot;&gt;https://www.databricks.com/blog/2021/05/19/evolution-to-the-data-lakehouse.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.dremio.com/blog/exploring-the-architecture-of-apache-iceberg-delta-lake-and-apache-hudi/&quot;&gt;https://www.dremio.com/blog/exploring-the-architecture-of-apache-iceberg-delta-lake-and-apache-hudi/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.dremio.com/blog/comparison-of-data-lake-table-formats-apache-iceberg-apache-hudi-and-delta-lake/&quot;&gt;https://www.dremio.com/blog/comparison-of-data-lake-table-formats-apache-iceberg-apache-hudi-and-delta-lake/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.databricks.com/glossary/data-lakehouse&quot;&gt;https://www.databricks.com/glossary/data-lakehouse&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hudi.apache.org/docs/hudi_stack&quot;&gt;https://hudi.apache.org/docs/hudi_stack&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://iceberg.apache.org/concepts/catalog/&quot;&gt;https://iceberg.apache.org/concepts/catalog/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.delta.io/latest/delta-intro.html&quot;&gt;https://docs.delta.io/latest/delta-intro.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://delta.io/blog/2023-02-08-delta-lake-schema-evolution/&quot;&gt;https://delta.io/blog/2023-02-08-delta-lake-schema-evolution/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><category term="Data Architecture" /><summary type="html">In this article, we will go through a brief overview of the journey from the foundational data warehouses to the data lakes and up to the emerging concept of the data lakehouse.</summary></entry><entry><title type="html">Cloudflare Analytics vs Google Analytics</title><link href="https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html" rel="alternate" type="text/html" title="Cloudflare Analytics vs Google Analytics" /><published>2024-08-11T00:00:00+00:00</published><updated>2024-08-11T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html">&lt;p&gt;&lt;em&gt;In this article we will look into the reasons for discrepancies between the data reported by Cloudflare Analytics and Google Analytics and how to leverage both of them.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Tracking and analyzing web data is essential for keeping a holistic view on your site’s performance. This is especially useful for bloggers to track key metrics such as which articles and pages are most visited, where visitors are located and the percentage of visitors who leave after viewing only one page just to name a few.&lt;/p&gt;
 
@@ -1798,161 +1983,4 @@ In addition, we discussed some of the key components of data governance and its 
 
 &lt;p&gt;&lt;a href=&quot;https://www.ibm.com/topics/data-governance&quot;&gt;https://www.ibm.com/topics/data-governance&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.heavy.ai/technical-glossary/data-quality&quot;&gt;https://www.heavy.ai/technical-glossary/data-quality&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><summary type="html">In this two parts article we will deep dive into each of the general steps of the data flow.</summary></entry><entry><title type="html">Data engineering 101: Understanding the Fundementals</title><link href="https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html" rel="alternate" type="text/html" title="Data engineering 101: Understanding the Fundementals" /><published>2023-03-01T00:00:00+00:00</published><updated>2023-03-01T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/03/01/data-engineering-101</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html">&lt;p&gt;&lt;em&gt;In this article we will explore the different aspects of data engineering and what makes it crucial in today’s data-driven world and how it can benefit organizations of all sizes and industries.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1&gt; Contents &lt;/h1&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#what-is-data-democratization&quot; id=&quot;markdown-toc-what-is-data-democratization&quot;&gt;What is Data Democratization?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#what-is-data-engineering&quot; id=&quot;markdown-toc-what-is-data-engineering&quot;&gt;What is Data Engineering?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#role-of-data-engineer&quot; id=&quot;markdown-toc-role-of-data-engineer&quot;&gt;Role of Data Engineer&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#data-engineering-vs-big-data-engineering&quot; id=&quot;markdown-toc-data-engineering-vs-big-data-engineering&quot;&gt;Data Engineering vs Big Data Engineering&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#data-flow&quot; id=&quot;markdown-toc-data-flow&quot;&gt;Data Flow&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;what-is-data-democratization&quot;&gt;What is Data Democratization?&lt;/h2&gt;
-
-&lt;p&gt;Data democratization is the process of making data accessible to all members of an organization, regardless of their role or level of technical expertise. 
-It enables organizations to make better and more informed decisions by providing access to data to a wide range of users. 
-Data democratization also helps to promote data-driven culture within an organization, as it enables them to explore and leverage their data to create new products and services.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-data-engineering&quot;&gt;What is Data Engineering?&lt;/h2&gt;
-
-&lt;p&gt;While data democratization is the foundation for organizations to become data-driven and make better decisions, data engineering plays a vital role in making it happen.&lt;/p&gt;
-
-&lt;p&gt;Data engineering is the process of acquiring, storing, and preparing raw data for analysis to extract valuable insights from their data and make informed business decisions.&lt;/p&gt;
-
-&lt;h2 id=&quot;role-of-data-engineer&quot;&gt;Role of Data Engineer&lt;/h2&gt;
-
-&lt;p&gt;A data engineer is responsible for the “plumbing” that helps derive value from data. 
-The specific responsibilities of a data engineer may vary depending on the organization and industry, but generally include:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;Designing and building data pipelines&lt;/em&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Acquire data from various sources into the appropriate storage and processing systems&lt;/li&gt;
-      &lt;li&gt;Coordination of the many jobs through orchestration tools&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Data storage and management&lt;/em&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Work with different types of data storage systems&lt;/li&gt;
-      &lt;li&gt;Design and implement data models&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Data processing&lt;/em&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Work with different types of data processing methods such as batch processing and streaming processing&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Data governance&lt;/em&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Ensure data is accurate, reliable, and easily accessible to users&lt;/li&gt;
-      &lt;li&gt;Establish, implement, and maintain policies and procedures for data quality, compliance, and security&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Manage data infrastructure&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Collaboration and communication&lt;/em&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Work closely with data scientists, analysts, and other stakeholders to understand their data needs and develop solutions that meet their requirements&lt;/li&gt;
-      &lt;li&gt;Communicate with other teams such as DevOps, IT and security to ensure that the data infrastructure is aligned with the organization’s overall strategy&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;data-engineering-vs-big-data-engineering&quot;&gt;Data Engineering vs Big Data Engineering&lt;/h2&gt;
-
-&lt;p&gt;According to a study by IDC, the global data sphere is projected to grow from 33 zettabytes (ZB) in 2018 to 175 ZB by 2025, with a compound annual growth rate of 23%. 
-It’s also important to note that the vast majority of this data (about 90%) is unstructured data, such as social media posts, images, and videos.
-Another study by IBM estimates that 2.5 quintillion bytes of data are created every day, and this amount is increasing exponentially.&lt;/p&gt;
-
-&lt;p&gt;These statistics highlight the sheer volume of data that is being generated on a daily basis and the significant growth in the amount of data generated over time which leads us to the definition of &lt;strong&gt;Big Data&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Big data refers to extremely large and complex data sets that are difficult to process and analyze using traditional data processing and management techniques. These data sets are characterized by the “3Vs” - &lt;em&gt;volume, velocity, and variety&lt;/em&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;Volume&lt;/em&gt; refers to the sheer amount of data that is generated and collected, this could be in terabytes, petabytes, or even exabytes.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Velocity&lt;/em&gt; refers to the speed at which data is generated and collected. With the growing number of devices and sensors that are connected to the internet, data is being generated at an unprecedented rate.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Variety&lt;/em&gt; refers to the different types of data that are generated and collected, such as structured data, unstructured data, and semi-structured data.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;So is data engineering always “Big”?&lt;/p&gt;
-
-&lt;p&gt;Data engineering is the broader concept of designing, building, and maintaining systems and infrastructure to support data-driven applications and services, while big data engineering is a specific subfield that is focused on the management and analysis of extremely large and complex data sets that requires the use of advanced processing tools and analytics techniques.&lt;/p&gt;
-
-&lt;p&gt;Overall, data engineering is needed to democratize data inside an organization for informed business decisions, not just when we are dealing with big data.&lt;/p&gt;
-
-&lt;p&gt;After understanding the “What” and the “Why” behind data engineering, it is now time to delve into the “How” of data engineering.&lt;/p&gt;
-
-&lt;h2 id=&quot;data-flow&quot;&gt;Data Flow&lt;/h2&gt;
-
-&lt;p&gt;The data flow outlines the different stages involved in making data easily accessible in a reliable and accurate way for analysis and decision making.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/articles/10_data_flow.png&quot; alt=&quot;image&quot; /&gt;
-&lt;br /&gt;&lt;em&gt;Figure 1: Data Flow Stages&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;The general steps include:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Data Sources&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Data sources are an important and challenging step due to the wide range of potential integration points.&lt;/li&gt;
-      &lt;li&gt;Depending on the organization’s needs, some common data sources include:
-        &lt;ul&gt;
-          &lt;li&gt;Relational and non relational databases&lt;/li&gt;
-          &lt;li&gt;Flat files: Data stored in CSV, Excel, or other flat file formats&lt;/li&gt;
-          &lt;li&gt;Streaming data: Data generated in real-time, such as data from social media feeds or IoT devices&lt;/li&gt;
-          &lt;li&gt;External data: Data from third-party sources, such as government data or data from other companies&lt;/li&gt;
-          &lt;li&gt;Legacy systems: Data stored in older systems that need to be migrated to the new data infrastructure&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Data Governance&lt;/strong&gt;
-&lt;br /&gt;Data governance is the systematic management of the availability, usability, integrity and security of the data used in an organization. 
-It is not particularly a separate step in the data flow, but rather a broad concept that involves processes, people and technology that support these processes in order to maintain high quality data and make better data driven decisions.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Data in Motion&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;em&gt;Ingestion&lt;/em&gt; 
-&lt;br /&gt;Ingestion is the process of acquiring and importing data from various sources into the organization’s data infrastructure.&lt;/li&gt;
-      &lt;li&gt;&lt;em&gt;Transformation&lt;/em&gt; 
-&lt;br /&gt;This is the process of cleaning, normalizing, and transforming the data acquired during the ingestion step so that it is in a format that can be used for analysis and reporting.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Data at Rest: Storage&lt;/strong&gt; 
-&lt;br /&gt;This is the process of storing and managing the data in a way that it can be accessed, queried, and updated easily. Therefore, choosing the right type of storage and technology is a key element not only to the following steps, but also to previous ones due to the fact that we might require multiple storages in different steps.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Analysis&lt;/strong&gt; 
-&lt;br /&gt;This is the step where we extract insights and knowledge from the processed data. This involves:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;em&gt;Visualization and Reporting&lt;/em&gt;
-&lt;br /&gt;Creating visual representations of the data to help communicate insights and make it easy to understand&lt;/li&gt;
-      &lt;li&gt;&lt;em&gt;Machine learning&lt;/em&gt;
-&lt;br /&gt;Using algorithms to learn from the data&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
-
-&lt;p&gt;In this article we have seen how valuable it is to democratize data inside an organization to make the shift towards data-driven decision making and the main role played by data engineers in the different steps of the raw data goes through to reach this goal. 
-In the following blog post we will dive deeper into each step to uncover best practices, tools and paradigms used and how they have evolved in an ever changing field. Stay tuned!&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://medium.com/free-code-camp/the-rise-of-the-data-engineer-91be18f1e603&quot;&gt;https://medium.com/free-code-camp/the-rise-of-the-data-engineer-91be18f1e603&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://maximebeauchemin.medium.com/the-downfall-of-the-data-engineer-5bfb701e5d6b&quot;&gt;https://maximebeauchemin.medium.com/the-downfall-of-the-data-engineer-5bfb701e5d6b&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/andkret/Cookbook&quot;&gt;https://github.com/andkret/Cookbook&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><summary type="html">In this article we will explore the different aspects of data engineering and what makes it crucial in today’s data-driven world and how it can benefit organizations of all sizes and industries.</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://www.heavy.ai/technical-glossary/data-quality&quot;&gt;https://www.heavy.ai/technical-glossary/data-quality&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><summary type="html">In this two parts article we will deep dive into each of the general steps of the data flow.</summary></entry></feed>

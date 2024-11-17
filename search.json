@@ -2,6 +2,17 @@
   
     {
 
+    "title"      : "Evolution of Analytical Data Architectures: From Data Warehouses to Lakehouses",
+	  "url"        : "/articles/2024/11/17/evolution-analytical-data-architectures.html",
+    "category"   : "articles",
+    "date"       : "2024-11-17 00:00:00 +0000",
+	  "tags"       : "Data Engineering Data Architecture",
+	  "description": "Overview of the evolution of analytical data architectures from data warehouses to the data lakes and data lakehouses"
+
+    } ,
+  
+    {
+
     "title"      : "Data Warehouse Modeling Techniques",
 	  "url"        : "/articles/2024/08/11/data-warehouse-modeling-techniques.html",
     "category"   : "articles",
