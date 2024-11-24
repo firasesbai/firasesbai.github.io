@@ -40,6 +40,8 @@ Note that none of the below links are affiliate links or sponsored.
 
 - [The 4-Hour Workweek](https://tim.blog/tim-ferriss-books/#the-4-hour-workweek) - *by Timothy Ferriss*
   - Tim Ferriss challenges the traditional 9-to-5 work model, advocating for lifestyle design and efficiency. Ferriss discusses the concept of "lifestyle automation" through outsourcing, delegating tasks, and focusing on high-impact activities. He emphasizes the value of time freedom, passive income streams, and mini-retirements. The book offers practical tips on starting a business, negotiating remote work, and maximizing productivity. Readers learn how to escape the rat race, achieve more in less time, and create a life of adventure and fulfillment beyond the typical workweek.
+- [Getting Things Done: the art of stress-free productivity](https://gettingthingsdone.com/what-is-gtd/) - *by David Allen*
+  - The book introduces the Getting Things Done (GTD) methodology, a system that helps you capture, clarify, organize, and prioritize tasks and commitments to achieve a clear mind and focused work. By creating a reliable external system to track everything and regularly reviewing it will allow you to stay aligned with your goals. Whether managing work or life, Allen’s approach emphasizes on reducing mental clutter so you can be more effective and creative.
 
 # Self-Help 
 
