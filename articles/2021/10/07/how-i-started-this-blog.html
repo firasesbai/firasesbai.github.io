@@ -10,8 +10,8 @@
 <meta property="og:title" content="How I Started This Blog" />
 <meta name="author" content="Firas Esbai" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="detailed steps to create a blog using jekyll a static site generator and host it in github pages" />
-<meta property="og:description" content="detailed steps to create a blog using jekyll a static site generator and host it in github pages" />
+<meta name="description" content="Detailed steps to create a blog using jekyll a static site generator and host it in github pages" />
+<meta property="og:description" content="Detailed steps to create a blog using jekyll a static site generator and host it in github pages" />
 <link rel="canonical" href="https://www.firasesbai.com/articles/2021/10/07/how-i-started-this-blog.html" />
 <meta property="og:url" content="https://www.firasesbai.com/articles/2021/10/07/how-i-started-this-blog.html" />
 <meta property="og:site_name" content="Firas Esbai" />
@@ -20,7 +20,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="How I Started This Blog" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Firas Esbai"},"description":"detailed steps to create a blog using jekyll a static site generator and host it in github pages","url":"https://www.firasesbai.com/articles/2021/10/07/how-i-started-this-blog.html","@type":"BlogPosting","headline":"How I Started This Blog","dateModified":"2021-10-07T00:00:00+00:00","datePublished":"2021-10-07T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.firasesbai.com/articles/2021/10/07/how-i-started-this-blog.html"},"@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Firas Esbai"},"description":"Detailed steps to create a blog using jekyll a static site generator and host it in github pages","url":"https://www.firasesbai.com/articles/2021/10/07/how-i-started-this-blog.html","@type":"BlogPosting","headline":"How I Started This Blog","dateModified":"2021-10-07T00:00:00+00:00","datePublished":"2021-10-07T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.firasesbai.com/articles/2021/10/07/how-i-started-this-blog.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://www.firasesbai.com/feed.xml" title="Firas Esbai" /><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id='G-3ET85T3WD3'"></script>
@@ -146,20 +146,20 @@
       
       <span class="reading-time" title="Estimated read time">
   
-  3 min read
+  14 min read
 </span>
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name"> - Firas Esbai</span></span></p></header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><em>In this article we will see how to easily setup and publish your first blog.</em></p>
+    <p><em>In this article we will see how to easily setup and publish your first blog website.</em></p>
 
 <p><img src="/assets/images/articles/4_how_i_started_this_blog.png" alt="image" />
 <br /> <em>Figure 1: What is Jekyll, Image from <a href="https://www.geeksforgeeks.org/jekyll-vs-wordpress/">Geeksforgeeks</a></em></p>
 
 <p>In a previous <a href="https://firasesbai.github.io/articles/2021/04/12/why-i-started-this-blog.html">post</a>, I mentioned five reasons that were behind the existance of this blog. Now, it is time to walk you through the journey of actually creating it.</p>
 
-<p>Through a series of posts we will setup a blog using <strong>Jekyll</strong> and enrich it with features to help you reach out and engage with your audience.</p>
+<p>In this article, we will start by setting up a simple blog using <strong>Jekyll</strong>, then enrich it with useful features to help you reach out and engage with your audience and finally deploy it easily using <strong>GitHub Pages</strong> and make it discoverable.</p>
 
 <p><em>So let’s get started!</em></p>
 
@@ -173,7 +173,43 @@
       <li><a href="#installation" id="markdown-toc-installation">Installation</a></li>
       <li><a href="#jekyll-themes" id="markdown-toc-jekyll-themes">Jekyll Themes</a></li>
       <li><a href="#jekyll-structure" id="markdown-toc-jekyll-structure">Jekyll Structure</a></li>
+    </ul>
+  </li>
+  <li><a href="#features" id="markdown-toc-features">Features</a>    <ul>
+      <li><a href="#jekyll-sitemap-generator-plugin" id="markdown-toc-jekyll-sitemap-generator-plugin">Jekyll Sitemap Generator Plugin</a>        <ul>
+          <li><a href="#what-is-a-sitemap" id="markdown-toc-what-is-a-sitemap">What is a Sitemap?</a></li>
+          <li><a href="#set-up" id="markdown-toc-set-up">Set up</a></li>
+        </ul>
+      </li>
+      <li><a href="#jekyll-seo-tag-plugin" id="markdown-toc-jekyll-seo-tag-plugin">Jekyll SEO Tag Plugin</a>        <ul>
+          <li><a href="#set-up-1" id="markdown-toc-set-up-1">Set up</a></li>
+        </ul>
+      </li>
+      <li><a href="#articles-reading-time" id="markdown-toc-articles-reading-time">Articles Reading Time</a>        <ul>
+          <li><a href="#how-to-estimate-reading-time" id="markdown-toc-how-to-estimate-reading-time">How to estimate reading time?</a></li>
+          <li><a href="#set-up-2" id="markdown-toc-set-up-2">Set up</a></li>
+        </ul>
+      </li>
+      <li><a href="#comments" id="markdown-toc-comments">Comments</a>        <ul>
+          <li><a href="#set-up-3" id="markdown-toc-set-up-3">Set up</a></li>
+        </ul>
+      </li>
+      <li><a href="#search" id="markdown-toc-search">Search</a>        <ul>
+          <li><a href="#set-up-4" id="markdown-toc-set-up-4">Set up</a></li>
+        </ul>
+      </li>
+      <li><a href="#pagination" id="markdown-toc-pagination">Pagination</a>        <ul>
+          <li><a href="#set-up-5" id="markdown-toc-set-up-5">Set up</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#deployment" id="markdown-toc-deployment">Deployment</a>    <ul>
       <li><a href="#github-pages" id="markdown-toc-github-pages">GitHub Pages</a></li>
+      <li><a href="#managing-a-custom-domain-for-your-site" id="markdown-toc-managing-a-custom-domain-for-your-site">Managing a custom domain for your Site</a>        <ul>
+          <li><a href="#set-up-6" id="markdown-toc-set-up-6">Set up</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li><a href="#recap" id="markdown-toc-recap">Recap</a></li>
@@ -241,6 +277,292 @@ You can find an explanation of the basic structure in the official <a href="http
 
 <p>Finally, browse to <code class="language-plaintext highlighter-rouge">http://localhost:4000</code> and see how your blog looks like.</p>
 
+<h2 id="features">Features</h2>
+
+<p>After adding a couple of blog posts, it is time to enrich your website. In this section, we will go through a list of fundamental features and how to set them up to make your blog stand out and give your readers an enjoyable experience.</p>
+
+<h3 id="jekyll-sitemap-generator-plugin">Jekyll Sitemap Generator Plugin</h3>
+
+<h4 id="what-is-a-sitemap">What is a Sitemap?</h4>
+
+<p>A sitemap is a file where you provide information about the pages, videos, and other files on your site, and the relationships between them. 
+Search engines like Google read this file to crawl your site more efficiently. A sitemap tells Google which pages and files you think are important in your site, and also provides valuable information about these files. 
+For example, when the page was last updated and any alternate language versions of the page.</p>
+
+<p>For more information you can check the following <a href="https://developers.google.com/search/docs/advanced/sitemaps/overview">link</a>.</p>
+
+<p>You can only benefit from having a sitemap for your website to improve its crawling even if your site’s pages are properly linked. 
+Especially when the sitemap is generated automatically using in this case the <strong>Jekyll Sitemap Generator Plugin</strong>.</p>
+
+<h4 id="set-up">Set up</h4>
+
+<p>In order to set this up for your blog you need to do the following:</p>
+
+<ol>
+  <li>Add <code class="language-plaintext highlighter-rouge">gem jekyll-sitemap</code> to your site’s Gemfile and run bundle</li>
+  <li>Add the following to your site’s <strong>_config.yml</strong> file:</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"> 
+<span class="ss">url: </span><span class="s2">"https://example.com"</span> <span class="c1"># the base hostname &amp; protocol for your site</span>
+<span class="ss">plugins:
+  </span><span class="o">-</span> <span class="n">jekyll</span><span class="o">-</span><span class="n">sitemap</span></code></pre></figure>
+
+<p>That’s it! You are good to go.</p>
+
+<p>For additional information, you can check the official Github <a href="https://github.com/jekyll/jekyll-sitemap">repository</a> of the plugin.</p>
+
+<h3 id="jekyll-seo-tag-plugin">Jekyll SEO Tag Plugin</h3>
+
+<p>After creating a sitemap for your blog, another useful plugin to add is the <strong>Jekyll SEO Tag Plugin</strong>. 
+This is a Jekyll plugin to add metadata tags for search engines and social networks to better index and display your site’s content.</p>
+
+<h4 id="set-up-1">Set up</h4>
+
+<p>In order to set this up for your blog you need to do the following:</p>
+
+<p>1- Add <code class="language-plaintext highlighter-rouge">gem jekyll-seo-tag</code> to your site’s Gemfile and run bundle</p>
+
+<p>2- Add the following to your site’s <strong>_config.yml</strong> file:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">   <span class="ss">plugins:
+    </span><span class="o">-</span> <span class="n">jekyll</span><span class="o">-</span><span class="n">seo</span><span class="o">-</span><span class="n">tag</span>
+   </code></pre></figure>
+
+<p>3- Add the following <strong>{% seo %}</strong> tag right before <code class="language-plaintext highlighter-rouge">&lt;/head&gt;</code> in your default layout</p>
+
+<p>4- Add a description for every article in your blog</p>
+
+<p>You can find more information on SEO optimisation in Jekyll website <a href="https://jsinibardy.com/optimize-seo-jekyll">here</a>.</p>
+
+<p>After finishing the necessary configuration steps and have integrated both plugins in your blog you can check the results and their impact by verifying the generated html pages.</p>
+
+<p>You can also use the <strong>google lighthouse</strong> tool from your chrome browser to generate a report about the performance of your site for different categories and metrics like seen in the screenshot below.
+Some useful hints and tips on how to further improve your site are also given to you in order to fix some common problems and enhance the user experience.</p>
+
+<p><img src="/assets/images/articles/6_lighthouse_results.PNG" alt="image" />
+<br /><em>Figure 2: Lighthouse Results</em></p>
+
+<h3 id="articles-reading-time">Articles Reading Time</h3>
+
+<p>Adding an estimated reading time at the beginning of your articles improves your engagement with the readers, especially the ones with time-limited schedules and which will probably refrain or bounce from it if they think that the article is too long.</p>
+
+<h4 id="how-to-estimate-reading-time">How to estimate reading time?</h4>
+
+<p>Words Per Minute (WPM) is a measure of words processed per minute. According to this <a href="https://en.wikipedia.org/wiki/Words_per_minute">Wikipedia</a> article the average person reading speed of English is at 200 wpm on paper and 180 on a monitor.</p>
+
+<h4 id="set-up-2">Set up</h4>
+
+<p>1- We start by creating a <code class="language-plaintext highlighter-rouge">reading-time.html</code> page under the <code class="language-plaintext highlighter-rouge">_includes</code> folder</p>
+
+<p>2- Add the following code snippet in the newly created page:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">      
+   <span class="o">&lt;</span><span class="n">span</span> <span class="k">class</span><span class="o">=</span><span class="s2">"reading-time"</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Estimated read time"</span><span class="o">&gt;</span>
+   <span class="p">{</span><span class="sx">% assign </span><span class="n">words</span> <span class="o">=</span> <span class="n">content</span> <span class="o">|</span> <span class="n">strip_html</span> <span class="o">|</span> <span class="n">number_of_words</span> <span class="sx">%}
+   {{ words | divided_by:180 }</span><span class="p">}</span> <span class="n">min</span> <span class="n">read</span>
+   <span class="o">&lt;</span><span class="sr">/span&gt;
+   
+   </span></code></pre></figure>
+
+<p>This basically calculates the total number of words in a page and divides it by the average person reading speed. 
+   We have also added the <code class="language-plaintext highlighter-rouge">strip_html</code> filter which removes any HTML tags from a string in order to have a more accurate reading time if you want to display this information in your home page as well.</p>
+
+<p>3- Finally all you need to do is to include this page in the <strong>post layout</strong> like this:<br />
+   <code class="language-plaintext highlighter-rouge">{% include reading-time.html %}</code></p>
+
+<p>You should now be able to see the estimated reading time appear on every post of your blog.</p>
+
+<h3 id="comments">Comments</h3>
+
+<p>Another feature that directly impacts the engagement with your readers is having a comments section.</p>
+
+<p>Usually people tend to use third party services, like <a href="https://disqus.com/">Disqus</a>, when it comes to adding comments for static sites. 
+We on the other hand will be seeing how to leverage Github’s API for commenting and integrate it by displaying Github issues comments on a static blog post.</p>
+
+<p>This might not be an ideal solution for everyone since it requires the person commenting to be logged in to Github. 
+In my case, using this approach made sense since most of my articles are rather technical and would involve some code snippets or references to a Github repository. 
+Besides the blog itself is hosted on Github using the free Github Pages hosting service.</p>
+
+<p>At the end we are only presenting one of many options and it is up to you to choose the best one for you depending on your requirements and needs.</p>
+
+<h4 id="set-up-3">Set up</h4>
+
+<ol>
+  <li>
+    <p>We start by adding the <code class="language-plaintext highlighter-rouge">issues_repository</code> variable in the <code class="language-plaintext highlighter-rouge">_config.yml</code> configuration file which will point to the Github repository where the comments will be added.</p>
+  </li>
+  <li>
+    <p>For every post where you want to include a comments section add in the [Front Matter] section a predefined variable called <code class="language-plaintext highlighter-rouge">issue_id</code> which points to the issue number of the issue you created in the Github repository.</p>
+  </li>
+  <li>
+    <p>Create a new <code class="language-plaintext highlighter-rouge">comments.html</code> file under the <code class="language-plaintext highlighter-rouge">_includes</code> folder. This is where the whole logic resides. Using the previously defined variables we fetch the existing comments using the Github API and load them. 
+You can find an example of this file <a href="https://github.com/firasesbai/firasesbai.github.io/blob/2a75e109ca4d4243102572ef6aa2873a0285c150/_includes/comments.html">here</a>.</p>
+  </li>
+  <li>
+    <p>Finally in order to make the loaded comments appear on our pages, like the one we have at the bottom of this article you are currently reading, we need to add the following code snippet in the <strong>post layout</strong> page:</p>
+  </li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"> 
+      
+   <span class="p">{</span><span class="sx">% if </span><span class="n">page</span><span class="p">.</span><span class="nf">issue_id</span> <span class="sx">%}
+    {% include comments.html issue_id=page.issue_id %}</span>
+   <span class="p">{</span><span class="sx">% endif </span><span class="o">%</span><span class="p">}</span>
+      
+   </code></pre></figure>
+
+<h3 id="search">Search</h3>
+
+<p>As the number of articles increases over time in your blog, it will be difficult to navigate and find a certain article that you are looking for. In this case, having search functionality becomes necessary.</p>
+
+<p>There are multiple ways to achieve this such as using Google Custom Search Engine or other paid services. Easiest solution though would be to use the <a href="https://github.com/christian-fei/Simple-Jekyll-Search">Simple Jekyll Instant Search</a>.</p>
+
+<h4 id="set-up-4">Set up</h4>
+
+<p>1- Create a <strong>JSON</strong> file called <code class="language-plaintext highlighter-rouge">search.json</code> in the root folder of your blog</p>
+
+<p>2- Add the following code snippet in the newly created file:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">      
+   <span class="o">---</span>
+   <span class="ss">layout: </span><span class="n">none</span>
+   <span class="o">---</span>
+
+   <span class="p">{</span><span class="sx">% for </span><span class="n">post</span> <span class="k">in</span> <span class="n">site</span><span class="p">.</span><span class="nf">posts</span> <span class="sx">%}
+    {
+      "title"       : "{{ post.title | escape }</span><span class="p">}</span><span class="s2">",
+      "</span><span class="n">category</span><span class="s2">"    : "</span><span class="p">{{</span> <span class="n">post</span><span class="p">.</span><span class="nf">category</span> <span class="p">}}</span><span class="s2">",
+      "</span><span class="n">tags</span><span class="s2">"        : "</span><span class="p">{{</span> <span class="n">post</span><span class="p">.</span><span class="nf">tags</span> <span class="o">|</span> <span class="ss">join: </span><span class="s1">', '</span> <span class="p">}}</span><span class="s2">",
+      "</span><span class="n">url</span><span class="s2">"         : "</span><span class="p">{{</span> <span class="n">site</span><span class="p">.</span><span class="nf">baseurl</span> <span class="p">}}{{</span> <span class="n">post</span><span class="p">.</span><span class="nf">url</span> <span class="p">}}</span><span class="s2">",
+      "</span><span class="n">date</span><span class="s2">"        : "</span><span class="p">{{</span> <span class="n">post</span><span class="p">.</span><span class="nf">date</span> <span class="p">}}</span><span class="s2">",
+      "</span><span class="n">description</span><span class="s2">" : "</span><span class="p">{{</span> <span class="n">post</span><span class="p">.</span><span class="nf">description</span> <span class="o">|</span> <span class="n">strip_html</span> <span class="o">|</span> <span class="n">strip_newlines</span> <span class="o">|</span> <span class="n">escape</span> <span class="p">}}</span><span class="s2">"
+    } 
+   {% unless forloop.last %},{% endunless %}
+   {% endfor %}
+   
+   </span></code></pre></figure>
+
+<p>This will go over all your posts and extract for each one necessary information such as title, category, etc… that will be used to search through your articles.</p>
+
+<p>3- Create a new <code class="language-plaintext highlighter-rouge">search-script.js</code> under <code class="language-plaintext highlighter-rouge">/js/</code> folder in your root directory. You can find an example of it <a href="https://github.com/firasesbai/firasesbai.github.io/blob/master/js/search-script.js">here</a>.</p>
+
+<p>4- Create a <code class="language-plaintext highlighter-rouge">search.html</code> page under the <code class="language-plaintext highlighter-rouge">_includes</code> folder.</p>
+
+<p>5- Add the following code snippet to it:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">      
+   
+   <span class="o">&lt;!--</span> <span class="no">Html</span> <span class="no">Elements</span> <span class="k">for</span> <span class="no">Search</span> <span class="o">--&gt;</span>
+   <span class="o">&lt;</span><span class="n">div</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"search-container"</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"search-input"</span> <span class="n">placeholder</span><span class="o">=</span><span class="s2">"search..."</span><span class="o">&gt;</span>
+   <span class="o">&lt;</span><span class="n">ul</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"results-container"</span><span class="o">&gt;&lt;</span><span class="sr">/ul&gt;
+   &lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+   <span class="o">&lt;!--</span> <span class="no">Script</span> <span class="n">pointing</span> <span class="n">to</span> <span class="n">search</span><span class="o">-</span><span class="n">script</span><span class="p">.</span><span class="nf">js</span> <span class="o">--&gt;</span>
+   <span class="o">&lt;</span><span class="n">script</span> <span class="n">src</span><span class="o">=</span><span class="s2">"/js/search-script.js"</span> <span class="n">type</span><span class="o">=</span><span class="s2">"text/javascript"</span><span class="o">&gt;&lt;</span><span class="sr">/script&gt;
+
+   &lt;!-- Configuration --&gt;
+   &lt;script&gt;
+   SimpleJekyllSearch({
+   searchInput: document.getElementById('search-input'),
+   resultsContainer: document.getElementById('results-container'),
+   json: '/se</span><span class="n">arch</span><span class="p">.</span><span class="nf">json</span><span class="s1">',
+   searchResultTemplate: '</span><span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"{url}"</span><span class="o">&gt;&lt;</span><span class="n">h4</span><span class="o">&gt;</span><span class="p">{</span><span class="n">title</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h4&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;</span><span class="sr">/div&gt;'
+   })
+   &lt;/s</span><span class="n">cript</span><span class="o">&gt;</span>
+
+   
+   </code></pre></figure>
+
+<p>6- Include the <code class="language-plaintext highlighter-rouge">search.html</code> page into your home page found under <code class="language-plaintext highlighter-rouge">_layouts/home.html</code> by adding the following line:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">      
+   <span class="o">&lt;</span><span class="n">div</span> <span class="n">align</span><span class="o">=</span><span class="s2">"right"</span><span class="o">&gt;</span> <span class="p">{</span><span class="sx">%- include search.html -%} &lt;/div&gt;   
+   
+   </span></code></pre></figure>
+
+<p>You should now be able to see a search bar, as shown below in the screenshot, and be able to type in keywords to find an article.</p>
+
+<p><img src="/assets/images/articles/8_search_bar.png" alt="image" />
+<br /> <em>Figure 3: Search Bar</em></p>
+
+<h3 id="pagination">Pagination</h3>
+
+<p>For the same reasons mentioned above, having a pagination system in place will make navigating your rich blog easier rather than making your readers scroll down endlessly.</p>
+
+<h4 id="set-up-5">Set up</h4>
+
+<p>1- Add <code class="language-plaintext highlighter-rouge">gem "jekyll-paginate-v2"</code> to your site’s Gemfile and run bundle</p>
+
+<p>2- Add the following to your site’s <code class="language-plaintext highlighter-rouge">_config.yml</code> file:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"> 
+      
+   <span class="c1"># Pagination Settings</span>
+   <span class="ss">pagination:
+    enabled: </span><span class="kp">true</span>
+    <span class="ss">per_page: </span><span class="mi">5</span>
+    <span class="ss">permalink: </span><span class="s1">'/page/:num/'</span>
+    <span class="ss">title: </span><span class="s1">' - page :num'</span>
+    <span class="ss">limit: </span><span class="mi">0</span>
+    <span class="ss">sort_field: </span><span class="s1">'date'</span>
+    <span class="ss">sort_reverse: </span><span class="kp">true</span>
+      
+   </code></pre></figure>
+
+<p>This will enable the pagination and sort your posts based on their release date having the latest at the top and a maximum of 5 articles per page.</p>
+
+<p>3-  Add the following code snippet to your home page found under <code class="language-plaintext highlighter-rouge">_layouts/home.html</code>:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"> 
+      
+    <span class="o">&lt;</span><span class="n">ul</span> <span class="k">class</span><span class="o">=</span><span class="s2">"post-list"</span><span class="o">&gt;</span>
+    <span class="o">&lt;!--</span> 
+        <span class="no">Here</span> <span class="n">is</span> <span class="n">the</span> <span class="n">main</span> <span class="n">paginator</span> <span class="n">logic</span> <span class="n">called</span><span class="p">.</span>
+    <span class="nf">-</span><span class="o">-&gt;</span>
+    <span class="p">{</span><span class="sx">% for </span><span class="n">post</span> <span class="k">in</span> <span class="n">paginator</span><span class="p">.</span><span class="nf">posts</span> <span class="sx">%}
+      &lt;li&gt;
+      
+        &lt;h3&gt; &lt;a class="post-link" href="{{ post.url | relative_url }</span><span class="p">}</span><span class="s2">"&gt;{{ post.title | escape }}&lt;/a&gt;&lt;/h3&gt;
+        &lt;span class="</span><span class="n">post</span><span class="o">-</span><span class="n">meta</span><span class="s2">"&gt;{{ post.date | date: "</span><span class="o">%</span><span class="n">b</span> <span class="sx">%-d, %Y" }}&lt;/span&gt;
+
+        {%-</span> <span class="k">if</span> <span class="n">site</span><span class="p">.</span><span class="nf">show_excerpts</span> <span class="o">-</span><span class="sx">%}
+          {{ post.excerpt }</span><span class="p">}</span>
+        <span class="p">{</span><span class="sx">%- endif -%}
+      &lt;/li&gt;
+    {% endfor %}</span>
+    <span class="o">&lt;</span><span class="sr">/ul&gt;
+  
+    &lt;!-- 
+    Showing buttons to move to the next and to the previous list of posts (pager buttons).
+    --&gt;
+    {% if paginator.total_pages &gt; 1 %}
+    &lt;ul class="pager"&gt;
+      {% if paginator.previous_page %}
+      &lt;li class="previous"&gt;
+          &lt;a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '/</span><span class="o">/</span><span class="s1">', '</span><span class="o">/</span><span class="s1">' }}"&gt;&amp;larr; Newer Posts&lt;/a&gt;
+      &lt;/li&gt;
+      {% endif %}
+      {% if paginator.next_page %}
+      &lt;li class="next"&gt;
+          &lt;a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '</span><span class="o">/</span><span class="sr">/', '/</span><span class="err">'</span> <span class="p">}}</span><span class="s2">"&gt;Older Posts &amp;rarr;&lt;/a&gt;
+      &lt;/li&gt;
+      {% endif %}
+    &lt;/ul&gt;
+   {% endif %}
+      
+   </span></code></pre></figure>
+
+<p>This will render your posts in a list using the <strong>paginator</strong> variable provided by the gem and using the corresponding configurations you added in step 2.</p>
+
+<p>That is it! If you have more then five posts, navigation buttons like shown below will appear at the bottom of your homepage in order to be able to visit your older posts.</p>
+
+<p><img src="/assets/images/articles/8_navigation_buttons.png" alt="image" />
+<br /><em>Figure 4: Navigation Buttons</em></p>
+
+<h2 id="deployment">Deployment</h2>
+
 <h3 id="github-pages">GitHub Pages</h3>
 
 <p>GitHub Pages is a static site hosting service that takes files from a repository on GitHub, optionally runs the files through a build process, and publishes a website.</p>
@@ -255,6 +577,51 @@ GitHub Pages will use Jekyll to build your site by default.</p>
 
 <p>Everything is being taken care of; sit back and enjoy your blog at <code class="language-plaintext highlighter-rouge">https://&lt;username&gt;.github.io</code> .</p>
 
+<h3 id="managing-a-custom-domain-for-your-site">Managing a custom domain for your Site</h3>
+
+<p>Using <em>GitHub Pages</em> worked out of the box for us and was a good starting point. Now that we have a fully functional website armed with all the features that we need, it is time to customise that URL by using a custom domain. 
+This has multiple benefits namely better promoting our own brand, providing trust to our readers and making the site more discoverable.</p>
+
+<h4 id="set-up-6">Set up</h4>
+
+<p>1- Head over to <a href="https://domains.google/">Google Domains</a> and search for a new domain</p>
+
+<p>2- Follow the steps in order to finalise your purchase. A standard <strong>.com</strong> should cost you around 12 Euros per year.</p>
+
+<p>3- Under your newly created domain, click on <strong>DNS</strong> from the sidebar and add a new <strong>Custom Records</strong> with the following configurations:</p>
+
+<p><strong>Custom Record 1</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"> 
+      
+   <span class="no">Host</span> <span class="no">Name</span><span class="p">:</span> <span class="n">www</span> <span class="p">(</span><span class="n">it</span> <span class="n">will</span> <span class="n">be</span> <span class="n">autocompleted</span> <span class="n">with</span> <span class="n">yourdomainname</span><span class="p">.</span><span class="nf">com</span><span class="p">)</span> 
+   <span class="no">Type</span><span class="p">:</span> <span class="no">CNAME</span>
+   <span class="no">TTL</span><span class="p">:</span> <span class="mi">3600</span> <span class="p">(</span><span class="no">Default</span><span class="p">)</span>
+   <span class="no">Data</span><span class="p">:</span>  <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span><span class="p">.</span><span class="nf">github</span><span class="p">.</span><span class="nf">io</span>
+      
+   </code></pre></figure>
+
+<p><strong>Custom Record 2</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"> 
+      
+   <span class="no">Host</span> <span class="no">Name</span><span class="p">:</span> <span class="n">leave</span> <span class="n">this</span> <span class="n">empty</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">default</span> <span class="n">to</span> <span class="n">yourdomainname</span> 
+   <span class="no">Type</span><span class="p">:</span> <span class="no">A</span>
+   <span class="no">TTL</span><span class="p">:</span> <span class="mi">3600</span> <span class="p">(</span><span class="no">Default</span><span class="p">)</span>
+   <span class="no">Data</span><span class="p">:</span> 
+    <span class="mf">185.199</span><span class="o">.</span><span class="mf">110.153</span>
+    <span class="mf">185.199</span><span class="o">.</span><span class="mf">111.153</span>
+    <span class="mf">185.199</span><span class="o">.</span><span class="mf">109.153</span>
+    <span class="mf">185.199</span><span class="o">.</span><span class="mf">108.153</span>
+      
+   </code></pre></figure>
+
+<p>4- On GitHub, navigate to your site’s repository and go to Settings</p>
+
+<p>5- Click on Pages from the sidebar, add your custom domain <code class="language-plaintext highlighter-rouge">www.yourdomainname.com</code> and click save.</p>
+
+<p>6- Add <strong>CNAME</strong> file to your master branch. By default when you add a custom domain, github adds the CNAME file to your <em>gh-pages</em> branch, which gets overwritten by the build from your master branch each time you push new changes.</p>
+
 <p>With this we have reached the end of this post, I hope you enjoyed it!</p>
 
 <p>If you have any remarks or questions, please don’t hesitate and do drop a comment below.</p>
@@ -263,7 +630,8 @@ GitHub Pages will use Jekyll to build your site by default.</p>
 
 <h2 id="recap">Recap</h2>
 
-<p>In this article we discussed the building blocks for our Jekyll blog and how to host it.</p>
+<p>In this article we discussed the building blocks for our Jekyll blog and how to host it. With this we have only touched the tip of the iceberg. Working on your blog will be a continuous process involving experimentation and trial of new features all in the purpose of reaching more people to share your thoughts and learnings. 
+I hope this will get you started on a good foot and if you have any suggestions or an interesting feature and you would like to share it, feel free to reach out.</p>
 
 <p><em>Happy learning!</em></p>
 
@@ -389,8 +757,26 @@ GitHub Pages will use Jekyll to build your site by default.</p>
     
    
     
+   
+    
+    
+    
+   
+    
+   
+    
+    
+    
+   
+    
+   
+    
+    
+    
+   
+    
     <div>
-      <h3><a href="/articles/2022/08/25/how-i-started-this-blog-part-4.html">How I Started This Blog Part 4</a></h3>
+      <h3><a href="/articles/2021/04/12/why-i-started-this-blog.html">5 Reasons Why I Started This Blog</a></h3>
     </div>
     
     
@@ -407,12 +793,7 @@ GitHub Pages will use Jekyll to build your site by default.</p>
     
    
     
-    <div>
-      <h3><a href="/articles/2022/03/27/how-i-started-this-blog-part-3.html">How I Started This Blog Part 3</a></h3>
-    </div>
-    
-    
-        
+   
 </div>
 
   

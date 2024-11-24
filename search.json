@@ -145,45 +145,12 @@
   
     {
 
-    "title"      : "How I Started This Blog Part 4",
-	  "url"        : "/articles/2022/08/25/how-i-started-this-blog-part-4.html",
-    "category"   : "articles",
-    "date"       : "2022-08-25 00:00:00 +0000",
-	  "tags"       : "Blogging",
-	  "description": "In this article we will integrate a search bar, add pages and customize our blog with a new domain"
-
-    } ,
-  
-    {
-
     "title"      : "My Reading List",
 	  "url"        : "/notes/2022/08/17/books-recommendations.html",
     "category"   : "notes",
     "date"       : "2022-08-17 00:00:00 +0000",
 	  "tags"       : "General",
 	  "description": ""
-
-    } ,
-  
-    {
-
-    "title"      : "How I Started This Blog Part 3",
-	  "url"        : "/articles/2022/03/27/how-i-started-this-blog-part-3.html",
-    "category"   : "articles",
-    "date"       : "2022-03-27 00:00:00 +0000",
-	  "tags"       : "Blogging",
-	  "description": "In this article we will integrate a comments section using Github comments API and add an estimated reading time to our articles"
-
-    } ,
-  
-    {
-
-    "title"      : "How I Started This Blog Part 2",
-	  "url"        : "/articles/2022/03/23/how-i-started-this-blog-part-2.html",
-    "category"   : "articles",
-    "date"       : "2022-03-23 00:00:00 +0000",
-	  "tags"       : "Blogging",
-	  "description": "In this article we will integrate some jekyll plugins to add a sitemap and improve your SEO ranking and lighthouse score of your blog"
 
     } ,
   
@@ -205,7 +172,7 @@
     "category"   : "articles",
     "date"       : "2021-10-07 00:00:00 +0000",
 	  "tags"       : "Blogging",
-	  "description": "detailed steps to create a blog using jekyll a static site generator and host it in github pages"
+	  "description": "Detailed steps to create a blog using jekyll a static site generator and host it in github pages"
 
     } ,
   
