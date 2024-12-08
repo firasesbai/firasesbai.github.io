@@ -35,7 +35,7 @@ All the source code is available [here]() - `optional`
 ## Headline 3 ##
 
 ![image alt text](/assets/images/articles/)
-*Figure 1: image alt txt*
+*Figure 1: image alt txt, Image from []()*
 
 With this we have reached the end of this post, I hope you enjoyed it!
 
