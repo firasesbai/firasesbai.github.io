@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" /><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>System Desing Interview Blueprint | Firas Esbai</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="System Desing Interview Blueprint" />
+<meta name="author" content="Firas Esbai" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="General guidelines and a reference framework to use when approaching system design interview" />
+<meta property="og:description" content="General guidelines and a reference framework to use when approaching system design interview" />
+<link rel="canonical" href="https://www.firasesbai.com/articles/2024/12/08/system-design-interview-blueprint.html" />
+<meta property="og:url" content="https://www.firasesbai.com/articles/2024/12/08/system-design-interview-blueprint.html" />
+<meta property="og:site_name" content="Firas Esbai" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-12-08T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="System Desing Interview Blueprint" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Firas Esbai"},"description":"General guidelines and a reference framework to use when approaching system design interview","url":"https://www.firasesbai.com/articles/2024/12/08/system-design-interview-blueprint.html","@type":"BlogPosting","headline":"System Desing Interview Blueprint","dateModified":"2024-12-08T00:00:00+00:00","datePublished":"2024-12-08T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.firasesbai.com/articles/2024/12/08/system-design-interview-blueprint.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://www.firasesbai.com/feed.xml" title="Firas Esbai" /><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id='G-3ET85T3WD3'"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3ET85T3WD3');
+</script>
+</head>
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg?v=1" color="#5bbad5">
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico?v=1">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- service Worker Logic -->	
+  <script type="text/javascript" src="/js/service-worker.js"></script>
+  
+  
+  	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id='G-3ET85T3WD3'"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3ET85T3WD3');
+</script>
+
+  
+  
+  <body><header class="site-header" role="banner">
+   <div class="wrapper"><a class="site-title" href="/" style="font-size: 26px"> Firas Esbai </a><nav class="site-nav">
+         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+         <label for="nav-trigger">
+            <span class="menu-icon">
+               <svg viewBox="0 0 18 15" width="18px" height="15px">
+                  <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+               </svg>
+            </span>
+         </label>
+         <div class="trigger">
+            <!--
+               my_page.autogen is populated by the pagination logic for all pages
+                               that are automatically created by the gem. Check for non-existence to exclude pagination pages from site.pages iterators
+               -->
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+                  <a class="page-link" href="/blog/index.html" style="font-size: 20px">Blog</a>
+               
+            
+               
+                  <a class="page-link" href="/contact/" style="font-size: 20px">Contact Me</a>
+               
+            
+
+         </div>
+      </nav></div>
+</header><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <link rel="stylesheet" href="/assets/css/post.css">
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <nav aria-label="breadcrumb">
+    <p class="breadcrumb">
+      <a href="/blog">Blog</a>
+      
+        
+        
+        > <a href="/categories/data-engineering">Data Engineering</a>
+      
+      > <span>System Desing Interview Blueprint</span>
+    </p>
+  </nav>
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">System Desing Interview Blueprint</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2024-12-08T00:00:00+00:00" itemprop="datePublished">
+        Dec 8, 2024 - 
+      </time>
+      
+      <span class="reading-time" title="Estimated read time">
+  
+  6 min read
+</span>
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name"> - Firas Esbai</span></span></p></header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><em>This article contains general guidelines and a reference framework to use when approaching system design interview.</em></p>
+
+<p>System design interview is a key component of the technical interview process that is no longer limited to big tech companies or traditional software engineering positions. Even though each company is different, a system design round is not uncommon for data engineering positions especially for senior and more experienced roles.</p>
+
+<p>The purpose of this step is to assess your ability to design large-scale, complex software systems from scratch focusing on your problem solving skills and communication and collaboration capabilities.</p>
+
+<p><em>So let’s get started!</em></p>
+
+<hr />
+
+<h1> Contents </h1>
+<ul id="markdown-toc">
+  <li><a href="#general-concepts" id="markdown-toc-general-concepts">General Concepts</a></li>
+  <li><a href="#workflow" id="markdown-toc-workflow">Workflow</a>    <ul>
+      <li><a href="#step-1-design-scope" id="markdown-toc-step-1-design-scope">Step 1: Design Scope</a>        <ul>
+          <li><a href="#general-questions" id="markdown-toc-general-questions">General questions</a></li>
+          <li><a href="#problem-specific-questions" id="markdown-toc-problem-specific-questions">Problem specific questions</a></li>
+          <li><a href="#non-functional-requirements" id="markdown-toc-non-functional-requirements">Non Functional Requirements</a></li>
+          <li><a href="#back-of-the-envelope-estimation" id="markdown-toc-back-of-the-envelope-estimation">Back of the envelope estimation</a></li>
+        </ul>
+      </li>
+      <li><a href="#step-2-high-level-design" id="markdown-toc-step-2-high-level-design">Step 2: High Level Design</a></li>
+      <li><a href="#step-3-design-deep-dive" id="markdown-toc-step-3-design-deep-dive">Step 3: Design Deep Dive</a></li>
+      <li><a href="#step-4-wrap-up" id="markdown-toc-step-4-wrap-up">Step 4: Wrap up</a></li>
+    </ul>
+  </li>
+  <li><a href="#common-system-design-use-cases" id="markdown-toc-common-system-design-use-cases">Common System Design Use Cases</a></li>
+  <li><a href="#recap" id="markdown-toc-recap">Recap</a></li>
+  <li><a href="#resources" id="markdown-toc-resources">Resources</a></li>
+</ul>
+<hr />
+
+<h2 id="general-concepts">General Concepts</h2>
+
+<p>While there is no shortage of information or resources on the internet when it comes to system design interview preparation, following is a list of some concepts and topics that I personnaly found common and almost always used in every system and thus you should be familiar with before going to the interview:</p>
+
+<ul>
+  <li><a href="https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#communication-protocols">API Architecture Styles</a></li>
+  <li><a href="https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#how-do-we-design-effective-and-safe-apis">API Design</a></li>
+  <li><strong>Rate Limiter</strong>: a rate limiter is used to control the rate of traffic requests sent by a client or a service. If the requests count hits the threshold defined by the rate limiter, all the following reuqests are blocked. The benefits of using a rate limiter include preventing resource starvation caused by Denial of Service (DoS) attack and reducing cost by requiring fewer servers and preventing these from being overloaded. 
+Some popular rate limiting algorithms include:
+    <ul>
+      <li>Token bucket</li>
+      <li>Leaky bucket</li>
+      <li>Fixed window</li>
+      <li>Sliding window</li>
+    </ul>
+
+    <p>For more information check out <a href="https://www.geeksforgeeks.org/rate-limiting-algorithms-system-design/">this link</a></p>
+  </li>
+  <li><a href="https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#load-balancer">Load Balancer</a></li>
+  <li><a href="https://www.geeksforgeeks.org/consistent-hashing/">Consistent hashing</a></li>
+  <li><a href="https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#content-delivery-network">Content Delivery Network (CDN)</a></li>
+  <li><strong>Database choice</strong>: 
+<img src="/assets/images/articles/20_database_choice.png" alt="Types of Databases" />
+<br /> <em>Figure 1: Types of Databases, Image from <a href="https://blog.bytebytego.com/p/understanding-database-types">ByteByteGo</a></em></li>
+  <li><strong>Caching</strong>: it improves load times and can reduce the load on your servers and databases. It is important to understand the different layers where caching can be applied, their advantages and disadvantages and strategies to update your cache. These would include:
+    <ul>
+      <li>Client caching</li>
+      <li>CDN caching</li>
+      <li>Web server caching</li>
+      <li>Database caching</li>
+      <li>Application caching</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="workflow">Workflow</h2>
+
+<h3 id="step-1-design-scope">Step 1: Design Scope</h3>
+
+<p>Generally you will be tasked with designing a well known system or application that is used by hundreds if not millions of users with a broad and ambiguous statement. Obviously coming up with all the potential problems, edge cases and details around the ultimate solution is not a one session task. The system in question came to its current state after years of cumulative efforts from multiple engineering teams and designing something similar in the current context and scope is not a realistic expectation nor a feasible task. Therefore, a good starting point would be to define the scope of the design and what you want to achieve during the interview.</p>
+
+<h4 id="general-questions">General questions</h4>
+
+<p>Start by asking some general questions to better understand the requirements. Make sure to take notes of any assumptions and decisions made along the way.</p>
+
+<p>Following are some questions to consider:</p>
+
+<ul>
+  <li>What are the most important features?</li>
+  <li>Is this a mobile app, a web app or both?</li>
+  <li>How many Daily Active Users (DAU) does the product have?</li>
+  <li>Can we leverage some of the existing cloud infrastructure provided by Amazon, Google or Microsoft?</li>
+  <li>Is encryption required?</li>
+</ul>
+
+<h4 id="problem-specific-questions">Problem specific questions</h4>
+
+<p>Building up on these, make sure to dive deeper in your conversation with your interviewer on more problem specific questions to clarify any ambiguities.</p>
+
+<h4 id="non-functional-requirements">Non Functional Requirements</h4>
+
+<p>After clarifying the requirements, it is important to understand the non functional aspects of your system which will guide you in your design choices since they are a crucial part of any large scale system.</p>
+
+<p>Some areas to consider would be:</p>
+
+<ul>
+  <li>Reliability</li>
+  <li>Scalability</li>
+  <li>High Availability</li>
+  <li>Fault tolerance</li>
+</ul>
+
+<h4 id="back-of-the-envelope-estimation">Back of the envelope estimation</h4>
+
+<p>A final part of defining your scope would involve doing back-of-the-envelope calculations. Weather your interviewer asks you to do it or not, these estimations help you assess which design will meet your requirements.</p>
+
+<p>These calculations will be based on the requirements and agreed upon assumptions form your previous questions and common performance numbers. You you should familiarize yourself with these numbers <a href="https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#appendix">here</a>.</p>
+
+<h3 id="step-2-high-level-design">Step 2: High Level Design</h3>
+
+<p>After clarifying the design scope, now it is time to identify the key components of your system. These are the high level components that you are going to work with for the rest of the interview. As you progress, you will be adding more details to your design along the way so the point here is to really start at a high level even if it seems oversimplified. This will serve as a baseline as you work with the interviewer on identifying the right level of detail needed.</p>
+
+<h3 id="step-3-design-deep-dive">Step 3: Design Deep Dive</h3>
+
+<p>Based on your domain of expertise, choose the part you feel most comfortable with and start diving deeper on its key components. For example, when starting at the database layer you could discuss the factors to consider when selecting the appropriate database technology such as scalability, performance and data consistency and model. For someone else this could be the API layer where they can discuss the appropriate architecture style to choose and give an example of some API endpoints requests, parameters and responses.</p>
+
+<p>While covering different parts of the system, it is important to consider system optimizations and cost savings aspects to ensure your system handles the requirements previously identified in the most efficient way.</p>
+
+<p>Make sure to also discuss some scenarios and user journeys to demonstrate how your proposed system supports how the users would eventually interact with it.</p>
+
+<h3 id="step-4-wrap-up">Step 4: Wrap up</h3>
+
+<p>At this stage you should be approaching the end of the session. It could be useful to give the interviewer a recap of your design. Since there is always something to improve, use this opportunity to mention potential improvements in order to handle more scale or refinements you could do if you had more time especially if you had to do some tradeoffs at the beginning. Discussing things like monitoring and logging and error handling in case of failures of different components in your system are worth touching upon and would demonstrate your critical thinking.</p>
+
+<h2 id="common-system-design-use-cases">Common System Design Use Cases</h2>
+
+<p>Following is a list of common system design questions and real world applications each with a set of unique challenges, requirements and type of data.</p>
+
+<ul>
+  <li>File storage and collaboration platform
+    <ul>
+      <li>Dropbox</li>
+      <li>Google Drive</li>
+    </ul>
+  </li>
+  <li>Messaging application
+    <ul>
+      <li>Slack</li>
+      <li>Facebook messenger</li>
+      <li>Whatsapp</li>
+      <li>WeChat</li>
+    </ul>
+  </li>
+  <li>Music streaming platform
+    <ul>
+      <li>Spotify</li>
+    </ul>
+  </li>
+  <li>News feed system
+    <ul>
+      <li>Facebook news feed</li>
+      <li>Instagram feed</li>
+      <li>Twitter timeline</li>
+    </ul>
+  </li>
+  <li>Ride sharing app
+    <ul>
+      <li>Uber</li>
+    </ul>
+  </li>
+  <li>Video streaming service
+    <ul>
+      <li>Netflix</li>
+      <li>Youtube</li>
+    </ul>
+  </li>
+</ul>
+
+<p>With this we have reached the end of this post, I hope you enjoyed it!</p>
+
+<p>If you have any remarks or questions, please don’t hesitate and do drop a comment below.</p>
+
+<p><em>Stay tuned!</em></p>
+
+<h2 id="recap">Recap</h2>
+
+<p>This article presented a mental model with a logical set of steps to follow when approaching a system design interview enriched with pointers to an opinionated set of topics and concepts to review beforehand.</p>
+
+<p><em>Happy learning and good luck on your system design interview!</em></p>
+
+<h2 id="resources">Resources</h2>
+
+<p><a href="https://www.goodreads.com/en/book/show/54109255">https://www.goodreads.com/en/book/show/54109255</a></p>
+
+<p><a href="https://www.goodreads.com/en/book/show/60631342">https://www.goodreads.com/en/book/show/60631342</a></p>
+
+<p><a href="https://github.com/ByteByteGoHq/system-design-101">https://github.com/ByteByteGoHq/system-design-101</a></p>
+
+<p><a href="https://github.com/donnemartin/system-design-primer">https://github.com/donnemartin/system-design-primer</a></p>
+
+  </div>
+
+  <hr>
+<br>
+<script async data-uid="303d8467ac" src="https://firas-esbai.ck.page/303d8467ac/index.js"></script>
+
+  <br>
+<hr>
+<br>
+<div id="relatedPosts">
+   <div class="post-header bg-">
+      <h1 class="page-heading">Further Reading</h1>
+   </div>
+   
+   
+   
+   
+   
+    
+    
+    
+   
+    
+   
+    
+    
+    
+   
+    
+    <div>
+      <h3><a href="/articles/2024/11/17/evolution-analytical-data-architectures.html">Evolution of Analytical Data Architectures: From Data Warehouses to Lakehouses</a></h3>
+    </div>
+    
+    
+   
+   
+    
+    
+    
+   
+    
+    <div>
+      <h3><a href="/articles/2024/08/11/data-warehouse-modeling-techniques.html">Data Warehouse Modeling Techniques</a></h3>
+    </div>
+    
+    
+   
+   
+    
+    
+    
+   
+    
+   
+    
+    
+    
+   
+    
+   
+    
+    
+    
+   
+    
+   
+    
+    
+    
+   
+    
+    <div>
+      <h3><a href="/articles/2023/09/24/data-processing-architectures-lambda-vs-kappa.html">Data Processing Architectures: Lambda vs Kappa</a></h3>
+    </div>
+    
+    
+   
+   
+    
+    
+    
+   
+    
+    <div>
+      <h3><a href="/articles/2023/09/10/understanding-modern-data-stack.html">Understanding Modern Data Stack</a></h3>
+    </div>
+    
+    
+        
+</div>
+
+  
+    
+<hr>
+<br>
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://firasesbai.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+
+  <a class="u-url" href="/articles/2024/12/08/system-design-interview-blueprint.html" hidden></a>
+</article>
+      </div>
+    </main><link rel="stylesheet" href="/assets/css/footer.css">
+ 
+<footer class="site-footer h-card">
+   <data class="u-url" href="/"></data>
+   <div class="wrapper">
+      <div class="footer-col-wrapper">
+         <div class="footer-col footer-col-1" style="text-align: left;"><ul class="social-media-list"><li><a href="https://www.firasesbai.com/feed.xml"><svg class="svg-icon orange"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg><span> Subscribe</span></a></li><li><a href="https://www.linkedin.com/in/firas-esbai"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">firas-esbai</span></a></li><li><a href="https://github.com/firasesbai"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">firasesbai</span></a></li></ul></div>
+         <div class="footer-col footer-col-2" style="text-align: right;">
+            <ul class="legal-list" style="list-style-type: none; padding: 0;">
+               <li><a href="/archive/">Archive</a></li>
+               <li><a href="/privacy-policy/">Privacy Policy</a></li>
+               <li><a href="/terms/">Terms and Conditions</a></li>
+            </ul>
+         </div>
+      </div>
+      <div style="text-align: center; margin-top: 10px;">
+         
+            <p class="p-name">Copyright &copy; 2024 Firas Esbai.</p>
+            
+      </div>
+   </div>
+</footer><!-- Cookie Consent Logic -->	
+	<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+	<script src="/js/cookie-consent-script.js" type="text/javascript"> </script>
+
+  </body>
+
+</html>

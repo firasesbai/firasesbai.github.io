@@ -2,6 +2,17 @@
   
     {
 
+    "title"      : "System Desing Interview Blueprint",
+	  "url"        : "/articles/2024/12/08/system-design-interview-blueprint.html",
+    "category"   : "articles",
+    "date"       : "2024-12-08 00:00:00 +0000",
+	  "tags"       : "Data Engineering",
+	  "description": "General guidelines and a reference framework to use when approaching system design interview"
+
+    } ,
+  
+    {
+
     "title"      : "Evolution of Analytical Data Architectures: From Data Warehouses to Lakehouses",
 	  "url"        : "/articles/2024/11/17/evolution-analytical-data-architectures.html",
     "category"   : "articles",

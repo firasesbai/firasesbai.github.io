@@ -1,5 +1,195 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2024-11-24T20:09:45+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Firas Esbai's Lifelong Learning Journey.
-</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Evolution of Analytical Data Architectures: From Data Warehouses to Lakehouses</title><link href="https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures.html" rel="alternate" type="text/html" title="Evolution of Analytical Data Architectures: From Data Warehouses to Lakehouses" /><published>2024-11-17T00:00:00+00:00</published><updated>2024-11-17T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures.html">&lt;p&gt;&lt;em&gt;In this article, we will go through a brief overview of the journey from the foundational data warehouses to the data lakes and up to the emerging concept of the data lakehouse.&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2024-12-08T21:38:01+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Firas Esbai's Lifelong Learning Journey.
+</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">System Desing Interview Blueprint</title><link href="https://www.firasesbai.com/articles/2024/12/08/system-design-interview-blueprint.html" rel="alternate" type="text/html" title="System Desing Interview Blueprint" /><published>2024-12-08T00:00:00+00:00</published><updated>2024-12-08T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/12/08/system-design-interview-blueprint</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/12/08/system-design-interview-blueprint.html">&lt;p&gt;&lt;em&gt;This article contains general guidelines and a reference framework to use when approaching system design interview.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;System design interview is a key component of the technical interview process that is no longer limited to big tech companies or traditional software engineering positions. Even though each company is different, a system design round is not uncommon for data engineering positions especially for senior and more experienced roles.&lt;/p&gt;
+
+&lt;p&gt;The purpose of this step is to assess your ability to design large-scale, complex software systems from scratch focusing on your problem solving skills and communication and collaboration capabilities.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#general-concepts&quot; id=&quot;markdown-toc-general-concepts&quot;&gt;General Concepts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#workflow&quot; id=&quot;markdown-toc-workflow&quot;&gt;Workflow&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#step-1-design-scope&quot; id=&quot;markdown-toc-step-1-design-scope&quot;&gt;Step 1: Design Scope&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#general-questions&quot; id=&quot;markdown-toc-general-questions&quot;&gt;General questions&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#problem-specific-questions&quot; id=&quot;markdown-toc-problem-specific-questions&quot;&gt;Problem specific questions&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#non-functional-requirements&quot; id=&quot;markdown-toc-non-functional-requirements&quot;&gt;Non Functional Requirements&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#back-of-the-envelope-estimation&quot; id=&quot;markdown-toc-back-of-the-envelope-estimation&quot;&gt;Back of the envelope estimation&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#step-2-high-level-design&quot; id=&quot;markdown-toc-step-2-high-level-design&quot;&gt;Step 2: High Level Design&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#step-3-design-deep-dive&quot; id=&quot;markdown-toc-step-3-design-deep-dive&quot;&gt;Step 3: Design Deep Dive&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#step-4-wrap-up&quot; id=&quot;markdown-toc-step-4-wrap-up&quot;&gt;Step 4: Wrap up&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#common-system-design-use-cases&quot; id=&quot;markdown-toc-common-system-design-use-cases&quot;&gt;Common System Design Use Cases&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;general-concepts&quot;&gt;General Concepts&lt;/h2&gt;
+
+&lt;p&gt;While there is no shortage of information or resources on the internet when it comes to system design interview preparation, following is a list of some concepts and topics that I personnaly found common and almost always used in every system and thus you should be familiar with before going to the interview:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#communication-protocols&quot;&gt;API Architecture Styles&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#how-do-we-design-effective-and-safe-apis&quot;&gt;API Design&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Rate Limiter&lt;/strong&gt;: a rate limiter is used to control the rate of traffic requests sent by a client or a service. If the requests count hits the threshold defined by the rate limiter, all the following reuqests are blocked. The benefits of using a rate limiter include preventing resource starvation caused by Denial of Service (DoS) attack and reducing cost by requiring fewer servers and preventing these from being overloaded. 
+Some popular rate limiting algorithms include:
+    &lt;ul&gt;
+      &lt;li&gt;Token bucket&lt;/li&gt;
+      &lt;li&gt;Leaky bucket&lt;/li&gt;
+      &lt;li&gt;Fixed window&lt;/li&gt;
+      &lt;li&gt;Sliding window&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;For more information check out &lt;a href=&quot;https://www.geeksforgeeks.org/rate-limiting-algorithms-system-design/&quot;&gt;this link&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#load-balancer&quot;&gt;Load Balancer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/consistent-hashing/&quot;&gt;Consistent hashing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#content-delivery-network&quot;&gt;Content Delivery Network (CDN)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Database choice&lt;/strong&gt;: 
+&lt;img src=&quot;/assets/images/articles/20_database_choice.png&quot; alt=&quot;Types of Databases&quot; /&gt;
+&lt;br /&gt; &lt;em&gt;Figure 1: Types of Databases, Image from &lt;a href=&quot;https://blog.bytebytego.com/p/understanding-database-types&quot;&gt;ByteByteGo&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Caching&lt;/strong&gt;: it improves load times and can reduce the load on your servers and databases. It is important to understand the different layers where caching can be applied, their advantages and disadvantages and strategies to update your cache. These would include:
+    &lt;ul&gt;
+      &lt;li&gt;Client caching&lt;/li&gt;
+      &lt;li&gt;CDN caching&lt;/li&gt;
+      &lt;li&gt;Web server caching&lt;/li&gt;
+      &lt;li&gt;Database caching&lt;/li&gt;
+      &lt;li&gt;Application caching&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;workflow&quot;&gt;Workflow&lt;/h2&gt;
+
+&lt;h3 id=&quot;step-1-design-scope&quot;&gt;Step 1: Design Scope&lt;/h3&gt;
+
+&lt;p&gt;Generally you will be tasked with designing a well known system or application that is used by hundreds if not millions of users with a broad and ambiguous statement. Obviously coming up with all the potential problems, edge cases and details around the ultimate solution is not a one session task. The system in question came to its current state after years of cumulative efforts from multiple engineering teams and designing something similar in the current context and scope is not a realistic expectation nor a feasible task. Therefore, a good starting point would be to define the scope of the design and what you want to achieve during the interview.&lt;/p&gt;
+
+&lt;h4 id=&quot;general-questions&quot;&gt;General questions&lt;/h4&gt;
+
+&lt;p&gt;Start by asking some general questions to better understand the requirements. Make sure to take notes of any assumptions and decisions made along the way.&lt;/p&gt;
+
+&lt;p&gt;Following are some questions to consider:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What are the most important features?&lt;/li&gt;
+  &lt;li&gt;Is this a mobile app, a web app or both?&lt;/li&gt;
+  &lt;li&gt;How many Daily Active Users (DAU) does the product have?&lt;/li&gt;
+  &lt;li&gt;Can we leverage some of the existing cloud infrastructure provided by Amazon, Google or Microsoft?&lt;/li&gt;
+  &lt;li&gt;Is encryption required?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;problem-specific-questions&quot;&gt;Problem specific questions&lt;/h4&gt;
+
+&lt;p&gt;Building up on these, make sure to dive deeper in your conversation with your interviewer on more problem specific questions to clarify any ambiguities.&lt;/p&gt;
+
+&lt;h4 id=&quot;non-functional-requirements&quot;&gt;Non Functional Requirements&lt;/h4&gt;
+
+&lt;p&gt;After clarifying the requirements, it is important to understand the non functional aspects of your system which will guide you in your design choices since they are a crucial part of any large scale system.&lt;/p&gt;
+
+&lt;p&gt;Some areas to consider would be:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reliability&lt;/li&gt;
+  &lt;li&gt;Scalability&lt;/li&gt;
+  &lt;li&gt;High Availability&lt;/li&gt;
+  &lt;li&gt;Fault tolerance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;back-of-the-envelope-estimation&quot;&gt;Back of the envelope estimation&lt;/h4&gt;
+
+&lt;p&gt;A final part of defining your scope would involve doing back-of-the-envelope calculations. Weather your interviewer asks you to do it or not, these estimations help you assess which design will meet your requirements.&lt;/p&gt;
+
+&lt;p&gt;These calculations will be based on the requirements and agreed upon assumptions form your previous questions and common performance numbers. You you should familiarize yourself with these numbers &lt;a href=&quot;https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#appendix&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;step-2-high-level-design&quot;&gt;Step 2: High Level Design&lt;/h3&gt;
+
+&lt;p&gt;After clarifying the design scope, now it is time to identify the key components of your system. These are the high level components that you are going to work with for the rest of the interview. As you progress, you will be adding more details to your design along the way so the point here is to really start at a high level even if it seems oversimplified. This will serve as a baseline as you work with the interviewer on identifying the right level of detail needed.&lt;/p&gt;
+
+&lt;h3 id=&quot;step-3-design-deep-dive&quot;&gt;Step 3: Design Deep Dive&lt;/h3&gt;
+
+&lt;p&gt;Based on your domain of expertise, choose the part you feel most comfortable with and start diving deeper on its key components. For example, when starting at the database layer you could discuss the factors to consider when selecting the appropriate database technology such as scalability, performance and data consistency and model. For someone else this could be the API layer where they can discuss the appropriate architecture style to choose and give an example of some API endpoints requests, parameters and responses.&lt;/p&gt;
+
+&lt;p&gt;While covering different parts of the system, it is important to consider system optimizations and cost savings aspects to ensure your system handles the requirements previously identified in the most efficient way.&lt;/p&gt;
+
+&lt;p&gt;Make sure to also discuss some scenarios and user journeys to demonstrate how your proposed system supports how the users would eventually interact with it.&lt;/p&gt;
+
+&lt;h3 id=&quot;step-4-wrap-up&quot;&gt;Step 4: Wrap up&lt;/h3&gt;
+
+&lt;p&gt;At this stage you should be approaching the end of the session. It could be useful to give the interviewer a recap of your design. Since there is always something to improve, use this opportunity to mention potential improvements in order to handle more scale or refinements you could do if you had more time especially if you had to do some tradeoffs at the beginning. Discussing things like monitoring and logging and error handling in case of failures of different components in your system are worth touching upon and would demonstrate your critical thinking.&lt;/p&gt;
+
+&lt;h2 id=&quot;common-system-design-use-cases&quot;&gt;Common System Design Use Cases&lt;/h2&gt;
+
+&lt;p&gt;Following is a list of common system design questions and real world applications each with a set of unique challenges, requirements and type of data.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;File storage and collaboration platform
+    &lt;ul&gt;
+      &lt;li&gt;Dropbox&lt;/li&gt;
+      &lt;li&gt;Google Drive&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Messaging application
+    &lt;ul&gt;
+      &lt;li&gt;Slack&lt;/li&gt;
+      &lt;li&gt;Facebook messenger&lt;/li&gt;
+      &lt;li&gt;Whatsapp&lt;/li&gt;
+      &lt;li&gt;WeChat&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Music streaming platform
+    &lt;ul&gt;
+      &lt;li&gt;Spotify&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;News feed system
+    &lt;ul&gt;
+      &lt;li&gt;Facebook news feed&lt;/li&gt;
+      &lt;li&gt;Instagram feed&lt;/li&gt;
+      &lt;li&gt;Twitter timeline&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ride sharing app
+    &lt;ul&gt;
+      &lt;li&gt;Uber&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Video streaming service
+    &lt;ul&gt;
+      &lt;li&gt;Netflix&lt;/li&gt;
+      &lt;li&gt;Youtube&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
+
+&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;This article presented a mental model with a logical set of steps to follow when approaching a system design interview enriched with pointers to an opinionated set of topics and concepts to review beforehand.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Happy learning and good luck on your system design interview!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.goodreads.com/en/book/show/54109255&quot;&gt;https://www.goodreads.com/en/book/show/54109255&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.goodreads.com/en/book/show/60631342&quot;&gt;https://www.goodreads.com/en/book/show/60631342&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ByteByteGoHq/system-design-101&quot;&gt;https://github.com/ByteByteGoHq/system-design-101&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/donnemartin/system-design-primer&quot;&gt;https://github.com/donnemartin/system-design-primer&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><summary type="html">This article contains general guidelines and a reference framework to use when approaching system design interview.</summary></entry><entry><title type="html">Evolution of Analytical Data Architectures: From Data Warehouses to Lakehouses</title><link href="https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures.html" rel="alternate" type="text/html" title="Evolution of Analytical Data Architectures: From Data Warehouses to Lakehouses" /><published>2024-11-17T00:00:00+00:00</published><updated>2024-11-17T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures.html">&lt;p&gt;&lt;em&gt;In this article, we will go through a brief overview of the journey from the foundational data warehouses to the data lakes and up to the emerging concept of the data lakehouse.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The evolution of data management has been driven by the growing complexity and scale of modern data needs. Organizations have sought different solutions over the years for handling diverse data types while optimizing for cost efficiency.&lt;/p&gt;
 
@@ -1809,178 +1999,4 @@ Then we discussed the different types of data storage and some concrete implemen
 
 &lt;p&gt;&lt;a href=&quot;https://delta.io/&quot;&gt;https://delta.io/&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/compare/the-difference-between-acid-and-base-database/&quot;&gt;https://aws.amazon.com/compare/the-difference-between-acid-and-base-database/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><summary type="html">This is part 2 of our in-depth article discussing the different stages of data flow inside an organisation.</summary></entry><entry><title type="html">Data engineering 201: In-depth Guide - Part 1</title><link href="https://www.firasesbai.com/articles/2023/03/11/data-engineering-201.html" rel="alternate" type="text/html" title="Data engineering 201: In-depth Guide - Part 1" /><published>2023-03-11T00:00:00+00:00</published><updated>2023-03-11T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/03/11/data-engineering-201</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/03/11/data-engineering-201.html">&lt;p&gt;&lt;em&gt;In this two parts article we will deep dive into each of the general steps of the data flow.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;In a previous &lt;a href=&quot;https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html&quot;&gt;blog post&lt;/a&gt;, we saw the importance of data engineering in democratizing data inside an organization and enabling data driven decision making. 
-In addition, we outlined the different stages data goes through in order to be able to extract insights out of it.&lt;/p&gt;
-
-&lt;p&gt;Here is a reminder of our data flow blueprint:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/articles/10_data_flow.png&quot; alt=&quot;image&quot; /&gt;
-&lt;br /&gt;&lt;em&gt;Figure 1: Data Flow Stages&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;We will start by taking a bird’s eye view, focusing on data sources, data governance and analysis before zooming in on the other stages of the data flow in part 2.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1&gt; Contents &lt;/h1&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#data-sources&quot; id=&quot;markdown-toc-data-sources&quot;&gt;Data Sources&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#data-governance&quot; id=&quot;markdown-toc-data-governance&quot;&gt;Data Governance&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#data-governance-vs-data-management&quot; id=&quot;markdown-toc-data-governance-vs-data-management&quot;&gt;Data Governance vs Data Management&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#benefits-of-data-governance&quot; id=&quot;markdown-toc-benefits-of-data-governance&quot;&gt;Benefits of Data Governance&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#analysis&quot; id=&quot;markdown-toc-analysis&quot;&gt;Analysis&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;data-sources&quot;&gt;Data Sources&lt;/h2&gt;
-
-&lt;p&gt;Data sources refer to the various systems and platforms that generate data and constitute the origin of all data in an organization and play a crucial role in the data engineering and big data landscape. 
-These sources can be internal systems such as transactional databases, or external sources such as social media platforms, sensors, or log files.&lt;/p&gt;
-
-&lt;p&gt;The variety and volume of data sources have dramatically increased with the growth of big data, making it important for organizations to have a comprehensive strategy for managing, processing, and analyzing data from multiple sources.&lt;/p&gt;
-
-&lt;p&gt;For instance, data must be transformed and stored in a format that enables efficient processing and analysis. 
-There are a variety of file formats, such as Parquet and Avro, that are common to big data use cases and which provide a means of storing and exchanging large volumes of structured and semi-structured data in a standardized way, making it easier for organizations to work with data from multiple sources.&lt;/p&gt;
-
-&lt;p&gt;Following is a table summarizing some properties and how do they compare between some big data file formats:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Properties&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;CSV&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;JSON&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Parquet&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Avro&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Human readability&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;No&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;NO&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Format&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Row-based&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Key-Value&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Columunar&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Row-based&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Compressible&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Splittable&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Complex data structure&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;No&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Schema evolution&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;No&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;No&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Read performance&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Slow&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Slow&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Fast&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Average&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Write performance&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Fast&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Fast&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Slow&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Average&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;CSV should typically be the fastest to write, JSON the easiest to understand for humans, and Parquet the fastest to read a subset of columns, while Avro is the fastest to read all columns at once.&lt;/p&gt;
-
-&lt;h2 id=&quot;data-governance&quot;&gt;Data Governance&lt;/h2&gt;
-
-&lt;p&gt;Data governance is the systematic management of the availability, usability, integrity and security of the data used in an organization. 
-It includes the actions people must take, the processes they must follow, and the technology that supports them throughout the data lifecycle to ensure data is secure, private, accurate, available, and usable.&lt;/p&gt;
-
-&lt;p&gt;Some of the key components of the data governance include:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Data compliance&lt;/strong&gt;: Establishing clear policies, procedures, and standards to govern data collection, storage, and usage. In addition, regularly monitoring and auditing data to ensure compliance with relevant regulations and laws&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Data security&lt;/strong&gt;: Implementing security measures to protect data from unauthorized access and breaches.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Data privacy&lt;/strong&gt;: Ensuring that personal and confidential data is managed in accordance with relevant regulations and laws.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Data Quality&lt;/strong&gt;: Refers to the development and implementation of activities that apply quality management techniques to data to make sure it is suitable to be used in a specific context, thus considered to be high quality data. Data quality is generally judged on six dimensions: accuracy, completeness, consistency, timeliness, validity, and uniqueness.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Data cataloging&lt;/strong&gt;: Maintaining a comprehensive and up-to-date inventory of data assets, including metadata, definitions, and relationships.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Data lineage&lt;/strong&gt;: Tracing the origin and evolution of data to understand its history and potential impact on decision-making.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;data-governance-vs-data-management&quot;&gt;Data Governance vs Data Management&lt;/h3&gt;
-
-&lt;p&gt;The scope of Data management is broader than data governance. 
-Data management includes all aspects of the full data lifecycle from collection and storage to usage and oversight. 
-This is inclusive of data governance, which can be considered as a core component of it, but it also includes other areas such as data architecture and data modeling.&lt;/p&gt;
-
-&lt;h3 id=&quot;benefits-of-data-governance&quot;&gt;Benefits of Data Governance&lt;/h3&gt;
-
-&lt;p&gt;Implementing a data governance framework can increase the value of data within your organization and therefore make better and more timely decisions. 
-In fact, effective data governance aims to maintain high quality data that’s both secure and compliant and easily accessible for deeper business insights.&lt;/p&gt;
-
-&lt;h2 id=&quot;analysis&quot;&gt;Analysis&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;Visualization&lt;/em&gt; and &lt;em&gt;reporting&lt;/em&gt; play a critical role in helping organizations to make informed decisions. 
-By presenting data in an easily understandable format, stakeholders can gain insights into trends, patterns, and relationships that would not be evident from raw data alone. 
-Effective visualization and reporting also make it easier for organizations to communicate the results of data analysis to others, including stakeholders, partners, and customers.&lt;/p&gt;
-
-&lt;p&gt;Visualization is the process of creating visual representations of data and information, such as charts, graphs, and maps. 
-Data visualization can be done using a wide range of tools including plotting libraries such as matplotlib or seaborn which are used especially by data scientists to more powerful analytics dashboards such as Tableau and Microsoft Power BI.&lt;/p&gt;
-
-&lt;p&gt;Reporting, on the other hand, is the presentation of data and information in a structured format that is designed to be easily consumable by stakeholders. 
-Reports are often used to provide an overview of key metrics, trends, and insights, and can be used to support decision making and strategic planning.&lt;/p&gt;
-
-&lt;p&gt;Another aspect of the data analysis we mentioned in &lt;a href=&quot;https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html&quot;&gt;this article&lt;/a&gt; is the use of &lt;em&gt;machine learning algorithms&lt;/em&gt;. 
-However, it is not feasible to fully cover the topic of machine learning within the scope of this article. 
-Though a good starting point for anyone new to this field is the &lt;a href=&quot;https://www.deeplearning.ai/courses/machine-learning-specialization/&quot;&gt;machine learning specialization course&lt;/a&gt; from Andrew Ng.&lt;/p&gt;
-
-&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
-
-&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
-
-&lt;p&gt;In this article we saw the different types of big data file formats and how they compare to each other which can help shape our choice to achieve more efficient data processing. 
-In addition, we discussed some of the key components of data governance and its benefit to achieve better data quality and therefore better data analysis through the usage of visualization and reporting.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://devopedia.org/data-serialization&quot;&gt;https://devopedia.org/data-serialization&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://cloud.google.com/learn/what-is-data-governance&quot;&gt;https://cloud.google.com/learn/what-is-data-governance&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.ibm.com/topics/data-governance&quot;&gt;https://www.ibm.com/topics/data-governance&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.heavy.ai/technical-glossary/data-quality&quot;&gt;https://www.heavy.ai/technical-glossary/data-quality&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><summary type="html">In this two parts article we will deep dive into each of the general steps of the data flow.</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/compare/the-difference-between-acid-and-base-database/&quot;&gt;https://aws.amazon.com/compare/the-difference-between-acid-and-base-database/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><summary type="html">This is part 2 of our in-depth article discussing the different stages of data flow inside an organisation.</summary></entry></feed>
