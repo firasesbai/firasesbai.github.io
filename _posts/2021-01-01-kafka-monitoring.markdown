@@ -21,7 +21,7 @@ That being said, this process could turn out to be very easy and more efficient 
 
 But, if you like to get your hands dirty and build your own monitoring solution using open source tools then let’s get started already. 
 
-**All the source code is available [here].**
+**All the source code is available [here](https://github.com/firasesbai/Monitoring-Kafka).**
 
 {% include table-of-content.html %}
 
@@ -34,7 +34,7 @@ Apache Kafka is a distributed messaging queue system created by LinkedIn in 2011
 It is based on a distributed, fault tolerant and resilient architecture. It allows decoupling of source systems, called `Producers` and target systems; the `Consumers`. Thus, not only simplifying the topology of your application but also handling millions of messages per seconds by horizontally scaling up to 100 brokers and still maintaining high performance and latency of less than 10ms making it widely adopted by many companies and the de facto platform for real time data processing.   
 
 ![image](/assets/images/articles/1_apache_kafka.png)
-*Figure 1: Apache Kafka, Image from [Confluent Developer]*
+*Figure 1: Apache Kafka, Image from [Confluent Developer](https://developer.confluent.io/what-is-apache-kafka/)*
 
 ## What is Prometheus? ##
 Prometheus is an open source monitoring and alerting toolkit. It is based on a `pull model`; collecting metrics from monitored targets and therefore alleviating them from a lot of workload. 
@@ -45,7 +45,7 @@ In addition to the collected metrics, Prometheus will create an additional one c
 
 Most programming languages have a Prometheus client library that lets you define and expose internal metrics via an HTTP endpoint on your application’s instance. However, in the case when it is not feasible to instrument a given system with Prometheus metrics directly, `exporters` are the solution for you. In fact, there are a number of exporters which help in exporting metrics from third-party systems as Prometheus metrics. For example, the Prometheus Node Exporter exposes a wide variety of hardware- and kernel-related metrics. 
 
-Another example of exporters would be the `JMX Exporter` which we will discuss in details in the next section. In addition, we will also use a `Kafka Exporter` which is an open-source project that can be found here [kafka_exporter] for some Kafka cluster related metrics. 
+Another example of exporters would be the `JMX Exporter` which we will discuss in details in the next section. In addition, we will also use a `Kafka Exporter` which is an open-source project that can be found here [kafka_exporter](https://github.com/danielqsj/kafka_exporter) for some Kafka cluster related metrics. 
 
 ## What is JMX-Exporter? ##
 
@@ -67,7 +67,7 @@ Below is a diagram showing the different tools and the interactions between them
 <br />*Figure 2: Kafka Monitoring Architecture*
 
 Following are the main steps to set this topology up:
-+ From [jmx_exporter] download JMX Exporter’s **jar** and **configuration files** for *Kafka* and *Zookeeper* respectively.
++ From [jmx_exporter](https://github.com/prometheus/jmx_exporter) download JMX Exporter’s **jar** and **configuration files** for *Kafka* and *Zookeeper* respectively.
 These configuration files contain rules for rewriting JMX MBeans to the Prometheus exposition format metrics. Basically, it’s a collection of regexps to convert MBeans strings to Prometheus strings.
 
 + Add the following environment variable to each one of your Kafka nodes: 
@@ -101,18 +101,8 @@ In this article we discussed the building blocks and the interaction between the
 
 ## Resources ##
 
-[https://www.confluent.io/what-is-apache-kafka]
+[https://www.confluent.io/what-is-apache-kafka](https://www.confluent.io/what-is-apache-kafka)
 
-[https://prometheus.io/docs/introduction/overview/]
+[https://prometheus.io/docs/introduction/overview/](https://prometheus.io/docs/introduction/overview)
 
-[https://grafana.com/grafana/]
-
-
-
-[here]: https://github.com/firasesbai/Monitoring-Kafka 
-[Confluent Developer]: https://developer.confluent.io/what-is-apache-kafka/
-[kafka_exporter]: https://github.com/danielqsj/kafka_exporter
-[jmx_exporter]: https://github.com/prometheus/jmx_exporter 
-[https://www.confluent.io/what-is-apache-kafka]: https://www.confluent.io/what-is-apache-kafka 
-[https://prometheus.io/docs/introduction/overview/]: https://prometheus.io/docs/introduction/overview/]
-[https://grafana.com/grafana/]: https://grafana.com/grafana/
+[https://grafana.com/grafana/](https://grafana.com/grafana/)

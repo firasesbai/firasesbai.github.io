@@ -13,7 +13,7 @@ comments: true
 
 This is a follow-up article on the Kafka monitoring topic where we started by setting up the necessary infrastructure to monitor an Apache Kafka cluster running in a production environment.
 
-If you have missed the first part, you can find it [here].
+If you have missed the first part, you can find it [here](https://firasesbai.github.io/articles/2021/01/01/kafka-monitoring.html).
 
 The key metrics we are interested in can be grouped into the following categories:
 
@@ -68,7 +68,7 @@ While it is important to collect and record the values of these metrics, an **al
 | PurgatorySize, delayedOperation=Fetch   | Number of requests waiting in the fetch purgatory. This is high if consumers use a large value for `fetch.wait.max.ms`.|
 
 
-In this Github [repository] you can find a set of ready to use **Grafana dashboards** (see example below) populated with all the discussed above metrics that should serve as a starting point for you to quickly set up a tracking and alerting mechanism for your cluster.     
+In this Github [repository](https://github.com/firasesbai/Monitoring-Kafka) you can find a set of ready to use **Grafana dashboards** (see example below) populated with all the discussed above metrics that should serve as a starting point for you to quickly set up a tracking and alerting mechanism for your cluster.     
 
 ![image](/assets/images/articles/2_grafana_dashboard.png)
 <br /> *Figure 1: Grafana Dashboard for Kafka Cluster Monitoring*
@@ -88,15 +88,8 @@ In this article we went through some of the most important metrics that we need 
 
 ## Resources ##
 
-[https://docs.confluent.io/current/kafka/monitoring.html]
+[https://docs.confluent.io/current/kafka/monitoring.html](https://docs.confluent.io/current/kafka/monitoring.html)
 
-[https://blog.serverdensity.com/how-to-monitor-kafka/]
+[https://blog.serverdensity.com/how-to-monitor-kafka/](https://blog.serverdensity.com/how-to-monitor-kafka/)
 
-[https://www.datadoghq.com/blog/monitoring-kafka-performance-metrics/]
-
-
-[here]: https://firasesbai.github.io/articles/2021/01/01/kafka-monitoring.html 
-[repository]: https://github.com/firasesbai/Monitoring-Kafka
-[https://docs.confluent.io/current/kafka/monitoring.html]: https://docs.confluent.io/current/kafka/monitoring.html 
-[https://blog.serverdensity.com/how-to-monitor-kafka/]: https://blog.serverdensity.com/how-to-monitor-kafka/
-[https://www.datadoghq.com/blog/monitoring-kafka-performance-metrics/]: https://www.datadoghq.com/blog/monitoring-kafka-performance-metrics/ 
+[https://www.datadoghq.com/blog/monitoring-kafka-performance-metrics/](https://www.datadoghq.com/blog/monitoring-kafka-performance-metrics/)

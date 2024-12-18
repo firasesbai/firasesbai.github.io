@@ -12,9 +12,9 @@ comments: true
 *In this article we will see how to easily setup and publish your first blog website.* 
 
 ![image](/assets/images/articles/4_how_i_started_this_blog.png)
-<br /> *Figure 1: What is Jekyll, Image from [Geeksforgeeks]*
+<br /> *Figure 1: What is Jekyll, Image from [Geeksforgeeks](https://www.geeksforgeeks.org/jekyll-vs-wordpress/)*
 
-In a previous [post], I mentioned five reasons that were behind the existance of this blog. Now, it is time to walk you through the journey of actually creating it.
+In a previous [post](https://firasesbai.github.io/articles/2021/04/12/why-i-started-this-blog.html), I mentioned five reasons that were behind the existance of this blog. Now, it is time to walk you through the journey of actually creating it.
 
 In this article, we will start by setting up a simple blog using **Jekyll**, then enrich it with useful features to help you reach out and engage with your audience and finally deploy it easily using **GitHub Pages** and make it discoverable. 
 
@@ -52,7 +52,7 @@ A **Bundler** is a gem that installs all gems in your Gemfile.
 To install it, run the following command: 
 {% highlight ruby %} gem install bundler {% endhighlight %}
 
-For a detailed installation according to your operating system, check the following [link].
+For a detailed installation according to your operating system, check the following [link](https://jekyllrb.com/docs/installation/).
 
 Using Gemfile and Bundler is optional but highly recommended as it ensures you’re running the same version of Jekyll and its plugins across different environments.
 
@@ -67,7 +67,7 @@ Running the following command will create a new Jekyll site powered by the **Min
 ### Jekyll Structure ###
 
 Understanding the structure of a Jekyll site is a crucial step to move your blog forward. 
-You can find an explanation of the basic structure in the official [documentation]. 
+You can find an explanation of the basic structure in the official [documentation](https://jekyllrb.com/docs/structure/). 
 
 For example, the `_posts` folder is where you would write your first blog post. 
 
@@ -432,16 +432,8 @@ I hope this will get you started on a good foot and if you have any suggestions 
 
 ## Resources ##
 
-[https://jekyllrb.com/docs/]
+[https://jekyllrb.com/docs/](https://jekyllrb.com/docs/)
 
-[https://github.com/jekyll/minima]
+[https://github.com/jekyll/minima](https://github.com/jekyll/minima)
 
-[https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll]
-
-[Geeksforgeeks]: https://www.geeksforgeeks.org/jekyll-vs-wordpress/
-[post]: https://firasesbai.github.io/articles/2021/04/12/why-i-started-this-blog.html
-[link]: https://jekyllrb.com/docs/installation/ 
-[documentation]: https://jekyllrb.com/docs/structure/
-[https://jekyllrb.com/docs/]: https://jekyllrb.com/docs/
-[https://github.com/jekyll/minima]: https://github.com/jekyll/minima
-[https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll]: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll 
+[https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll)

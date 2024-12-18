@@ -11,7 +11,7 @@ comments: true
 
 *In this article we will deep dive into prometheus, the open-source monitoring and alerting system, and see how we can use it to monitor a simple python application.* 
 
-All the source code is available [here].
+All the source code is available [here](https://github.com/firasesbai/fastapi-prometheus-monitoring).
 
 *So let's get started!* 
 
@@ -35,7 +35,7 @@ The main components of Prometheus are:
 - **Time-Series Database**: Prometheus stores all the metrics it collects in its built-in time-series database. This allows Prometheus to quickly query and analyze metrics, and to provide historical data.
 - **PromQL**: Prometheus has a powerful query language called PromQL, which can be used to retrieve and analyze metrics stored in its database. PromQL allows you to filter and aggregate metrics, and to create complex queries and alerts.
 - **Alertmanager**: Prometheus has a built-in alerting system called Alertmanager that can be used to trigger alerts based on metrics and send notifications through various channels.
-- **Exporters**: Prometheus exporters are third-party tools that convert metrics from various systems and technologies into a format that Prometheus can understand. This allows Prometheus to scrape metrics from a wide variety of sources, such as JMX for Java applications, StatsD, SNMP, and more. For more details, check this blog [post] on how to use JMX exporter to monitor an apache kafka cluster. 
+- **Exporters**: Prometheus exporters are third-party tools that convert metrics from various systems and technologies into a format that Prometheus can understand. This allows Prometheus to scrape metrics from a wide variety of sources, such as JMX for Java applications, StatsD, SNMP, and more. For more details, check this blog [post](https://www.firasesbai.com/articles/2021/01/01/kafka-monitoring.html) on how to use JMX exporter to monitor an apache kafka cluster. 
 
 These components work together in the following way: 
 
@@ -70,14 +70,14 @@ There are several popular tools that can integrate with Prometheus:
 
 ## Implementation ## 
 
-In our [example], we created a simple python application using fastapi. 
+In our [example](https://github.com/firasesbai/fastapi-prometheus-monitoring), we created a simple python application using fastapi. 
 Our application has two endpoints; one that returns the prometheus metrics and another one that returns a random fact about cats. 
 When querying the latter, we also show how to create your own prometheus metrics by measuring the number of times our endpoint was triggered. 
 This is an example of a metric of type counter. 
 
 ### Set up ###
 
-1- Clone this Github [repository], change into the corresponding directory and run the following command: `docker-compose up -d` 
+1- Clone this Github [repository](https://github.com/firasesbai/fastapi-prometheus-monitoring), change into the corresponding directory and run the following command: `docker-compose up -d` 
    
    This will start two docker containers: one corresponding to the *prometheus service* and the other is our python application container called *fastapi-app*. 
 
@@ -120,20 +120,10 @@ In addition, we went through an example of how to deploy a python application in
 
 ## Resources ##
 
-[https://prometheus.io/docs/introduction/overview/]
+[https://prometheus.io/docs/introduction/overview/](https://prometheus.io/docs/introduction/overview/)
 
-[https://grafana.com/grafana/]
+[https://grafana.com/grafana/](https://grafana.com/grafana/)
 
-[https://docs.influxdata.com/kapacitor/v1.6/working/scraping-and-discovery/]
+[https://docs.influxdata.com/kapacitor/v1.6/working/scraping-and-discovery/](https://docs.influxdata.com/kapacitor/v1.6/working/scraping-and-discovery/)
 
-[https://thanos.io/]
-
-[here]: https://github.com/firasesbai/fastapi-prometheus-monitoring
-[post]: https://www.firasesbai.com/articles/2021/01/01/kafka-monitoring.html
-[example]: https://github.com/firasesbai/fastapi-prometheus-monitoring
-[repository]: https://github.com/firasesbai/fastapi-prometheus-monitoring
-
-[https://prometheus.io/docs/introduction/overview/]: https://prometheus.io/docs/introduction/overview/
-[https://grafana.com/grafana/]: https://grafana.com/grafana/
-[https://docs.influxdata.com/kapacitor/v1.6/working/scraping-and-discovery/]: https://docs.influxdata.com/kapacitor/v1.6/working/scraping-and-discovery/
-[https://thanos.io/]: https://thanos.io/
+[https://thanos.io/](https://thanos.io/)

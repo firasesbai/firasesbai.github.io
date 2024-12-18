@@ -11,7 +11,7 @@ comments: true
 
 *In this two parts article we will deep dive into each of the general steps of the data flow.* 
 
-In a previous [blog post], we saw the importance of data engineering in democratizing data inside an organization and enabling data driven decision making. 
+In a previous [blog post](https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html), we saw the importance of data engineering in democratizing data inside an organization and enabling data driven decision making. 
 In addition, we outlined the different stages data goes through in order to be able to extract insights out of it. 
 
 Here is a reminder of our data flow blueprint: 
@@ -87,9 +87,9 @@ Data visualization can be done using a wide range of tools including plotting li
 Reporting, on the other hand, is the presentation of data and information in a structured format that is designed to be easily consumable by stakeholders. 
 Reports are often used to provide an overview of key metrics, trends, and insights, and can be used to support decision making and strategic planning.
 
-Another aspect of the data analysis we mentioned in [this article] is the use of *machine learning algorithms*. 
+Another aspect of the data analysis we mentioned in [this article](https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html) is the use of *machine learning algorithms*. 
 However, it is not feasible to fully cover the topic of machine learning within the scope of this article. 
-Though a good starting point for anyone new to this field is the [machine learning specialization course] from Andrew Ng.
+Though a good starting point for anyone new to this field is the [machine learning specialization course](https://www.deeplearning.ai/courses/machine-learning-specialization/) from Andrew Ng.
 
 With this we have reached the end of this post, I hope you enjoyed it!
 
@@ -102,22 +102,12 @@ In addition, we discussed some of the key components of data governance and its 
 
 ## Resources ##
 
-[https://devopedia.org/data-serialization]
+[https://devopedia.org/data-serialization](https://devopedia.org/data-serialization)
 
-[https://cloud.google.com/learn/what-is-data-governance]
+[https://cloud.google.com/learn/what-is-data-governance](https://cloud.google.com/learn/what-is-data-governance)
 
-[https://www.ibm.com/topics/data-governance]
+[https://www.ibm.com/topics/data-governance](https://www.ibm.com/topics/data-governance)
 
-[https://www.heavy.ai/technical-glossary/data-quality]
+[https://www.heavy.ai/technical-glossary/data-quality](https://www.heavy.ai/technical-glossary/data-quality)
 
-[https://www.tableau.com/learn/articles/data-management-vs-data-governance]: https://www.tableau.com/learn/articles/data-management-vs-data-governance
-
-[https://devopedia.org/data-serialization]: https://devopedia.org/data-serialization 
-[https://cloud.google.com/learn/what-is-data-governance]: https://cloud.google.com/learn/what-is-data-governance
-[https://www.ibm.com/topics/data-governance]: https://www.ibm.com/topics/data-governance 
-[https://www.heavy.ai/technical-glossary/data-quality]: https://www.heavy.ai/technical-glossary/data-quality
-[https://www.tableau.com/learn/articles/data-management-vs-data-governance]: https://www.tableau.com/learn/articles/data-management-vs-data-governance
-
-[blog post]: https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html
-[this article]: https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html
-[machine learning specialization course]: https://www.deeplearning.ai/courses/machine-learning-specialization/ 
+[https://www.tableau.com/learn/articles/data-management-vs-data-governance](https://www.tableau.com/learn/articles/data-management-vs-data-governance)

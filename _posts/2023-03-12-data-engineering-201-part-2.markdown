@@ -14,7 +14,7 @@ redirect_from: /articles/2023/03/12/data-engineering-201-Part-2.html
 
 We will discover how data in motion and data at rest is handled through different techniques and methods and the importance of choosing the right storage technology. 
 
-If you have missed the first part, you can find it [here]. 
+If you have missed the first part, you can find it [here](https://www.firasesbai.com/articles/2023/03/11/data-engineering-201.html). 
 
 So buckle up, folks! This is going to be a long ride. But don't worry, it's worth it. Grab a snack, get comfy, and let's dive in!"
 
@@ -205,7 +205,7 @@ Data Lakehouses are enabled by a new system design: implementing similar data st
 ![image](/assets/images/articles/12_data_warehouse_vs_data_lake_vs_data_lakehouse.png)
 <br />*Figure 2: Data Warehouse vs Data Lake vs Data Lakehouse* 
 
-Some data management solutions such as [Delta Lake], which is an implementation of Data Lakehouse from Databricks, offer the ability to store and process big data in a reliable and consistent manner, while also providing the scalability and cost savings of a data lake.
+Some data management solutions such as [Delta Lake](https://delta.io/), which is an implementation of Data Lakehouse from Databricks, offer the ability to store and process big data in a reliable and consistent manner, while also providing the scalability and cost savings of a data lake.
 
 The data lakehouse is a relatively new concept and is still evolving, but it has the potential to become an important technology for big data processing and analysis in the future.
 
@@ -220,21 +220,12 @@ Then we discussed the different types of data storage and some concrete implemen
 
 ## Resources ##
 
-[https://martinfowler.com/articles/data-mesh-principles.html]
+[https://martinfowler.com/articles/data-mesh-principles.html](https://martinfowler.com/articles/data-mesh-principles.html)
 
-[https://www.jie-tao.com/delta-lake-step-by-step1/]
+[https://www.jie-tao.com/delta-lake-step-by-step1/](https://www.jie-tao.com/delta-lake-step-by-step1/)
 
-[https://www.databricks.com/blog/2020/01/30/what-is-a-data-lakehouse.html] 
+[https://www.databricks.com/blog/2020/01/30/what-is-a-data-lakehouse.html](https://www.databricks.com/blog/2020/01/30/what-is-a-data-lakehouse.html) 
 
-[https://delta.io/] 
+[https://delta.io/](https://delta.io/) 
 
-[https://aws.amazon.com/compare/the-difference-between-acid-and-base-database/]
-
-[https://martinfowler.com/articles/data-mesh-principles.html]: https://martinfowler.com/articles/data-mesh-principles.html
-[https://www.jie-tao.com/delta-lake-step-by-step1/]: https://www.jie-tao.com/delta-lake-step-by-step1/
-[https://www.databricks.com/blog/2020/01/30/what-is-a-data-lakehouse.html]: https://www.databricks.com/blog/2020/01/30/what-is-a-data-lakehouse.html
-[https://delta.io/]: https://delta.io/
-[https://aws.amazon.com/compare/the-difference-between-acid-and-base-database/]: https://aws.amazon.com/compare/the-difference-between-acid-and-base-database/
-
-[here]: https://www.firasesbai.com/articles/2023/03/11/data-engineering-201.html
-[Delta Lake]: https://delta.io/ 
+[https://aws.amazon.com/compare/the-difference-between-acid-and-base-database/](https://aws.amazon.com/compare/the-difference-between-acid-and-base-database/)

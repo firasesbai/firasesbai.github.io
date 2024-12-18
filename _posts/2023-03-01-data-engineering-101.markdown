@@ -117,12 +117,8 @@ In the following blog post we will dive deeper into each step to uncover best pr
 
 ## Resources ##
 
-[https://medium.com/free-code-camp/the-rise-of-the-data-engineer-91be18f1e603]
+[https://medium.com/free-code-camp/the-rise-of-the-data-engineer-91be18f1e603](https://medium.com/free-code-camp/the-rise-of-the-data-engineer-91be18f1e603)
 
-[https://maximebeauchemin.medium.com/the-downfall-of-the-data-engineer-5bfb701e5d6b]
+[https://maximebeauchemin.medium.com/the-downfall-of-the-data-engineer-5bfb701e5d6b](https://maximebeauchemin.medium.com/the-downfall-of-the-data-engineer-5bfb701e5d6b)
 
-[https://github.com/andkret/Cookbook]
-
-[https://medium.com/free-code-camp/the-rise-of-the-data-engineer-91be18f1e603]: https://medium.com/free-code-camp/the-rise-of-the-data-engineer-91be18f1e603 
-[https://maximebeauchemin.medium.com/the-downfall-of-the-data-engineer-5bfb701e5d6b]: https://maximebeauchemin.medium.com/the-downfall-of-the-data-engineer-5bfb701e5d6b 
-[https://github.com/andkret/Cookbook]: https://github.com/andkret/Cookbook 
+[https://github.com/andkret/Cookbook](https://github.com/andkret/Cookbook)
