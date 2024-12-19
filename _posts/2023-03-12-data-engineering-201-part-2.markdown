@@ -93,9 +93,9 @@ OLAP
 - Find out the "total money spent by all users"
 - Find out "what is the most sold product" 
 
-#### OLTP Databases ####
+### OLTP Databases ###
 
-##### SQL vs NoSQL #####
+#### SQL vs NoSQL ####
 
 OLTP databases can use either **SQL (Structured Query Language)** or **NoSQL (Not only SQL)** technologies.
 
@@ -122,7 +122,7 @@ This allows NoSQL databases to better handle unstructured data and changing data
 However , NoSQL databases may not provide the same level of transactional consistency as SQL databases, which can result in data inconsistencies. 
 Plus they can be complex to set up and maintain as well, even though this can be addressed since they are designed to work well in cloud environments, which makes them a good choice for OLTP systems that need to scale quickly and elastically.
 
-##### ACID vs BASE #####
+#### ACID vs BASE ####
 
 We kept mentioning **transactional consistency** and you might be wondering what is it? 
 
@@ -141,11 +141,11 @@ For relational databases, transactions have the following four standard properti
 
 ACID databases prioritize consistency over availability—the whole transaction fails if an error occurs in any step within the transaction. In contrast, BASE databases prioritize availability over consistency. Instead of failing the transaction, users can access inconsistent data temporarily.
 
-#### OLAP Databases ####
+### OLAP Databases ###
 
 In this section we will discuss two important components that are used for advanced analysis and decision-making; **data warehouses** and **data lakes**. 
 
-##### Data warehouse #####
+#### Data warehouse ####
 
 A data warehouse is a centralized repository for storing and managing large amounts of data from various sources. 
 Data warehouses are designed to support business intelligence (BI) and analytics applications, by providing a single source of data that can be queried, analyzed, and used to make informed decisions. 
@@ -163,7 +163,7 @@ The explosion of big data, including the growth of structured, semi-structured, 
 In addition, Traditional data warehouses required expensive hardware and software to store and process data. 
 The cost of these solutions made it difficult for organizations to store all their data, which led to the adoption of data lakes as a more cost-effective alternative.
 
-##### Data lake #####
+#### Data lake ####
 
 A data lake is a centralized repository that stores large amounts of raw, structured and unstructured data. The data is stored in its native format and can be accessed, processed, and analyzed later as needed. 
 The following are the key characteristics of a data lake:
@@ -207,7 +207,7 @@ However, it had its own set of challenges, such as the lack of reliability and t
 
 Can we get the best of both worlds without the complexity of managing both a data lake and a data warehouse or perhaps multiple ones?  
 
-##### Data Lakehouse #####
+#### Data Lakehouse ####
 
 A data Lakehouse is a new, open architecture that combines the best elements of data lakes and data warehouses. 
 Data Lakehouses are enabled by a new system design: implementing similar data structures and data management features to those in a data warehouse directly on top of low cost cloud storage in open formats. 
