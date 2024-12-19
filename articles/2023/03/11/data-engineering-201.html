@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" /><head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<!-- MailerLite Universal -->
+<script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '1240462');
+</script>
+<!-- End MailerLite Universal --><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
@@ -159,8 +169,10 @@ In addition, we outlined the different stages data goes through in order to be a
 
 <p>Here is a reminder of our data flow blueprint:</p>
 
-<p><img src="/assets/images/articles/10_data_flow.png" alt="image" />
-<br /><em>Figure 1: Data Flow Stages</em></p>
+<figure>
+  <img src="/assets/images/articles/10_data_flow.png" alt="diagram with boxes representing stages through which data flows" />
+  <figcaption>Figure 1: Data Flow Stages</figcaption>
+</figure>
 
 <p>We will start by taking a bird’s eye view, focusing on data sources, data governance and analysis before zooming in on the other stages of the data flow in part 2.</p>
 
@@ -264,6 +276,8 @@ There are a variety of file formats, such as Parquet and Avro, that are common t
   </tbody>
 </table>
 
+<p style="text-align:center;">Table 1: Big Data File Formats Properties Comparison</p>
+
 <p>CSV should typically be the fastest to write, JSON the easiest to understand for humans, and Parquet the fastest to read a subset of columns, while Avro is the fastest to read all columns at once.</p>
 
 <h2 id="data-governance">Data Governance</h2>
@@ -334,7 +348,7 @@ In addition, we discussed some of the key components of data governance and its 
 
   <hr>
 <br>
-<script async data-uid="303d8467ac" src="https://firas-esbai.ck.page/303d8467ac/index.js"></script>
+<div class="ml-embedded" data-form="T82iSQ"></div>
 
   <br>
 <hr>

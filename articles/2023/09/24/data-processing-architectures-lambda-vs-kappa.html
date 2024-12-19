@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" /><head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<!-- MailerLite Universal -->
+<script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '1240462');
+</script>
+<!-- End MailerLite Universal --><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
@@ -193,8 +203,10 @@ The architecture takes an event stream and forks/duplicates it into two relative
 
 <p>The following diagram shows the lambda architecture at a high level:</p>
 
-<p><img src="/assets/images/articles/16_lambda_architecture.png" alt="High Level Lambda Architecture" />
-<em>Figure 1: High Level Lambda Architecture</em></p>
+<figure>
+  <img src="/assets/images/articles/16_lambda_architecture.png" alt="diagram showing high level components of lambda architecture" />
+  <figcaption>Figure 1: High Level Lambda Architecture</figcaption>
+</figure>
 
 <h3 id="advantages-and-disadvantages">Advantages and Disadvantages</h3>
 
@@ -209,8 +221,10 @@ The architecture takes an event stream and forks/duplicates it into two relative
 <p>The Kappa architecture was introduced by <em>Jay Kreps</em>, co-founder and CEO at Confluent, a company built around the open source messaging system Apache Kafka, as a response to some of the challenges and complexities associated with the Lambda Architecture. 
 The Kappa Architecture primarily focuses on stream processing simplifying the complexity of maintaining two systems with a single technology stack, referred to as <strong>Stream Processing Layer</strong> in the diagram below, that can perform both real-time and batch processing:</p>
 
-<p><img src="/assets/images/articles/16_kappa_architecture.png" alt="High Level Kappa Architecture" />
-<em>Figure 2: High Level Kappa Architecture</em></p>
+<figure>
+  <img src="/assets/images/articles/16_kappa_architecture.png" alt="diagram showing high level components of kappa architecture" />
+  <figcaption>Figure 2: High Level Kappa Architecture</figcaption>
+</figure>
 
 <h3 id="advantages-and-disadvantages-1">Advantages and Disadvantages</h3>
 
@@ -252,7 +266,7 @@ If the algorithms used to process historical data and real-time data are not alw
 
   <hr>
 <br>
-<script async data-uid="303d8467ac" src="https://firas-esbai.ck.page/303d8467ac/index.js"></script>
+<div class="ml-embedded" data-form="T82iSQ"></div>
 
   <br>
 <hr>

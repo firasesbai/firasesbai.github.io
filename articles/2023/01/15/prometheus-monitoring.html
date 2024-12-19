@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" /><head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<!-- MailerLite Universal -->
+<script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '1240462');
+</script>
+<!-- End MailerLite Universal --><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
@@ -249,13 +259,17 @@ This is an example of a metric of type counter.</p>
 
 <p>2- Access the prometheus dashboard in your web browser through: <code class="language-plaintext highlighter-rouge">http://localhost:9090/targets</code> where you will see our python application as a target for the prometheus service to monitor as shown in the screenshot below:</p>
 
-<p><img src="/assets/images/articles/9_prometheus_interface.png" alt="image" />
-<br /><em>Figure 1: Prometheus Web Interface</em></p>
+<figure>
+  <img src="/assets/images/articles/9_prometheus_interface.png" alt="image of the prometheus web interfaces showing list of target endpoints" />
+  <figcaption>Figure 1: Prometheus Web Interface</figcaption>
+</figure>
 
 <p>3- Go to <code class="language-plaintext highlighter-rouge">http://127.0.0.1:8000/docs</code> where you will see the Swagger UI of our python application.</p>
 
-<p><img src="/assets/images/articles/9_fastapi_swagger_ui.png" alt="image" />
-<br /><em>Figure 2: FastAPI Swagger UI</em></p>
+<figure>
+  <img src="/assets/images/articles/9_fastapi_swagger_ui.png" alt="swagger ui of a fastapi application containing two endpoints" />
+  <figcaption>Figure 2: FastAPI Swagger UI</figcaption>
+</figure>
 
 <p>As indicated in the screenshot above, our application has two endpoints:</p>
 <ul>
@@ -270,8 +284,10 @@ This is an example of a metric of type counter.</p>
 <p>These metrics were made available by adding the <strong>prometheus middleware</strong> to our application. 
   In addition, we can also see our own created metric as shown below:</p>
 
-<p><img src="/assets/images/articles/9_custom_prometheus_metric.png" alt="image" />
-<br /><em>Figure 3: Custom Prometheus Metrics Example</em></p>
+<figure>
+  <img src="/assets/images/articles/9_custom_prometheus_metric.png" alt="an example counter of prometheus metric" />
+  <figcaption>Figure 3: Custom Prometheus Metrics Example</figcaption>
+</figure>
 
 <p>That’s it! You have successfully created a custom metric in your python application and you were able to scrape it and make it visible to prometheus.</p>
 
@@ -299,7 +315,7 @@ In addition, we went through an example of how to deploy a python application in
 
   <hr>
 <br>
-<script async data-uid="303d8467ac" src="https://firas-esbai.ck.page/303d8467ac/index.js"></script>
+<div class="ml-embedded" data-form="T82iSQ"></div>
 
   <br>
 <hr>

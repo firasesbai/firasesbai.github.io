@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" /><head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<!-- MailerLite Universal -->
+<script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '1240462');
+</script>
+<!-- End MailerLite Universal --><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
@@ -244,6 +254,8 @@
   </tbody>
 </table>
 
+<p style="text-align:center;">Table 1: Broker Server Metrics</p>
+
 <p><em>*ISR: In-Sync Replica</em></p>
 <h2 id="broker-topics-metrics">Broker Topics Metrics</h2>
 
@@ -281,6 +293,8 @@
     </tr>
   </tbody>
 </table>
+
+<p style="text-align:center;">Table 2: Broker Topics Metrics</p>
 
 <h2 id="broker-requests-metrics">Broker Requests Metrics</h2>
 
@@ -331,10 +345,14 @@
   </tbody>
 </table>
 
+<p style="text-align:center;">Table 3: Broker Requests Metrics</p>
+
 <p>In this Github <a href="https://github.com/firasesbai/Monitoring-Kafka">repository</a> you can find a set of ready to use <strong>Grafana dashboards</strong> (see example below) populated with all the discussed above metrics that should serve as a starting point for you to quickly set up a tracking and alerting mechanism for your cluster.</p>
 
-<p><img src="/assets/images/articles/2_grafana_dashboard.png" alt="image" />
-<br /> <em>Figure 1: Grafana Dashboard for Kafka Cluster Monitoring</em></p>
+<figure>
+  <img src="/assets/images/articles/2_grafana_dashboard.png" alt="Grafana Dashboard showing monitoring metrics for Apache Kafka Cluster" />
+  <figcaption>Figure 1: Grafana Dashboard for Kafka Cluster Monitoring</figcaption>
+</figure>
 
 <p>With this we have reached the end of this post, I hope you enjoyed it!</p>
 
@@ -360,7 +378,7 @@
 
   <hr>
 <br>
-<script async data-uid="303d8467ac" src="https://firas-esbai.ck.page/303d8467ac/index.js"></script>
+<div class="ml-embedded" data-form="T82iSQ"></div>
 
   <br>
 <hr>

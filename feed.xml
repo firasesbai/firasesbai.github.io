@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2024-12-18T06:45:03+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Firas Esbai's Lifelong Learning Journey.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2024-12-19T14:36:17+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Firas Esbai's Lifelong Learning Journey.
 </subtitle><author><name>Firas Esbai</name></author><entry><title type="html">System Desing Interview Blueprint</title><link href="https://www.firasesbai.com/articles/2024/12/08/system-design-interview-blueprint.html" rel="alternate" type="text/html" title="System Desing Interview Blueprint" /><published>2024-12-08T00:00:00+00:00</published><updated>2024-12-08T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/12/08/system-design-interview-blueprint</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/12/08/system-design-interview-blueprint.html">&lt;p&gt;&lt;em&gt;This article contains general guidelines and a reference framework to use when approaching system design interview.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;System design interview is a key component of the technical interview process that is no longer limited to big tech companies or traditional software engineering positions. Even though each company is different, a system design round is not uncommon for data engineering positions especially for senior and more experienced roles.&lt;/p&gt;
@@ -52,9 +52,14 @@ Some popular rate limiting algorithms include:
   &lt;li&gt;&lt;a href=&quot;https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#load-balancer&quot;&gt;Load Balancer&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/consistent-hashing/&quot;&gt;Consistent hashing&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#content-delivery-network&quot;&gt;Content Delivery Network (CDN)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Database choice&lt;/strong&gt;: 
-&lt;img src=&quot;/assets/images/articles/20_database_choice.png&quot; alt=&quot;Types of Databases&quot; /&gt;
-&lt;br /&gt; &lt;em&gt;Figure 1: Types of Databases, Image from &lt;a href=&quot;https://blog.bytebytego.com/p/understanding-database-types&quot;&gt;ByteByteGo&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Database choice&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/20_database_choice.png&quot; alt=&quot;comparison between types and characteristics of databases&quot; /&gt;
+  &lt;figcaption&gt;Figure 1: Types of Databases - &lt;a href=&quot;https://blog.bytebytego.com/p/understanding-database-types&quot;&gt;Image Source&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Caching&lt;/strong&gt;: it improves load times and can reduce the load on your servers and databases. It is important to understand the different layers where caching can be applied, their advantages and disadvantages and strategies to update your cache. These would include:
     &lt;ul&gt;
       &lt;li&gt;Client caching&lt;/li&gt;
@@ -165,6 +170,16 @@ Some popular rate limiting algorithms include:
     &lt;ul&gt;
       &lt;li&gt;Netflix&lt;/li&gt;
       &lt;li&gt;Youtube&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Online Marketplace
+    &lt;ul&gt;
+      &lt;li&gt;Airbnb&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;E-commerce Platform
+    &lt;ul&gt;
+      &lt;li&gt;Amazon.com&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -345,6 +360,8 @@ Some popular rate limiting algorithms include:
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;p style=&quot;text-align:center;&quot;&gt;Table 1: Open Table Formats Comparison&lt;/p&gt;
 
 &lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
 
@@ -583,6 +600,8 @@ Some popular rate limiting algorithms include:
   &lt;/tbody&gt;
 &lt;/table&gt;
 
+&lt;p style=&quot;text-align:center;&quot;&gt;Table 1: Partial Dependency Example&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;The primary key is the combination of (StudentId, CourseID)&lt;/li&gt;
   &lt;li&gt;StudentName depends only on StudentID&lt;/li&gt;
@@ -629,6 +648,8 @@ Some popular rate limiting algorithms include:
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;p style=&quot;text-align:center;&quot;&gt;Table 2: Transitive Dependency Example&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;The primary key is EmployeeID&lt;/li&gt;
@@ -740,8 +761,10 @@ Some popular rate limiting algorithms include:
 
 &lt;p&gt;The following diagram summarizes the mapping of different layers, their purpose, and applied modeling techniques in each:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/articles/19_data_lakehouse_architecture.png&quot; alt=&quot;Data lakehouse architecture and modeling techniques&quot; /&gt;
-&lt;em&gt;Figure 1: Data lakehouse architecture and modeling techniques - &lt;a href=&quot;https://www.databricks.com/blog/2022/06/24/data-warehousing-modeling-techniques-and-their-implementation-on-the-databricks-lakehouse-platform.html&quot;&gt;Source&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/19_data_lakehouse_architecture.png&quot; alt=&quot;medallion architecture with used modeling techniques in each stage&quot; /&gt;
+  &lt;figcaption&gt;Figure 1: Data lakehouse architecture and modeling techniques - &lt;a href=&quot;https://www.databricks.com/blog/2022/06/24/data-warehousing-modeling-techniques-and-their-implementation-on-the-databricks-lakehouse-platform.html&quot;&gt;Image Source&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;First data is landed in the Bronze layer in raw format using the same models of source systems in order to get converted to delta lake format. Next it flows into the Silver layer where it gets aggregated using more normalized model. Finally, the gold layer is meant for read-optimized presentation layer using denormalized models.&lt;/p&gt;
 
@@ -823,8 +846,10 @@ That being said, I believe most of the content is still relevant and can serve a
 Regions contain multiple &lt;strong&gt;Zones&lt;/strong&gt; where the resources are deployed and are isolated from one another so that failures in one zone do not affect other zones in a region. 
 Most regions have at least three zones and can have more. All regions have at least two zones.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/articles/18_gcp_regions.png&quot; alt=&quot;Google Cloud Regions&quot; /&gt;&lt;br /&gt;
-&lt;em&gt;Figure 1: Google Cloud Regions, Source: &lt;a href=&quot;https://cloud.google.com/about/locations#lightbox-regions-map&quot;&gt;https://cloud.google.com/about/locations#lightbox-regions-map&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/18_gcp_regions.png&quot; alt=&quot;world map of google cloud region locations&quot; /&gt;
+  &lt;figcaption&gt;Figure 1: Google Cloud Regions - &lt;a href=&quot;https://cloud.google.com/about/locations#lightbox-regions-map&quot;&gt;Image Source&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;Google data centers are connected with Google’s own high-speed network. Google is the only cloud provider that owns all the fiber connecting its data center together. A huge amount of the world’s internet traffic goes through Google’s network.&lt;/p&gt;
 
@@ -1104,8 +1129,10 @@ Most regions have at least three zones and can have more. All regions have at le
 
 &lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Cloud Computing" /><summary type="html">This article contains a collection of notes, mind maps and resources to support you while preparing for the google cloud professional data engineer certification.</summary></entry><entry><title type="html">Learning How to Learn</title><link href="https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn.html" rel="alternate" type="text/html" title="Learning How to Learn" /><published>2023-10-21T00:00:00+00:00</published><updated>2023-10-21T00:00:00+00:00</updated><id>https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn</id><content type="html" xml:base="https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn.html">&lt;p&gt;&lt;em&gt;Notes from the Learning How to Learn Book By Barbara Oakley.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/articles/17_learning_how_to_learn.png&quot; alt=&quot;image&quot; /&gt;
-&lt;br /&gt;&lt;em&gt;Figure 1: Learning How to Learn Mindmap&lt;/em&gt;&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/17_learning_how_to_learn.png&quot; alt=&quot;mindmap containing important topics from the learning how to learn book&quot; /&gt;
+  &lt;figcaption&gt;Figure 1: Learning How to Learn Mindmap&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;hr /&gt;
 
@@ -1367,8 +1394,10 @@ The architecture takes an event stream and forks/duplicates it into two relative
 
 &lt;p&gt;The following diagram shows the lambda architecture at a high level:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/articles/16_lambda_architecture.png&quot; alt=&quot;High Level Lambda Architecture&quot; /&gt;
-&lt;em&gt;Figure 1: High Level Lambda Architecture&lt;/em&gt;&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/16_lambda_architecture.png&quot; alt=&quot;diagram showing high level components of lambda architecture&quot; /&gt;
+  &lt;figcaption&gt;Figure 1: High Level Lambda Architecture&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;h3 id=&quot;advantages-and-disadvantages&quot;&gt;Advantages and Disadvantages&lt;/h3&gt;
 
@@ -1383,8 +1412,10 @@ The architecture takes an event stream and forks/duplicates it into two relative
 &lt;p&gt;The Kappa architecture was introduced by &lt;em&gt;Jay Kreps&lt;/em&gt;, co-founder and CEO at Confluent, a company built around the open source messaging system Apache Kafka, as a response to some of the challenges and complexities associated with the Lambda Architecture. 
 The Kappa Architecture primarily focuses on stream processing simplifying the complexity of maintaining two systems with a single technology stack, referred to as &lt;strong&gt;Stream Processing Layer&lt;/strong&gt; in the diagram below, that can perform both real-time and batch processing:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/articles/16_kappa_architecture.png&quot; alt=&quot;High Level Kappa Architecture&quot; /&gt;
-&lt;em&gt;Figure 2: High Level Kappa Architecture&lt;/em&gt;&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/16_kappa_architecture.png&quot; alt=&quot;diagram showing high level components of kappa architecture&quot; /&gt;
+  &lt;figcaption&gt;Figure 2: High Level Kappa Architecture&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;h3 id=&quot;advantages-and-disadvantages-1&quot;&gt;Advantages and Disadvantages&lt;/h3&gt;
 
@@ -1490,8 +1521,10 @@ If the algorithms used to process historical data and real-time data are not alw
 
 &lt;p&gt;The components of the modern data stack can be perfectly mapped to the same diagram from the mentioned article, at least at a high level first, as shown below:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/articles/15_modern_data_stack_example.png&quot; alt=&quot;Example of Componentes of Modern Data Stack in Standard Data Flow&quot; /&gt;
-&lt;em&gt;Figure 1: Example of Componentes of Modern Data Stack in Standard Data Flow&lt;/em&gt;&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/15_modern_data_stack_example.png&quot; alt=&quot;diagram with boxes containing logos of tools and representing stages through which data flows&quot; /&gt;
+  &lt;figcaption&gt;Figure 1: Example of Componentes of Modern Data Stack in Standard Data Flow&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;Note that the specific tools are changing and evolving rapidly but they usually include some of the ones we chose as an example in the diagram. In addition, some vendor technologies fit beyond a single stage as presented in the diagram and offer more capabilities such as data governance and/or machine learning.&lt;/p&gt;
 
@@ -1713,18 +1746,16 @@ By transforming your Jekyll-based blog into a PWA, you’ll enhance user engagem
   &lt;li&gt;&lt;a href=&quot;#ingestion&quot; id=&quot;markdown-toc-ingestion&quot;&gt;Ingestion&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#transformation&quot; id=&quot;markdown-toc-transformation&quot;&gt;Transformation&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#storage&quot; id=&quot;markdown-toc-storage&quot;&gt;Storage&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#oltp-vs-olap&quot; id=&quot;markdown-toc-oltp-vs-olap&quot;&gt;OLTP vs OLAP&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#oltp-databases&quot; id=&quot;markdown-toc-oltp-databases&quot;&gt;OLTP Databases&lt;/a&gt;            &lt;ul&gt;
-              &lt;li&gt;&lt;a href=&quot;#sql-vs-nosql&quot; id=&quot;markdown-toc-sql-vs-nosql&quot;&gt;SQL vs NoSQL&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href=&quot;#acid-vs-base&quot; id=&quot;markdown-toc-acid-vs-base&quot;&gt;ACID vs BASE&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#olap-databases&quot; id=&quot;markdown-toc-olap-databases&quot;&gt;OLAP Databases&lt;/a&gt;            &lt;ul&gt;
-              &lt;li&gt;&lt;a href=&quot;#data-warehouse&quot; id=&quot;markdown-toc-data-warehouse&quot;&gt;Data warehouse&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href=&quot;#data-lake&quot; id=&quot;markdown-toc-data-lake&quot;&gt;Data lake&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href=&quot;#data-lakehouse&quot; id=&quot;markdown-toc-data-lakehouse&quot;&gt;Data Lakehouse&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#oltp-vs-olap&quot; id=&quot;markdown-toc-oltp-vs-olap&quot;&gt;OLTP vs OLAP&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#oltp-databases&quot; id=&quot;markdown-toc-oltp-databases&quot;&gt;OLTP Databases&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#sql-vs-nosql&quot; id=&quot;markdown-toc-sql-vs-nosql&quot;&gt;SQL vs NoSQL&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#acid-vs-base&quot; id=&quot;markdown-toc-acid-vs-base&quot;&gt;ACID vs BASE&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#olap-databases&quot; id=&quot;markdown-toc-olap-databases&quot;&gt;OLAP Databases&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#data-warehouse&quot; id=&quot;markdown-toc-data-warehouse&quot;&gt;Data warehouse&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#data-lake&quot; id=&quot;markdown-toc-data-lake&quot;&gt;Data lake&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#data-lakehouse&quot; id=&quot;markdown-toc-data-lakehouse&quot;&gt;Data Lakehouse&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -1819,9 +1850,9 @@ Both operational and analytical data are important for organizations, but they s
   &lt;li&gt;Find out “what is the most sold product”&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;oltp-databases&quot;&gt;OLTP Databases&lt;/h4&gt;
+&lt;h3 id=&quot;oltp-databases&quot;&gt;OLTP Databases&lt;/h3&gt;
 
-&lt;h5 id=&quot;sql-vs-nosql&quot;&gt;SQL vs NoSQL&lt;/h5&gt;
+&lt;h4 id=&quot;sql-vs-nosql&quot;&gt;SQL vs NoSQL&lt;/h4&gt;
 
 &lt;p&gt;OLTP databases can use either &lt;strong&gt;SQL (Structured Query Language)&lt;/strong&gt; or &lt;strong&gt;NoSQL (Not only SQL)&lt;/strong&gt; technologies.&lt;/p&gt;
 
@@ -1867,6 +1898,8 @@ Both operational and analytical data are important for organizations, but they s
   &lt;/tbody&gt;
 &lt;/table&gt;
 
+&lt;p style=&quot;text-align:center;&quot;&gt;Table 1: SQL vs NoSQL Databases&lt;/p&gt;
+
 &lt;p&gt;SQL databases are based on a relational model and use a structured data model, where data is organized into tables, rows, and columns. 
 This makes it easy to enforce data constraints, such as unique keys, and ensures data consistency. 
 They are well tested and proven, and they have a long history of use in OLTP systems. 
@@ -1879,7 +1912,7 @@ This allows NoSQL databases to better handle unstructured data and changing data
 However , NoSQL databases may not provide the same level of transactional consistency as SQL databases, which can result in data inconsistencies. 
 Plus they can be complex to set up and maintain as well, even though this can be addressed since they are designed to work well in cloud environments, which makes them a good choice for OLTP systems that need to scale quickly and elastically.&lt;/p&gt;
 
-&lt;h5 id=&quot;acid-vs-base&quot;&gt;ACID vs BASE&lt;/h5&gt;
+&lt;h4 id=&quot;acid-vs-base&quot;&gt;ACID vs BASE&lt;/h4&gt;
 
 &lt;p&gt;We kept mentioning &lt;strong&gt;transactional consistency&lt;/strong&gt; and you might be wondering what is it?&lt;/p&gt;
 
@@ -1902,11 +1935,11 @@ For relational databases, transactions have the following four standard properti
 
 &lt;p&gt;ACID databases prioritize consistency over availability—the whole transaction fails if an error occurs in any step within the transaction. In contrast, BASE databases prioritize availability over consistency. Instead of failing the transaction, users can access inconsistent data temporarily.&lt;/p&gt;
 
-&lt;h4 id=&quot;olap-databases&quot;&gt;OLAP Databases&lt;/h4&gt;
+&lt;h3 id=&quot;olap-databases&quot;&gt;OLAP Databases&lt;/h3&gt;
 
 &lt;p&gt;In this section we will discuss two important components that are used for advanced analysis and decision-making; &lt;strong&gt;data warehouses&lt;/strong&gt; and &lt;strong&gt;data lakes&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;h5 id=&quot;data-warehouse&quot;&gt;Data warehouse&lt;/h5&gt;
+&lt;h4 id=&quot;data-warehouse&quot;&gt;Data warehouse&lt;/h4&gt;
 
 &lt;p&gt;A data warehouse is a centralized repository for storing and managing large amounts of data from various sources. 
 Data warehouses are designed to support business intelligence (BI) and analytics applications, by providing a single source of data that can be queried, analyzed, and used to make informed decisions. 
@@ -1926,7 +1959,7 @@ The following are the key characteristics of a data warehouse:&lt;/p&gt;
 In addition, Traditional data warehouses required expensive hardware and software to store and process data. 
 The cost of these solutions made it difficult for organizations to store all their data, which led to the adoption of data lakes as a more cost-effective alternative.&lt;/p&gt;
 
-&lt;h5 id=&quot;data-lake&quot;&gt;Data lake&lt;/h5&gt;
+&lt;h4 id=&quot;data-lake&quot;&gt;Data lake&lt;/h4&gt;
 
 &lt;p&gt;A data lake is a centralized repository that stores large amounts of raw, structured and unstructured data. The data is stored in its native format and can be accessed, processed, and analyzed later as needed. 
 The following are the key characteristics of a data lake:&lt;/p&gt;
@@ -1943,8 +1976,49 @@ The following are the key characteristics of a data lake:&lt;/p&gt;
 
 &lt;p&gt;The following table summarizes the differences between data warehouse and data lake.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/articles/11_data_warehouse_vs_data_lake.png&quot; alt=&quot;image&quot; /&gt;
-&lt;br /&gt;&lt;em&gt;Figure 1: Data Warehouse vs Data Lake&lt;/em&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Data Warehouse&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Data Lake&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Data&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;structured, processed&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;structured, semi structured, unstructured, raw&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Processing&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;schema-on-write&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;schema-on-read&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Storage&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;expensive for large data volumes&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;designed for low-cost storage&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Agility&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;less agile, fixed configuration&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;highly agile, configurable as needed&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Security&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;mature&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;maturing&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Users&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;business professionals&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;data scientists&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p style=&quot;text-align:center;&quot;&gt;Table 2: Data Warehouse vs Data Lake&lt;/p&gt;
 
 &lt;p&gt;As organizations move data infrastructure to the cloud, the choice of data warehouse vs. data lake, or the need for complex integrations between the two, is less of an issue. 
 It is becoming natural for organizations to have both, and move data flexibly from lakes to warehouses to enable business analysis.&lt;/p&gt;
@@ -1968,13 +2042,15 @@ However, it had its own set of challenges, such as the lack of reliability and t
 
 &lt;p&gt;Can we get the best of both worlds without the complexity of managing both a data lake and a data warehouse or perhaps multiple ones?&lt;/p&gt;
 
-&lt;h5 id=&quot;data-lakehouse&quot;&gt;Data Lakehouse&lt;/h5&gt;
+&lt;h4 id=&quot;data-lakehouse&quot;&gt;Data Lakehouse&lt;/h4&gt;
 
 &lt;p&gt;A data Lakehouse is a new, open architecture that combines the best elements of data lakes and data warehouses. 
 Data Lakehouses are enabled by a new system design: implementing similar data structures and data management features to those in a data warehouse directly on top of low cost cloud storage in open formats.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/articles/12_data_warehouse_vs_data_lake_vs_data_lakehouse.png&quot; alt=&quot;image&quot; /&gt;
-&lt;br /&gt;&lt;em&gt;Figure 2: Data Warehouse vs Data Lake vs Data Lakehouse&lt;/em&gt;&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/12_data_warehouse_vs_data_lake_vs_data_lakehouse.png&quot; alt=&quot;architecture diagrams comparing data warehouse, data lake and data lakehouse&quot; /&gt;
+  &lt;figcaption&gt;Figure 1: Data Warehouse vs Data Lake vs Data Lakehouse - &lt;a href=&quot;https://www.databricks.com/glossary/data-lakehouse&quot;&gt;Image Source&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;p&gt;Some data management solutions such as &lt;a href=&quot;https://delta.io/&quot;&gt;Delta Lake&lt;/a&gt;, which is an implementation of Data Lakehouse from Databricks, offer the ability to store and process big data in a reliable and consistent manner, while also providing the scalability and cost savings of a data lake.&lt;/p&gt;
 

@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" /><head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<!-- MailerLite Universal -->
+<script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '1240462');
+</script>
+<!-- End MailerLite Universal --><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
@@ -146,7 +156,7 @@
       
       <span class="reading-time" title="Estimated read time">
   
-  14 min read
+  15 min read
 </span>
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name"> - Firas Esbai</span></span></p></header>
@@ -167,18 +177,16 @@
   <li><a href="#ingestion" id="markdown-toc-ingestion">Ingestion</a></li>
   <li><a href="#transformation" id="markdown-toc-transformation">Transformation</a></li>
   <li><a href="#storage" id="markdown-toc-storage">Storage</a>    <ul>
-      <li><a href="#oltp-vs-olap" id="markdown-toc-oltp-vs-olap">OLTP vs OLAP</a>        <ul>
-          <li><a href="#oltp-databases" id="markdown-toc-oltp-databases">OLTP Databases</a>            <ul>
-              <li><a href="#sql-vs-nosql" id="markdown-toc-sql-vs-nosql">SQL vs NoSQL</a></li>
-              <li><a href="#acid-vs-base" id="markdown-toc-acid-vs-base">ACID vs BASE</a></li>
-            </ul>
-          </li>
-          <li><a href="#olap-databases" id="markdown-toc-olap-databases">OLAP Databases</a>            <ul>
-              <li><a href="#data-warehouse" id="markdown-toc-data-warehouse">Data warehouse</a></li>
-              <li><a href="#data-lake" id="markdown-toc-data-lake">Data lake</a></li>
-              <li><a href="#data-lakehouse" id="markdown-toc-data-lakehouse">Data Lakehouse</a></li>
-            </ul>
-          </li>
+      <li><a href="#oltp-vs-olap" id="markdown-toc-oltp-vs-olap">OLTP vs OLAP</a></li>
+      <li><a href="#oltp-databases" id="markdown-toc-oltp-databases">OLTP Databases</a>        <ul>
+          <li><a href="#sql-vs-nosql" id="markdown-toc-sql-vs-nosql">SQL vs NoSQL</a></li>
+          <li><a href="#acid-vs-base" id="markdown-toc-acid-vs-base">ACID vs BASE</a></li>
+        </ul>
+      </li>
+      <li><a href="#olap-databases" id="markdown-toc-olap-databases">OLAP Databases</a>        <ul>
+          <li><a href="#data-warehouse" id="markdown-toc-data-warehouse">Data warehouse</a></li>
+          <li><a href="#data-lake" id="markdown-toc-data-lake">Data lake</a></li>
+          <li><a href="#data-lakehouse" id="markdown-toc-data-lakehouse">Data Lakehouse</a></li>
         </ul>
       </li>
     </ul>
@@ -273,9 +281,9 @@ Both operational and analytical data are important for organizations, but they s
   <li>Find out “what is the most sold product”</li>
 </ul>
 
-<h4 id="oltp-databases">OLTP Databases</h4>
+<h3 id="oltp-databases">OLTP Databases</h3>
 
-<h5 id="sql-vs-nosql">SQL vs NoSQL</h5>
+<h4 id="sql-vs-nosql">SQL vs NoSQL</h4>
 
 <p>OLTP databases can use either <strong>SQL (Structured Query Language)</strong> or <strong>NoSQL (Not only SQL)</strong> technologies.</p>
 
@@ -321,6 +329,8 @@ Both operational and analytical data are important for organizations, but they s
   </tbody>
 </table>
 
+<p style="text-align:center;">Table 1: SQL vs NoSQL Databases</p>
+
 <p>SQL databases are based on a relational model and use a structured data model, where data is organized into tables, rows, and columns. 
 This makes it easy to enforce data constraints, such as unique keys, and ensures data consistency. 
 They are well tested and proven, and they have a long history of use in OLTP systems. 
@@ -333,7 +343,7 @@ This allows NoSQL databases to better handle unstructured data and changing data
 However , NoSQL databases may not provide the same level of transactional consistency as SQL databases, which can result in data inconsistencies. 
 Plus they can be complex to set up and maintain as well, even though this can be addressed since they are designed to work well in cloud environments, which makes them a good choice for OLTP systems that need to scale quickly and elastically.</p>
 
-<h5 id="acid-vs-base">ACID vs BASE</h5>
+<h4 id="acid-vs-base">ACID vs BASE</h4>
 
 <p>We kept mentioning <strong>transactional consistency</strong> and you might be wondering what is it?</p>
 
@@ -356,11 +366,11 @@ For relational databases, transactions have the following four standard properti
 
 <p>ACID databases prioritize consistency over availability—the whole transaction fails if an error occurs in any step within the transaction. In contrast, BASE databases prioritize availability over consistency. Instead of failing the transaction, users can access inconsistent data temporarily.</p>
 
-<h4 id="olap-databases">OLAP Databases</h4>
+<h3 id="olap-databases">OLAP Databases</h3>
 
 <p>In this section we will discuss two important components that are used for advanced analysis and decision-making; <strong>data warehouses</strong> and <strong>data lakes</strong>.</p>
 
-<h5 id="data-warehouse">Data warehouse</h5>
+<h4 id="data-warehouse">Data warehouse</h4>
 
 <p>A data warehouse is a centralized repository for storing and managing large amounts of data from various sources. 
 Data warehouses are designed to support business intelligence (BI) and analytics applications, by providing a single source of data that can be queried, analyzed, and used to make informed decisions. 
@@ -380,7 +390,7 @@ The following are the key characteristics of a data warehouse:</p>
 In addition, Traditional data warehouses required expensive hardware and software to store and process data. 
 The cost of these solutions made it difficult for organizations to store all their data, which led to the adoption of data lakes as a more cost-effective alternative.</p>
 
-<h5 id="data-lake">Data lake</h5>
+<h4 id="data-lake">Data lake</h4>
 
 <p>A data lake is a centralized repository that stores large amounts of raw, structured and unstructured data. The data is stored in its native format and can be accessed, processed, and analyzed later as needed. 
 The following are the key characteristics of a data lake:</p>
@@ -397,8 +407,49 @@ The following are the key characteristics of a data lake:</p>
 
 <p>The following table summarizes the differences between data warehouse and data lake.</p>
 
-<p><img src="/assets/images/articles/11_data_warehouse_vs_data_lake.png" alt="image" />
-<br /><em>Figure 1: Data Warehouse vs Data Lake</em></p>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th style="text-align: left">Data Warehouse</th>
+      <th style="text-align: left">Data Lake</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Data</td>
+      <td style="text-align: left">structured, processed</td>
+      <td style="text-align: left">structured, semi structured, unstructured, raw</td>
+    </tr>
+    <tr>
+      <td>Processing</td>
+      <td style="text-align: left">schema-on-write</td>
+      <td style="text-align: left">schema-on-read</td>
+    </tr>
+    <tr>
+      <td>Storage</td>
+      <td style="text-align: left">expensive for large data volumes</td>
+      <td style="text-align: left">designed for low-cost storage</td>
+    </tr>
+    <tr>
+      <td>Agility</td>
+      <td style="text-align: left">less agile, fixed configuration</td>
+      <td style="text-align: left">highly agile, configurable as needed</td>
+    </tr>
+    <tr>
+      <td>Security</td>
+      <td style="text-align: left">mature</td>
+      <td style="text-align: left">maturing</td>
+    </tr>
+    <tr>
+      <td>Users</td>
+      <td style="text-align: left">business professionals</td>
+      <td style="text-align: left">data scientists</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="text-align:center;">Table 2: Data Warehouse vs Data Lake</p>
 
 <p>As organizations move data infrastructure to the cloud, the choice of data warehouse vs. data lake, or the need for complex integrations between the two, is less of an issue. 
 It is becoming natural for organizations to have both, and move data flexibly from lakes to warehouses to enable business analysis.</p>
@@ -422,13 +473,15 @@ However, it had its own set of challenges, such as the lack of reliability and t
 
 <p>Can we get the best of both worlds without the complexity of managing both a data lake and a data warehouse or perhaps multiple ones?</p>
 
-<h5 id="data-lakehouse">Data Lakehouse</h5>
+<h4 id="data-lakehouse">Data Lakehouse</h4>
 
 <p>A data Lakehouse is a new, open architecture that combines the best elements of data lakes and data warehouses. 
 Data Lakehouses are enabled by a new system design: implementing similar data structures and data management features to those in a data warehouse directly on top of low cost cloud storage in open formats.</p>
 
-<p><img src="/assets/images/articles/12_data_warehouse_vs_data_lake_vs_data_lakehouse.png" alt="image" />
-<br /><em>Figure 2: Data Warehouse vs Data Lake vs Data Lakehouse</em></p>
+<figure>
+  <img src="/assets/images/articles/12_data_warehouse_vs_data_lake_vs_data_lakehouse.png" alt="architecture diagrams comparing data warehouse, data lake and data lakehouse" />
+  <figcaption>Figure 1: Data Warehouse vs Data Lake vs Data Lakehouse - <a href="https://www.databricks.com/glossary/data-lakehouse">Image Source</a></figcaption>
+</figure>
 
 <p>Some data management solutions such as <a href="https://delta.io/">Delta Lake</a>, which is an implementation of Data Lakehouse from Databricks, offer the ability to store and process big data in a reliable and consistent manner, while also providing the scalability and cost savings of a data lake.</p>
 
@@ -459,7 +512,7 @@ Then we discussed the different types of data storage and some concrete implemen
 
   <hr>
 <br>
-<script async data-uid="303d8467ac" src="https://firas-esbai.ck.page/303d8467ac/index.js"></script>
+<div class="ml-embedded" data-form="T82iSQ"></div>
 
   <br>
 <hr>

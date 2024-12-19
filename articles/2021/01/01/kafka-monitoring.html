@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" /><head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+<!-- MailerLite Universal -->
+<script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '1240462');
+</script>
+<!-- End MailerLite Universal --><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
@@ -187,8 +197,10 @@
 
 <p>It is based on a distributed, fault tolerant and resilient architecture. It allows decoupling of source systems, called <code class="language-plaintext highlighter-rouge">Producers</code> and target systems; the <code class="language-plaintext highlighter-rouge">Consumers</code>. Thus, not only simplifying the topology of your application but also handling millions of messages per seconds by horizontally scaling up to 100 brokers and still maintaining high performance and latency of less than 10ms making it widely adopted by many companies and the de facto platform for real time data processing.</p>
 
-<p><img src="/assets/images/articles/1_apache_kafka.png" alt="image" />
-<em>Figure 1: Apache Kafka, Image from <a href="https://developer.confluent.io/what-is-apache-kafka/">Confluent Developer</a></em></p>
+<figure>
+  <img src="/assets/images/articles/1_apache_kafka.png" alt="Apache Kafka usage and integrations" />
+  <figcaption>Figure 1: Apache Kafka - <a href="https://developer.confluent.io/what-is-apache-kafka/">Image Source</a></figcaption>
+</figure>
 
 <h2 id="what-is-prometheus">What is Prometheus?</h2>
 <p>Prometheus is an open source monitoring and alerting toolkit. It is based on a <code class="language-plaintext highlighter-rouge">pull model</code>; collecting metrics from monitored targets and therefore alleviating them from a lot of workload.</p>
@@ -217,8 +229,10 @@
 
 <p>Below is a diagram showing the different tools and the interactions between them:</p>
 
-<p><img src="/assets/images/articles/1_kafka_monitoring_architecture.png" alt="image" />
-<br /><em>Figure 2: Kafka Monitoring Architecture</em></p>
+<figure>
+  <img src="/assets/images/articles/1_kafka_monitoring_architecture.png" alt="Diagram showing how to monitor Apache Kafka" />
+  <figcaption>Figure 2: Apache Kafka Monitoring Architecture</figcaption>
+</figure>
 
 <p>Following are the main steps to set this topology up:</p>
 <ul>
@@ -275,7 +289,7 @@ These configuration files contain rules for rewriting JMX MBeans to the Promethe
 
   <hr>
 <br>
-<script async data-uid="303d8467ac" src="https://firas-esbai.ck.page/303d8467ac/index.js"></script>
+<div class="ml-embedded" data-form="T82iSQ"></div>
 
   <br>
 <hr>
