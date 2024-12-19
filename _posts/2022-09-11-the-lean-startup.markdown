@@ -204,7 +204,7 @@ It is at the core of the lean startup model.
    | B       | E           |       |           |
    | C       |             |       |           |
    
-   *Table 1: Kanban Example*
+   <p style="text-align:center;">Table 1: Kanban Example</p>
    
    No bucket can contain more than 3 projects at a time. 
    

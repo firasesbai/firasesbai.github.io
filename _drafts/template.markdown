@@ -32,7 +32,7 @@ All the source code is available [here]() - `optional`
 | ------|:------|
 | row 1 | row 1 | 
 
-*Table 1: table alt txt*
+<p style="text-align:center;">Table 1: table alt txt</p>
 
 ## Headline 3 ##
 
