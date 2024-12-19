@@ -108,6 +108,8 @@ OLTP databases can use either **SQL (Structured Query Language)** or **NoSQL (No
 | **Scaling**             | Vertical (scale-up with a larger server)                           | Horizontal (scale-out across commodity servers) |
 | **Joins**               | Typically required                                                 | Typically not required |
 
+*Table 1: SQL vs NoSQL Databases*
+
 SQL databases are based on a relational model and use a structured data model, where data is organized into tables, rows, and columns. 
 This makes it easy to enforce data constraints, such as unique keys, and ensures data consistency. 
 They are well tested and proven, and they have a long history of use in OLTP systems. 
@@ -184,6 +186,8 @@ The following table summarizes the differences between data warehouse and data l
 | Agility        | less agile, fixed configuration  | highly agile, configurable as needed           |
 | Security       | mature                           | maturing                                       |
 | Users          | business professionals           | data scientists                                |
+
+*Table 2: Data Warehouse vs Data Lake*
 
 As organizations move data infrastructure to the cloud, the choice of data warehouse vs. data lake, or the need for complex integrations between the two, is less of an issue. 
 It is becoming natural for organizations to have both, and move data flexibly from lakes to warehouses to enable business analysis.

@@ -64,6 +64,8 @@ For example, considering the following table:
 | 102       | CS102    | Emma        | Networking | Dr. Johnson    |
 | 103       | CS102    | John        | Networking | Dr. Johnson    |
 
+*Table 1: Partial Dependency Example*
+
 - The primary key is the combination of (StudentId, CourseID)
 - StudentName depends only on StudentID
 - CourseName depends only on CourseID
@@ -80,6 +82,8 @@ For example, considering the following table:
 | E01        | Alice        | D1           | Sales          |
 | E02        | Bob          | D2           | Marketing      |
 | E03        | Charlie      | D1           | Sales          |
+
+*Table 2: Transitive Dependency Example*
 
 - The primary key is EmployeeID
 - EmployeeName depends on EmployeeID

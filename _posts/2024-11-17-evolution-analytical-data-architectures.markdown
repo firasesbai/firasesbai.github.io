@@ -106,6 +106,8 @@ The following table summarizes differences between these open table formats and 
 | **Partition Evolution** | Partition evolution is a metadata operation and does not eagerly rewrite files. When you evolve a partition spec, the old data written with an earlier spec remains unchanged. New data is written using the new spec in a new layout. Metadata for each of the partition versions is kept separately. | Hudi considers partition evolution as anti-pattern and avoids such scheme | Delta lake does not natively support partition evolution without rewriting the entire table |
 | **Time Travel**         | Every change to an Iceberg table creates a new snapshot. Queries can access the table’s list of snapshots to return results from older versions. Queries can be executed using: {::nomarkdown}<ul><li>specific snapshot id</li><li>timestamp when a snapshot was the current at that time</li></ul>{:/} | The internal timeline log used by Hudi enables time travel queries support using a point in time syntax with timestamps | Delta lake will inspect the transaction log and figure out which files should be read for each given version. It also supports time travel by timestamp without having to figure out the exact version. |
 
+*Table 1: Open Table Formats Comparison*
+
 With this we have reached the end of this post, I hope you enjoyed it!
 
 If you have any remarks or questions, please don’t hesitate and do drop a comment below.

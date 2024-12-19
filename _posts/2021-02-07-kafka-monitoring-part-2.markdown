@@ -40,6 +40,8 @@ While it is important to collect and record the values of these metrics, an **al
 | IsrExpandsPerSec             | When a broker is brought up after a failure, it starts catching up by reading from the leader. Once it is caught up, it gets added back to the ISR.    																																																																						               | -                                    |
 | ConsumerLag                  | Lag in number of messages per follower replica. This is useful to know if the replica is slow or has stopped replicating from the leader.    																																																																												   | -                                    |
 
+*Table 1: Broker Server Metrics*
+
 *\*ISR: In-Sync Replica*
 ## Broker Topics Metrics ##
 
@@ -52,6 +54,7 @@ While it is important to collect and record the values of these metrics, an **al
 | TotalFetchRequestsPerSec    | Fetch request rate.                           |
 | FailedFetchRequestsPerSec   | Fetch request rate for requests that failed.  |
 
+*Table 2: Broker Topics Metrics*
 
 ## Broker Requests Metrics ##
 
@@ -67,6 +70,7 @@ While it is important to collect and record the values of these metrics, an **al
 | PurgatorySize, delayedOperation=Produce | Number of requests waiting in the producer purgatory. This should be non-zero when `acks=all` is used on the producer. |
 | PurgatorySize, delayedOperation=Fetch   | Number of requests waiting in the fetch purgatory. This is high if consumers use a large value for `fetch.wait.max.ms`.|
 
+*Table 3: Broker Requests Metrics*
 
 In this Github [repository](https://github.com/firasesbai/Monitoring-Kafka) you can find a set of ready to use **Grafana dashboards** (see example below) populated with all the discussed above metrics that should serve as a starting point for you to quickly set up a tracking and alerting mechanism for your cluster.     
 

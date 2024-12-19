@@ -48,6 +48,8 @@ Following is a table summarizing some properties and how do they compare between
 | Read performance        | Slow       | Slow        | Fast        | Average    |
 | Write performance       | Fast       | Fast        | Slow        | Average    |
 
+*Table 1: Big Data File Formats Properties Comparison*
+
 CSV should typically be the fastest to write, JSON the easiest to understand for humans, and Parquet the fastest to read a subset of columns, while Avro is the fastest to read all columns at once. 
 
 ## Data Governance ##

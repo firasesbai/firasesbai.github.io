@@ -198,6 +198,8 @@ It is at the core of the lean startup model.
    | B       | E           |       |           |
    | C       |             |       |           |
    
+   *Table 1: Kanban Example*
+   
    No bucket can contain more than 3 projects at a time. 
    
    *Validated* is defined as knowing whether the story was a good idea to have been done in the first place. 

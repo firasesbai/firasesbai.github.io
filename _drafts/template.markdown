@@ -32,6 +32,8 @@ All the source code is available [here]() - `optional`
 | ------|:------|
 | row 1 | row 1 | 
 
+*Table 1: table alt txt*
+
 ## Headline 3 ##
 
 ![image alt text](/assets/images/articles/)
