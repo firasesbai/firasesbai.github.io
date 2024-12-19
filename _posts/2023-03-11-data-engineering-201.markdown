@@ -16,8 +16,10 @@ In addition, we outlined the different stages data goes through in order to be a
 
 Here is a reminder of our data flow blueprint: 
 
-![image](/assets/images/articles/10_data_flow.png)
-<br />*Figure 1: Data Flow Stages* 
+<figure>
+  <img src="/assets/images/articles/10_data_flow.png" alt="diagram with boxes representing stages through which data flows">
+  <figcaption>Figure 1: Data Flow Stages</figcaption>
+</figure>
 
 We will start by taking a bird’s eye view, focusing on data sources, data governance and analysis before zooming in on the other stages of the data flow in part 2.  
 

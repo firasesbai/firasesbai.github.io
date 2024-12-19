@@ -14,7 +14,10 @@ pinned: true
 
 See also my collection of **learning resources** around **data engineering** in this [repository](https://github.com/firasesbai/data-engineering-resources).  
 
-![image](/assets/images/articles/13_reading_recommendations.jpg)
+<figure>
+  <img src="/assets/images/articles/13_reading_recommendations.jpg" alt="">
+  <figcaption></figcaption>
+</figure>
 
 
 This is a *Work In Progress* which means you might want to keep an eye on it as it will be updated regularly. 

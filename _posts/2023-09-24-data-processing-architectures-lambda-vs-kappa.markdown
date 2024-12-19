@@ -34,8 +34,10 @@ There are two variations on this: a **unified serving layer** with one database 
 
 The following diagram shows the lambda architecture at a high level: 
 
-![High Level Lambda Architecture](/assets/images/articles/16_lambda_architecture.png)
-*Figure 1: High Level Lambda Architecture*
+<figure>
+  <img src="/assets/images/articles/16_lambda_architecture.png" alt="diagram showing high level components of lambda architecture">
+  <figcaption>Figure 1: High Level Lambda Architecture</figcaption>
+</figure>
 
 ### Advantages and Disadvantages ###
 
@@ -50,8 +52,10 @@ So, what’s different in Kappa architecture?
 The Kappa architecture was introduced by *Jay Kreps*, co-founder and CEO at Confluent, a company built around the open source messaging system Apache Kafka, as a response to some of the challenges and complexities associated with the Lambda Architecture. 
 The Kappa Architecture primarily focuses on stream processing simplifying the complexity of maintaining two systems with a single technology stack, referred to as **Stream Processing Layer** in the diagram below, that can perform both real-time and batch processing: 
 
-![High Level Kappa Architecture](/assets/images/articles/16_kappa_architecture.png)
-*Figure 2: High Level Kappa Architecture*
+<figure>
+  <img src="/assets/images/articles/16_kappa_architecture.png" alt="diagram showing high level components of kappa architecture">
+  <figcaption>Figure 2: High Level Kappa Architecture</figcaption>
+</figure>
 
 ### Advantages and Disadvantages ###
 

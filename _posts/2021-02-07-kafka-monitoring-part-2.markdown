@@ -74,8 +74,10 @@ While it is important to collect and record the values of these metrics, an **al
 
 In this Github [repository](https://github.com/firasesbai/Monitoring-Kafka) you can find a set of ready to use **Grafana dashboards** (see example below) populated with all the discussed above metrics that should serve as a starting point for you to quickly set up a tracking and alerting mechanism for your cluster.     
 
-![image](/assets/images/articles/2_grafana_dashboard.png)
-<br /> *Figure 1: Grafana Dashboard for Kafka Cluster Monitoring*
+<figure>
+  <img src="/assets/images/articles/2_grafana_dashboard.png" alt="Grafana Dashboard showing monitoring metrics for Apache Kafka Cluster">
+  <figcaption>Figure 1: Grafana Dashboard for Kafka Cluster Monitoring</figcaption>
+</figure>
 
 With this we have reached the end of this post, I hope you enjoyed it! 
 

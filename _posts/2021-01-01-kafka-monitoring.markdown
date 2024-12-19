@@ -33,8 +33,10 @@ Apache Kafka is a distributed messaging queue system created by LinkedIn in 2011
 
 It is based on a distributed, fault tolerant and resilient architecture. It allows decoupling of source systems, called `Producers` and target systems; the `Consumers`. Thus, not only simplifying the topology of your application but also handling millions of messages per seconds by horizontally scaling up to 100 brokers and still maintaining high performance and latency of less than 10ms making it widely adopted by many companies and the de facto platform for real time data processing.   
 
-![image](/assets/images/articles/1_apache_kafka.png)
-*Figure 1: Apache Kafka - [Image Source](https://developer.confluent.io/what-is-apache-kafka/)*
+<figure>
+  <img src="/assets/images/articles/1_apache_kafka.png" alt="Apache Kafka usage and integrations">
+  <figcaption>Figure 1: Apache Kafka - <a href="https://developer.confluent.io/what-is-apache-kafka/">Image Source</a></figcaption>
+</figure>
 
 ## What is Prometheus? ##
 Prometheus is an open source monitoring and alerting toolkit. It is based on a `pull model`; collecting metrics from monitored targets and therefore alleviating them from a lot of workload. 
@@ -63,8 +65,11 @@ Now after looking at each component separately, the most important question is:
 
 Below is a diagram showing the different tools and the interactions between them:
 
-![image](/assets/images/articles/1_kafka_monitoring_architecture.png)
-<br />*Figure 2: Kafka Monitoring Architecture*
+<figure>
+  <img src="/assets/images/articles/1_kafka_monitoring_architecture.png" alt="Diagram showing how to monitor Apache Kafka">
+  <figcaption>Figure 2: Apache Kafka Monitoring Architecture</figcaption>
+</figure>
+
 
 Following are the main steps to set this topology up:
 + From [jmx_exporter](https://github.com/prometheus/jmx_exporter) download JMX Exporter’s **jar** and **configuration files** for *Kafka* and *Zookeeper* respectively.

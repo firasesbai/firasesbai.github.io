@@ -74,8 +74,10 @@ After understanding the “What” and the “Why” behind data engineering, it
 
 The data flow outlines the different stages involved in making data easily accessible in a reliable and accurate way for analysis and decision making. 
 
-![image](/assets/images/articles/10_data_flow.png)
-<br />*Figure 1: Data Flow Stages* 
+<figure>
+  <img src="/assets/images/articles/10_data_flow.png" alt="diagram with boxes representing stages through which data flows">
+  <figcaption>Figure 1: Data Flow Stages</figcaption>
+</figure>
 
 The general steps include:
 

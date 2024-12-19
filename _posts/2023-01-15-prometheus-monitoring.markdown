@@ -83,13 +83,18 @@ This is an example of a metric of type counter.
 
 2- Access the prometheus dashboard in your web browser through: `http://localhost:9090/targets` where you will see our python application as a target for the prometheus service to monitor as shown in the screenshot below:  
 
-![image](/assets/images/articles/9_prometheus_interface.png)
-<br />*Figure 1: Prometheus Web Interface* 
+<figure>
+  <img src="/assets/images/articles/9_prometheus_interface.png" alt="image of the prometheus web interfaces showing list of target endpoints">
+  <figcaption>Figure 1: Prometheus Web Interface</figcaption>
+</figure>
+
  
 3- Go to `http://127.0.0.1:8000/docs` where you will see the Swagger UI of our python application.
 
-![image](/assets/images/articles/9_fastapi_swagger_ui.png)
-<br />*Figure 2: FastAPI Swagger UI*
+<figure>
+  <img src="/assets/images/articles/9_fastapi_swagger_ui.png" alt="swagger ui of a fastapi application containing two endpoints">
+  <figcaption>Figure 2: FastAPI Swagger UI</figcaption>
+</figure>
 
   As indicated in the screenshot above, our application has two endpoints: 
   - `/metrics`: Makes the monitoring metrics available for prometheus to scrape 
@@ -102,8 +107,10 @@ This is an example of a metric of type counter.
   These metrics were made available by adding the **prometheus middleware** to our application. 
   In addition, we can also see our own created metric as shown below: 
 
-![image](/assets/images/articles/9_custom_prometheus_metric.png)
-<br />*Figure 3: Custom Prometheus Metrics Example*
+<figure>
+  <img src="/assets/images/articles/9_custom_prometheus_metric.png" alt="an example counter of prometheus metric">
+  <figcaption>Figure 3: Custom Prometheus Metrics Example</figcaption>
+</figure>
 
 That’s it! You have successfully created a custom metric in your python application and you were able to scrape it and make it visible to prometheus.
 

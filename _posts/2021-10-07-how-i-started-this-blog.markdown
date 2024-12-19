@@ -11,8 +11,10 @@ comments: true
 
 *In this article we will see how to easily setup and publish your first blog website.* 
 
-![image](/assets/images/articles/4_how_i_started_this_blog.png)
-<br /> *Figure 1: What is Jekyll - [Image Source](https://www.geeksforgeeks.org/jekyll-vs-wordpress/)*
+<figure>
+  <img src="/assets/images/articles/4_how_i_started_this_blog.png" alt="logo of jekyll">
+  <figcaption>Figure 1: What is Jekyll - <a href="https://www.geeksforgeeks.org/jekyll-vs-wordpress/">Image Source</a></figcaption>
+</figure>
 
 In a previous [post](https://firasesbai.github.io/articles/2021/04/12/why-i-started-this-blog.html), I mentioned five reasons that were behind the existance of this blog. Now, it is time to walk you through the journey of actually creating it.
 
@@ -140,8 +142,10 @@ After finishing the necessary configuration steps and have integrated both plugi
 You can also use the **google lighthouse** tool from your chrome browser to generate a report about the performance of your site for different categories and metrics like seen in the screenshot below.
 Some useful hints and tips on how to further improve your site are also given to you in order to fix some common problems and enhance the user experience.  
 
-![image](/assets/images/articles/6_lighthouse_results.PNG)
-<br />*Figure 2: Lighthouse Results*
+<figure>
+  <img src="/assets/images/articles/6_lighthouse_results.PNG" alt="scores of lighthouse report">
+  <figcaption>Figure 2: Lighthouse Results</figcaption>
+</figure>
 
 ### Articles Reading Time ###
 
@@ -280,8 +284,11 @@ There are multiple ways to achieve this such as using Google Custom Search Engin
 
 You should now be able to see a search bar, as shown below in the screenshot, and be able to type in keywords to find an article. 
 
-![image](/assets/images/articles/8_search_bar.png)
-<br /> *Figure 3: Search Bar* 
+<figure>
+  <img src="/assets/images/articles/8_search_bar.png" alt="search bar image">
+  <figcaption>Figure 3: Search Bar</figcaption>
+</figure>
+
 
 ### Pagination ###
 
@@ -352,8 +359,10 @@ For the same reasons mentioned above, having a pagination system in place will m
 
 That is it! If you have more then five posts, navigation buttons like shown below will appear at the bottom of your homepage in order to be able to visit your older posts. 
 
-![image](/assets/images/articles/8_navigation_buttons.png)
-<br />*Figure 4: Navigation Buttons*
+<figure>
+  <img src="/assets/images/articles/8_navigation_buttons.png" alt="image showing 2 buttons for older and newer posts">
+  <figcaption>Figure 4: Navigation Buttons</figcaption>
+</figure>
 
 ## Deployment ##
 

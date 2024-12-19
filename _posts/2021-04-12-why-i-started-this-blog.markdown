@@ -11,7 +11,10 @@ comments: true
 
 *5 Reasons Why I Started This Blog.*
 
-![image](/assets/images/articles/3_why_i_started_this_blog.jpg)
+<figure>
+  <img src="/assets/images/articles/3_why_i_started_this_blog.jpg" alt="">
+  <figcaption></figcaption>
+</figure>
 
 {% include table-of-content.html %}
 

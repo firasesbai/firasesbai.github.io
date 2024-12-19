@@ -11,8 +11,11 @@ comments: true
 
 *Notes from the Lean Startup Book By Eric Ries*
 
-![image](/assets/images/articles/14_the_lean_startup.png)
-<br />*Figure 1: Lean Startup Validated Learnings to Achieve Growth*
+<figure>
+  <img src="/assets/images/articles/14_the_lean_startup.png" alt="correlation of applying build measure loop to validate learnings and achieving growth">
+  <figcaption>Figure 1: Lean Startup Validated Learnings to Achieve Growth</figcaption>
+</figure>
+
 
 {% include table-of-content.html %}
 
@@ -85,8 +88,11 @@ How vision leads to steering?
 
 Build-Measure-Learn feedback loop. 
 
-![image](/assets/images/articles/14_learn_build_measure.png)
-<br />*Figure 2: Learn Build Measure Loop*
+<figure>
+  <img src="/assets/images/articles/14_learn_build_measure.png" alt="build measure learn cycle">
+  <figcaption>Figure 2: Learn Build Measure Loop</figcaption>
+</figure>
+
 
 It is at the core of the lean startup model.
 
@@ -250,9 +256,12 @@ It is at the core of the lean startup model.
    
    Product development process in a lean startup is responding to pull requests in the form of experiments that need to be run. 
    Thus it is not the customer but rather our *hypothesis about the customer* that pulls work from product development and other functions. Any other work is waste. 
-   
-   ![image](/assets/images/articles/14_the_startup_way.png)
-   <br />*Figure 3: The Startup Way - [Image Source](http://www.thestartupway.com/)*
+
+   <figure>
+    <img src="/assets/images/articles/14_the_startup_way.png" alt="pyramid showing components of the startup way">
+    <figcaption>Figure 3: The Startup Way - <a href="http://www.thestartupway.com/">Image Source</a></figcaption>
+  </figure>
+
 
 - ***Principal 10: Growth***
 

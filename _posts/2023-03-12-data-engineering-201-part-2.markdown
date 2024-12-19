@@ -212,8 +212,10 @@ Can we get the best of both worlds without the complexity of managing both a dat
 A data Lakehouse is a new, open architecture that combines the best elements of data lakes and data warehouses. 
 Data Lakehouses are enabled by a new system design: implementing similar data structures and data management features to those in a data warehouse directly on top of low cost cloud storage in open formats. 
 
-![image](/assets/images/articles/12_data_warehouse_vs_data_lake_vs_data_lakehouse.png)
-<br />*Figure 2: Data Warehouse vs Data Lake vs Data Lakehouse - [Image Source](https://www.databricks.com/glossary/data-lakehouse)* 
+<figure>
+  <img src="/assets/images/articles/12_data_warehouse_vs_data_lake_vs_data_lakehouse.png" alt="architecture diagrams comparing data warehouse, data lake and data lakehouse">
+  <figcaption>Figure 1: Data Warehouse vs Data Lake vs Data Lakehouse - <a href="https://www.databricks.com/glossary/data-lakehouse">Image Source</a></figcaption>
+</figure>
 
 Some data management solutions such as [Delta Lake](https://delta.io/), which is an implementation of Data Lakehouse from Databricks, offer the ability to store and process big data in a reliable and consistent manner, while also providing the scalability and cost savings of a data lake.
 

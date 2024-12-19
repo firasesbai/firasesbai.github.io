@@ -30,8 +30,10 @@ Google Cloud services are available in different locations divided into **Region
 Regions contain multiple **Zones** where the resources are deployed and are isolated from one another so that failures in one zone do not affect other zones in a region. 
 Most regions have at least three zones and can have more. All regions have at least two zones.
 
-![Google Cloud Regions](/assets/images/articles/18_gcp_regions.png)<br>
-*Figure 1: Google Cloud Regions - [Image Source](https://cloud.google.com/about/locations#lightbox-regions-map)*
+<figure>
+  <img src="/assets/images/articles/18_gcp_regions.png" alt="world map of google cloud region locations">
+  <figcaption>Figure 1: Google Cloud Regions - <a href="https://cloud.google.com/about/locations#lightbox-regions-map">Image Source</a></figcaption>
+</figure>
 
 Google data centers are connected with Google’s own high-speed network. Google is the only cloud provider that owns all the fiber connecting its data center together. A huge amount of the world’s internet traffic goes through Google’s network.
 

@@ -11,8 +11,10 @@ comments: true
 
 *Notes from the Learning How to Learn Book By Barbara Oakley.*
 
-![image](/assets/images/articles/17_learning_how_to_learn.png)
-<br />*Figure 1: Learning How to Learn Mindmap*
+<figure>
+  <img src="/assets/images/articles/17_learning_how_to_learn.png" alt="mindmap containing important topics from the learning how to learn book">
+  <figcaption>Figure 1: Learning How to Learn Mindmap</figcaption>
+</figure>
 
 {% include table-of-content.html %}
 

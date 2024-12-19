@@ -36,8 +36,10 @@ All the source code is available [here]() - `optional`
 
 ## Headline 3 ##
 
-![image alt text](/assets/images/articles/)
-*Figure 1: image alt txt - [Image Source]()*
+<figure>
+  <img src="/assets/images/articles/" alt="image alt txt">
+  <figcaption>Figure 1: image alt txt - <a href="">Image Source</a></figcaption>
+</figure>
 
 With this we have reached the end of this post, I hope you enjoyed it!
 
