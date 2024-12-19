@@ -12,7 +12,7 @@ comments: true
 *In this article we will see how to easily setup and publish your first blog website.* 
 
 ![image](/assets/images/articles/4_how_i_started_this_blog.png)
-<br /> *Figure 1: What is Jekyll, Image from [Geeksforgeeks](https://www.geeksforgeeks.org/jekyll-vs-wordpress/)*
+<br /> *Figure 1: What is Jekyll - [Image Source](https://www.geeksforgeeks.org/jekyll-vs-wordpress/)*
 
 In a previous [post](https://firasesbai.github.io/articles/2021/04/12/why-i-started-this-blog.html), I mentioned five reasons that were behind the existance of this blog. Now, it is time to walk you through the journey of actually creating it.
 

@@ -34,7 +34,7 @@ Apache Kafka is a distributed messaging queue system created by LinkedIn in 2011
 It is based on a distributed, fault tolerant and resilient architecture. It allows decoupling of source systems, called `Producers` and target systems; the `Consumers`. Thus, not only simplifying the topology of your application but also handling millions of messages per seconds by horizontally scaling up to 100 brokers and still maintaining high performance and latency of less than 10ms making it widely adopted by many companies and the de facto platform for real time data processing.   
 
 ![image](/assets/images/articles/1_apache_kafka.png)
-*Figure 1: Apache Kafka, Image from [Confluent Developer](https://developer.confluent.io/what-is-apache-kafka/)*
+*Figure 1: Apache Kafka - [Image Source](https://developer.confluent.io/what-is-apache-kafka/)*
 
 ## What is Prometheus? ##
 Prometheus is an open source monitoring and alerting toolkit. It is based on a `pull model`; collecting metrics from monitored targets and therefore alleviating them from a lot of workload. 

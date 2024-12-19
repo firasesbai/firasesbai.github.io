@@ -39,7 +39,7 @@ Some popular rate limiting algorithms include:
 - [Content Delivery Network (CDN)](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#content-delivery-network)
 - **Database choice**: 
 ![Types of Databases](/assets/images/articles/20_database_choice.png)
-<br> *Figure 1: Types of Databases, Image from [ByteByteGo](https://blog.bytebytego.com/p/understanding-database-types)*
+<br> *Figure 1: Types of Databases - [Image Source](https://blog.bytebytego.com/p/understanding-database-types)*
 - **Caching**: it improves load times and can reduce the load on your servers and databases. It is important to understand the different layers where caching can be applied, their advantages and disadvantages and strategies to update your cache. These would include:
     - Client caching
     - CDN caching

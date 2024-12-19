@@ -176,8 +176,14 @@ The following are the key characteristics of a data lake:
 
 The following table summarizes the differences between data warehouse and data lake. 
 
-![image](/assets/images/articles/11_data_warehouse_vs_data_lake.png)
-<br />*Figure 1: Data Warehouse vs Data Lake* 
+|                | Data Warehouse                   | Data Lake                                      |
+| ---------------|:---------------------------------|:-----------------------------------------------|
+| Data           | structured, processed            | structured, semi structured, unstructured, raw |
+| Processing     | schema-on-write                  | schema-on-read                                 |
+| Storage        | expensive for large data volumes | designed for low-cost storage                  |
+| Agility        | less agile, fixed configuration  | highly agile, configurable as needed           |
+| Security       | mature                           | maturing                                       |
+| Users          | business professionals           | data scientists                                |
 
 As organizations move data infrastructure to the cloud, the choice of data warehouse vs. data lake, or the need for complex integrations between the two, is less of an issue. 
 It is becoming natural for organizations to have both, and move data flexibly from lakes to warehouses to enable business analysis.
@@ -203,7 +209,7 @@ A data Lakehouse is a new, open architecture that combines the best elements of 
 Data Lakehouses are enabled by a new system design: implementing similar data structures and data management features to those in a data warehouse directly on top of low cost cloud storage in open formats. 
 
 ![image](/assets/images/articles/12_data_warehouse_vs_data_lake_vs_data_lakehouse.png)
-<br />*Figure 2: Data Warehouse vs Data Lake vs Data Lakehouse* 
+<br />*Figure 2: Data Warehouse vs Data Lake vs Data Lakehouse - [Image Source](https://www.databricks.com/glossary/data-lakehouse)* 
 
 Some data management solutions such as [Delta Lake](https://delta.io/), which is an implementation of Data Lakehouse from Databricks, offer the ability to store and process big data in a reliable and consistent manner, while also providing the scalability and cost savings of a data lake.
 

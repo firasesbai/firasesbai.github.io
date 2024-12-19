@@ -250,7 +250,7 @@ It is at the core of the lean startup model.
    Thus it is not the customer but rather our *hypothesis about the customer* that pulls work from product development and other functions. Any other work is waste. 
    
    ![image](/assets/images/articles/14_the_startup_way.png)
-   <br />*Figure 3: The Startup Way, Image from [theleanstartup]*
+   <br />*Figure 3: The Startup Way - [Image Source](http://www.thestartupway.com/)*
 
 - ***Principal 10: Growth***
 
@@ -343,5 +343,3 @@ It is at the core of the lean startup model.
 	 7. Any team that creates an experiment must monitor the metrics and customer reactions while the experiment is in progress and abort it if something catastrophic happens 
 
 *Thanks for reading, I hope you enjoyed it!*
-
-[theleanstartup]: http://www.thestartupway.com/

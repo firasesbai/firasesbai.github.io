@@ -153,7 +153,7 @@ The medallion architecture is a data design pattern used to logically organize d
 The following diagram summarizes the mapping of different layers, their purpose, and applied modeling techniques in each:
 
 ![Data lakehouse architecture and modeling techniques](/assets/images/articles/19_data_lakehouse_architecture.png)
-*Figure 1: Data lakehouse architecture and modeling techniques - [Source](https://www.databricks.com/blog/2022/06/24/data-warehousing-modeling-techniques-and-their-implementation-on-the-databricks-lakehouse-platform.html)*
+*Figure 1: Data lakehouse architecture and modeling techniques - [Image Source](https://www.databricks.com/blog/2022/06/24/data-warehousing-modeling-techniques-and-their-implementation-on-the-databricks-lakehouse-platform.html)*
 
 First data is landed in the Bronze layer in raw format using the same models of source systems in order to get converted to delta lake format. Next it flows into the Silver layer where it gets aggregated using more normalized model. Finally, the gold layer is meant for read-optimized presentation layer using denormalized models. 
 

@@ -31,7 +31,7 @@ Regions contain multiple **Zones** where the resources are deployed and are isol
 Most regions have at least three zones and can have more. All regions have at least two zones.
 
 ![Google Cloud Regions](/assets/images/articles/18_gcp_regions.png)<br>
-*Figure 1: Google Cloud Regions, Source: [https://cloud.google.com/about/locations#lightbox-regions-map](https://cloud.google.com/about/locations#lightbox-regions-map)*
+*Figure 1: Google Cloud Regions - [Image Source](https://cloud.google.com/about/locations#lightbox-regions-map)*
 
 Google data centers are connected with Google’s own high-speed network. Google is the only cloud provider that owns all the fiber connecting its data center together. A huge amount of the world’s internet traffic goes through Google’s network.
 
