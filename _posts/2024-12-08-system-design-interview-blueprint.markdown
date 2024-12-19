@@ -125,6 +125,10 @@ Following is a list of common system design questions and real world application
 - Video streaming service
     - Netflix
     - Youtube
+- Online Marketplace
+    - Airbnb
+- E-commerce Platform 
+    - Amazon.com
 
 With this we have reached the end of this post, I hope you enjoyed it!
 
