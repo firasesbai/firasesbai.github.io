@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   
+  <!-- Cookie Consent CSS -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+  <!-- D3js -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
 
 <!-- MailerLite Universal -->
 <script>
@@ -159,7 +163,11 @@
   6 min read
 </span>
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name"> - Firas Esbai</span></span></p></header>
+            <span class="p-author h-card" itemprop="name"> - Firas Esbai</span></span></p><p class="post-meta last-updated">
+        Last updated:<time class="dt-modified" datetime="2024-12-23T00:00:00+00:00" itemprop="dateModified">
+          Dec 23, 2024
+        </time>
+      </p></header>
 
   <div class="post-content e-content" itemprop="articleBody">
     <p><em>This article contains a collection of notes, mind maps and resources to support you while preparing for the google cloud professional data engineer certification.</em></p>
@@ -212,9 +220,33 @@ That being said, I believe most of the content is still relevant and can serve a
 </ul>
 <hr />
 
+<script src="/js/visualizations/mind-map.js"></script>
+
+<script src="/js/visualizations/create-chart.js"></script>
+
 <h2 id="google-cloud">Google Cloud</h2>
 
-<p>Before we dive into the characteristics of Google Cloud services that will enable professional data engineers to design, build and operationalize data processing systems, let’s start with a 10,000-foot view on different topics that may be included in the exam.</p>
+<p>Before we dive into the characteristics of Google Cloud services that will enable professional data engineers to design, build and operationalize data processing systems, let’s start with a 10,000-foot view on different topics that may be included in the exam presented in the below interactive mindmap:</p>
+
+<div id="mindmap-container"></div>
+<script>
+    createChart("mindmap-container", "/assets/data/2023-11-19-gcp-data-engineer-certification/google-cloud.json", "mindmap", {
+      width: 800,
+      height: 600,
+      nodeColor: "#fefae0",
+      nodeBorderColor: "#333",
+      linkColor: "#aaa",
+      linkWidth: 2,
+      textFontSize: "14px",
+      textColor: "#444"
+    });
+</script>
+
+<figure>
+   <figcaption>Figure 1: 10,000 View on Google Cloud Professional Data Engineer Exam Topics</figcaption>
+</figure>
+
+<p>In the coming sections, we will cover each topic from the mindmap separately.</p>
 
 <h3 id="infrastructure">Infrastructure</h3>
 
@@ -224,7 +256,7 @@ Most regions have at least three zones and can have more. All regions have at le
 
 <figure>
   <img src="/assets/images/articles/18_gcp_regions.png" alt="world map of google cloud region locations" />
-  <figcaption>Figure 1: Google Cloud Regions - <a href="https://cloud.google.com/about/locations#lightbox-regions-map">Image Source</a></figcaption>
+  <figcaption>Figure 2: Google Cloud Regions - <a href="https://cloud.google.com/about/locations#lightbox-regions-map">Image Source</a></figcaption>
 </figure>
 
 <p>Google data centers are connected with Google’s own high-speed network. Google is the only cloud provider that owns all the fiber connecting its data center together. A huge amount of the world’s internet traffic goes through Google’s network.</p>
@@ -235,75 +267,121 @@ Most regions have at least three zones and can have more. All regions have at le
 
 <h3 id="vpc-networks">VPC Networks</h3>
 
-<p><img src="/assets/images/articles/18_gcp_vpc_networks.png" alt="Google Cloud Platform VPC Networks" /><br />
-<em>Figure 2: Google Cloud Platform VPC Networks</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_vpc_networks.png" alt="mindmap of topics related to VPC networks" />
+  <figcaption>Figure 3: Google Cloud Platform VPC Networks</figcaption>
+</figure>
 
 <h3 id="data-transfer-services">Data Transfer Services</h3>
 
-<p><img src="/assets/images/articles/18_gcp_data_transfer_services.png" alt="Google Cloud Platform Data Transfer Services" /><br />
-<em>Figure 3: Google Cloud Platform Data Transfer Services</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_data_transfer_services.png" alt="mindmap of topics related to data transfer services" />
+  <figcaption>Figure 4: Google Cloud Platform Data Transfer Services</figcaption>
+</figure>
 
 <h3 id="resource-manager">Resource Manager</h3>
 
-<p><img src="/assets/images/articles/18_gcp_resource_manager.png" alt="Google Cloud Platform Resource Manager" /><br />
-<em>Figure 4: Google Cloud Platform Resource Manager</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_resource_manager.png" alt="mindmap of topics related to resource manager" />
+  <figcaption>Figure 5: Google Cloud Platform Resource Manager</figcaption>
+</figure>
 
 <h3 id="security">Security</h3>
 
-<p><img src="/assets/images/articles/18_gcp_security.png" alt="Security in Google Cloud Platform" /><br />
-<em>Figure 5: Security in Google Cloud Platform</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_security.png" alt="mindmap of topics related to security" />
+  <figcaption>Figure 6: Security in Google Cloud Platform</figcaption>
+</figure>
 
 <h3 id="compute">Compute</h3>
 
-<p><img src="/assets/images/articles/18_gcp_compute.png" alt="Google Cloud Platform Compute" /><br />
-<em>Figure 6: Google Cloud Platform Compute</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_compute.png" alt="mindmap of topics related to compute" />
+  <figcaption>Figure 7: Google Cloud Platform Compute</figcaption>
+</figure>
 
 <h3 id="storage">Storage</h3>
 
-<p><img src="/assets/images/articles/18_gcp_storage.png" alt="Google Cloud Platform Storage" /><br />
-<em>Figure 7: Google Cloud Platform Storage</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_storage.png" alt="mindmap of topics related to storage" />
+  <figcaption>Figure 8: Google Cloud Platform Storage</figcaption>
+</figure>
 
 <h3 id="ingestion-and-processing">Ingestion and Processing</h3>
 
-<p><img src="/assets/images/articles/18_gcp_ingestion_and_processing.png" alt="Ingestion and Processing in Google Cloud Platform" /><br />
-<em>Figure 8: Ingestion and Processing in Google Cloud Platform</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_ingestion_and_processing.png" alt="mindmap of topics related to ingestion and processing" />
+  <figcaption>Figure 9: Ingestion and Processing in Google Cloud Platform</figcaption>
+</figure>
 
 <h3 id="data-pipelines-management">Data Pipelines Management</h3>
 
-<p><img src="/assets/images/articles/18_gcp_data_pipelines_management.png" alt="Data Pipelines Management in Google Cloud Platform Data" /><br />
-<em>Figure 9: Data Pipelines Management in Google Cloud Platform Data</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_data_pipelines_management.png" alt="mindmap of topics related to data pipelines management" />
+  <figcaption>Figure 10: Data Pipelines Management in Google Cloud Platform Data</figcaption>
+</figure>
 
 <h3 id="data-governance">Data Governance</h3>
 
-<p><img src="/assets/images/articles/18_gcp_data_governance.png" alt="Data Governance in Google Cloud Platform" /><br />
-<em>Figure 10: Data Governance in Google Cloud Platform</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_data_governance.png" alt="mindmap of topics related to data governance" />
+  <figcaption>Figure 11: Data Governance in Google Cloud Platform</figcaption>
+</figure>
 
 <h3 id="analytics">Analytics</h3>
 
-<p><img src="/assets/images/articles/18_gcp_analytics.png" alt="Analytics in Google Cloud Platform" /><br />
-<em>Figure 11: Analytics in Google Cloud Platform</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_analytics.png" alt="mindmap of topics related to analytics" />
+  <figcaption>Figure 12: Analytics in Google Cloud Platform</figcaption>
+</figure>
 
 <h3 id="machine-learning">Machine Learning</h3>
 
-<p><img src="/assets/images/articles/18_gcp_machine_learning.png" alt="Machine Learning in Google Cloud Platform" /><br />
-<em>Figure 12: Machine Learning in Google Cloud Platform</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_machine_learning.png" alt="mindmap of topics related to machine learning" />
+  <figcaption>Figure 13: Machine Learning in Google Cloud Platform</figcaption>
+</figure>
 
 <h2 id="ingestion-and-pocessing">Ingestion and Pocessing</h2>
 
 <p>As a professional data engineer, designing data processing systems requires building and operationalizing data pipelines by choosing the appropriate services to integrate new data sources and processing the data in batch or streaming fashion. In this section, we deep dive into services that will allow you to ingest data in real time and build data processing systems whether you are migrating on premises workloads or starting from scratch.</p>
 
+<div id="mindmap-container-ingestion-and-processing"></div>
+<script>
+    createChart("mindmap-container-ingestion-and-processing", "/assets/data/2023-11-19-gcp-data-engineer-certification/ingestion-and-processing.json", "mindmap", {
+      width: 800,
+      height: 600,
+      nodeColor: "#fefae0",
+      nodeBorderColor: "#333",
+      linkColor: "#aaa",
+      linkWidth: 2,
+      textFontSize: "14px",
+      textColor: "#444"
+    });
+</script>
+
+<figure>
+   <figcaption>Figure 14: Ingestion and Processing Topics</figcaption>
+</figure>
+
 <h3 id="pubsub">Pub/Sub</h3>
 
-<p><img src="/assets/images/articles/18_gcp_pub_sub.png" alt="Pub/Sub" /><br />
-<em>Figure 13: Pub/Sub</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_pub_sub.png" alt="mindmap of topics related to pub sub" />
+  <figcaption>Figure 15: Pub/Sub</figcaption>
+</figure>
 
 <h3 id="dataproc">Dataproc</h3>
 
-<p><img src="/assets/images/articles/18_gcp_dataproc.png" alt="Dataproc 1/2" /><br />
-<em>Figure 14: Dataproc 1/2</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_dataproc.png" alt="mindmap of topics related to dataproc part 1" />
+  <figcaption>Figure 16: Dataproc Part 1/2</figcaption>
+</figure>
 
-<p><img src="/assets/images/articles/18_gcp_dataproc_2.png" alt="Dataproc 2/2" /><br />
-<em>Figure 15: Dataproc 2/2</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_dataproc_2.png" alt="mindmap of topics related to dataproc part 2" />
+  <figcaption>Figure 17: Dataproc Part 2/2</figcaption>
+</figure>
 
 <h3 id="dataflow">Dataflow</h3>
 
@@ -334,26 +412,54 @@ Most regions have at least three zones and can have more. All regions have at le
   </li>
 </ul>
 
-<p><img src="/assets/images/articles/18_gcp_dataflow.png" alt="Dataflow 1/3" /><br />
-<em>Figure 16: Dataflow 1/3</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_dataflow.png" alt="mindmap of topics related to dataproc part 1" />
+  <figcaption>Figure 18: Datflow Part 1/3</figcaption>
+</figure>
 
-<p><img src="/assets/images/articles/18_gcp_dataflow_2.png" alt="Dataflow 2/3" /><br />
-<em>Figure 17: Dataflow 2/3</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_dataflow_2.png" alt="mindmap of topics related to dataproc part 2" />
+  <figcaption>Figure 19: Datflow Part 2/3</figcaption>
+</figure>
 
-<p><img src="/assets/images/articles/18_gcp_dataflow_3.png" alt="Dataflow 3/3" /><br />
-<em>Figure 18: Dataflow 3/3</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_dataflow_3.png" alt="mindmap of topics related to dataproc part 3" />
+  <figcaption>Figure 20: Datflow Part 3/3</figcaption>
+</figure>
 
 <h2 id="storage-1">Storage</h2>
 
 <p>One of a data engineer’s most important skills is choosing the right storage technology, which involves knowing how to use managed services and having a solid grasp of storage performance and pricing. To further optimize your data processing and cut expenses, consider data modeling, schema design, and data life cycle management. In this section we will delve into the many storage options provided by Google Cloud.</p>
 
+<div id="mindmap-container-storage"></div>
+<script>
+    createChart("mindmap-container-storage", "/assets/data/2023-11-19-gcp-data-engineer-certification/storage.json", "mindmap", {
+      width: 800,
+      height: 600,
+      nodeColor: "#fefae0",
+      nodeBorderColor: "#333",
+      linkColor: "#aaa",
+      linkWidth: 2,
+      textFontSize: "14px",
+      textColor: "#444"
+    });
+</script>
+
+<figure>
+   <figcaption>Figure 21: Storage Topics</figcaption>
+</figure>
+
 <h3 id="cloud-storage">Cloud Storage</h3>
 
-<p><img src="/assets/images/articles/18_gcp_cloud_storage.png" alt="Cloud Storage 1/2" /><br />
-<em>Figure 19: Cloud Storage 1/2</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_cloud_storage.png" alt="mindmap of topics related to cloud storage part 1" />
+  <figcaption>Figure 22: Cloud Storage Part 1/2</figcaption>
+</figure>
 
-<p><img src="/assets/images/articles/18_gcp_cloud_storage_2.png" alt="Cloud Storage 2/2" /><br />
-<em>Figure 20: Cloud Storage 2/2</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_cloud_storage_2.png" alt="mindmap of topics related to cloud storage part 2" />
+  <figcaption>Figure 23: Cloud Storage Part 2/2</figcaption>
+</figure>
 
 <p>Google Cloud provides 3 ways to manage the KEK encryption key:</p>
 <ul>
@@ -371,33 +477,45 @@ Most regions have at least three zones and can have more. All regions have at le
   <li>Microsoft SQL</li>
 </ul>
 
-<p><img src="/assets/images/articles/18_gcp_cloud_sql.png" alt="Cloud SQL" /><br />
-<em>Figure 21: Cloud SQL</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_cloud_sql.png" alt="mindmap of topics related to cloud slq" />
+  <figcaption>Figure 24: Cloud SQL</figcaption>
+</figure>
 
 <h3 id="query-insights">Query Insights</h3>
 
-<p><img src="/assets/images/articles/18_gcp_insights.png" alt="Query Insights" /><br />
-<em>Figure 22: Query Insights</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_insights.png" alt="mindmap of topics related to query insights" />
+  <figcaption>Figure 25: Query Insights</figcaption>
+</figure>
 
 <h3 id="cloud-spanner">Cloud Spanner</h3>
 
-<p><img src="/assets/images/articles/18_gcp_cloud_spanner.png" alt="Cloud Spanner" /><br />
-<em>Figure 23: Cloud Spanner</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_cloud_spanner.png" alt="mindmap of topics related to cloud spanner" />
+  <figcaption>Figure 26: Cloud Spanner</figcaption>
+</figure>
 
 <h3 id="firestore">Firestore</h3>
 
-<p><img src="/assets/images/articles/18_gcp_firestore.png" alt="Firestore" /><br />
-<em>Figure 24: Firestore</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_firestore.png" alt="mindmap of topics related to firestore" />
+  <figcaption>Figure 27: Firestore</figcaption>
+</figure>
 
 <h3 id="datastore">Datastore</h3>
 
-<p><img src="/assets/images/articles/18_gcp_datastore.png" alt="Datastore" /><br />
-<em>Figure 25: Datastore</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_datastore.png" alt="mindmap of topics related to datastore" />
+  <figcaption>Figure 28: Datastore</figcaption>
+</figure>
 
 <h3 id="memorystore">Memorystore</h3>
 
-<p><img src="/assets/images/articles/18_gcp_memorystore.png" alt="Memorystore" /><br />
-<em>Figure 26: Memorystore</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_memorystore.png" alt="mindmap of topics related to memorystore" />
+  <figcaption>Figure 29: Memorystore</figcaption>
+</figure>
 
 <h3 id="bigtable">Bigtable</h3>
 
@@ -408,48 +526,92 @@ Most regions have at least three zones and can have more. All regions have at le
   <li>Low latency random data access</li>
 </ul>
 
-<p><img src="/assets/images/articles/18_gcp_bigtable.png" alt="Bigtable" /><br />
-<em>Figure 27: Bigtable</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigtable.png" alt="mindmap of topics related to bigtable" />
+  <figcaption>Figure 30: Bigtable</figcaption>
+</figure>
 
 <h2 id="bigquery">BigQuery</h2>
 
+<div id="mindmap-container-bigquery"></div>
+<script>
+    createChart("mindmap-container-bigquery", "/assets/data/2023-11-19-gcp-data-engineer-certification/bigquery.json", "mindmap", {
+      width: 800,
+      height: 600,
+      nodeColor: "#fefae0",
+      nodeBorderColor: "#333",
+      linkColor: "#aaa",
+      linkWidth: 2,
+      textFontSize: "14px",
+      textColor: "#444"
+    });
+</script>
+
+<figure>
+   <figcaption>Figure 31: BigQuery Topics</figcaption>
+</figure>
+
 <p>The last section is solely dedicated to BigQuery. BigQuery is a serverless and cost-effective data warehouse. It is deeply integrated with the GCP’s analytical and data processing offering, allowing customers to build an enterprise ready cloud native data warehouse. BigQuery is part of Google Cloud’s comprehensive data analytics platform that covers the analytics value chain from Ingest, process and store to advanced analytics and collaboration.</p>
 
-<p><img src="/assets/images/articles/18_gcp_bigquery.png" alt="BigQuery 1/12" /><br />
-<em>Figure 28: BigQuery 1/12</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery.png" alt="mindmap of topics related to bigquery part 1" />
+  <figcaption>Figure 32: BigQuery Part 1/12</figcaption>
+</figure>
 
-<p><img src="/assets/images/articles/18_gcp_bigquery_2.png" alt="BigQuery 2/12" /><br />
-<em>Figure 29: BigQuery 2/12</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_2.png" alt="mindmap of topics related to bigquery part 2" />
+  <figcaption>Figure 33: BigQuery Part 2/12</figcaption>
+</figure>
 
-<p><img src="/assets/images/articles/18_gcp_bigquery_3.png" alt="BigQuery 3/12" /><br />
-<em>Figure 30: BigQuery 3/12</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_3.png" alt="mindmap of topics related to bigquery part 3" />
+  <figcaption>Figure 34: BigQuery Part 3/12</figcaption>
+</figure>
 
-<p><img src="/assets/images/articles/18_gcp_bigquery_4.png" alt="BigQuery 4/12" /><br />
-<em>Figure 31: BigQuery 4/12</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_4.png" alt="mindmap of topics related to bigquery part 4" />
+  <figcaption>Figure 35: BigQuery Part 4/12</figcaption>
+</figure>
 
-<p><img src="/assets/images/articles/18_gcp_bigquery_5.png" alt="BigQuery 5/12" /><br />
-<em>Figure 32: BigQuery 5/12</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_5.png" alt="mindmap of topics related to bigquery part 5" />
+  <figcaption>Figure 36: BigQuery Part 5/12</figcaption>
+</figure>
 
-<p><img src="/assets/images/articles/18_gcp_bigquery_6.png" alt="BigQuery 6/12" /><br />
-<em>Figure 33: BigQuery 6/12</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_6.png" alt="mindmap of topics related to bigquery part 6" />
+  <figcaption>Figure 37: BigQuery Part 6/12</figcaption>
+</figure>
 
-<p><img src="/assets/images/articles/18_gcp_bigquery_7.png" alt="BigQuery 7/12" /><br />
-<em>Figure 34: BigQuery 7/12</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_7.png" alt="mindmap of topics related to bigquery part 7" />
+  <figcaption>Figure 38: BigQuery Part 7/12</figcaption>
+</figure>
 
-<p><img src="/assets/images/articles/18_gcp_bigquery_8.png" alt="BigQuery 8/12" /><br />
-<em>Figure 35: BigQuery 8/12</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_8.png" alt="mindmap of topics related to bigquery part 8" />
+  <figcaption>Figure 39: BigQuery Part 8/12</figcaption>
+</figure>
 
-<p><img src="/assets/images/articles/18_gcp_bigquery_9.png" alt="BigQuery 9/12" /><br />
-<em>Figure 36: BigQuery 9/12</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_9.png" alt="mindmap of topics related to bigquery part 9" />
+  <figcaption>Figure 40: BigQuery Part 9/12</figcaption>
+</figure>
 
-<p><img src="/assets/images/articles/18_gcp_bigquery_10.png" alt="BigQuery 10/12" /><br />
-<em>Figure 37: BigQuery 10/12</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_10.png" alt="mindmap of topics related to bigquery part 10" />
+  <figcaption>Figure 41: BigQuery Part 10/12</figcaption>
+</figure>
 
-<p><img src="/assets/images/articles/18_gcp_bigquery_11.png" alt="BigQuery 11/12" /><br />
-<em>Figure 38: BigQuery 11/12</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_11.png" alt="mindmap of topics related to bigquery part 11" />
+  <figcaption>Figure 42: BigQuery Part 11/12</figcaption>
+</figure>
 
-<p><img src="/assets/images/articles/18_gcp_bigquery_12.png" alt="BigQuery 12/12" /><br />
-<em>Figure 39: BigQuery 12/12</em></p>
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_12.png" alt="mindmap of topics related to bigquery part 12" />
+  <figcaption>Figure 43: BigQuery Part 12/12</figcaption>
+</figure>
 
 <h2 id="resources">Resources</h2>
 
