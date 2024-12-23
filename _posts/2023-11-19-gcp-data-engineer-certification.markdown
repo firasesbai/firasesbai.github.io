@@ -2,6 +2,7 @@
 layout: post
 title:  "Preparation Guide for Google Cloud Professional Data Engineer Certification"
 date:   2023-11-19
+modified_date: 2024-12-23
 category: articles
 tags: ["Cloud Computing"]
 author: Firas Esbai
@@ -20,9 +21,31 @@ So brace yourselves, this is gonna be a rather long post filled with too many im
 
 {% include table-of-content.html %}
 
+<script src="/js/visualizations/mind-map.js"></script>
+<script src="/js/visualizations/create-chart.js"></script>
+
 ## Google Cloud ##
 
-Before we dive into the characteristics of Google Cloud services that will enable professional data engineers to design, build and operationalize data processing systems, let’s start with a 10,000-foot view on different topics that may be included in the exam. 
+Before we dive into the characteristics of Google Cloud services that will enable professional data engineers to design, build and operationalize data processing systems, let’s start with a 10,000-foot view on different topics that may be included in the exam presented in the below interactive mindmap:
+
+<div id="mindmap-container"></div>
+<script>
+    createChart("mindmap-container", "/assets/data/2023-11-19-gcp-data-engineer-certification/google-cloud.json", "mindmap", {
+      width: 800,
+      height: 600,
+      nodeColor: "#fefae0",
+      nodeBorderColor: "#333",
+      linkColor: "#aaa",
+      linkWidth: 2,
+      textFontSize: "14px",
+      textColor: "#444"
+    });
+</script>
+<figure>
+   <figcaption>Figure 1: 10,000 View on Google Cloud Professional Data Engineer Exam Topics</figcaption>
+</figure>
+
+In the coming sections, we will cover each topic from the mindmap separately.  
 
 ### Infrastructure ###
 
@@ -32,7 +55,7 @@ Most regions have at least three zones and can have more. All regions have at le
 
 <figure>
   <img src="/assets/images/articles/18_gcp_regions.png" alt="world map of google cloud region locations">
-  <figcaption>Figure 1: Google Cloud Regions - <a href="https://cloud.google.com/about/locations#lightbox-regions-map">Image Source</a></figcaption>
+  <figcaption>Figure 2: Google Cloud Regions - <a href="https://cloud.google.com/about/locations#lightbox-regions-map">Image Source</a></figcaption>
 </figure>
 
 Google data centers are connected with Google’s own high-speed network. Google is the only cloud provider that owns all the fiber connecting its data center together. A huge amount of the world’s internet traffic goes through Google’s network.
@@ -43,76 +66,121 @@ In addition to the POPs, Google runs a global caching system or CDN that consist
 
 ### VPC Networks ###
 
-![Google Cloud Platform VPC Networks](/assets/images/articles/18_gcp_vpc_networks.png)<br>
-*Figure 2: Google Cloud Platform VPC Networks*
+<figure>
+  <img src="/assets/images/articles/18_gcp_vpc_networks.png" alt="mindmap of topics related to VPC networks">
+  <figcaption>Figure 3: Google Cloud Platform VPC Networks</figcaption>
+</figure>
 
 ### Data Transfer Services ###
 
-![Google Cloud Platform Data Transfer Services](/assets/images/articles/18_gcp_data_transfer_services.png)<br>
-*Figure 3: Google Cloud Platform Data Transfer Services*
+<figure>
+  <img src="/assets/images/articles/18_gcp_data_transfer_services.png" alt="mindmap of topics related to data transfer services">
+  <figcaption>Figure 4: Google Cloud Platform Data Transfer Services</figcaption>
+</figure>
 
 ### Resource Manager ###
 
-![Google Cloud Platform Resource Manager](/assets/images/articles/18_gcp_resource_manager.png)<br>
-*Figure 4: Google Cloud Platform Resource Manager*
+<figure>
+  <img src="/assets/images/articles/18_gcp_resource_manager.png" alt="mindmap of topics related to resource manager">
+  <figcaption>Figure 5: Google Cloud Platform Resource Manager</figcaption>
+</figure>
 
 ### Security ###
 
-![Security in Google Cloud Platform](/assets/images/articles/18_gcp_security.png)<br>
-*Figure 5: Security in Google Cloud Platform*
+<figure>
+  <img src="/assets/images/articles/18_gcp_security.png" alt="mindmap of topics related to security">
+  <figcaption>Figure 6: Security in Google Cloud Platform</figcaption>
+</figure>
 
 ### Compute ###
 
-![Google Cloud Platform Compute](/assets/images/articles/18_gcp_compute.png)<br>
-*Figure 6: Google Cloud Platform Compute*
+<figure>
+  <img src="/assets/images/articles/18_gcp_compute.png" alt="mindmap of topics related to compute">
+  <figcaption>Figure 7: Google Cloud Platform Compute</figcaption>
+</figure>
 
 ### Storage ### 
 
-![Google Cloud Platform Storage](/assets/images/articles/18_gcp_storage.png)<br>
-*Figure 7: Google Cloud Platform Storage*
+<figure>
+  <img src="/assets/images/articles/18_gcp_storage.png" alt="mindmap of topics related to storage">
+  <figcaption>Figure 8: Google Cloud Platform Storage</figcaption>
+</figure>
 
 ### Ingestion and Processing ###
 
-![Ingestion and Processing in Google Cloud Platform](/assets/images/articles/18_gcp_ingestion_and_processing.png)<br>
-*Figure 8: Ingestion and Processing in Google Cloud Platform*
+<figure>
+  <img src="/assets/images/articles/18_gcp_ingestion_and_processing.png" alt="mindmap of topics related to ingestion and processing">
+  <figcaption>Figure 9: Ingestion and Processing in Google Cloud Platform</figcaption>
+</figure>
 
 ### Data Pipelines Management ###
 
-![Data Pipelines Management in Google Cloud Platform Data](/assets/images/articles/18_gcp_data_pipelines_management.png)<br>
-*Figure 9: Data Pipelines Management in Google Cloud Platform Data*
+<figure>
+  <img src="/assets/images/articles/18_gcp_data_pipelines_management.png" alt="mindmap of topics related to data pipelines management">
+  <figcaption>Figure 10: Data Pipelines Management in Google Cloud Platform Data</figcaption>
+</figure>
 
 ### Data Governance ###
 
-![Data Governance in Google Cloud Platform](/assets/images/articles/18_gcp_data_governance.png)<br>
-*Figure 10: Data Governance in Google Cloud Platform*
+<figure>
+  <img src="/assets/images/articles/18_gcp_data_governance.png" alt="mindmap of topics related to data governance">
+  <figcaption>Figure 11: Data Governance in Google Cloud Platform</figcaption>
+</figure>
 
 ### Analytics ###
 
-![Analytics in Google Cloud Platform](/assets/images/articles/18_gcp_analytics.png)<br>
-*Figure 11: Analytics in Google Cloud Platform*
+<figure>
+  <img src="/assets/images/articles/18_gcp_analytics.png" alt="mindmap of topics related to analytics">
+  <figcaption>Figure 12: Analytics in Google Cloud Platform</figcaption>
+</figure>
 
 ### Machine Learning ###
 
-![Machine Learning in Google Cloud Platform](/assets/images/articles/18_gcp_machine_learning.png)<br>
-*Figure 12: Machine Learning in Google Cloud Platform*
+<figure>
+  <img src="/assets/images/articles/18_gcp_machine_learning.png" alt="mindmap of topics related to machine learning">
+  <figcaption>Figure 13: Machine Learning in Google Cloud Platform</figcaption>
+</figure>
 
 ## Ingestion and Pocessing ##
 
 As a professional data engineer, designing data processing systems requires building and operationalizing data pipelines by choosing the appropriate services to integrate new data sources and processing the data in batch or streaming fashion. In this section, we deep dive into services that will allow you to ingest data in real time and build data processing systems whether you are migrating on premises workloads or starting from scratch. 
 
+<div id="mindmap-container-ingestion-and-processing"></div>
+<script>
+    createChart("mindmap-container-ingestion-and-processing", "/assets/data/2023-11-19-gcp-data-engineer-certification/ingestion-and-processing.json", "mindmap", {
+      width: 800,
+      height: 600,
+      nodeColor: "#fefae0",
+      nodeBorderColor: "#333",
+      linkColor: "#aaa",
+      linkWidth: 2,
+      textFontSize: "14px",
+      textColor: "#444"
+    });
+</script>
+<figure>
+   <figcaption>Figure 14: Ingestion and Processing Topics</figcaption>
+</figure>
+
+
 ### Pub/Sub ###
 
-![Pub/Sub](/assets/images/articles/18_gcp_pub_sub.png)<br>
-*Figure 13: Pub/Sub*
+<figure>
+  <img src="/assets/images/articles/18_gcp_pub_sub.png" alt="mindmap of topics related to pub sub">
+  <figcaption>Figure 15: Pub/Sub</figcaption>
+</figure>
 
 ### Dataproc ###
 
-![Dataproc 1/2](/assets/images/articles/18_gcp_dataproc.png)<br>
-*Figure 14: Dataproc 1/2*
+<figure>
+  <img src="/assets/images/articles/18_gcp_dataproc.png" alt="mindmap of topics related to dataproc part 1">
+  <figcaption>Figure 16: Dataproc Part 1/2</figcaption>
+</figure>
 
-![Dataproc 2/2](/assets/images/articles/18_gcp_dataproc_2.png)<br>
-*Figure 15: Dataproc 2/2*
-
+<figure>
+  <img src="/assets/images/articles/18_gcp_dataproc_2.png" alt="mindmap of topics related to dataproc part 2">
+  <figcaption>Figure 17: Dataproc Part 2/2</figcaption>
+</figure>
 
 ### Dataflow ###
 
@@ -129,26 +197,53 @@ It allows you to execute your Apache Beans pipelines on Google Cloud.
 - The Apache Beam SDK, which provides the programming environment to make the creation of streaming and batch pipelines easier 
    - Defines *WHAT* has to be done
 
-![Dataflow 1/3](/assets/images/articles/18_gcp_dataflow.png)<br>
-*Figure 16: Dataflow 1/3*
+<figure>
+  <img src="/assets/images/articles/18_gcp_dataflow.png" alt="mindmap of topics related to dataproc part 1">
+  <figcaption>Figure 18: Datflow Part 1/3</figcaption>
+</figure>
 
-![Dataflow 2/3](/assets/images/articles/18_gcp_dataflow_2.png)<br>
-*Figure 17: Dataflow 2/3*
+<figure>
+  <img src="/assets/images/articles/18_gcp_dataflow_2.png" alt="mindmap of topics related to dataproc part 2">
+  <figcaption>Figure 19: Datflow Part 2/3</figcaption>
+</figure>
 
-![Dataflow 3/3](/assets/images/articles/18_gcp_dataflow_3.png)<br>
-*Figure 18: Dataflow 3/3*
+<figure>
+  <img src="/assets/images/articles/18_gcp_dataflow_3.png" alt="mindmap of topics related to dataproc part 3">
+  <figcaption>Figure 20: Datflow Part 3/3</figcaption>
+</figure>
 
 ## Storage ##
 
 One of a data engineer's most important skills is choosing the right storage technology, which involves knowing how to use managed services and having a solid grasp of storage performance and pricing. To further optimize your data processing and cut expenses, consider data modeling, schema design, and data life cycle management. In this section we will delve into the many storage options provided by Google Cloud. 
 
+<div id="mindmap-container-storage"></div>
+<script>
+    createChart("mindmap-container-storage", "/assets/data/2023-11-19-gcp-data-engineer-certification/storage.json", "mindmap", {
+      width: 800,
+      height: 600,
+      nodeColor: "#fefae0",
+      nodeBorderColor: "#333",
+      linkColor: "#aaa",
+      linkWidth: 2,
+      textFontSize: "14px",
+      textColor: "#444"
+    });
+</script>
+<figure>
+   <figcaption>Figure 21: Storage Topics</figcaption>
+</figure>
+
 ### Cloud Storage ### 
 
-![Cloud Storage 1/2](/assets/images/articles/18_gcp_cloud_storage.png)<br>
-*Figure 19: Cloud Storage 1/2*
+<figure>
+  <img src="/assets/images/articles/18_gcp_cloud_storage.png" alt="mindmap of topics related to cloud storage part 1">
+  <figcaption>Figure 22: Cloud Storage Part 1/2</figcaption>
+</figure>
 
-![Cloud Storage 2/2](/assets/images/articles/18_gcp_cloud_storage_2.png)<br>
-*Figure 20: Cloud Storage 2/2*
+<figure>
+  <img src="/assets/images/articles/18_gcp_cloud_storage_2.png" alt="mindmap of topics related to cloud storage part 2">
+  <figcaption>Figure 23: Cloud Storage Part 2/2</figcaption>
+</figure>
 
 Google Cloud provides 3 ways to manage the KEK encryption key:
 - Google Managed Encryption Keys - GMEK: automatic encryption using Cloud KMS (Key Management Service)
@@ -162,33 +257,45 @@ Cloud SQL is a fully managed relational database service for:
 - PostgreSQL
 - Microsoft SQL
 
-![Cloud SQL](/assets/images/articles/18_gcp_cloud_sql.png)<br>
-*Figure 21: Cloud SQL*
+<figure>
+  <img src="/assets/images/articles/18_gcp_cloud_sql.png" alt="mindmap of topics related to cloud slq">
+  <figcaption>Figure 24: Cloud SQL</figcaption>
+</figure>
 
 ### Query Insights ### 
 
-![Query Insights](/assets/images/articles/18_gcp_insights.png)<br>
-*Figure 22: Query Insights*
+<figure>
+  <img src="/assets/images/articles/18_gcp_insights.png" alt="mindmap of topics related to query insights">
+  <figcaption>Figure 25: Query Insights</figcaption>
+</figure>
 
 ### Cloud Spanner ### 
 
-![Cloud Spanner](/assets/images/articles/18_gcp_cloud_spanner.png)<br>
-*Figure 23: Cloud Spanner*
+<figure>
+  <img src="/assets/images/articles/18_gcp_cloud_spanner.png" alt="mindmap of topics related to cloud spanner">
+  <figcaption>Figure 26: Cloud Spanner</figcaption>
+</figure>
 
 ### Firestore ### 
 
-![Firestore](/assets/images/articles/18_gcp_firestore.png)<br>
-*Figure 24: Firestore*
+<figure>
+  <img src="/assets/images/articles/18_gcp_firestore.png" alt="mindmap of topics related to firestore">
+  <figcaption>Figure 27: Firestore</figcaption>
+</figure>
 
 ### Datastore ### 
 
-![Datastore](/assets/images/articles/18_gcp_datastore.png)<br>
-*Figure 25: Datastore*
+<figure>
+  <img src="/assets/images/articles/18_gcp_datastore.png" alt="mindmap of topics related to datastore">
+  <figcaption>Figure 28: Datastore</figcaption>
+</figure>
 
 ### Memorystore ### 
 
-![Memorystore](/assets/images/articles/18_gcp_memorystore.png)<br>
-*Figure 26: Memorystore*
+<figure>
+  <img src="/assets/images/articles/18_gcp_memorystore.png" alt="mindmap of topics related to memorystore">
+  <figcaption>Figure 29: Memorystore</figcaption>
+</figure>
 
 ### Bigtable ### 
 
@@ -197,49 +304,91 @@ Bigtable is a fully managed NoSQL database service. It is suitable for:
 - High Throughput 
 - Low latency random data access 
 
-![Bigtable](/assets/images/articles/18_gcp_bigtable.png)<br>
-*Figure 27: Bigtable*
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigtable.png" alt="mindmap of topics related to bigtable">
+  <figcaption>Figure 30: Bigtable</figcaption>
+</figure>
 
 ## BigQuery ##
 
+<div id="mindmap-container-bigquery"></div>
+<script>
+    createChart("mindmap-container-bigquery", "/assets/data/2023-11-19-gcp-data-engineer-certification/bigquery.json", "mindmap", {
+      width: 800,
+      height: 600,
+      nodeColor: "#fefae0",
+      nodeBorderColor: "#333",
+      linkColor: "#aaa",
+      linkWidth: 2,
+      textFontSize: "14px",
+      textColor: "#444"
+    });
+</script>
+<figure>
+   <figcaption>Figure 31: BigQuery Topics</figcaption>
+</figure>
+
 The last section is solely dedicated to BigQuery. BigQuery is a serverless and cost-effective data warehouse. It is deeply integrated with the GCP’s analytical and data processing offering, allowing customers to build an enterprise ready cloud native data warehouse. BigQuery is part of Google Cloud’s comprehensive data analytics platform that covers the analytics value chain from Ingest, process and store to advanced analytics and collaboration.
 
-![BigQuery 1/12](/assets/images/articles/18_gcp_bigquery.png)<br>
-*Figure 28: BigQuery 1/12*
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery.png" alt="mindmap of topics related to bigquery part 1">
+  <figcaption>Figure 32: BigQuery Part 1/12</figcaption>
+</figure>
 
-![BigQuery 2/12](/assets/images/articles/18_gcp_bigquery_2.png)<br>
-*Figure 29: BigQuery 2/12*
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_2.png" alt="mindmap of topics related to bigquery part 2">
+  <figcaption>Figure 33: BigQuery Part 2/12</figcaption>
+</figure>
 
-![BigQuery 3/12](/assets/images/articles/18_gcp_bigquery_3.png)<br>
-*Figure 30: BigQuery 3/12*
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_3.png" alt="mindmap of topics related to bigquery part 3">
+  <figcaption>Figure 34: BigQuery Part 3/12</figcaption>
+</figure>
 
-![BigQuery 4/12](/assets/images/articles/18_gcp_bigquery_4.png)<br>
-*Figure 31: BigQuery 4/12*
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_4.png" alt="mindmap of topics related to bigquery part 4">
+  <figcaption>Figure 35: BigQuery Part 4/12</figcaption>
+</figure>
 
-![BigQuery 5/12](/assets/images/articles/18_gcp_bigquery_5.png)<br>
-*Figure 32: BigQuery 5/12*
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_5.png" alt="mindmap of topics related to bigquery part 5">
+  <figcaption>Figure 36: BigQuery Part 5/12</figcaption>
+</figure>
 
-![BigQuery 6/12](/assets/images/articles/18_gcp_bigquery_6.png)<br>
-*Figure 33: BigQuery 6/12*
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_6.png" alt="mindmap of topics related to bigquery part 6">
+  <figcaption>Figure 37: BigQuery Part 6/12</figcaption>
+</figure>
 
-![BigQuery 7/12](/assets/images/articles/18_gcp_bigquery_7.png)<br>
-*Figure 34: BigQuery 7/12*
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_7.png" alt="mindmap of topics related to bigquery part 7">
+  <figcaption>Figure 38: BigQuery Part 7/12</figcaption>
+</figure>
 
-![BigQuery 8/12](/assets/images/articles/18_gcp_bigquery_8.png)<br>
-*Figure 35: BigQuery 8/12*
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_8.png" alt="mindmap of topics related to bigquery part 8">
+  <figcaption>Figure 39: BigQuery Part 8/12</figcaption>
+</figure>
 
-![BigQuery 9/12](/assets/images/articles/18_gcp_bigquery_9.png)<br>
-*Figure 36: BigQuery 9/12*
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_9.png" alt="mindmap of topics related to bigquery part 9">
+  <figcaption>Figure 40: BigQuery Part 9/12</figcaption>
+</figure>
 
-![BigQuery 10/12](/assets/images/articles/18_gcp_bigquery_10.png)<br>
-*Figure 37: BigQuery 10/12*
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_10.png" alt="mindmap of topics related to bigquery part 10">
+  <figcaption>Figure 41: BigQuery Part 10/12</figcaption>
+</figure>
 
-![BigQuery 11/12](/assets/images/articles/18_gcp_bigquery_11.png)<br>
-*Figure 38: BigQuery 11/12*
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_11.png" alt="mindmap of topics related to bigquery part 11">
+  <figcaption>Figure 42: BigQuery Part 11/12</figcaption>
+</figure>
 
-![BigQuery 12/12](/assets/images/articles/18_gcp_bigquery_12.png)<br>
-*Figure 39: BigQuery 12/12*
-
+<figure>
+  <img src="/assets/images/articles/18_gcp_bigquery_12.png" alt="mindmap of topics related to bigquery part 12">
+  <figcaption>Figure 43: BigQuery Part 12/12</figcaption>
+</figure>
 
 ## Resources ##
 
