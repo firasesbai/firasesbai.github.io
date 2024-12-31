@@ -2,6 +2,17 @@
   
     {
 
+    "title"      : "Level Up Your SQL Skills As a Data Engineer",
+	  "url"        : "/articles/2024/12/30/level-up-sql-skills-data-engineer.html",
+    "category"   : "articles",
+    "date"       : "2024-12-30 00:00:00 +0000",
+	  "tags"       : "Data Engineering",
+	  "description": "overview of sql topics with example queries for data engineers"
+
+    } ,
+  
+    {
+
     "title"      : "System Desing Interview Blueprint",
 	  "url"        : "/articles/2024/12/08/system-design-interview-blueprint.html",
     "category"   : "articles",

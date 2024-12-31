@@ -1,5 +1,601 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2024-12-23T16:06:33+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Firas Esbai's Lifelong Learning Journey.
-</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">System Desing Interview Blueprint</title><link href="https://www.firasesbai.com/articles/2024/12/08/system-design-interview-blueprint.html" rel="alternate" type="text/html" title="System Desing Interview Blueprint" /><published>2024-12-08T00:00:00+00:00</published><updated>2024-12-08T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/12/08/system-design-interview-blueprint</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/12/08/system-design-interview-blueprint.html">&lt;p&gt;&lt;em&gt;This article contains general guidelines and a reference framework to use when approaching system design interview.&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2024-12-31T11:11:30+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Firas Esbai's Lifelong Learning Journey.
+</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Level Up Your SQL Skills As a Data Engineer</title><link href="https://www.firasesbai.com/articles/2024/12/30/level-up-sql-skills-data-engineer.html" rel="alternate" type="text/html" title="Level Up Your SQL Skills As a Data Engineer" /><published>2024-12-30T00:00:00+00:00</published><updated>2024-12-30T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/12/30/level-up-sql-skills-data-engineer</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/12/30/level-up-sql-skills-data-engineer.html">&lt;p&gt;&lt;em&gt;Mastering SQL and understanding what can be done with it is crucial in making you a better data engineer.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This article is your starting point to leveling up your SQL skills. We will start with a refresher and then move on to more advanced topics and optimizations techniques all packed with concrete examples and a final case study to wrap it all up.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#sql-overview&quot; id=&quot;markdown-toc-sql-overview&quot;&gt;SQL Overview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#sql-query-order-of-execution&quot; id=&quot;markdown-toc-sql-query-order-of-execution&quot;&gt;SQL Query Order of Execution&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#advanced-slq&quot; id=&quot;markdown-toc-advanced-slq&quot;&gt;Advanced SLQ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#subquery-vs-cte-vs-temp-table&quot; id=&quot;markdown-toc-subquery-vs-cte-vs-temp-table&quot;&gt;Subquery vs CTE vs Temp Table&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#what-is-a-subquery&quot; id=&quot;markdown-toc-what-is-a-subquery&quot;&gt;What is a Subquery?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#what-is-a-cte&quot; id=&quot;markdown-toc-what-is-a-cte&quot;&gt;What is a CTE?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#what-is-a-temp-table&quot; id=&quot;markdown-toc-what-is-a-temp-table&quot;&gt;What is a Temp Table?&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#window-functions&quot; id=&quot;markdown-toc-window-functions&quot;&gt;Window Functions&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#so-what-exactly-are-window-functions&quot; id=&quot;markdown-toc-so-what-exactly-are-window-functions&quot;&gt;So what exactly are Window functions?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#breakdown-of-window-functions&quot; id=&quot;markdown-toc-breakdown-of-window-functions&quot;&gt;Breakdown of Window functions&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#sql-query-optimization-techniques&quot; id=&quot;markdown-toc-sql-query-optimization-techniques&quot;&gt;SQL Query Optimization Techniques&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#case-study-nyc-citi-bike-trips&quot; id=&quot;markdown-toc-case-study-nyc-citi-bike-trips&quot;&gt;Case Study: NYC Citi Bike Trips&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;sql-overview&quot;&gt;SQL Overview&lt;/h2&gt;
+
+&lt;p&gt;There are 5 components of the SQL language:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Data Definition Language (DDL)&lt;/strong&gt;: Used to define the structure that holds the data. It includes commands like:
+    &lt;ul&gt;
+      &lt;li&gt;CREATE: Used to create objects in the database (e.g., tables).&lt;/li&gt;
+      &lt;li&gt;ALTER: Used to modify the structure of an existing database object.&lt;/li&gt;
+      &lt;li&gt;DROP: Used to delete objects from the database.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data Manipulation Language (DML)&lt;/strong&gt;: deals with the manipulation of the data itself. Common DML commands include:
+    &lt;ul&gt;
+      &lt;li&gt;INSERT: Used to add new rows of data into a table.&lt;/li&gt;
+      &lt;li&gt;UPDATE: Used to modify existing data within a table.&lt;/li&gt;
+      &lt;li&gt;DELETE: Used to remove rows from a table.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data Control Language (DCL)&lt;/strong&gt;: concerned with the rights, permissions, and other controls of the database system. It includes commands like:
+    &lt;ul&gt;
+      &lt;li&gt;GRANT: Gives users access privileges to database.&lt;/li&gt;
+      &lt;li&gt;REVOKE: Takes back privileges granted with the GRANT command.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Transaction Control Language (TCL)&lt;/strong&gt;: deals with transactions within a database. Transactions allow for control over groups of SQL statements. Common TCL commands include:
+    &lt;ul&gt;
+      &lt;li&gt;COMMIT: Saves changes made during the current transaction.&lt;/li&gt;
+      &lt;li&gt;ROLLBACK: Restores the database to its original state since the last COMMIT.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data Query Language (DQL)&lt;/strong&gt;: used to retrieve data from the database. The primary command in DQL is:
+    &lt;ul&gt;
+      &lt;li&gt;SELECT: Retrieves data from one or more tables.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These components together provide a comprehensive set of tools to interact with and manage databases using SQL.&lt;/p&gt;
+
+&lt;h2 id=&quot;sql-query-order-of-execution&quot;&gt;SQL Query Order of Execution&lt;/h2&gt;
+
+&lt;p&gt;For a given SQL query, the SQL engine will execute its clauses in a specific standard order in order to process your query and return the desired results.&lt;/p&gt;
+
+&lt;p&gt;Understanding the order in which a SQL query is executed is important and will allow you to optimize your queries by minimizing the amount of data processed and improving query execution times. In addition, it will result in writing better and more efficient queries which consume less resources and lead to faster response times and less constraints on the database server.&lt;/p&gt;
+
+&lt;p&gt;The following table summarizes the SQL query order of execution:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Order&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Clause&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Function&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;From/Join&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Determines table(s) from which data will be queried&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Where&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Filters data on rows&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Group By&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Checks if you have aggregations&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Having&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Filters data based on specified groups&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Select&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Selects which columns you want to see returned&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Order By&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Sorts the data returned&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Limit&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Limits the number of rows returned&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p style=&quot;text-align:center;&quot;&gt;Table 1: SQL query order of execution&lt;/p&gt;
+
+&lt;h2 id=&quot;advanced-slq&quot;&gt;Advanced SLQ&lt;/h2&gt;
+
+&lt;h2 id=&quot;subquery-vs-cte-vs-temp-table&quot;&gt;Subquery vs CTE vs Temp Table&lt;/h2&gt;
+
+&lt;h3 id=&quot;what-is-a-subquery&quot;&gt;What is a Subquery?&lt;/h3&gt;
+
+&lt;p&gt;Subquery, also known as inner query, is a query nested inside another SQL query. Subqueries are enclosed within parentheses and can be placed in various parts of a SQL statement such as the SELECT, FROM, WHERE, or HAVING clauses.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;   
+&lt;span class=&quot;no&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;departments&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;INT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;VARCHAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+&lt;span class=&quot;no&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+   &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;INT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+   &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;VARCHAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; 
+   &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DECIMAL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; 
+   &lt;span class=&quot;n&quot;&gt;department_id&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;INT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;no&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;departments&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;VALUES&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'HR'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Finance'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Marketing'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;no&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;department_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;VALUES&lt;/span&gt; 
+   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'John Doe'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; 
+   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Jane Smith'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;60000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; 
+   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Alice Johnson'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;70000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; 
+   &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Bob Williams'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;55000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Suppose we want to retrieve all the employees that work in &lt;strong&gt;HR&lt;/strong&gt; department:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;   
+&lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;department_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;departments&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'HR'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Subqueries are a powerful feature of SQL allowing for more complex and dynamic queries by enabling you to use the results of one query as a condition or value in another.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-a-cte&quot;&gt;What is a CTE?&lt;/h3&gt;
+
+&lt;p&gt;CTE stands for Common Table Expression. It is a named temporary result set that exist only for the duration of the main query.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Basic Syntax:&lt;/em&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
+&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Start&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CTE&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;WITH&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cte_name&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CTE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;query&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;definition&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;here&lt;/span&gt;
+	&lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;column2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+	&lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;table_name&lt;/span&gt;
+	&lt;span class=&quot;no&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;conditions&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;END&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CTE&lt;/span&gt; 
+&lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cte_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;CTEs are useful for improving the readability and maintainability of complex queries. In addition, when you need to use the same subquery result multiple times within a larger query, it avoids duplicating complex logic and can make queries more readable and easier to maintain.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-a-temp-table&quot;&gt;What is a Temp Table?&lt;/h3&gt;
+
+&lt;p&gt;A temporary table in SQL is a table that exists temporarily on the database server.&lt;/p&gt;
+
+&lt;p&gt;Unlike CTEs that exist only in the context of the query in which they are defined, Temp tables can be created and used just like regular database tables, but they are dropped automatically when the session ends or when explicitly dropped by the user.&lt;/p&gt;
+
+&lt;p&gt;Temp Tables are useful for holding intermediate results that you want to reuse multiple times within a session and allow to break down complex tasks into smaller, more manageable tasks.&lt;/p&gt;
+
+&lt;h2 id=&quot;window-functions&quot;&gt;Window Functions&lt;/h2&gt;
+
+&lt;p&gt;SQL Window functions show up in pretty much every data engineering interview nowadays. Therefore, it is important to understand the key concepts related to this powerful feature.&lt;/p&gt;
+
+&lt;h3 id=&quot;so-what-exactly-are-window-functions&quot;&gt;So what exactly are Window functions?&lt;/h3&gt;
+
+&lt;p&gt;Window functions allow you to perform calculations across a set of table rows related to the current row. This is different from aggregate functions, which summarize data into a single output row for each group.&lt;/p&gt;
+
+&lt;h3 id=&quot;breakdown-of-window-functions&quot;&gt;Breakdown of Window functions&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Partitioning&lt;/strong&gt;: Window functions are typically used with an &lt;strong&gt;OVER clause&lt;/strong&gt;, which defines the window of rows over which the function will operate. This clause can partition the result set into groups of rows based on one or more column values.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ordering&lt;/strong&gt;: Within each partition, you can specify an &lt;strong&gt;ORDER BY&lt;/strong&gt; clause to define the order in which the rows are processed by the window function.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Window Frame&lt;/strong&gt;: This defines the subset of rows within the partition to which the function is applied. The frame can be defined as rows preceding or following the current row, or between a range of rows.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;There are two main categories of window functions:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Aggregate Window Functions:&lt;/strong&gt; These functions resemble regular aggregate functions (SUM, COUNT, AVG, etc.) but operate within the window instead of across the entire dataset. This allows you to calculate things like &lt;strong&gt;running totals&lt;/strong&gt; or &lt;strong&gt;moving averages&lt;/strong&gt;.&lt;/p&gt;
+
+    &lt;p&gt;Commonly used SQL Aggregate Window Functions include:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;COUNT&lt;/strong&gt;() counts the number of rows in a specified column across a defined window.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;SUM&lt;/strong&gt;() computes the sum of values within a specified column across a defined window.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;AVG&lt;/strong&gt;() calculates the average of a selected group of values across a defined window.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;MIN&lt;/strong&gt;() retrieves the lowest value from a particular column across a defined window.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;MAX&lt;/strong&gt;() fetches the highest value from a specific column across a defined window.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;FIRST_VALUE&lt;/strong&gt;() returns the first value in a designated column across a defined window.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;LAST_VALUE&lt;/strong&gt;() provides the last value in a given column across a defined window.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Ranking Window Functions:&lt;/strong&gt; These functions assign a rank or order to each row based on a specified value. Examples include ROW_NUMBER(), RANK(), and DENSE_RANK(). These are useful for identifying &lt;strong&gt;top performers&lt;/strong&gt;, assigning &lt;strong&gt;unique sequential identifiers&lt;/strong&gt;, or &lt;strong&gt;grouping data into buckets&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To better illustrate the syntax of the window function, let’s take the following example:&lt;/p&gt;
+
+&lt;p&gt;Suppose we have a table &lt;strong&gt;employees&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
+&lt;span class=&quot;no&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;emp_id&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;INT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;emp_name&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;VARCHAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;department&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;VARCHAR&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DECIMAL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;no&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;emp_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;department&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;VALUES&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Alice'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'HR'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;50000.00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Bob'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'HR'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;60000.00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Charlie'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Engineering'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;70000.00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'David'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Engineering'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;80000.00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Eve'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Engineering'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;90000.00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;We want to calculate the average salary for each departement:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
+&lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;emp_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;emp_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;department&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;AVG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;OVER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;PARTITION&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;department&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;avg_salary_department&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The result would be:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
+&lt;span class=&quot;n&quot;&gt;emp_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;department&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;avg_salary_department&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;------------------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Alice&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HR&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;50000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;55000.00&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Bob&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HR&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;60000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;55000.00&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Charlie&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Engineering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;70000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;80000.00&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;David&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Engineering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;80000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;80000.00&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Eve&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Engineering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;90000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;80000.00&lt;/span&gt;   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The window function calculates the average salary for each row in the result set, but it doesn’t change the number of rows returned. Each row retains its original data, but we also get a new column with the average salary for the department of that row.&lt;/p&gt;
+
+&lt;p&gt;However, using a &lt;strong&gt;Group By&lt;/strong&gt;, the result set is reduced to one row per department, where each row represents a distinct department.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
+&lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;department&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;AVG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;avg_salary_department&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;department&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;department&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;avg_salary_department&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;------------------------------------&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;HR&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;55000.00&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;Engineering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;80000.00&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;To better illustrate the difference between ROW_NUMBER(), RANK(), and DENSE_RANK(), we will update our employees table with the following values:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
+&lt;span class=&quot;n&quot;&gt;emp_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;department&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt;   
+&lt;span class=&quot;o&quot;&gt;-------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Alice&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HR&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;60000.00&lt;/span&gt; 
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Bob&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HR&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;70000.00&lt;/span&gt; 
+&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Charlie&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Engineering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;80000.00&lt;/span&gt; 
+&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;David&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Engineering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;80000.00&lt;/span&gt; 
+&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Eve&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Engineering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;75000.00&lt;/span&gt; 
+&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Frank&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Engineering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;70000.00&lt;/span&gt;   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Ranking the employees within their departments based on their salaries results in the following queries:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
+&lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;emp_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;emp_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;department&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;no&quot;&gt;ROW_NUMBER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;OVER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;PARTITION&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;department&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DESC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row_number&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;emp_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;department&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row_number&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Bob&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HR&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;70000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Frank&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HR&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;70000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Alice&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HR&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;60000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Charlie&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Engineering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;80000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;David&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Engineering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;80000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Eve&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Engineering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;75000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Each Row has a unique number regardless of ties.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
+&lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;emp_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;emp_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;department&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;no&quot;&gt;RANK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;OVER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;PARTITION&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;department&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DESC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;emp_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;department&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;--------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Bob&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HR&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;70000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Frank&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HR&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;70000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Alice&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HR&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;60000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Charlie&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Engineering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;80000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;David&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Engineering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;80000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Eve&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Engineering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;75000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt; 
+&lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;emp_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;emp_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;department&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+   &lt;span class=&quot;no&quot;&gt;DENSE_RANK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;OVER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;PARTITION&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;department&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DESC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dense_rank&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;employees&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;emp_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emp_name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;department&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;salary&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dense_rank&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-------------------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Bob&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HR&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;70000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Frank&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HR&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;70000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Alice&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;HR&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;60000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Charlie&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Engineering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;80000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;David&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Engineering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;80000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Eve&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Engineering&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;75000.00&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The difference between RANK and DENSE_RANK is the gaps between the ranking in case of ties. You can check this by looking at the row of Alice and Eve where their rank is 3 with RANK but 2 with DENSE_RANK.&lt;/p&gt;
+
+&lt;h2 id=&quot;sql-query-optimization-techniques&quot;&gt;SQL Query Optimization Techniques&lt;/h2&gt;
+
+&lt;p&gt;Since SQL is declarative, there are typically many alternative ways to execute a given query, with widely varying performance. When a query is submitted to the database, the query optimizer evaluates different possible plans or query execution plans which are sequences of steps used to access data. Once determined, the most efficient query is then returned.&lt;/p&gt;
+
+&lt;p&gt;Many database systems provide tools to view the query plan, either graphically or in text format. This helps developers understand and optimize query performance.&lt;/p&gt;
+
+&lt;p&gt;Regularly reviewing and analyzing query execution plans to understand how queries are executed and identify potential performance issues is very helpful. In addition, knowing and applying other optimization techinques can enahance the performance of your system. Here are some general tips for query optimization:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use column names instead of * in a SELECT statement. This reduces the amount of data transferred and processed.&lt;/li&gt;
+  &lt;li&gt;Use the most appropriate and efficient data types for your columns to save space and improve performance.&lt;/li&gt;
+  &lt;li&gt;Create indexes on columns that are frequently used in WHERE clauses, JOIN conditions, and as part of ORDER BY clauses for faster data retrievel.&lt;/li&gt;
+  &lt;li&gt;Use appropriate join types(INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN) and ensure that join conditions are based on indexed columns.&lt;/li&gt;
+  &lt;li&gt;Consider the order of joins: join smaller tables first to reduce the size of intermediate results.&lt;/li&gt;
+  &lt;li&gt;Use INNER JOINs where possible as it’s usually faster than OUTER JOINs.&lt;/li&gt;
+  &lt;li&gt;Use subqueries only when necessary and consider alternatives like JOINs or Common Table Expressions (CTEs) to simplify and optimize complex queries&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;case-study-nyc-citi-bike-trips&quot;&gt;Case Study: NYC Citi Bike Trips&lt;/h2&gt;
+
+&lt;p&gt;In this section we will try to apply some of the learnings from previous sections to answer some questions about the Citi Bike Trips dataset using SQL.&lt;/p&gt;
+
+&lt;p&gt;This dataset contains information about trips of the Citi Bike share program. It is hosted and available in Google BigQuery and included in the free tier processing. For more information, check &lt;a href=&quot;https://console.cloud.google.com/marketplace/product/city-of-new-york/nyc-citi-bike?project=propane-cooler-150809&quot;&gt;this link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Each question is followed by the corresponding SQL query and its output. For better readability the output of some queries is limited to 3 rows.&lt;/p&gt;
+
+&lt;p&gt;The answer and expected output are hidden. Try to answer the questions to test your understanding before revealing them.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Which trips lasted longer than 30 minutes?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Show Answer&lt;/summary&gt;
+   
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;      
+   &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; 
+      &lt;span class=&quot;n&quot;&gt;tripduration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;n&quot;&gt;start_station_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;n&quot;&gt;end_station_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;n&quot;&gt;bikeid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;n&quot;&gt;usertype&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`bigquery-public-data.new_york_citibike.citibike_trips`&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tripduration&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;LIMIT&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   
+   &lt;span class=&quot;n&quot;&gt;tripduration&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start_station_name&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end_station_name&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bikeid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;usertype&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;mi&quot;&gt;16930&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;South&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;St&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Whitehall&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;St&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;NYCBS&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Depot&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BAL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DYR&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;14826&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Subscriber&lt;/span&gt;
+   &lt;span class=&quot;mi&quot;&gt;547&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Ave&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;W&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;St&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;NYCBS&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Depot&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BAL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DYR&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;22094&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Subscriber&lt;/span&gt;
+   &lt;span class=&quot;mi&quot;&gt;442403&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;E&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;St&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Avenue&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;A&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;NYCBS&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Depot&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DEL&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16592&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Customer&lt;/span&gt;   
+   
+   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/details&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What is the average trip duration for each user type (Subscriber and Customer)?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Show Answer&lt;/summary&gt;
+   
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;      
+   &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; 
+      &lt;span class=&quot;n&quot;&gt;usertype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;no&quot;&gt;ROUND&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;AVG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tripduration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;average_trip_duration&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`bigquery-public-data.new_york_citibike.citibike_trips`&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;usertype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   
+   &lt;span class=&quot;n&quot;&gt;usertype&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;average_trip_duration&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;----------------------------------&lt;/span&gt;
+   &lt;span class=&quot;no&quot;&gt;Subscriber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;806.38&lt;/span&gt;  
+   &lt;span class=&quot;no&quot;&gt;Customer&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2145.51&lt;/span&gt; 
+   
+   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/details&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How many trips were made each day?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Show Answer&lt;/summary&gt;
+   
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;      
+   &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; 
+      &lt;span class=&quot;no&quot;&gt;DATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;starttime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;day&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;no&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trip_count&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`bigquery-public-data.new_york_citibike.citibike_trips`&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;day&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;day&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+   &lt;span class=&quot;n&quot;&gt;day&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trip_count&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;-----------------------&lt;/span&gt;
+   &lt;span class=&quot;mi&quot;&gt;2013&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;07&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;01&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16650&lt;/span&gt; 
+   &lt;span class=&quot;mi&quot;&gt;2013&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;07&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;02&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;22745&lt;/span&gt; 
+   &lt;span class=&quot;mi&quot;&gt;2013&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;07&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;03&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;21864&lt;/span&gt; 
+   
+   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/details&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Which start station has the highest number of trips?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Show Answer&lt;/summary&gt;
+   
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;      
+   &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; 
+      &lt;span class=&quot;n&quot;&gt;start_station_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;no&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trip_count&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`bigquery-public-data.new_york_citibike.citibike_trips`&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start_station_name&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trip_count&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DESC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+   &lt;span class=&quot;n&quot;&gt;start_station_name&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trip_count&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;----------------------------------&lt;/span&gt;
+   &lt;span class=&quot;no&quot;&gt;Pershing&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Square&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;North&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;438077&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;E&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;17&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;St&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Broadway&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;423334&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;W&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;St&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Ave&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;403795&lt;/span&gt; 
+   
+   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/details&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Which stations had more than 1,000 trips starting from them?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Show Answer&lt;/summary&gt;
+   
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;      
+   &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; 
+      &lt;span class=&quot;n&quot;&gt;start_station_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;no&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trip_count&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`bigquery-public-data.new_york_citibike.citibike_trips`&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start_station_name&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;HAVING&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trip_count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   
+   &lt;span class=&quot;n&quot;&gt;start_duration_name&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trip_count&lt;/span&gt; 
+   &lt;span class=&quot;o&quot;&gt;----------------------------------&lt;/span&gt; 
+   &lt;span class=&quot;no&quot;&gt;Liberty&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;St&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Broadway&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;149199&lt;/span&gt;     
+   &lt;span class=&quot;no&quot;&gt;W&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;45&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;St&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Ave&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;118394&lt;/span&gt;     
+   &lt;span class=&quot;no&quot;&gt;Henry&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;St&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Grand&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;St&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;105108&lt;/span&gt;     
+   
+   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/details&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What is the rolling average trip duration for each bike?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Show Answer&lt;/summary&gt;
+   
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;      
+   &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt; 
+      &lt;span class=&quot;n&quot;&gt;bikeid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;no&quot;&gt;DATE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;starttime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trip_date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;n&quot;&gt;tripduration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
+      &lt;span class=&quot;no&quot;&gt;AVG&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tripduration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;OVER&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;PARTITION&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bikeid&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;starttime&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ROWS&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BETWEEN&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;PRECEDING&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CURRENT&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ROW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rolling_avg&lt;/span&gt; 
+      &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`bigquery-public-data.new_york_citibike.citibike_trips`&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+   &lt;span class=&quot;n&quot;&gt;bikeid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;trip_date&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tripduration&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rolling_avg&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;mi&quot;&gt;23076&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;04&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;468&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;505.2&lt;/span&gt;      
+   &lt;span class=&quot;mi&quot;&gt;23076&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;04&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;332&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;869.8&lt;/span&gt;
+   &lt;span class=&quot;mi&quot;&gt;23076&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;05&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;729&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;588.8&lt;/span&gt;
+   
+   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/details&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What are the top 3 longest trips for each station?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;details&gt;
+&lt;summary&gt;Show Answer&lt;/summary&gt;
+   
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;      
+   &lt;span class=&quot;no&quot;&gt;WITH&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ranked_trips&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;start_station_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;tripduration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;no&quot;&gt;ROW_NUMBER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;OVER&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;PARTITION&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start_station_id&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tripduration&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DESC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt;
+      &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`bigquery-public-data.new_york_citibike.citibike_trips`&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;no&quot;&gt;SELECT&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;start_station_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;tripduration&lt;/span&gt;
+   &lt;span class=&quot;no&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ranked_trips&lt;/span&gt;
+   &lt;span class=&quot;no&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rank&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+   &lt;span class=&quot;no&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start_station_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tripduration&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;DESC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+   &lt;span class=&quot;n&quot;&gt;start_station_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tripduration&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;-------------------------------&lt;/span&gt;
+   &lt;span class=&quot;mi&quot;&gt;72&lt;/span&gt;               &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2006840&lt;/span&gt; 
+   &lt;span class=&quot;mi&quot;&gt;72&lt;/span&gt;               &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;792782&lt;/span&gt;  
+   &lt;span class=&quot;mi&quot;&gt;72&lt;/span&gt;               &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;594321&lt;/span&gt;  
+   
+   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/details&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
+
+&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;In this article, we explored on a high level topics of different difficulty levels of the SQL language. Hopefully the examples and the case study helped in clarifying these concepts but this is only the tip of the iceberg. Writing clearer and more efficient SQL queries requires practice. The resources section contains valuable materials to support you further in your learning journey.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Query_plan&quot;&gt;https://en.wikipedia.org/wiki/Query_plan&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://sqlzoo.net/wiki/SQL_Tutorial&quot;&gt;https://sqlzoo.net/wiki/SQL_Tutorial&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.windowfunctions.com/&quot;&gt;https://www.windowfunctions.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://datalemur.com/sql-tutorial&quot;&gt;https://datalemur.com/sql-tutorial&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://selectstarsql.com/&quot;&gt;https://selectstarsql.com/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><summary type="html">Mastering SQL and understanding what can be done with it is crucial in making you a better data engineer.</summary></entry><entry><title type="html">System Desing Interview Blueprint</title><link href="https://www.firasesbai.com/articles/2024/12/08/system-design-interview-blueprint.html" rel="alternate" type="text/html" title="System Desing Interview Blueprint" /><published>2024-12-08T00:00:00+00:00</published><updated>2024-12-08T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/12/08/system-design-interview-blueprint</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/12/08/system-design-interview-blueprint.html">&lt;p&gt;&lt;em&gt;This article contains general guidelines and a reference framework to use when approaching system design interview.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;System design interview is a key component of the technical interview process that is no longer limited to big tech companies or traditional software engineering positions. Even though each company is different, a system design round is not uncommon for data engineering positions especially for senior and more experienced roles.&lt;/p&gt;
 
@@ -1885,348 +2481,4 @@ By transforming your Jekyll-based blog into a PWA, you’ll enhance user engagem
 
 &lt;p&gt;&lt;a href=&quot;https://fredrickb.com/2019/07/25/turning-jekyll-site-into-a-progressive-web-app/&quot;&gt;https://fredrickb.com/2019/07/25/turning-jekyll-site-into-a-progressive-web-app/&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://sevic.dev/caching-service-worker-workbox/&quot;&gt;https://sevic.dev/caching-service-worker-workbox/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Blogging" /><summary type="html">In this guide, we’ll explore how to transform your Jekyll-based blog into a Progressive Web App, unlocking features such as offline access, fast loading, and a seamless user experience.</summary></entry><entry><title type="html">Data engineering 201: In-depth Guide - Part 2</title><link href="https://www.firasesbai.com/articles/2023/03/12/data-engineering-201-part-2.html" rel="alternate" type="text/html" title="Data engineering 201: In-depth Guide - Part 2" /><published>2023-03-12T00:00:00+00:00</published><updated>2023-03-12T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/03/12/data-engineering-201-part-2</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/03/12/data-engineering-201-part-2.html">&lt;p&gt;&lt;em&gt;This is part 2 of our in-depth article discussing the different stages of data flow inside an organisation.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;We will discover how data in motion and data at rest is handled through different techniques and methods and the importance of choosing the right storage technology.&lt;/p&gt;
-
-&lt;p&gt;If you have missed the first part, you can find it &lt;a href=&quot;https://www.firasesbai.com/articles/2023/03/11/data-engineering-201.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;So buckle up, folks! This is going to be a long ride. But don’t worry, it’s worth it. Grab a snack, get comfy, and let’s dive in!”&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1&gt; Contents &lt;/h1&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#ingestion&quot; id=&quot;markdown-toc-ingestion&quot;&gt;Ingestion&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#transformation&quot; id=&quot;markdown-toc-transformation&quot;&gt;Transformation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#storage&quot; id=&quot;markdown-toc-storage&quot;&gt;Storage&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#oltp-vs-olap&quot; id=&quot;markdown-toc-oltp-vs-olap&quot;&gt;OLTP vs OLAP&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#oltp-databases&quot; id=&quot;markdown-toc-oltp-databases&quot;&gt;OLTP Databases&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#sql-vs-nosql&quot; id=&quot;markdown-toc-sql-vs-nosql&quot;&gt;SQL vs NoSQL&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#acid-vs-base&quot; id=&quot;markdown-toc-acid-vs-base&quot;&gt;ACID vs BASE&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#olap-databases&quot; id=&quot;markdown-toc-olap-databases&quot;&gt;OLAP Databases&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#data-warehouse&quot; id=&quot;markdown-toc-data-warehouse&quot;&gt;Data warehouse&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#data-lake&quot; id=&quot;markdown-toc-data-lake&quot;&gt;Data lake&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#data-lakehouse&quot; id=&quot;markdown-toc-data-lakehouse&quot;&gt;Data Lakehouse&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;ingestion&quot;&gt;Ingestion&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;ETL (Extract, Transform, Load)&lt;/strong&gt; and &lt;strong&gt;ELT (Extract, Load, Transform)&lt;/strong&gt; are both data integration techniques used to move data from multiple sources to a single destination, such as a data warehouse or a data lake (more on this later in the Storage section).&lt;/p&gt;
-
-&lt;p&gt;In ETL, data is extracted from source systems, transformed into a format suitable for the destination system, and then loaded into the destination system. 
-The transformation is actually done in what is often referred to as a staging area. 
-This approach is typically used in traditional data warehousing systems. 
-Any data you load into your data warehouse must be transformed into a relational format before the data warehouse can ingest it. 
-As a part of this data transformation process, data mapping may also be necessary to combine multiple data sources based on correlating information. 
-In addition, ETL can help with data privacy and compliance by cleaning sensitive and secure data even before loading into the data warehouse.&lt;/p&gt;
-
-&lt;p&gt;In ELT on the other hand, data is first extracted from source systems and loaded into the destination system in its raw form, where it is then transformed into the desired format. 
-This approach is typically used in big data environments, where the target system, such as a data lake, is designed to handle large amounts of unstructured and semi-structured data and can perform the transformations in parallel.&lt;/p&gt;
-
-&lt;p&gt;Rather than obsessing over this ETL vs ELT cage fight, just try to take away the following:&lt;/p&gt;
-
-&lt;p&gt;Sometimes you may want to optimize/reshape your data sooner (because you know that’s how everyone wants to use it). 
-Other times, you want to leave the schema flexible (and just let the user’s queries/views do the work) to avoid having to maintain lots of tables/views/jobs.&lt;/p&gt;
-
-&lt;h2 id=&quot;transformation&quot;&gt;Transformation&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Batch&lt;/strong&gt; and &lt;strong&gt;Stream&lt;/strong&gt; processing are two popular methods for data processing and transformation.&lt;/p&gt;
-
-&lt;p&gt;In batch processing, we wait for a certain amount of raw data to “pile up” before running an ETL job. 
-Typically this means data is between an hour to a few days old before it is made available for analysis. 
-Batch ETL jobs will typically be run on a set schedule (e.g. every 24 hours), or in some cases once the amount of data reaches a certain threshold.
-You should lean towards batch processing when:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Data freshness is not a mission-critical issue&lt;/li&gt;
-  &lt;li&gt;You are working with large datasets and are running a complex algorithm that requires access to the entire batch – e.g., sorting the entire dataset&lt;/li&gt;
-  &lt;li&gt;You get access to the data in batches rather than in streams&lt;/li&gt;
-  &lt;li&gt;When you are joining tables in relational databases&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In stream processing, we process data as soon as it arrives in the storage layer – which would often also be very close to the time it was generated (although this would not always be the case). 
-This would typically be in sub-second timeframes, so that for the end user the processing happens in real-time. 
-These operations would typically not be stateful, or would only be able to store a ‘small’ state, so would usually involve a relatively simple transformation or calculation.&lt;/p&gt;
-
-&lt;p&gt;Another alternative is &lt;strong&gt;micro-batch&lt;/strong&gt; processing. 
-In micro-batch processing, we run batch processes on much smaller accumulations of data – typically less than a minute’s worth of data. 
-This means data is available in near real-time. 
-In practice, there is little difference between micro-batching and stream processing, and the terms would often be used interchangeably in data architecture descriptions and software platform descriptions.
-Microbatch processing is useful when we need very fresh data, but not necessarily real-time – meaning we can’t wait an hour or a day for a batch processing to run, but we also don’t need to know what happened in the last few seconds. 
-Example scenarios could include web analytics (clickstream) or user behavior.&lt;/p&gt;
-
-&lt;h2 id=&quot;storage&quot;&gt;Storage&lt;/h2&gt;
-
-&lt;p&gt;Two different types of data are used today in an organization; &lt;strong&gt;Operational&lt;/strong&gt; and &lt;strong&gt;Analytical&lt;/strong&gt;. 
-Both operational and analytical data are important for organizations, but they serve different purposes and are used in different ways.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;​​Operational data refers to the data that is used in day-to-day business operations to support critical functions such as sales, marketing, and customer service. Operational data is often used to support short-term decision making and is focused on current and immediate needs.&lt;/li&gt;
-  &lt;li&gt;Analytical data, on the other hand, is used for long-term strategic decision making. Analytical data is used to support trend analysis, business intelligence, and other data-driven decision making processes.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;oltp-vs-olap&quot;&gt;OLTP vs OLAP&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;OLTP (Online Transaction Processing)&lt;/strong&gt; and &lt;strong&gt;OLAP (Online Analytical Processing)&lt;/strong&gt; are two different types of data processing systems that are often used to manage operational and analytical data, respectively.&lt;/p&gt;
-
-&lt;p&gt;OLTP&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;OLTP systems are used to process operational data and are designed to support rapid data insertion, updates, and retrievals.&lt;/li&gt;
-  &lt;li&gt;Make sure that the systems can keep up with high volumes of transactions but often very small and fast in nature (e.g. online banking, FinTech application).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;OLAP&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;OLAP systems are used to process analytical data and are designed to support large-scale data analysis.&lt;/li&gt;
-  &lt;li&gt;Make sure that you can crunch through millions or billions of rows of data for your complex and large theories, where they need to run some fancy aggregation or calculations for data Analytics purposes.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Example: Online Store&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;OLTP&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Store user data, passwords, previous transactions, find user, change its name,… basically perform INSERT, UPDATE, DELETE operations&lt;/li&gt;
-  &lt;li&gt;Store actual products, their associated prices&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;OLAP&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Find out the “total money spent by all users”&lt;/li&gt;
-  &lt;li&gt;Find out “what is the most sold product”&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;oltp-databases&quot;&gt;OLTP Databases&lt;/h3&gt;
-
-&lt;h4 id=&quot;sql-vs-nosql&quot;&gt;SQL vs NoSQL&lt;/h4&gt;
-
-&lt;p&gt;OLTP databases can use either &lt;strong&gt;SQL (Structured Query Language)&lt;/strong&gt; or &lt;strong&gt;NoSQL (Not only SQL)&lt;/strong&gt; technologies.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;SQL Database&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;NoSQL Database&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Data storage model&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Tables with fixed rows and columns&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Document: JSON Documents &lt;br /&gt; Key-value: key-value pairs &lt;br /&gt; Wide-Columns: Tables with rows and dynamic columns &lt;br /&gt; Graph&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Development history&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Developed in the 1970s with a focus on reducing data duplication&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Developed in the late 2000s with a focus on scaling and allowing for rapid application change driven by agile and DevOps practices&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Primary purpose&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;General purpose&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Document: general purpose &lt;br /&gt; Key-value: large amounts of data with simple lookup queries &lt;br /&gt; Wide-column: large amounts of data with predictable query patterns &lt;br /&gt; Graph: analyzing and traversing relationships between connected data&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Schema&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Rigid&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Flexible (Implicit schema!, querying time)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Scaling&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Vertical (scale-up with a larger server)&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Horizontal (scale-out across commodity servers)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Joins&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Typically required&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Typically not required&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p style=&quot;text-align:center;&quot;&gt;Table 1: SQL vs NoSQL Databases&lt;/p&gt;
-
-&lt;p&gt;SQL databases are based on a relational model and use a structured data model, where data is organized into tables, rows, and columns. 
-This makes it easy to enforce data constraints, such as unique keys, and ensures data consistency. 
-They are well tested and proven, and they have a long history of use in OLTP systems. 
-This makes them a reliable choice for OLTP systems. 
-However, SQL databases can be complex to set up and maintain and can be challenging to scale, particularly for large OLTP systems that require horizontal scalability and the rigid schema of SQL databases can make it difficult to accommodate changing requirements or new data types.&lt;/p&gt;
-
-&lt;p&gt;NoSQL databases on the other hand are designed for horizontal scalability, which makes them well suited for OLTP systems that need to scale to handle large amounts of data and users. 
-In addition, they use a variety of data models which makes them more flexible than SQL databases. 
-This allows NoSQL databases to better handle unstructured data and changing data requirements. 
-However , NoSQL databases may not provide the same level of transactional consistency as SQL databases, which can result in data inconsistencies. 
-Plus they can be complex to set up and maintain as well, even though this can be addressed since they are designed to work well in cloud environments, which makes them a good choice for OLTP systems that need to scale quickly and elastically.&lt;/p&gt;
-
-&lt;h4 id=&quot;acid-vs-base&quot;&gt;ACID vs BASE&lt;/h4&gt;
-
-&lt;p&gt;We kept mentioning &lt;strong&gt;transactional consistency&lt;/strong&gt; and you might be wondering what is it?&lt;/p&gt;
-
-&lt;p&gt;A transaction is a sequence of operations performed (using one or more SQL statements) on a database as a single logical unit of work. 
-For relational databases, transactions have the following four standard properties, usually referred to by the acronym &lt;strong&gt;ACID&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Atomicity&lt;/strong&gt; − ensures that all operations within the work unit are completed successfully. Otherwise, the transaction is aborted at the point of failure and all the previous operations are rolled back to their former state.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Consistency&lt;/strong&gt; − ensures that the database properly changes states upon a successfully committed transaction.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Isolation&lt;/strong&gt; − enables transactions to operate independently of and transparent to each other. Executing transactions concurrently has the same results as if the transactions were executed serially.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Durability&lt;/strong&gt; − ensures that the result or effect of a committed transaction persists in case of a system failure.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;BASE&lt;/strong&gt; on the other hand is often used to describe the properties of NoSQL databases. It stands for:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Basically available&lt;/strong&gt; - the system guarantees availability.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Soft state&lt;/strong&gt; - the state of the system may change over time, even without input.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Eventual consistency&lt;/strong&gt; - the system will become consistent over a period of time, given that the system doesn’t receive input during that period.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ACID databases prioritize consistency over availability—the whole transaction fails if an error occurs in any step within the transaction. In contrast, BASE databases prioritize availability over consistency. Instead of failing the transaction, users can access inconsistent data temporarily.&lt;/p&gt;
-
-&lt;h3 id=&quot;olap-databases&quot;&gt;OLAP Databases&lt;/h3&gt;
-
-&lt;p&gt;In this section we will discuss two important components that are used for advanced analysis and decision-making; &lt;strong&gt;data warehouses&lt;/strong&gt; and &lt;strong&gt;data lakes&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h4 id=&quot;data-warehouse&quot;&gt;Data warehouse&lt;/h4&gt;
-
-&lt;p&gt;A data warehouse is a centralized repository for storing and managing large amounts of data from various sources. 
-Data warehouses are designed to support business intelligence (BI) and analytics applications, by providing a single source of data that can be queried, analyzed, and used to make informed decisions. 
-The following are the key characteristics of a data warehouse:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;Integration&lt;/em&gt; - Data warehouses integrate data from multiple sources, such as transactional systems, log files, and external data sources, into a single, unified view.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Scalability&lt;/em&gt; - Data warehouses are designed to handle large amounts of data, which can grow over time.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Data Modeling&lt;/em&gt; - Data warehouses use a specific data model, such as the star or snowflake schema, to organize data and make it easier to query and analyze.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Historical data&lt;/em&gt; - Data warehouses store historical data, allowing users to analyze trends and changes over time.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Performance optimization&lt;/em&gt; - Data warehouses are optimized for fast querying and analysis, by using techniques such as indexing, materialized views, and aggregations.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Data Cleansing&lt;/em&gt; - Data warehouses often include data cleansing and normalization to ensure that data is consistent and accurate.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Security and access control&lt;/em&gt; - Data warehouses have robust security and access control features to ensure that sensitive data is protected and only authorized users have access to it.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The explosion of big data, including the growth of structured, semi-structured, and unstructured data, made it increasingly difficult for traditional data warehouses to store and process all the data being generated. 
-In addition, Traditional data warehouses required expensive hardware and software to store and process data. 
-The cost of these solutions made it difficult for organizations to store all their data, which led to the adoption of data lakes as a more cost-effective alternative.&lt;/p&gt;
-
-&lt;h4 id=&quot;data-lake&quot;&gt;Data lake&lt;/h4&gt;
-
-&lt;p&gt;A data lake is a centralized repository that stores large amounts of raw, structured and unstructured data. The data is stored in its native format and can be accessed, processed, and analyzed later as needed. 
-The following are the key characteristics of a data lake:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;Flexibility&lt;/em&gt; - Data lakes allow organizations to store a wide variety of data types and formats, including structured, semi-structured, and unstructured data, without having to worry about pre-defining schemas.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Scalability&lt;/em&gt; - Data lakes are designed to handle very large amounts of data, which can grow over time.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Cost-effectiveness&lt;/em&gt; - Data lakes are often implemented on low-cost, commodity hardware&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Raw data preservation&lt;/em&gt; - Data lakes preserve raw data, allowing organizations to perform in-depth analysis and retain the original data for future use.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Decentralized processing&lt;/em&gt; - Data lakes can be used to distribute processing tasks across multiple nodes in a network, allowing for increased processing speed and scalability.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Self-service analytics&lt;/em&gt; - Data lakes allow business users and data scientists to perform their own data analysis, without having to rely on IT or data engineering teams.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Integration with big data tools&lt;/em&gt; - Data lakes can be integrated with big data tools, such as Apache Spark and Apache Flink, allowing organizations to perform complex data processing and analysis tasks.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The following table summarizes the differences between data warehouse and data lake.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Data Warehouse&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Data Lake&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Data&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;structured, processed&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;structured, semi structured, unstructured, raw&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Processing&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;schema-on-write&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;schema-on-read&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Storage&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;expensive for large data volumes&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;designed for low-cost storage&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Agility&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;less agile, fixed configuration&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;highly agile, configurable as needed&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Security&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;mature&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;maturing&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Users&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;business professionals&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;data scientists&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p style=&quot;text-align:center;&quot;&gt;Table 2: Data Warehouse vs Data Lake&lt;/p&gt;
-
-&lt;p&gt;As organizations move data infrastructure to the cloud, the choice of data warehouse vs. data lake, or the need for complex integrations between the two, is less of an issue. 
-It is becoming natural for organizations to have both, and move data flexibly from lakes to warehouses to enable business analysis.&lt;/p&gt;
-
-&lt;p&gt;Here is a list of some known cloud-based solutions from different cloud providers:&lt;/p&gt;
-
-&lt;p&gt;Cloud data warehousing solutions&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;Amazon Redshift&lt;/em&gt; - a fully-managed, analytical data warehouse that can handle petabyte-scale data, and enable querying it in seconds.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Google BigQuery&lt;/em&gt; - an enterprise-grade cloud-native data warehouse, which runs fast interactive and ad-hoc queries on datasets of petabyte-scale.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Cloud data lake solutions&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;Amazon S3&lt;/em&gt; - an object storage platform built to store and retrieve any amount of data from any data source, and designed for 99.999999999% durability.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Azure Blob Storage&lt;/em&gt; - stores billions of objects in hot, cool, or archive tiers, depending on how often data is accessed. Data ranges from structured (converted to object form) to any unstructured format - images, videos, audio, documents.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The data lake architecture was introduced as a solution to some challenges of data warehousing with the rise of big data offering the ability to store and process big data in a cost-effective and scalable manner. 
-However, it had its own set of challenges, such as the lack of reliability and transactional consistency and the complex data quality problems making it difficult for GDPR compliance and to use for critical business decisions.&lt;/p&gt;
-
-&lt;p&gt;Can we get the best of both worlds without the complexity of managing both a data lake and a data warehouse or perhaps multiple ones?&lt;/p&gt;
-
-&lt;h4 id=&quot;data-lakehouse&quot;&gt;Data Lakehouse&lt;/h4&gt;
-
-&lt;p&gt;A data Lakehouse is a new, open architecture that combines the best elements of data lakes and data warehouses. 
-Data Lakehouses are enabled by a new system design: implementing similar data structures and data management features to those in a data warehouse directly on top of low cost cloud storage in open formats.&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/12_data_warehouse_vs_data_lake_vs_data_lakehouse.png&quot; alt=&quot;architecture diagrams comparing data warehouse, data lake and data lakehouse&quot; /&gt;
-  &lt;figcaption&gt;Figure 1: Data Warehouse vs Data Lake vs Data Lakehouse - &lt;a href=&quot;https://www.databricks.com/glossary/data-lakehouse&quot;&gt;Image Source&lt;/a&gt;&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Some data management solutions such as &lt;a href=&quot;https://delta.io/&quot;&gt;Delta Lake&lt;/a&gt;, which is an implementation of Data Lakehouse from Databricks, offer the ability to store and process big data in a reliable and consistent manner, while also providing the scalability and cost savings of a data lake.&lt;/p&gt;
-
-&lt;p&gt;The data lakehouse is a relatively new concept and is still evolving, but it has the potential to become an important technology for big data processing and analysis in the future.&lt;/p&gt;
-
-&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
-
-&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
-
-&lt;p&gt;In this article, we went through some popular patterns such as ETL vs ELT and stream vs batch processing that are used in data ingestion and transformation and where they can be applied. 
-Then we discussed the different types of data storage and some concrete implementations of them in the cloud and how they fit in an organization based on its requirements, data maturity and purpose.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://martinfowler.com/articles/data-mesh-principles.html&quot;&gt;https://martinfowler.com/articles/data-mesh-principles.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.jie-tao.com/delta-lake-step-by-step1/&quot;&gt;https://www.jie-tao.com/delta-lake-step-by-step1/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.databricks.com/blog/2020/01/30/what-is-a-data-lakehouse.html&quot;&gt;https://www.databricks.com/blog/2020/01/30/what-is-a-data-lakehouse.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://delta.io/&quot;&gt;https://delta.io/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/compare/the-difference-between-acid-and-base-database/&quot;&gt;https://aws.amazon.com/compare/the-difference-between-acid-and-base-database/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><summary type="html">This is part 2 of our in-depth article discussing the different stages of data flow inside an organisation.</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://sevic.dev/caching-service-worker-workbox/&quot;&gt;https://sevic.dev/caching-service-worker-workbox/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Blogging" /><summary type="html">In this guide, we’ll explore how to transform your Jekyll-based blog into a Progressive Web App, unlocking features such as offline access, fast loading, and a seamless user experience.</summary></entry></feed>
