@@ -160,10 +160,14 @@
       
       <span class="reading-time" title="Estimated read time">
   
-  8 min read
+  9 min read
 </span>
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name"> - Firas Esbai</span></span></p></header>
+            <span class="p-author h-card" itemprop="name"> - Firas Esbai</span></span></p><p class="post-meta last-updated">
+        Last updated:<time class="dt-modified" datetime="2025-01-01T00:00:00+00:00" itemprop="dateModified">
+          Jan 1, 2025
+        </time>
+      </p></header>
 
   <div class="post-content e-content" itemprop="articleBody">
     <p><em>In this article we will go over the big three approaches for modeling analytical data.</em></p>
@@ -203,7 +207,10 @@
 
 <h2 id="what-is-data-modeling">What is Data Modeling?</h2>
 
-<p>The aim of the data model design is to represent the data in an easy way for reusability, flexibility, and scalability. The process of crafting data models involves 3 steps:</p>
+<p>Data Modeling is the process of creating a visual representation of a system’s data to represent it in an easy way for reusability, flexibility, and scalability. 
+The output is usually a collection of living documents that evolve along with changes to business needs and serve the purpose of facilitating communication among stakeholders and the foundation for later database implementation and analysis.</p>
+
+<p>The process of crafting data models involves 3 steps:</p>
 <ul>
   <li><strong>Conceptual</strong>
     <ul>
@@ -217,10 +224,32 @@
   </li>
   <li><strong>Physical</strong>
     <ul>
-      <li>Defines how the logical model will be implemented using the system and technology in question to ensure that the writes and reads can be performed efficiently.</li>
+      <li>Defines how the logical model will be implemented using the system and technology in question to ensure that the writes and reads can be performed efficiently. It gives details about:
+        <ul>
+          <li>Data field types as represented in the Database Management System (DBMS)</li>
+          <li>Data relationships as represented in the DBMS</li>
+          <li>Additional details, such as performance tuning</li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
+
+<p>To better illustrate these steps, let’s consider an <strong>Auto Dealership</strong> as an example and model the potential system’s data. For instance, the diagram below highlights the different data entities and their relationships of the business on a conceptual level:</p>
+
+<figure>
+  <img src="/assets/images/articles/19_conceptual_model_auto_dealership.png" alt="conceptual data model of an auto dealership" />
+  <figcaption>Figure 1: Conceptual data model of an auto dealership</figcaption>
+</figure>
+
+<p>Adding more details to the identified entities will result in the following logical diagram:</p>
+
+<figure>
+  <img src="/assets/images/articles/19_logical_model_auto_dealership.png" alt="logical data model of an auto dealership" />
+  <figcaption>Figure 2: Logical data model of an auto dealership </figcaption>
+</figure>
+
+<p>Finally, the physical model will depend on the chosen database technology and will involve considerations such as how easy it is to manage it and will it be able to handle the load if the data volume scales.</p>
 
 <h2 id="normalization-vs-denormalization">Normalization vs Denormalization</h2>
 
@@ -385,11 +414,20 @@
           <li><strong>Integrated</strong> = other data sources</li>
           <li><strong>Subject oriented</strong> = reorganise the data per subject</li>
           <li><strong>Time variant</strong> = data warehouse contains historical data</li>
-          <li><strong>Non volatile</strong> = data warehouse remains stable between refreshes</li>
+          <li><strong>Non volatile</strong> = data warehouse remains stable between refreshes
+Continuing with the auto dealership example, an example of a star schema of the EDW is shown below:</li>
         </ul>
       </li>
     </ul>
   </li>
+</ul>
+
+<figure>
+  <img src="/assets/images/articles/19_star_schema_auto_dealership.png" alt="star schema of an auto dealership" />
+  <figcaption>Figure 3: Star schema of an auto dealership </figcaption>
+</figure>
+
+<ul>
   <li><strong>Kimball</strong>
     <ul>
       <li>Bottom up approach</li>
@@ -411,13 +449,22 @@
           </li>
           <li><strong>Type 3</strong>
             <ul>
-              <li>A type 3 SCD is similar to a type 2 SCD, but instead of creating a new Row, a change in a type 3 SCD creates a new field</li>
+              <li>A type 3 SCD is similar to a type 2 SCD, but instead of creating a new Row, a change in a type 3 SCD creates a new field
+Applying the dimensional modeling approach to our example will result, as shown below, in a <em>Sales</em> fact table representing sales transactions with numeric measures (facts) and several dimension tables that provide the context for the facts with descriptive attributes.</li>
             </ul>
           </li>
         </ul>
       </li>
     </ul>
   </li>
+</ul>
+
+<figure>
+  <img src="/assets/images/articles/19_dimensional_model_auto_dealership.png" alt="dimensional model of an auto dealership" />
+  <figcaption>Figure 4: Dimensional model of an auto dealership </figcaption>
+</figure>
+
+<ul>
   <li><strong>Data Vault</strong>
     <ul>
       <li>Data Vaults organize data into three different types: <strong>hubs</strong>, <strong>links</strong>, and <strong>satellites</strong>
@@ -452,7 +499,7 @@
 
 <figure>
   <img src="/assets/images/articles/19_data_lakehouse_architecture.png" alt="medallion architecture with used modeling techniques in each stage" />
-  <figcaption>Figure 1: Data lakehouse architecture and modeling techniques - <a href="https://www.databricks.com/blog/2022/06/24/data-warehousing-modeling-techniques-and-their-implementation-on-the-databricks-lakehouse-platform.html">Image Source</a></figcaption>
+  <figcaption>Figure 5: Data lakehouse architecture and modeling techniques - <a href="https://www.databricks.com/blog/2022/06/24/data-warehousing-modeling-techniques-and-their-implementation-on-the-databricks-lakehouse-platform.html">Image Source</a></figcaption>
 </figure>
 
 <p>First data is landed in the Bronze layer in raw format using the same models of source systems in order to get converted to delta lake format. Next it flows into the Silver layer where it gets aggregated using more normalized model. Finally, the gold layer is meant for read-optimized presentation layer using denormalized models.</p>
@@ -476,6 +523,8 @@
 <p><a href="https://www.databricks.com/glossary/medallion-architecture">https://www.databricks.com/glossary/medallion-architecture</a></p>
 
 <p><a href="https://www.databricks.com/blog/2022/06/24/prescriptive-guidance-for-implementing-a-data-vault-model-on-the-databricks-lakehouse-platform.html">https://www.databricks.com/blog/2022/06/24/prescriptive-guidance-for-implementing-a-data-vault-model-on-the-databricks-lakehouse-platform.html</a></p>
+
+<p><a href="https://aws.amazon.com/what-is/data-modeling/">https://aws.amazon.com/what-is/data-modeling/</a></p>
 
   </div>
 
@@ -613,7 +662,7 @@
       </div>
       <div style="text-align: center; margin-top: 10px;">
          
-            <p class="p-name">Copyright &copy; 2024 Firas Esbai.</p>
+            <p class="p-name">Copyright &copy; 2025 Firas Esbai.</p>
             
       </div>
    </div>

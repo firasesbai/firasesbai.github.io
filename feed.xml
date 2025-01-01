@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2024-12-31T11:11:30+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Firas Esbai's Lifelong Learning Journey.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2025-01-01T12:18:11+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>Firas Esbai's Lifelong Learning Journey.
 </subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Level Up Your SQL Skills As a Data Engineer</title><link href="https://www.firasesbai.com/articles/2024/12/30/level-up-sql-skills-data-engineer.html" rel="alternate" type="text/html" title="Level Up Your SQL Skills As a Data Engineer" /><published>2024-12-30T00:00:00+00:00</published><updated>2024-12-30T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/12/30/level-up-sql-skills-data-engineer</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/12/30/level-up-sql-skills-data-engineer.html">&lt;p&gt;&lt;em&gt;Mastering SQL and understanding what can be done with it is crucial in making you a better data engineer.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;This article is your starting point to leveling up your SQL skills. We will start with a refresher and then move on to more advanced topics and optimizations techniques all packed with concrete examples and a final case study to wrap it all up.&lt;/p&gt;
@@ -1110,7 +1110,10 @@ Some popular rate limiting algorithms include:
 
 &lt;h2 id=&quot;what-is-data-modeling&quot;&gt;What is Data Modeling?&lt;/h2&gt;
 
-&lt;p&gt;The aim of the data model design is to represent the data in an easy way for reusability, flexibility, and scalability. The process of crafting data models involves 3 steps:&lt;/p&gt;
+&lt;p&gt;Data Modeling is the process of creating a visual representation of a system’s data to represent it in an easy way for reusability, flexibility, and scalability. 
+The output is usually a collection of living documents that evolve along with changes to business needs and serve the purpose of facilitating communication among stakeholders and the foundation for later database implementation and analysis.&lt;/p&gt;
+
+&lt;p&gt;The process of crafting data models involves 3 steps:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Conceptual&lt;/strong&gt;
     &lt;ul&gt;
@@ -1124,10 +1127,32 @@ Some popular rate limiting algorithms include:
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Physical&lt;/strong&gt;
     &lt;ul&gt;
-      &lt;li&gt;Defines how the logical model will be implemented using the system and technology in question to ensure that the writes and reads can be performed efficiently.&lt;/li&gt;
+      &lt;li&gt;Defines how the logical model will be implemented using the system and technology in question to ensure that the writes and reads can be performed efficiently. It gives details about:
+        &lt;ul&gt;
+          &lt;li&gt;Data field types as represented in the Database Management System (DBMS)&lt;/li&gt;
+          &lt;li&gt;Data relationships as represented in the DBMS&lt;/li&gt;
+          &lt;li&gt;Additional details, such as performance tuning&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;To better illustrate these steps, let’s consider an &lt;strong&gt;Auto Dealership&lt;/strong&gt; as an example and model the potential system’s data. For instance, the diagram below highlights the different data entities and their relationships of the business on a conceptual level:&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/19_conceptual_model_auto_dealership.png&quot; alt=&quot;conceptual data model of an auto dealership&quot; /&gt;
+  &lt;figcaption&gt;Figure 1: Conceptual data model of an auto dealership&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Adding more details to the identified entities will result in the following logical diagram:&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/19_logical_model_auto_dealership.png&quot; alt=&quot;logical data model of an auto dealership&quot; /&gt;
+  &lt;figcaption&gt;Figure 2: Logical data model of an auto dealership &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Finally, the physical model will depend on the chosen database technology and will involve considerations such as how easy it is to manage it and will it be able to handle the load if the data volume scales.&lt;/p&gt;
 
 &lt;h2 id=&quot;normalization-vs-denormalization&quot;&gt;Normalization vs Denormalization&lt;/h2&gt;
 
@@ -1292,11 +1317,20 @@ Some popular rate limiting algorithms include:
           &lt;li&gt;&lt;strong&gt;Integrated&lt;/strong&gt; = other data sources&lt;/li&gt;
           &lt;li&gt;&lt;strong&gt;Subject oriented&lt;/strong&gt; = reorganise the data per subject&lt;/li&gt;
           &lt;li&gt;&lt;strong&gt;Time variant&lt;/strong&gt; = data warehouse contains historical data&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Non volatile&lt;/strong&gt; = data warehouse remains stable between refreshes&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Non volatile&lt;/strong&gt; = data warehouse remains stable between refreshes
+Continuing with the auto dealership example, an example of a star schema of the EDW is shown below:&lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/19_star_schema_auto_dealership.png&quot; alt=&quot;star schema of an auto dealership&quot; /&gt;
+  &lt;figcaption&gt;Figure 3: Star schema of an auto dealership &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Kimball&lt;/strong&gt;
     &lt;ul&gt;
       &lt;li&gt;Bottom up approach&lt;/li&gt;
@@ -1318,13 +1352,22 @@ Some popular rate limiting algorithms include:
           &lt;/li&gt;
           &lt;li&gt;&lt;strong&gt;Type 3&lt;/strong&gt;
             &lt;ul&gt;
-              &lt;li&gt;A type 3 SCD is similar to a type 2 SCD, but instead of creating a new Row, a change in a type 3 SCD creates a new field&lt;/li&gt;
+              &lt;li&gt;A type 3 SCD is similar to a type 2 SCD, but instead of creating a new Row, a change in a type 3 SCD creates a new field
+Applying the dimensional modeling approach to our example will result, as shown below, in a &lt;em&gt;Sales&lt;/em&gt; fact table representing sales transactions with numeric measures (facts) and several dimension tables that provide the context for the facts with descriptive attributes.&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/19_dimensional_model_auto_dealership.png&quot; alt=&quot;dimensional model of an auto dealership&quot; /&gt;
+  &lt;figcaption&gt;Figure 4: Dimensional model of an auto dealership &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Data Vault&lt;/strong&gt;
     &lt;ul&gt;
       &lt;li&gt;Data Vaults organize data into three different types: &lt;strong&gt;hubs&lt;/strong&gt;, &lt;strong&gt;links&lt;/strong&gt;, and &lt;strong&gt;satellites&lt;/strong&gt;
@@ -1359,7 +1402,7 @@ Some popular rate limiting algorithms include:
 
 &lt;figure&gt;
   &lt;img src=&quot;/assets/images/articles/19_data_lakehouse_architecture.png&quot; alt=&quot;medallion architecture with used modeling techniques in each stage&quot; /&gt;
-  &lt;figcaption&gt;Figure 1: Data lakehouse architecture and modeling techniques - &lt;a href=&quot;https://www.databricks.com/blog/2022/06/24/data-warehousing-modeling-techniques-and-their-implementation-on-the-databricks-lakehouse-platform.html&quot;&gt;Image Source&lt;/a&gt;&lt;/figcaption&gt;
+  &lt;figcaption&gt;Figure 5: Data lakehouse architecture and modeling techniques - &lt;a href=&quot;https://www.databricks.com/blog/2022/06/24/data-warehousing-modeling-techniques-and-their-implementation-on-the-databricks-lakehouse-platform.html&quot;&gt;Image Source&lt;/a&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;First data is landed in the Bronze layer in raw format using the same models of source systems in order to get converted to delta lake format. Next it flows into the Silver layer where it gets aggregated using more normalized model. Finally, the gold layer is meant for read-optimized presentation layer using denormalized models.&lt;/p&gt;
@@ -1382,7 +1425,9 @@ Some popular rate limiting algorithms include:
 
 &lt;p&gt;&lt;a href=&quot;https://www.databricks.com/glossary/medallion-architecture&quot;&gt;https://www.databricks.com/glossary/medallion-architecture&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.databricks.com/blog/2022/06/24/prescriptive-guidance-for-implementing-a-data-vault-model-on-the-databricks-lakehouse-platform.html&quot;&gt;https://www.databricks.com/blog/2022/06/24/prescriptive-guidance-for-implementing-a-data-vault-model-on-the-databricks-lakehouse-platform.html&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><category term="Data Architecture" /><summary type="html">In this article we will go over the big three approaches for modeling analytical data.</summary></entry><entry><title type="html">Preparation Guide for Google Cloud Professional Data Engineer Certification</title><link href="https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification.html" rel="alternate" type="text/html" title="Preparation Guide for Google Cloud Professional Data Engineer Certification" /><published>2023-11-19T00:00:00+00:00</published><updated>2023-11-19T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification.html">&lt;p&gt;&lt;em&gt;This article contains a collection of notes, mind maps and resources to support you while preparing for the google cloud professional data engineer certification.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.databricks.com/blog/2022/06/24/prescriptive-guidance-for-implementing-a-data-vault-model-on-the-databricks-lakehouse-platform.html&quot;&gt;https://www.databricks.com/blog/2022/06/24/prescriptive-guidance-for-implementing-a-data-vault-model-on-the-databricks-lakehouse-platform.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/what-is/data-modeling/&quot;&gt;https://aws.amazon.com/what-is/data-modeling/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><category term="Data Architecture" /><summary type="html">In this article we will go over the big three approaches for modeling analytical data.</summary></entry><entry><title type="html">Preparation Guide for Google Cloud Professional Data Engineer Certification</title><link href="https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification.html" rel="alternate" type="text/html" title="Preparation Guide for Google Cloud Professional Data Engineer Certification" /><published>2023-11-19T00:00:00+00:00</published><updated>2023-11-19T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification.html">&lt;p&gt;&lt;em&gt;This article contains a collection of notes, mind maps and resources to support you while preparing for the google cloud professional data engineer certification.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Disclaimer&lt;/em&gt;&lt;/strong&gt;: The new Professional Data Engineer exam will be live starting November 13. The new version reflects updates to Google Cloud’s data storing, data sharing, and data governance and has less emphasis on operationalizing machine learning models. 
 That being said, I believe most of the content is still relevant and can serve as a guide to assist you as you begin your preparation.&lt;/p&gt;
