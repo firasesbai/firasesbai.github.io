@@ -2,6 +2,7 @@
 layout: post
 title:  "Data Warehouse Modeling Techniques"
 date:   2024-08-11
+modified_date: 01.01.2025
 category: articles
 tags: ["Data Engineering", "Data Architecture"]
 author: Firas Esbai
@@ -29,13 +30,35 @@ Unlike the data warehouse which is a centralized data repository that provides a
 
 ## What is Data Modeling? ##
 
-The aim of the data model design is to represent the data in an easy way for reusability, flexibility, and scalability. The process of crafting data models involves 3 steps:
+Data Modeling is the process of creating a visual representation of a system's data to represent it in an easy way for reusability, flexibility, and scalability. 
+The output is usually a collection of living documents that evolve along with changes to business needs and serve the purpose of facilitating communication among stakeholders and the foundation for later database implementation and analysis.
+
+The process of crafting data models involves 3 steps:
 - **Conceptual**
    - Analysis and design phase to understand the key business entities and attributes and capture their interactions as per the business processes and rules within the organization.
 - **Logical**
    - Technology agnostic model that adds more details and relations between entities for how the conceptual model will be implemented.
 - **Physical**
-   - Defines how the logical model will be implemented using the system and technology in question to ensure that the writes and reads can be performed efficiently.
+   - Defines how the logical model will be implemented using the system and technology in question to ensure that the writes and reads can be performed efficiently. It gives details about:
+      - Data field types as represented in the Database Management System (DBMS)
+      - Data relationships as represented in the DBMS
+      - Additional details, such as performance tuning
+
+To better illustrate these steps, let's consider an **Auto Dealership** as an example and model the potential system's data. For instance, the diagram below highlights the different data entities and their relationships of the business on a conceptual level:
+
+<figure>
+  <img src="/assets/images/articles/19_conceptual_model_auto_dealership.png" alt="conceptual data model of an auto dealership">
+  <figcaption>Figure 1: Conceptual data model of an auto dealership</figcaption>
+</figure>
+
+Adding more details to the identified entities will result in the following logical diagram: 
+
+<figure>
+  <img src="/assets/images/articles/19_logical_model_auto_dealership.png" alt="logical data model of an auto dealership">
+  <figcaption>Figure 2: Logical data model of an auto dealership </figcaption>
+</figure>
+
+Finally, the physical model will depend on the chosen database technology and will involve considerations such as how easy it is to manage it and will it be able to handle the load if the data volume scales. 
 
 ## Normalization vs Denormalization ##
 
@@ -121,6 +144,13 @@ The three big approaches for modeling analytical data are:
       - **Subject oriented** = reorganise the data per subject
       - **Time variant** = data warehouse contains historical data
       - **Non volatile** = data warehouse remains stable between refreshes
+Continuing with the auto dealership example, an example of a star schema of the EDW is shown below:
+
+<figure>
+  <img src="/assets/images/articles/19_star_schema_auto_dealership.png" alt="star schema of an auto dealership">
+  <figcaption>Figure 3: Star schema of an auto dealership </figcaption>
+</figure>
+
 - **Kimball**
    - Bottom up approach
    - Focuses on building data marts that address specific business processes making the data mart the data warehouse itself
@@ -134,6 +164,13 @@ The three big approaches for modeling analytical data are:
          - Keep a full history of dimension records. When a record changes, that specific record is flagged as changed, and a new dimension record is created that reflects the current status of the attributes
       - **Type 3**
          - A type 3 SCD is similar to a type 2 SCD, but instead of creating a new Row, a change in a type 3 SCD creates a new field
+Applying the dimensional modeling approach to our example will result, as shown below, in a *Sales* fact table representing sales transactions with numeric measures (facts) and several dimension tables that provide the context for the facts with descriptive attributes. 
+
+<figure>
+  <img src="/assets/images/articles/19_dimensional_model_auto_dealership.png" alt="dimensional model of an auto dealership">
+  <figcaption>Figure 4: Dimensional model of an auto dealership </figcaption>
+</figure>
+
 - **Data Vault**
    - Data Vaults organize data into three different types: **hubs**, **links**, and **satellites**
       - Hubs represent core business entities. The primary key of Hub tables is usually derived by a combination of business concept ID, load date, and other metadata information
@@ -158,7 +195,7 @@ The following diagram summarizes the mapping of different layers, their purpose,
 
 <figure>
   <img src="/assets/images/articles/19_data_lakehouse_architecture.png" alt="medallion architecture with used modeling techniques in each stage">
-  <figcaption>Figure 1: Data lakehouse architecture and modeling techniques - <a href="https://www.databricks.com/blog/2022/06/24/data-warehousing-modeling-techniques-and-their-implementation-on-the-databricks-lakehouse-platform.html">Image Source</a></figcaption>
+  <figcaption>Figure 5: Data lakehouse architecture and modeling techniques - <a href="https://www.databricks.com/blog/2022/06/24/data-warehousing-modeling-techniques-and-their-implementation-on-the-databricks-lakehouse-platform.html">Image Source</a></figcaption>
 </figure>
 
 
@@ -183,3 +220,5 @@ In this article we covered the three main data warehouse modeling techniques and
 [https://www.databricks.com/glossary/medallion-architecture](https://www.databricks.com/glossary/medallion-architecture)
 
 [https://www.databricks.com/blog/2022/06/24/prescriptive-guidance-for-implementing-a-data-vault-model-on-the-databricks-lakehouse-platform.html](https://www.databricks.com/blog/2022/06/24/prescriptive-guidance-for-implementing-a-data-vault-model-on-the-databricks-lakehouse-platform.html)
+
+[https://aws.amazon.com/what-is/data-modeling/](https://aws.amazon.com/what-is/data-modeling/)
