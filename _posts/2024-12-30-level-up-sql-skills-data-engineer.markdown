@@ -61,7 +61,7 @@ The following table summarizes the SQL query order of execution:
 
 <p style="text-align:center;">Table 1: SQL query order of execution</p>
 
-## Advanced SLQ ##
+## Advanced SQL ##
 
 ## Subquery vs CTE vs Temp Table ##
 
