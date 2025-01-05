@@ -8,6 +8,7 @@ author: Firas Esbai
 decription: "My recommended list of books arranged in different categories and subjects"
 comments: true
 pinned: true 
+image: "/assets/images/articles/13_reading_recommendations.jpg"
 ---
 
 *A curated list of books that I have read and would recommend to others. The list is organised in different topics and subjects.*

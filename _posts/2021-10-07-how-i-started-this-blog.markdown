@@ -7,6 +7,7 @@ tags: ["Blogging"]
 author: Firas Esbai
 description: "Detailed steps to create a blog using jekyll a static site generator and host it in github pages"
 comments: true
+image: "/assets/images/articles/4_how_i_started_this_blog.png"
 ---
 
 *In this article we will see how to easily setup and publish your first blog website.* 

@@ -8,6 +8,7 @@ tags: ["Data Engineering", "Data Architecture"]
 author: Firas Esbai
 description: "Big three modeling techniques and database design approaches and their implementation in databricks lakehouse architecure"
 comments: true
+image: "/assets/images/articles/19_star_schema_auto_dealership.png"
 ---
 
 *In this article we will go over the big three approaches for modeling analytical data.*

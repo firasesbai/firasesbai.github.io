@@ -7,6 +7,7 @@ tags: ["General"]
 author: Firas Esbai
 decription: "Summary, favorite quotes and important notes and takeaways from the book the lean startup by eric ries"
 comments: true
+image: "/assets/images/articles/14_the_lean_startup.png"
 ---
 
 *Notes from the Lean Startup Book By Eric Ries*

@@ -7,6 +7,7 @@ tags: ["Observability"]
 author: Firas Esbai
 description: "Explanation of important metrics and their usage for Apache Kafka Monitoring"
 comments: true
+image: "/assets/images/articles/2_grafana_dashboard.png"
 ---
 
 *In this article we will stop by some of the most important metrics that we need to keep an eye on while monitoring an Apache Kafka cluster.*

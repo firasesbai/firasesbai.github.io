@@ -7,6 +7,7 @@ tags: ["General"]
 author: Firas Esbai
 description: "Summary and important notes and takeaways from the book learning how to learn by Barbara Oakley"
 comments: true
+image: "/assets/images/articles/17_learning_how_to_learn.png"
 ---
 
 *Notes from the Learning How to Learn Book By Barbara Oakley.*

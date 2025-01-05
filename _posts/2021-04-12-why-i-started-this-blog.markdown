@@ -7,6 +7,7 @@ tags: ["Blogging"]
 author: Firas Esbai
 description: "Discover the transformative power of starting a blog for the right reasons. Explore my Five personal reasons why i started blogging to help you join the journey"
 comments: true
+image: "/assets/images/articles/3_why_i_started_this_blog.jpg"
 ---
 
 *5 Reasons Why I Started This Blog.*

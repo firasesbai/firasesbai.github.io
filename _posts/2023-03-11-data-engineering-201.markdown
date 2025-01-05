@@ -7,6 +7,7 @@ tags: ["Data Engineering"]
 author: Firas Esbai
 description: "In this article we will discuss different data sources and big data file formats as well as data governance, its benefits and differences from data management"
 comments: true
+image: "/assets/images/articles/10_data_flow.png"
 ---
 
 *In this two parts article we will deep dive into each of the general steps of the data flow.* 

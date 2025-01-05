@@ -68,6 +68,17 @@ pagination:
   sort_field: 'date'
   sort_reverse: true
 
+# SEO Tag Settings
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      image: 
+        path: /assets/images/default-sep-tag-image.png
+        height: 630
+        width: 1200
+
 # Redirects Settings
 redirect_from:
   json: false

@@ -7,6 +7,7 @@ tags: ["Observability"]
 author: Firas Esbai
 description: "In this article we will deep dive into prometheus and see how to create a custom metric for a simple python application"
 comments: true
+image: "/assets/images/articles/9_prometheus_interface.png"
 ---
 
 *In this article we will deep dive into prometheus, the open-source monitoring and alerting system, and see how we can use it to monitor a simple python application.* 

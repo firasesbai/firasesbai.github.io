@@ -7,6 +7,7 @@ tags: ["Data Engineering", "Data Architecture"]
 author: Firas Esbai
 description: "uncovering lambda and kappa architectures and their tradeoffs and use cases"
 comments: true
+image: "/assets/images/articles/16_lambda_architecture.png"
 ---
 
 *In this article we will explore two popular data processing architectures: Lambda and Kappa. We will take a look at their components, key differences and how to choose between them.*
