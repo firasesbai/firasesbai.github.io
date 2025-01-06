@@ -7,7 +7,7 @@
     "category"   : "articles",
     "date"       : "2024-12-30 00:00:00 +0000",
 	  "tags"       : "Data Engineering",
-	  "description": "overview of sql topics with example queries for data engineers"
+	  "description": "Overview of sql topics from basic to advanced with example queries for data engineers looking to level up their sql skills"
 
     } ,
   
@@ -51,7 +51,7 @@
     "category"   : "articles",
     "date"       : "2024-08-11 00:00:00 +0000",
 	  "tags"       : "Blogging",
-	  "description": "Reasons for discrepancies between data present in google analytics and data in cloudflare analytics"
+	  "description": "Reasons for discrepancies between data present in google analytics and data in cloudflare analytics and how to leverage both"
 
     } ,
   
@@ -62,7 +62,7 @@
     "category"   : "articles",
     "date"       : "2023-11-19 00:00:00 +0000",
 	  "tags"       : "Cloud Computing",
-	  "description": "Preparation guide full of mind maps, notes and resources to help you prepare for google cloud professional data engineer certification."
+	  "description": "Preparation guide full of mind maps, notes and resources to help you prepare for google cloud professional data engineer certification"
 
     } ,
   
@@ -84,7 +84,7 @@
     "category"   : "articles",
     "date"       : "2023-09-24 00:00:00 +0000",
 	  "tags"       : "Data Engineering Data Architecture",
-	  "description": "uncovering lambda and kappa architectures and their tradeoffs and use cases"
+	  "description": "Uncovering lambda and kappa architectures, their tradeoffs and use cases and how to choose the right architecture"
 
     } ,
   
@@ -95,7 +95,7 @@
     "category"   : "articles",
     "date"       : "2023-09-10 00:00:00 +0000",
 	  "tags"       : "Data Engineering Data Architecture Cloud Computing",
-	  "description": "uncovering modern data stack, its components with examples and their objectives"
+	  "description": "Uncovering modern data stack, its components with examples and their objectives"
 
     } ,
   
@@ -106,7 +106,7 @@
     "category"   : "articles",
     "date"       : "2023-08-21 00:00:00 +0000",
 	  "tags"       : "Blogging",
-	  "description": "In this article we will walk through required steps to transform a jekyll blog into a progressive web app and how to deploy it to github pages after exploring some theory behind it."
+	  "description": "Required steps to transform a jekyll blog into a progressive web app and how to deploy it to github pages after exploring some theory behind it"
 
     } ,
   
@@ -117,7 +117,7 @@
     "category"   : "articles",
     "date"       : "2023-03-12 00:00:00 +0000",
 	  "tags"       : "Data Engineering",
-	  "description": "In this article we will deep dive into data ingestion and data integration techniques. Look into popular methods for data processing and transformation. Explore different storage types and how they compare to each others."
+	  "description": "Deep dive into data ingestion and integration techniques, popular methods for data processing and transformation and comparison of different storage types"
 
     } ,
   
@@ -194,7 +194,7 @@
     "category"   : "articles",
     "date"       : "2021-10-07 00:00:00 +0000",
 	  "tags"       : "Blogging",
-	  "description": "Detailed steps to create a blog using jekyll a static site generator and host it in github pages"
+	  "description": "Detailed steps to create a blog packed with fundamental features using jekyll a static site generator and host it in github pages"
 
     } ,
   
@@ -216,7 +216,7 @@
     "category"   : "articles",
     "date"       : "2021-02-07 00:00:00 +0000",
 	  "tags"       : "Observability",
-	  "description": "Explanation of important metrics and their usage for Apache Kafka Monitoring"
+	  "description": "Explanation of important metrics and their usage for Apache Kafka Monitoring and how to visualize then in grafana"
 
     } ,
   
