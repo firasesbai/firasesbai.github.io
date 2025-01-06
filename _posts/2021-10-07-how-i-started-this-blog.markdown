@@ -5,7 +5,7 @@ date:   2021-10-07
 category: articles
 tags: ["Blogging"]
 author: Firas Esbai
-description: "Detailed steps to create a blog using jekyll a static site generator and host it in github pages"
+description: "Detailed steps to create a blog packed with fundamental features using jekyll a static site generator and host it in github pages"
 comments: true
 image: "/assets/images/articles/4_how_i_started_this_blog.png"
 ---

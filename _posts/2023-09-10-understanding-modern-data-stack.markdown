@@ -5,7 +5,7 @@ date:   2023-09-10
 category: articles
 tags: ["Data Engineering", "Data Architecture", "Cloud Computing"]
 author: Firas Esbai
-description: "uncovering modern data stack, its components with examples and their objectives"
+description: "Uncovering modern data stack, its components with examples and their objectives"
 comments: true
 image: "/assets/images/articles/15_modern_data_stack_example.png"
 ---

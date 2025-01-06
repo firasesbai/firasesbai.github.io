@@ -6,7 +6,7 @@ modified_date:
 category: articles
 tags: ["Data Engineering"]
 author: Firas Esbai
-description: "overview of sql topics with example queries for data engineers"
+description: "Overview of sql topics from basic to advanced with example queries for data engineers looking to level up their sql skills"
 comments: true
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /categories/data-engineering
+description: "Explore articles and insights on data engineering, covering key topics and resources to expand your knowledge and interests."
 ---
 
 {% assign category = "Data Engineering" %}

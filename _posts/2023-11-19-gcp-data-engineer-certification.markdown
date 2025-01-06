@@ -6,7 +6,7 @@ modified_date: 2024-12-23
 category: articles
 tags: ["Cloud Computing"]
 author: Firas Esbai
-description: "Preparation guide full of mind maps, notes and resources to help you prepare for google cloud professional data engineer certification."
+description: "Preparation guide full of mind maps, notes and resources to help you prepare for google cloud professional data engineer certification"
 comments: true
 image: "/assets/images/articles/18_gcp_regions.png"
 ---

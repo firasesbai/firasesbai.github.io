@@ -5,7 +5,7 @@ date:   2023-03-12
 category: articles
 tags: ["Data Engineering"]
 author: Firas Esbai
-description: "deep dive into data ingestion and integration techniques, popular methods for data processing and transformation and comparison of different storage types"
+description: "Deep dive into data ingestion and integration techniques, popular methods for data processing and transformation and comparison of different storage types"
 comments: true
 redirect_from: /articles/2023/03/12/data-engineering-201-Part-2.html
 image: "/assets/images/articles/12_data_warehouse_vs_data_lake_vs_data_lakehouse.png"

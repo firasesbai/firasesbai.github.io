@@ -5,7 +5,7 @@ date:   2023-09-24
 category: articles
 tags: ["Data Engineering", "Data Architecture"]
 author: Firas Esbai
-description: "uncovering lambda and kappa architectures and their tradeoffs and use cases"
+description: "Uncovering lambda and kappa architectures, their tradeoffs and use cases and how to choose the right architecture"
 comments: true
 image: "/assets/images/articles/16_lambda_architecture.png"
 ---

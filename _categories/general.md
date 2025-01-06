@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /categories/general
+description: "Explore articles and general notes from books or other interesting resources covering their key topics."
 ---
 
 {% assign category = "General" %}

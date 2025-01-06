@@ -5,7 +5,7 @@ date:   2024-08-11
 category: articles
 tags: ["Blogging"]
 author: Firas Esbai
-description: "Reasons for discrepancies between data present in google analytics and data in cloudflare analytics"
+description: "Reasons for discrepancies between data present in google analytics and data in cloudflare analytics and how to leverage both"
 comments: true
 ---
 

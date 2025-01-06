@@ -1,6 +1,7 @@
 ---
 layout: page
 permalink: /categories/cloud-computing
+description: "Explore articles and insights on cloud computing, covering key topics and resources to expand your knowledge and interests."
 ---
 
 {% assign category = "Cloud Computing" %}
