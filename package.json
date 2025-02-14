@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "workbox-cli": "^7.0.0"
+    "workbox-cli": "^7.3.0"
   }
 }
