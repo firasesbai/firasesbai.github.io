@@ -416,13 +416,14 @@ The output is usually a collection of living documents that evolve along with ch
           <li><strong>Integrated</strong> = other data sources</li>
           <li><strong>Subject oriented</strong> = reorganise the data per subject</li>
           <li><strong>Time variant</strong> = data warehouse contains historical data</li>
-          <li><strong>Non volatile</strong> = data warehouse remains stable between refreshes
-Continuing with the auto dealership example, an example of a star schema of the EDW is shown below:</li>
+          <li><strong>Non volatile</strong> = data warehouse remains stable between refreshes</li>
         </ul>
       </li>
     </ul>
   </li>
 </ul>
+
+<p>Continuing with the auto dealership example, an example of a star schema of the EDW is shown below:</p>
 
 <figure>
   <img src="/assets/images/articles/19_star_schema_auto_dealership.png" alt="star schema of an auto dealership" />
@@ -451,8 +452,7 @@ Continuing with the auto dealership example, an example of a star schema of the 
           </li>
           <li><strong>Type 3</strong>
             <ul>
-              <li>A type 3 SCD is similar to a type 2 SCD, but instead of creating a new Row, a change in a type 3 SCD creates a new field
-Applying the dimensional modeling approach to our example will result, as shown below, in a <em>Sales</em> fact table representing sales transactions with numeric measures (facts) and several dimension tables that provide the context for the facts with descriptive attributes.</li>
+              <li>A type 3 SCD is similar to a type 2 SCD, but instead of creating a new Row, a change in a type 3 SCD creates a new field</li>
             </ul>
           </li>
         </ul>
@@ -460,6 +460,8 @@ Applying the dimensional modeling approach to our example will result, as shown 
     </ul>
   </li>
 </ul>
+
+<p>Applying the dimensional modeling approach to our example will result, as shown below, in a <em>Sales</em> fact table representing sales transactions with numeric measures (facts) and several dimension tables that provide the context for the facts with descriptive attributes.</p>
 
 <figure>
   <img src="/assets/images/articles/19_dimensional_model_auto_dealership.png" alt="dimensional model of an auto dealership" />
@@ -551,6 +553,18 @@ Applying the dimensional modeling approach to our example will result, as shown 
     
    
     
+    <div>
+      <h3><a href="/articles/2025/05/18/data-encoding-and-formats.html">Data Encoding and Formats</a></h3>
+    </div>
+    
+    
+   
+   
+    
+    
+    
+   
+    
    
     
     
@@ -583,42 +597,6 @@ Applying the dimensional modeling approach to our example will result, as shown 
     
     <div>
       <h3><a href="/articles/2024/11/17/evolution-analytical-data-architectures.html">Evolution of Analytical Data Architectures: From Data Warehouses to Lakehouses</a></h3>
-    </div>
-    
-    
-   
-   
-    
-    
-    
-   
-    
-   
-    
-    
-    
-   
-    
-   
-    
-    
-    
-   
-    
-   
-    
-    
-    
-   
-    
-   
-    
-    
-    
-   
-    
-    <div>
-      <h3><a href="/articles/2023/09/24/data-processing-architectures-lambda-vs-kappa.html">Data Processing Architectures: Lambda vs Kappa</a></h3>
     </div>
     
     

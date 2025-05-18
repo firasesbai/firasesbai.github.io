@@ -162,10 +162,14 @@
       
       <span class="reading-time" title="Estimated read time">
   
-  15 min read
+  17 min read
 </span>
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name"> - Firas Esbai</span></span></p></header>
+            <span class="p-author h-card" itemprop="name"> - Firas Esbai</span></span></p><p class="post-meta last-updated">
+        Last updated:<time class="dt-modified" datetime="2025-05-18T00:00:00+00:00" itemprop="dateModified">
+          May 18, 2025
+        </time>
+      </p></header>
 
   <div class="post-content e-content" itemprop="articleBody">
     <p><em>This is part 2 of our in-depth article discussing the different stages of data flow inside an organisation.</em></p>
@@ -181,7 +185,7 @@
 <h1> Contents </h1>
 <ul id="markdown-toc">
   <li><a href="#ingestion" id="markdown-toc-ingestion">Ingestion</a></li>
-  <li><a href="#transformation" id="markdown-toc-transformation">Transformation</a></li>
+  <li><a href="#transformation-batch-vs-streaming" id="markdown-toc-transformation-batch-vs-streaming">Transformation: Batch vs Streaming</a></li>
   <li><a href="#storage" id="markdown-toc-storage">Storage</a>    <ul>
       <li><a href="#oltp-vs-olap" id="markdown-toc-oltp-vs-olap">OLTP vs OLAP</a></li>
       <li><a href="#oltp-databases" id="markdown-toc-oltp-databases">OLTP Databases</a>        <ul>
@@ -213,6 +217,8 @@ Any data you load into your data warehouse must be transformed into a relational
 As a part of this data transformation process, data mapping may also be necessary to combine multiple data sources based on correlating information. 
 In addition, ETL can help with data privacy and compliance by cleaning sensitive and secure data even before loading into the data warehouse.</p>
 
+<p>ETL processes come in two primary forms: <strong>Initial</strong> and <strong>Incremental</strong>. An <strong>Initial ETL</strong> is typically a one-time, comprehensive data migration performed when a data warehouse is first launched. It loads all necessary historical data, including what’s definitely and potentially needed for business intelligence and analytics. This process might need to be repeated if the data warehouse encounters significant issues. In contrast, <strong>Incremental ETL</strong> handles the ongoing updates to the data warehouse by processing only new, modified, or deleted data. Common patterns for incremental ETL include <strong>append</strong>, which adds new data; <strong>in-place update</strong>, which modifies existing records; <strong>complete replacement</strong>, which refreshes entire datasets; and <strong>rolling append</strong>, which maintains a specific historical window of data.</p>
+
 <p>In ELT on the other hand, data is first extracted from source systems and loaded into the destination system in its raw form, where it is then transformed into the desired format. 
 This approach is typically used in big data environments, where the target system, such as a data lake, is designed to handle large amounts of unstructured and semi-structured data and can perform the transformations in parallel.</p>
 
@@ -221,7 +227,7 @@ This approach is typically used in big data environments, where the target syste
 <p>Sometimes you may want to optimize/reshape your data sooner (because you know that’s how everyone wants to use it). 
 Other times, you want to leave the schema flexible (and just let the user’s queries/views do the work) to avoid having to maintain lots of tables/views/jobs.</p>
 
-<h2 id="transformation">Transformation</h2>
+<h2 id="transformation-batch-vs-streaming">Transformation: Batch vs Streaming</h2>
 
 <p><strong>Batch</strong> and <strong>Stream</strong> processing are two popular methods for data processing and transformation.</p>
 
@@ -240,12 +246,24 @@ You should lean towards batch processing when:</p>
 This would typically be in sub-second timeframes, so that for the end user the processing happens in real-time. 
 These operations would typically not be stateful, or would only be able to store a ‘small’ state, so would usually involve a relatively simple transformation or calculation.</p>
 
+<p>For example, events from an IoT device where each event is processed individually is stateless because we don’t maintain any state or knowledge of the previous events. On the other hand, a stateful example would be calculating the volume of a particular product sold in a particular time interval like an hour for an e-commerce application.</p>
+
 <p>Another alternative is <strong>micro-batch</strong> processing. 
 In micro-batch processing, we run batch processes on much smaller accumulations of data – typically less than a minute’s worth of data. 
 This means data is available in near real-time. 
 In practice, there is little difference between micro-batching and stream processing, and the terms would often be used interchangeably in data architecture descriptions and software platform descriptions.
 Microbatch processing is useful when we need very fresh data, but not necessarily real-time – meaning we can’t wait an hour or a day for a batch processing to run, but we also don’t need to know what happened in the last few seconds. 
 Example scenarios could include web analytics (clickstream) or user behavior.</p>
+
+<p>In general, any application cannot run for an infinite amount of time even if we want them to do that, for two practical reasons:</p>
+<ol>
+  <li>Applications often suffer system failures or cluster crashes.</li>
+  <li>Systems sometimes need to be brought down for periodic maintenance.</li>
+</ol>
+
+<p>Therefore, we want the application to recover gracefully when this happens. This is where checkpointing comes into picture as a fault tolerance mechanism. It involves periodically saving the state of your stream processing application to durable storage. This saved state, or “checkpoint,” allows the system to recover and resume processing from the point of the last successful checkpoint. This prevents data loss and ensures that processing can continue with minimal interruption and without reprocessing the entire data stream. When recovering from a checkpoint, the system might however process some data again. This requires the processing logic to be <strong>idempotent</strong>, which means that reprocessing the same data multiple times won’t cause unintended side effects or inconsistencies in the final results.</p>
+
+<p>In real-world streaming scenarios, data doesn’t always arrive in perfect temporal order due to network latency, processing delays in upstream systems, or other unforeseen issues. If these late-arriving records are simply ignored, the results of windowed computations can be incomplete and inaccurate. <strong>Watermarking</strong> is a common approach for handling late data. A watermark is a heuristic that estimates how far behind the current processing time the event stream is likely to be. The system uses this watermark to determine when it’s “safe” to finalize a window, assuming that no more data for that window is expected to arrive. Late data arriving after the watermark needs to be handled using other strategies. One way is to route it to another system, usually referred to as a Dead-Letter Queue, for further analysis or potential reprocessing in a batch-oriented manner. This prevents late data from indefinitely delaying the processing of subsequent events.</p>
 
 <h2 id="storage">Storage</h2>
 
@@ -537,6 +555,18 @@ Then we discussed the different types of data storage and some concrete implemen
     
    
     
+    <div>
+      <h3><a href="/articles/2025/05/18/data-encoding-and-formats.html">Data Encoding and Formats</a></h3>
+    </div>
+    
+    
+   
+   
+    
+    
+    
+   
+    
    
     
     
@@ -569,18 +599,6 @@ Then we discussed the different types of data storage and some concrete implemen
     
     <div>
       <h3><a href="/articles/2024/11/17/evolution-analytical-data-architectures.html">Evolution of Analytical Data Architectures: From Data Warehouses to Lakehouses</a></h3>
-    </div>
-    
-    
-   
-   
-    
-    
-    
-   
-    
-    <div>
-      <h3><a href="/articles/2024/08/11/data-warehouse-modeling-techniques.html">Data Warehouse Modeling Techniques</a></h3>
     </div>
     
     

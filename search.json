@@ -2,6 +2,17 @@
   
     {
 
+    "title"      : "Data Encoding and Formats",
+	  "url"        : "/articles/2025/05/18/data-encoding-and-formats.html",
+    "category"   : "articles",
+    "date"       : "2025-05-18 00:00:00 +0000",
+	  "tags"       : "Data Engineering",
+	  "description": "Overview of data formats, their characteristics and how to choose the right format for better performance"
+
+    } ,
+  
+    {
+
     "title"      : "Migrating from Google Domains to Cloudflare",
 	  "url"        : "/articles/2025/01/19/google-domains-cloudflare-migration.html",
     "category"   : "articles",
