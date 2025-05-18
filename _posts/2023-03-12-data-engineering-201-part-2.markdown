@@ -9,6 +9,7 @@ description: "Deep dive into data ingestion and integration techniques, popular 
 comments: true
 redirect_from: /articles/2023/03/12/data-engineering-201-Part-2.html
 image: "/assets/images/articles/12_data_warehouse_vs_data_lake_vs_data_lakehouse.png"
+modified_date: 2025-05-18
 ---
 
 *This is part 2 of our in-depth article discussing the different stages of data flow inside an organisation.* 
@@ -32,6 +33,8 @@ Any data you load into your data warehouse must be transformed into a relational
 As a part of this data transformation process, data mapping may also be necessary to combine multiple data sources based on correlating information. 
 In addition, ETL can help with data privacy and compliance by cleaning sensitive and secure data even before loading into the data warehouse. 
 
+ETL processes come in two primary forms: **Initial** and **Incremental**. An **Initial ETL** is typically a one-time, comprehensive data migration performed when a data warehouse is first launched. It loads all necessary historical data, including what's definitely and potentially needed for business intelligence and analytics. This process might need to be repeated if the data warehouse encounters significant issues. In contrast, **Incremental ETL** handles the ongoing updates to the data warehouse by processing only new, modified, or deleted data. Common patterns for incremental ETL include **append**, which adds new data; **in-place update**, which modifies existing records; **complete replacement**, which refreshes entire datasets; and **rolling append**, which maintains a specific historical window of data.
+
 In ELT on the other hand, data is first extracted from source systems and loaded into the destination system in its raw form, where it is then transformed into the desired format. 
 This approach is typically used in big data environments, where the target system, such as a data lake, is designed to handle large amounts of unstructured and semi-structured data and can perform the transformations in parallel.
 
@@ -40,7 +43,7 @@ Rather than obsessing over this ETL vs ELT cage fight, just try to take away the
 Sometimes you may want to optimize/reshape your data sooner (because you know that’s how everyone wants to use it). 
 Other times, you want to leave the schema flexible (and just let the user’s queries/views do the work) to avoid having to maintain lots of tables/views/jobs.
 
-## Transformation ##
+## Transformation: Batch vs Streaming ##
 
 **Batch** and **Stream** processing are two popular methods for data processing and transformation. 
 
@@ -57,12 +60,22 @@ In stream processing, we process data as soon as it arrives in the storage layer
 This would typically be in sub-second timeframes, so that for the end user the processing happens in real-time. 
 These operations would typically not be stateful, or would only be able to store a ‘small’ state, so would usually involve a relatively simple transformation or calculation.
 
+For example, events from an IoT device where each event is processed individually is stateless because we don't maintain any state or knowledge of the previous events. On the other hand, a stateful example would be calculating the volume of a particular product sold in a particular time interval like an hour for an e-commerce application.
+
 Another alternative is **micro-batch** processing. 
 In micro-batch processing, we run batch processes on much smaller accumulations of data – typically less than a minute’s worth of data. 
 This means data is available in near real-time. 
 In practice, there is little difference between micro-batching and stream processing, and the terms would often be used interchangeably in data architecture descriptions and software platform descriptions.
 Microbatch processing is useful when we need very fresh data, but not necessarily real-time – meaning we can’t wait an hour or a day for a batch processing to run, but we also don’t need to know what happened in the last few seconds. 
 Example scenarios could include web analytics (clickstream) or user behavior.
+
+In general, any application cannot run for an infinite amount of time even if we want them to do that, for two practical reasons:
+1. Applications often suffer system failures or cluster crashes.
+2. Systems sometimes need to be brought down for periodic maintenance.
+
+Therefore, we want the application to recover gracefully when this happens. This is where checkpointing comes into picture as a fault tolerance mechanism. It involves periodically saving the state of your stream processing application to durable storage. This saved state, or "checkpoint," allows the system to recover and resume processing from the point of the last successful checkpoint. This prevents data loss and ensures that processing can continue with minimal interruption and without reprocessing the entire data stream. When recovering from a checkpoint, the system might however process some data again. This requires the processing logic to be **idempotent**, which means that reprocessing the same data multiple times won't cause unintended side effects or inconsistencies in the final results.
+
+In real-world streaming scenarios, data doesn't always arrive in perfect temporal order due to network latency, processing delays in upstream systems, or other unforeseen issues. If these late-arriving records are simply ignored, the results of windowed computations can be incomplete and inaccurate. **Watermarking** is a common approach for handling late data. A watermark is a heuristic that estimates how far behind the current processing time the event stream is likely to be. The system uses this watermark to determine when it's "safe" to finalize a window, assuming that no more data for that window is expected to arrive. Late data arriving after the watermark needs to be handled using other strategies. One way is to route it to another system, usually referred to as a Dead-Letter Queue, for further analysis or potential reprocessing in a batch-oriented manner. This prevents late data from indefinitely delaying the processing of subsequent events.
 
 ## Storage ##
 
