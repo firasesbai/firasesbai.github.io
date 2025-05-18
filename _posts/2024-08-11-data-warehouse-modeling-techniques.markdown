@@ -145,6 +145,7 @@ The three big approaches for modeling analytical data are:
       - **Subject oriented** = reorganise the data per subject
       - **Time variant** = data warehouse contains historical data
       - **Non volatile** = data warehouse remains stable between refreshes
+
 Continuing with the auto dealership example, an example of a star schema of the EDW is shown below:
 
 <figure>
@@ -165,6 +166,7 @@ Continuing with the auto dealership example, an example of a star schema of the 
          - Keep a full history of dimension records. When a record changes, that specific record is flagged as changed, and a new dimension record is created that reflects the current status of the attributes
       - **Type 3**
          - A type 3 SCD is similar to a type 2 SCD, but instead of creating a new Row, a change in a type 3 SCD creates a new field
+
 Applying the dimensional modeling approach to our example will result, as shown below, in a *Sales* fact table representing sales transactions with numeric measures (facts) and several dimension tables that provide the context for the facts with descriptive attributes. 
 
 <figure>
