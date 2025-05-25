@@ -1,5 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2025-05-18T14:16:41+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>The Blog and Portfolio of Firas Esbai.
-</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Data Encoding and Formats</title><link href="https://www.firasesbai.com/articles/2025/05/18/data-encoding-and-formats.html" rel="alternate" type="text/html" title="Data Encoding and Formats" /><published>2025-05-18T00:00:00+00:00</published><updated>2025-05-18T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/05/18/data-encoding-and-formats</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/05/18/data-encoding-and-formats.html">&lt;p&gt;&lt;em&gt;In this article, we will explore the importance of data encoding and how to choose the right data format, weather it is simple CSVs or binary formats like Avro and Parquet, in order to achieve better performance, cost, and evolvability.&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2025-05-25T13:14:55+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>The Blog and Portfolio of Firas Esbai.
+</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Data Engineering Capabilities and Personas</title><link href="https://www.firasesbai.com/articles/2025/05/25/data-engineering-capabilities-and-personas.html" rel="alternate" type="text/html" title="Data Engineering Capabilities and Personas" /><published>2025-05-25T00:00:00+00:00</published><updated>2025-05-25T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/05/25/data-engineering-capabilities-and-personas</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/05/25/data-engineering-capabilities-and-personas.html">&lt;p&gt;&lt;em&gt;In this article, we will look at key data engineering capabilities at the intersection of several archetypes and personas.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In &lt;a href=&quot;https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html&quot;&gt;a previous article&lt;/a&gt;, we looked into the role of a data engineer and the general responsibilities associated with it. However, the field of data engineering has changed dramatically over the last decade. This led to the emergence of different constellations of data teams. Depending on the company size and maturity level, more specialized personas appeared requiring certain set of capabilities. In today’s article, we will breakdown these types and the expected capabilities.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#software-engineering-at-heart&quot; id=&quot;markdown-toc-software-engineering-at-heart&quot;&gt;Software Engineering at Heart&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#data-platform-engineering&quot; id=&quot;markdown-toc-data-platform-engineering&quot;&gt;Data Platform Engineering&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#analytics-engineering&quot; id=&quot;markdown-toc-analytics-engineering&quot;&gt;Analytics Engineering&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;software-engineering-at-heart&quot;&gt;Software Engineering at Heart&lt;/h2&gt;
+
+&lt;p&gt;There is a lot of debate and people comparing the role of data engineer with traditional software engineering. Some would argue that a data engineer is just a specialized software engineer while others would question the complexity and required technical skills in data engineering. One thing we can take out from this though is that the lines between the roles are blurring.&lt;/p&gt;
+
+&lt;p&gt;A data engineer should be able to build, maintain and test the software architecture for managing different complexities of data. This includes understanding the principles, patterns and practices of writing clean code that is easy to evolve, test and get into production. A solid understanding of distributed systems and microservices architecture through the lenses of Application Programming Interfaces (APIs) in order to implement a secure, scalable and performant solution.&lt;/p&gt;
+
+&lt;h2 id=&quot;data-platform-engineering&quot;&gt;Data Platform Engineering&lt;/h2&gt;
+
+&lt;p&gt;Another area data teams focus on is the design and operation of the infrastructure required to run different types of data workloads. This includes knowing the tradeoffs between on-premises and cloud infrastructure as well as related tools and practices such as infrastructure as code, monitoring, performance testing and optimization.&lt;/p&gt;
+
+&lt;p&gt;The purpose of building a data platform is to cover the end to end data lifecycle and related aspects including:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Data pipelines:
+    &lt;ul&gt;
+      &lt;li&gt;Ability to build, deploy, and orchestrate data pipelines and the different technology options to implement them. Examples include Extract-Transform-Load (ETL), Extract-Load-Transform (ELT), Change Data Capture (CDC), and batch vs. streaming pipelines.&lt;/li&gt;
+      &lt;li&gt;Building data pipelines is not just about moving data from one system to another. It involves continuously evaluating, monitoring and improving the quality of your data over time. Common data quality aspects include completeness, timeliness, accuracy, integrity, and consistency.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Data Modeling:
+    &lt;ul&gt;
+      &lt;li&gt;Ability to model data in different types of databases according to the data architecture and business needs. This includes RDBMS, data warehouses, key-value stores, document stores, graph databases, distributed file systems and columnar data stores.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Data Storage:
+    &lt;ul&gt;
+      &lt;li&gt;Ability to understand and choose different platforms and technology options to store data. This includes different types of databases, data lake, data warehouse, and data serialization formats.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Data Governance:
+    &lt;ul&gt;
+      &lt;li&gt;Data governance includes a company-wide principles, practices and organizational structures. It involves the ability to understand, design, and apply security controls around the sharing and using of data across the enterprise. Encompassing aspects around authorization, encryption, information security, compliance and regulatory needs. In addition, familiarity with the elements of data privacy and ethics such as bias, are crucial in order to detect and mitigate the anticipated threats, vulnerabilities and unintended consequences that can arise when using data.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;analytics-engineering&quot;&gt;Analytics Engineering&lt;/h2&gt;
+
+&lt;p&gt;One more area to cover is analytics engineering where data engineering teams focus on extracting insights and knowledge from the processed data at the end of the data lifecycle. In addition to understanding multidimensional modeling and data warehousing technologies, it involves the ability to derive insights and actionable knowledge delivering clear reports, dashboards and KPIs containing compelling and effective visualizations to inform stakeholders and to support business decision-making.&lt;/p&gt;
+
+&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
+
+&lt;p&gt;Let me know what other teams should we include?&lt;/p&gt;
+
+&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;In this article, we discussed core capabilities required across different personas and team structures. Understanding these constellations helps organizations build effective teams and deliver value.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><summary type="html">In this article, we will look at key data engineering capabilities at the intersection of several archetypes and personas.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Data Encoding and Formats</title><link href="https://www.firasesbai.com/articles/2025/05/18/data-encoding-and-formats.html" rel="alternate" type="text/html" title="Data Encoding and Formats" /><published>2025-05-18T00:00:00+00:00</published><updated>2025-05-18T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/05/18/data-encoding-and-formats</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/05/18/data-encoding-and-formats.html">&lt;p&gt;&lt;em&gt;In this article, we will explore the importance of data encoding and how to choose the right data format, weather it is simple CSVs or binary formats like Avro and Parquet, in order to achieve better performance, cost, and evolvability.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Data Serialization and Data Formats go hand in hand; one converts data objects to a shareable or storable structure and the other describes how this new structure is stored or transmitted and retrieved. The choice of &lt;em&gt;how&lt;/em&gt; we serialize and the &lt;em&gt;format&lt;/em&gt; we use impacts performance, storage costs and interoperability. Getting it right is key to building efficient, scalable, and maintainable data pipelines.&lt;/p&gt;
 
@@ -2509,102 +2577,4 @@ The essential idea here is that the zombie habitual part of your brain likes pro
 
 &lt;p&gt;&lt;a href=&quot;https://www.brainfacts.org/&quot;&gt;https://www.brainfacts.org/&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Procrastination&quot;&gt;https://en.wikipedia.org/wiki/Procrastination&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="notes" /><category term="General" /><summary type="html">Notes from the Learning How to Learn Book By Barbara Oakley.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/articles/17_learning_how_to_learn.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/articles/17_learning_how_to_learn.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Data Processing Architectures: Lambda vs Kappa</title><link href="https://www.firasesbai.com/articles/2023/09/24/data-processing-architectures-lambda-vs-kappa.html" rel="alternate" type="text/html" title="Data Processing Architectures: Lambda vs Kappa" /><published>2023-09-24T00:00:00+00:00</published><updated>2023-09-24T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/09/24/data-processing-architectures-lambda-vs-kappa</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/09/24/data-processing-architectures-lambda-vs-kappa.html">&lt;p&gt;&lt;em&gt;In this article we will explore two popular data processing architectures: Lambda and Kappa. We will take a look at their components, key differences and how to choose between them.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;In our data-driven era, the ability to harness the power of data has become a pivotal competitive advantage for businesses and organizations across industries. The vast volumes of information generated daily present both opportunities and challenges. How do we efficiently process, analyze, and derive insights from this deluge of data in real-time, without drowning in complexity?&lt;/p&gt;
-
-&lt;p&gt;This is where data processing architectures come into play, offering structured approaches to these challenges. In this blog post, we will explore two prominent contenders in the realm of data processing: the &lt;strong&gt;Lambda&lt;/strong&gt; and &lt;strong&gt;Kappa&lt;/strong&gt; architectures.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1&gt; Contents &lt;/h1&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#lambda-architecture&quot; id=&quot;markdown-toc-lambda-architecture&quot;&gt;Lambda Architecture&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#advantages-and-disadvantages&quot; id=&quot;markdown-toc-advantages-and-disadvantages&quot;&gt;Advantages and Disadvantages&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#kappa-architecture&quot; id=&quot;markdown-toc-kappa-architecture&quot;&gt;Kappa Architecture&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#advantages-and-disadvantages-1&quot; id=&quot;markdown-toc-advantages-and-disadvantages-1&quot;&gt;Advantages and Disadvantages&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#choosing-the-right-architecture&quot; id=&quot;markdown-toc-choosing-the-right-architecture&quot;&gt;Choosing the Right Architecture&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;lambda-architecture&quot;&gt;Lambda Architecture&lt;/h2&gt;
-
-&lt;p&gt;Lambda architecture was introduced by &lt;em&gt;Nathan Marz&lt;/em&gt; to address the challenges of data processing in a scalable and fault-tolerant manner.
-The architecture takes an event stream and forks/duplicates it into two relatively independent layers called the &lt;strong&gt;Batch Layer&lt;/strong&gt; and the &lt;strong&gt;Speed Layer&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;The &lt;strong&gt;Batch layer&lt;/strong&gt; takes incoming data, combines it with historical data, and recomputes the results by iterating over the entire dataset thus allowing the system to give the most accurate results. However, the results are achieved at the expense of high latency due to the long computation time.&lt;/p&gt;
-
-&lt;p&gt;The &lt;strong&gt;Speed Layer&lt;/strong&gt; on the other hand is used to provide a low-latency, near-real-time result. It performs incremental updates on data that was not processed in the last batch of the Batch Layer.&lt;/p&gt;
-
-&lt;p&gt;The results from both systems constitute the &lt;strong&gt;Serving Layer&lt;/strong&gt;. It is responsible for serving queryable, up-to-date results to users or applications. In this layer, the query aims at merging and analyzing data from both the Batch Layer view and the incremental flow view from the Speed Layer.&lt;/p&gt;
-
-&lt;p&gt;There are two variations on this: a &lt;strong&gt;unified serving layer&lt;/strong&gt; with one database for both outputs or &lt;strong&gt;separate serving layers&lt;/strong&gt; with two different databases, one optimized for real time and the other optimized for batch updates.&lt;/p&gt;
-
-&lt;p&gt;The following diagram shows the lambda architecture at a high level:&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/16_lambda_architecture.png&quot; alt=&quot;diagram showing high level components of lambda architecture&quot; /&gt;
-  &lt;figcaption&gt;Figure 1: High Level Lambda Architecture&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;advantages-and-disadvantages&quot;&gt;Advantages and Disadvantages&lt;/h3&gt;
-
-&lt;p&gt;One of the key challenges in streaming is the reprocessing of the data. This can be due to code changes because your application evolves and you need to update the business logic or because you found a bug and you need to fix it. In either way, you will need to recompute your output to see the effect of these changes. The batch layer in the lambda architecture addresses this challenge by having a complete history of immutable data. In addition, the usage of two separate systems for processing data makes the lambda architecture flexible, easily scalable and fault tolerant. For instance, it can be used for a variety of use cases, including real-time analytics using the stream processing system and machine learning where models can leverage the large volume of data through the batch layer to generate more accurate results. If one system fails, say the batch processing system, the other can continue to operate providing real time insights into the data. Lastly, both systems can be scaled independently by either adding more nodes to the cluster or adding more streams.&lt;/p&gt;
-
-&lt;p&gt;However, managing two separate processing systems is very complex. We need to provision and manage the infrastructure for two distributed systems including monitoring and logging which increases the cost and operations efforts of storage, compute and networking. Also, we need to align the business logic across streaming and batch codebases resulting in writing the same logic in two places with, most likely, different languages. This leads to difficult debugging and a challenge in validating data quality and making sure that the algorithms in each layer are matching.&lt;/p&gt;
-
-&lt;p&gt;So, what’s different in Kappa architecture?&lt;/p&gt;
-
-&lt;h2 id=&quot;kappa-architecture&quot;&gt;Kappa Architecture&lt;/h2&gt;
-
-&lt;p&gt;The Kappa architecture was introduced by &lt;em&gt;Jay Kreps&lt;/em&gt;, co-founder and CEO at Confluent, a company built around the open source messaging system Apache Kafka, as a response to some of the challenges and complexities associated with the Lambda Architecture. 
-The Kappa Architecture primarily focuses on stream processing simplifying the complexity of maintaining two systems with a single technology stack, referred to as &lt;strong&gt;Stream Processing Layer&lt;/strong&gt; in the diagram below, that can perform both real-time and batch processing:&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/16_kappa_architecture.png&quot; alt=&quot;diagram showing high level components of kappa architecture&quot; /&gt;
-  &lt;figcaption&gt;Figure 2: High Level Kappa Architecture&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;advantages-and-disadvantages-1&quot;&gt;Advantages and Disadvantages&lt;/h3&gt;
-
-&lt;p&gt;The shift to a single stream processing system to handle both real-time and batch processing makes the Kappa architecture simpler, more efficient and cost effective than the lambda architecture. Having a single source of truth to all the data reduces both the burden of maintaining two separate systems and two codebases as well as the underlying costs. People can now develop, test, debug, and operate their systems on top of a single processing framework such as Apache Kafka.&lt;/p&gt;
-
-&lt;p&gt;Stream processing is considered a paradigm shift from the traditional batch data processing. Therefore, it goes without saying that the Kappa architecture presents some challenges and limitations. In fact, processing out of order data or intricate joins combining many streams causes difficulties when transforming data in a streaming method. On top of that, data reprocessing which is now running using a single codebase, on the same framework, and with the same input data, still comes with some tradeoffs. As Jay Kreps detailed in his 
-&lt;a href=&quot;https://www.oreilly.com/radar/questioning-the-lambda-architecture/&quot;&gt;original post&lt;/a&gt;, we can leverage Apache Kafka retention period (30 days for example) and take the retained data as an input to a second instance of the streaming process that will produce a new output table with the reprocessed data. However, this approach depends heavily on the configured retention period value and is limited in cases where we need to fix the algorithm or deploy a change like adding a new field that goes beyond the span of the retention period.&lt;/p&gt;
-
-&lt;h2 id=&quot;choosing-the-right-architecture&quot;&gt;Choosing the Right Architecture&lt;/h2&gt;
-
-&lt;p&gt;So when should we use one architecture or the other? As is often the case, it depends on some peculiarities of the implemented application.&lt;/p&gt;
-
-&lt;p&gt;A very simple case is when the algorithms used for real-time and historical data are identical and implementable on streaming. It is then clearly very advantageous to use the same codebase to process historical and real-time data, and hence use the Kappa Architecture.
-If the algorithms used to process historical data and real-time data are not always identical. Here, the choice between Lambda and Kappa becomes a tradeoff between the performance benefits of batch processing over a simpler codebase.&lt;/p&gt;
-
-&lt;p&gt;Some examples of use cases where Kappa architecture is a good fit include fraud detection to detect fraudulent transactions in real time, process data from IoT devices in real time or recommendation engines used to to provide personalized recommendations to users in real time.&lt;/p&gt;
-
-&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
-
-&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
-
-&lt;p&gt;Lambda and Kappa are two popular data processing architectures that can be used to handle huge data. The ideal architecture relies on the individual needs for a given use case. We have discussed some benefits as well as drawbacks and limitations of each design to assist you in making your decision. Real-time insights are more important for businesses that want to become data-driven, which has increased the popularity of event streaming architecture. Batch processing will not go away, therefore it is essential to view the two architectures as complementing solutions rather than one being a cure for all ills.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.kai-waehner.de/blog/2021/09/23/real-time-kappa-architecture-mainstream-replacing-batch-lambda/&quot;&gt;https://www.kai-waehner.de/blog/2021/09/23/real-time-kappa-architecture-mainstream-replacing-batch-lambda/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.oreilly.com/radar/questioning-the-lambda-architecture/&quot;&gt;https://www.oreilly.com/radar/questioning-the-lambda-architecture/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://nathanmarz.com/blog/how-to-beat-the-cap-theorem.html&quot;&gt;http://nathanmarz.com/blog/how-to-beat-the-cap-theorem.html&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><category term="Data Architecture" /><summary type="html">In this article we will explore two popular data processing architectures: Lambda and Kappa. We will take a look at their components, key differences and how to choose between them.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/articles/16_lambda_architecture.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/articles/16_lambda_architecture.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Procrastination&quot;&gt;https://en.wikipedia.org/wiki/Procrastination&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="notes" /><category term="General" /><summary type="html">Notes from the Learning How to Learn Book By Barbara Oakley.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/articles/17_learning_how_to_learn.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/articles/17_learning_how_to_learn.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

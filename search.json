@@ -2,6 +2,17 @@
   
     {
 
+    "title"      : "Data Engineering Capabilities and Personas",
+	  "url"        : "/articles/2025/05/25/data-engineering-capabilities-and-personas.html",
+    "category"   : "articles",
+    "date"       : "2025-05-25 00:00:00 +0000",
+	  "tags"       : "Data Engineering",
+	  "description": "Discover essential data engineering capabilities and personas in modern data teams for business success."
+
+    } ,
+  
+    {
+
     "title"      : "Data Encoding and Formats",
 	  "url"        : "/articles/2025/05/18/data-encoding-and-formats.html",
     "category"   : "articles",
