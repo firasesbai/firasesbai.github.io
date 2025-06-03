@@ -182,7 +182,12 @@
 
 <h1> Contents </h1>
 <ul id="markdown-toc">
-  <li><a href="#general-concepts" id="markdown-toc-general-concepts">General Concepts</a></li>
+  <li><a href="#general-concepts" id="markdown-toc-general-concepts">General Concepts</a>    <ul>
+      <li><a href="#api-and-web-development" id="markdown-toc-api-and-web-development">API and Web Development</a></li>
+      <li><a href="#database-and-storage" id="markdown-toc-database-and-storage">Database and storage</a></li>
+      <li><a href="#caching-and-performance" id="markdown-toc-caching-and-performance">Caching and performance</a></li>
+    </ul>
+  </li>
   <li><a href="#workflow" id="markdown-toc-workflow">Workflow</a>    <ul>
       <li><a href="#step-1-design-scope" id="markdown-toc-step-1-design-scope">Step 1: Design Scope</a>        <ul>
           <li><a href="#general-questions" id="markdown-toc-general-questions">General questions</a></li>
@@ -206,9 +211,10 @@
 
 <p>While there is no shortage of information or resources on the internet when it comes to system design interview preparation, following is a list of some concepts and topics that I personnaly found common and almost always used in every system and thus you should be familiar with before going to the interview:</p>
 
+<h3 id="api-and-web-development">API and Web Development</h3>
 <ul>
-  <li><a href="https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#communication-protocols">API Architecture Styles</a></li>
-  <li><a href="https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#how-do-we-design-effective-and-safe-apis">API Design</a></li>
+  <li><a href="https://bytebytego.com/guides/a-cheatsheet-on-comparing-api-architectural-styles/">API Architecture Styles</a></li>
+  <li><a href="https://bytebytego.com/guides/a-cheat-sheet-for-api-designs/">API Design</a></li>
   <li><strong>Rate Limiter</strong>: a rate limiter is used to control the rate of traffic requests sent by a client or a service. If the requests count hits the threshold defined by the rate limiter, all the following reuqests are blocked. The benefits of using a rate limiter include preventing resource starvation caused by Denial of Service (DoS) attack and reducing cost by requiring fewer servers and preventing these from being overloaded. 
 Some popular rate limiting algorithms include:
     <ul>
@@ -221,8 +227,10 @@ Some popular rate limiting algorithms include:
     <p>For more information check out <a href="https://www.geeksforgeeks.org/rate-limiting-algorithms-system-design/">this link</a></p>
   </li>
   <li><a href="https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#load-balancer">Load Balancer</a></li>
-  <li><a href="https://www.geeksforgeeks.org/consistent-hashing/">Consistent hashing</a></li>
-  <li><a href="https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#content-delivery-network">Content Delivery Network (CDN)</a></li>
+</ul>
+
+<h3 id="database-and-storage">Database and storage</h3>
+<ul>
   <li><strong>Database choice</strong>:</li>
 </ul>
 <figure>
@@ -231,6 +239,12 @@ Some popular rate limiting algorithms include:
 </figure>
 
 <ul>
+  <li><a href="https://www.geeksforgeeks.org/consistent-hashing/">Consistent hashing</a></li>
+</ul>
+
+<h3 id="caching-and-performance">Caching and performance</h3>
+<ul>
+  <li><a href="https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#content-delivery-network">Content Delivery Network (CDN)</a></li>
   <li><strong>Caching</strong>: it improves load times and can reduce the load on your servers and databases. It is important to understand the different layers where caching can be applied, their advantages and disadvantages and strategies to update your cache. These would include:
     <ul>
       <li>Client caching</li>
