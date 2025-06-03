@@ -24,8 +24,9 @@ The purpose of this step is to assess your ability to design large-scale, comple
 
 While there is no shortage of information or resources on the internet when it comes to system design interview preparation, following is a list of some concepts and topics that I personnaly found common and almost always used in every system and thus you should be familiar with before going to the interview: 
 
-- [API Architecture Styles](https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#communication-protocols)
-- [API Design](https://github.com/ByteByteGoHq/system-design-101?tab=readme-ov-file#how-do-we-design-effective-and-safe-apis)
+### API and Web Development ###
+- [API Architecture Styles](https://bytebytego.com/guides/a-cheatsheet-on-comparing-api-architectural-styles/)
+- [API Design](https://bytebytego.com/guides/a-cheat-sheet-for-api-designs/)
 - **Rate Limiter**: a rate limiter is used to control the rate of traffic requests sent by a client or a service. If the requests count hits the threshold defined by the rate limiter, all the following reuqests are blocked. The benefits of using a rate limiter include preventing resource starvation caused by Denial of Service (DoS) attack and reducing cost by requiring fewer servers and preventing these from being overloaded. 
 Some popular rate limiting algorithms include:
     - Token bucket
@@ -35,14 +36,19 @@ Some popular rate limiting algorithms include:
    
    For more information check out [this link](https://www.geeksforgeeks.org/rate-limiting-algorithms-system-design/)
 - [Load Balancer](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#load-balancer)
-- [Consistent hashing](https://www.geeksforgeeks.org/consistent-hashing/)
-- [Content Delivery Network (CDN)](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#content-delivery-network)
+
+### Database and storage ###
 - **Database choice**: 
 <figure>
   <img src="/assets/images/articles/20_database_choice.png" alt="comparison between types and characteristics of databases">
   <figcaption>Figure 1: Types of Databases - <a href="https://blog.bytebytego.com/p/understanding-database-types">Image Source</a></figcaption>
 </figure>
 
+
+- [Consistent hashing](https://www.geeksforgeeks.org/consistent-hashing/)
+
+### Caching and performance ###
+- [Content Delivery Network (CDN)](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#content-delivery-network)
 - **Caching**: it improves load times and can reduce the load on your servers and databases. It is important to understand the different layers where caching can be applied, their advantages and disadvantages and strategies to update your cache. These would include:
     - Client caching
     - CDN caching
