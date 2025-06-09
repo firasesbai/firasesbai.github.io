@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2025-06-03T05:14:47+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>The Blog and Portfolio of Firas Esbai.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2025-06-09T11:10:44+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>The Blog and Portfolio of Firas Esbai.
 </subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Data Engineering Capabilities and Personas</title><link href="https://www.firasesbai.com/articles/2025/05/25/data-engineering-capabilities-and-personas.html" rel="alternate" type="text/html" title="Data Engineering Capabilities and Personas" /><published>2025-05-25T00:00:00+00:00</published><updated>2025-05-25T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/05/25/data-engineering-capabilities-and-personas</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/05/25/data-engineering-capabilities-and-personas.html">&lt;p&gt;&lt;em&gt;In this article, we will look at key data engineering capabilities at the intersection of several archetypes and personas.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;In &lt;a href=&quot;https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html&quot;&gt;a previous article&lt;/a&gt;, we looked into the role of a data engineer and the general responsibilities associated with it. However, the field of data engineering has changed dramatically over the last decade. This led to the emergence of different constellations of data teams. Depending on the company size and maturity level, more specialized personas appeared requiring certain set of capabilities. In today’s article, we will breakdown these types and the expected capabilities.&lt;/p&gt;
@@ -1036,6 +1036,8 @@ While similar to Parquet in structure, ORC shines in Hive-centric workflows and 
 &lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#general-concepts&quot; id=&quot;markdown-toc-general-concepts&quot;&gt;General Concepts&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#api-and-web-development&quot; id=&quot;markdown-toc-api-and-web-development&quot;&gt;API and Web Development&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#security&quot; id=&quot;markdown-toc-security&quot;&gt;Security&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#software-architecture&quot; id=&quot;markdown-toc-software-architecture&quot;&gt;Software Architecture&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#database-and-storage&quot; id=&quot;markdown-toc-database-and-storage&quot;&gt;Database and storage&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#caching-and-performance&quot; id=&quot;markdown-toc-caching-and-performance&quot;&gt;Caching and performance&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
@@ -1067,6 +1069,16 @@ While similar to Parquet in structure, ORC shines in Hive-centric workflows and 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://bytebytego.com/guides/a-cheatsheet-on-comparing-api-architectural-styles/&quot;&gt;API Architecture Styles&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://bytebytego.com/guides/a-cheat-sheet-for-api-designs/&quot;&gt;API Design&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;API Gateway&lt;/strong&gt;: An API gateway acts as a single entry point for clients accessing APIss providing centralized management. It can perform tasks like:
+    &lt;ul&gt;
+      &lt;li&gt;parameter validation of HTTP requests&lt;/li&gt;
+      &lt;li&gt;allow-list/deny-list checks&lt;/li&gt;
+      &lt;li&gt;authentication and authorization via identity provider&lt;/li&gt;
+      &lt;li&gt;apply rate limiting rules&lt;/li&gt;
+      &lt;li&gt;routing and service discovery&lt;/li&gt;
+      &lt;li&gt;protocol conversion to backend microservice&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Rate Limiter&lt;/strong&gt;: a rate limiter is used to control the rate of traffic requests sent by a client or a service. If the requests count hits the threshold defined by the rate limiter, all the following reuqests are blocked. The benefits of using a rate limiter include preventing resource starvation caused by Denial of Service (DoS) attack and reducing cost by requiring fewer servers and preventing these from being overloaded. 
 Some popular rate limiting algorithms include:
     &lt;ul&gt;
@@ -1078,7 +1090,21 @@ Some popular rate limiting algorithms include:
 
     &lt;p&gt;For more information check out &lt;a href=&quot;https://www.geeksforgeeks.org/rate-limiting-algorithms-system-design/&quot;&gt;this link&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Proxy&lt;/strong&gt;: A proxy server acts as an intermediary between clients and a server, handling requests from the client and forwarding them to the server. It can be used for various purposes, including filtering content, providing anonymity, and caching web pages.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Reverse Proxy&lt;/strong&gt;: A reverse proxy sits in front of one or more servers and acts as a single entry point for clients accessing those servers. It handles incoming requests, caches content, provides load balancing, and can also enhance security by hiding the actual server IP addresses and handling encryption and decryption of SSL communications.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#load-balancer&quot;&gt;Load Balancer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;security&quot;&gt;Security&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bytebytego.com/guides/session-cookie-jwt-token-sso-and-oauth-2/&quot;&gt;User Identity Management&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;HTTPS&lt;/strong&gt;: secures web communication by building upon TCP. It starts with a &lt;strong&gt;TLS handshake&lt;/strong&gt;: your browser validates the website’s identity using its SSL/TLS certificate (which contains its public key) and is verified by a trusted CA. This public key is then used in &lt;strong&gt;asymmetric encryption&lt;/strong&gt; to securely exchange a shared secret key. Once established, all subsequent data transfer is encrypted using this shared secret key via much faster &lt;strong&gt;symmetric encryption&lt;/strong&gt;. Asymmetric encryption is slower, so it’s only used for the initial secure setup, while faster symmetric encryption handles the continuous data flow, so this two-phase approach ensures both secure identity verification and efficient data privacy.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;software-architecture&quot;&gt;Software Architecture&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Blue-Green Deployment&lt;/strong&gt;: With blue-green deployment, we have two identical environments: one is staging (blue) and the other is production (green). The staging environment is one version ahead of production. Once testing is done in the staging environment, user traffic is switched to the staging environment, and the staging becomes the production. This deployment strategy is simple to perform rollback, but having two identical production quality environments could be expensive.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Canary Deployment&lt;/strong&gt;: A canary deployment upgrades services gradually, each time to a subset of users. It is cheaper than blue-green deployment and easy to perform rollback. However, since there is no staging environment, we have to test on production. This process is more complicated because we need to monitor the canary while gradually migrating more and more users away from the old version.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;database-and-storage&quot;&gt;Database and storage&lt;/h3&gt;
@@ -1092,6 +1118,8 @@ Some popular rate limiting algorithms include:
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/consistent-hashing/&quot;&gt;Consistent hashing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Pessimistic vs Optimistic Locking&lt;/strong&gt;: Pessimistic locking assumes conflicts will occur and locks the data before any changes are made. It prevents other users from accessing and updating the data until the lock is released. The most common way to implement this is by using &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SELECT... FOR UPDATE&lt;/code&gt;. 
+Optimistic locking assumes conflicts are rare. It allows multiple users to access data simultaneously and checks for conflicts when changes are committed. If a conflict is detected, the operation is rolled back. The most common way to implement it is by adding a version column to your database table.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;caching-and-performance&quot;&gt;Caching and performance&lt;/h3&gt;
@@ -1241,7 +1269,11 @@ Some popular rate limiting algorithms include:
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/ByteByteGoHq/system-design-101&quot;&gt;https://github.com/ByteByteGoHq/system-design-101&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/donnemartin/system-design-primer&quot;&gt;https://github.com/donnemartin/system-design-primer&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><summary type="html">This article contains general guidelines and a reference framework to use when approaching system design interview.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Evolution of Analytical Data Architectures: From Data Warehouses to Lakehouses</title><link href="https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures.html" rel="alternate" type="text/html" title="Evolution of Analytical Data Architectures: From Data Warehouses to Lakehouses" /><published>2024-11-17T00:00:00+00:00</published><updated>2024-11-17T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures.html">&lt;p&gt;&lt;em&gt;In this article, we will go through a brief overview of the journey from the foundational data warehouses to the data lakes and up to the emerging concept of the data lakehouse.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://bytebytego.com/guides/how-to-deploy-services/&quot;&gt;https://bytebytego.com/guides/how-to-deploy-services/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://bytebytego.com/guides/8-common-system-design-problems-and-solutions/&quot;&gt;https://bytebytego.com/guides/8-common-system-design-problems-and-solutions/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/donnemartin/system-design-primer&quot;&gt;https://github.com/donnemartin/system-design-primer&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><category term="General" /><summary type="html">This article contains general guidelines and a reference framework to use when approaching system design interview.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Evolution of Analytical Data Architectures: From Data Warehouses to Lakehouses</title><link href="https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures.html" rel="alternate" type="text/html" title="Evolution of Analytical Data Architectures: From Data Warehouses to Lakehouses" /><published>2024-11-17T00:00:00+00:00</published><updated>2024-11-17T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures.html">&lt;p&gt;&lt;em&gt;In this article, we will go through a brief overview of the journey from the foundational data warehouses to the data lakes and up to the emerging concept of the data lakehouse.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The evolution of data management has been driven by the growing complexity and scale of modern data needs. Organizations have sought different solutions over the years for handling diverse data types while optimizing for cost efficiency.&lt;/p&gt;
 

@@ -164,10 +164,14 @@
       
       <span class="reading-time" title="Estimated read time">
   
-  6 min read
+  9 min read
 </span>
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name"> - Firas Esbai</span></span></p></header>
+            <span class="p-author h-card" itemprop="name"> - Firas Esbai</span></span></p><p class="post-meta last-updated">
+        Last updated:<time class="dt-modified" datetime="2025-06-09T00:00:00+00:00" itemprop="dateModified">
+          Jun 9, 2025
+        </time>
+      </p></header>
 
   <div class="post-content e-content" itemprop="articleBody">
     <p><em>This article contains general guidelines and a reference framework to use when approaching system design interview.</em></p>
@@ -184,6 +188,8 @@
 <ul id="markdown-toc">
   <li><a href="#general-concepts" id="markdown-toc-general-concepts">General Concepts</a>    <ul>
       <li><a href="#api-and-web-development" id="markdown-toc-api-and-web-development">API and Web Development</a></li>
+      <li><a href="#security" id="markdown-toc-security">Security</a></li>
+      <li><a href="#software-architecture" id="markdown-toc-software-architecture">Software Architecture</a></li>
       <li><a href="#database-and-storage" id="markdown-toc-database-and-storage">Database and storage</a></li>
       <li><a href="#caching-and-performance" id="markdown-toc-caching-and-performance">Caching and performance</a></li>
     </ul>
@@ -215,6 +221,16 @@
 <ul>
   <li><a href="https://bytebytego.com/guides/a-cheatsheet-on-comparing-api-architectural-styles/">API Architecture Styles</a></li>
   <li><a href="https://bytebytego.com/guides/a-cheat-sheet-for-api-designs/">API Design</a></li>
+  <li><strong>API Gateway</strong>: An API gateway acts as a single entry point for clients accessing APIss providing centralized management. It can perform tasks like:
+    <ul>
+      <li>parameter validation of HTTP requests</li>
+      <li>allow-list/deny-list checks</li>
+      <li>authentication and authorization via identity provider</li>
+      <li>apply rate limiting rules</li>
+      <li>routing and service discovery</li>
+      <li>protocol conversion to backend microservice</li>
+    </ul>
+  </li>
   <li><strong>Rate Limiter</strong>: a rate limiter is used to control the rate of traffic requests sent by a client or a service. If the requests count hits the threshold defined by the rate limiter, all the following reuqests are blocked. The benefits of using a rate limiter include preventing resource starvation caused by Denial of Service (DoS) attack and reducing cost by requiring fewer servers and preventing these from being overloaded. 
 Some popular rate limiting algorithms include:
     <ul>
@@ -226,7 +242,21 @@ Some popular rate limiting algorithms include:
 
     <p>For more information check out <a href="https://www.geeksforgeeks.org/rate-limiting-algorithms-system-design/">this link</a></p>
   </li>
+  <li><strong>Proxy</strong>: A proxy server acts as an intermediary between clients and a server, handling requests from the client and forwarding them to the server. It can be used for various purposes, including filtering content, providing anonymity, and caching web pages.</li>
+  <li><strong>Reverse Proxy</strong>: A reverse proxy sits in front of one or more servers and acts as a single entry point for clients accessing those servers. It handles incoming requests, caches content, provides load balancing, and can also enhance security by hiding the actual server IP addresses and handling encryption and decryption of SSL communications.</li>
   <li><a href="https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#load-balancer">Load Balancer</a></li>
+</ul>
+
+<h3 id="security">Security</h3>
+<ul>
+  <li><a href="https://bytebytego.com/guides/session-cookie-jwt-token-sso-and-oauth-2/">User Identity Management</a></li>
+  <li><strong>HTTPS</strong>: secures web communication by building upon TCP. It starts with a <strong>TLS handshake</strong>: your browser validates the website’s identity using its SSL/TLS certificate (which contains its public key) and is verified by a trusted CA. This public key is then used in <strong>asymmetric encryption</strong> to securely exchange a shared secret key. Once established, all subsequent data transfer is encrypted using this shared secret key via much faster <strong>symmetric encryption</strong>. Asymmetric encryption is slower, so it’s only used for the initial secure setup, while faster symmetric encryption handles the continuous data flow, so this two-phase approach ensures both secure identity verification and efficient data privacy.</li>
+</ul>
+
+<h3 id="software-architecture">Software Architecture</h3>
+<ul>
+  <li><strong>Blue-Green Deployment</strong>: With blue-green deployment, we have two identical environments: one is staging (blue) and the other is production (green). The staging environment is one version ahead of production. Once testing is done in the staging environment, user traffic is switched to the staging environment, and the staging becomes the production. This deployment strategy is simple to perform rollback, but having two identical production quality environments could be expensive.</li>
+  <li><strong>Canary Deployment</strong>: A canary deployment upgrades services gradually, each time to a subset of users. It is cheaper than blue-green deployment and easy to perform rollback. However, since there is no staging environment, we have to test on production. This process is more complicated because we need to monitor the canary while gradually migrating more and more users away from the old version.</li>
 </ul>
 
 <h3 id="database-and-storage">Database and storage</h3>
@@ -240,6 +270,8 @@ Some popular rate limiting algorithms include:
 
 <ul>
   <li><a href="https://www.geeksforgeeks.org/consistent-hashing/">Consistent hashing</a></li>
+  <li><strong>Pessimistic vs Optimistic Locking</strong>: Pessimistic locking assumes conflicts will occur and locks the data before any changes are made. It prevents other users from accessing and updating the data until the lock is released. The most common way to implement this is by using <code class="language-plaintext highlighter-rouge">SELECT... FOR UPDATE</code>. 
+Optimistic locking assumes conflicts are rare. It allows multiple users to access data simultaneously and checks for conflicts when changes are committed. If a conflict is detected, the operation is rolled back. The most common way to implement it is by adding a version column to your database table.</li>
 </ul>
 
 <h3 id="caching-and-performance">Caching and performance</h3>
@@ -388,6 +420,10 @@ Some popular rate limiting algorithms include:
 <p><a href="https://www.goodreads.com/en/book/show/60631342">https://www.goodreads.com/en/book/show/60631342</a></p>
 
 <p><a href="https://github.com/ByteByteGoHq/system-design-101">https://github.com/ByteByteGoHq/system-design-101</a></p>
+
+<p><a href="https://bytebytego.com/guides/how-to-deploy-services/">https://bytebytego.com/guides/how-to-deploy-services/</a></p>
+
+<p><a href="https://bytebytego.com/guides/8-common-system-design-problems-and-solutions/">https://bytebytego.com/guides/8-common-system-design-problems-and-solutions/</a></p>
 
 <p><a href="https://github.com/donnemartin/system-design-primer">https://github.com/donnemartin/system-design-primer</a></p>
 
