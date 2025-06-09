@@ -2,9 +2,9 @@
 layout: post
 title:  "System Desing Interview Blueprint"
 date:   2024-12-08
-modified_date: 
+modified_date: 2025-06-09
 category: articles
-tags: ["Data Engineering"]
+tags: ["Data Engineering", "General"]
 author: Firas Esbai
 description: "General guidelines and a reference framework to use when approaching system design interview"
 comments: true
@@ -27,6 +27,13 @@ While there is no shortage of information or resources on the internet when it c
 ### API and Web Development ###
 - [API Architecture Styles](https://bytebytego.com/guides/a-cheatsheet-on-comparing-api-architectural-styles/)
 - [API Design](https://bytebytego.com/guides/a-cheat-sheet-for-api-designs/)
+- **API Gateway**: An API gateway acts as a single entry point for clients accessing APIss providing centralized management. It can perform tasks like:
+  - parameter validation of HTTP requests
+  - allow-list/deny-list checks
+  - authentication and authorization via identity provider
+  - apply rate limiting rules
+  - routing and service discovery
+  - protocol conversion to backend microservice
 - **Rate Limiter**: a rate limiter is used to control the rate of traffic requests sent by a client or a service. If the requests count hits the threshold defined by the rate limiter, all the following reuqests are blocked. The benefits of using a rate limiter include preventing resource starvation caused by Denial of Service (DoS) attack and reducing cost by requiring fewer servers and preventing these from being overloaded. 
 Some popular rate limiting algorithms include:
     - Token bucket
@@ -35,7 +42,17 @@ Some popular rate limiting algorithms include:
     - Sliding window 
    
    For more information check out [this link](https://www.geeksforgeeks.org/rate-limiting-algorithms-system-design/)
+- **Proxy**: A proxy server acts as an intermediary between clients and a server, handling requests from the client and forwarding them to the server. It can be used for various purposes, including filtering content, providing anonymity, and caching web pages.
+- **Reverse Proxy**: A reverse proxy sits in front of one or more servers and acts as a single entry point for clients accessing those servers. It handles incoming requests, caches content, provides load balancing, and can also enhance security by hiding the actual server IP addresses and handling encryption and decryption of SSL communications. 
 - [Load Balancer](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#load-balancer)
+
+### Security ###
+- [User Identity Management](https://bytebytego.com/guides/session-cookie-jwt-token-sso-and-oauth-2/)
+- **HTTPS**: secures web communication by building upon TCP. It starts with a **TLS handshake**: your browser validates the website's identity using its SSL/TLS certificate (which contains its public key) and is verified by a trusted CA. This public key is then used in **asymmetric encryption** to securely exchange a shared secret key. Once established, all subsequent data transfer is encrypted using this shared secret key via much faster **symmetric encryption**. Asymmetric encryption is slower, so it's only used for the initial secure setup, while faster symmetric encryption handles the continuous data flow, so this two-phase approach ensures both secure identity verification and efficient data privacy.
+
+### Software Architecture ###
+- **Blue-Green Deployment**: With blue-green deployment, we have two identical environments: one is staging (blue) and the other is production (green). The staging environment is one version ahead of production. Once testing is done in the staging environment, user traffic is switched to the staging environment, and the staging becomes the production. This deployment strategy is simple to perform rollback, but having two identical production quality environments could be expensive.
+- **Canary Deployment**: A canary deployment upgrades services gradually, each time to a subset of users. It is cheaper than blue-green deployment and easy to perform rollback. However, since there is no staging environment, we have to test on production. This process is more complicated because we need to monitor the canary while gradually migrating more and more users away from the old version.
 
 ### Database and storage ###
 - **Database choice**: 
@@ -46,6 +63,8 @@ Some popular rate limiting algorithms include:
 
 
 - [Consistent hashing](https://www.geeksforgeeks.org/consistent-hashing/)
+- **Pessimistic vs Optimistic Locking**: Pessimistic locking assumes conflicts will occur and locks the data before any changes are made. It prevents other users from accessing and updating the data until the lock is released. The most common way to implement this is by using ``` SELECT... FOR UPDATE```. 
+Optimistic locking assumes conflicts are rare. It allows multiple users to access data simultaneously and checks for conflicts when changes are committed. If a conflict is detected, the operation is rolled back. The most common way to implement it is by adding a version column to your database table. 
 
 ### Caching and performance ###
 - [Content Delivery Network (CDN)](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#content-delivery-network)
@@ -158,5 +177,9 @@ This article presented a mental model with a logical set of steps to follow when
 [https://www.goodreads.com/en/book/show/60631342](https://www.goodreads.com/en/book/show/60631342)
 
 [https://github.com/ByteByteGoHq/system-design-101](https://github.com/ByteByteGoHq/system-design-101)
+
+[https://bytebytego.com/guides/how-to-deploy-services/](https://bytebytego.com/guides/how-to-deploy-services/)
+
+[https://bytebytego.com/guides/8-common-system-design-problems-and-solutions/](https://bytebytego.com/guides/8-common-system-design-problems-and-solutions/)
 
 [https://github.com/donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer)
