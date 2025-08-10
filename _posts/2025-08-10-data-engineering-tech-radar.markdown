@@ -18,7 +18,7 @@ The world of data engineering is constantly changing. New tools emerge every wee
 
 Keeping up feels like a full-time job already and we are usually looking to find something to help us cut through the noise and answer the following: How do you decide which technologies are genuinely worth your time?
 
-To help, first myself, answer that question, I created this **[Data Engineering Tech Radar](https://www.firasesbai.com/data-tech-radar/)**.
+To help, first myself, answer that question, I created this **[Data Engineering Tech Radar](https://www.firasesbai.com/data-tech-radar/){:target="_blank"}**.
 
 Inspired by the pioneering [ThoughtWorks Tech Radar](https://www.thoughtworks.com/en-de/radar), this is my curated, opinionated, and practical guide to the data ecosystem. It’s a snapshot of my perspective on the tools, platforms, languages, and techniques that I have personally used or seen other teams adopt them in production. It is also a way to capture and keep track of what actually matters in our field right now and not feel overwhelmed. 
 
@@ -68,6 +68,6 @@ But most importantly, this is meant to be a conversation starter.
 
 What did I get right? What do you completely disagree with? What hidden gems are missing from the "Assess" ring? I’d love to hear your thoughts.
 
-**Check out the full [Data Engineering Tech Radar](https://www.firasesbai.com/data-tech-radar/) and let me know what you think.**
+**Check out the full [Data Engineering Tech Radar](https://www.firasesbai.com/data-tech-radar/){:target="_blank"} and let me know what you think.**
 
 *Stay tuned!* 
