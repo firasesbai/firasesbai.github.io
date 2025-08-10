@@ -2,6 +2,17 @@
   
     {
 
+    "title"      : "Introducing My Data Engineering Tech Radar",
+	  "url"        : "/articles/2025/08/10/data-engineering-tech-radar.html",
+    "category"   : "articles",
+    "date"       : "2025-08-10 00:00:00 +0000",
+	  "tags"       : "Data Engineering",
+	  "description": "Launching a Data Engineering Tech Radar"
+
+    } ,
+  
+    {
+
     "title"      : "Data Engineering Capabilities and Personas",
 	  "url"        : "/articles/2025/05/25/data-engineering-capabilities-and-personas.html",
     "category"   : "articles",

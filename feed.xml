@@ -1,5 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2025-06-09T11:10:44+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>The Blog and Portfolio of Firas Esbai.
-</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Data Engineering Capabilities and Personas</title><link href="https://www.firasesbai.com/articles/2025/05/25/data-engineering-capabilities-and-personas.html" rel="alternate" type="text/html" title="Data Engineering Capabilities and Personas" /><published>2025-05-25T00:00:00+00:00</published><updated>2025-05-25T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/05/25/data-engineering-capabilities-and-personas</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/05/25/data-engineering-capabilities-and-personas.html">&lt;p&gt;&lt;em&gt;In this article, we will look at key data engineering capabilities at the intersection of several archetypes and personas.&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2025-08-10T17:51:48+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>The Blog and Portfolio of Firas Esbai.
+</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Introducing My Data Engineering Tech Radar</title><link href="https://www.firasesbai.com/articles/2025/08/10/data-engineering-tech-radar.html" rel="alternate" type="text/html" title="Introducing My Data Engineering Tech Radar" /><published>2025-08-10T00:00:00+00:00</published><updated>2025-08-10T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/08/10/data-engineering-tech-radar</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/08/10/data-engineering-tech-radar.html">&lt;p&gt;&lt;em&gt;Launching a Data Engineering Tech Radar.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The world of data engineering is constantly changing. New tools emerge every week, architectural patterns fall in and out of favor, and the hype cycle churns endlessly. I’m sure we all at some point have come across variations of landscapes or state of data engineering diagrams packed with unreadable logos. Be assured, this is not one of those.&lt;/p&gt;
+
+&lt;p&gt;Keeping up feels like a full-time job already and we are usually looking to find something to help us cut through the noise and answer the following: How do you decide which technologies are genuinely worth your time?&lt;/p&gt;
+
+&lt;p&gt;To help, first myself, answer that question, I created this &lt;strong&gt;&lt;a href=&quot;https://www.firasesbai.com/data-tech-radar/&quot;&gt;Data Engineering Tech Radar&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Inspired by the pioneering &lt;a href=&quot;https://www.thoughtworks.com/en-de/radar&quot;&gt;ThoughtWorks Tech Radar&lt;/a&gt;, this is my curated, opinionated, and practical guide to the data ecosystem. It’s a snapshot of my perspective on the tools, platforms, languages, and techniques that I have personally used or seen other teams adopt them in production. It is also a way to capture and keep track of what actually matters in our field right now and not feel overwhelmed.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#why-a-tech-radar&quot; id=&quot;markdown-toc-why-a-tech-radar&quot;&gt;Why a Tech Radar?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#how-it-works-quadrants-and-rings&quot; id=&quot;markdown-toc-how-it-works-quadrants-and-rings&quot;&gt;How It Works: Quadrants and Rings&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#the-quadrants&quot; id=&quot;markdown-toc-the-quadrants&quot;&gt;The Quadrants&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#the-rings&quot; id=&quot;markdown-toc-the-rings&quot;&gt;The Rings&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#this-is-just-the-beginning&quot; id=&quot;markdown-toc-this-is-just-the-beginning&quot;&gt;This Is Just the Beginning&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;why-a-tech-radar&quot;&gt;Why a Tech Radar?&lt;/h2&gt;
+
+&lt;p&gt;My motivation for creating this radar is threefold:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;To Navigate Complexity:&lt;/strong&gt; The goal isn’t to list every tool, but to provide a filter. This radar helps separate the signal from the noise by offering a structured opinion on what’s production-ready, what’s promising, and what you might want to proceed with caution on.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;To Share Real-World Experience:&lt;/strong&gt; Tutorials can show you &lt;em&gt;how&lt;/em&gt; a tool works, but they rarely tell you &lt;em&gt;if&lt;/em&gt; you should use it. This radar is built on hands-on experience, reflecting what has worked well in practice and the lessons learned along the way.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;To Track a Moving Target:&lt;/strong&gt; The data landscape is not static, and neither is this radar. It’s a living document that I will update periodically to reflect new developments and evolving opinions, serving as a log of how our industry changes over time.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;how-it-works-quadrants-and-rings&quot;&gt;How It Works: Quadrants and Rings&lt;/h2&gt;
+
+&lt;p&gt;To make sense of everything, the radar is broken down into four quadrants and four rings.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/22_data_tech_radar.png&quot; alt=&quot;Data Tech Radar&quot; /&gt;
+  &lt;figcaption&gt;Figure 1: Data Tech Radar&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;the-quadrants&quot;&gt;The Quadrants&lt;/h3&gt;
+
+&lt;p&gt;The quadrants categorize items by their functional area in the data lifecycle.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Languages &amp;amp; Frameworks:&lt;/strong&gt; This quadrant covers the foundational skills, languages and frameworks.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Transformation &amp;amp; Orchestration:&lt;/strong&gt; Tools and practices for data transformation, ETL processes, and workflow orchestration.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data Platforms &amp;amp; Storage&lt;/strong&gt;: Technologies for data storage, databases, and data warehousing solutions.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data Analytics:&lt;/strong&gt; Tools and platforms for data analysis, visualization, and business intelligence.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-rings&quot;&gt;The Rings&lt;/h3&gt;
+
+&lt;p&gt;The rings represent my opinion on a technology’s maturity and my recommendation for its adoption.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Adopt:&lt;/strong&gt; Technologies that are well-established and I have used or seen other teams adopt them in production and they’ve proven their value.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Trial:&lt;/strong&gt; Emerging technologies that show promise and I have started exploring them or using on non-critical projects.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Assess:&lt;/strong&gt; Technologies that caught my eye and are used or recommended by other teams that I think are worth exploring.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Hold:&lt;/strong&gt; Technologies to proceed with caution on and I would not recommended for new projects.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;this-is-just-the-beginning&quot;&gt;This Is Just the Beginning&lt;/h2&gt;
+
+&lt;p&gt;This is just the initial release and it might not have all the tools I have under the radar but this radar is a starting point, a snapshot in time, and it should be treated as such. My opinions will change as I learn, and new tools will emerge that demand a spot. I plan to revisit and update the radar periodically to keep it relevant.&lt;/p&gt;
+
+&lt;p&gt;But most importantly, this is meant to be a conversation starter.&lt;/p&gt;
+
+&lt;p&gt;What did I get right? What do you completely disagree with? What hidden gems are missing from the “Assess” ring? I’d love to hear your thoughts.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Check out the full &lt;a href=&quot;https://www.firasesbai.com/data-tech-radar/&quot;&gt;Data Engineering Tech Radar&lt;/a&gt; and let me know what you think.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><summary type="html">Launching a Data Engineering Tech Radar.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/articles/22_data_tech_radar.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/articles/22_data_tech_radar.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Data Engineering Capabilities and Personas</title><link href="https://www.firasesbai.com/articles/2025/05/25/data-engineering-capabilities-and-personas.html" rel="alternate" type="text/html" title="Data Engineering Capabilities and Personas" /><published>2025-05-25T00:00:00+00:00</published><updated>2025-05-25T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/05/25/data-engineering-capabilities-and-personas</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/05/25/data-engineering-capabilities-and-personas.html">&lt;p&gt;&lt;em&gt;In this article, we will look at key data engineering capabilities at the intersection of several archetypes and personas.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;In &lt;a href=&quot;https://www.firasesbai.com/articles/2023/03/01/data-engineering-101.html&quot;&gt;a previous article&lt;/a&gt;, we looked into the role of a data engineer and the general responsibilities associated with it. However, the field of data engineering has changed dramatically over the last decade. This led to the emergence of different constellations of data teams. Depending on the company size and maturity level, more specialized personas appeared requiring certain set of capabilities. In today’s article, we will breakdown these types and the expected capabilities.&lt;/p&gt;
 
@@ -2397,230 +2472,4 @@ Most regions have at least three zones and can have more. All regions have at le
 
 &lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
 
-&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Cloud Computing" /><summary type="html">This article contains a collection of notes, mind maps and resources to support you while preparing for the google cloud professional data engineer certification.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/articles/18_gcp_regions.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/articles/18_gcp_regions.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Learning How to Learn</title><link href="https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn.html" rel="alternate" type="text/html" title="Learning How to Learn" /><published>2023-10-21T00:00:00+00:00</published><updated>2023-10-21T00:00:00+00:00</updated><id>https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn</id><content type="html" xml:base="https://www.firasesbai.com/notes/2023/10/21/learning-how-to-learn.html">&lt;p&gt;&lt;em&gt;Notes from the Learning How to Learn Book By Barbara Oakley.&lt;/em&gt;&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/17_learning_how_to_learn.png&quot; alt=&quot;mindmap containing important topics from the learning how to learn book&quot; /&gt;
-  &lt;figcaption&gt;Figure 1: Learning How to Learn Mindmap&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;hr /&gt;
-
-&lt;h1&gt; Contents &lt;/h1&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#summary&quot; id=&quot;markdown-toc-summary&quot;&gt;Summary&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#main-takeaways&quot; id=&quot;markdown-toc-main-takeaways&quot;&gt;Main Takeaways&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#1-what-is-learning&quot; id=&quot;markdown-toc-1-what-is-learning&quot;&gt;1/ What is learning?&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#2-memory&quot; id=&quot;markdown-toc-2-memory&quot;&gt;2/ Memory&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#working-memory&quot; id=&quot;markdown-toc-working-memory&quot;&gt;Working Memory&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#long-term-memory&quot; id=&quot;markdown-toc-long-term-memory&quot;&gt;Long Term Memory&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#3-how-to-improve-your-memory&quot; id=&quot;markdown-toc-3-how-to-improve-your-memory&quot;&gt;3/ How to improve your memory&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#4-chunking&quot; id=&quot;markdown-toc-4-chunking&quot;&gt;4/ Chunking&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#what-is-a-chunk&quot; id=&quot;markdown-toc-what-is-a-chunk&quot;&gt;What is a Chunk?&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#how-to-form-a-chunk&quot; id=&quot;markdown-toc-how-to-form-a-chunk&quot;&gt;How to form a chunk?&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#the-value-of-a-library-of-chunks&quot; id=&quot;markdown-toc-the-value-of-a-library-of-chunks&quot;&gt;The value of a Library of Chunks&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#interleaving&quot; id=&quot;markdown-toc-interleaving&quot;&gt;Interleaving&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#5-procrastination&quot; id=&quot;markdown-toc-5-procrastination&quot;&gt;5/ Procrastination&lt;/a&gt;        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#what-is-a-habit&quot; id=&quot;markdown-toc-what-is-a-habit&quot;&gt;What is a habit?&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#harnessing-your-zombies&quot; id=&quot;markdown-toc-harnessing-your-zombies&quot;&gt;Harnessing your zombies&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#6-juggling-life-and-learning&quot; id=&quot;markdown-toc-6-juggling-life-and-learning&quot;&gt;6/ Juggling Life and Learning&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
-
-&lt;p&gt;In a world that’s constantly evolving, the ability to learn efficiently and effectively is a skill that can unlock doors to personal and professional growth. Whether you’re a student striving for academic excellence, a professional seeking to stay competitive in your career, or simply someone who wants to enhance their ability to acquire new knowledge, the &lt;strong&gt;&lt;a href=&quot;https://barbaraoakley.com/books/learning-how-to-learn/&quot;&gt;Learn How to Learn book&lt;/a&gt;&lt;/strong&gt; is a valuable resource that can empower you to do just that.&lt;/p&gt;
-
-&lt;p&gt;This book has garnered attention from learners of all backgrounds. It delves into the science behind learning and equips you with proven strategies to enhance your learning abilities. As we explore the key takeaways from this book, you’ll discover how to overcome common obstacles, develop effective study habits, and harness the power of your brain to grasp new concepts with confidence.&lt;/p&gt;
-
-&lt;h2 id=&quot;main-takeaways&quot;&gt;Main Takeaways&lt;/h2&gt;
-
-&lt;h3 id=&quot;1-what-is-learning&quot;&gt;1/ What is learning?&lt;/h3&gt;
-
-&lt;p&gt;There are two different modes of thinking:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Focused&lt;/strong&gt;: concentrate intently on something you’re trying to learn or to understand&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Diffuse&lt;/strong&gt;: relaxed thinking style related to a set of neural resting states&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;When you’re learning something new, especially something that’s a bit challenging, your mind needs to be able to go back and forth between the two different learning modes. Study something hard by focusing intently. Then take a break or at least change your focus to something different for a while. During this time of seeming relaxation, your brain’s diffuse mode has a chance to work away in the background and help you out with your conceptual understanding.&lt;/p&gt;
-
-&lt;p&gt;Salvador Dali and Thomas Edison are two well-known innovators who leveraged interleaving between these phases. They would hold onto objects while falling asleep in their chairs. They would think of a problem and once they lost consciousness the object they held would fall to the floor and wake them up. Many of their imaginative ideas came from this state.&lt;/p&gt;
-
-&lt;h3 id=&quot;2-memory&quot;&gt;2/ Memory&lt;/h3&gt;
-
-&lt;h4 id=&quot;working-memory&quot;&gt;Working Memory&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The part of memory that has to do with what you’re immediately and consciously processing in your mind. It is centred out of the prefrontal cortex. There are also connections to other parts of your brain so you can access long-term memories.&lt;/li&gt;
-  &lt;li&gt;Working memory holds only about &lt;strong&gt;four items&lt;/strong&gt; at a time.&lt;/li&gt;
-  &lt;li&gt;You often need to keep repeating what you’re trying to work with so it stays in your working memory; for example repeat a phone number to yourself until you have a chance to write it down. You may find yourself shutting your eyes to keep any other items from intruding into the limited slots of your working memory as you concentrate.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;long-term-memory&quot;&gt;Long Term Memory&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Wide storage warehouse distributed over the brain.&lt;/li&gt;
-  &lt;li&gt;It is immense and has so many items that they can bury each other.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;To move information into long-term memory, it often takes time and practice. To help with this process use a technique called &lt;strong&gt;Spaced Repetition&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Research has shown that when you first try to put an item of information in long-term memory, you need to revisit it at least a few times to increase the chances that you’ll be able to find it later when you might need it.&lt;/p&gt;
-
-&lt;p&gt;You might be surprised to learn that just plain being awake creates toxic products in your brain.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Sleep&lt;/strong&gt; is your brain’s way of keeping itself healthy. When you sleep, your brain cells shrink. This causes an increase in the space between your brain cells. Fluid can flow past these cells and wash the toxins out.&lt;/p&gt;
-
-&lt;p&gt;Sleep is also an important part of the memory and learning process. It seems that during sleep, your brain tidies up ideas and concepts you’re thinking about and learning. It erases the less important parts of memory and simultaneously strengthens areas that you need or want to remember. During sleep, your brain also rehearses some of the tougher parts of whatever you’re trying to learn, going over and over neural patterns to deepen and strengthen them.&lt;br /&gt;
-Sleep has also been shown to make a remarkable difference in your ability to figure out difficult problems and to understand what you’re trying to learn.&lt;/p&gt;
-
-&lt;h3 id=&quot;3-how-to-improve-your-memory&quot;&gt;3/ How to improve your memory&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Recall&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Simply looking away and seeing what you can recall from the material you’ve just read is a more productive approach than simply rereading. Using recall, mental retrieval of the key ideas, rather than passive rereading, will make your study time more focused and effective. The only time rereading text seems to be effective, is if you let time pass between the rereading, so that it becomes more of an exercise in spaced repetition.&lt;/li&gt;
-      &lt;li&gt;Another tip is recalling material when you are outside your usual place of study can also help you strengthen your grasp of the material. You don’t realize it, but when you are learning something new you can often take in subliminal cues for the room and the space around you at the time you were originally learning the material.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Mnemonics&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Let’s say you want to remember four plants that help ward off vampires; garlic, rose, hawthorn, and mustard. The first letters abbreviate to GRHM. so all you need to do to remember is to use the image of Graham cracker.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Highlighting and Underlining&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;It must be done very carefully. Otherwise it can not only be ineffective, but also misleading. If you do mark up the text, try to look for main ideas before making any marks. And try to keep your underlining or highlighting to a minimum. On the other hand, words or notes in a margin that synthesizes key concepts are a very good idea.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Visual/Spatial Memory&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Our mind is built for visual/spatial memory. For example, if you were asked to look around a house you never visited before, you’d soon have a sense of the general furniture layout. We can tap into this memory by associating strange and funny images to memorize a concept. We can use spaced repetition to commit this relationship to long term memory. The more senses you use the easier it is to commit to memory.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Memory Palace Technique&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Is a particularly powerful way of grouping things you want to remember. It involves calling to mind a familiar place like the layout of your house and using it as a visual notepad where you can deposit the concept images that you want to remember. You would imagine yourself walking through a place you know well, coupled with shockingly memorable images of what you want to remember.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Memory tricks allow people to expand their working memory with easy access to long term memory. What’s more, the memory process itself becomes an exercise in creativity. The more you memorize using these innovative techniques, the more creative you become.&lt;/p&gt;
-
-&lt;h3 id=&quot;4-chunking&quot;&gt;4/ Chunking&lt;/h3&gt;
-
-&lt;h4 id=&quot;what-is-a-chunk&quot;&gt;What is a Chunk?&lt;/h4&gt;
-
-&lt;p&gt;Chunking is the mental leap that helps you unite bits of information together through meaning. The new logical whole makes the chunk easier to remember, and also makes it easier to fit the chunk into the larger picture of what you’re learning.&lt;/p&gt;
-
-&lt;p&gt;Once you chunk an idea, a concept, or an action, you don’t need to remember all the little underlying details. You’ve got the main idea, the chunk, and that’s enough.&lt;/p&gt;
-
-&lt;h4 id=&quot;how-to-form-a-chunk&quot;&gt;How to form a chunk?&lt;/h4&gt;
-
-&lt;p&gt;The best chunks are the ones that are so well ingrained that you don’t even have to consciously think about connecting the neural patterns together. That actually is the point of making complex ideas, movements or reactions into a single chunk.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Focus your undivided attention on the information you want to chunk (limited short term memory)&lt;/li&gt;
-  &lt;li&gt;Understand the basic idea of what you want to chunk.
-    &lt;ul&gt;
-      &lt;li&gt;It helps hold the underlying memory traces together&lt;/li&gt;
-      &lt;li&gt;It creates broad encompassing traces that can link to other memory traces&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Practice and repetition with context
-    &lt;ul&gt;
-      &lt;li&gt;Context means going beyond the initial problem and seeing more broadly&lt;/li&gt;
-      &lt;li&gt;Helps you see how your new formed chunks fit in the bigger picture&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;It is as if you have an attention octopus that slips its tentacles through those four slots of working memory when necessary to help you make connections to information that you might have in various parts of your brain.&lt;/p&gt;
-
-&lt;h4 id=&quot;the-value-of-a-library-of-chunks&quot;&gt;The value of a Library of Chunks&lt;/h4&gt;
-
-&lt;p&gt;Basically what people do to enhance their knowledge and gain expertise, is to gradually build the number of chunks in their mind, valuable bits of information they can piece together in new and creative ways.&lt;/p&gt;
-
-&lt;p&gt;Chunks can also help you understand new concepts. This is because when you grasp one chunk, you’ll find that that chunk can be related in surprising ways to similar chunks, not only in that field but also in very different fields. This idea is called transfer.&lt;/p&gt;
-
-&lt;p&gt;If you have a library of concepts and solutions internalized as chunked patterns, you can think of it as a collection or a library of neural patterns. When you’re trying to figure something out, if you have a good library of these chunks, you can more easily skip to the right solution by, metaphorically speaking, listening to whispers from your diffuse mode. Your diffuse mode can help you connect two or more chunks together in new ways to solve novel problems. Another way to think of it is this, as you build each chunk it is filling in a part of your larger knowledge picture, but if you don’t practice with your growing chunks, they can remain faint and it’s harder to put together the big picture of what you’re trying to learn.&lt;/p&gt;
-
-&lt;p&gt;There are two ways to figure something out or to solve problems. First, through sequential step-by-step reasoning and second, through a more holistic intuition. Sequential thinking where each small step leads deliberately towards a solution, involves the focused mode. Intuition on the other hand often seems to require this creative diffuse mode linking of several seemingly different focused mode thoughts. Most difficult problems and concepts are grasped through intuition, because these new ideas make a leap away from what you’re familiar with. Keep in mind that the diffuse modes, semi-random way of making connections means that the solutions it provides should be very carefully verified using the focused mode. Intuitive insights aren’t always correct.&lt;/p&gt;
-
-&lt;h4 id=&quot;interleaving&quot;&gt;Interleaving&lt;/h4&gt;
-
-&lt;p&gt;Mastering a new subject means learning not only the basic chunks, but also learning how to select and use different chunks. The best way to learn is by practicing jumping back and forth between problems or situations that require different techniques or strategies. 
-Interleaving is extraordinarily important. Although practice and repetition is important in helping build solid neural patterns to draw on, it’s interleaving that starts building flexibility and creativity.&lt;/p&gt;
-
-&lt;h3 id=&quot;5-procrastination&quot;&gt;5/ Procrastination&lt;/h3&gt;
-
-&lt;p&gt;Procrastination is the act of unnecessarily and voluntarily delaying or postponing something despite knowing that there will be negative consequences for doing so.&lt;/p&gt;
-
-&lt;p&gt;Procrastination is an easy habit to develop because of the reward. It shares features with addiction. It offers temporary excitement and relief from sometimes boring reality.&lt;/p&gt;
-
-&lt;h4 id=&quot;what-is-a-habit&quot;&gt;What is a habit?&lt;/h4&gt;
-
-&lt;p&gt;Habit is an energy saver for us. It allows us to free our mind for other types of activities. You go into this habitual zombie far more often than you might think, that’s the point of habit. You don’t have to think in a focused manner about what you are doing while you are performing the habit, it saves energy. 
-Habits can be good and bad, they can be brief like absently brushing back your hair or they can be long for example when you take a walk or watch television for a few hours after you get home from work.&lt;/p&gt;
-
-&lt;p&gt;You can think of habits as having 4 parts:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;The cue&lt;/strong&gt;: this is the trigger that launches you into zombie mode&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;The routine&lt;/strong&gt;: what we do in reaction to that cue. This is your zombie mode. Zombie responses can be useful, harmless or sometimes harmful.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;The reward&lt;/strong&gt;: every habit develops and continues because it rewards us. It gives us an immediate little feeling of pleasure.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;The belief&lt;/strong&gt;: habits have power because your belief in them. To change a habit you need to change your underlying belief.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;If you find yourself avoiding certain tasks because they make you feel uncomfortable, you should know there’s another helpful way to re-frame things and that’s to learn to focus on process not product. Process means the flow of time and the habits and actions associated with that flow of time. As in, I’m going to spend 20 minutes working. Product is an outcome, for example, a homework assignment that you need to finish. To prevent procrastination you want to avoid concentrating on the product. Instead your attention should be on building processes. 
-The essential idea here is that the zombie habitual part of your brain likes processes because it can march mindlessly along.&lt;/p&gt;
-
-&lt;h4 id=&quot;harnessing-your-zombies&quot;&gt;Harnessing your zombies&lt;/h4&gt;
-
-&lt;p&gt;The trick to overriding a habit is to look to change your reaction to a cue. The only place you need to apply will power is to change your reaction to the cue. To understand that, it helps to go back through the four components of habit and we analyze them from the perspective of procrastination:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Cue
-    &lt;ul&gt;
-      &lt;li&gt;It usually falls into one of the following categories: location, time, how you feel and reactions, either to other people or to something that just happened. Do you look something up on the web and then find yourself web surfing? The issue with procrastination is that, because it’s an automatic habit, you’re often unaware that you’ve begun to procrastinate. You can prevent the most damaging cues by shutting off your cell phone or keeping away from the internet and other distractions for brief periods of time, as when you’re doing a pomodoro.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Routine
-    &lt;ul&gt;
-      &lt;li&gt;The key to rewiring is to have a plan. Developing a new ritual can be helpful. Some students make it a habit to leave their phone in their car when they head for class which removes a potent distraction.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;The reward
-    &lt;ul&gt;
-      &lt;li&gt;It helps to add a new reward if you want to overcome your previous cravings. Only once your brain starts expecting that reward, will the important rewiring take place that will allow you to create new habits.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;The belief
-    &lt;ul&gt;
-      &lt;li&gt;The most important part of changing your procrastination habit is the belief that you can do it.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;6-juggling-life-and-learning&quot;&gt;6/ Juggling Life and Learning&lt;/h3&gt;
-
-&lt;p&gt;A good way for you to keep perspective about what you’re trying to learn and accomplish is to once a week write a brief weekly list of key tasks in a planner journal. Then each day on another page of your planner, write a list of the tasks that you can reasonably work on or accomplish (The list should be short, 6 items for example where some are process oriented and others product oriented). Try to write this daily task list the evening before. Why? Research has shown that this helps your subconscious to grapple with the tasks on the list, so you can figure out how to accomplish them. Writing the list before you go to sleep enlists your zombies to help you accomplish the items on the list the next day. If you don’t write your tasks down on a list, they lurk at the edge of the four or so slots in your working memory, taking up valuable mental real estate. But once you make a task list, it frees working memory for problem-solving.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Thanks for reading, I hope you enjoyed it!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://barbaraoakley.com/books/learning-how-to-learn/&quot;&gt;https://barbaraoakley.com/books/learning-how-to-learn/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.brainfacts.org/&quot;&gt;https://www.brainfacts.org/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Procrastination&quot;&gt;https://en.wikipedia.org/wiki/Procrastination&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="notes" /><category term="General" /><summary type="html">Notes from the Learning How to Learn Book By Barbara Oakley.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/articles/17_learning_how_to_learn.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/articles/17_learning_how_to_learn.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Cloud Computing" /><summary type="html">This article contains a collection of notes, mind maps and resources to support you while preparing for the google cloud professional data engineer certification.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/articles/18_gcp_regions.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/articles/18_gcp_regions.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

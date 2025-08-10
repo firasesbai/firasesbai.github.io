@@ -1,0 +1,87 @@
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="/js/visualizations/radar.js"></script>
+
+<style>
+body, .content-container {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.flex-row {
+    display: flex;
+    gap: 2rem; /* space between containers */
+    align-items: flex-start;
+}
+
+.content-container {
+    flex: 1 1 0;
+    min-width: 300px;
+    max-width: 600px;
+}
+</style>
+
+<body>
+
+<svg id="radar"></svg>
+
+<script>
+fetch('/assets/data/tech-radar/radar-data.json')
+  .then(response => response.json())
+  .then(radarData => {
+
+    radar_visualization({
+        title: "Data Engineering Tech Radar",
+        quadrants: [
+            { name: "Languages & Frameworks" },
+            { name: "Transformation & Orchestration" },
+            { name: "Data Platforms & Storage" },
+            { name: "Data Analytics" },
+        ],
+        rings: [
+            { name: "ADOPT", color: "#5ba300" },
+            { name: "TRIAL", color: "#009eb0" },
+            { name: "ASSESS", color: "#c7ba00" },
+            { name: "HOLD", color: "#e09b96" }
+        ],
+        entries: radarData.entries
+    });
+});
+</script>
+
+<div class="flex-row">  
+    <div class="content-container">
+        <h3>What is the Data Engineering Tech Radar?</h3>
+        <p>
+            This radar is a curated, opinionated guide to the landscape of data tools, platforms, and concepts.
+            It's a living document that reflects my experience and perspective on the data engineering ecosystem, inspired by the original ThoughtWorks Tech Radar and built using the Zalando Radar visualization library.
+        </p>
+        <h4>Quadrants</h4>
+        <ul>
+            <li><strong>Languages & Frameworks</strong>: This quadrant covers the foundational skills, languages and frameworks.</li>
+            <li><strong>Transformation & Orchestration</strong>: Tools and practices for data transformation, ETL processes, and workflow orchestration.</li>
+            <li><strong>Data Platforms & Storage</strong>: Technologies for data storage, databases, and data warehousing solutions.</li>
+            <li><strong>Data Analytics</strong>: Tools and platforms for data analysis, visualization, and business intelligence.</li>
+        </ul>
+    </div>
+    <div class="content-container">
+        <h4>Rings</h4>
+        <ul>
+            <li><strong>ADOPT</strong>: Technologies that are well-established and I have used or seen other teams adopt them in production and they've proven their value.</li>
+            <li><strong>TRIAL</strong>: Emerging technologies that show promise and I have started exploring them or using on non-critical projects.</li>
+            <li><strong>ASSESS</strong>: Technologies that caught my eye and are used or recommended by other teams that I think are worth exploring.</li>
+            <li><strong>HOLD</strong>: Technologies to proceed with caution on and I would not recommended for new projects.</li>
+        </ul>
+
+        <h3>The Purpose</h3>
+        <p>
+            The goal of this radar is to provide a structured way to navigate the complex and rapidly evolving landscape of data engineering technologies.
+            It serves as a personal knowledge base to track the adoption and development of tools, showcase hands-on experience, and offer an opinionated perspective on the state of data engineering.
+            The radar is not exhaustive but aims to spark conversations and help others make informed decisions about the technologies they choose.
+        </p>
+    </div>
+</div>
+
+</body>
+
+
