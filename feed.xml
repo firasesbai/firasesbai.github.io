@@ -1,5 +1,139 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2025-08-10T17:58:13+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>The Blog and Portfolio of Firas Esbai.
-</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Introducing My Data Engineering Tech Radar</title><link href="https://www.firasesbai.com/articles/2025/08/10/data-engineering-tech-radar.html" rel="alternate" type="text/html" title="Introducing My Data Engineering Tech Radar" /><published>2025-08-10T00:00:00+00:00</published><updated>2025-08-10T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/08/10/data-engineering-tech-radar</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/08/10/data-engineering-tech-radar.html">&lt;p&gt;&lt;em&gt;Launching a Data Engineering Tech Radar.&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2025-08-18T05:26:24+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>The Blog and Portfolio of Firas Esbai.
+</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Blogging Tools</title><link href="https://www.firasesbai.com/articles/2025/08/18/blogging-tools.html" rel="alternate" type="text/html" title="Blogging Tools" /><published>2025-08-18T00:00:00+00:00</published><updated>2025-08-18T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/08/18/blogging-tools</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/08/18/blogging-tools.html">&lt;p&gt;&lt;em&gt;A curated list of tools that I’m using for writing and building this site.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In this article, I have curated a list of resources and tools that help me manage everything from hosting and analytics to writing and working on this site. Finding the right tool can make a huge difference in terms of efficiency. While there are countless options out there, this is what works best for me.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#writing-and-planning&quot; id=&quot;markdown-toc-writing-and-planning&quot;&gt;Writing and Planning&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#trello&quot; id=&quot;markdown-toc-trello&quot;&gt;Trello&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#obsidian&quot; id=&quot;markdown-toc-obsidian&quot;&gt;Obsidian&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#domain-and-hosting&quot; id=&quot;markdown-toc-domain-and-hosting&quot;&gt;Domain and Hosting&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#cloudflare&quot; id=&quot;markdown-toc-cloudflare&quot;&gt;Cloudflare&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#github-pages&quot; id=&quot;markdown-toc-github-pages&quot;&gt;Github Pages&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#analytics-and-tracking&quot; id=&quot;markdown-toc-analytics-and-tracking&quot;&gt;Analytics and Tracking&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#google-analytics-4-ga4&quot; id=&quot;markdown-toc-google-analytics-4-ga4&quot;&gt;Google Analytics 4 (GA4)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#google-search-console&quot; id=&quot;markdown-toc-google-search-console&quot;&gt;Google Search Console&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#looker&quot; id=&quot;markdown-toc-looker&quot;&gt;Looker&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#seo&quot; id=&quot;markdown-toc-seo&quot;&gt;SEO&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#ahrefs&quot; id=&quot;markdown-toc-ahrefs&quot;&gt;Ahrefs&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#screaming-frog&quot; id=&quot;markdown-toc-screaming-frog&quot;&gt;Screaming Frog&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#google-chrome-lighthouse&quot; id=&quot;markdown-toc-google-chrome-lighthouse&quot;&gt;Google Chrome Lighthouse&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#add-ons&quot; id=&quot;markdown-toc-add-ons&quot;&gt;Add-ons&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#email-marketing&quot; id=&quot;markdown-toc-email-marketing&quot;&gt;Email Marketing&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#comments&quot; id=&quot;markdown-toc-comments&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#contact-form&quot; id=&quot;markdown-toc-contact-form&quot;&gt;Contact Form&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#speed-optimization&quot; id=&quot;markdown-toc-speed-optimization&quot;&gt;Speed Optimization&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#cloudflare-1&quot; id=&quot;markdown-toc-cloudflare-1&quot;&gt;Cloudflare&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#tinypng&quot; id=&quot;markdown-toc-tinypng&quot;&gt;TinyPNG&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#google-pagespeed-insights&quot; id=&quot;markdown-toc-google-pagespeed-insights&quot;&gt;Google Pagespeed Insights&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;writing-and-planning&quot;&gt;Writing and Planning&lt;/h2&gt;
+
+&lt;h3 id=&quot;trello&quot;&gt;Trello&lt;/h3&gt;
+
+&lt;p&gt;Trello is a visual project management tool. I use it to organise the content workflow and capture ideas for potential articles. I keep it simple with just 3 lists representing the stages of the writing process: To Do, Doing, and Done. Each card within represents a blog post or some fixes or improvements to the site itself. To distinguish between them I use specific labels. This visual approach allows me to easily see what needs to be done and ensure I’m on track.&lt;/p&gt;
+
+&lt;h3 id=&quot;obsidian&quot;&gt;Obsidian&lt;/h3&gt;
+
+&lt;p&gt;Obsidian is a markdown based note taking app. In this context, i use it for kicking off drafts, creating notes for each blog post and capturing relevant research. It allows for linking notes together and creating interconnected central knowledge base where you can easily jump between related notes to brainstorm and rediscover information.&lt;/p&gt;
+
+&lt;h2 id=&quot;domain-and-hosting&quot;&gt;Domain and Hosting&lt;/h2&gt;
+
+&lt;h3 id=&quot;cloudflare&quot;&gt;Cloudflare&lt;/h3&gt;
+
+&lt;p&gt;While often thought of for performance and security (which I’ll touch on later), Cloudflare also handles my DNS. It provides a fast and robust way to manage my domain’s records. For more details, you can check &lt;a href=&quot;https://www.firasesbai.com/articles/2025/01/19/google-domains-cloudflare-migration.html&quot;&gt;the following article&lt;/a&gt; where I outline how I migrated from Google Domains to Cloudflare.&lt;/p&gt;
+
+&lt;h3 id=&quot;github-pages&quot;&gt;Github Pages&lt;/h3&gt;
+
+&lt;p&gt;This is where the site physically lives. It’s a free solution for hosting static websites like this one directly from a GitHub repository, and it integrates seamlessly with custom domains via Cloudflare.&lt;/p&gt;
+
+&lt;h2 id=&quot;analytics-and-tracking&quot;&gt;Analytics and Tracking&lt;/h2&gt;
+
+&lt;h3 id=&quot;google-analytics-4-ga4&quot;&gt;Google Analytics 4 (GA4)&lt;/h3&gt;
+
+&lt;p&gt;GA4 helps me understand traffic sources, user behavior, content performance, and conversions. It’s the primary source for overall site metrics.&lt;/p&gt;
+
+&lt;h3 id=&quot;google-search-console&quot;&gt;Google Search Console&lt;/h3&gt;
+
+&lt;p&gt;This is essential for understanding how my site performs in Google Search. It shows me search queries, indexing status, technical errors, and sitemaps.&lt;/p&gt;
+
+&lt;h3 id=&quot;looker&quot;&gt;Looker&lt;/h3&gt;
+
+&lt;p&gt;I use Looker to create custom dashboards pulling data from GA4, Cloudflare Analytics, Search Console and Google Forms. This allows me to visualize key metrics in a centralised view without switching between tools and overcoming data discrepancies as indicated in &lt;a href=&quot;https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html&quot;&gt;this article&lt;/a&gt; where I cover the difference between Cloudflare Analytics and Google Analytics.&lt;/p&gt;
+
+&lt;h2 id=&quot;seo&quot;&gt;SEO&lt;/h2&gt;
+
+&lt;h3 id=&quot;ahrefs&quot;&gt;Ahrefs&lt;/h3&gt;
+&lt;p&gt;I mainly use Ahrefs Webmaster Tools which gives you free access to a bundle of 3 tools if you can verify the ownership of your website. You can achieve this by connecting Google Search Console as the recommended approach. 
+    - Web Analytics: You can setup web analytics for your site as an alternative to Google Analytics to get real time metrics about your visitors.
+    - Site Audit: Scans your website for known technical and most common SEO issues such as broken links, duplicate content and missing metadata description. You can setup scheduled crawls of your site and get an email with an overview containing a health score of the site, number of issues grouped by severity and newly identified issues since the last crawl. This will allow you to proactively identify and fix issues to improve your site’s performance.
+    - Site Explorer: Helps you gain insights into your site’s organic search performance&lt;/p&gt;
+
+&lt;h3 id=&quot;screaming-frog&quot;&gt;Screaming Frog&lt;/h3&gt;
+
+&lt;p&gt;Screaming Frog is a desktop based website crawler with a free version limited to 500 URLs which is more than enough for a small blog. It acts as a search engine spider by crawling your site’s URLs and extracting data to give you a comprehensive technical audit. By finding and fixing issues like broken links, you ensure a better user experience and help search engines properly crawl and index your site.&lt;/p&gt;
+
+&lt;h3 id=&quot;google-chrome-lighthouse&quot;&gt;Google Chrome Lighthouse&lt;/h3&gt;
+
+&lt;p&gt;As part of the Chrome browser’s developer tools, Lighthouse provides a detailed report on the performance, accessibility, best practices and SEO of any web page. It is very handy for a quick and easy way to check the health of individual pages on the site locally before publishing them.&lt;/p&gt;
+
+&lt;h2 id=&quot;add-ons&quot;&gt;Add-ons&lt;/h2&gt;
+
+&lt;h3 id=&quot;email-marketing&quot;&gt;Email Marketing&lt;/h3&gt;
+
+&lt;p&gt;Building an email list is vital for direct communication with my audience. I’ve explored tools like &lt;strong&gt;ConvertKit&lt;/strong&gt; and &lt;strong&gt;Mailerlite&lt;/strong&gt;, both offering features to build and manage subscriber lists, create landing pages, and send broadcasts or sequences. I have settled for Mailerlite as the free plan was more interesting especially for starting out with small number of subscribers.&lt;/p&gt;
+
+&lt;h3 id=&quot;comments&quot;&gt;Comments&lt;/h3&gt;
+
+&lt;p&gt;I use &lt;strong&gt;Disqus&lt;/strong&gt; for managing comments on the blog posts. Originally I started out using Github API where I create an issue for each blog post and the comments section will redirect the users to commenting on the created issue. The list of all the comments is then fetched from the API. This was easy to setup initially but had limits as it requires the users to have a Github account and to be logged in. In addition, the overhead of maintaining the different issues made it easy to switch to Disqus as it provides a robust commenting system with moderation tools.&lt;/p&gt;
+
+&lt;h3 id=&quot;contact-form&quot;&gt;Contact Form&lt;/h3&gt;
+
+&lt;p&gt;I use an embedded &lt;strong&gt;Google Forms&lt;/strong&gt; in my contact page to enable visitors of my site to reach out and handle their requests and inquiries.&lt;/p&gt;
+
+&lt;h2 id=&quot;speed-optimization&quot;&gt;Speed Optimization&lt;/h2&gt;
+
+&lt;h3 id=&quot;cloudflare-1&quot;&gt;Cloudflare&lt;/h3&gt;
+
+&lt;p&gt;As mentioned earlier, using Cloudflare comes with the additional bonus of faster and more responsive website. This is achieved through its role as a Content Delivery Network (CDN). A CDN is a network of servers located all over the world. When a visitor comes to my blog, Cloudflare automatically serves the static content (like images, CSS, and JavaScript files) from the server closest to them. This dramatically reduces the physical distance the data has to travel, which in turn cuts down on page load times.&lt;/p&gt;
+
+&lt;h3 id=&quot;tinypng&quot;&gt;TinyPNG&lt;/h3&gt;
+
+&lt;p&gt;Images are often the biggest culprit for slow page load times. TinyPNG is a free online tool that uses smart lossy compression techniques to reduce the file size of my images without a noticeable loss in quality.&lt;/p&gt;
+
+&lt;h3 id=&quot;google-pagespeed-insights&quot;&gt;Google Pagespeed Insights&lt;/h3&gt;
+
+&lt;p&gt;While using Google Chrome Lighthouse before publishing a post is useful for seeing how the introduced changes affect the performance, it is still run under controlled, simulated conditions such as throttled netweok speed on a specific device. This is where Pagespeed Insights comes in handy by complementing that with data on how real world visitors have experienced your site. It provides a holistic view of performance for both mobile and desktop with a list of actionable recommendations. This is a more accurate representation of how your site performs for your actual audience, across various devices and network conditions.&lt;/p&gt;
+
+&lt;p&gt;If you have any remarks or suggestions for me, please don’t hesitate and do drop a comment below.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;This is not an exhaustive list but rather a work in progress. Each tool serves a specific purpose in streamlining the process from writing to managing the site’s performance. While the exact setup may evolve, the goal remains the same: keep things simple and effective.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Blogging" /><summary type="html">A curated list of tools that I’m using for writing and building this site.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Introducing My Data Engineering Tech Radar</title><link href="https://www.firasesbai.com/articles/2025/08/10/data-engineering-tech-radar.html" rel="alternate" type="text/html" title="Introducing My Data Engineering Tech Radar" /><published>2025-08-10T00:00:00+00:00</published><updated>2025-08-10T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/08/10/data-engineering-tech-radar</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/08/10/data-engineering-tech-radar.html">&lt;p&gt;&lt;em&gt;Launching a Data Engineering Tech Radar.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The world of data engineering is constantly changing. New tools emerge every week, architectural patterns fall in and out of favor, and the hype cycle churns endlessly. I’m sure we all at some point have come across variations of landscapes or state of data engineering diagrams packed with unreadable logos. Be assured, this is not one of those.&lt;/p&gt;
 
@@ -1977,499 +2111,4 @@ The output is usually a collection of living documents that evolve along with ch
 
 &lt;p&gt;&lt;a href=&quot;https://www.databricks.com/blog/2022/06/24/prescriptive-guidance-for-implementing-a-data-vault-model-on-the-databricks-lakehouse-platform.html&quot;&gt;https://www.databricks.com/blog/2022/06/24/prescriptive-guidance-for-implementing-a-data-vault-model-on-the-databricks-lakehouse-platform.html&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/what-is/data-modeling/&quot;&gt;https://aws.amazon.com/what-is/data-modeling/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><category term="Data Architecture" /><summary type="html">In this article we will go over the big three approaches for modeling analytical data.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/articles/19_star_schema_auto_dealership.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/articles/19_star_schema_auto_dealership.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Preparation Guide for Google Cloud Professional Data Engineer Certification</title><link href="https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification.html" rel="alternate" type="text/html" title="Preparation Guide for Google Cloud Professional Data Engineer Certification" /><published>2023-11-19T00:00:00+00:00</published><updated>2023-11-19T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification</id><content type="html" xml:base="https://www.firasesbai.com/articles/2023/11/19/gcp-data-engineer-certification.html">&lt;p&gt;&lt;em&gt;This article contains a collection of notes, mind maps and resources to support you while preparing for the google cloud professional data engineer certification.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Disclaimer&lt;/em&gt;&lt;/strong&gt;: The new Professional Data Engineer exam will be live starting November 13. The new version reflects updates to Google Cloud’s data storing, data sharing, and data governance and has less emphasis on operationalizing machine learning models. 
-That being said, I believe most of the content is still relevant and can serve as a guide to assist you as you begin your preparation.&lt;/p&gt;
-
-&lt;p&gt;So brace yourselves, this is gonna be a rather long post filled with too many images extracted from different parts of the mind maps I used for my preparation in order to make them easy to read and follow.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1&gt; Contents &lt;/h1&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#google-cloud&quot; id=&quot;markdown-toc-google-cloud&quot;&gt;Google Cloud&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#infrastructure&quot; id=&quot;markdown-toc-infrastructure&quot;&gt;Infrastructure&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#vpc-networks&quot; id=&quot;markdown-toc-vpc-networks&quot;&gt;VPC Networks&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#data-transfer-services&quot; id=&quot;markdown-toc-data-transfer-services&quot;&gt;Data Transfer Services&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#resource-manager&quot; id=&quot;markdown-toc-resource-manager&quot;&gt;Resource Manager&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#security&quot; id=&quot;markdown-toc-security&quot;&gt;Security&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#compute&quot; id=&quot;markdown-toc-compute&quot;&gt;Compute&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#storage&quot; id=&quot;markdown-toc-storage&quot;&gt;Storage&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#ingestion-and-processing&quot; id=&quot;markdown-toc-ingestion-and-processing&quot;&gt;Ingestion and Processing&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#data-pipelines-management&quot; id=&quot;markdown-toc-data-pipelines-management&quot;&gt;Data Pipelines Management&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#data-governance&quot; id=&quot;markdown-toc-data-governance&quot;&gt;Data Governance&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#analytics&quot; id=&quot;markdown-toc-analytics&quot;&gt;Analytics&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#machine-learning&quot; id=&quot;markdown-toc-machine-learning&quot;&gt;Machine Learning&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#ingestion-and-pocessing&quot; id=&quot;markdown-toc-ingestion-and-pocessing&quot;&gt;Ingestion and Pocessing&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#pubsub&quot; id=&quot;markdown-toc-pubsub&quot;&gt;Pub/Sub&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#dataproc&quot; id=&quot;markdown-toc-dataproc&quot;&gt;Dataproc&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#dataflow&quot; id=&quot;markdown-toc-dataflow&quot;&gt;Dataflow&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#storage-1&quot; id=&quot;markdown-toc-storage-1&quot;&gt;Storage&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#cloud-storage&quot; id=&quot;markdown-toc-cloud-storage&quot;&gt;Cloud Storage&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#cloud-sql&quot; id=&quot;markdown-toc-cloud-sql&quot;&gt;Cloud SQL&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#query-insights&quot; id=&quot;markdown-toc-query-insights&quot;&gt;Query Insights&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#cloud-spanner&quot; id=&quot;markdown-toc-cloud-spanner&quot;&gt;Cloud Spanner&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#firestore&quot; id=&quot;markdown-toc-firestore&quot;&gt;Firestore&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#datastore&quot; id=&quot;markdown-toc-datastore&quot;&gt;Datastore&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#memorystore&quot; id=&quot;markdown-toc-memorystore&quot;&gt;Memorystore&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#bigtable&quot; id=&quot;markdown-toc-bigtable&quot;&gt;Bigtable&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#bigquery&quot; id=&quot;markdown-toc-bigquery&quot;&gt;BigQuery&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;script src=&quot;/js/visualizations/mind-map.js&quot;&gt;&lt;/script&gt;
-
-&lt;script src=&quot;/js/visualizations/create-chart.js&quot;&gt;&lt;/script&gt;
-
-&lt;h2 id=&quot;google-cloud&quot;&gt;Google Cloud&lt;/h2&gt;
-
-&lt;p&gt;Before we dive into the characteristics of Google Cloud services that will enable professional data engineers to design, build and operationalize data processing systems, let’s start with a 10,000-foot view on different topics that may be included in the exam presented in the below interactive mindmap:&lt;/p&gt;
-
-&lt;div id=&quot;mindmap-container&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-    createChart(&quot;mindmap-container&quot;, &quot;/assets/data/2023-11-19-gcp-data-engineer-certification/google-cloud.json&quot;, &quot;mindmap&quot;, {
-      width: 800,
-      height: 600,
-      nodeColor: &quot;#fefae0&quot;,
-      nodeBorderColor: &quot;#333&quot;,
-      linkColor: &quot;#aaa&quot;,
-      linkWidth: 2,
-      textFontSize: &quot;14px&quot;,
-      textColor: &quot;#444&quot;
-    });
-&lt;/script&gt;
-
-&lt;figure&gt;
-   &lt;figcaption&gt;Figure 1: 10,000 View on Google Cloud Professional Data Engineer Exam Topics&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;In the coming sections, we will cover each topic from the mindmap separately.&lt;/p&gt;
-
-&lt;h3 id=&quot;infrastructure&quot;&gt;Infrastructure&lt;/h3&gt;
-
-&lt;p&gt;Google Cloud services are available in different locations divided into &lt;strong&gt;Regions&lt;/strong&gt;.
-Regions contain multiple &lt;strong&gt;Zones&lt;/strong&gt; where the resources are deployed and are isolated from one another so that failures in one zone do not affect other zones in a region. 
-Most regions have at least three zones and can have more. All regions have at least two zones.&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_regions.png&quot; alt=&quot;world map of google cloud region locations&quot; /&gt;
-  &lt;figcaption&gt;Figure 2: Google Cloud Regions - &lt;a href=&quot;https://cloud.google.com/about/locations#lightbox-regions-map&quot;&gt;Image Source&lt;/a&gt;&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Google data centers are connected with Google’s own high-speed network. Google is the only cloud provider that owns all the fiber connecting its data center together. A huge amount of the world’s internet traffic goes through Google’s network.&lt;/p&gt;
-
-&lt;p&gt;In addition to the data centers, there are points of presence all over the world. They allow access to Google’s network where all messages are encrypted, secure and very fast.&lt;/p&gt;
-
-&lt;p&gt;In addition to the POPs, Google runs a global caching system or CDN that consists of hundreds of more nodes. You can easily take advantage of this CDN to cache your content, thus increasing your application performance and decreasing your networking cost.&lt;/p&gt;
-
-&lt;h3 id=&quot;vpc-networks&quot;&gt;VPC Networks&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_vpc_networks.png&quot; alt=&quot;mindmap of topics related to VPC networks&quot; /&gt;
-  &lt;figcaption&gt;Figure 3: Google Cloud Platform VPC Networks&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;data-transfer-services&quot;&gt;Data Transfer Services&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_data_transfer_services.png&quot; alt=&quot;mindmap of topics related to data transfer services&quot; /&gt;
-  &lt;figcaption&gt;Figure 4: Google Cloud Platform Data Transfer Services&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;resource-manager&quot;&gt;Resource Manager&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_resource_manager.png&quot; alt=&quot;mindmap of topics related to resource manager&quot; /&gt;
-  &lt;figcaption&gt;Figure 5: Google Cloud Platform Resource Manager&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;security&quot;&gt;Security&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_security.png&quot; alt=&quot;mindmap of topics related to security&quot; /&gt;
-  &lt;figcaption&gt;Figure 6: Security in Google Cloud Platform&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;compute&quot;&gt;Compute&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_compute.png&quot; alt=&quot;mindmap of topics related to compute&quot; /&gt;
-  &lt;figcaption&gt;Figure 7: Google Cloud Platform Compute&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;storage&quot;&gt;Storage&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_storage.png&quot; alt=&quot;mindmap of topics related to storage&quot; /&gt;
-  &lt;figcaption&gt;Figure 8: Google Cloud Platform Storage&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;ingestion-and-processing&quot;&gt;Ingestion and Processing&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_ingestion_and_processing.png&quot; alt=&quot;mindmap of topics related to ingestion and processing&quot; /&gt;
-  &lt;figcaption&gt;Figure 9: Ingestion and Processing in Google Cloud Platform&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;data-pipelines-management&quot;&gt;Data Pipelines Management&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_data_pipelines_management.png&quot; alt=&quot;mindmap of topics related to data pipelines management&quot; /&gt;
-  &lt;figcaption&gt;Figure 10: Data Pipelines Management in Google Cloud Platform Data&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;data-governance&quot;&gt;Data Governance&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_data_governance.png&quot; alt=&quot;mindmap of topics related to data governance&quot; /&gt;
-  &lt;figcaption&gt;Figure 11: Data Governance in Google Cloud Platform&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;analytics&quot;&gt;Analytics&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_analytics.png&quot; alt=&quot;mindmap of topics related to analytics&quot; /&gt;
-  &lt;figcaption&gt;Figure 12: Analytics in Google Cloud Platform&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;machine-learning&quot;&gt;Machine Learning&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_machine_learning.png&quot; alt=&quot;mindmap of topics related to machine learning&quot; /&gt;
-  &lt;figcaption&gt;Figure 13: Machine Learning in Google Cloud Platform&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h2 id=&quot;ingestion-and-pocessing&quot;&gt;Ingestion and Pocessing&lt;/h2&gt;
-
-&lt;p&gt;As a professional data engineer, designing data processing systems requires building and operationalizing data pipelines by choosing the appropriate services to integrate new data sources and processing the data in batch or streaming fashion. In this section, we deep dive into services that will allow you to ingest data in real time and build data processing systems whether you are migrating on premises workloads or starting from scratch.&lt;/p&gt;
-
-&lt;div id=&quot;mindmap-container-ingestion-and-processing&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-    createChart(&quot;mindmap-container-ingestion-and-processing&quot;, &quot;/assets/data/2023-11-19-gcp-data-engineer-certification/ingestion-and-processing.json&quot;, &quot;mindmap&quot;, {
-      width: 800,
-      height: 600,
-      nodeColor: &quot;#fefae0&quot;,
-      nodeBorderColor: &quot;#333&quot;,
-      linkColor: &quot;#aaa&quot;,
-      linkWidth: 2,
-      textFontSize: &quot;14px&quot;,
-      textColor: &quot;#444&quot;
-    });
-&lt;/script&gt;
-
-&lt;figure&gt;
-   &lt;figcaption&gt;Figure 14: Ingestion and Processing Topics&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;pubsub&quot;&gt;Pub/Sub&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_pub_sub.png&quot; alt=&quot;mindmap of topics related to pub sub&quot; /&gt;
-  &lt;figcaption&gt;Figure 15: Pub/Sub&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;dataproc&quot;&gt;Dataproc&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_dataproc.png&quot; alt=&quot;mindmap of topics related to dataproc part 1&quot; /&gt;
-  &lt;figcaption&gt;Figure 16: Dataproc Part 1/2&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_dataproc_2.png&quot; alt=&quot;mindmap of topics related to dataproc part 2&quot; /&gt;
-  &lt;figcaption&gt;Figure 17: Dataproc Part 2/2&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;dataflow&quot;&gt;Dataflow&lt;/h3&gt;
-
-&lt;p&gt;It allows you to execute your Apache Beans pipelines on Google Cloud.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;A managed service that provides the resources necessary to create pipelines
-    &lt;ul&gt;
-      &lt;li&gt;Defines &lt;em&gt;HOW&lt;/em&gt; to run the pipeline:
-        &lt;ul&gt;
-          &lt;li&gt;Optimizes the graph by fusing transforms for example for best execution path&lt;/li&gt;
-          &lt;li&gt;Breaks jobs into units of work&lt;/li&gt;
-          &lt;li&gt;Schedules them to various workers&lt;/li&gt;
-          &lt;li&gt;Optimization is always ongoing
-            &lt;ul&gt;
-              &lt;li&gt;Units of work are continually rebalanced mid job which provides fault tolerance&lt;/li&gt;
-              &lt;li&gt;autoscaling mid job&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;Resources –both compute and storage– are deployed on demand and on a per job basis&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;The Apache Beam SDK, which provides the programming environment to make the creation of streaming and batch pipelines easier
-    &lt;ul&gt;
-      &lt;li&gt;Defines &lt;em&gt;WHAT&lt;/em&gt; has to be done&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_dataflow.png&quot; alt=&quot;mindmap of topics related to dataproc part 1&quot; /&gt;
-  &lt;figcaption&gt;Figure 18: Datflow Part 1/3&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_dataflow_2.png&quot; alt=&quot;mindmap of topics related to dataproc part 2&quot; /&gt;
-  &lt;figcaption&gt;Figure 19: Datflow Part 2/3&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_dataflow_3.png&quot; alt=&quot;mindmap of topics related to dataproc part 3&quot; /&gt;
-  &lt;figcaption&gt;Figure 20: Datflow Part 3/3&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h2 id=&quot;storage-1&quot;&gt;Storage&lt;/h2&gt;
-
-&lt;p&gt;One of a data engineer’s most important skills is choosing the right storage technology, which involves knowing how to use managed services and having a solid grasp of storage performance and pricing. To further optimize your data processing and cut expenses, consider data modeling, schema design, and data life cycle management. In this section we will delve into the many storage options provided by Google Cloud.&lt;/p&gt;
-
-&lt;div id=&quot;mindmap-container-storage&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-    createChart(&quot;mindmap-container-storage&quot;, &quot;/assets/data/2023-11-19-gcp-data-engineer-certification/storage.json&quot;, &quot;mindmap&quot;, {
-      width: 800,
-      height: 600,
-      nodeColor: &quot;#fefae0&quot;,
-      nodeBorderColor: &quot;#333&quot;,
-      linkColor: &quot;#aaa&quot;,
-      linkWidth: 2,
-      textFontSize: &quot;14px&quot;,
-      textColor: &quot;#444&quot;
-    });
-&lt;/script&gt;
-
-&lt;figure&gt;
-   &lt;figcaption&gt;Figure 21: Storage Topics&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;cloud-storage&quot;&gt;Cloud Storage&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_cloud_storage.png&quot; alt=&quot;mindmap of topics related to cloud storage part 1&quot; /&gt;
-  &lt;figcaption&gt;Figure 22: Cloud Storage Part 1/2&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_cloud_storage_2.png&quot; alt=&quot;mindmap of topics related to cloud storage part 2&quot; /&gt;
-  &lt;figcaption&gt;Figure 23: Cloud Storage Part 2/2&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Google Cloud provides 3 ways to manage the KEK encryption key:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Google Managed Encryption Keys - GMEK: automatic encryption using Cloud KMS (Key Management Service)&lt;/li&gt;
-  &lt;li&gt;Customer Managed Encryption Keys - CMEK: you control the creation and existance of the KEK key in KMS&lt;/li&gt;
-  &lt;li&gt;Customer Supplied Encryption Keys - CSEK: you provide the KEK key&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;cloud-sql&quot;&gt;Cloud SQL&lt;/h3&gt;
-
-&lt;p&gt;Cloud SQL is a fully managed relational database service for:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;MySQL&lt;/li&gt;
-  &lt;li&gt;PostgreSQL&lt;/li&gt;
-  &lt;li&gt;Microsoft SQL&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_cloud_sql.png&quot; alt=&quot;mindmap of topics related to cloud slq&quot; /&gt;
-  &lt;figcaption&gt;Figure 24: Cloud SQL&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;query-insights&quot;&gt;Query Insights&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_insights.png&quot; alt=&quot;mindmap of topics related to query insights&quot; /&gt;
-  &lt;figcaption&gt;Figure 25: Query Insights&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;cloud-spanner&quot;&gt;Cloud Spanner&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_cloud_spanner.png&quot; alt=&quot;mindmap of topics related to cloud spanner&quot; /&gt;
-  &lt;figcaption&gt;Figure 26: Cloud Spanner&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;firestore&quot;&gt;Firestore&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_firestore.png&quot; alt=&quot;mindmap of topics related to firestore&quot; /&gt;
-  &lt;figcaption&gt;Figure 27: Firestore&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;datastore&quot;&gt;Datastore&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_datastore.png&quot; alt=&quot;mindmap of topics related to datastore&quot; /&gt;
-  &lt;figcaption&gt;Figure 28: Datastore&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;memorystore&quot;&gt;Memorystore&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_memorystore.png&quot; alt=&quot;mindmap of topics related to memorystore&quot; /&gt;
-  &lt;figcaption&gt;Figure 29: Memorystore&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;bigtable&quot;&gt;Bigtable&lt;/h3&gt;
-
-&lt;p&gt;Bigtable is a fully managed NoSQL database service. It is suitable for:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Storing &amp;gt; 1TB&lt;/li&gt;
-  &lt;li&gt;High Throughput&lt;/li&gt;
-  &lt;li&gt;Low latency random data access&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_bigtable.png&quot; alt=&quot;mindmap of topics related to bigtable&quot; /&gt;
-  &lt;figcaption&gt;Figure 30: Bigtable&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h2 id=&quot;bigquery&quot;&gt;BigQuery&lt;/h2&gt;
-
-&lt;div id=&quot;mindmap-container-bigquery&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-    createChart(&quot;mindmap-container-bigquery&quot;, &quot;/assets/data/2023-11-19-gcp-data-engineer-certification/bigquery.json&quot;, &quot;mindmap&quot;, {
-      width: 800,
-      height: 600,
-      nodeColor: &quot;#fefae0&quot;,
-      nodeBorderColor: &quot;#333&quot;,
-      linkColor: &quot;#aaa&quot;,
-      linkWidth: 2,
-      textFontSize: &quot;14px&quot;,
-      textColor: &quot;#444&quot;
-    });
-&lt;/script&gt;
-
-&lt;figure&gt;
-   &lt;figcaption&gt;Figure 31: BigQuery Topics&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;The last section is solely dedicated to BigQuery. BigQuery is a serverless and cost-effective data warehouse. It is deeply integrated with the GCP’s analytical and data processing offering, allowing customers to build an enterprise ready cloud native data warehouse. BigQuery is part of Google Cloud’s comprehensive data analytics platform that covers the analytics value chain from Ingest, process and store to advanced analytics and collaboration.&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_bigquery.png&quot; alt=&quot;mindmap of topics related to bigquery part 1&quot; /&gt;
-  &lt;figcaption&gt;Figure 32: BigQuery Part 1/12&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_2.png&quot; alt=&quot;mindmap of topics related to bigquery part 2&quot; /&gt;
-  &lt;figcaption&gt;Figure 33: BigQuery Part 2/12&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_3.png&quot; alt=&quot;mindmap of topics related to bigquery part 3&quot; /&gt;
-  &lt;figcaption&gt;Figure 34: BigQuery Part 3/12&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_4.png&quot; alt=&quot;mindmap of topics related to bigquery part 4&quot; /&gt;
-  &lt;figcaption&gt;Figure 35: BigQuery Part 4/12&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_5.png&quot; alt=&quot;mindmap of topics related to bigquery part 5&quot; /&gt;
-  &lt;figcaption&gt;Figure 36: BigQuery Part 5/12&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_6.png&quot; alt=&quot;mindmap of topics related to bigquery part 6&quot; /&gt;
-  &lt;figcaption&gt;Figure 37: BigQuery Part 6/12&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_7.png&quot; alt=&quot;mindmap of topics related to bigquery part 7&quot; /&gt;
-  &lt;figcaption&gt;Figure 38: BigQuery Part 7/12&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_8.png&quot; alt=&quot;mindmap of topics related to bigquery part 8&quot; /&gt;
-  &lt;figcaption&gt;Figure 39: BigQuery Part 8/12&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_9.png&quot; alt=&quot;mindmap of topics related to bigquery part 9&quot; /&gt;
-  &lt;figcaption&gt;Figure 40: BigQuery Part 9/12&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_10.png&quot; alt=&quot;mindmap of topics related to bigquery part 10&quot; /&gt;
-  &lt;figcaption&gt;Figure 41: BigQuery Part 10/12&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_11.png&quot; alt=&quot;mindmap of topics related to bigquery part 11&quot; /&gt;
-  &lt;figcaption&gt;Figure 42: BigQuery Part 11/12&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/18_gcp_bigquery_12.png&quot; alt=&quot;mindmap of topics related to bigquery part 12&quot; /&gt;
-  &lt;figcaption&gt;Figure 43: BigQuery Part 12/12&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
-
-&lt;p&gt;Developer Cheat Sheet:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://googlecloudcheatsheet.withgoogle.com/&quot;&gt;https://googlecloudcheatsheet.withgoogle.com/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The Cloud Girl:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/priyankavergadia/GCPSketchnote&quot;&gt;https://github.com/priyankavergadia/GCPSketchnote&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Google Cloud Product list:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cloud.google.com/terms/services&quot;&gt;https://cloud.google.com/terms/services&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;21 products explained under 2 minutes:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cloud.google.com/blog/topics/inside-google-cloud/21-google-cloud-tools-each-explained-under-2-minutes&quot;&gt;https://cloud.google.com/blog/topics/inside-google-cloud/21-google-cloud-tools-each-explained-under-2-minutes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;GCP Data Engineer Study Guide:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/xg1990/GCP-Data-Engineer-Study-Guide/blob/master/GCP%20Data%20Engineer.pdf&quot;&gt;https://github.com/xg1990/GCP-Data-Engineer-Study-Guide/blob/master/GCP%20Data%20Engineer.pdf&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Data Engineering Cheat Sheet on GCP:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/ml874/Data-Engineering-on-GCP-Cheatsheet/blob/master/data_engineering_on_GCP.pdf&quot;&gt;https://github.com/ml874/Data-Engineering-on-GCP-Cheatsheet/blob/master/data_engineering_on_GCP.pdf&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Schema design best practices for Bigtable:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cloud.google.com/bigtable/docs/schema-design&quot;&gt;https://cloud.google.com/bigtable/docs/schema-design&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Optimize query computation for BigQuery:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cloud.google.com/bigquery/docs/best-practices-performance-compute&quot;&gt;https://cloud.google.com/bigquery/docs/best-practices-performance-compute&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
-
-&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Cloud Computing" /><summary type="html">This article contains a collection of notes, mind maps and resources to support you while preparing for the google cloud professional data engineer certification.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/articles/18_gcp_regions.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/articles/18_gcp_regions.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/what-is/data-modeling/&quot;&gt;https://aws.amazon.com/what-is/data-modeling/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><category term="Data Architecture" /><summary type="html">In this article we will go over the big three approaches for modeling analytical data.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/articles/19_star_schema_auto_dealership.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/articles/19_star_schema_auto_dealership.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

@@ -2,6 +2,17 @@
   
     {
 
+    "title"      : "Blogging Tools",
+	  "url"        : "/articles/2025/08/18/blogging-tools.html",
+    "category"   : "articles",
+    "date"       : "2025-08-18 00:00:00 +0000",
+	  "tags"       : "Blogging",
+	  "description": "Discover the curated list of tools for writing and building this site, covering hosting, analytics, SEO, and speed optimization."
+
+    } ,
+  
+    {
+
     "title"      : "Introducing My Data Engineering Tech Radar",
 	  "url"        : "/articles/2025/08/10/data-engineering-tech-radar.html",
     "category"   : "articles",
