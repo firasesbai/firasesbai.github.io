@@ -1,5 +1,100 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2025-08-18T05:26:24+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>The Blog and Portfolio of Firas Esbai.
-</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Blogging Tools</title><link href="https://www.firasesbai.com/articles/2025/08/18/blogging-tools.html" rel="alternate" type="text/html" title="Blogging Tools" /><published>2025-08-18T00:00:00+00:00</published><updated>2025-08-18T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/08/18/blogging-tools</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/08/18/blogging-tools.html">&lt;p&gt;&lt;em&gt;A curated list of tools that I’m using for writing and building this site.&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2025-09-08T05:10:57+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>The Blog and Portfolio of Firas Esbai.
+</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">101 Apache Airflow Cheatsheet</title><link href="https://www.firasesbai.com/articles/2025/09/08/apache-airflow-101.html" rel="alternate" type="text/html" title="101 Apache Airflow Cheatsheet" /><published>2025-09-08T00:00:00+00:00</published><updated>2025-09-08T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/09/08/apache-airflow-101</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/09/08/apache-airflow-101.html">&lt;p&gt;&lt;em&gt;101 Apache Airflow Cheatsheet.&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#what-is-apache-airflow&quot; id=&quot;markdown-toc-what-is-apache-airflow&quot;&gt;What is Apache Airflow?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#core-concepts&quot; id=&quot;markdown-toc-core-concepts&quot;&gt;Core Concepts&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#directed-acyclic-graphs-dags&quot; id=&quot;markdown-toc-directed-acyclic-graphs-dags&quot;&gt;Directed Acyclic Graphs (DAGs)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#dag-run&quot; id=&quot;markdown-toc-dag-run&quot;&gt;DAG Run&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#tasks&quot; id=&quot;markdown-toc-tasks&quot;&gt;Tasks&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#task-instances&quot; id=&quot;markdown-toc-task-instances&quot;&gt;Task Instances&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#variables&quot; id=&quot;markdown-toc-variables&quot;&gt;Variables&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#architecture-components&quot; id=&quot;markdown-toc-architecture-components&quot;&gt;Architecture Components&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#architecture-components-1&quot; id=&quot;markdown-toc-architecture-components-1&quot;&gt;Architecture Components&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;what-is-apache-airflow&quot;&gt;What is Apache Airflow?&lt;/h2&gt;
+
+&lt;p&gt;Apache Airflow is an open-source workflow management platform designed to programmatically author, schedule, and monitor complex data pipelines.&lt;/p&gt;
+
+&lt;h2 id=&quot;core-concepts&quot;&gt;Core Concepts&lt;/h2&gt;
+
+&lt;h3 id=&quot;directed-acyclic-graphs-dags&quot;&gt;Directed Acyclic Graphs (DAGs)&lt;/h3&gt;
+
+&lt;p&gt;The fundamental structure in Airflow, representing a collection of tasks with defined dependencies. Each DAG is defined in Python code and dictates the order of task execution based on their relationships. A DAG is a graph structure where tasks are represented as nodes, and the dependencies between these tasks are represented as directed edges. The “directed” aspect indicates that tasks have a specific order of execution, while “acyclic” means there are no loops or cycles, preventing infinite execution paths.&lt;/p&gt;
+
+&lt;h3 id=&quot;dag-run&quot;&gt;DAG Run&lt;/h3&gt;
+
+&lt;p&gt;A DAG Run is an object representing an instantiation of the DAG in time. Any time the DAG is executed, a DAG Run is created and all tasks inside it are executed. The status of the DAG Run depends on the tasks states. Each DAG Run is run separately from one another, meaning that you can have many runs of a DAG at the same time.&lt;/p&gt;
+
+&lt;h3 id=&quot;tasks&quot;&gt;Tasks&lt;/h3&gt;
+
+&lt;p&gt;Task is the  individual units of work within a DAG. Each task represents a single operation, such as data extraction, transformation, or loading (ETL). The relationships between tasks are established using dependency definitions. This can be done through:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Bitwise Operators: Using » to set downstream dependencies and « for upstream dependencies.&lt;/li&gt;
+  &lt;li&gt;Methods: Using set_upstream() and set_downstream() methods to explicitly define task relationships.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are three common types of task:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Operators&lt;/strong&gt;, conceptually a template for predefined tasks that you can string together quickly to build most parts of your DAGs.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Sensors&lt;/strong&gt;, a special subclass of Operators which are entirely about waiting for an external event to happen.&lt;/li&gt;
+  &lt;li&gt;A &lt;strong&gt;TaskFlow-decorated&lt;/strong&gt; @task, which is a custom Python function packaged up as a Task.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To pass data between tasks you have three options:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;XComs&lt;/strong&gt; (“Cross-communications”), a system where you can have tasks push and pull small bits of metadata identified by a &lt;strong&gt;key&lt;/strong&gt; as well as the &lt;strong&gt;task_id&lt;/strong&gt; and &lt;strong&gt;dag_id&lt;/strong&gt; it came from.&lt;/li&gt;
+  &lt;li&gt;Uploading and downloading large files from a storage service (either one you run, or part of a public cloud)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;TaskFlow API&lt;/strong&gt; automatically passes data between tasks via implicit XComs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;task-instances&quot;&gt;Task Instances&lt;/h3&gt;
+
+&lt;p&gt;Much in the same way that a DAG is instantiated into a DAG Run each time it runs, task instances are specific executions of tasks at particular times, which can vary based on the DAG’s scheduling.&lt;/p&gt;
+
+&lt;h3 id=&quot;variables&quot;&gt;Variables&lt;/h3&gt;
+
+&lt;p&gt;Variables are Airflow’s runtime configuration concept - a general key/value store that is global and can be queried from your tasks, and easily set via Airflow’s user interface, or bulk-uploaded as a JSON file.
+Variables are &lt;strong&gt;global&lt;/strong&gt;, and should only be used for overall configuration that covers the entire installation; to pass data from one Task/Operator to another, you should use XComs instead.&lt;/p&gt;
+
+&lt;h2 id=&quot;architecture-components&quot;&gt;Architecture Components&lt;/h2&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/23_apache_airflow_architecture.png&quot; alt=&quot;Apache Airflow Architecture Components&quot; /&gt;
+  &lt;figcaption&gt;Figure 1: Apache Airflow Architecture Components - &lt;a href=&quot;https://airflow.apache.org/docs/apache-airflow/2.1.2/concepts/overview.html&quot;&gt;Image Source&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Scheduler&lt;/strong&gt;: The component responsible for scheduling tasks and determining when they should run. It checks the DAG directory for tasks that need to be executed.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Executor&lt;/strong&gt;: This defines how and where tasks are executed. Various executors are available.  In the default Airflow installation, this runs everything inside the scheduler, but most production-suitable executors actually push task execution out to workers.
+Most executors will generally also introduce other components to let them talk to their workers - like a &lt;strong&gt;task queue&lt;/strong&gt; - but you can still think of the executor and its workers as a single logical component&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Web Server&lt;/strong&gt;: Provides a user interface for monitoring and managing workflows, allowing users to inspect DAGs and task statuses.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;A folder of DAG files&lt;/strong&gt;, read by the scheduler and executor (and any workers the executor has)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Metadata Database&lt;/strong&gt;: Stores all metadata related to DAGs and tasks, typically using PostgreSQL or MySQL.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;architecture-components-1&quot;&gt;Architecture Components&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Task Management&lt;/strong&gt;: Airflow manages task dependencies automatically, ensuring that tasks execute in the correct order.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Scheduling&lt;/strong&gt;: Airflow provides advanced scheduling capabilities, allowing workflows to run on defined schedules or trigger based on external events.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Extensibility&lt;/strong&gt;: Users can create custom operators and plugins to extend Airflow’s functionality, integrating with various data sources and services.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Error Handling and Retries&lt;/strong&gt;: Built-in mechanisms allow tasks to be retried automatically upon failure, enhancing workflow reliability.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Scalability&lt;/strong&gt;: Airflow can handle thousands of concurrent tasks across multiple workers, making it suitable for large-scale data operations.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Rich Command Line Interface (CLI)&lt;/strong&gt;: The CLI provides utilities for managing DAGs and executing tasks directly from the command line.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Integration with Other Tools&lt;/strong&gt;: Airflow supports integration with various cloud services and data tools, including AWS, Google Cloud Platform, and many others.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><summary type="html">101 Apache Airflow Cheatsheet.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Blogging Tools</title><link href="https://www.firasesbai.com/articles/2025/08/18/blogging-tools.html" rel="alternate" type="text/html" title="Blogging Tools" /><published>2025-08-18T00:00:00+00:00</published><updated>2025-08-18T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/08/18/blogging-tools</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/08/18/blogging-tools.html">&lt;p&gt;&lt;em&gt;A curated list of tools that I’m using for writing and building this site.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;In this article, I have curated a list of resources and tools that help me manage everything from hosting and analytics to writing and working on this site. Finding the right tool can make a huge difference in terms of efficiency. While there are countless options out there, this is what works best for me.&lt;/p&gt;
 
@@ -1755,360 +1850,4 @@ Optimistic locking assumes conflicts are rare. It allows multiple users to acces
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://developers.cloudflare.com/analytics/faq/about-analytics/#4lt2VoRUorCudxN1xzxpOt&quot;&gt;https://developers.cloudflare.com/analytics/faq/about-analytics/#4lt2VoRUorCudxN1xzxpOt&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Blogging" /><summary type="html">In this article we will look into the reasons for discrepancies between the data reported by Cloudflare Analytics and Google Analytics and how to leverage both of them.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Data Warehouse Modeling Techniques</title><link href="https://www.firasesbai.com/articles/2024/08/11/data-warehouse-modeling-techniques.html" rel="alternate" type="text/html" title="Data Warehouse Modeling Techniques" /><published>2024-08-11T00:00:00+00:00</published><updated>2024-08-11T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/08/11/data-warehouse-modeling-techniques</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/08/11/data-warehouse-modeling-techniques.html">&lt;p&gt;&lt;em&gt;In this article we will go over the big three approaches for modeling analytical data.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;We will go through some definitions around data modeling and database design approaches as well as the differences between a data warehouse and a data mart, how they are used in business intelligence and data analytics and the modeling techniques applied with them.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1&gt; Contents &lt;/h1&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#what-is-a-data-warehouse&quot; id=&quot;markdown-toc-what-is-a-data-warehouse&quot;&gt;What is a Data Warehouse?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#data-warehouse-vs-data-mart&quot; id=&quot;markdown-toc-data-warehouse-vs-data-mart&quot;&gt;Data Warehouse vs Data Mart&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#what-is-data-modeling&quot; id=&quot;markdown-toc-what-is-data-modeling&quot;&gt;What is Data Modeling?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#normalization-vs-denormalization&quot; id=&quot;markdown-toc-normalization-vs-denormalization&quot;&gt;Normalization vs Denormalization&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#normalization&quot; id=&quot;markdown-toc-normalization&quot;&gt;Normalization&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#denormalization&quot; id=&quot;markdown-toc-denormalization&quot;&gt;Denormalization&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#data-warehouse-modeling-techniques&quot; id=&quot;markdown-toc-data-warehouse-modeling-techniques&quot;&gt;Data Warehouse Modeling Techniques&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#modeling-techniques-implementation-on-databricks-lakehouse-platform&quot; id=&quot;markdown-toc-modeling-techniques-implementation-on-databricks-lakehouse-platform&quot;&gt;Modeling Techniques Implementation on Databricks Lakehouse Platform&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;what-is-a-data-warehouse&quot;&gt;What is a Data Warehouse?&lt;/h2&gt;
-
-&lt;p&gt;Data Warehouse is not the same as a database but rather typically built on top of other databases. It aggregates data from dozens of data sources such as operational systems or external systems and the data is actually copied rather than moved.&lt;/p&gt;
-
-&lt;p&gt;Building a Data Warehouse serves the purpose of having a one stop shop: all your data in a single location which will enable you to make data driven decisions through trend analysis and business intelligence.&lt;/p&gt;
-
-&lt;h2 id=&quot;data-warehouse-vs-data-mart&quot;&gt;Data Warehouse vs Data Mart&lt;/h2&gt;
-
-&lt;p&gt;Unlike the data warehouse which is a centralized data repository that provides a holistic view on the organization’s data, data mart is a specialized and focused subset of a data warehouse. It supports specific analytical needs and is generally easier and quicker to design and implement compared to a data warehouse.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-data-modeling&quot;&gt;What is Data Modeling?&lt;/h2&gt;
-
-&lt;p&gt;Data Modeling is the process of creating a visual representation of a system’s data to represent it in an easy way for reusability, flexibility, and scalability. 
-The output is usually a collection of living documents that evolve along with changes to business needs and serve the purpose of facilitating communication among stakeholders and the foundation for later database implementation and analysis.&lt;/p&gt;
-
-&lt;p&gt;The process of crafting data models involves 3 steps:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Conceptual&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Analysis and design phase to understand the key business entities and attributes and capture their interactions as per the business processes and rules within the organization.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Logical&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Technology agnostic model that adds more details and relations between entities for how the conceptual model will be implemented.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Physical&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Defines how the logical model will be implemented using the system and technology in question to ensure that the writes and reads can be performed efficiently. It gives details about:
-        &lt;ul&gt;
-          &lt;li&gt;Data field types as represented in the Database Management System (DBMS)&lt;/li&gt;
-          &lt;li&gt;Data relationships as represented in the DBMS&lt;/li&gt;
-          &lt;li&gt;Additional details, such as performance tuning&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;To better illustrate these steps, let’s consider an &lt;strong&gt;Auto Dealership&lt;/strong&gt; as an example and model the potential system’s data. For instance, the diagram below highlights the different data entities and their relationships of the business on a conceptual level:&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/19_conceptual_model_auto_dealership.png&quot; alt=&quot;conceptual data model of an auto dealership&quot; /&gt;
-  &lt;figcaption&gt;Figure 1: Conceptual data model of an auto dealership&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Adding more details to the identified entities will result in the following logical diagram:&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/19_logical_model_auto_dealership.png&quot; alt=&quot;logical data model of an auto dealership&quot; /&gt;
-  &lt;figcaption&gt;Figure 2: Logical data model of an auto dealership &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Finally, the physical model will depend on the chosen database technology and will involve considerations such as how easy it is to manage it and will it be able to handle the load if the data volume scales.&lt;/p&gt;
-
-&lt;h2 id=&quot;normalization-vs-denormalization&quot;&gt;Normalization vs Denormalization&lt;/h2&gt;
-
-&lt;p&gt;Normalization and Denormalization are two opposing approaches to database design.&lt;/p&gt;
-
-&lt;h3 id=&quot;normalization&quot;&gt;Normalization&lt;/h3&gt;
-
-&lt;p&gt;In normalization, the focus is on reducing data redundancy and non-consistency and improving data integrity. This is achieved by organizing data into separate related tables in accordance with normal forms.&lt;/p&gt;
-
-&lt;p&gt;There are several normal forms each building upon the previous one and the main normalization norms are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;First normal form (1NF)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Each column is unique and has a single value. The table has a unique primary key.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Second normal form (2NF)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;The requirements of 1NF, plus &lt;em&gt;partial dependencies&lt;/em&gt; are removed.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Third normal form (3NF)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;The requirements of 2NF, plus each table contains only relevant Fields related to its primary key and has no &lt;em&gt;transitive dependencies&lt;/em&gt;.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A &lt;em&gt;partial dependency&lt;/em&gt; occurs when a subset of fields in a composite key can be used to determine a non-key column of the table.&lt;/p&gt;
-
-&lt;p&gt;For example, considering the following table:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;StudentID&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;CourseID&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;StudentName&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;CourseName&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;InstructorName&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;101&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;CS101&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;John&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Database&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Dr. Smith&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;102&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;CS102&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Emma&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Networking&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Dr. Johnson&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;103&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;CS102&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;John&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Networking&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Dr. Johnson&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p style=&quot;text-align:center;&quot;&gt;Table 1: Partial Dependency Example&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The primary key is the combination of (StudentId, CourseID)&lt;/li&gt;
-  &lt;li&gt;StudentName depends only on StudentID&lt;/li&gt;
-  &lt;li&gt;CourseName depends only on CourseID&lt;/li&gt;
-  &lt;li&gt;Here, we have two partial dependencies:
-    &lt;ul&gt;
-      &lt;li&gt;StudentID → StudentName&lt;/li&gt;
-      &lt;li&gt;CourseID → CourseName&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A &lt;em&gt;transitive dependency&lt;/em&gt; occurs when a non-key field depends on another non-key field.&lt;/p&gt;
-
-&lt;p&gt;For example, considering the following table:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;EmployeeID&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;EmployeeName&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;DepartmentID&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;DepartmentName&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;E01&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Alice&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;D1&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Sales&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;E02&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Bob&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;D2&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Marketing&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;E03&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Charlie&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;D1&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Sales&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p style=&quot;text-align:center;&quot;&gt;Table 2: Transitive Dependency Example&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The primary key is EmployeeID&lt;/li&gt;
-  &lt;li&gt;EmployeeName depends on EmployeeID&lt;/li&gt;
-  &lt;li&gt;DepartmentID depends on EmployeeID&lt;/li&gt;
-  &lt;li&gt;DepartmentName depends on DepartmentID&lt;/li&gt;
-  &lt;li&gt;Here, we have a transitive dependency:
-    &lt;ul&gt;
-      &lt;li&gt;EmployeeID → DepartmentID → DepartmentName&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Most practical database designs typically aim for 3NF as it generally provides a good balance between data integrity and performance.&lt;/p&gt;
-
-&lt;p&gt;In general, normalization is best suited for systems with frequent insert, update, and delete operations, like transactional databases. What about denormalization?&lt;/p&gt;
-
-&lt;h3 id=&quot;denormalization&quot;&gt;Denormalization&lt;/h3&gt;
-
-&lt;p&gt;Denormalization on the other hand focuses on improving query performance, especially for read-heavy workloads, by combining related data from multiple tables increasing data redundancy and storage requirements and decreasing the number of tables in the database.&lt;/p&gt;
-
-&lt;p&gt;Denormalization is ideal for reporting systems and data warehouses where complex joins are expensive.&lt;/p&gt;
-
-&lt;p&gt;The choice between normalization and denormalization depends on specific application needs:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Use normalization when data integrity and consistency are crucial, and when the database undergoes frequent updates.&lt;/li&gt;
-  &lt;li&gt;Opt for denormalization when query performance is a priority, especially for read-intensive applications or when complex joins significantly slow down data retrieval.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;data-warehouse-modeling-techniques&quot;&gt;Data Warehouse Modeling Techniques&lt;/h2&gt;
-
-&lt;p&gt;The three big approaches for modeling analytical data are:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Inmon&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Top-down approach&lt;/li&gt;
-      &lt;li&gt;Advocates for creating a centralized, integrated &lt;em&gt;Enterprise Data Warehouse&lt;/em&gt; (EDW)&lt;/li&gt;
-      &lt;li&gt;Uses a normalized structure (3NF) for the core warehouse where data is organized by subject reflecting the overall business structure&lt;/li&gt;
-      &lt;li&gt;&lt;em&gt;Data Marts&lt;/em&gt; are created from the EDW as needed for analytical needs&lt;/li&gt;
-      &lt;li&gt;The popular option for modeling the data mart is a &lt;strong&gt;Star Schema&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;Rules how to build data warehouse, store and organise data (Bill Inmon, 1990):
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;Integrated&lt;/strong&gt; = other data sources&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Subject oriented&lt;/strong&gt; = reorganise the data per subject&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Time variant&lt;/strong&gt; = data warehouse contains historical data&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Non volatile&lt;/strong&gt; = data warehouse remains stable between refreshes&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Continuing with the auto dealership example, an example of a star schema of the EDW is shown below:&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/19_star_schema_auto_dealership.png&quot; alt=&quot;star schema of an auto dealership&quot; /&gt;
-  &lt;figcaption&gt;Figure 3: Star schema of an auto dealership &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Kimball&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Bottom up approach&lt;/li&gt;
-      &lt;li&gt;Focuses on building data marts that address specific business processes making the data mart the data warehouse itself&lt;/li&gt;
-      &lt;li&gt;Uses a &lt;strong&gt;Star or Snowflake Schema&lt;/strong&gt; for the design of the data marts&lt;/li&gt;
-      &lt;li&gt;Data is modulated with two general types of tables: &lt;strong&gt;Facts&lt;/strong&gt; and &lt;strong&gt;Dimensions&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;A &lt;strong&gt;slowly changing dimension (SCD)&lt;/strong&gt; is necessary to track changes in dimensions&lt;/li&gt;
-      &lt;li&gt;SCD three most common ones:
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;Type 1&lt;/strong&gt;
-            &lt;ul&gt;
-              &lt;li&gt;Overwrite existing dimension records. This is super simple and means you have no access to the deleted historical dimension records&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Type 2&lt;/strong&gt;
-            &lt;ul&gt;
-              &lt;li&gt;Keep a full history of dimension records. When a record changes, that specific record is flagged as changed, and a new dimension record is created that reflects the current status of the attributes&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Type 3&lt;/strong&gt;
-            &lt;ul&gt;
-              &lt;li&gt;A type 3 SCD is similar to a type 2 SCD, but instead of creating a new Row, a change in a type 3 SCD creates a new field&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Applying the dimensional modeling approach to our example will result, as shown below, in a &lt;em&gt;Sales&lt;/em&gt; fact table representing sales transactions with numeric measures (facts) and several dimension tables that provide the context for the facts with descriptive attributes.&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/19_dimensional_model_auto_dealership.png&quot; alt=&quot;dimensional model of an auto dealership&quot; /&gt;
-  &lt;figcaption&gt;Figure 4: Dimensional model of an auto dealership &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Data Vault&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Data Vaults organize data into three different types: &lt;strong&gt;hubs&lt;/strong&gt;, &lt;strong&gt;links&lt;/strong&gt;, and &lt;strong&gt;satellites&lt;/strong&gt;
-        &lt;ul&gt;
-          &lt;li&gt;Hubs represent core business entities. The primary key of Hub tables is usually derived by a combination of business concept ID, load date, and other metadata information&lt;/li&gt;
-          &lt;li&gt;Links represent relationships between hubs. It has only the join keys. It is like a Factless Fact table in the dimensional model. No attributes - just join keys&lt;/li&gt;
-          &lt;li&gt;Satellites store attributes about hubs or links. They have descriptive information on core business entities. They are similar to a normalized version of a Dimension table&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;Data Vault is a “write-optimized” modeling style&lt;/li&gt;
-      &lt;li&gt;Great fit for data lakes and lakehouse approach&lt;/li&gt;
-      &lt;li&gt;Supports agile development approaches:
-        &lt;ul&gt;
-          &lt;li&gt;It can be easily extended without massive refactoring like the dimensional models&lt;/li&gt;
-          &lt;li&gt;Additional hubs can be easily added to links and additional satellites can be added to a Hub with minimal changes&lt;/li&gt;
-          &lt;li&gt;Existing ETL jobs need significantly less refactoring when the data model changes&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;modeling-techniques-implementation-on-databricks-lakehouse-platform&quot;&gt;Modeling Techniques Implementation on Databricks Lakehouse Platform&lt;/h2&gt;
-
-&lt;p&gt;A &lt;strong&gt;data Lakehouse&lt;/strong&gt; is a new, open architecture that combines the best elements of data lakes and data warehouses. The Databricks Lakehouse is a large-scale enterprise-level platform that can host many use cases and data products. Therefore, it can support many different data modeling styles for different purposes and both normalized Data Vault (write-optimized) and denormalized dimensional models (read-optimized) data modeling styles have their place.&lt;/p&gt;
-
-&lt;p&gt;The application of both techniques can be especially recognized through the lenses of the &lt;strong&gt;Medallion Architecture&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;The medallion architecture is a data design pattern used to logically organize data in a lakehouse, with the goal of incrementally and progressively improving the structure and quality of data as it flows through each layer of the architecture (from Bronze ⇒ Silver ⇒ Gold layer tables).&lt;/p&gt;
-
-&lt;p&gt;The following diagram summarizes the mapping of different layers, their purpose, and applied modeling techniques in each:&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;img src=&quot;/assets/images/articles/19_data_lakehouse_architecture.png&quot; alt=&quot;medallion architecture with used modeling techniques in each stage&quot; /&gt;
-  &lt;figcaption&gt;Figure 5: Data lakehouse architecture and modeling techniques - &lt;a href=&quot;https://www.databricks.com/blog/2022/06/24/data-warehousing-modeling-techniques-and-their-implementation-on-the-databricks-lakehouse-platform.html&quot;&gt;Image Source&lt;/a&gt;&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;First data is landed in the Bronze layer in raw format using the same models of source systems in order to get converted to delta lake format. Next it flows into the Silver layer where it gets aggregated using more normalized model. Finally, the gold layer is meant for read-optimized presentation layer using denormalized models.&lt;/p&gt;
-
-&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
-
-&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
-
-&lt;p&gt;In this article we covered the three main data warehouse modeling techniques and relevant design concepts and how they are applied in some form of combination taking the example of Databricks lakehouse platform.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.snowflake.com/guides/difference-between-data-warehouse-and-data-mart/&quot;&gt;https://www.snowflake.com/guides/difference-between-data-warehouse-and-data-mart/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.databricks.com/glossary/medallion-architecture&quot;&gt;https://www.databricks.com/glossary/medallion-architecture&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.databricks.com/blog/2022/06/24/prescriptive-guidance-for-implementing-a-data-vault-model-on-the-databricks-lakehouse-platform.html&quot;&gt;https://www.databricks.com/blog/2022/06/24/prescriptive-guidance-for-implementing-a-data-vault-model-on-the-databricks-lakehouse-platform.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/what-is/data-modeling/&quot;&gt;https://aws.amazon.com/what-is/data-modeling/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><category term="Data Architecture" /><summary type="html">In this article we will go over the big three approaches for modeling analytical data.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/articles/19_star_schema_auto_dealership.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/articles/19_star_schema_auto_dealership.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://developers.cloudflare.com/analytics/faq/about-analytics/#4lt2VoRUorCudxN1xzxpOt&quot;&gt;https://developers.cloudflare.com/analytics/faq/about-analytics/#4lt2VoRUorCudxN1xzxpOt&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Blogging" /><summary type="html">In this article we will look into the reasons for discrepancies between the data reported by Cloudflare Analytics and Google Analytics and how to leverage both of them.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

@@ -2,6 +2,17 @@
   
     {
 
+    "title"      : "101 Apache Airflow Cheatsheet",
+	  "url"        : "/articles/2025/09/08/apache-airflow-101.html",
+    "category"   : "articles",
+    "date"       : "2025-09-08 00:00:00 +0000",
+	  "tags"       : "Data Engineering",
+	  "description": "Apache Airflow simplifies workflow automation with DAGs, task scheduling, and data pipeline management for data engineering workflows."
+
+    } ,
+  
+    {
+
     "title"      : "Blogging Tools",
 	  "url"        : "/articles/2025/08/18/blogging-tools.html",
     "category"   : "articles",
