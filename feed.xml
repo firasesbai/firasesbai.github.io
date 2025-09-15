@@ -1,5 +1,119 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2025-09-08T05:10:57+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>The Blog and Portfolio of Firas Esbai.
-</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">101 Apache Airflow Cheatsheet</title><link href="https://www.firasesbai.com/articles/2025/09/08/apache-airflow-101.html" rel="alternate" type="text/html" title="101 Apache Airflow Cheatsheet" /><published>2025-09-08T00:00:00+00:00</published><updated>2025-09-08T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/09/08/apache-airflow-101</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/09/08/apache-airflow-101.html">&lt;p&gt;&lt;em&gt;101 Apache Airflow Cheatsheet.&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2025-09-15T05:44:39+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>The Blog and Portfolio of Firas Esbai.
+</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">101 Apache Kafka Cheatsheet</title><link href="https://www.firasesbai.com/articles/2025/09/15/apache-kafka-101.html" rel="alternate" type="text/html" title="101 Apache Kafka Cheatsheet" /><published>2025-09-15T00:00:00+00:00</published><updated>2025-09-15T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/09/15/apache-kafka-101</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/09/15/apache-kafka-101.html">&lt;p&gt;&lt;em&gt;101 Apache Kafka Cheatsheet&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#what-is-apache-kafka&quot; id=&quot;markdown-toc-what-is-apache-kafka&quot;&gt;What is Apache Kafka?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#core-concepts&quot; id=&quot;markdown-toc-core-concepts&quot;&gt;Core Concepts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#key-features&quot; id=&quot;markdown-toc-key-features&quot;&gt;Key Features&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#message-delivery-semantics&quot; id=&quot;markdown-toc-message-delivery-semantics&quot;&gt;Message delivery semantics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#use-cases&quot; id=&quot;markdown-toc-use-cases&quot;&gt;Use Cases&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;what-is-apache-kafka&quot;&gt;What is Apache Kafka?&lt;/h2&gt;
+
+&lt;p&gt;Apache Kafka is an open-source distributed event streaming platform. It consists of highly scalable and fault tolerant &lt;strong&gt;servers&lt;/strong&gt; enabling real-time data ingestion and processing between &lt;strong&gt;clients&lt;/strong&gt; that are decoupled (source and target) and can scale independently.&lt;/p&gt;
+
+&lt;h2 id=&quot;core-concepts&quot;&gt;Core Concepts&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Cluster&lt;/strong&gt;: A group of Kafka broker servers that work together to manage and distribute data.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Broker&lt;/strong&gt;: A Kafka server that stores data and serves client requests (producers and consumers). Multiple brokers form a cluster.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Topic&lt;/strong&gt;: A named stream of records to which producers send data and from which consumers read. Topics are split into partitions.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Partition&lt;/strong&gt;: Each topic is divided into partitions, which are ordered, immutable sequences of messages. Partitions enable parallelism and scalability.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Producer&lt;/strong&gt;: An application or service that sends (publishes) records to Kafka topics.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Message Key&lt;/strong&gt;: producers can choose to send a key with records then messages for that key will always go to the same partition.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Consumer&lt;/strong&gt;: An application or service that reads (subscribes to) records from Kafka topics.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Consumer Group&lt;/strong&gt;: A group of consumers that work together to consume data from a topic, ensuring each message is processed only once by the group.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ZooKeeper&lt;/strong&gt;: Used for managing and coordinating Kafka brokers (leader election, metadata, etc.). 
+Note: Newer Kafka versions are moving toward removing ZooKeeper dependency.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Offset&lt;/strong&gt;: A unique identifier for each message within a partition, used by consumers to keep track of read messages.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Replication&lt;/strong&gt;: Each partition can be replicated across multiple brokers to ensure durability and high availability.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/24_apache_kafka_architecture.png&quot; alt=&quot;Example Kafka Topic &amp;amp; Producers &quot; /&gt;
+  &lt;figcaption&gt;Figure 1: Example Kafka Topic &amp;amp; Producers - &lt;a href=&quot;https://kafka.apache.org/documentation/#gettingStarted&quot;&gt;Image Source&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;key-features&quot;&gt;Key Features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;High Throughput&lt;/strong&gt;: Capable of handling millions of messages per second.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Low Latency&lt;/strong&gt;: Designed for real-time streaming and processing.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Scalability&lt;/strong&gt;: Scales horizontally by adding brokers and partitions.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Fault Tolerance&lt;/strong&gt;: Data is replicated across brokers; if one fails, another can take over.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Durability&lt;/strong&gt;: Messages are persisted on disk and replicated.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Decoupling&lt;/strong&gt;: Producers and consumers are independent, enabling flexible architectures.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Multiple APIs&lt;/strong&gt;:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;Admin API&lt;/em&gt;: manage and inspect topics, brokers, and other Kafka objects.&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;Producer API&lt;/em&gt;: Publish data to topics.&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;Consumer API&lt;/em&gt;: Subscribe to and process data from topics.&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;Streams API&lt;/em&gt;: Build stream processing applications.&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;Connect API&lt;/em&gt;: Integrate with external systems (databases, file systems, etc.)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;message-delivery-semantics&quot;&gt;Message delivery semantics&lt;/h2&gt;
+
+&lt;p&gt;Apache Kafka provides three primary message delivery semantics:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;At-most-once&lt;/strong&gt;: Messages are delivered zero or one time. Some messages may be lost, but never delivered more than once.
+Typical usage in applicaitons with high-throughput, low latency requirements and risk of data loss.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;At-least-once&lt;/strong&gt;: Messages are delivered one or more times. No message is lost, but duplicates may occur. 
+Typical usage in data pipelines where no data loss is acceptable, and duplicates can be handled.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Exactly-once&lt;/strong&gt;: Each message is delivered once and only once. No data loss or duplicate delivery.
+Ensures no message loss or duplication, but with increased latency and configuration overhead
+Typical usage in Financial transactions and critical data flows.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;How kafka achieves these semantics:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;At-most-once:
+    &lt;ul&gt;
+      &lt;li&gt;Producer sends messages without waiting for acknowledgment (acks=0).&lt;/li&gt;
+      &lt;li&gt;If a failure occurs before delivery, messages may be lost.&lt;/li&gt;
+      &lt;li&gt;Consumer commits its offset before processing messages. If it crashes after committing but before processing, messages are lost.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;At-least-once:
+    &lt;ul&gt;
+      &lt;li&gt;Producer waits for acknowledgment (acks=1 or acks=all).&lt;/li&gt;
+      &lt;li&gt;If acknowledgment is not received, the producer retries, which can result in duplicate messages.&lt;/li&gt;
+      &lt;li&gt;Consumers must be idempotent to handle possible duplicates&lt;/li&gt;
+      &lt;li&gt;Consumer commits offset after processing. If it crashes before committing, messages may be processed again after recovery (duplicates possible).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Exactly-once:
+    &lt;ul&gt;
+      &lt;li&gt;Producer uses idempotence and transactions; each message is written once even if retried.&lt;/li&gt;
+      &lt;li&gt;Consumers and producers must be properly configured for transactional processing. Offset commits and output are part of the same transaction, ensuring atomicity.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;use-cases&quot;&gt;Use Cases&lt;/h2&gt;
+
+&lt;p&gt;Some of the popular use cases for Apache Kafka include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Messaging&lt;/strong&gt;: replacement to traditional message broker for decoupling data processing between producers and consumers.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Website activity tracking&lt;/strong&gt;: this is the original use case where a user’s site activity like page views, clicks and searches events are published to central topics 
+and available for consumption from real time analytics and insights applications.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Metrics&lt;/strong&gt;: similarly apache kafka is used in aggregating statistics from distributed applications to produce centralized feeds of operational data.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Log aggregation&lt;/strong&gt;: used as a replacement for log aggregation solutions giving cleaner abstraction of log or event data as a stream of messages.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><summary type="html">101 Apache Kafka Cheatsheet</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">101 Apache Airflow Cheatsheet</title><link href="https://www.firasesbai.com/articles/2025/09/08/apache-airflow-101.html" rel="alternate" type="text/html" title="101 Apache Airflow Cheatsheet" /><published>2025-09-08T00:00:00+00:00</published><updated>2025-09-08T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/09/08/apache-airflow-101</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/09/08/apache-airflow-101.html">&lt;p&gt;&lt;em&gt;101 Apache Airflow Cheatsheet.&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -1764,90 +1878,4 @@ Optimistic locking assumes conflicts are rare. It allows multiple users to acces
 
 &lt;p&gt;&lt;a href=&quot;https://docs.delta.io/latest/delta-intro.html&quot;&gt;https://docs.delta.io/latest/delta-intro.html&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://delta.io/blog/2023-02-08-delta-lake-schema-evolution/&quot;&gt;https://delta.io/blog/2023-02-08-delta-lake-schema-evolution/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><category term="Data Architecture" /><summary type="html">In this article, we will go through a brief overview of the journey from the foundational data warehouses to the data lakes and up to the emerging concept of the data lakehouse.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Cloudflare Analytics vs Google Analytics</title><link href="https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html" rel="alternate" type="text/html" title="Cloudflare Analytics vs Google Analytics" /><published>2024-08-11T00:00:00+00:00</published><updated>2024-08-11T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html">&lt;p&gt;&lt;em&gt;In this article we will look into the reasons for discrepancies between the data reported by Cloudflare Analytics and Google Analytics and how to leverage both of them.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Tracking and analyzing web data is essential for keeping a holistic view on your site’s performance. This is especially useful for bloggers to track key metrics such as which articles and pages are most visited, where visitors are located and the percentage of visitors who leave after viewing only one page just to name a few.&lt;/p&gt;
-
-&lt;p&gt;For monitoring this site’s performance, I have opted for integrating Google Analytics web service. In addition, I’m using cloudflare for managing a custom domain name. Cloudflare has implemented Analytics where users can also gain insights to their managed sites. These however show big discrepancies from the data present in Google Analytics. Understanding the reasons behind it is what we will try to accomplish in this blog post.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1&gt; Contents &lt;/h1&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#data-collection-method&quot; id=&quot;markdown-toc-data-collection-method&quot;&gt;Data Collection Method&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#server-side-tracking&quot; id=&quot;markdown-toc-server-side-tracking&quot;&gt;Server-Side Tracking&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#client-side-tracking&quot; id=&quot;markdown-toc-client-side-tracking&quot;&gt;Client-Side Tracking&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#types-of-data-collected&quot; id=&quot;markdown-toc-types-of-data-collected&quot;&gt;Types of Data Collected&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#cloudflare&quot; id=&quot;markdown-toc-cloudflare&quot;&gt;Cloudflare&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#google-analytics&quot; id=&quot;markdown-toc-google-analytics&quot;&gt;Google Analytics&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#recommendation&quot; id=&quot;markdown-toc-recommendation&quot;&gt;Recommendation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;data-collection-method&quot;&gt;Data Collection Method&lt;/h2&gt;
-
-&lt;p&gt;Understanding the different methods used by each tool to collect data will reveal the main reason for discrepancies in their reports.&lt;/p&gt;
-
-&lt;h3 id=&quot;server-side-tracking&quot;&gt;Server-Side Tracking&lt;/h3&gt;
-
-&lt;p&gt;Cloudflare uses DNS and server-side data to track visits. This means it collects data on every request made to your website’s server. This includes all HTTP/HTTPS requests, regardless of whether they are made by human users, bots, or automated scripts. Therefore, every unique IP address for a request is identified as a visit.&lt;/p&gt;
-
-&lt;p&gt;For this reason, Cloudflare Analytics probably will show higher unique visitors than Google Analytics unique pageviews because when a bot or API is consuming partial content from your site without loading the full page it counts as a unique visitor in Cloudflare but not as a pageview.&lt;/p&gt;
-
-&lt;h3 id=&quot;client-side-tracking&quot;&gt;Client-Side Tracking&lt;/h3&gt;
-
-&lt;p&gt;Google Analytics uses a JavaScript tag embedded in web pages to collect data. When a user loads a page, the script sends data back to Google Analytics. Even though Google Analytics filters out known bot traffic, it can miss traffic from users who block Javascript, use privacy-focused browsers or have ad blockers that prevent Google Analytics from loading.&lt;/p&gt;
-
-&lt;p&gt;For this reason, Cloudflare Analytics probably will show higher number of visitors than Google Analytics.&lt;/p&gt;
-
-&lt;h2 id=&quot;types-of-data-collected&quot;&gt;Types of Data Collected&lt;/h2&gt;
-
-&lt;p&gt;Knowing the reason behind the data of both Cloudflare and Google Analytics was only the beginning. In this section, we will look into the type of data collected by them and its purpose.&lt;/p&gt;
-
-&lt;h3 id=&quot;cloudflare&quot;&gt;Cloudflare&lt;/h3&gt;
-
-&lt;p&gt;Cloudflare often provides high-level technical data. It tracks every request made to your server which gives a comprehensive view of all incoming traffic and how many requests each resource on your website receives. In addition, Cloudflare provides data to help maintain the security and efficiency of your website such as blocked threats or DDoS attacks and cache hits/misses and load times.&lt;/p&gt;
-
-&lt;h3 id=&quot;google-analytics&quot;&gt;Google Analytics&lt;/h3&gt;
-
-&lt;p&gt;Google Analytics excels in tracking how users interact with your website. It provides detailed metrics on page views, sessions, bounce rates, and conversion rates. Also, it tracks where your visitors come from, whether through organic search, paid ads, social media, or referrals. This will help you understand your users’ behavior and engagement and their journey through your website.&lt;/p&gt;
-
-&lt;h2 id=&quot;recommendation&quot;&gt;Recommendation&lt;/h2&gt;
-
-&lt;p&gt;Leveraging data from both Cloudflare and Google Analytics offers a powerful combination of insights that will allow you to maximise your understanding of your website traffic along with detailed insights into user behavior and improve the performance and security.&lt;/p&gt;
-
-&lt;p&gt;One way to achieve this would be using &lt;a href=&quot;https://lookerstudio.google.com/overview&quot;&gt;Looker Studio&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Looker Studio is an online free tool by Google that will allow you to easily access data from multiple sources through its built-in connectors and visualise it through interactive reports and dashboards.&lt;/p&gt;
-
-&lt;p&gt;If you are using Google Analytics then getting your data into Looker Studio is just a few clicks away. However, for Cloudflare data it is a bit more than that.&lt;/p&gt;
-
-&lt;p&gt;Cloudflare web analytics is free and does not require an Enterprise plan but getting data into Looker Studio in an automated fashion would require a Cloudflare Enterprise account with Cloudflare Logs enabled. For more information, check this &lt;a href=&quot;https://developers.cloudflare.com/analytics/analytics-integrations/looker/&quot;&gt;link&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;An alternative workaround to visualize your Cloudflare data in Looker Studio can be achieved by exporting the collected data into Google Sheets first and then use the latter as a new data source in Looker Studio.&lt;/p&gt;
-
-&lt;p&gt;The data export step can be done either manually or using a script that sends requests to Cloudflare’s API. Choosing one option over the other is up to you depending on your requirements and needs for up-to-date dashboards and how often you will review them.&lt;/p&gt;
-
-&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
-
-&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
-
-&lt;p&gt;In this article we covered the reasons behind the difference of data gathered by Cloudflare Analytics and data coming from Google Analytics. We also saw how to use Looker Studio as a central reporting solution for combining both data sources for a comprehensive website analytics.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developers.cloudflare.com/analytics/faq/about-analytics/#4lt2VoRUorCudxN1xzxpOt&quot;&gt;https://developers.cloudflare.com/analytics/faq/about-analytics/#4lt2VoRUorCudxN1xzxpOt&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Blogging" /><summary type="html">In this article we will look into the reasons for discrepancies between the data reported by Cloudflare Analytics and Google Analytics and how to leverage both of them.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://delta.io/blog/2023-02-08-delta-lake-schema-evolution/&quot;&gt;https://delta.io/blog/2023-02-08-delta-lake-schema-evolution/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><category term="Data Architecture" /><summary type="html">In this article, we will go through a brief overview of the journey from the foundational data warehouses to the data lakes and up to the emerging concept of the data lakehouse.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

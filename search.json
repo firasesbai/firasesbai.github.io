@@ -2,6 +2,17 @@
   
     {
 
+    "title"      : "101 Apache Kafka Cheatsheet",
+	  "url"        : "/articles/2025/09/15/apache-kafka-101.html",
+    "category"   : "articles",
+    "date"       : "2025-09-15 00:00:00 +0000",
+	  "tags"       : "Data Engineering",
+	  "description": "Apache Kafka is a highly scaled, distributed and fault tolerant event streaming platform."
+
+    } ,
+  
+    {
+
     "title"      : "101 Apache Airflow Cheatsheet",
 	  "url"        : "/articles/2025/09/08/apache-airflow-101.html",
     "category"   : "articles",
