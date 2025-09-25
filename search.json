@@ -2,6 +2,17 @@
   
     {
 
+    "title"      : "Learnings from Vibe Coding",
+	  "url"        : "/articles/2025/09/25/vibe-coding-learnings.html",
+    "category"   : "articles",
+    "date"       : "2025-09-25 00:00:00 +0000",
+	  "tags"       : "AI",
+	  "description": "Lessons from trying out vibe coding using cursor"
+
+    } ,
+  
+    {
+
     "title"      : "101 Apache Kafka Cheatsheet",
 	  "url"        : "/articles/2025/09/15/apache-kafka-101.html",
     "category"   : "articles",

@@ -19,26 +19,26 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Cloudflare Analytics vs Google Analytics | Firas Esbai</title>
+<title>Learnings from Vibe Coding | Firas Esbai</title>
 <meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="Cloudflare Analytics vs Google Analytics" />
+<meta property="og:title" content="Learnings from Vibe Coding" />
 <meta name="author" content="Firas Esbai" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Reasons for discrepancies between data present in google analytics and data in cloudflare analytics and how to leverage both" />
-<meta property="og:description" content="Reasons for discrepancies between data present in google analytics and data in cloudflare analytics and how to leverage both" />
-<link rel="canonical" href="https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html" />
-<meta property="og:url" content="https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html" />
+<meta name="description" content="Lessons from trying out vibe coding using cursor" />
+<meta property="og:description" content="Lessons from trying out vibe coding using cursor" />
+<link rel="canonical" href="https://www.firasesbai.com/articles/2025/09/25/vibe-coding-learnings.html" />
+<meta property="og:url" content="https://www.firasesbai.com/articles/2025/09/25/vibe-coding-learnings.html" />
 <meta property="og:site_name" content="Firas Esbai" />
 <meta property="og:image" content="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-08-11T00:00:00+00:00" />
+<meta property="article:published_time" content="2025-09-25T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" />
-<meta property="twitter:title" content="Cloudflare Analytics vs Google Analytics" />
+<meta property="twitter:title" content="Learnings from Vibe Coding" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Firas Esbai"},"dateModified":"2024-08-11T00:00:00+00:00","datePublished":"2024-08-11T00:00:00+00:00","description":"Reasons for discrepancies between data present in google analytics and data in cloudflare analytics and how to leverage both","headline":"Cloudflare Analytics vs Google Analytics","image":{"height":630,"width":1200,"url":"https://www.firasesbai.com/assets/images/default-sep-tag-image.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html"},"url":"https://www.firasesbai.com/articles/2024/08/11/cloudflare-vs-google-analytics.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Firas Esbai"},"dateModified":"2025-09-25T00:00:00+00:00","datePublished":"2025-09-25T00:00:00+00:00","description":"Lessons from trying out vibe coding using cursor","headline":"Learnings from Vibe Coding","image":{"height":630,"width":1200,"url":"https://www.firasesbai.com/assets/images/default-sep-tag-image.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.firasesbai.com/articles/2025/09/25/vibe-coding-learnings.html"},"url":"https://www.firasesbai.com/articles/2025/09/25/vibe-coding-learnings.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://www.firasesbai.com/feed.xml" title="Firas Esbai" /><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id='G-3ET85T3WD3'"></script>
@@ -154,113 +154,111 @@
       
         
         
-        > <a href="/categories/blogging">Blogging</a>
+        > <a href="/categories/ai">AI</a>
       
-      > <span>Cloudflare Analytics vs Google Analytics</span>
+      > <span>Learnings from Vibe Coding</span>
     </p>
   </nav>
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Cloudflare Analytics vs Google Analytics</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2024-08-11T00:00:00+00:00" itemprop="datePublished">
-        Aug 11, 2024 - 
+    <h1 class="post-title p-name" itemprop="name headline">Learnings from Vibe Coding</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2025-09-25T00:00:00+00:00" itemprop="datePublished">
+        Sep 25, 2025 - 
       </time>
       
       <span class="reading-time" title="Estimated read time">
   
-  4 min read
+  6 min read
 </span>
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name"> - Firas Esbai</span></span></p></header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><em>In this article we will look into the reasons for discrepancies between the data reported by Cloudflare Analytics and Google Analytics and how to leverage both of them.</em></p>
-
-<p>Tracking and analyzing web data is essential for keeping a holistic view on your site’s performance. This is especially useful for bloggers to track key metrics such as which articles and pages are most visited, where visitors are located and the percentage of visitors who leave after viewing only one page just to name a few.</p>
-
-<p>For monitoring this site’s performance, I have opted for integrating Google Analytics web service. In addition, I’m using cloudflare for managing a custom domain name. Cloudflare has implemented Analytics where users can also gain insights to their managed sites. These however show big discrepancies from the data present in Google Analytics. Understanding the reasons behind it is what we will try to accomplish in this blog post.</p>
-
-<p><em>So let’s get started!</em></p>
+    <p><em>In this article, I share some lessons learned from trying out vibe coding.</em></p>
 
 <hr />
 
 <h1> Contents </h1>
 <ul id="markdown-toc">
-  <li><a href="#data-collection-method" id="markdown-toc-data-collection-method">Data Collection Method</a>    <ul>
-      <li><a href="#server-side-tracking" id="markdown-toc-server-side-tracking">Server-Side Tracking</a></li>
-      <li><a href="#client-side-tracking" id="markdown-toc-client-side-tracking">Client-Side Tracking</a></li>
-    </ul>
-  </li>
-  <li><a href="#types-of-data-collected" id="markdown-toc-types-of-data-collected">Types of Data Collected</a>    <ul>
-      <li><a href="#cloudflare" id="markdown-toc-cloudflare">Cloudflare</a></li>
-      <li><a href="#google-analytics" id="markdown-toc-google-analytics">Google Analytics</a></li>
-    </ul>
-  </li>
-  <li><a href="#recommendation" id="markdown-toc-recommendation">Recommendation</a></li>
+  <li><a href="#what-is-vibe-coding" id="markdown-toc-what-is-vibe-coding">What is Vibe Coding?</a></li>
+  <li><a href="#expectations" id="markdown-toc-expectations">Expectations</a></li>
+  <li><a href="#key-takeaways" id="markdown-toc-key-takeaways">Key Takeaways</a></li>
   <li><a href="#recap" id="markdown-toc-recap">Recap</a></li>
-  <li><a href="#resources" id="markdown-toc-resources">Resources</a></li>
 </ul>
 <hr />
 
-<h2 id="data-collection-method">Data Collection Method</h2>
+<h2 id="what-is-vibe-coding">What is Vibe Coding?</h2>
 
-<p>Understanding the different methods used by each tool to collect data will reveal the main reason for discrepancies in their reports.</p>
+<p>Vibe coding is a term coined by Andrej Karpathy in his X post that was shared on February 2, 2025. However, the term has definitely evolved in my opinion since the original description. It is indeed a new kind of coding where the developer has become more like a moderator of multiple chat sessions and agents running in the background resulting in a handful of new and updated files with new generated code by the large language model that are waiting for his review.</p>
 
-<h3 id="server-side-tracking">Server-Side Tracking</h3>
+<figure>
+  <img src="/assets/images/articles/25_vibe_coding_andrej_karpathy_post.png" alt="Andrej Karpathy X Post" />
+  <figcaption>Figure 1: Andrej Karpathy's Post - <a href="https://x.com/karpathy/status/1886192184808149383?lang=en">Image Source</a></figcaption>
+</figure>
 
-<p>Cloudflare uses DNS and server-side data to track visits. This means it collects data on every request made to your website’s server. This includes all HTTP/HTTPS requests, regardless of whether they are made by human users, bots, or automated scripts. Therefore, every unique IP address for a request is identified as a visit.</p>
+<h2 id="expectations">Expectations</h2>
 
-<p>For this reason, Cloudflare Analytics probably will show higher unique visitors than Google Analytics unique pageviews because when a bot or API is consuming partial content from your site without loading the full page it counts as a unique visitor in Cloudflare but not as a pageview.</p>
+<p>This is not gonna be one of those <em>I built a SaaS app in 15 minutes</em>. It is easy and at times surprisingly good how fast you can generate a landing page for an idea or have a decent CRUD app running but things get more complicated when building complex SaaS.</p>
 
-<h3 id="client-side-tracking">Client-Side Tracking</h3>
+<figure>
+  <img src="/assets/images/articles/25_vibe_coding_leo_post.png" alt="Leo's posts about Vibe Coding" />
+  <figcaption>Figure 2: Leo's posts about Vibe Coding - <a href="https://x.com/leojr94_?lang=en">Image Source</a></figcaption>
+</figure>
 
-<p>Google Analytics uses a JavaScript tag embedded in web pages to collect data. When a user loads a page, the script sends data back to Google Analytics. Even though Google Analytics filters out known bot traffic, it can miss traffic from users who block Javascript, use privacy-focused browsers or have ad blockers that prevent Google Analytics from loading.</p>
+<p>In my experiment, I wanted to answer a simple question: <em>can AI assisted development make me move faster through the backlog?</em></p>
 
-<p>For this reason, Cloudflare Analytics probably will show higher number of visitors than Google Analytics.</p>
+<p>Obviously faster does not always mean better and the metric for measuring the outcome should not be the number of lines of code generated because if anything you won’t be disappointed: LLMs can truly quickly generate a lot of code!</p>
 
-<h2 id="types-of-data-collected">Types of Data Collected</h2>
+<p>As this was a personal side project, the stakes were not that high but the role of the moderator as mentioned earlier is still of huge importance. As you can see from the diagram below, I dealt with times where the model generated thousands of lines of code but almost always not all of it was accepted. You have to be a gatekeeper protecting your codebase from bugs or introducing weird behaviour and making sure to always follow clear design patterns and software development best practices.</p>
 
-<p>Knowing the reason behind the data of both Cloudflare and Google Analytics was only the beginning. In this section, we will look into the type of data collected by them and its purpose.</p>
+<figure>
+  <img src="/assets/images/articles/25_total_line_changes.png" alt="total line changes from chat" />
+  <figcaption>Figure 3: Total Line Changes from Chat</figcaption>
+</figure>
 
-<h3 id="cloudflare">Cloudflare</h3>
+<p>So over the course of two weeks, I used <strong>Cursor</strong> to try to answer my question. I did not start from scratch and vibe coded my way into this project but rather build on top of an existing web application and extended it with new features. That means I already had a clear code structure with clearly defined interfaces and domain models that have greatly influenced the LLM’s code organization and structure.</p>
 
-<p>Cloudflare often provides high-level technical data. It tracks every request made to your server which gives a comprehensive view of all incoming traffic and how many requests each resource on your website receives. In addition, Cloudflare provides data to help maintain the security and efficiency of your website such as blocked threats or DDoS attacks and cache hits/misses and load times.</p>
+<p>When it comes to the features, some of them were straightforward but many weren’t. These were a collection of cards with merely a title in a Trello board that came from ideas I thought were cool to implement someday so I just wrote them down there quickly to not lose track of them. This point is important as we’ll see later because it influences how you approach building these features and how to draft your prompts for that.</p>
 
-<h3 id="google-analytics">Google Analytics</h3>
+<p>A final thing to mention before moving on to the key takeaways is the distribution of the used programming languages in the project:</p>
 
-<p>Google Analytics excels in tracking how users interact with your website. It provides detailed metrics on page views, sessions, bounce rates, and conversion rates. Also, it tracks where your visitors come from, whether through organic search, paid ads, social media, or referrals. This will help you understand your users’ behavior and engagement and their journey through your website.</p>
+<figure>
+  <img src="/assets/images/articles/25_programming_language_usage.png" alt="programming language usage" />
+  <figcaption>Figure 4: Programming Language Usage</figcaption>
+</figure>
 
-<h2 id="recommendation">Recommendation</h2>
+<p>I’m not a frontend developer and my Javascript skills at this point were a bit rusty to say the least but surprisingly this is the part where I made most of the progress that I couldn’t have done without the AI assistance in such a short time.</p>
 
-<p>Leveraging data from both Cloudflare and Google Analytics offers a powerful combination of insights that will allow you to maximise your understanding of your website traffic along with detailed insights into user behavior and improve the performance and security.</p>
+<h2 id="key-takeaways">Key Takeaways</h2>
 
-<p>One way to achieve this would be using <a href="https://lookerstudio.google.com/overview">Looker Studio</a>.</p>
+<p>Following are the observations and notes I took as I progressed in this experiment:</p>
 
-<p>Looker Studio is an online free tool by Google that will allow you to easily access data from multiple sources through its built-in connectors and visualise it through interactive reports and dashboards.</p>
+<ul>
+  <li>Use user journeys and expected behaviour in your prompt when explaining a feature especially one that would require changes across both frontend and backend logic.</li>
+  <li>Be specific and start with thin slices. Describing multiple features and expectations in the same prompt just because they are correlated will not result in better results but rather only confuse the model.</li>
+  <li>Request analysis of the code structure and design by giving the whole codebase as context to the mode. This helps you reflect on the progress made so far, assess the list of features implemented and decide what to do next because it is easy to have decision paralysis in this honeymoon phase where you are in love with how productive you are and everything seems feasible that you just want to do it all at once.</li>
+  <li>Asking the model to simplify any implementation is always good: rely on your judgment of assessing what looks good and what looks meh.</li>
+  <li>If the model gets stuck with a particular implementation or request, expect to have duplicated code snippets and functions with similar logic but slightly different names resulting from multiple attempts at solving the issue. This means that the model was really bad at cleaning up dead code unless you specifically ask it to evaluate some code by highlighting it.</li>
+  <li>After several interactions within the same chat, it is better to continue or start over in a new one: It helps you clear your thoughts with a fresh new prompt and therefore guide the model to better output.</li>
+  <li>I can’t stress this enough but if you are not starting from scratch and you will be updating an existing codebase, have your unit tests ready as your defense mechanism.</li>
+  <li>From time to time, it is useful to start your prompt by specifically asking the model not to make code changes. Ask it to give you multiple implementation options and review the suggestions before proceeding with any of them. If needed drill down on the one you found most appealing with follow up questions and clarifications.</li>
+  <li>Commit changes frequently especially between requests when you are satisfied with the suggested changes. This way it is easier to review follow up code changes in particular those made to the same files.</li>
+  <li>Review the whole codebase once you have committed new changes to keep your understanding of it in check and be able to track down potential issues or improvements.</li>
+  <li>Some changes are really small and you can just make them in place using the tab functionality:</li>
+</ul>
 
-<p>If you are using Google Analytics then getting your data into Looker Studio is just a few clicks away. However, for Cloudflare data it is a bit more than that.</p>
-
-<p>Cloudflare web analytics is free and does not require an Enterprise plan but getting data into Looker Studio in an automated fashion would require a Cloudflare Enterprise account with Cloudflare Logs enabled. For more information, check this <a href="https://developers.cloudflare.com/analytics/analytics-integrations/looker/">link</a>.</p>
-
-<p>An alternative workaround to visualize your Cloudflare data in Looker Studio can be achieved by exporting the collected data into Google Sheets first and then use the latter as a new data source in Looker Studio.</p>
-
-<p>The data export step can be done either manually or using a script that sends requests to Cloudflare’s API. Choosing one option over the other is up to you depending on your requirements and needs for up-to-date dashboards and how often you will review them.</p>
+<figure>
+  <img src="/assets/images/articles/25_total_tabs_accepted.png" alt="total tabs accepted" />
+  <figcaption>Figure 5: Total Tabs Accepted</figcaption>
+</figure>
 
 <p>With this we have reached the end of this post, I hope you enjoyed it!</p>
 
 <p>If you have any remarks or questions, please don’t hesitate and do drop a comment below.</p>
 
-<p><em>Stay tuned!</em></p>
-
 <h2 id="recap">Recap</h2>
 
-<p>In this article we covered the reasons behind the difference of data gathered by Cloudflare Analytics and data coming from Google Analytics. We also saw how to use Looker Studio as a central reporting solution for combining both data sources for a comprehensive website analytics.</p>
-
-<p><em>Happy learning!</em></p>
-
-<h2 id="resources">Resources</h2>
-
-<p><a href="https://developers.cloudflare.com/analytics/faq/about-analytics/#4lt2VoRUorCudxN1xzxpOt">https://developers.cloudflare.com/analytics/faq/about-analytics/#4lt2VoRUorCudxN1xzxpOt</a></p>
+<p>Coming back to the original quest of this whole experiment: did AI supported me in doing things faster? for sure it did. Like any other tool when used properly and consciously it will help augment your abilities to do your work better and support you in many ways. Will programmers be replaced by AI? I’ll take that with a pinch of salt.</p>
 
   </div>
 
@@ -303,42 +301,6 @@
     
    
     
-    <div>
-      <h3><a href="/articles/2025/08/18/blogging-tools.html">Blogging Tools</a></h3>
-    </div>
-    
-    
-   
-   
-    
-    
-    
-   
-    
-   
-    
-    
-    
-   
-    
-   
-    
-    
-    
-   
-    
-   
-    
-    
-    
-   
-    
-    <div>
-      <h3><a href="/articles/2025/01/19/google-domains-cloudflare-migration.html">Migrating from Google Domains to Cloudflare</a></h3>
-    </div>
-    
-    
-   
    
     
     
@@ -399,12 +361,6 @@
     
    
     
-    <div>
-      <h3><a href="/articles/2023/08/21/turning-your-jekyll-blog-into-a-progressive-web-app-on-github-pages.html">Turning Your Jekyll Blog into a Progressive Web App (PWA) on GitHub Pages: A Step-by-Step Guide</a></h3>
-    </div>
-    
-    
-   
    
     
     
@@ -453,12 +409,49 @@
     
    
     
-    <div>
-      <h3><a href="/articles/2021/10/07/how-i-started-this-blog.html">How I Started This Blog</a></h3>
-    </div>
+   
     
     
-        
+    
+   
+    
+   
+    
+    
+    
+   
+    
+   
+    
+    
+    
+   
+    
+   
+    
+    
+    
+   
+    
+   
+    
+    
+    
+   
+    
+   
+    
+    
+    
+   
+    
+   
+    
+    
+    
+   
+    
+   
 </div>
 
   
@@ -486,7 +479,7 @@
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   
 
-  <a class="u-url" href="/articles/2024/08/11/cloudflare-vs-google-analytics.html" hidden></a>
+  <a class="u-url" href="/articles/2025/09/25/vibe-coding-learnings.html" hidden></a>
 </article>
       </div>
     </main><link rel="stylesheet" href="/assets/css/footer.css">

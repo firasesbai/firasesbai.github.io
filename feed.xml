@@ -1,5 +1,89 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2025-09-17T19:36:41+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>The Blog and Portfolio of Firas Esbai.
-</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">101 Apache Kafka Cheatsheet</title><link href="https://www.firasesbai.com/articles/2025/09/15/apache-kafka-101.html" rel="alternate" type="text/html" title="101 Apache Kafka Cheatsheet" /><published>2025-09-15T00:00:00+00:00</published><updated>2025-09-15T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/09/15/apache-kafka-101</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/09/15/apache-kafka-101.html">&lt;p&gt;&lt;em&gt;101 Apache Kafka Cheatsheet&lt;/em&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://www.firasesbai.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.firasesbai.com/" rel="alternate" type="text/html" /><updated>2025-09-25T09:14:49+00:00</updated><id>https://www.firasesbai.com/feed.xml</id><title type="html">Firas Esbai</title><subtitle>The Blog and Portfolio of Firas Esbai.
+</subtitle><author><name>Firas Esbai</name></author><entry><title type="html">Learnings from Vibe Coding</title><link href="https://www.firasesbai.com/articles/2025/09/25/vibe-coding-learnings.html" rel="alternate" type="text/html" title="Learnings from Vibe Coding" /><published>2025-09-25T00:00:00+00:00</published><updated>2025-09-25T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/09/25/vibe-coding-learnings</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/09/25/vibe-coding-learnings.html">&lt;p&gt;&lt;em&gt;In this article, I share some lessons learned from trying out vibe coding.&lt;/em&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt; Contents &lt;/h1&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#what-is-vibe-coding&quot; id=&quot;markdown-toc-what-is-vibe-coding&quot;&gt;What is Vibe Coding?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#expectations&quot; id=&quot;markdown-toc-expectations&quot;&gt;Expectations&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#key-takeaways&quot; id=&quot;markdown-toc-key-takeaways&quot;&gt;Key Takeaways&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;what-is-vibe-coding&quot;&gt;What is Vibe Coding?&lt;/h2&gt;
+
+&lt;p&gt;Vibe coding is a term coined by Andrej Karpathy in his X post that was shared on February 2, 2025. However, the term has definitely evolved in my opinion since the original description. It is indeed a new kind of coding where the developer has become more like a moderator of multiple chat sessions and agents running in the background resulting in a handful of new and updated files with new generated code by the large language model that are waiting for his review.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/25_vibe_coding_andrej_karpathy_post.png&quot; alt=&quot;Andrej Karpathy X Post&quot; /&gt;
+  &lt;figcaption&gt;Figure 1: Andrej Karpathy's Post - &lt;a href=&quot;https://x.com/karpathy/status/1886192184808149383?lang=en&quot;&gt;Image Source&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;expectations&quot;&gt;Expectations&lt;/h2&gt;
+
+&lt;p&gt;This is not gonna be one of those &lt;em&gt;I built a SaaS app in 15 minutes&lt;/em&gt;. It is easy and at times surprisingly good how fast you can generate a landing page for an idea or have a decent CRUD app running but things get more complicated when building complex SaaS.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/25_vibe_coding_leo_post.png&quot; alt=&quot;Leo's posts about Vibe Coding&quot; /&gt;
+  &lt;figcaption&gt;Figure 2: Leo's posts about Vibe Coding - &lt;a href=&quot;https://x.com/leojr94_?lang=en&quot;&gt;Image Source&lt;/a&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;In my experiment, I wanted to answer a simple question: &lt;em&gt;can AI assisted development make me move faster through the backlog?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Obviously faster does not always mean better and the metric for measuring the outcome should not be the number of lines of code generated because if anything you won’t be disappointed: LLMs can truly quickly generate a lot of code!&lt;/p&gt;
+
+&lt;p&gt;As this was a personal side project, the stakes were not that high but the role of the moderator as mentioned earlier is still of huge importance. As you can see from the diagram below, I dealt with times where the model generated thousands of lines of code but almost always not all of it was accepted. You have to be a gatekeeper protecting your codebase from bugs or introducing weird behaviour and making sure to always follow clear design patterns and software development best practices.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/25_total_line_changes.png&quot; alt=&quot;total line changes from chat&quot; /&gt;
+  &lt;figcaption&gt;Figure 3: Total Line Changes from Chat&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;So over the course of two weeks, I used &lt;strong&gt;Cursor&lt;/strong&gt; to try to answer my question. I did not start from scratch and vibe coded my way into this project but rather build on top of an existing web application and extended it with new features. That means I already had a clear code structure with clearly defined interfaces and domain models that have greatly influenced the LLM’s code organization and structure.&lt;/p&gt;
+
+&lt;p&gt;When it comes to the features, some of them were straightforward but many weren’t. These were a collection of cards with merely a title in a Trello board that came from ideas I thought were cool to implement someday so I just wrote them down there quickly to not lose track of them. This point is important as we’ll see later because it influences how you approach building these features and how to draft your prompts for that.&lt;/p&gt;
+
+&lt;p&gt;A final thing to mention before moving on to the key takeaways is the distribution of the used programming languages in the project:&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/25_programming_language_usage.png&quot; alt=&quot;programming language usage&quot; /&gt;
+  &lt;figcaption&gt;Figure 4: Programming Language Usage&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I’m not a frontend developer and my Javascript skills at this point were a bit rusty to say the least but surprisingly this is the part where I made most of the progress that I couldn’t have done without the AI assistance in such a short time.&lt;/p&gt;
+
+&lt;h2 id=&quot;key-takeaways&quot;&gt;Key Takeaways&lt;/h2&gt;
+
+&lt;p&gt;Following are the observations and notes I took as I progressed in this experiment:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use user journeys and expected behaviour in your prompt when explaining a feature especially one that would require changes across both frontend and backend logic.&lt;/li&gt;
+  &lt;li&gt;Be specific and start with thin slices. Describing multiple features and expectations in the same prompt just because they are correlated will not result in better results but rather only confuse the model.&lt;/li&gt;
+  &lt;li&gt;Request analysis of the code structure and design by giving the whole codebase as context to the mode. This helps you reflect on the progress made so far, assess the list of features implemented and decide what to do next because it is easy to have decision paralysis in this honeymoon phase where you are in love with how productive you are and everything seems feasible that you just want to do it all at once.&lt;/li&gt;
+  &lt;li&gt;Asking the model to simplify any implementation is always good: rely on your judgment of assessing what looks good and what looks meh.&lt;/li&gt;
+  &lt;li&gt;If the model gets stuck with a particular implementation or request, expect to have duplicated code snippets and functions with similar logic but slightly different names resulting from multiple attempts at solving the issue. This means that the model was really bad at cleaning up dead code unless you specifically ask it to evaluate some code by highlighting it.&lt;/li&gt;
+  &lt;li&gt;After several interactions within the same chat, it is better to continue or start over in a new one: It helps you clear your thoughts with a fresh new prompt and therefore guide the model to better output.&lt;/li&gt;
+  &lt;li&gt;I can’t stress this enough but if you are not starting from scratch and you will be updating an existing codebase, have your unit tests ready as your defense mechanism.&lt;/li&gt;
+  &lt;li&gt;From time to time, it is useful to start your prompt by specifically asking the model not to make code changes. Ask it to give you multiple implementation options and review the suggestions before proceeding with any of them. If needed drill down on the one you found most appealing with follow up questions and clarifications.&lt;/li&gt;
+  &lt;li&gt;Commit changes frequently especially between requests when you are satisfied with the suggested changes. This way it is easier to review follow up code changes in particular those made to the same files.&lt;/li&gt;
+  &lt;li&gt;Review the whole codebase once you have committed new changes to keep your understanding of it in check and be able to track down potential issues or improvements.&lt;/li&gt;
+  &lt;li&gt;Some changes are really small and you can just make them in place using the tab functionality:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure&gt;
+  &lt;img src=&quot;/assets/images/articles/25_total_tabs_accepted.png&quot; alt=&quot;total tabs accepted&quot; /&gt;
+  &lt;figcaption&gt;Figure 5: Total Tabs Accepted&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
+
+&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;Coming back to the original quest of this whole experiment: did AI supported me in doing things faster? for sure it did. Like any other tool when used properly and consciously it will help augment your abilities to do your work better and support you in many ways. Will programmers be replaced by AI? I’ll take that with a pinch of salt.&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="AI" /><summary type="html">In this article, I share some lessons learned from trying out vibe coding.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">101 Apache Kafka Cheatsheet</title><link href="https://www.firasesbai.com/articles/2025/09/15/apache-kafka-101.html" rel="alternate" type="text/html" title="101 Apache Kafka Cheatsheet" /><published>2025-09-15T00:00:00+00:00</published><updated>2025-09-15T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2025/09/15/apache-kafka-101</id><content type="html" xml:base="https://www.firasesbai.com/articles/2025/09/15/apache-kafka-101.html">&lt;p&gt;&lt;em&gt;101 Apache Kafka Cheatsheet&lt;/em&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -1691,191 +1775,4 @@ Optimistic locking assumes conflicts are rare. It allows multiple users to acces
 
 &lt;p&gt;&lt;a href=&quot;https://bytebytego.com/guides/8-common-system-design-problems-and-solutions/&quot;&gt;https://bytebytego.com/guides/8-common-system-design-problems-and-solutions/&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/donnemartin/system-design-primer&quot;&gt;https://github.com/donnemartin/system-design-primer&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><category term="General" /><summary type="html">This article contains general guidelines and a reference framework to use when approaching system design interview.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Evolution of Analytical Data Architectures: From Data Warehouses to Lakehouses</title><link href="https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures.html" rel="alternate" type="text/html" title="Evolution of Analytical Data Architectures: From Data Warehouses to Lakehouses" /><published>2024-11-17T00:00:00+00:00</published><updated>2024-11-17T00:00:00+00:00</updated><id>https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures</id><content type="html" xml:base="https://www.firasesbai.com/articles/2024/11/17/evolution-analytical-data-architectures.html">&lt;p&gt;&lt;em&gt;In this article, we will go through a brief overview of the journey from the foundational data warehouses to the data lakes and up to the emerging concept of the data lakehouse.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;The evolution of data management has been driven by the growing complexity and scale of modern data needs. Organizations have sought different solutions over the years for handling diverse data types while optimizing for cost efficiency.&lt;/p&gt;
-
-&lt;p&gt;This article explores the key transitions from one analytical architecture to the other and the challenges that shaped each phase.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;So let’s get started!&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1&gt; Contents &lt;/h1&gt;
-&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#data-warehouses&quot; id=&quot;markdown-toc-data-warehouses&quot;&gt;Data Warehouses&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#data-lakes&quot; id=&quot;markdown-toc-data-lakes&quot;&gt;Data Lakes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#two-tier-architecture-data-warehouse--data-lake&quot; id=&quot;markdown-toc-two-tier-architecture-data-warehouse--data-lake&quot;&gt;Two-Tier Architecture: Data Warehouse + Data Lake&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#data-lakehouses&quot; id=&quot;markdown-toc-data-lakehouses&quot;&gt;Data Lakehouses&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#what-is-a-table-format&quot; id=&quot;markdown-toc-what-is-a-table-format&quot;&gt;What is a Table Format?&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#open-table-formats&quot; id=&quot;markdown-toc-open-table-formats&quot;&gt;Open Table Formats&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#recap&quot; id=&quot;markdown-toc-recap&quot;&gt;Recap&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#resources&quot; id=&quot;markdown-toc-resources&quot;&gt;Resources&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;data-warehouses&quot;&gt;Data Warehouses&lt;/h2&gt;
-
-&lt;p&gt;The concept of data warehousing emerged in the late 1980s as a response to the growing need for businesses to make data-driven decisions. In fact, the proliferation of applications and the resulting disparate data across the organization resulted in a tedious manual process of querying and finding the right data with the correct version in order to avoid incorrect decisions.&lt;/p&gt;
-
-&lt;p&gt;As a result, the &lt;em&gt;Data Warehouse&lt;/em&gt; was born.&lt;/p&gt;
-
-&lt;p&gt;A data warehouse is a centralized repository for storing and managing large amounts of data from various sources.&lt;/p&gt;
-
-&lt;p&gt;Data Warehouse is not the same as a database but rather typically built on top of data copied from other databases and addresses several limitations of traditional operational databases:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Centralization&lt;/strong&gt;: They provided a single source of truth for enterprise-wide data.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Historical analysis&lt;/strong&gt;: Unlike operational systems focused on current data, warehouses allowed for trend analysis over time.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Complex querying&lt;/strong&gt;: Designed for analytical processing, they could handle complex queries more efficiently than transaction-oriented databases.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Data quality&lt;/strong&gt;: The ETL (Extract, Transform, Load) process helped in cleaning and standardizing data before loading it into the warehouse.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;However, as data types evolved and volumes grew exponentially, data warehouses faced mainly the following challenges:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Scalability&lt;/strong&gt;: The increasing volume and velocity of data required expensive hardware and software to store and process data. The cost of these solutions made it difficult for organizations to store all their data.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Flexibility&lt;/strong&gt;: The rigid schema-on-write approach made it difficult to accommodate rapidly changing data requirements and the growth of semi-structured and unstructured data types.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;These limitations set the stage for the next evolution in analytical data architecture: the &lt;strong&gt;Data Lake&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;data-lakes&quot;&gt;Data Lakes&lt;/h2&gt;
-
-&lt;p&gt;As mentioned, the concept of a data lake emerged as a response to the limitations of traditional data warehouses, which were costly, proprietary, and unable to handle the diverse and voluminous data generated by modern businesses.&lt;/p&gt;
-
-&lt;p&gt;Initially data lakes were almost exclusively implemented on &lt;strong&gt;&lt;em&gt;Hadoop&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Hadoop is an open-source platform that enables the storage and processing of large datasets across distributed computing environments. The original development of Hadoop goes back to 2003 when Google released two papers:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;em&gt;Google File System (GFS)&lt;/em&gt;&lt;/strong&gt;: a way to store data across distributed machines&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;em&gt;Google MapReduce&lt;/em&gt;&lt;/strong&gt;: a programming model for distributed data processing on top of GFS&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This research paved the way for Yahoo to bootstrap the Hadoop project. Later on, a shift towards modern data lakes appeared that leverages cloud platforms.&lt;/p&gt;
-
-&lt;p&gt;Cloud platforms offer elasticity and cost efficiency especially with the need for data lakes to support a wider range of users and use cases including machine learning.&lt;/p&gt;
-
-&lt;p&gt;While data lakes offer a lot of improvements over data warehouses including enabling organizations to scale their data storage in a more cost-effective way and flexibility with their schema on-read approach, it is also important to note that they also come with challenges.&lt;/p&gt;
-
-&lt;p&gt;Following are some of the key challenges associated with data lakes:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Data Reliability&lt;/strong&gt;: Data lakes can suffer from reliability issues due to broken data pipelines and the need for continuous reprocessing of missing or corrupted data. This often occurs when write operations fail partially, requiring data engineers to clean up and reprocess the data, which can be time-consuming and resource-intensive.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Data Quality&lt;/strong&gt;: Ensuring high data quality is a significant challenge in data lakes, as they store raw, unprocessed data that may be inconsistent or incomplete. Poor data quality can negatively impact downstream analytics and decision-making processes.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Data Governance&lt;/strong&gt;: Implementing effective data governance in data lakes is complex due to the variety and volume of data. Ensuring data integrity, security, and compliance with regulations such as GDPR and CCPA is challenging, especially when it comes to deleting or updating data.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Data Silos&lt;/strong&gt;: Without proper management, data lakes can become data swamps, where data is isolated and inaccessible, leading to the creation of data silos. This hinders collaboration and limits the organization’s ability to extract valuable insights from the data.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In an attempt to address these challenges, a common approach organizations ended up deploying was the &lt;strong&gt;Two-Tier Architecture&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;two-tier-architecture-data-warehouse--data-lake&quot;&gt;Two-Tier Architecture: Data Warehouse + Data Lake&lt;/h2&gt;
-
-&lt;p&gt;This architecture involves using a data lake as the first tier for data ingestion and storage, followed by a data warehouse as the second tier for structured analytics and reporting.&lt;/p&gt;
-
-&lt;p&gt;This leverages the cost effective storage and flexibility of the data lake to store the large volumes of raw data. In addition, through ETL processes, data will be moved from the lake to the data warehouse where security, compliance, and optimized performance for analytical queries are ensured.&lt;/p&gt;
-
-&lt;p&gt;This sounds like the perfect combination and the answer to all the previously mentioned challenges. In practice however this has several drawbacks. It results in higher costs because of the redundant data stored across both systems and the maintenance costs of both infrastructures. Also managing two separate systems can be quite complex for users.&lt;/p&gt;
-
-&lt;p&gt;Luckily the evolution did not stop here and the data lakehouse architecture emerged to the rescue which aims to combine the best features of both data warehouses and data lakes but into a single, unified architecture.&lt;/p&gt;
-
-&lt;h2 id=&quot;data-lakehouses&quot;&gt;Data Lakehouses&lt;/h2&gt;
-
-&lt;p&gt;Data Lakehouses combine the best elements of both data lakes and data warehouses.&lt;/p&gt;
-
-&lt;p&gt;They are enabled by a new system design: implementing similar data structures, data management features and ACID transactions to those in a data warehouse directly on top of low cost cloud storage in open file formats of the data lake for flexibility and scale.&lt;/p&gt;
-
-&lt;p&gt;One of the key technology advancements that have enabled the data lakehouse architecture is a &lt;strong&gt;table format&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;what-is-a-table-format&quot;&gt;What is a Table Format?&lt;/h3&gt;
-
-&lt;p&gt;Table format is a metadata layer that allows tools to interact with data lake storage like a traditional database. Since data in a data lake is usually stretched across several files, the metadata layer contains information about which files are part of different table versions to offer rich management features like ACID-compliant transactions.&lt;/p&gt;
-
-&lt;p&gt;In addition, the metadata layers enable other features common in data lakehouses such as:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Schema evolution&lt;/strong&gt;: accommodate data that is changing over time by easily changing a table current’s schema&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Partition evolution&lt;/strong&gt;: allows us to update the partition scheme of a table without having to rewrite all the previous data&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Time Travel&lt;/strong&gt;: query a table at previous states&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;open-table-formats&quot;&gt;Open Table Formats&lt;/h3&gt;
-
-&lt;p&gt;Multiple projects have emerged as open source table format technologies to allow community development, drive standardization efforts and avoid vendor lock in. The term open table format gained prominence with the rise of the data lakehouse concept and become a way to collectively refer to these technologies.&lt;/p&gt;
-
-&lt;p&gt;Among these are Apache Iceberg, Apache Hudi, and Databricks Delta Lake.&lt;/p&gt;
-
-&lt;p&gt;The following table summarizes differences between these open table formats and how each has a different approach to supporting common features of data lakehouses.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Apache Iceberg&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Apache Hudi&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Delta Lake&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Origin&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Originated at Netflix and then become part of the Apache Software Foundation&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Originated at Uber and then become part of the Apache Software Foundation&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Developed by Databricks and is now an independent open-source sub-project of the Linux Foundation Projects&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Metadata Layer&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Catalogue&lt;/strong&gt;: maintain a list of existing Iceberg tables and keeps a reference to a table’s current metadata file known as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;metadata.json&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Timeline&lt;/strong&gt;: event log recording all table actions in an ordered manner, with events kept for a specified period.&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;&lt;strong&gt;Transaction Log&lt;/strong&gt;: Log files similar to Git commits to capture files added and removed from the table since the last commit and Log checkpoints that summarize a group of log files so each individual log file doesn’t have to be read to construct the list of files in the dataset.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Schema Evolution&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;In-place table evolution: schema updates are metadata changes and no data files need to be rewritten to perform the update. Iceberg supports the following schema evolution changes: &lt;ul&gt;&lt;li&gt;&lt;i&gt;Add&lt;/i&gt; -- add a new column to the table or to a nested struct&lt;/li&gt;&lt;li&gt;&lt;i&gt;Drop&lt;/i&gt; -- remove an existing column from the table or a nested struct&lt;/li&gt;&lt;li&gt;&lt;i&gt;Rename&lt;/i&gt; -- rename an existing column or field in a nested struct&lt;/li&gt;&lt;li&gt;&lt;i&gt;Update&lt;/i&gt; -- widen the type of a column, struct field, map key, map value, or list element&lt;/li&gt;&lt;li&gt;&lt;i&gt;Reorder&lt;/i&gt; -- change the order of columns or fields in a nested struct&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Supports schema evolution on write out of the box and an experimental schema evolution on read feature. Schema evolution on write supports backward compatible scenarios such as adding a nullable field, promoting data types or handling missing columns.&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Schema evolution is disabled by default. This is referred to as schema enforcement. You can enable it by:&lt;ul&gt;&lt;li&gt;&lt;i&gt;mergeSchema&lt;/i&gt;: applies for a single write to a single table &lt;/li&gt;&lt;li&gt;&lt;i&gt;autoMerge&lt;/i&gt;: activates schema evolution for writes to any table&lt;/li&gt;&lt;/ul&gt; Delta lake supports the following types of schema changes: &lt;ul&gt;&lt;li&gt;Adding new columns (at arbitrary positions)&lt;/li&gt;&lt;li&gt;Reordering existing columns&lt;/li&gt;&lt;li&gt;Renaming existing columns&lt;/li&gt;&lt;/ul&gt; When attempting to write data with a new schema, Delta Lake compares the new schema with the existing schema stored in the transaction log. It checks if the schema change is compatible and allowed based on the current settings (e.g., if mergeSchema is enabled). If the change is allowed, Delta Lake creates a new transaction that includes:&lt;ul&gt;&lt;li&gt;An &quot;update metadata&quot; action to modify the table's schema&lt;/li&gt;&lt;li&gt;&quot;Add file&quot; actions for the new data files&lt;/li&gt;&lt;/ul&gt; If the transaction is successful, these changes are committed to the transaction log as a new entry. After the commit, the latest table state, including the new schema, is reflected in the next checkpoint file &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Partition Evolution&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Partition evolution is a metadata operation and does not eagerly rewrite files. When you evolve a partition spec, the old data written with an earlier spec remains unchanged. New data is written using the new spec in a new layout. Metadata for each of the partition versions is kept separately.&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Hudi considers partition evolution as anti-pattern and avoids such scheme&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Delta lake does not natively support partition evolution without rewriting the entire table&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Time Travel&lt;/strong&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Every change to an Iceberg table creates a new snapshot. Queries can access the table’s list of snapshots to return results from older versions. Queries can be executed using: &lt;ul&gt;&lt;li&gt;specific snapshot id&lt;/li&gt;&lt;li&gt;timestamp when a snapshot was the current at that time&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;The internal timeline log used by Hudi enables time travel queries support using a point in time syntax with timestamps&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Delta lake will inspect the transaction log and figure out which files should be read for each given version. It also supports time travel by timestamp without having to figure out the exact version.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p style=&quot;text-align:center;&quot;&gt;Table 1: Open Table Formats Comparison&lt;/p&gt;
-
-&lt;p&gt;With this we have reached the end of this post, I hope you enjoyed it!&lt;/p&gt;
-
-&lt;p&gt;If you have any remarks or questions, please don’t hesitate and do drop a comment below.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Stay tuned!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
-
-&lt;p&gt;In this article, we covered the advantages and challenges of different data analytics architecture and how these led to the current development of the data lakehouse concept. In addition, we compared internal structures of open table formats to better understand their importance in enabling the data lakehouse architecture.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Happy learning!&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.databricks.com/blog/2021/05/19/evolution-to-the-data-lakehouse.html&quot;&gt;https://www.databricks.com/blog/2021/05/19/evolution-to-the-data-lakehouse.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.dremio.com/blog/exploring-the-architecture-of-apache-iceberg-delta-lake-and-apache-hudi/&quot;&gt;https://www.dremio.com/blog/exploring-the-architecture-of-apache-iceberg-delta-lake-and-apache-hudi/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.dremio.com/blog/comparison-of-data-lake-table-formats-apache-iceberg-apache-hudi-and-delta-lake/&quot;&gt;https://www.dremio.com/blog/comparison-of-data-lake-table-formats-apache-iceberg-apache-hudi-and-delta-lake/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.databricks.com/glossary/data-lakehouse&quot;&gt;https://www.databricks.com/glossary/data-lakehouse&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://hudi.apache.org/docs/hudi_stack&quot;&gt;https://hudi.apache.org/docs/hudi_stack&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://iceberg.apache.org/concepts/catalog/&quot;&gt;https://iceberg.apache.org/concepts/catalog/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.delta.io/latest/delta-intro.html&quot;&gt;https://docs.delta.io/latest/delta-intro.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://delta.io/blog/2023-02-08-delta-lake-schema-evolution/&quot;&gt;https://delta.io/blog/2023-02-08-delta-lake-schema-evolution/&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><category term="Data Architecture" /><summary type="html">In this article, we will go through a brief overview of the journey from the foundational data warehouses to the data lakes and up to the emerging concept of the data lakehouse.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://github.com/donnemartin/system-design-primer&quot;&gt;https://github.com/donnemartin/system-design-primer&lt;/a&gt;&lt;/p&gt;</content><author><name>Firas Esbai</name></author><category term="articles" /><category term="Data Engineering" /><category term="General" /><summary type="html">This article contains general guidelines and a reference framework to use when approaching system design interview.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" /><media:content medium="image" url="https://www.firasesbai.com/assets/images/default-sep-tag-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
