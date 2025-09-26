@@ -8,7 +8,7 @@ tags: ["Data Engineering"]
 author: Firas Esbai
 description: "Apache Airflow simplifies workflow automation with DAGs, task scheduling, and data pipeline management for data engineering workflows."
 comments: true
-image: 
+image: "/assets/images/articles/23_apache_airflow_architecture.png"
 pinned:
 ---
 

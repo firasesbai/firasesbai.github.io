@@ -8,7 +8,7 @@ tags: ["Blogging"]
 author: Firas Esbai
 description: "Steps to migrate your domain from google domains to cloudflare registrar and explanation of dns provider, important dns records and domain name structure"
 comments: true
-image: 
+image: "/assets/images/articles/21_domain_name_structure_diagram.png"
 ---
 
 *In this article, I will outline how I migrated from Google Domains, due to its shutdown, to Cloudflare all while explaining some key terms and concepts.*

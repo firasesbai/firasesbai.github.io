@@ -8,7 +8,7 @@ tags: ["AI"]
 author: Firas Esbai
 description: "Lessons from trying out vibe coding using cursor"
 comments: true
-image: 
+image: "/assets/images/articles/25_total_line_changes.png"
 pinned:
 ---
 
