@@ -2,6 +2,17 @@
   
     {
 
+    "title"      : "Serverless Architecture for Data Engineering",
+	  "url"        : "/articles/2025/10/24/serverless-architecture-for-data-engineering.html",
+    "category"   : "articles",
+    "date"       : "2025-10-24 00:00:00 +0000",
+	  "tags"       : "Data Engineering Data Architecture Cloud Computing",
+	  "description": "understanding serverless architecture in data engineering by building etl pipeline for nyc taxi trip data."
+
+    } ,
+  
+    {
+
     "title"      : "101 Apache Spark Cheatsheet",
 	  "url"        : "/articles/2025/10/10/apache-spark-101.html",
     "category"   : "articles",
