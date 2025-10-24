@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "workbox-cli": "^7.3.0"
+    "workbox-build": "^7.3.0"
+  },
+  "scripts": {
+    "build:sw": "node js/build-sw.js"
   }
 }
