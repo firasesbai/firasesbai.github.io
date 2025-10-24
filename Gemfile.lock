@@ -81,6 +81,7 @@ GEM
     wdm (0.1.1)
 
 PLATFORMS
+  universal-darwin-25
   x64-mingw32
   x86_64-linux
 
