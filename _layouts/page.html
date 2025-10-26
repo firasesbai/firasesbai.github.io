@@ -2,6 +2,12 @@
 layout: default
 ---
 
+{% if page.custom_css %}
+  {% for css_file in page.custom_css %}
+    <link rel="stylesheet" href="{{ css_file }}">
+  {% endfor %}
+{% endif %}
+
 <article class="post">
 
   <div class="post-content">
