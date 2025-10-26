@@ -3,6 +3,6 @@
     "workbox-build": "^7.3.0"
   },
   "scripts": {
-    "build:sw": "node js/build-sw.js"
+    "build:sw": "node js/service-worker/build-sw.js"
   }
 }
