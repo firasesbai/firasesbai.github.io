@@ -1,5 +1,5 @@
 const { generateSW } = require('workbox-build');
-const workboxConfig = require('../workbox-config');
+const workboxConfig = require('./workbox-config');
 
 generateSW(workboxConfig).then(({ count, size, warnings }) => {
   if (warnings.length > 0) {
