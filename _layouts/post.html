@@ -41,6 +41,10 @@ layout: default
     {{ content }}
   </div>
 
+  {% if page.tags contains "Data Engineering" or page.tags contains "Data Architecture" or page.tags contains "Cloud Computing" %}
+    {% include subscribe-course.html %}
+  {% endif %}
+  
   {% include subscribe.html %}
 
   {% include related-posts.html %}
