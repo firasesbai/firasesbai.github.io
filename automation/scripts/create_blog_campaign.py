@@ -13,6 +13,7 @@ class MailerLiteClient:
     """MailerLite API client for campaign management."""
     
     def __init__(self, api_key: str):
+        """Initialize the MailerLite client."""
         self.api_key = api_key
         self.base_url = "https://connect.mailerlite.com/api"
         self.headers = {
@@ -21,9 +22,17 @@ class MailerLiteClient:
             "Accept": "application/json"
         }
     
-    def create_campaign(self, subject: str, from_email: str, from_name: str, group_ids: Optional[List[str]] = None) -> Optional[Dict]:
-        """Create a new campaign and return campaign info."""
-        url = f"{self.base_url}/campaigns"
+    def create_campaign(
+        self, 
+        subject: str, 
+        from_email: str, 
+        from_name: str
+    ) -> Optional[str]:
+        """
+        Create a draft campaign in MailerLite.
+        Returns the campaign ID if successful, None otherwise.
+        Note: Free tier requires manual content addition via UI.
+        """
         
         payload = {
             "name": subject,
@@ -35,9 +44,7 @@ class MailerLiteClient:
             }]
         }
         
-        # Only add groups if specified
-        if group_ids:
-            payload["groups"] = group_ids
+        url = f"{self.base_url}/campaigns"
         
         try:
             response = requests.post(url, headers=self.headers, json=payload)
@@ -45,10 +52,7 @@ class MailerLiteClient:
             campaign_data = response.json()
             
             data = campaign_data.get("data", {})
-            return {
-                "campaign_id": data.get("id"),
-                "email_id": data.get("default_email_id")
-            }
+            return data.get("id")
         except requests.exceptions.RequestException as e:
             print(f"❌ Error creating campaign: {e}")
             if hasattr(e.response, 'text'):
@@ -190,13 +194,6 @@ def main():
     from_name = os.getenv('FROM_NAME') or config.get('from_name', 'Firas Esbai')
     site_url = os.getenv('SITE_URL') or config.get('site_url', 'https://www.firasesbai.com')
     
-    # Group IDs from env var (comma-separated) or config
-    group_ids_env = os.getenv('GROUP_IDS')
-    if group_ids_env:
-        group_ids = [gid.strip() for gid in group_ids_env.split(',')]
-    else:
-        group_ids = config.get('group_ids', [])
-    
     # API key only required if not dry-run
     if not args.dry_run and not api_key:
         print("❌ MAILERLITE_API_KEY not found in environment or config")
@@ -235,12 +232,9 @@ def main():
     # Create campaign
     subject = f"New Blog Post: {post_data['title']}"
     print(f"\n📧 Creating campaign: {subject}")
-    if group_ids:
-        print(f"🎯 Targeting groups: {', '.join(group_ids)}")
-    else:
-        print("📢 Sending to all subscribers")
+    print("📢 Campaign will be created as draft (select groups in MailerLite UI)")
     
-    campaign_id = client.create_campaign(subject, from_email, from_name, group_ids)
+    campaign_id = client.create_campaign(subject, from_email, from_name)
     
     if not campaign_id:
         print("❌ Failed to create campaign")

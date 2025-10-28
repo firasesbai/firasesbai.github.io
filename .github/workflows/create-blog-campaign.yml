@@ -54,29 +54,14 @@ jobs:
             echo "has_new_posts=true" >> $GITHUB_OUTPUT
           fi
       
-      - name: Create campaign for new post (automatic)
-        if: github.event_name == 'push' && steps.detect_posts.outputs.has_new_posts == 'true'
+      - name: Create campaign
+        if: (github.event_name == 'push' && steps.detect_posts.outputs.has_new_posts == 'true') || github.event_name == 'workflow_dispatch'
         env:
           MAILERLITE_API_KEY: ${{ secrets.MAILERLITE_API_KEY }}
-          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
-          FROM_NAME: ${{ secrets.FROM_NAME }}
-          SITE_URL: ${{ secrets.SITE_URL }}
-          GROUP_IDS: ${{ secrets.GROUP_IDS }}
         run: |
-          python automation/scripts/create_blog_campaign.py \
-            --post-path "${{ steps.detect_posts.outputs.post_path }}"
-      
-      - name: Create campaign for selected post (manual)
-        if: github.event_name == 'workflow_dispatch'
-        env:
-          MAILERLITE_API_KEY: ${{ secrets.MAILERLITE_API_KEY }}
-          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
-          FROM_NAME: ${{ secrets.FROM_NAME }}
-          SITE_URL: ${{ secrets.SITE_URL }}
-          GROUP_IDS: ${{ secrets.GROUP_IDS }}
-        run: |
-          python automation/scripts/create_blog_campaign.py \
-            --post-path "${{ inputs.post_path }}"
+          # Use post path from git diff for automatic trigger, or from input for manual trigger
+          POST_PATH="${{ steps.detect_posts.outputs.post_path || inputs.post_path }}"
+          python automation/scripts/create_blog_campaign.py --post-path "$POST_PATH"
       
       - name: Notify on success
         if: success()

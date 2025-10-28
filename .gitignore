@@ -17,9 +17,7 @@ venv/
 env/
 ENV/
 .venv/
-
-# Automation secrets
-automation/config/email_config.json
+automation/venv/
 
 # IDE
 .vscode/
