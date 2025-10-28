@@ -155,7 +155,7 @@ class EmailTemplateGenerator:
         excerpt = post_data['excerpt']
         url = post_data['url']
         
-        text = f"""Hi there! 👋
+        text = f"""Hey there!
 
 I just published a new blog post that you might find interesting:
 
@@ -168,7 +168,7 @@ Read the full article here:
 
 As always, thanks for reading!
 
-Found this helpful? Hit reply and let me know what you think!
+If you found this helpful or have any feedback, hit reply and let me know what you think!
 """
         return text
 
