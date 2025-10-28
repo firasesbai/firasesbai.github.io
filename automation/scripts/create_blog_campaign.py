@@ -240,7 +240,7 @@ def main():
         print("❌ Failed to create campaign")
         sys.exit(1)
     
-    print(f"✅ Campaign created: {campaign_id['campaign_id']}")
+    print(f"✅ Campaign created: {campaign_id}")
     
     # Display email content for copy-paste
     print("\n" + "="*60)
@@ -248,7 +248,7 @@ def main():
     print("="*60)
     print(email_text)
     print("="*60)
-    print(f"\n👉 Edit campaign here: https://dashboard.mailerlite.com/emails/{campaign_id['campaign_id']}/edit")
+    print(f"\n👉 Edit campaign here: https://dashboard.mailerlite.com/campaigns/{campaign_id}/edit")
     print("\n💡 Next steps:")
     print("   1. Click the edit link above")
     print("   2. Paste the email content into MailerLite's editor")
