@@ -1,0 +1,90 @@
+name: Create Blog Campaign
+
+# Trigger on push to master when a new post is added
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - '_posts/*.markdown'
+  
+  # Allow manual trigger with post selection
+  workflow_dispatch:
+    inputs:
+      post_path:
+        description: 'Path to blog post (e.g., _posts/2025-01-01-example.markdown)'
+        required: true
+        type: string
+
+jobs:
+  create-campaign:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2  # Need previous commit to detect new posts
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r automation/requirements.txt
+      
+      - name: Detect new or modified posts
+        id: detect_posts
+        if: github.event_name == 'push'
+        run: |
+          # Get list of added/modified markdown files in _posts
+          NEW_POSTS=$(git diff --name-only --diff-filter=A HEAD~1 HEAD | grep '^_posts/.*\.markdown$' || true)
+          
+          if [ -z "$NEW_POSTS" ]; then
+            echo "No new posts detected"
+            echo "has_new_posts=false" >> $GITHUB_OUTPUT
+          else
+            echo "New posts detected:"
+            echo "$NEW_POSTS"
+            # Get the first new post
+            FIRST_POST=$(echo "$NEW_POSTS" | head -n 1)
+            echo "post_path=$FIRST_POST" >> $GITHUB_OUTPUT
+            echo "has_new_posts=true" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Create campaign for new post (automatic)
+        if: github.event_name == 'push' && steps.detect_posts.outputs.has_new_posts == 'true'
+        env:
+          MAILERLITE_API_KEY: ${{ secrets.MAILERLITE_API_KEY }}
+          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+          FROM_NAME: ${{ secrets.FROM_NAME }}
+          SITE_URL: ${{ secrets.SITE_URL }}
+          GROUP_IDS: ${{ secrets.GROUP_IDS }}
+        run: |
+          python automation/scripts/create_blog_campaign.py \
+            --post-path "${{ steps.detect_posts.outputs.post_path }}"
+      
+      - name: Create campaign for selected post (manual)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          MAILERLITE_API_KEY: ${{ secrets.MAILERLITE_API_KEY }}
+          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+          FROM_NAME: ${{ secrets.FROM_NAME }}
+          SITE_URL: ${{ secrets.SITE_URL }}
+          GROUP_IDS: ${{ secrets.GROUP_IDS }}
+        run: |
+          python automation/scripts/create_blog_campaign.py \
+            --post-path "${{ inputs.post_path }}"
+      
+      - name: Notify on success
+        if: success()
+        run: |
+          echo "✅ Blog campaign created successfully!"
+      
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "❌ Failed to create blog campaign"
+          exit 1

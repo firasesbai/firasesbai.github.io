@@ -1,5 +1,32 @@
+# Jekyll
 _site
 .sass-cache
 .jekyll-metadata
 .jekyll-cache
+
+# Node.js
 node_modules
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv/
+
+# Automation secrets
+automation/config/email_config.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
