@@ -58,6 +58,7 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
+    jekyll-webp (1.0.0)
     json (2.7.6)
     json-minify (0.0.3)
       json (> 0)
@@ -77,8 +78,6 @@ GEM
     nokogiri (1.13.10-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.10-x64-mingw32)
-      racc (~> 1.4)
-    nokogiri (1.13.10-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.10-x86_64-linux)
       racc (~> 1.4)
@@ -123,6 +122,7 @@ DEPENDENCIES
   jekyll-redirect-from (~> 0.16.0)
   jekyll-seo-tag (~> 2.8)
   jekyll-sitemap (~> 1.4)
+  jekyll-webp
   kramdown (>= 2.3.0)
   kramdown-parser-gfm
   minima (~> 2.5.1)

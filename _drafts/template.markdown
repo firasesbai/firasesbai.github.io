@@ -37,10 +37,18 @@ All the source code is available [here]() - `optional`
 
 ## Headline 3 ##
 
-<figure>
-  <img src="/assets/images/articles/" alt="image alt txt">
-  <figcaption>Figure 1: image alt txt - <a href="">Image Source</a></figcaption>
-</figure>
+<!-- With caption (for article images with sources) -->
+{% include image.html 
+   src="/assets/images/articles/XX_your_image_name.png" 
+   alt="image alt txt" 
+   caption='Figure 1: image description - <a href="">Image Source</a>' 
+%}
+
+<!-- Without caption (simple image) -->
+{% include image.html 
+   src="/assets/images/articles/XX_your_image_name.png" 
+   alt="image alt txt" 
+%}
 
 With this we have reached the end of this post, I hope you enjoyed it!
 

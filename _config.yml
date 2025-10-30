@@ -60,6 +60,7 @@ plugins:
   - jekyll-last-modified-at
   - jekyll-minifier
   - jekyll-loading-lazy
+  - jekyll-webp
 
 # Minifier Settings
 jekyll-minifier:
@@ -93,6 +94,16 @@ defaults:
 # Redirects Settings
 redirect_from:
   json: false
+
+# WebP Settings
+webp:
+  enabled: true
+  quality: 85
+  img_dir: ["/assets/images", "/assets/images/articles"]
+  nested: true
+  formats: [".jpeg", ".jpg", ".png"]
+  regenerate: false
+  verbose: false
 
 #######################################################
 #################### Additional Settings ##############

@@ -30,6 +30,7 @@ group :jekyll_plugins do
   gem "jekyll-last-modified-at", "~> 1.3.2"
   gem "jekyll-minifier"
   gem "jekyll-loading-lazy"
+  gem "jekyll-webp"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

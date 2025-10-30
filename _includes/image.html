@@ -1,0 +1,8 @@
+{% if include.caption %}<figure{% if include.class %} class="{{ include.class }}"{% endif %}>{% endif %}
+  <picture>
+    <source srcset="{{ include.src | replace: '.png', '.webp' | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.PNG', '.webp' | replace: '.JPG', '.webp' }}" type="image/webp">
+    <img src="{{ include.src }}" alt="{{ include.alt }}" loading="lazy"{% if include.class and include.caption == nil %} class="{{ include.class }}"{% endif %}>
+  </picture>
+  {% if include.caption %}
+  <figcaption>{{ include.caption }}</figcaption>
+</figure>{% endif %}
