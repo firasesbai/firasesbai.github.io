@@ -7,6 +7,7 @@
   <!-- D3js -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
 
+{% if jekyll.environment == "production" %}
 <!-- MailerLite Universal -->
 <script>
   (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
@@ -16,6 +17,7 @@
   ml('account', '1240462');
 </script>
 <!-- End MailerLite Universal -->
+{% endif %}
   
   {%- include head.html -%}
   
@@ -32,7 +34,7 @@
   <!-- service Worker Logic -->	
   <script type="text/javascript" src="/js/service-worker/service-worker.js"></script>
   
-  {% if site.google_analytics %}
+  {% if jekyll.environment == "production" and site.google_analytics %}
   	{% include google-analytics.html %}
   {% endif %}
   

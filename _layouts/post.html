@@ -49,7 +49,7 @@ layout: default
 
   {% include related-posts.html %}
 
-  {% if page.comments %}
+  {% if page.comments and jekyll.environment == "production" %}
     {% include disqus_comments.html %}
   {% endif %}
 
