@@ -2,7 +2,6 @@
 layout: post
 title:  "101 Apache Spark Cheatsheet"
 date:   2025-10-10
-modified_date: 
 category: articles
 tags: ["Data Engineering"]
 author: Firas Esbai

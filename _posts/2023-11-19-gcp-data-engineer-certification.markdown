@@ -2,7 +2,6 @@
 layout: post
 title:  "Preparation Guide for Google Cloud Professional Data Engineer Certification"
 date:   2023-11-19
-modified_date: 2024-12-23
 category: articles
 tags: ["Cloud Computing"]
 author: Firas Esbai

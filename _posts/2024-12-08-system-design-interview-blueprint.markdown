@@ -2,7 +2,6 @@
 layout: post
 title:  "System Desing Interview Blueprint"
 date:   2024-12-08
-modified_date: 2025-06-09
 category: articles
 tags: ["Data Engineering", "General"]
 author: Firas Esbai

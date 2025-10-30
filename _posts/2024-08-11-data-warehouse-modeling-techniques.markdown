@@ -2,7 +2,6 @@
 layout: post
 title:  "Data Warehouse Modeling Techniques"
 date:   2024-08-11
-modified_date: 01.01.2025
 category: articles
 tags: ["Data Engineering", "Data Architecture"]
 author: Firas Esbai

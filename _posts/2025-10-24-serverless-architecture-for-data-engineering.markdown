@@ -2,7 +2,6 @@
 layout: post
 title:  "Serverless Architecture for Data Engineering"
 date:   2025-10-24
-modified_date: 
 category: articles
 tags: ["Data Engineering", "Data Architecture", "Cloud Computing"]
 author: Firas Esbai

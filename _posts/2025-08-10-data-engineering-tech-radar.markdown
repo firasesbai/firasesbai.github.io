@@ -2,7 +2,6 @@
 layout: post
 title:  "Introducing My Data Engineering Tech Radar"
 date:   2025-08-10
-modified_date: 
 category: articles
 tags: ["Data Engineering"]
 author: Firas Esbai

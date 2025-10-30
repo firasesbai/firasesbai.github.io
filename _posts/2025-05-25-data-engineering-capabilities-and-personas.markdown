@@ -2,7 +2,6 @@
 layout: post
 title:  "Data Engineering Capabilities and Personas"
 date:   2025-05-25
-modified_date: 
 category: articles
 tags: ["Data Engineering"]
 author: Firas Esbai

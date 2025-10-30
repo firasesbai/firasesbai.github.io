@@ -2,7 +2,6 @@
 layout: post
 title:  "Blogging Tools"
 date:   2025-08-18
-modified_date: 
 category: articles
 tags: ["Blogging"]
 author: Firas Esbai

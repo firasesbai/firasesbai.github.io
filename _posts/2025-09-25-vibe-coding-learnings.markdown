@@ -2,7 +2,6 @@
 layout: post
 title:  "Learnings from Vibe Coding"
 date:   2025-09-25
-modified_date: 
 category: articles
 tags: ["AI"]
 author: Firas Esbai

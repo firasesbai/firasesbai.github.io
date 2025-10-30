@@ -2,7 +2,6 @@
 layout: post
 title:  "101 Apache Kafka Cheatsheet"
 date:   2025-09-15
-modified_date: 
 category: articles
 tags: ["Data Engineering"]
 author: Firas Esbai

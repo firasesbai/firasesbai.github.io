@@ -9,7 +9,6 @@ description: "Deep dive into data ingestion and integration techniques, popular 
 comments: true
 redirect_from: /articles/2023/03/12/data-engineering-201-Part-2.html
 image: "/assets/images/articles/12_data_warehouse_vs_data_lake_vs_data_lakehouse.png"
-modified_date: 2025-05-18
 ---
 
 *This is part 2 of our in-depth article discussing the different stages of data flow inside an organisation.* 

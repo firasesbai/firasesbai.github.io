@@ -2,7 +2,6 @@
 layout: post
 title:  "Level Up Your SQL Skills As a Data Engineer"
 date:   2024-12-30
-modified_date: 
 category: articles
 tags: ["Data Engineering"]
 author: Firas Esbai
