@@ -59,6 +59,7 @@ plugins:
   - jekyll-redirect-from
   - jekyll-last-modified-at
   - jekyll-minifier
+  - jekyll-loading-lazy
 
 # Minifier Settings
 jekyll-minifier:
