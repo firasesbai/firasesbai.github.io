@@ -58,6 +58,15 @@ plugins:
   - jekyll-seo-tag
   - jekyll-redirect-from
   - jekyll-last-modified-at
+  - jekyll-minifier
+
+# Minifier Settings
+jekyll-minifier:
+  exclude: 'development'
+  uglifier_args:
+    harmony: true
+  compress_css: true
+  compress_javascript: true
 
 # Pagination Settings
 pagination:
