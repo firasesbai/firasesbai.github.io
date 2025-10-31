@@ -61,6 +61,7 @@ plugins:
   - jekyll-minifier
   - jekyll-loading-lazy
   - jekyll-webp
+  - jekyll-diagrams
 
 # Minifier Settings
 jekyll-minifier:
@@ -104,6 +105,10 @@ webp:
   formats: [".jpeg", ".jpg", ".png"]
   regenerate: false
   verbose: false
+
+# Jekyll Diagrams Settings
+jekyll-diagrams:
+  mermaid:
 
 #######################################################
 #################### Additional Settings ##############

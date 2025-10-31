@@ -25,21 +25,21 @@ jobs:
         with:
           ruby-version: 2.7
       
-      # Installs dependencies and Builds jekyll site 
-      - name: install dependencies & build site
-        uses: limjh16/jekyll-action-ts@v2
-        with:
-          # Enables caching. Similar to https://github.com/actions/cache.
-          enable_cache: true 
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-          restore-keys: ${{ runner.os }}-gems-
-
       # Downloads Node.js & install packages 
       - name: setup node
         uses: actions/setup-node@v2
         with:
           node-version: 18
       - run: npm ci 
+      
+      # Installs dependencies & Builds jekyll site with diagrams
+      - name: install dependencies & build site
+        uses: limjh16/jekyll-action-ts@v2
+        with:
+          enable_cache: true 
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+          restore-keys: ${{ runner.os }}-gems-
+          custom_build_command: npm run build
 
       # Generates service worker
       - name: generate sw

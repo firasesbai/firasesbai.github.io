@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  ""
-date:   
+date:   2021-01-01
 category: articles
 tags: []
 author: Firas Esbai
@@ -49,6 +49,48 @@ All the source code is available [here]() - `optional`
    src="/assets/images/articles/XX_your_image_name.png" 
    alt="image alt txt" 
 %}
+
+## Headline 4 ##
+
+<!-- Mermaid Flowchart - Great for system architecture, data flows -->
+{% mermaid %}
+graph LR
+    A[Client] --> B[Load Balancer]
+    B --> C[Server 1]
+    B --> D[Server 2]
+    C --> E[Database]
+    D --> E[Database]
+{% endmermaid %}
+
+<!-- Mermaid Sequence Diagram - Great for API calls, interactions -->
+{% mermaid %}
+sequenceDiagram
+    participant User
+    participant API
+    participant Database
+    User->>API: POST /data
+    API->>Database: INSERT query
+    Database-->>API: Success
+    API-->>User: 201 Created
+{% endmermaid %}
+
+<!-- Mermaid Class Diagram - Great for data models -->
+{% mermaid %}
+classDiagram
+    class Order {
+        +int orderId
+        +Date orderDate
+        +calculateTotal()
+    }
+    class Customer {
+        +int customerId
+        +String name
+        +placeOrder()
+    }
+    Customer --> Order : places
+{% endmermaid %}
+
+<!-- More Mermaid examples at: https://mermaid.js.org/intro/ -->
 
 With this we have reached the end of this post, I hope you enjoyed it!
 
