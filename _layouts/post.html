@@ -3,6 +3,7 @@ layout: default
 custom_css:
   - /assets/css/post.css
   - /assets/css/code-copy.css
+  - /assets/css/reading-progress.css
 ---
 
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
@@ -11,6 +12,17 @@ custom_css:
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    
+    <!-- Post Tags -->
+    {% if page.tags and page.tags.size > 0 %}
+      <div class="post-tags">
+        {% for tag in page.tags %}
+          {% assign tag_url = tag | downcase | replace: " ", "-" %}
+          <a href="/archive/#{{ tag_url }}" class="post-tag-badge">{{ tag }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+    
     <p class="post-meta">
       {%- assign date_format = site.minima.date_format | default: "%B %-d, %Y" -%}
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
@@ -56,6 +68,9 @@ custom_css:
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
+
+<!-- Reading Progress Bar Script -->
+<script src="{{ '/js/reading-progress.js' | relative_url }}"></script>
 
 <!-- Code Copy Button Script -->
 <script src="{{ '/js/code-copy.js' | relative_url }}"></script>
