@@ -3,7 +3,7 @@ layout: post
 title:  "Learnings from Vibe Coding"
 date:   2025-09-25
 category: articles
-tags: ["AI"]
+tags: ["AI Engineering"]
 author: Firas Esbai
 description: "Lessons from trying out vibe coding using cursor"
 comments: true

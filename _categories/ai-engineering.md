@@ -1,10 +1,10 @@
 ---
 layout: page
-permalink: /categories/ai
+permalink: /categories/ai-engineering
 description: "Explore articles and insights on artificial intelligence, covering key topics and resources to expand your knowledge and interests."
 ---
 
-{% assign category = "AI" %}
+{% assign category = "AI Engineering" %}
 
 {% for tag in site.tags %}
 {% if tag[0] == category %}
