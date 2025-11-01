@@ -21,6 +21,9 @@
   
   {%- include head.html -%}
   
+  <!-- Global CSS for footer -->
+  <link rel="stylesheet" href="{{ '/assets/css/footer.css' | relative_url }}">
+  
   {% if layout.custom_css %}
     {% for css_file in layout.custom_css %}
       <link rel="stylesheet" href="{{ css_file | relative_url }}">
