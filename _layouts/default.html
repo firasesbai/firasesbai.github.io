@@ -21,8 +21,8 @@
   
   {%- include head.html -%}
   
-  <!-- Global CSS for footer -->
-  <link rel="stylesheet" href="{{ '/assets/css/footer.css' | relative_url }}">
+  <!-- Global CSS Bundle -->
+  <link rel="stylesheet" href="{{ '/bundles/global.css' | relative_url }}">
   
   {% if layout.custom_css %}
     {% for css_file in layout.custom_css %}
