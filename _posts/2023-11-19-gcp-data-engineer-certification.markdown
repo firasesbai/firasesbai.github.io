@@ -8,6 +8,7 @@ author: Firas Esbai
 description: "Preparation guide full of mind maps, notes and resources to help you prepare for google cloud professional data engineer certification"
 comments: true
 image: "/assets/images/articles/18_gcp_regions.png"
+has_visualization: true
 ---
 
 *This article contains a collection of notes, mind maps and resources to support you while preparing for the google cloud professional data engineer certification.*
@@ -21,8 +22,8 @@ So brace yourselves, this is gonna be a rather long post filled with too many im
 
 {% include table-of-content.html %}
 
-<script src="/js/visualizations/mind-map.js"></script>
-<script src="/js/visualizations/create-chart.js"></script>
+<script src="/js/visualizations/mind-map.js" defer></script>
+<script src="/js/visualizations/create-chart.js" defer></script>
 
 ## Google Cloud ##
 

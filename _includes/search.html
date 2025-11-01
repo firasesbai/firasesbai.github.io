@@ -7,15 +7,17 @@
 <ul id="results-container"></ul>
 </div>
 
-<!-- Script pointing to search-script.js -->
-<script src="/js/search-script.js" type="text/javascript"></script>
+<!-- Script pointing to search-script.js (deferred - non-critical) -->
+<script src="/js/search-script.js" type="text/javascript" defer></script>
 
 <!-- Configuration -->
 <script>
-SimpleJekyllSearch({
-  searchInput: document.getElementById('search-input'),
-  resultsContainer: document.getElementById('results-container'),
-  json: '/search.json',
-  searchResultTemplate: '<div><a href="{url}"><h4>{title}</h4></a></div>'
-  })
+document.addEventListener('DOMContentLoaded', function() {
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<div><a href="{url}"><h4>{title}</h4></a></div>'
+  });
+});
 </script>
