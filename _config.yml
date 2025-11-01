@@ -110,6 +110,12 @@ webp:
 jekyll-diagrams:
   mermaid:
 
+# Sass Settings 
+sass:
+  # suppress deprecation warnings
+  quiet_deps: true
+  style: compressed
+
 #######################################################
 #################### Additional Settings ##############
 #######################################################
