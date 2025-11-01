@@ -3,9 +3,60 @@ h1 {
   margin-bottom: 20px;
 }
 
+h2 {
+  font-size: 1.8em;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
 h4 {
   font-size: 1.5em;
   margin-top: 20px;
+}
+
+/* Tag Cloud Styling */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0 40px 0;
+  align-items: center;
+  line-height: 2;
+}
+
+.tag-item {
+  text-decoration: none;
+  color: #007bff;
+  transition: all 0.3s ease;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.tag-item:hover {
+  background-color: #007bff;
+  color: white;
+  transform: scale(1.05);
+}
+
+.tag-count {
+  font-size: 0.7em;
+  opacity: 0.7;
+}
+
+.year-count {
+  font-size: 0.7em;
+  font-weight: normal;
+  opacity: 0.7;
+  margin-left: 5px;
+}
+
+.post-date {
+  font-size: 0.9em;
+  color: #6c757d;
+  margin-left: 10px;
+  font-style: italic;
 }
 
 ul {

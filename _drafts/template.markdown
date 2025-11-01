@@ -2,8 +2,8 @@
 layout: post
 title:  ""
 date:   2021-01-01
-category: articles
-tags: []
+category: articles        # Content type: "articles" or "notes" (controls URL path)
+tags: []                  # Topics: e.g., ["Data Engineering", "Cloud Computing"]
 author: Firas Esbai
 description: ""
 comments:
