@@ -88,7 +88,7 @@ defaults:
       type: posts
     values:
       image: 
-        path: /assets/images/default-sep-tag-image.png
+        path: /assets/images/default-seo-tag-image.png
         height: 630
         width: 1200
 
