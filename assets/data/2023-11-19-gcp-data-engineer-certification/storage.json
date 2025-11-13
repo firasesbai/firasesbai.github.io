@@ -1,1 +1,25 @@
-{"nodes":[{"id":1,"name":"Storage"},{"id":2,"name":"Cloud Storage"},{"id":3,"name":"Cloud SQL"},{"id":4,"name":"Query Insights"},{"id":5,"name":"Cloud Spanner"},{"id":6,"name":"Firestore"},{"id":7,"name":"Datastore"},{"id":8,"name":"Memorystore"},{"id":9,"name":"Bigtable"}],"links":[{"source":1,"target":2},{"source":1,"target":3},{"source":1,"target":4},{"source":1,"target":5},{"source":1,"target":6},{"source":1,"target":7},{"source":1,"target":8},{"source":1,"target":9}]}
+{
+    "nodes": [
+      {"id": 1, "name": "Storage"},
+
+      {"id": 2, "name": "Cloud Storage"},
+      {"id": 3, "name": "Cloud SQL"},
+      {"id": 4, "name": "Query Insights"},
+      {"id": 5, "name": "Cloud Spanner"},
+      {"id": 6, "name": "Firestore"},
+      {"id": 7, "name": "Datastore"},
+      {"id": 8, "name": "Memorystore"},
+      {"id": 9, "name": "Bigtable"}
+    ],
+    "links": [
+        {"source": 1, "target": 2},
+        {"source": 1, "target": 3},
+        {"source": 1, "target": 4},
+        {"source": 1, "target": 5},
+        {"source": 1, "target": 6},
+        {"source": 1, "target": 7},
+        {"source": 1, "target": 8},
+        {"source": 1, "target": 9}
+    ]
+  }
+  

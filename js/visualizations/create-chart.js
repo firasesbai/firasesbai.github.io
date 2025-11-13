@@ -1,1 +1,28 @@
-function createChart(t,n,r,e={}){const o={mindmap:createMindMap};r in o?d3.json(n).then(function(n){const a=e.width||400,c=e.height||300,i=d3.select(`#${t}`).append("svg").attr("width",a).attr("height",c);o[r](i,n,e)})["catch"](function(t){console.error(`Error loading data from ${n}:`,t)}):console.error(`Unsupported chart type: ${r}`)}
+function createChart(containerId, dataPath, chartType, options = {}) {
+    const chartFunctions = {
+        mindmap: createMindMap,
+    };
+
+    if (!(chartType in chartFunctions)) {
+        console.error(`Unsupported chart type: ${chartType}`);
+        return;
+    }
+
+    d3.json(dataPath)
+        .then(function (data) {
+            const width = options.width || 400;
+            const height = options.height || 300;
+
+            // Create or select the container's SVG
+            const svg = d3.select(`#${containerId}`)
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+            // Call the appropriate chart creation function
+            chartFunctions[chartType](svg, data, options);
+        })
+        .catch(function (error) {
+            console.error(`Error loading data from ${dataPath}:`, error);
+        });
+}
