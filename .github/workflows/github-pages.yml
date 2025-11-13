@@ -33,14 +33,13 @@ jobs:
           node-version: 18
       - run: npm ci 
       
-      # Installs dependencies & Builds jekyll site with diagrams
-      - name: install dependencies & build site
-        uses: limjh16/jekyll-action-ts@v2
-        with:
-          enable_cache: true 
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-          restore-keys: ${{ runner.os }}-gems-
-          custom_build_command: npm run build
+      # Add node_modules/.bin to PATH so mmdc is available
+      - name: Add node_modules/.bin to PATH
+        run: echo "${{ github.workspace }}/node_modules/.bin" >> $GITHUB_PATH
+
+      # Build Jekyll site (with diagrams)
+      - name: Build site
+        run: bundle exec jekyll build
 
       # Generates service worker
       - name: generate sw
