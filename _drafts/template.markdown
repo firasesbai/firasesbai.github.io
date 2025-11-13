@@ -61,6 +61,7 @@ graph LR
     C --> E[Database]
     D --> E[Database]
 {% endmermaid %}
+<p style="text-align:center;">Figure 1: alt txt</p>
 
 <!-- Mermaid Sequence Diagram - Great for API calls, interactions -->
 {% mermaid %}
@@ -73,6 +74,7 @@ sequenceDiagram
     Database-->>API: Success
     API-->>User: 201 Created
 {% endmermaid %}
+<p style="text-align:center;">Figure 3: alt txt</p>
 
 <!-- Mermaid Class Diagram - Great for data models -->
 {% mermaid %}
@@ -89,6 +91,7 @@ classDiagram
     }
     Customer --> Order : places
 {% endmermaid %}
+<p style="text-align:center;">Figure 4: alt txt</p>
 
 <!-- More Mermaid examples at: https://mermaid.js.org/intro/ -->
 
