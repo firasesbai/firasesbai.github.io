@@ -40,6 +40,8 @@ jobs:
       # Build Jekyll site (with diagrams)
       - name: Build site
         run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
 
       # Generates service worker
       - name: generate sw
