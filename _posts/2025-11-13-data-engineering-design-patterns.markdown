@@ -140,6 +140,8 @@ If you have any remarks or questions, please don’t hesitate and do drop a comm
 
 ## Recap ##
 
+In this article, we explored four essential data engineering design patterns that help build reliable and efficient data pipelines. The **Write-Audit-Publish (WAP)** pattern ensures data quality by validating data in a staging area before publishing to production and leveraged Apache Iceberg branches for an example implementation of this pattern. **Change Data Capture (CDC)** enables near real-time data synchronization by capturing incremental changes from source databases using log-based, trigger-based, or timestamp-based methods. **Dead-Letter Queues (DLQ)** provide a safety net for failed messages in streaming systems, improving observability and reducing data loss. Finally, the **Cumulative Aggregate Table** pattern optimizes performance for rolling window calculations by pre-computing and storing state, eliminating the need to scan large amounts of raw data repeatedly.
+
 *Happy learning!*
 
 ## Resources ##
