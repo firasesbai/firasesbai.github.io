@@ -5,60 +5,248 @@
    <div class="post-header bg-{{site.default_post_color}}">
       <h1 class="page-heading">Further Reading</h1>
    </div>
-   {% assign maxRelated = 4 %}
-   {% assign minCommonTags = 1 %}
    
-   {%- comment -%}Build array of related posts with scores{%- endcomment -%}
-   {% assign related_posts_array = "" | split: "" %}
-   
-   {% for post in site.posts %}
-    {% if post.url != page.url %}
-      {% assign sameTagCount = 0 %}
-      {% assign commonTags = '' %}
+   <div id="similar-posts-container">
+      <!-- Loading state -->
+      <div id="similar-posts-loading" style="text-align: center; padding: 20px; color: #6c757d;">
+         <p>Loading similar posts...</p>
+      </div>
       
-      {% for tag in post.tags %}
-        {% if page.tags contains tag %}
-          {% assign sameTagCount = sameTagCount | plus: 1 %}
-          {% capture tagmarkup %} <span class="tag-badge">{{ tag }}</span> {% endcapture %}
-          {% assign commonTags = commonTags | append: tagmarkup %}
-        {% endif %}
+      <!-- Error state (hidden by default) -->
+      <div id="similar-posts-error" style="display: none;">
+         <p class="no-related">Unable to load recommendations. <a href="/archive/">Explore the archive</a> to discover more articles.</p>
+      </div>
+      
+      <!-- Results will be inserted here -->
+      <div id="similar-posts-results"></div>
+   </div>
+   
+   <!-- Fallback: Traditional tag-based related posts (hidden by default, shown if API fails) -->
+   <div id="tag-based-related" style="display: none;">
+      {% assign maxRelated = 4 %}
+      {% assign minCommonTags = 1 %}
+      
+      {% assign related_posts_array = "" | split: "" %}
+      
+      {% for post in site.posts %}
+       {% if post.url != page.url %}
+         {% assign sameTagCount = 0 %}
+         {% assign commonTags = '' %}
+         
+         {% for tag in post.tags %}
+           {% if page.tags contains tag %}
+             {% assign sameTagCount = sameTagCount | plus: 1 %}
+             {% capture tagmarkup %} <span class="tag-badge">{{ tag }}</span> {% endcapture %}
+             {% assign commonTags = commonTags | append: tagmarkup %}
+           {% endif %}
+         {% endfor %}
+         
+         {% if sameTagCount >= minCommonTags %}
+           {% assign score_padded = sameTagCount | prepend: "000" | slice: -3, 3 %}
+           {% assign sort_key = score_padded | append: "|||" | append: post.url | append: "|||" | append: commonTags %}
+           {% assign related_posts_array = related_posts_array | push: sort_key %}
+         {% endif %}
+       {% endif %}
       {% endfor %}
       
-      {%- comment -%}Add post to array if it has common tags{%- endcomment -%}
-      {% if sameTagCount >= minCommonTags %}
-        {%- comment -%}Create sortable key: score + URL{%- endcomment -%}
-        {% assign score_padded = sameTagCount | prepend: "000" | slice: -3, 3 %}
-        {% assign sort_key = score_padded | append: "|||" | append: post.url | append: "|||" | append: commonTags %}
-        {% assign related_posts_array = related_posts_array | push: sort_key %}
+      {% assign sorted_related = related_posts_array | sort | reverse %}
+      
+      {% for item in sorted_related limit:maxRelated %}
+        {% assign parts = item | split: "|||" %}
+        {% assign post_url = parts[1] %}
+        {% assign tags = parts[2] %}
+        
+        {% for post in site.posts %}
+          {% if post.url == post_url %}
+            <div class="related-post-item">
+              <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+              <p class="related-meta">
+                <span class="related-date">{{ post.date | date: "%B %d, %Y" }}</span>
+                <span class="related-tags">{{ tags }}</span>
+              </p>
+            </div>
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+      
+      {% if related_posts_array.size == 0 %}
+        <p class="no-related">No related posts found. <a href="/archive/">Explore the archive</a> to discover more articles.</p>
       {% endif %}
-    {% endif %}
-   {% endfor %}
-   
-   {%- comment -%}Sort by score (descending) and display{%- endcomment -%}
-   {% assign sorted_related = related_posts_array | sort | reverse %}
-   
-   {% for item in sorted_related limit:maxRelated %}
-     {% assign parts = item | split: "|||" %}
-     {% assign post_url = parts[1] %}
-     {% assign tags = parts[2] %}
-     
-     {%- comment -%}Find the actual post object{%- endcomment -%}
-     {% for post in site.posts %}
-       {% if post.url == post_url %}
-         <div class="related-post-item">
-           <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-           <p class="related-meta">
-             <span class="related-date">{{ post.date | date: "%B %d, %Y" }}</span>
-             <span class="related-tags">{{ tags }}</span>
-           </p>
-         </div>
-         {% break %}
-       {% endif %}
-     {% endfor %}
-   {% endfor %}
-   
-   {%- comment -%}Show message if no related posts{%- endcomment -%}
-   {% if related_posts_array.size == 0 %}
-     <p class="no-related">No related posts found. <a href="/archive/">Explore the archive</a> to discover more articles.</p>
-   {% endif %}
+   </div>
 </div>
+
+<script>
+(function() {
+  'use strict';
+  
+  // API endpoint - automatically use production URL when deployed
+  const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  const API_URL = isDevelopment 
+    ? 'http://localhost:8080/api/v1/similar' 
+    : 'https://api.firasesbai.com/api/v1/similar';
+  const MAX_POSTS = 4;
+  const TIMEOUT_MS = 30000; // 30s to handle cold starts
+  
+  // Construct the full URL for the current post
+  const currentUrl = '{{ site.url }}{{ page.url }}';
+  
+  async function loadSimilarPosts() {
+    const loadingEl = document.getElementById('similar-posts-loading');
+    const errorEl = document.getElementById('similar-posts-error');
+    const resultsEl = document.getElementById('similar-posts-results');
+    const fallbackEl = document.getElementById('tag-based-related');
+    
+    // Check cache first (per-article, 7-day TTL)
+    const cacheKey = `similar_posts_${currentUrl}`;
+    const CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
+    
+    try {
+      const cached = localStorage.getItem(cacheKey);
+      if (cached) {
+        const { posts, timestamp } = JSON.parse(cached);
+        
+        // Use cache if less than 7 days old
+        if (Date.now() - timestamp < CACHE_TTL) {
+          loadingEl.style.display = 'none';
+          displaySimilarPosts(posts, resultsEl);
+          return; // Exit early with cached data
+        }
+      }
+    } catch (e) {
+      // Ignore cache errors (localStorage disabled, quota exceeded, etc.)
+      console.log('Cache read failed:', e);
+    }
+    
+    // Create abort controller for timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS);
+    
+    try {
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          url: currentUrl,
+          limit: MAX_POSTS
+        }),
+        signal: controller.signal
+      });
+      
+      clearTimeout(timeoutId);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      
+      const data = await response.json();
+      
+      // Hide loading
+      loadingEl.style.display = 'none';
+      
+      if (data.similar_posts && data.similar_posts.length > 0) {
+        displaySimilarPosts(data.similar_posts, resultsEl);
+        
+        // Cache the results
+        try {
+          localStorage.setItem(cacheKey, JSON.stringify({
+            posts: data.similar_posts,
+            timestamp: Date.now()
+          }));
+        } catch (e) {
+          // Ignore cache write errors (quota exceeded, etc.)
+          console.log('Cache write failed:', e);
+        }
+      } else {
+        // No similar posts found
+        resultsEl.innerHTML = '<p class="no-related">No related posts found. <a href="/archive/">Explore the archive</a> to discover more articles.</p>';
+      }
+      
+    } catch (error) {
+      clearTimeout(timeoutId);
+      console.error('Error loading similar posts:', error);
+      
+      // Hide loading and error message
+      loadingEl.style.display = 'none';
+      
+      // Show fallback tag-based related posts
+      fallbackEl.style.display = 'block';
+    }
+  }
+  
+  function displaySimilarPosts(posts, container) {
+    const html = posts.map(post => {
+      // Parse date
+      const date = new Date(post.date);
+      const formattedDate = date.toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      });
+      
+      // Format tags
+      const tagsHtml = post.tags && post.tags.length > 0
+        ? post.tags.map(tag => `<span class="tag-badge">${tag}</span>`).join(' ')
+        : '';
+      
+      // Calculate similarity percentage
+      const similarityPercent = Math.round(post.score * 100);
+      
+      return `
+        <div class="related-post-item">
+          <h3><a href="${post.url}">${post.title}</a></h3>
+          <p class="related-meta">
+            <span class="related-date">${formattedDate}</span>
+            ${tagsHtml ? `<span class="related-tags">${tagsHtml}</span>` : ''}
+            <span class="similarity-score" title="Similarity: ${similarityPercent}%">
+              <svg width="12" height="12" style="vertical-align: middle; margin-left: 8px;">
+                <circle cx="6" cy="6" r="5" fill="none" stroke="#007bff" stroke-width="1.5"/>
+                <circle cx="6" cy="6" r="5" fill="none" stroke="#007bff" stroke-width="1.5" 
+                        stroke-dasharray="${similarityPercent * 0.314} 31.4" 
+                        stroke-dashoffset="7.85" 
+                        transform="rotate(-90 6 6)"/>
+              </svg>
+              ${similarityPercent}% match
+            </span>
+          </p>
+        </div>
+      `;
+    }).join('');
+    
+    container.innerHTML = html;
+  }
+  
+  // Load similar posts when section comes into view or immediately if already visible
+  function initializeSimilarPosts() {
+    const relatedSection = document.getElementById('relatedPosts');
+    
+    // Check if Intersection Observer is supported
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            loadSimilarPosts();
+            observer.disconnect(); // Only load once
+          }
+        });
+      }, {
+        rootMargin: '200px' // Start loading 200px before section is visible
+      });
+      
+      observer.observe(relatedSection);
+    } else {
+      // Fallback for older browsers - load immediately
+      loadSimilarPosts();
+    }
+  }
+  
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeSimilarPosts);
+  } else {
+    initializeSimilarPosts();
+  }
+})();
+</script>
