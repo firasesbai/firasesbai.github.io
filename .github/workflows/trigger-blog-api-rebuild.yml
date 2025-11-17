@@ -1,0 +1,40 @@
+name: Trigger Blog API Index Rebuild
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '_posts/**'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  trigger-api:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Trigger API repository dispatch
+        id: trigger
+        run: |
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.API_REPO_TOKEN }}" \
+            https://api.github.com/repos/firasesbai/api.firasesbai.com/dispatches \
+            -d '{"event_type":"blog-updated"}')
+          
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          
+          if [ "$HTTP_CODE" -eq 204 ]; then
+            echo "success=true" >> $GITHUB_OUTPUT
+          else
+            echo "success=false" >> $GITHUB_OUTPUT
+            echo "HTTP Status: $HTTP_CODE"
+            exit 1
+          fi
+      
+      - name: Log success
+        if: steps.trigger.outputs.success == 'true'
+        run: echo "✓ Successfully triggered API index rebuild"
+      
+      - name: Log failure
+        if: failure()
+        run: echo "✗ Failed to trigger API index rebuild"
