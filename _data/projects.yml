@@ -1,0 +1,12 @@
+- name: "firasesbai.com"
+  description: "My personal website where I share technical blog posts, learning notes and projects."
+  image: "/assets/images/default-seo-tag-image.png"
+  tags:
+    - Python
+    - Javascript
+    - Jekyll
+    - Cloud Run
+    - Faiss
+  links:
+    live: "https://www.firasesbai.com"
+    github: "https://github.com/firasesbai/firasesbai.github.io"
