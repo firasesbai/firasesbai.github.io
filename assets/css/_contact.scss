@@ -43,6 +43,78 @@
     color: #0056b3;
 }
 
+/* Contact Methods (Buttons) */
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+@media (max-width: 768px) {
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid;
+    justify-content: center;
+}
+
+.contact-button svg {
+    flex-shrink: 0;
+}
+
+.contact-button.email {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.contact-button.email:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.contact-button.linkedin {
+    background-color: #0077b5;
+    color: white;
+    border-color: #0077b5;
+}
+
+.contact-button.linkedin:hover {
+    background-color: #005582;
+    border-color: #004471;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
+}
+
+.contact-button.github {
+    background-color: #24292e;
+    color: white;
+    border-color: #24292e;
+}
+
+.contact-button.github:hover {
+    background-color: #1b1f23;
+    border-color: #14171a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(36, 41, 46, 0.3);
+}
+
 .form-section {
     margin: 40px 0;
     padding: 30px 20px;
