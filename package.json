@@ -5,6 +5,11 @@
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "^11.3.0"
   },
+  "overrides": {
+    "workbox-build":{
+      "glob": "10.5.0"
+    }
+  },
   "scripts": {
     "build": "PATH=\"$PWD/node_modules/.bin:$PATH\" bundle exec jekyll build",
     "build:drafts": "PATH=\"$PWD/node_modules/.bin:$PATH\" bundle exec jekyll build --drafts",
