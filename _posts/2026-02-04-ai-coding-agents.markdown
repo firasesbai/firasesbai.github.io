@@ -5,7 +5,7 @@ date:   2026-02-04
 category: articles        
 tags: ["AI Engineering"]                  
 author: Firas Esbai
-description: ""
+description: "Practicle guide on what are ai coding agents, best practices and features that extend their capabilities and how to leverage them using Cline"
 comments: true
 image: "/assets/images/articles/30_prompt_engineering_vs_context_engineering.png"
 ---
