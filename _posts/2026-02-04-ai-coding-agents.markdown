@@ -38,7 +38,7 @@ Looking to [Anthropic's definition](https://www.anthropic.com/engineering/buildi
 
 To simplify things and have a set of building blocks that we can use later as foundations to build upon and extend, we can consider an agent to be composed of the following: 
 
-```mermaid
+{% mermaid %}
 flowchart LR
     direction TB
     
@@ -55,7 +55,9 @@ flowchart LR
     
     Input --> Core
     Core --> Output
-```
+{% endmermaid %}
+
+<p style="text-align:center;">Figure 1: AI Agent Building Blocks</p>
 
 It is worth highlighting that the agent operates in a continuous loop: it observes the current state, reasons about what to do next, takes actions through tools and observes the results. This cycle continues until the task is completed or the user intervenes. 
 
@@ -83,7 +85,7 @@ What started as crafting optimized effective prompts, known as prompt engineerin
 {% include image.html 
    src="/assets/images/articles/30_prompt_engineering_vs_context_engineering.png" 
    alt="prompt engineering vs context engineering" 
-   caption='Figure 1: Prompt engineering vs Context engineering - <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">Image Source</a>' 
+   caption='Figure 2: Prompt engineering vs Context engineering - <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">Image Source</a>' 
 %}
 
 Besides the model's system prompt, when you start a new task or conversation, the context window will include the user's query along with needed context, requirements, documentation and active files. As you interact more with model, the conversation history is also included. In addition, tools like Cline will include additional dynamic context needed to achieve the task at hand. For instance, Cline automatically discovers:
