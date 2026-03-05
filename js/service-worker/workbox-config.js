@@ -20,7 +20,7 @@ module.exports = {
 		},
 		{
 		  urlPattern: /\.(?:css|js|webmanifest)$/,
-		  handler: 'CacheFirst',
+		  handler: 'StaleWhileRevalidate',
 		  options: {
 			cacheName: 'static-cache',
 		  },
