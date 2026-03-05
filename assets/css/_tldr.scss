@@ -27,6 +27,13 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.tldr-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+  transform: none;
+  box-shadow: none;
+}
+
 .tldr-button .tldr-icon {
   font-size: 1.1em;
 }
@@ -38,6 +45,7 @@
 
 /* Loading state */
 .tldr-loading {
+  margin-top: 10px;
   padding: 12px 20px;
   background-color: #f8f9fa;
   border-left: 4px solid #007bff;
@@ -68,13 +76,17 @@
 }
 
 /* Result */
-#tldr-result {
+.tldr-result {
+  margin-top: 10px;
   padding: 16px 20px;
   background-color: #f8f9fa;
   border-left: 4px solid #007bff;
   border-radius: 0 8px 8px 0;
-  opacity: 0;
-  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Fade-in animation applied dynamically via JS */
+.tldr-fade-in {
+  animation: fadeIn 0.4s ease;
 }
 
 .tldr-content {
