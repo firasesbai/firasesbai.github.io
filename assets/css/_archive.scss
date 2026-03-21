@@ -90,26 +90,11 @@ a:hover {
   letter-spacing: 0.5px;
 }
 
-/* Concept tags (AI-generated, non-clickable) */
-.concept-tag {
-  cursor: default;
-  color: #495057;
-  background-color: #f8f9fa;
-  border: 1px solid #dee2e6;
-}
-
-.concept-tag:hover {
-  background-color: #007bff;
-  color: white;
-  border-color: #007bff;
-  cursor: pointer;
-}
-
 /* Active (selected) concept tag */
-.concept-tag-active {
+.concept-tag-active,
+.concept-tag-active:hover {
   background-color: #007bff;
   color: white;
-  border-color: #007bff;
 }
 
 /* Posts list shown when a tag is clicked */
