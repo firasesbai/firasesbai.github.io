@@ -39,13 +39,18 @@ custom_css:
   {% endfor %}
 </div>
 
-<h2>Explore by Tags <span class="ai-badge">AI</span></h2>
+<h2>Explore by Tags</h2>
 
 <div id="concept-tags-loading" class="concept-tags-loading">
   <p>Loading concept tags...</p>
 </div>
 
 <div id="concept-tags" class="tag-cloud" style="display: none;"></div>
+
+<div id="concept-tags-posts" class="concept-posts-list" style="display: none;">
+  <h4 id="concept-tags-posts-title"></h4>
+  <ul id="concept-tags-posts-list"></ul>
+</div>
 
 <div id="concept-tags-error" style="display: none;">
   <p class="concept-tags-fallback">Concept tags unavailable.</p>
@@ -63,6 +68,12 @@ custom_css:
   var loadingEl = document.getElementById('concept-tags-loading');
   var cloudEl = document.getElementById('concept-tags');
   var errorEl = document.getElementById('concept-tags-error');
+  var postsEl = document.getElementById('concept-tags-posts');
+  var postsTitleEl = document.getElementById('concept-tags-posts-title');
+  var postsListEl = document.getElementById('concept-tags-posts-list');
+
+  var tagsData = null;
+  var activeTag = null;
 
   // Check cache first
   try {
@@ -98,6 +109,8 @@ custom_css:
       return;
     }
 
+    tagsData = tags;
+
     // Find max count for font scaling
     var maxCount = 0;
     for (var tag in tags) {
@@ -111,14 +124,58 @@ custom_css:
       var tagName = sortedTags[i];
       var count = tags[tagName].count;
       var fontSize = (count / maxCount * 1.2 + 0.9).toFixed(2);
-      html += '<span class="tag-item concept-tag" style="font-size: ' + fontSize + 'em;" title="' + count + ' post' + (count !== 1 ? 's' : '') + '">'
+      html += '<a href="#" class="tag-item concept-tag" data-tag="' + tagName + '" style="font-size: ' + fontSize + 'em;" title="' + count + ' post' + (count !== 1 ? 's' : '') + '">'
            + tagName + ' <span class="tag-count">(' + count + ')</span>'
-           + '</span> ';
+           + '</a> ';
     }
 
     cloudEl.innerHTML = html;
     loadingEl.style.display = 'none';
     cloudEl.style.display = 'block';
+
+    // Add click handlers
+    cloudEl.addEventListener('click', function(e) {
+      var target = e.target.closest('.concept-tag');
+      if (!target) return;
+      e.preventDefault();
+      var tagName = target.getAttribute('data-tag');
+      toggleTag(tagName);
+    });
+  }
+
+  function toggleTag(tagName) {
+    // Remove active class from all tags
+    var allTags = cloudEl.querySelectorAll('.concept-tag');
+    for (var i = 0; i < allTags.length; i++) {
+      allTags[i].classList.remove('concept-tag-active');
+    }
+
+    // If clicking the same tag, collapse
+    if (activeTag === tagName) {
+      activeTag = null;
+      postsEl.style.display = 'none';
+      return;
+    }
+
+    activeTag = tagName;
+
+    // Highlight active tag
+    var activeEl = cloudEl.querySelector('[data-tag="' + tagName + '"]');
+    if (activeEl) activeEl.classList.add('concept-tag-active');
+
+    // Show posts for this tag
+    var tagInfo = tagsData[tagName];
+    if (!tagInfo || !tagInfo.posts) return;
+
+    postsTitleEl.textContent = tagName;
+    var html = '';
+    for (var i = 0; i < tagInfo.posts.length; i++) {
+      var post = tagInfo.posts[i];
+      var title = post.title || post.url;
+      html += '<li><a href="' + post.url + '">' + title + '</a></li>';
+    }
+    postsListEl.innerHTML = html;
+    postsEl.style.display = 'block';
   }
 })();
 </script>
