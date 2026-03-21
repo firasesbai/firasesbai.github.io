@@ -39,6 +39,90 @@ custom_css:
   {% endfor %}
 </div>
 
+<h2>Explore by Tags <span class="ai-badge">AI</span></h2>
+
+<div id="concept-tags-loading" class="concept-tags-loading">
+  <p>Loading concept tags...</p>
+</div>
+
+<div id="concept-tags" class="tag-cloud" style="display: none;"></div>
+
+<div id="concept-tags-error" style="display: none;">
+  <p class="concept-tags-fallback">Concept tags unavailable.</p>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  var isDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  var API_URL = isDev ? 'http://localhost:8080/api/v1/tags' : 'https://api.firasesbai.com/api/v1/tags';
+  var CACHE_KEY = 'ai_concept_tags';
+  var CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // 7 days
+
+  var loadingEl = document.getElementById('concept-tags-loading');
+  var cloudEl = document.getElementById('concept-tags');
+  var errorEl = document.getElementById('concept-tags-error');
+
+  // Check cache first
+  try {
+    var cached = localStorage.getItem(CACHE_KEY);
+    if (cached) {
+      var parsed = JSON.parse(cached);
+      if (Date.now() - parsed.timestamp < CACHE_TTL) {
+        renderTags(parsed.data);
+        return;
+      }
+    }
+  } catch (e) { /* ignore */ }
+
+  // Fetch from API
+  fetch(API_URL)
+    .then(function(r) { return r.ok ? r.json() : Promise.reject('HTTP ' + r.status); })
+    .then(function(data) {
+      renderTags(data);
+      try {
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ data: data, timestamp: Date.now() }));
+      } catch (e) { /* ignore */ }
+    })
+    .catch(function() {
+      loadingEl.style.display = 'none';
+      errorEl.style.display = 'block';
+    });
+
+  function renderTags(data) {
+    var tags = data.tags;
+    if (!tags || Object.keys(tags).length === 0) {
+      loadingEl.style.display = 'none';
+      errorEl.style.display = 'block';
+      return;
+    }
+
+    // Find max count for font scaling
+    var maxCount = 0;
+    for (var tag in tags) {
+      if (tags[tag].count > maxCount) maxCount = tags[tag].count;
+    }
+
+    // Sort tags alphabetically
+    var sortedTags = Object.keys(tags).sort();
+    var html = '';
+    for (var i = 0; i < sortedTags.length; i++) {
+      var tagName = sortedTags[i];
+      var count = tags[tagName].count;
+      var fontSize = (count / maxCount * 1.2 + 0.9).toFixed(2);
+      html += '<span class="tag-item concept-tag" style="font-size: ' + fontSize + 'em;" title="' + count + ' post' + (count !== 1 ? 's' : '') + '">'
+           + tagName + ' <span class="tag-count">(' + count + ')</span>'
+           + '</span> ';
+    }
+
+    cloudEl.innerHTML = html;
+    loadingEl.style.display = 'none';
+    cloudEl.style.display = 'block';
+  }
+})();
+</script>
+
 <h2>Archive by Year</h2>
 
 {%- comment -%}Dynamically build years list from posts{%- endcomment -%}
