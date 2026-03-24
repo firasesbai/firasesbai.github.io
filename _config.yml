@@ -140,3 +140,4 @@ exclude:
     - .gitignore
     - vendor
     - node_modules
+    - automation
