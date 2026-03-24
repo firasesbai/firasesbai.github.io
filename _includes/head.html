@@ -1,0 +1,58 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  {%- feed_meta -%}
+
+  <!-- Preconnect to third-party origins for faster loading -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://assets.mailerlite.com" crossorigin>
+  {% if jekyll.environment == "production" and site.google_analytics %}
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  {% endif %}
+  {% if page.has_visualization %}
+  <link rel="preconnect" href="https://d3js.org" crossorigin>
+  {% endif %}
+
+  <!-- Cookie Consent CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+  <!-- D3.js - Deferred for better performance -->
+  {% if page.has_visualization %}
+  <script src="https://d3js.org/d3.v7.min.js" defer></script>
+  {% endif %}
+
+  <!-- Global CSS Bundle -->
+  <link rel="stylesheet" href="{{ '/assets/css/bundles/global.css' | relative_url }}">
+  
+  {% if layout.custom_css %}
+    {% for css_file in layout.custom_css %}
+      <link rel="stylesheet" href="{{ css_file | relative_url }}">
+    {% endfor %}
+  {% endif %}
+  
+  {% if page.custom_css %}
+    {% for css_file in page.custom_css %}
+      <link rel="stylesheet" href="{{ css_file | relative_url }}">
+    {% endfor %}
+  {% endif %}
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg?v=1" color="#5bbad5">
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico?v=1">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Service Worker Logic (deferred) -->
+  <script src="/js/service-worker/service-worker.js" defer></script>
+
+  {% if jekyll.environment == "production" and site.google_analytics %}
+    {% include google-analytics.html %}
+  {% endif %}
+</head>

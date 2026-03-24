@@ -80,7 +80,10 @@ custom_css:
       }
 
          function closeSuccessMessage() {
-            location.reload();
+            var msg = document.querySelector('.success-message');
+            if (msg) {
+               msg.remove();
+            }
          }
       </script>
    </div>
