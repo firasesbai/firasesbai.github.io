@@ -2,64 +2,15 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
   {%- include head.html -%}
-  
-  <!-- Cookie Consent CSS -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 
-  <!-- D3.js - Deferred for better performance -->
-  {% if page.has_visualization %}
-  <script src="https://d3js.org/d3.v7.min.js" defer></script>
-  {% endif %}
-
-{% if jekyll.environment == "production" %}
-<!-- MailerLite Universal -->
-<script>
-  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-  ml('account', '1240462');
-</script>
-<!-- End MailerLite Universal -->
-{% endif %}
-  
-  <!-- Global CSS Bundle -->
-  <link rel="stylesheet" href="{{ '/assets/css/bundles/global.css' | relative_url }}">
-  
-  {% if layout.custom_css %}
-    {% for css_file in layout.custom_css %}
-      <link rel="stylesheet" href="{{ css_file | relative_url }}">
-    {% endfor %}
-  {% endif %}
-  
-  {% if page.custom_css %}
-    {% for css_file in page.custom_css %}
-      <link rel="stylesheet" href="{{ css_file | relative_url }}">
-    {% endfor %}
-  {% endif %}
-  
-  <!-- insert favicons. use https://realfavicongenerator.net/ -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v=1">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=1">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png?v=1">
-  <link rel="manifest" href="/assets/favicon/site.webmanifest">
-  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg?v=1" color="#5bbad5">
-  <link rel="shortcut icon" href="/assets/favicon/favicon.ico?v=1">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-
-  <!-- service Worker Logic -->	
-  <script type="text/javascript" src="/js/service-worker/service-worker.js"></script>
-  
-  {% if jekyll.environment == "production" and site.google_analytics %}
-  	{% include google-analytics.html %}
-  {% endif %}
-  
   <body>
+
+    <!-- Skip to main content link for keyboard accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     {%- include header.html -%}
 
-    <main class="page-content" aria-label="Content">
+    <main id="main-content" class="page-content" aria-label="Content">
       <div class="wrapper">
         {{ content }}
       </div>
@@ -67,9 +18,20 @@
 
     {%- include footer.html -%}
 
-	<!-- Cookie Consent Logic (deferred - non-critical) -->	
-	<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false" defer></script>
-	<script src="/js/cookie-consent-script.js" type="text/javascript" defer></script>
+    <!-- MailerLite Universal (deferred - non-critical) -->
+    {% if jekyll.environment == "production" %}
+    <script>
+      (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+      .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+      n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+      (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+      ml('account', '1240462');
+    </script>
+    {% endif %}
+
+    <!-- Cookie Consent Logic (deferred - non-critical) -->
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false" defer></script>
+    <script src="/js/cookie-consent-script.js" type="text/javascript" defer></script>
 
   </body>
 
