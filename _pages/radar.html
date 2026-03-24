@@ -30,25 +30,26 @@ body, .content-container {
 <svg id="radar"></svg>
 
 <script>
-fetch('/assets/data/tech-radar/radar-data.json')
-  .then(response => response.json())
-  .then(radarData => {
-
-    radar_visualization({
-        title: "Data Engineering Tech Radar",
-        quadrants: [
-            { name: "Languages & Frameworks" },
-            { name: "Transformation & Orchestration" },
-            { name: "Data Platforms & Storage" },
-            { name: "Data Analytics" },
-        ],
-        rings: [
-            { name: "ADOPT", color: "#5ba300" },
-            { name: "TRIAL", color: "#009eb0" },
-            { name: "ASSESS", color: "#c7ba00" },
-            { name: "HOLD", color: "#e09b96" }
-        ],
-        entries: radarData.entries
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('/assets/data/tech-radar/radar-data.json')
+    .then(response => response.json())
+    .then(radarData => {
+      radar_visualization({
+          title: "Data Engineering Tech Radar",
+          quadrants: [
+              { name: "Languages & Frameworks" },
+              { name: "Transformation & Orchestration" },
+              { name: "Data Platforms & Storage" },
+              { name: "Data Analytics" },
+          ],
+          rings: [
+              { name: "ADOPT", color: "#5ba300" },
+              { name: "TRIAL", color: "#009eb0" },
+              { name: "ASSESS", color: "#c7ba00" },
+              { name: "HOLD", color: "#e09b96" }
+          ],
+          entries: radarData.entries
+      });
     });
 });
 </script>
