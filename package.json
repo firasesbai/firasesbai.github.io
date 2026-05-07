@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "workbox-build": "^7.3.0"
+    "workbox-build": "^7.4.1"
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "^11.12.0"
