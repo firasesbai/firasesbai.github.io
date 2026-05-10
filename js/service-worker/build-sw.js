@@ -1,5 +1,7 @@
 if (typeof globalThis.crypto === 'undefined') {
-  globalThis.crypto = require('crypto').webcrypto;
+  const { webcrypto } = require('crypto');
+  globalThis.crypto = webcrypto;
+  global.crypto = webcrypto;
 }
 
 const { generateSW } = require('workbox-build');
