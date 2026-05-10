@@ -1,3 +1,7 @@
+if (typeof globalThis.crypto === 'undefined') {
+  globalThis.crypto = require('crypto').webcrypto;
+}
+
 const { generateSW } = require('workbox-build');
 const workboxConfig = require('./workbox-config');
 
