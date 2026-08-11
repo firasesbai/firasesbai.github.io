@@ -11,7 +11,7 @@ image:
 pinned:
 ---
 
-*In this article, I will guide you on how I build and integrated semantic search using Google Cloud for my site.*
+*In this article, I will guide you on how I built and integrated semantic search using Google Cloud for my site.*
 
 We all have seen the exponential adoption of Large Language Models (LLMs) since the release of ChatGPT on November 2022 and the headlines that promise us something new every year; from Model Context Protocol (MCP) and CLI Coding Agents to autonomous multi-agents systems and Context Graphs, the list goes on. 
 Taking a step back, this article is my first attempt to show you how to build AI use cases that actually work. Building is a great way of learning while also gaining insights into how these systems work under the hood. 
@@ -150,7 +150,7 @@ Since Cloud Run charges for the resources you use and in order not incur additio
 
 ## What's Next? ##
 
-Building a semantic search doesn't require expensive infrastructure. With open-source tools and serverless platforms, you can build production-quality services that scale and cost almost nothing. Having the core architecture in place, adding new use cases such as a recommendations endpoint based on the existing similarity search and vector database or potentially combining the semantic search with keyword matching for better results are now easier. Avoiding over engineered solutions and solving the problems as they araise avoids pre mature unnecessary optimizations. 
+Building a semantic search doesn't require expensive infrastructure. With open-source tools and serverless platforms, you can build production-quality services that scale and cost almost nothing. Having the core architecture in place, adding new use cases such as a recommendations endpoint based on the existing similarity search and vector database or potentially combining the semantic search with keyword matching for better results are now easier. Avoiding over engineered solutions and solving the problems as they arise avoids premature unnecessary optimizations. 
 
 I'd love to hear your thoughts and know more about what AI projects you're currently working on. 
 

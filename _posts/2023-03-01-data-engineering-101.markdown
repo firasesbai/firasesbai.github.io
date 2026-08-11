@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Data engineering 101: Understanding the Fundementals"
+title:  "Data engineering 101: Understanding the Fundamentals"
 date:   2023-03-01
 category: articles
 tags: ["Data Engineering"]

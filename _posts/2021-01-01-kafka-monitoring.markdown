@@ -5,7 +5,7 @@ date:   2021-01-01
 category: articles
 tags: ["Observability"]
 author: Firas Esbai
-description: "Detailed explanation with code examples for Apache Kafka cluser monitoring using Prometheus and Grafana dashboards"
+description: "Detailed explanation with code examples for Apache Kafka cluster monitoring using Prometheus and Grafana dashboards"
 comments: true 
 image: "/assets/images/articles/1_kafka_monitoring_architecture.png"
 ---

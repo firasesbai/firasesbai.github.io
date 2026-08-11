@@ -5,7 +5,7 @@ date:   2021-02-07
 category: articles
 tags: ["Observability"]
 author: Firas Esbai
-description: "Explanation of important metrics and their usage for Apache Kafka Monitoring and how to visualize then in grafana"
+description: "Explanation of important metrics and their usage for Apache Kafka Monitoring and how to visualize them in Grafana"
 comments: true
 image: "/assets/images/articles/2_grafana_dashboard.png"
 ---

@@ -43,7 +43,7 @@ Before going through each data format separately, let's start by understanding g
 
 ## Standardized Textual Formats ##
 
-Many programming languages provide built-in mechanisms for encoding in-memory objects into byte sequences like Python's `pickle` module. While these are easy to use, the encoding is tightly coupled to the specific language used making it very difficult or impossible to read the data in a different programming languages. In addition, the processes of encoding and decoding are usually CPU intensive and result in a sizeable encoded data. Not to mention that they are open to security vulnerabilities when malicious byte sequence is decoded that causes the application to instantiate unintended classes, potentially leading to arbitrary code execution.
+Many programming languages provide built-in mechanisms for encoding in-memory objects into byte sequences like Python's `pickle` module. While these are easy to use, the encoding is tightly coupled to the specific language used, making it very difficult or impossible to read the data in a different programming language. In addition, the processes of encoding and decoding are usually CPU intensive and result in sizeable encoded data. Not to mention that they are open to security vulnerabilities when malicious byte sequences are decoded, causing the application to instantiate unintended classes, potentially leading to arbitrary code execution.
 
 To overcome the limitations of language-specific formats, standardized encodings readable by multiple languages are widely used. Common examples include JSON, XML, and CSV due to their human-readability and simplicity, especially for data exchange.
 

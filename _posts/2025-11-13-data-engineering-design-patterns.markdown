@@ -60,7 +60,7 @@ Implementing the 3 steps WAP pattern using Iceberg branches would result in the 
    caption='Figure 2: Example Diagram of Audit Branch - <a href="https://iceberg.apache.org/docs/1.6.1/branching/#audit-branch">Image Source</a>' 
 %}
 
-Using the WAP pattern, downstream pipelines or dashboards can intuitively depend on the production table directly. However, the main challenges is the introduced delays and increased latency by the multistep process which might not be idea for near real time use cases.
+Using the WAP pattern, downstream pipelines or dashboards can intuitively depend on the production table directly. However, the main challenge is the introduced delays and increased latency by the multistep process which might not be ideal for near real time use cases.
 
 ## Change Data Capture (CDC) ##
 
