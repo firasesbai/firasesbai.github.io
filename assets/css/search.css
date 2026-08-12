@@ -44,6 +44,47 @@
   transform: scale(0.98);
 }
 
+/* Generated theme discovery */
+.themes-container {
+  width: 100%;
+  margin: 1.5rem 0 0.25rem 0;
+  text-align: center;
+}
+
+.themes-title {
+  color: #495057;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+}
+
+.themes-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+#search-container .theme-chip {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  color: #0056b3;
+  cursor: pointer;
+  flex-shrink: 1;
+  font-size: 0.9rem;
+  margin-left: 0;
+  padding: 6px 10px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+#search-container .theme-chip:hover,
+#search-container .theme-chip-active {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
 /* Search status message */
 #search-status {
   width: 100%;
@@ -66,6 +107,11 @@
   border-bottom: 1px solid #eee;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
+}
+
+#results-container .search-result {
+  list-style: none;
+  margin-bottom: 1.5rem;
 }
 
 #results-container li:last-child {

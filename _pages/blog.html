@@ -11,6 +11,9 @@ custom_css:
   - /assets/css/search.css
 ---
 
+<h1 class="page-title">Blog</h1>
+<p class="page-subtitle">Things I like to write about.</p>
+
 <div class="search">
     {%- include search.html -%}
     <br>
@@ -25,9 +28,7 @@ custom_css:
   <ul class="post-list">
    <li>
    <div class="pinned-articles">
-      <h2>
-         📌 Pinned 📌
-      </h2>
+      <h2 class="section-title">Pinned</h2>
    </div>
    {% for post in site.posts %}
     {% if post.pinned %}
