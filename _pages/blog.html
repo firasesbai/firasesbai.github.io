@@ -40,7 +40,7 @@ custom_css:
             </div>
             {% assign image_path = post.image.path | default: post.image %}
             <div class="post-image-wrapper">
-               <img src="{{ image_path }}" alt="{{ post.title }}" class="post-teaser-image" loading="lazy">
+               <img src="{{ image_path }}" alt="{{ post.title }}" class="post-teaser-image" loading="lazy" decoding="async" width="200" height="150">
             </div>
 
          </div>
@@ -69,7 +69,7 @@ custom_css:
             <div class="post-card">
                {% assign image_path = post.image.path | default: post.image %}
                <div class="post-image-wrapper">
-                  <img src="{{ image_path }}" alt="{{ post.title }}" class="post-teaser-image" loading="lazy">
+                  <img src="{{ image_path }}" alt="{{ post.title }}" class="post-teaser-image" loading="lazy" decoding="async" width="200" height="150">
                </div>
                <div class="post-content">
                   <h3> 
