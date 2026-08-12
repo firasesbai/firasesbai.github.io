@@ -131,14 +131,6 @@ pre, code {
   text-align: center;
   padding: 20px;
 }
-/* Similarity score indicator */
-.similarity-score {
-  margin-left: 10px;
-  font-size: 0.85em;
-  color: #007bff;
-  font-weight: 500;
-}
-
 /* Loading state */
 #similar-posts-loading {
   animation: pulse 1.5s ease-in-out infinite;

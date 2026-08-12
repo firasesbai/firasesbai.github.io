@@ -191,25 +191,12 @@
         ? post.tags.map(tag => `<span class="tag-badge">${tag}</span>`).join(' ')
         : '';
       
-      // Calculate similarity percentage
-      const similarityPercent = Math.round(post.score * 100);
-      
       return `
         <div class="related-post-item">
           <h3><a href="${post.url}">${post.title}</a></h3>
           <p class="related-meta">
             <span class="related-date">${formattedDate}</span>
             ${tagsHtml ? `<span class="related-tags">${tagsHtml}</span>` : ''}
-            <span class="similarity-score" title="Similarity: ${similarityPercent}%">
-              <svg width="12" height="12" style="vertical-align: middle; margin-left: 8px;">
-                <circle cx="6" cy="6" r="5" fill="none" stroke="#007bff" stroke-width="1.5"/>
-                <circle cx="6" cy="6" r="5" fill="none" stroke="#007bff" stroke-width="1.5" 
-                        stroke-dasharray="${similarityPercent * 0.314} 31.4" 
-                        stroke-dashoffset="7.85" 
-                        transform="rotate(-90 6 6)"/>
-              </svg>
-              ${similarityPercent}% match
-            </span>
           </p>
         </div>
       `;
