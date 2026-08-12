@@ -1,21 +1,3 @@
-h1 {
-  font-size: 2em;
-  margin-bottom: 8px;
-  text-align: center;
-}
-
-.archive-intro {
-  color: #6c757d;
-  margin: 0 0 28px 0;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.8em;
-  margin-top: 36px;
-  margin-bottom: 14px;
-}
-
 h3 {
   font-size: 1.3em;
   margin: 0 0 12px 0;
@@ -26,9 +8,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  border-top: 1px solid #e9ecef;
   margin: 0 0 36px 0;
-  padding-top: 22px;
   align-items: center;
   line-height: 1.4;
 }
@@ -59,12 +39,6 @@ h3 {
   margin-left: 3px;
 }
 
-.post-date {
-  font-size: 0.85em;
-  color: #6c757d;
-  white-space: nowrap;
-}
-
 ul {
   list-style-type: none;
   padding-left: 0;
@@ -86,28 +60,4 @@ a:hover {
 .archive-year {
   border-top: 1px solid #e9ecef;
   padding: 22px 0 10px 0;
-}
-
-.archive-post-list {
-  margin: 0;
-}
-
-.archive-post {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 12px;
-}
-
-.archive-post a {
-  line-height: 1.4;
-}
-
-@media (max-width: 640px) {
-  .archive-post {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 2px;
-  }
 }

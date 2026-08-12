@@ -6,10 +6,8 @@ custom_css:
   - /assets/css/bundles/archive.css
 ---
 
-<h1>Archive</h1>
-<p class="archive-intro">Browse curated topic collections and every published article.</p>
-
-<h2>Curated Topics</h2>
+<h1 class="index-title">Archive</h1>
+<p class="index-subtitle">Browse curated topic collections and every published article.</p>
 
 <div class="tag-cloud">
   {% assign sorted_tags = site.tags | sort %}
@@ -20,12 +18,12 @@ custom_css:
     <a href="/categories/{{ tag_url }}" 
        class="tag-item" 
        title="{{ post_count }} post{% if post_count != 1 %}s{% endif %}">
-      {{ tag[0] }} <span class="tag-count">({{ post_count }})</span>
+      {{ tag[0] }}
     </a>
   {% endfor %}
 </div>
 
-<h2>All Posts</h2>
+<h2 class="section-title">All Posts</h2>
 
 {%- comment -%}Dynamically build years list from posts{%- endcomment -%}
 {% assign years = "" | split: "" %}
