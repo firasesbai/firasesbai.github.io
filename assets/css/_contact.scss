@@ -14,14 +14,14 @@
 
 .email-link {
     font-size: 1.4em;
-    color: #007bff;
+    color: #0b5c7a;
     text-decoration: none;
     font-weight: 500;
 }
 
 .email-link:hover {
     text-decoration: underline;
-    color: #0056b3;
+    color: #08465d;
 }
 
 /* Contact Methods (Buttons) */
@@ -58,16 +58,16 @@
 }
 
 .contact-button.email {
-    background-color: #007bff;
+    background-color: #0b5c7a;
     color: white;
-    border-color: #007bff;
+    border-color: #0b5c7a;
 }
 
 .contact-button.email:hover {
-    background-color: #0056b3;
-    border-color: #004085;
+    background-color: #08465d;
+    border-color: #08465d;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(11, 92, 122, 0.24);
 }
 
 .contact-button.linkedin {
@@ -103,6 +103,26 @@
     border-radius: 5px;
 }
 
+.thank-you-section {
+    border-top: 1px solid #e9ecef;
+    margin-top: 30px;
+    padding-top: 22px;
+}
+
+.thank-you-article-list {
+    list-style: disc;
+    margin: 12px 0 18px 24px;
+    padding-left: 18px;
+}
+
+.thank-you-article-list li {
+    margin-bottom: 8px;
+}
+
+.thank-you-signoff {
+    text-align: center;
+}
+
 .success-message {
     background-color: #4CAF50;
     color: white;
@@ -116,7 +136,14 @@
 }
 
 .close-button {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    color: inherit;
     cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    padding: 0 0 0 12px;
 }
 
 form {
@@ -144,7 +171,7 @@ textarea {
 }
 
 input[type="submit"] {
-    background-color: #007bff;
+    background-color: #0b5c7a;
     color: white;
     padding: 12px 30px;
     border: none;
@@ -155,7 +182,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #08465d;
 }
 
 @media (max-width: 600px) {

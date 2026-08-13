@@ -8,7 +8,6 @@ author: Firas Esbai
 description: "Lessons from trying out vibe coding using cursor"
 comments: true
 image: "/assets/images/articles/25_total_line_changes.png"
-pinned:
 ---
 
 *In this article, I share some lessons learned from trying out vibe coding.*

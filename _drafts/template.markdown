@@ -8,14 +8,15 @@ author: Firas Esbai
 description: ""
 comments:
 image: 
-pinned:
 ---
 
-*excerpt*
+*Opening hook / excerpt*
+
+<!-- Example: In this article, I will explain the specific problem, why it matters, and what the reader will be able to do by the end. -->
 
 All the source code is available [here]() - `optional` 
 
-*So let’s get started!*
+<!-- Transition into the article body. Example: So let’s get started! -->
 
 {% include table-of-content.html %}
 
@@ -95,15 +96,15 @@ classDiagram
 
 <!-- More Mermaid examples at: https://mermaid.js.org/intro/ -->
 
-With this we have reached the end of this post, I hope you enjoyed it!
+<!-- Closing note. Example: With this we have reached the end of this post, I hope you enjoyed it! -->
 
-If you have any remarks or questions, please don’t hesitate and do drop a comment below.
+<!-- Reader prompt. Example: If you have any remarks or questions, please don’t hesitate and do drop a comment below. -->
 
-*Stay tuned!* 
+<!-- Signoff. Example: Stay tuned! -->
 
 ## Recap ##
 
-*Happy learning!*
+<!-- Final takeaway. Example: Happy learning! -->
 
 ## Resources ##
 

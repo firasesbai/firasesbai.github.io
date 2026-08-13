@@ -1,8 +1,8 @@
 <!-- Html Elements for Search -->
 <div id="search-container">
-  <label for="search-input" class="sr-only">Search articles</label>
-  <input type="text" id="search-input" placeholder="Search...">
-  <button type="submit" id="search-button">🔍</button>
+  <label for="search-input" class="sr-only">{{ include.search_label | default: "Search articles" }}</label>
+  <input type="text" id="search-input" placeholder="{{ include.search_label | default: "Search" }}..." data-search-scope="{{ include.search_scope | default: "all" }}">
+  <button type="submit" id="search-button" aria-label="Search">🔍</button>
   <div id="themes-container" class="themes-container" hidden>
     <h2 class="themes-title">Explore by Theme</h2>
     <div id="themes-list" class="themes-list"></div>
@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const searchStatus = document.getElementById('search-status');
   const themesContainer = document.getElementById('themes-container');
   const themesList = document.getElementById('themes-list');
+  const searchScope = searchInput.dataset.searchScope || 'all';
+  const singularItemLabel = searchScope === 'articles' ? 'article' : searchScope === 'notes' ? 'note' : 'post';
+  const pluralItemLabel = searchScope === 'articles' ? 'articles' : searchScope === 'notes' ? 'notes' : 'posts';
   
   // API endpoint - automatically use production URL when deployed
   const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
@@ -29,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const THEMES_URL = isDevelopment
     ? 'http://localhost:8080/api/v1/themes?limit=8&min_count=2&include_posts=true'
     : 'https://api.firasesbai.com/api/v1/themes?limit=8&min_count=2&include_posts=true';
-  const THEMES_CACHE_KEY = 'blog_themes';
+  const THEMES_CACHE_KEY = `blog_themes_${searchScope}`;
   const THEMES_CACHE_TTL = 7 * 24 * 60 * 60 * 1000;
   
   let debounceTimer;
@@ -40,10 +43,39 @@ document.addEventListener('DOMContentLoaded', function() {
     return div.innerHTML;
   }
 
+  function itemLabel(count) {
+    return count === 1 ? singularItemLabel : pluralItemLabel;
+  }
+
   function clearActiveTheme() {
     themesList.querySelectorAll('.theme-chip').forEach(chip => {
       chip.classList.remove('theme-chip-active');
     });
+  }
+
+  function isInScope(post) {
+    if (searchScope === 'articles') {
+      return !post.url.startsWith('/notes/');
+    }
+
+    if (searchScope === 'notes') {
+      return post.url.startsWith('/notes/');
+    }
+
+    return true;
+  }
+
+  function scopeTheme(theme) {
+    const posts = (theme.posts || []).filter(isInScope);
+    if (posts.length === 0) {
+      return null;
+    }
+
+    return {
+      ...theme,
+      count: posts.length,
+      posts
+    };
   }
 
   function renderThemePosts(theme) {
@@ -54,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     searchInput.value = '';
-    searchStatus.textContent = `Showing ${theme.count} posts for ${theme.label}`;
+    searchStatus.textContent = `Showing ${theme.count} ${itemLabel(theme.count)} for ${theme.label}`;
     searchStatus.style.color = '#666';
 
     resultsContainer.innerHTML = theme.posts.map(post => `
@@ -69,6 +101,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function renderThemes(themes) {
+    themes = themes.map(scopeTheme).filter(Boolean);
+
     if (!themes || themes.length === 0) {
       return;
     }
@@ -107,11 +141,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
       const data = await response.json();
-      renderThemes(data.themes);
+      const themes = data.themes.map(scopeTheme).filter(Boolean);
+      renderThemes(themes);
 
       try {
         localStorage.setItem(THEMES_CACHE_KEY, JSON.stringify({
-          themes: data.themes,
+          themes,
           timestamp: Date.now()
         }));
       } catch (error) {
@@ -161,18 +196,19 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       const data = await response.json();
+      const results = data.results.filter(isInScope);
       
       // Update status
-      searchStatus.textContent = `Found ${data.total} results in ${data.processing_time_ms.toFixed(0)}ms`;
+      searchStatus.textContent = `Found ${results.length} ${itemLabel(results.length)} in ${data.processing_time_ms.toFixed(0)}ms`;
       searchStatus.style.color = '#28a745';
       
       // Display results
-      if (data.results.length === 0) {
-        resultsContainer.innerHTML = '<li style="list-style: none;">No results found</li>';
+      if (results.length === 0) {
+        resultsContainer.innerHTML = '<li class="empty-result">No results found</li>';
         return;
       }
       
-      resultsContainer.innerHTML = data.results.map(result => `
+      resultsContainer.innerHTML = results.map(result => `
         <li class="search-result">
           <div>
             <a href="${result.url}">

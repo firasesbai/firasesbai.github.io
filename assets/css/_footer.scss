@@ -26,3 +26,57 @@
 .legal-list li {
     margin-bottom: 5px; /* Space between links */
 }
+
+.site-footer .social-link {
+    color: #6c757d;
+    transition: color 0.2s ease;
+}
+
+.site-footer .social-link:visited {
+    color: #6c757d;
+}
+
+.site-footer .social-link .svg-icon {
+    fill: currentColor;
+    transition: fill 0.2s ease;
+}
+
+.site-footer .social-link:hover,
+.site-footer .social-link:focus {
+    text-decoration: none;
+}
+
+.site-footer .social-link:hover .svg-icon,
+.site-footer .social-link:focus .svg-icon {
+    fill: currentColor;
+}
+
+.site-footer .social-link-rss:hover,
+.site-footer .social-link-rss:focus {
+    color: #f26522;
+}
+
+.site-footer .social-link-rss:hover .svg-icon,
+.site-footer .social-link-rss:focus .svg-icon {
+    fill: #f26522;
+}
+
+.site-footer .social-link-linkedin:hover,
+.site-footer .social-link-linkedin:focus {
+    color: #0077b5;
+}
+
+.site-footer .social-link-linkedin:hover .svg-icon,
+.site-footer .social-link-linkedin:focus .svg-icon {
+    fill: #0077b5;
+}
+
+.site-footer .social-link-github:hover,
+.site-footer .social-link-github:focus {
+    color: #24292e;
+}
+
+.site-footer .social-link-github:hover .svg-icon,
+.site-footer .social-link-github:focus .svg-icon {
+    fill: #24292e;
+}

@@ -8,7 +8,6 @@ author: Firas Esbai
 description: "Apache Spark is an open-source, distributed computing system designed for fast and general-purpose data processing."
 comments:
 image: "/assets/images/articles/26_spark_architecture.png"
-pinned:
 ---
 
 *101 Apache Spark Cheatsheet*

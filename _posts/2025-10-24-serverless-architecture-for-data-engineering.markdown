@@ -8,7 +8,6 @@ author: Firas Esbai
 description: "understanding serverless architecture in data engineering by building etl pipeline for nyc taxi trip data."
 comments: true
 image: "/assets/images/articles/27_post_mvp_redesign.png"
-pinned:
 ---
 
 *Understanding serverless architecture in data engineering by example.*

@@ -8,7 +8,6 @@ author: Firas Esbai
 description: "modern data platform engineering, components, benefits and impact of AI including LLMs and agents."
 comments: true
 image: "/assets/images/articles/29_data_platform_engineering_meme.png"
-pinned:
 ---
 
 *In this article, we dive into data platforms, their components and the impact of AI with the rise of large language models and autonomous agents.* 

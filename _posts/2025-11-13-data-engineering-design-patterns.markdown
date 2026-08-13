@@ -8,7 +8,6 @@ author: Firas Esbai
 description: "Explore essential data engineering design patterns including WAP, CDC, DLQ and cumulative aggregate tables."
 comments: true
 image: "/assets/images/articles/28_wap_iceberg_audit_branch.png"
-pinned:
 ---
 
 *In this article, we will look at common data engineering design patterns.*

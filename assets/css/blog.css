@@ -13,6 +13,24 @@ ul.pager li {display: inline;border: 1px solid black; padding: 10px; margin: 5px
     text-align: center; 
 }
 
+.collection-divider {
+    margin: 28px 0;
+}
+
+.course-offer {
+    background: #f8f9fa;
+    border-left: 4px solid #0b5c7a;
+    border-radius: 8px;
+    margin: 24px 0;
+    padding: 20px;
+}
+
+.course-offer-placeholder {
+    color: #6c757d;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
 /* Post card layout */
 .post-card {
     display: flex;

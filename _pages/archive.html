@@ -1,13 +1,13 @@
 ---
 layout: page
 permalink: /archive/
-description: "Explore a comprehensive archive of Firas Esbai's articles."
+description: "Explore a comprehensive archive of Firas Esbai's articles and notes."
 custom_css:
   - /assets/css/bundles/archive.css
 ---
 
 <h1 class="index-title">Archive</h1>
-<p class="index-subtitle">Browse curated topic collections and every published article.</p>
+<p class="index-subtitle">Browse curated topics and the full site archive.</p>
 
 <div class="tag-cloud">
   {% assign sorted_tags = site.tags | sort %}
@@ -22,8 +22,6 @@ custom_css:
     </a>
   {% endfor %}
 </div>
-
-<h2 class="section-title">All Posts</h2>
 
 {%- comment -%}Dynamically build years list from posts{%- endcomment -%}
 {% assign years = "" | split: "" %}

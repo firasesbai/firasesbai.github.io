@@ -1,77 +1,84 @@
 ---
 layout: default
-title: Blog
+title: Tech Blog
 permalink: /blog/
 pagination:
   enabled: true
-description: "Things I like to write about."
+  category: articles
+description: "Technical articles about building data and AI systems."
 nav_order: 1
 custom_css:
   - /assets/css/blog.css
   - /assets/css/search.css
 ---
 
-<h1 class="page-title">Blog</h1>
-<p class="page-subtitle">Things I like to write about.</p>
+<h1 class="collection-title">Tech Blog</h1>
+<p class="collection-subtitle">Technical articles about building data and AI systems.</p>
 
 <div class="search">
-    {%- include search.html -%}
-    <br>
+    {%- include search.html search_scope="articles" search_label="Search" -%}
 </div>
 
-<hr>
-<br>
+<hr class="collection-divider">
 
 <div class="blog-container">
 
-  <!-- Logic for displaying pinned articles -->
+  {% assign all_article_posts = site.categories.articles | sort: 'date' | reverse %}
+  {% assign article_posts = paginator.posts %}
+  {% assign featured_posts = all_article_posts | where: "featured", true %}
+
+  {% if paginator.page == 1 and featured_posts.size > 0 %}
   <ul class="post-list">
-   <li>
-   <div class="pinned-articles">
-      <h2 class="section-title">Pinned</h2>
-   </div>
-   {% for post in site.posts %}
-    {% if post.pinned %}
+    <li>
+      <div class="pinned-articles">
+        <h2 class="section-title">Featured Articles</h2>
+      </div>
+    </li>
+    {% for post in featured_posts limit:3 %}
+      <li>
          <div class="post-card">
             <div class="post-content">
                <h3>
                   <a class="post-link" href="{{ post.url | relative_url}}">{{ post.title | escape }}</a>
                </h3>
                {{ post.excerpt }}
-            </div>
-            {% assign image_path = post.image.path | default: post.image %}
-            <div class="post-image-wrapper">
-               <img src="{{ image_path }}" alt="{{ post.title }}" class="post-teaser-image" loading="lazy" decoding="async" width="200" height="150">
-            </div>
-
-         </div>
-   </li>
-    {% endif %}
-   {% endfor %}
-
-  <!-- Free Course Offer -->
-  <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #007bff;">
-     {% include subscribe-course.html %}
-  </div>
-
-  </ul>
-
-  <hr>
-  <br>
-
-  <ul class="post-list">
-     <!-- 
-        Here is the main paginator logic called.
-        All calls to site.posts should be replaced by paginator.posts 
-        -->
-     {% for post in paginator.posts %}
-      {% unless post.pinned %}
-         <li>
-            <div class="post-card">
-               {% assign image_path = post.image.path | default: post.image %}
+             </div>
+             {% assign image_path = post.image.path | default: post.image %}
+             {% if image_path %}
                <div class="post-image-wrapper">
                   <img src="{{ image_path }}" alt="{{ post.title }}" class="post-teaser-image" loading="lazy" decoding="async" width="200" height="150">
                </div>
+             {% endif %}
+
+          </div>
+      </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if paginator.page == 1 %}
+  <div class="course-offer">
+     {% if jekyll.environment == "production" %}
+     {% include subscribe-course.html %}
+     {% else %}
+     <div class="course-offer-placeholder">Email course signup appears here in production.</div>
+     {% endif %}
+  </div>
+  {% endif %}
+
+  <hr class="collection-divider">
+
+  <ul class="post-list">
+      {% for post in article_posts %}
+      {% unless post.featured %}
+         <li>
+            <div class="post-card">
+                {% assign image_path = post.image.path | default: post.image %}
+                {% if image_path %}
+                  <div class="post-image-wrapper">
+                     <img src="{{ image_path }}" alt="{{ post.title }}" class="post-teaser-image" loading="lazy" decoding="async" width="200" height="150">
+                  </div>
+                {% endif %}
                <div class="post-content">
                   <h3> 
                      <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
@@ -91,21 +98,19 @@ custom_css:
      {% endfor %}
   </ul>
   
-  <!-- 
-     Showing buttons to move to the next and to the previous list of posts (pager buttons).
-     -->
   {% if paginator.total_pages > 1 %}
-  <ul class="pager">
-     {% if paginator.previous_page %}
-     <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-     </li>
-     {% endif %}
-     {% if paginator.next_page %}
-     <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-     </li>
-     {% endif %}
-  </ul>
-  {% endif %}
+   <ul class="pager">
+      {% if paginator.previous_page %}
+      <li class="previous">
+         <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Articles</a>
+      </li>
+      {% endif %}
+      {% if paginator.next_page %}
+      <li class="next">
+         <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Articles &rarr;</a>
+      </li>
+      {% endif %}
+   </ul>
+   {% endif %}
+   
 </div>

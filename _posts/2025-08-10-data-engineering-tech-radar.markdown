@@ -8,7 +8,7 @@ author: Firas Esbai
 description: "Launching a Data Engineering Tech Radar"
 comments: true
 image: "/assets/images/articles/22_data_tech_radar.png"
-pinned: true
+featured: true
 ---
 
 *Launching a Data Engineering Tech Radar.*

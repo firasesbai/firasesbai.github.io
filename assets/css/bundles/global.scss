@@ -5,6 +5,11 @@
 @import url("https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible:400&display=swap");
 @import "../footer";
 
+.home-site-header .site-nav {
+  float: none;
+  text-align: right;
+}
+
 /* Shared page heading system */
 .page-title {
   font-family: 'Atkinson Hyperlegible', sans-serif;
@@ -28,6 +33,24 @@
   font-size: 1.8em;
   margin-top: 36px;
   margin-bottom: 14px;
+}
+
+.collection-title {
+  font-size: 2.2em;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.collection-subtitle {
+  color: #6c757d;
+  font-size: 1.05em;
+  line-height: 1.55;
+  margin: 0 auto 32px auto;
+  max-width: 720px;
+  text-align: center;
 }
 
 .index-title {
@@ -69,6 +92,17 @@
 
 .archive-post a {
   line-height: 1.4;
+}
+
+.not-found-content {
+  margin: 0 auto;
+  max-width: 640px;
+  text-align: center;
+}
+
+.not-found-links {
+  margin-top: 24px;
+  text-align: center;
 }
 
 @media (max-width: 640px) {

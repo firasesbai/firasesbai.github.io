@@ -8,7 +8,6 @@ author: Firas Esbai
 description: "Apache Kafka is a highly scaled, distributed and fault tolerant event streaming platform."
 comments: true
 image: "/assets/images/articles/24_apache_kafka_architecture.png"
-pinned:
 ---
 
 *101 Apache Kafka Cheatsheet*

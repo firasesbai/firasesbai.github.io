@@ -44,7 +44,7 @@ author: Firas Esbai
 description: "<SEO description>"
 comments: true
 image:
-pinned:
+featured:
 ---
 ```
 
@@ -56,7 +56,7 @@ Field rules:
 - **description**: Write an SEO-optimized summary, 150-160 characters. It should capture the article's value proposition and include relevant keywords. Wrap in double quotes.
 - **comments**: Set to `true`.
 - **image**: Leave empty (the user adds images manually later).
-- **pinned**: Leave empty.
+- **featured**: Leave empty by default. Set to `true` only when the article should appear in the Tech Blog's Featured Articles section.
 
 ### 3. Format the body
 
@@ -177,6 +177,6 @@ These are the existing tag categories on the blog. Always pick from this list:
 - Data Architecture
 - AI Engineering
 - Blogging
-- General
+- System Design
 
-If the draft topic doesn't clearly fit any of these, use "General".
+If the draft topic doesn't clearly fit any of these, leave tags empty and use `category: notes` for notes or `category: articles` for technical articles.

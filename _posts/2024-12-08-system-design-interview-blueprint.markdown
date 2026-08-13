@@ -3,7 +3,7 @@ layout: post
 title:  "System Design Interview Blueprint"
 date:   2024-12-08
 category: articles
-tags: ["Data Engineering", "General"]
+tags: ["Data Engineering", "System Design"]
 author: Firas Esbai
 description: "General guidelines and a reference framework to use when approaching system design interview"
 comments: true

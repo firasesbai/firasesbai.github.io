@@ -1,15 +1,15 @@
 ---
 layout: page
-permalink: /categories/general
-description: "Explore articles and general notes from books or other interesting resources covering their key topics."
+permalink: /categories/system-design
+description: "Explore articles and notes about system design, architecture tradeoffs, and interview frameworks."
 ---
 
-{% assign category = "General" %}
+{% assign category = "System Design" %}
 
 {% for tag in site.tags %}
 {% if tag[0] == category %}
   <h1 class="index-title">{{ tag[0] }}</h1>
-  <p class="index-subtitle">Notes and articles that do not fit neatly into one technical topic.</p>
+  <p class="index-subtitle">Articles related to {{ tag[0] | downcase }}.</p>
   <ul class="archive-post-list">
     {% for post in tag[1] %}
       <li class="archive-post">

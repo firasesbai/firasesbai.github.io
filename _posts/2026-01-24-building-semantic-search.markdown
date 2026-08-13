@@ -8,7 +8,6 @@ author: Firas Esbai
 description: "Guide on how to build a semantic search using fastapi, faiss and sentence-transformers on google cloud"
 comments: true
 image: 
-pinned:
 ---
 
 *In this article, I will guide you on how I built and integrated semantic search using Google Cloud for my site.*
