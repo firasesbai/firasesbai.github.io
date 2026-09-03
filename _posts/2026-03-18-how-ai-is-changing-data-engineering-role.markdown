@@ -8,7 +8,6 @@ author: Firas Esbai
 description: "How AI is reshaping data engineering, from business context and data pipelines to data quality, RAG, vector databases and new architectures"
 comments: true
 image: "/assets/images/articles/31_creator_claude_code_tweet.png"
-pinned:
 ---
 
 *In this article, I will highlight some of the changes that I'm seeing in the field and how they are impacting the role of the data engineer.*

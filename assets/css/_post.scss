@@ -20,9 +20,9 @@
 }
 
 .post-tag-badge:hover {
-  background-color: #007bff;
+  background-color: #0b5c7a;
   color: #ffffff;
-  border-color: #007bff;
+  border-color: #0b5c7a;
   text-decoration: none;
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -35,7 +35,7 @@
   }
 .breadcrumb a {
     text-decoration: none;
-    color: #007bff;
+    color: #0b5c7a;
   }
 .breadcrumb span {
     color: #6c757d;
@@ -98,7 +98,7 @@ pre, code {
 }
 
 .related-post-item h3 a:hover {
-  color: #007bff;
+  color: #0b5c7a;
 }
 
 .related-meta {
@@ -131,14 +131,6 @@ pre, code {
   text-align: center;
   padding: 20px;
 }
-/* Similarity score indicator */
-.similarity-score {
-  margin-left: 10px;
-  font-size: 0.85em;
-  color: #007bff;
-  font-weight: 500;
-}
-
 /* Loading state */
 #similar-posts-loading {
   animation: pulse 1.5s ease-in-out infinite;

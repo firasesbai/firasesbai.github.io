@@ -1,10 +1,10 @@
 ---
 layout: page
-permalink: /categories/observability
-description: "Explore articles and insights on observability, covering key topics and resources to expand your knowledge and interests."
+permalink: /categories/system-design
+description: "Explore articles and notes about system design, architecture tradeoffs, and interview frameworks."
 ---
 
-{% assign category = "Observability" %}
+{% assign category = "System Design" %}
 
 {% for tag in site.tags %}
 {% if tag[0] == category %}

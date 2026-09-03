@@ -8,7 +8,7 @@ author: Firas Esbai
 description: "Launching a Data Engineering Tech Radar"
 comments: true
 image: "/assets/images/articles/22_data_tech_radar.png"
-pinned: true
+featured: true
 ---
 
 *Launching a Data Engineering Tech Radar.*
@@ -57,7 +57,7 @@ The rings represent my opinion on a technology's maturity and my recommendation 
 - **Adopt:** Technologies that are well-established and I have used or seen other teams adopt them in production and they've proven their value.
 - **Trial:** Emerging technologies that show promise and I have started exploring them or using on non-critical projects.
 - **Assess:** Technologies that caught my eye and are used or recommended by other teams that I think are worth exploring.
-- **Hold:** Technologies to proceed with caution on and I would not recommended for new projects.
+- **Hold:** Technologies to proceed with caution on and I would not recommend for new projects.
 
 ## This Is Just the Beginning ##
 

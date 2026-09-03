@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "System Desing Interview Blueprint"
+title:  "System Design Interview Blueprint"
 date:   2024-12-08
 category: articles
-tags: ["Data Engineering", "General"]
+tags: ["Data Engineering", "System Design"]
 author: Firas Esbai
 description: "General guidelines and a reference framework to use when approaching system design interview"
 comments: true
@@ -21,7 +21,7 @@ The purpose of this step is to assess your ability to design large-scale, comple
 
 ## General Concepts ##
 
-While there is no shortage of information or resources on the internet when it comes to system design interview preparation, following is a list of some concepts and topics that I personnaly found common and almost always used in every system and thus you should be familiar with before going to the interview: 
+While there is no shortage of information or resources on the internet when it comes to system design interview preparation, following is a list of some concepts and topics that I personally found common and almost always used in every system and thus you should be familiar with before going to the interview: 
 
 ### API and Web Development ###
 - [API Architecture Styles](https://bytebytego.com/guides/a-cheatsheet-on-comparing-api-architectural-styles/)

@@ -2,7 +2,116 @@
 ---
 /* Global CSS Bundle - Loaded on all pages */
 
+@import url("https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible:400&display=swap");
 @import "../footer";
+
+.home-site-header .site-nav {
+  float: none;
+  text-align: right;
+}
+
+/* Shared page heading system */
+.page-title {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  font-size: 2em;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  color: #6c757d;
+  font-size: 1.1em;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0 0 28px 0;
+}
+
+.section-title {
+  font-size: 1.8em;
+  margin-top: 36px;
+  margin-bottom: 14px;
+}
+
+.collection-title {
+  font-size: 2.2em;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.collection-subtitle {
+  color: #6c757d;
+  font-size: 1.05em;
+  line-height: 1.55;
+  margin: 0 auto 32px auto;
+  max-width: 720px;
+  text-align: center;
+}
+
+.index-title {
+  font-size: 2em;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.index-subtitle {
+  color: #6c757d;
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 0 0 28px 0;
+  text-align: left;
+}
+
+.post-date {
+  color: #6c757d;
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+.archive-post-list {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.archive-post {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.archive-post a {
+  line-height: 1.4;
+}
+
+.not-found-content {
+  margin: 0 auto;
+  max-width: 640px;
+  text-align: center;
+}
+
+.not-found-links {
+  margin-top: 24px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .archive-post {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
+  }
+}
 
 /* Skip to main content link - accessibility */
 .skip-link {

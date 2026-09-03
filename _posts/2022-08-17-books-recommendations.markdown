@@ -3,11 +3,10 @@ layout: post
 title:  "My Reading List"
 date:   2022-08-17
 category: notes
-tags: ["General"]
+tags: []
 author: Firas Esbai
 decription: "My recommended list of books arranged in different categories and subjects"
 comments: true
-pinned:  
 image: "/assets/images/articles/13_reading_recommendations.jpg"
 ---
 

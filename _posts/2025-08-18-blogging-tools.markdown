@@ -8,7 +8,6 @@ author: Firas Esbai
 description: "Discover the curated list of tools for writing and building this site, covering hosting, analytics, SEO, and speed optimization."
 comments: yes
 image: 
-pinned:
 ---
 
 *A curated list of tools that I'm using for writing and building this site.*

@@ -1,62 +1,42 @@
-h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-size: 1.8em;
-  margin-top: 30px;
-  margin-bottom: 15px;
-}
-
-h4 {
-  font-size: 1.5em;
-  margin-top: 20px;
+h3 {
+  font-size: 1.3em;
+  margin: 0 0 12px 0;
 }
 
 /* Tag Cloud Styling */
 .tag-cloud {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  margin: 20px 0 40px 0;
+  gap: 10px;
+  margin: 0 0 36px 0;
   align-items: center;
-  line-height: 2;
+  line-height: 1.4;
 }
 
 .tag-item {
   text-decoration: none;
-  color: #007bff;
-  transition: all 0.3s ease;
+  color: #0b5c7a;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   display: inline-block;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.95em;
   font-weight: 500;
 }
 
 .tag-item:hover {
-  background-color: #007bff;
+  background-color: #0b5c7a;
+  border-color: #0b5c7a;
   color: white;
-  transform: scale(1.05);
+  text-decoration: none;
 }
 
 .tag-count {
-  font-size: 0.7em;
+  font-size: 0.85em;
   opacity: 0.7;
-}
-
-.year-count {
-  font-size: 0.7em;
-  font-weight: normal;
-  opacity: 0.7;
-  margin-left: 5px;
-}
-
-.post-date {
-  font-size: 0.9em;
-  color: #6c757d;
-  margin-left: 10px;
-  font-style: italic;
+  margin-left: 3px;
 }
 
 ul {
@@ -70,78 +50,14 @@ li {
 
 a {
   text-decoration: none;
-  color: #007bff; /* Change to your site's color */
+  color: #0b5c7a;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-/* AI Badge */
-.ai-badge {
-  display: inline-block;
-  font-size: 0.45em;
-  font-weight: 600;
-  background-color: #007bff;
-  color: white;
-  padding: 2px 8px;
-  border-radius: 10px;
-  vertical-align: middle;
-  letter-spacing: 0.5px;
-}
-
-/* Active (selected) concept tag */
-.concept-tag-active,
-.concept-tag-active:hover {
-  background-color: #007bff;
-  color: white;
-}
-
-/* Posts list shown when a tag is clicked */
-.concept-posts-list {
-  margin: 10px 0 30px 0;
-  padding: 15px 20px;
-  background-color: #f8f9fa;
-  border-left: 4px solid #007bff;
-  border-radius: 0 8px 8px 0;
-  animation: fadeIn 0.3s ease;
-}
-
-.concept-posts-list h4 {
-  margin: 0 0 10px 0;
-  font-size: 1.1em;
-  color: #007bff;
-}
-
-.concept-posts-list ul {
-  margin: 0;
-  padding-left: 20px;
-  list-style-type: disc;
-}
-
-.concept-posts-list li {
-  margin-bottom: 6px;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Loading state */
-.concept-tags-loading {
-  padding: 10px 0;
-  color: #6c757d;
-  font-style: italic;
-  animation: pulse 1.5s ease-in-out infinite;
-}
-
-.concept-tags-fallback {
-  color: #6c757d;
-  font-style: italic;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+.archive-year {
+  border-top: 1px solid #e9ecef;
+  padding: 22px 0 10px 0;
 }

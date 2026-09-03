@@ -1,0 +1,42 @@
+---
+layout: page
+title: Notes
+permalink: /notes/
+description: "Essays and notes from books, articles, and ideas worth saving."
+nav_order: 2
+custom_css:
+  - /assets/css/blog.css
+---
+
+<h1 class="collection-title">Notes</h1>
+<p class="collection-subtitle">Essays and notes from books, articles, and ideas worth saving.</p>
+
+{% assign note_posts = site.categories.notes | sort: 'date' | reverse %}
+
+<ul class="post-list notes-list">
+  {% for post in note_posts %}
+    <li>
+      <div class="post-card">
+        {% assign image_path = post.image.path | default: post.image %}
+        {% if image_path %}
+          <div class="post-image-wrapper">
+            <img src="{{ image_path }}" alt="{{ post.title }}" class="post-teaser-image" loading="lazy" decoding="async" width="200" height="150">
+          </div>
+        {% endif %}
+        <div class="post-content">
+          <h2>
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h2>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" | append: ' - '}}
+          {% assign words = post.content | strip_html | number_of_words %}
+          {{ words | divided_by:180 }} min read
+          </span>
+
+          {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+          {%- endif -%}
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+</ul>

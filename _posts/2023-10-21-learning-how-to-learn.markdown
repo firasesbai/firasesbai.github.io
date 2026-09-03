@@ -3,7 +3,7 @@ layout: post
 title:  "Learning How to Learn"
 date:   2023-10-21
 category: notes
-tags: ["General"]
+tags: []
 author: Firas Esbai
 description: "Summary and important notes and takeaways from the book learning how to learn by Barbara Oakley"
 comments: true

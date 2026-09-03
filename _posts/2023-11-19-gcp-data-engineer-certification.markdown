@@ -185,7 +185,7 @@ As a professional data engineer, designing data processing systems requires buil
 
 ### Dataflow ###
 
-It allows you to execute your Apache Beans pipelines on Google Cloud. 
+It allows you to execute your Apache Beam pipelines on Google Cloud. 
 - A managed service that provides the resources necessary to create pipelines
    - Defines *HOW* to run the pipeline:
       - Optimizes the graph by fusing transforms for example for best execution path 
@@ -199,18 +199,18 @@ It allows you to execute your Apache Beans pipelines on Google Cloud.
    - Defines *WHAT* has to be done
 
 <figure>
-  <img src="/assets/images/articles/18_gcp_dataflow.png" alt="mindmap of topics related to dataproc part 1">
-  <figcaption>Figure 18: Datflow Part 1/3</figcaption>
+  <img src="/assets/images/articles/18_gcp_dataflow.png" alt="mindmap of topics related to dataflow part 1">
+  <figcaption>Figure 18: Dataflow Part 1/3</figcaption>
 </figure>
 
 <figure>
-  <img src="/assets/images/articles/18_gcp_dataflow_2.png" alt="mindmap of topics related to dataproc part 2">
-  <figcaption>Figure 19: Datflow Part 2/3</figcaption>
+  <img src="/assets/images/articles/18_gcp_dataflow_2.png" alt="mindmap of topics related to dataflow part 2">
+  <figcaption>Figure 19: Dataflow Part 2/3</figcaption>
 </figure>
 
 <figure>
-  <img src="/assets/images/articles/18_gcp_dataflow_3.png" alt="mindmap of topics related to dataproc part 3">
-  <figcaption>Figure 20: Datflow Part 3/3</figcaption>
+  <img src="/assets/images/articles/18_gcp_dataflow_3.png" alt="mindmap of topics related to dataflow part 3">
+  <figcaption>Figure 20: Dataflow Part 3/3</figcaption>
 </figure>
 
 ## Storage ##
@@ -259,7 +259,7 @@ Cloud SQL is a fully managed relational database service for:
 - Microsoft SQL
 
 <figure>
-  <img src="/assets/images/articles/18_gcp_cloud_sql.png" alt="mindmap of topics related to cloud slq">
+  <img src="/assets/images/articles/18_gcp_cloud_sql.png" alt="mindmap of topics related to cloud sql">
   <figcaption>Figure 24: Cloud SQL</figcaption>
 </figure>
 

@@ -1,186 +1,27 @@
 ---
 layout: page
 permalink: /archive/
-description: "Explore a comprehensive archive of Firas Esbai's articles."
+description: "Explore a comprehensive archive of Firas Esbai's articles and notes."
 custom_css:
   - /assets/css/bundles/archive.css
 ---
 
-<h1>Archive</h1>
-
-<h2>Explore by Topic</h2>
+<h1 class="index-title">Archive</h1>
+<p class="index-subtitle">Browse curated topics and the full site archive.</p>
 
 <div class="tag-cloud">
   {% assign sorted_tags = site.tags | sort %}
-  {% assign max_count = 0 %}
-  
-  {%- comment -%}Find the max post count for scaling{%- endcomment -%}
-  {% for tag in sorted_tags %}
-    {% assign count = tag[1] | size %}
-    {% if count > max_count %}
-      {% assign max_count = count %}
-    {% endif %}
-  {% endfor %}
-  
-  {%- comment -%}Generate dynamic tag cloud with scaled font sizes{%- endcomment -%}
   {% for tag in sorted_tags %}
     {% assign post_count = tag[1] | size %}
     {% assign tag_url = tag[0] | downcase | replace: " ", "-" %}
-    
-    {%- comment -%}Scale font size: 1em to 2.5em based on post count{%- endcomment -%}
-    {% assign font_size = post_count | times: 1.0 | divided_by: max_count | times: 1.5 | plus: 1.0 %}
-    
+
     <a href="/categories/{{ tag_url }}" 
        class="tag-item" 
-       style="font-size: {{ font_size }}em;"
        title="{{ post_count }} post{% if post_count != 1 %}s{% endif %}">
-      {{ tag[0] }} <span class="tag-count">({{ post_count }})</span>
+      {{ tag[0] }}
     </a>
   {% endfor %}
 </div>
-
-<h2>Explore by Tags</h2>
-
-<div id="concept-tags-loading" class="concept-tags-loading">
-  <p>Loading concept tags...</p>
-</div>
-
-<div id="concept-tags" class="tag-cloud" style="display: none;"></div>
-
-<div id="concept-tags-posts" class="concept-posts-list" style="display: none;">
-  <h4 id="concept-tags-posts-title"></h4>
-  <ul id="concept-tags-posts-list"></ul>
-</div>
-
-<div id="concept-tags-error" style="display: none;">
-  <p class="concept-tags-fallback">Concept tags unavailable.</p>
-</div>
-
-<script>
-(function() {
-  'use strict';
-
-  var isDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-  var API_URL = isDev ? 'http://localhost:8080/api/v1/tags' : 'https://api.firasesbai.com/api/v1/tags';
-  var CACHE_KEY = 'ai_concept_tags';
-  var CACHE_TTL = 7 * 24 * 60 * 60 * 1000; // 7 days
-
-  var loadingEl = document.getElementById('concept-tags-loading');
-  var cloudEl = document.getElementById('concept-tags');
-  var errorEl = document.getElementById('concept-tags-error');
-  var postsEl = document.getElementById('concept-tags-posts');
-  var postsTitleEl = document.getElementById('concept-tags-posts-title');
-  var postsListEl = document.getElementById('concept-tags-posts-list');
-
-  var tagsData = null;
-  var activeTag = null;
-
-  // Check cache first
-  try {
-    var cached = localStorage.getItem(CACHE_KEY);
-    if (cached) {
-      var parsed = JSON.parse(cached);
-      if (Date.now() - parsed.timestamp < CACHE_TTL) {
-        renderTags(parsed.data);
-        return;
-      }
-    }
-  } catch (e) { /* ignore */ }
-
-  // Fetch from API
-  fetch(API_URL)
-    .then(function(r) { return r.ok ? r.json() : Promise.reject('HTTP ' + r.status); })
-    .then(function(data) {
-      renderTags(data);
-      try {
-        localStorage.setItem(CACHE_KEY, JSON.stringify({ data: data, timestamp: Date.now() }));
-      } catch (e) { /* ignore */ }
-    })
-    .catch(function() {
-      loadingEl.style.display = 'none';
-      errorEl.style.display = 'block';
-    });
-
-  function renderTags(data) {
-    var tags = data.tags;
-    if (!tags || Object.keys(tags).length === 0) {
-      loadingEl.style.display = 'none';
-      errorEl.style.display = 'block';
-      return;
-    }
-
-    tagsData = tags;
-
-    // Find max count for font scaling
-    var maxCount = 0;
-    for (var tag in tags) {
-      if (tags[tag].count > maxCount) maxCount = tags[tag].count;
-    }
-
-    // Sort tags alphabetically
-    var sortedTags = Object.keys(tags).sort();
-    var html = '';
-    for (var i = 0; i < sortedTags.length; i++) {
-      var tagName = sortedTags[i];
-      var count = tags[tagName].count;
-      var fontSize = (count / maxCount * 1.2 + 0.9).toFixed(2);
-      html += '<a href="#" class="tag-item concept-tag" data-tag="' + tagName + '" style="font-size: ' + fontSize + 'em;" title="' + count + ' post' + (count !== 1 ? 's' : '') + '">'
-           + tagName + ' <span class="tag-count">(' + count + ')</span>'
-           + '</a> ';
-    }
-
-    cloudEl.innerHTML = html;
-    loadingEl.style.display = 'none';
-    cloudEl.style.display = 'block';
-
-    // Add click handlers
-    cloudEl.addEventListener('click', function(e) {
-      var target = e.target.closest('.concept-tag');
-      if (!target) return;
-      e.preventDefault();
-      var tagName = target.getAttribute('data-tag');
-      toggleTag(tagName);
-    });
-  }
-
-  function toggleTag(tagName) {
-    // Remove active class from all tags
-    var allTags = cloudEl.querySelectorAll('.concept-tag');
-    for (var i = 0; i < allTags.length; i++) {
-      allTags[i].classList.remove('concept-tag-active');
-    }
-
-    // If clicking the same tag, collapse
-    if (activeTag === tagName) {
-      activeTag = null;
-      postsEl.style.display = 'none';
-      return;
-    }
-
-    activeTag = tagName;
-
-    // Highlight active tag
-    var activeEl = cloudEl.querySelector('[data-tag="' + tagName + '"]');
-    if (activeEl) activeEl.classList.add('concept-tag-active');
-
-    // Show posts for this tag
-    var tagInfo = tagsData[tagName];
-    if (!tagInfo || !tagInfo.posts) return;
-
-    postsTitleEl.textContent = tagName;
-    var html = '';
-    for (var i = 0; i < tagInfo.posts.length; i++) {
-      var post = tagInfo.posts[i];
-      var title = post.title || post.url;
-      html += '<li><a href="' + post.url + '">' + title + '</a></li>';
-    }
-    postsListEl.innerHTML = html;
-    postsEl.style.display = 'block';
-  }
-})();
-</script>
-
-<h2>Archive by Year</h2>
 
 {%- comment -%}Dynamically build years list from posts{%- endcomment -%}
 {% assign years = "" | split: "" %}
@@ -193,24 +34,18 @@ custom_css:
 {% assign years = years | uniq | sort | reverse %}
 
 {% for year in years %}
-  {%- comment -%}Count posts for this year{%- endcomment -%}
-  {% assign year_post_count = 0 %}
-  {% for post in site.posts %}
-    {% assign post_year = post.date | date: "%Y" %}
-    {% if post_year == year %}
-      {% assign year_post_count = year_post_count | plus: 1 %}
-    {% endif %}
-  {% endfor %}
-  
-  <h4>{{ year }} <span class="year-count">({{ year_post_count }} posts)</span></h4>
-  <ul>
-  {% for post in site.posts %}
-    {% assign post_year = post.date | date: "%Y" %}
-    {% if post_year == year %}
-      <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </li>
-    {% endif %}
-  {% endfor %}
-  </ul>
+  <section class="archive-year">
+    <h3>{{ year }}</h3>
+    <ul class="archive-post-list">
+    {% for post in site.posts %}
+      {% assign post_year = post.date | date: "%Y" %}
+      {% if post_year == year %}
+        <li class="archive-post">
+          <a href="{{ post.url }}">{{ post.title }}</a>
+          <span class="post-date">{{ post.date | date: "%b %-d" }}</span>
+        </li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </section>
 {% endfor %}

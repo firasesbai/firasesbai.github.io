@@ -72,7 +72,7 @@ So when should we use one architecture or the other? As is often the case, it de
 A very simple case is when the algorithms used for real-time and historical data are identical and implementable on streaming. It is then clearly very advantageous to use the same codebase to process historical and real-time data, and hence use the Kappa Architecture.
 If the algorithms used to process historical data and real-time data are not always identical. Here, the choice between Lambda and Kappa becomes a tradeoff between the performance benefits of batch processing over a simpler codebase.
 
-Some examples of use cases where Kappa architecture is a good fit include fraud detection to detect fraudulent transactions in real time, process data from IoT devices in real time or recommendation engines used to to provide personalized recommendations to users in real time. 
+Some examples of use cases where Kappa architecture is a good fit include fraud detection to detect fraudulent transactions in real time, processing data from IoT devices in real time or recommendation engines used to provide personalized recommendations to users in real time. 
 
 
 With this we have reached the end of this post, I hope you enjoyed it!

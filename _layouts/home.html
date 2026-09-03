@@ -5,63 +5,54 @@ custom_css:
 ---
 
 <div class="home">
-   <div class="header">
-      <div class="welcome-message">
-          <h1>Welcome 👋 to My Corner</h1>
+   <header class="home-hero">
+      <div class="home-hero-copy">
+          <h1 class="collection-title home-title">Firas Esbai</h1>
+          <p class="collection-subtitle">Writing about data systems, AI, and engineering practices.</p>
       </div>
-  </div>
-
-<hr>
-
-<main class="main-content">
-  <div class="flex-container">
-      <div class="intro-text">
-         <p>I'm <strong>{{site.title}}</strong>, a lead data engineer with several years of experience.</p>
-         <p>My main interest is building intelligent data intensive systems. I focus on design and solving architecture challenges to help businesses thrive with better data-driven decisions, while building high-performing teams that drive meaningful impact.</p>
-      </div>
-      <div class="profile-image"> 
-         <picture>
-            <source srcset="/assets/images/0_profile.webp" type="image/webp">
-            <img alt="Firas Esbai" src="/assets/images/0_profile.png" width="200" height="203" class="profile-img">
-         </picture>
-      </div>
-  </div>
-
-   <section class="about-site">
-      <p>
-         I started this site to keep my own writings and document my learning journey that I'm now sharing with you. 
-         I write about modern tools, architectures and best practices for building resilient, future-proof data systems.
-      </p>
-   </section>
-
-   <section class="cta">
-      <p>Feel free to <a href="/contact/">Get in Touch</a>, I'm always open to interesting conversations and collaboration.</p>
-   </section>
-
-   <hr>
-
-   <section class="recent-posts">
-      <h2>Recent Blog Posts</h2>
-      <ul>
-        {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
-        {% for post in sorted_posts limit:3 %}
-          <li>
-            <h3>
-               <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-            </h3>
-            <span class="post-date">
-               {{ post.date | date: "%b %-d, %Y" | append: ' - '}}
-               {% assign words = post.content | strip_html | number_of_words %}
-               {{ words | divided_by:180 }} min read
-            </span>
-            {%- if site.show_excerpts -%}
-               {{ post.excerpt }}
-            {%- endif -%}
-          </li>
-        {% endfor %}
-      </ul>
-      <div class="view-all-container">
-         <a href="/blog" class="btn">View All Posts</a>
+       <div class="home-profile-image">
+          <img alt="Firas Esbai" src="/assets/images/0_profile.png" width="160" height="162" class="profile-img">
        </div>
-    </section>
-</main>
+   </header>
+
+   <div class="main-content">
+      <section class="home-intro">
+         <p>I'm a lead data engineer with 10 years of experience focused on building reliable data applications and platforms. 
+            This site is where I document what I learn about data engineering, AI systems, architecture tradeoffs, and the practices that make systems easier to operate and evolve.
+         </p>
+      </section>
+
+       <section class="recent-posts">
+          <div class="home-section-heading">
+             <h2 class="home-section-title">Latest Articles</h2>
+          </div>
+          <ul class="home-article-list">
+             {% assign sorted_posts = site.categories.articles | sort: 'date' | reverse %}
+             {% for post in sorted_posts limit:3 %}
+                <li class="home-article-card">
+                   {% assign image_path = post.image.path | default: post.image %}
+                   <a class="home-article-media" href="{{ post.url | relative_url }}" aria-hidden="true" tabindex="-1">
+                      {% if image_path %}
+                         <img src="{{ image_path }}" alt="" loading="lazy" decoding="async">
+                      {% else %}
+                         <span class="home-article-fallback">{{ post.tags | first | default: "Article" }}</span>
+                      {% endif %}
+                   </a>
+                   <div class="home-article-body">
+                      <span class="home-article-kicker">{{ post.tags | first | default: "Technical Article" }}</span>
+                      <h3>
+                         <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+                      </h3>
+                      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}{% assign words = post.content | strip_html | number_of_words %} - {{ words | divided_by:180 }} min read</span>
+                      {% assign article_summary = post.description | default: post.excerpt | strip_html %}
+                      <p>{{ article_summary | truncatewords: 18 }}</p>
+                   </div>
+                </li>
+             {% endfor %}
+          </ul>
+         <div class="view-all-container">
+            <a href="/blog/" class="btn">Read More</a>
+         </div>
+      </section>
+   </div>
+</div>

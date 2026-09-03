@@ -1,0 +1,18 @@
+- name: "firasesbai.com"
+  label: "Case Study"
+  description: "The publishing system behind this site, including Jekyll content workflows, API-backed semantic search, TL;DR summaries, related posts, and theme discovery."
+  image: "/assets/images/default-seo-tag-image.png"
+  tags:
+    - Jekyll
+    - FastAPI
+    - Cloud Run
+    - FAISS
+    - Semantic Search
+    - Gemini
+  highlights:
+    - "Static Jekyll site with structured article, note, and archive workflows."
+    - "FastAPI service powering semantic search, similar posts, summaries, and generated themes."
+    - "Embedding-based retrieval with FAISS and build-time API index refreshes after publishing."
+  links:
+    live: "https://www.firasesbai.com"
+    github: "https://github.com/firasesbai/firasesbai.github.io"
