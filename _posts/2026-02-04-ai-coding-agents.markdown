@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "AI Coding Agents: A Practical Guide"
+title:  "The Anatomy of an AI Coding Agent"
 date:   2026-02-04
 category: articles        
 tags: ["AI Engineering"]                  
 author: Firas Esbai
-description: "Practical guide on what AI coding agents are, best practices and features that extend their capabilities and how to leverage them using Cline"
+description: "What are AI coding agents, best practices and features that extend their capabilities and how to leverage them using Cline"
 comments: true
 image: "/assets/images/articles/30_prompt_engineering_vs_context_engineering.png"
 ---
@@ -22,7 +22,7 @@ This article maps out the anatomy of an AI coding agent, using Cline as the prim
 
 ## Foundation: What is an Agent? ##
 
-GitHub copilot was initially released in June 2021. A collaboration between GitHub and OpenAI resulted in an AI powered tool with the premise to help developers code faster leveraging OpenAI's Codex model. The tool mainly offered what is now sometimes referred to as "autocomplete on steroids". However, things evolved rapidly and by 2024 the AI coding tools got more advanced especially with integrations into IDEs to reach what we are currently witnessing as the emergence of AI coding agents. But what is an AI agent?  
+GitHub Copilot was initially released in June 2021. A collaboration between GitHub and OpenAI resulted in an AI powered tool with the premise to help developers code faster leveraging OpenAI's Codex model. The tool mainly offered what is now sometimes referred to as "autocomplete on steroids". However, things evolved rapidly and by 2024 the AI coding tools got more advanced especially with integrations into IDEs to reach what we are currently witnessing as the emergence of AI coding agents. But what is an AI agent?  
 
 In order to understand what is an AI Agent and identify its foundational building blocks, we will first look at different definitions from AI research labs and technology companies. 
 
@@ -132,7 +132,7 @@ Skills are folders of instructions that package repeated workflows, specialized 
 
 The **SKILL.md** file contains 2 sections: metadata and instructions. The latter contains detailed instructions to follow for that particular skill. The metadata provides necessary information when to use this skill through specific fields of which 2 are mandatory: name and description. 
 
-Agent skills are now an open standard and has been adopted by a growing number of agent products. 
+Agent skills are now an open standard and have been adopted by a growing number of agent products. 
 
 Unlike rules which are always active, skills load on demand. Installing multiple skills does not affect the context as only the metadata is always loaded and the instructions and other files are loaded progressively when the skill is triggered. 
 
