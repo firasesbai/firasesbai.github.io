@@ -44,7 +44,7 @@ As this was a personal side project, the stakes were not that high but the role 
   <figcaption>Figure 3: Total Line Changes from Chat</figcaption>
 </figure>
 
-So over the course of two weeks, I used **Cursor** to try to answer my question. I did not start from scratch and vibe coded my way into this project but rather build on top of an existing web application and extended it with new features. That means I already had a clear code structure with clearly defined interfaces and domain models that have greatly influenced the LLM's code organization and structure.
+So over the course of two weeks, I used **Cursor** to try to answer my question. I did not start from scratch and vibe coded my way into this project but rather built on top of an existing web application and extended it with new features. That means I already had a clear code structure with clearly defined interfaces and domain models that have greatly influenced the LLM's code organization and structure.
 
 When it comes to the features, some of them were straightforward but many weren't. These were a collection of cards with merely a title in a Trello board that came from ideas I thought were cool to implement someday so I just wrote them down there quickly to not lose track of them. This point is important as we'll see later because it influences how you approach building these features and how to draft your prompts for that. 
 
@@ -55,7 +55,7 @@ A final thing to mention before moving on to the key takeaways is the distributi
   <figcaption>Figure 4: Programming Language Usage</figcaption>
 </figure>
 
-I'm not a frontend developer and my Javascript skills at this point were a bit rusty to say the least but surprisingly this is the part where I made most of the progress that I couldn't have done without the AI assistance in such a short time. 
+I'm not a frontend developer and my JavaScript skills at this point were a bit rusty to say the least but surprisingly this is the part where I made most of the progress that I couldn't have done without the AI assistance in such a short time. 
 
 ## Key Takeaways ##
 
@@ -63,7 +63,7 @@ Following are the observations and notes I took as I progressed in this experime
 
 - Use user journeys and expected behaviour in your prompt when explaining a feature especially one that would require changes across both frontend and backend logic.  
 - Be specific and start with thin slices. Describing multiple features and expectations in the same prompt just because they are correlated will not result in better results but rather only confuse the model.  
-- Request analysis of the code structure and design by giving the whole codebase as context to the mode. This helps you reflect on the progress made so far, assess the list of features implemented and decide what to do next because it is easy to have decision paralysis in this honeymoon phase where you are in love with how productive you are and everything seems feasible that you just want to do it all at once.  
+- Request analysis of the code structure and design by giving the whole codebase as context to the model. This helps you reflect on the progress made so far, assess the list of features implemented and decide what to do next because it is easy to have decision paralysis in this honeymoon phase where you are in love with how productive you are and everything seems feasible that you just want to do it all at once.  
 - Asking the model to simplify any implementation is always good: rely on your judgment of assessing what looks good and what looks meh.  
 - If the model gets stuck with a particular implementation or request, expect to have duplicated code snippets and functions with similar logic but slightly different names resulting from multiple attempts at solving the issue. This means that the model was really bad at cleaning up dead code unless you specifically ask it to evaluate some code by highlighting it. 
 - After several interactions within the same chat, it is better to continue or start over in a new one: It helps you clear your thoughts with a fresh new prompt and therefore guide the model to better output. 
